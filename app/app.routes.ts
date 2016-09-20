@@ -1,6 +1,7 @@
 import {Routes,RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {DashboardDemo} from './demo/view/dashboarddemo';
+import {SampleDemo} from './demo/view/sampledemo';
 /*import {DataTableDemo} from './demo/view/datatabledemo';
 import {SampleDemo} from './demo/view/sampledemo';
 import {FormsDemo} from './demo/view/formsdemo';
@@ -15,8 +16,8 @@ import {Setup} from './setup';
 
 export const routes: Routes = [
     {path: '', component: DashboardDemo},
-    /*{path: 'sample', component: SampleDemo},
-    {path: 'forms', component: FormsDemo},
+    {path: 'sample', component: SampleDemo},
+    /*{path: 'forms', component: FormsDemo},
     {path: 'data', component: DataDemo},
     {path: 'datatable', component: DataTableDemo},
     {path: 'panels', component: PanelsDemo},
