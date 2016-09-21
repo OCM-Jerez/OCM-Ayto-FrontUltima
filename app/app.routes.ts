@@ -7,6 +7,7 @@ import {DataDemo} from './demo/view/datademo';
 import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
 import {MenusDemo} from './demo/view/menusdemo';
+import {MessagesDemo} from './demo/view/messagesdemo';
 /*;
 import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'panels', component: PanelsDemo},
     {path: 'overlays', component: OverlaysDemo},
     {path: 'menus', component: MenusDemo},
+    {path: 'messages', component: MessagesDemo},
     /*
     {path: 'messages', component: MessagesDemo},
     {path: 'misc', component: MiscDemo},

@@ -75,6 +75,7 @@ import {DataDemo} from './demo/view/datademo';
 import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
 import {MenusDemo} from './demo/view/menusdemo';
+import {MessagesDemo} from './demo/view/messagesdemo';
 /*
 import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
@@ -162,7 +163,8 @@ import {NodeService} from './demo/service/nodeservice';
         DataDemo,
         PanelsDemo,
         OverlaysDemo,
-        MenusDemo,/*
+        MenusDemo,
+        MessagesDemo,/*
         OverlaysDemo,
         MessagesDemo,
         MiscDemo,
