@@ -70,8 +70,8 @@ import {Application}  from './application';
 import {DashboardDemo} from './demo/view/dashboarddemo';
 import {SampleDemo} from './demo/view/sampledemo';
 import {FormsDemo} from './demo/view/formsdemo';
-/*import {FormsDemo} from './demo/view/formsdemo';
 import {DataDemo} from './demo/view/datademo';
+/*
 import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
 import {MenusDemo} from './demo/view/menusdemo';
@@ -156,9 +156,8 @@ import {NodeService} from './demo/service/nodeservice';
         Application,
         DashboardDemo,
         SampleDemo,
-        FormsDemo,/*
         FormsDemo,
-        DataDemo,
+        DataDemo,/*
         PanelsDemo,
         OverlaysDemo,
         MenusDemo,
