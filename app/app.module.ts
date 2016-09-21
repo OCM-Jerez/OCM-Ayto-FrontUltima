@@ -74,8 +74,8 @@ import {FormsDemo} from './demo/view/formsdemo';
 import {DataDemo} from './demo/view/datademo';
 import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
-/*
 import {MenusDemo} from './demo/view/menusdemo';
+/*
 import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
 import {EmptyDemo} from './demo/view/emptydemo';*/
@@ -161,9 +161,9 @@ import {NodeService} from './demo/service/nodeservice';
         FormsDemo,
         DataDemo,
         PanelsDemo,
-        OverlaysDemo,/*
         OverlaysDemo,
-        MenusDemo,
+        MenusDemo,/*
+        OverlaysDemo,
         MessagesDemo,
         MiscDemo,
         EmptyDemo,*/
