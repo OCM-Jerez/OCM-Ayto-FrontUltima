@@ -69,6 +69,7 @@ import {TreeTableModule} from 'primeng/primeng';
 import {Application}  from './application';
 import {DashboardDemo} from './demo/view/dashboarddemo';
 import {SampleDemo} from './demo/view/sampledemo';
+import {FormsDemo} from './demo/view/formsdemo';
 /*import {FormsDemo} from './demo/view/formsdemo';
 import {DataDemo} from './demo/view/datademo';
 import {PanelsDemo} from './demo/view/panelsdemo';
@@ -154,7 +155,8 @@ import {NodeService} from './demo/service/nodeservice';
     declarations: [
         Application,
         DashboardDemo,
-        SampleDemo,/*
+        SampleDemo,
+        FormsDemo,/*
         FormsDemo,
         DataDemo,
         PanelsDemo,
