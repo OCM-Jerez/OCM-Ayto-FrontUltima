@@ -14,6 +14,7 @@ import {CarouselModule} from 'primeng/primeng';
 import {ChartModule} from 'primeng/primeng';
 import {CheckboxModule} from 'primeng/primeng';
 import {CodeHighlighterModule} from 'primeng/primeng';
+import {ConfirmDialogModule} from 'primeng/primeng';
 import {SharedModule} from 'primeng/primeng';
 import {ContextMenuModule} from 'primeng/primeng';
 import {DataGridModule} from 'primeng/primeng';
@@ -72,8 +73,8 @@ import {SampleDemo} from './demo/view/sampledemo';
 import {FormsDemo} from './demo/view/formsdemo';
 import {DataDemo} from './demo/view/datademo';
 import {PanelsDemo} from './demo/view/panelsdemo';
-/*
 import {OverlaysDemo} from './demo/view/overlaysdemo';
+/*
 import {MenusDemo} from './demo/view/menusdemo';
 import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
@@ -100,6 +101,7 @@ import {NodeService} from './demo/service/nodeservice';
         ChartModule,
         CheckboxModule,
         CodeHighlighterModule,
+        ConfirmDialogModule,
         SharedModule,
         ContextMenuModule,
         DataGridModule,
@@ -158,7 +160,8 @@ import {NodeService} from './demo/service/nodeservice';
         SampleDemo,
         FormsDemo,
         DataDemo,
-        PanelsDemo,/*
+        PanelsDemo,
+        OverlaysDemo,/*
         OverlaysDemo,
         MenusDemo,
         MessagesDemo,
