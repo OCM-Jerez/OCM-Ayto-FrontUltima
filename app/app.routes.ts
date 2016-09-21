@@ -8,10 +8,8 @@ import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
 import {MenusDemo} from './demo/view/menusdemo';
 import {MessagesDemo} from './demo/view/messagesdemo';
-/*;
-import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
-import {EmptyDemo} from './demo/view/emptydemo';*/
+import {EmptyDemo} from './demo/view/emptydemo';
 import {Setup} from './setup';
 
 export const routes: Routes = [
@@ -23,10 +21,8 @@ export const routes: Routes = [
     {path: 'overlays', component: OverlaysDemo},
     {path: 'menus', component: MenusDemo},
     {path: 'messages', component: MessagesDemo},
-    /*
-    {path: 'messages', component: MessagesDemo},
     {path: 'misc', component: MiscDemo},
-    {path: 'empty', component: EmptyDemo},*/
+    {path: 'empty', component: EmptyDemo},
     {path: 'setup', component: Setup}
 ];
 

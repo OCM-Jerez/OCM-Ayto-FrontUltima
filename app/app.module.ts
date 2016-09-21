@@ -76,10 +76,8 @@ import {PanelsDemo} from './demo/view/panelsdemo';
 import {OverlaysDemo} from './demo/view/overlaysdemo';
 import {MenusDemo} from './demo/view/menusdemo';
 import {MessagesDemo} from './demo/view/messagesdemo';
-/*
-import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
-import {EmptyDemo} from './demo/view/emptydemo';*/
+import {EmptyDemo} from './demo/view/emptydemo';
 import {Setup} from './setup';
 
 import {CarService} from './demo/service/carservice';
@@ -164,11 +162,10 @@ import {NodeService} from './demo/service/nodeservice';
         PanelsDemo,
         OverlaysDemo,
         MenusDemo,
-        MessagesDemo,/*
-        OverlaysDemo,
+        MessagesDemo,
         MessagesDemo,
         MiscDemo,
-        EmptyDemo,*/
+        EmptyDemo,
         Setup
     ],
     providers: [
