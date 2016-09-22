@@ -5,6 +5,10 @@
     clear:both;
 }
 
+*[hidden] {
+    display: none; 
+}
+
 .card {
     @include content-shadow();
     @include border-radius(2px);

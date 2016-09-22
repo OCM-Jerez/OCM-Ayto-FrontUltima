@@ -17,7 +17,7 @@
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="topbar-items fadeInDown animated">
-                    <li class="profile-item" *ngIf="profileMode=='top'||layoutMode=='horizontal'">
+                    <li class="profile-item" [hidden]="profileMode!='top'&&layoutMode!='horizontal'">
                         <a href="#">                            
                             <div class="profile-image"></div>
                             <span class="topbar-item-name">Jane Williams</span>
@@ -170,7 +170,7 @@
         <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}">
             <div class="nano">
                 <div class="nano-content menu-scroll-content">
-                    <div class="profile" *ngIf="profileMode=='inline'&&layoutMode!='horizontal'">
+                    <div class="profile" [hidden]="profileMode!='inline'||layoutMode=='horizontal'">
                         <div class="profile-image"></div>
                         <a id="profile-options" href="#">
                             <span class="profile-name">Jane Williams</span>
@@ -178,7 +178,7 @@
                         </a>
                     </div>
 
-                    <ul id="profile-menu" class="ultima-menu" *ngIf="profileMode=='inline'">
+                    <ul id="profile-menu" class="ultima-menu" [hidden]="profileMode!='inline'">
                         <li role="menuitem">
                             <a href="#" class="ripplelink">
                                 <i class="material-icons">person</i>
@@ -246,7 +246,7 @@
                                 <li role="menuitem"><a [routerLink]="['/menus']"><i class="material-icons">menu</i><span>Menus</span></a></li>
                                 <li role="menuitem"><a [routerLink]="['/messages']"><i class="material-icons">message</i><span>Messages</span></a></li>
                                 <li role="menuitem"><a href="/ultima/charts.xhtml"><i class="material-icons">insert_chart</i><span>Charts</span></a></li>
-                                <li role="menuitem"><a href="/ultima/file.xhtml"><i class="material-icons">attach_file</i><span>File</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/file']"><i class="material-icons">attach_file</i><span>File</span></a></li>
                                 <li role="menuitem"><a [routerLink]="['/misc']"><i class="material-icons">toys</i><span>Misc</span></a></li>
                             </ul>
                         </li>
