@@ -1451,7 +1451,7 @@ body .layout-wrapper.layout-compact {
       padding-right: 36px; }
   body .layout-wrapper.layout-compact .ui-splitbutton .ui-splitbutton-menubutton {
     height: 30px; }
-  body .layout-wrapper.layout-compact .ui-inputfield {
+  body .layout-wrapper.layout-compact .ui-inputtext {
     font-size: 14px; }
   body .layout-wrapper.layout-compact .ui-chkbox {
     line-height: 18px;
@@ -1469,8 +1469,8 @@ body .layout-wrapper.layout-compact {
     width: 14px;
     height: 14px; }
     body .layout-wrapper.layout-compact .ui-radiobutton .ui-radiobutton-box .ui-radiobutton-icon {
-      top: 0;
-      left: -1px;
+      top: -4px;
+      left: -3px;
       width: 18px;
       height: 18px; }
   body .layout-wrapper.layout-compact .ui-picklist .ui-picklist-caption {

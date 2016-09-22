@@ -33,7 +33,7 @@ export class FormsDemo implements OnInit {
     
     ratingValue: number;
     
-    checkboxValues: string[];
+    checkboxValues: string[] = [];
     
     radioValues: string[];
     
