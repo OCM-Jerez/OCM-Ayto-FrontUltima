@@ -78,6 +78,7 @@ import {MenusDemo} from './demo/view/menusdemo';
 import {MessagesDemo} from './demo/view/messagesdemo';
 import {MiscDemo} from './demo/view/miscdemo';
 import {EmptyDemo} from './demo/view/emptydemo';
+import {ChartsDemo} from './demo/view/chartsdemo';
 import {FileDemo} from './demo/view/filedemo';
 import {Setup} from './setup';
 
@@ -166,6 +167,7 @@ import {NodeService} from './demo/service/nodeservice';
         MessagesDemo,
         MessagesDemo,
         MiscDemo,
+        ChartsDemo,
         EmptyDemo,
         FileDemo,
         Setup
