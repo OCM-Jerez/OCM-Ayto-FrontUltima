@@ -15,7 +15,7 @@ body {
         font-size: $contentFontSize;
         border: 1px solid $dividerColor;
         
-        .ui-icon {
+        .fa {
             color: #757575;
         }
     }
@@ -26,7 +26,7 @@ body {
         font-size: $headerFontSize;
         border: 1px solid $primaryColor;
         
-        .ui-icon {
+        .fa {
             color: #ffffff;
         }
     }
@@ -47,7 +47,7 @@ body {
         background-color: $accentColor;
         color: $accentTextColor;
         
-        .ui-icon {
+        .fa {
             color: #ffffff;
         }
     }
@@ -87,7 +87,7 @@ body {
 
     }
 
-    .ui-icon {
+    .fa {
         font-family: 'Material Icons';
         font-weight: normal;
         font-style: normal;
@@ -120,7 +120,7 @@ body {
         
     }
     
-    .ui-inputfield {
+    .ui-inputtext {
         background: transparent;
         border-width: 0 0 1px 0;  
         padding: 2px 2px 1px 2px;
@@ -279,7 +279,7 @@ body {
                 width: 100%;
             }
             
-            .ui-icon {
+            .fa {
                 color: $textSecondaryColor;
                 top: 8px;
             }
@@ -352,7 +352,7 @@ body {
         background-color: #ffffff;
         @include border-radius(3px);
         
-        &.ui-inputfield {
+        &.ui-inputtext {
             padding: 0;
         }
         
@@ -377,7 +377,7 @@ body {
         .ui-selectlistbox-filter-container {
             padding: $inputHeaderPadding;
             
-            .ui-icon {
+            .fa {
                 top: 8px;
                 right: 8px;
             }
@@ -519,7 +519,7 @@ body {
         .ui-datatable-footer {
             padding: $headerPadding;
             
-            .ui-inputfield {
+            .ui-inputtext {
                 color: #ffffff;
                 
                 &:focus {
@@ -555,10 +555,6 @@ body {
                     vertical-align: middle;
                     margin: -4px 0 0 0;
                     color: $textSecondaryColor;
-                    
-                    &.ui-icon-carat-2-n-s {
-                        margin-left: 4px;   
-                    }
                 }
                 
                 .ui-column-resizer {
@@ -572,11 +568,11 @@ body {
                     color: $accentTextColor;
                     border-top-color: $accentColor;
                     
-                    .ui-icon {
+                    .fa {
                         color: $accentTextColor;
                     }
                     
-                    .ui-inputfield {
+                    .ui-inputtext {
                         color: $accentTextColor;
                         
                         &.ui-state-focus {
@@ -625,7 +621,7 @@ body {
                     }
                     
                     &.ui-state-highlight {
-                        .ui-inputfield {
+                        .ui-inputtext {
                             color: #ffffff;
                             border-color: #ffffff;
                             
@@ -667,8 +663,8 @@ body {
                 border-color: #e62a10;
                 color: #ffffff;
                 
-                .ui-inputfield,
-                .ui-inputfield.ui-state-error {
+                .ui-inputtext,
+                .ui-inputtext.ui-state-error {
                     border-color: #ffffff;
                 }
             }
@@ -693,7 +689,7 @@ body {
                     }
                 }
                 
-                .ui-inputfield {
+                .ui-inputtext {
                     color: #ffffff;
                     border-color: #ffffff;
                     
@@ -704,12 +700,12 @@ body {
             }
         }
         
-        > .ui-icon-arrowthick-1-s {
+        > .fa-arrowthick-1-s {
             font-size: 18px;
             color: $accentColor;
         }
         
-        > .ui-icon-arrowthick-1-n {
+        > .fa-arrowthick-1-n {
             display: none !important;
         }
         
@@ -801,7 +797,7 @@ body {
             line-height: 36px;
         }
         
-        .ui-icon {
+        .fa {
             color: #ffffff;
         }
         
@@ -810,7 +806,7 @@ body {
             width: 40px;
             height: 40px;
             
-            .ui-icon {
+            .fa {
                 width: 24px;
                 height: 24px;
                 font-size: 24px;
@@ -821,7 +817,7 @@ body {
         
         &.ui-button-text-icon-left,
         &.ui-button-text-icon-right {
-            .ui-icon {
+            .fa {
                 width: 24px;
                 height: 24px;
                 font-size: 24px;
@@ -1026,7 +1022,7 @@ body {
             @include border-radius-left(0);
             @include border-radius-right(3px);
             
-            .ui-icon {
+            .fa {
                 margin-left: -12px;
             }
         }
@@ -1104,7 +1100,7 @@ body {
                 transform: scale(0);
             }
             
-            .ui-icon-bullet {
+            .fa-bullet {
                 background-color: $primaryColor;
                 -webkit-transform: scale(0.5);
                 transform: scale(0.5);
@@ -1163,7 +1159,7 @@ body {
                     display: none;
                 }
                 
-                .ui-icon {
+                .fa {
                     color: $textSecondaryColor;
                     margin-top: -16px;
                 }
@@ -1172,7 +1168,7 @@ body {
         
         &.ui-autocomplete-multiple {
             .ui-autocomplete-multiple-container {
-                &.ui-inputfield {
+                &.ui-inputtext {
                     box-sizing: border-box;
                     padding: 2px 2px 1px 2px;
                 }
@@ -1221,7 +1217,7 @@ body {
             top: 0;
             margin-right: 0;
             
-            .ui-icon {
+            .fa {
                 height: 24px;
                 width: 24px;
                 margin-top: -8px;
@@ -1229,7 +1225,7 @@ body {
         }
         
         .ui-selectonemenu-label {
-            &.ui-inputfield {
+            &.ui-inputtext {
                 font: $inputFontSize "Roboto","Helvetica Neue",sans-serif;
             }
             
@@ -1264,7 +1260,7 @@ body {
         }
         
         .ui-selectonemenu-filter-container {
-            .ui-icon {
+            .fa {
                 top: 5px;
                 right: 8px;
             }
@@ -1284,7 +1280,7 @@ body {
             padding: 0;
             margin-right: -2px;
             
-            .ui-icon {
+            .fa {
                 height: 24px;
                 width: 24px;
                 margin-top: -8px;
@@ -1333,12 +1329,12 @@ body {
                 vertical-align: middle;
                 float: none;
                 
-                .ui-icon {
+                .fa {
                     top: -2px;
                     color: #ffffff;
                 }  
                 
-                .ui-inputfield {
+                .ui-inputtext {
                     color: #ffffff;
                     padding-right: 30px;
                     width: 100%;
@@ -1464,7 +1460,7 @@ body {
         .ui-selectlistbox-filter-container {
             padding: $inputHeaderPadding;
             
-            .ui-icon {
+            .fa {
                 top: 8px;
                 right: 10px;
             }
@@ -1482,15 +1478,15 @@ body {
             z-index: auto;
             @include no-shadow();
             
-            .ui-icon-triangle-1-n {
+            .fa-triangle-1-n {
                 color: $textColor;
             }
             
-            .ui-icon-triangle-1-s {
+            .fa-triangle-1-s {
                 color: $textColor;
             }    
             
-            .ui-icon {
+            .fa {
                 top: 0px;
                 height: 12px;
                 color: $textSecondaryColor;
@@ -1498,13 +1494,13 @@ body {
         }
         
         .ui-spinner-up {
-            .ui-icon {
+            .fa {
                 top: 6px;
             }
         }
         
         .ui-spinner-down {
-            .ui-icon {
+            .fa {
                 top: 2px;
             }
         }
@@ -1625,7 +1621,7 @@ body {
             @include no-shadow();
             @include border-radius(0);
             
-            .ui-icon {
+            .fa {
                 color: $textSecondaryColor;
             }
         }
@@ -1654,7 +1650,7 @@ body {
                 right: 8px;
                 @include material-icon("play_circle_outline");
                 
-                .ui-icon {
+                .fa {
                     display: none;
                 }
                 
@@ -1671,7 +1667,7 @@ body {
                 @include rotate(180deg);
                 left: 8px;
                 
-                .ui-icon {
+                .fa {
                     display: none;
                 }
                 
@@ -2005,11 +2001,11 @@ body {
                 }
             }
             
-            .ui-icon-triangle-1-e {
+            .fa-triangle-1-e {
                 margin-top: -12px;
             }
             
-            .ui-icon-triangle-1-s {
+            .fa-triangle-1-s {
                 margin-top: -12px;
             }
             
@@ -2062,7 +2058,7 @@ body {
                     }
                 }
                 
-                > .ui-icon-close {
+                > .fa-close {
                     margin: 8px 0 0 0;
                     @include transition(color .3s);
                     color: $textSecondaryColor;
@@ -2087,7 +2083,7 @@ body {
                         color: $primaryColor;
                     }
                     
-                    > .ui-icon-close {
+                    > .fa-close {
                         color: $accentColor;
                     }
                 }
@@ -2407,10 +2403,10 @@ body {
                         padding: 10px 16px;
                         font-weight: 400;
                         
-                        .ui-icon {
+                        .fa {
                             font-size: 24px;
                             
-                            &.ui-icon-triangle-1-s, &.ui-icon-triangle-1-e {
+                            &.fa-triangle-1-s, &.fa-triangle-1-e {
                                 margin: -12px 0 0 4px;
                             }
                         }
@@ -2469,14 +2465,14 @@ body {
                 li {
                     &.ui-widget-header {
                         padding-left: 36px;
-                        .ui-icon {
+                        .fa {
                             color: #ffffff;
                             
-                            &.ui-icon-triangle-1-s {
+                            &.fa-triangle-1-s {
                                 margin-top: -12px;
                             }
                             
-                            &.ui-icon-triangle-1-e {
+                            &.fa-triangle-1-e {
                                 margin-top: -12px;
                             }
                         }
@@ -2486,7 +2482,7 @@ body {
         }
         
         &.ui-tieredmenu {
-            .ui-icon-triangle-1-e {
+            .fa-triangle-1-e {
                 position: absolute;
                 right: 8px;
                 top: 10px;
@@ -2566,7 +2562,7 @@ body {
                    a {
                        color: $textSecondaryColor;
                        
-                       .ui-icon {
+                       .fa {
                            color: $textSecondaryColor;
                        }
                    }
@@ -2584,7 +2580,7 @@ body {
                    a {
                        color: $primaryColor;
                        
-                       .ui-icon {
+                       .fa {
                            color: $primaryColor;
                        }
                    }
@@ -2604,7 +2600,7 @@ body {
                 font-size: $fontSize;
             }
             
-            .ui-icon {
+            .fa {
                 color: #ffffff;
                 margin-top: -12px;
             }
@@ -2612,7 +2608,7 @@ body {
             &.ui-state-active {
                 background-color: $accentColor;
                 @include border-radius-bottom(0);
-                a, .ui-icon {
+                a, .fa {
                     color: $accentTextColor;
                 }
             }
@@ -2645,7 +2641,7 @@ body {
                         float: none;
                     }
                     
-                    .ui-icon {
+                    .fa {
                         position: static;
                         display: inline-block;
                         vertical-align: middle;
@@ -2661,7 +2657,7 @@ body {
             padding: $headerPadding;
             font-size: $headerFontSize;
             
-            .ui-icon {
+            .fa {
                 color: #ffffff;
             }
             
@@ -2693,7 +2689,7 @@ body {
             .ui-chkbox {
                 margin-right: 8px; 
                 
-                .ui-icon {
+                .fa {
                     color: #757575;
                 }   
             }
@@ -2749,7 +2745,7 @@ body {
     
     .fc {
         .fc-button-group {
-            .ui-icon {
+            .fa {
                 margin-top: 3px;
             }
             
@@ -2780,7 +2776,7 @@ body {
                 padding: 10px 14px;
                 border: 0 none;
                 
-                .ui-icon {
+                .fa {
                     color: $textSecondaryColor;
                 }
                 
@@ -2805,7 +2801,7 @@ body {
                     background-color: $accentColor;
                     color: $accentTextColor;
                     
-                    .ui-icon {
+                    .fa {
                         color: $accentTextColor;
                     }
                 }
@@ -2910,15 +2906,15 @@ body {
                     @include hover-element();
                 }
                 
-                .ui-icon {
+                .fa {
                     color: $textSecondaryColor;
                 }
                 
-                .ui-icon-extlink {
+                .fa-extlink {
                     @include icon_override('fullscreen');
                 }
                 
-                .ui-icon-newwin {
+                .fa-newwin {
                     @include icon_override('fullscreen_exit');
                 }
             }
@@ -2932,7 +2928,7 @@ body {
                 color: $textColor;
                 @include no-shadow();
                 
-                .ui-icon {
+                .fa {
                     color: $textSecondaryColor;
                 }
                 
@@ -2980,7 +2976,7 @@ body {
             .ui-lightbox-nav-right, .ui-lightbox-nav-left {
                 top: 40%;
                 
-                .ui-icon {
+                .fa {
                     @include transition(color .3s);
                     font-size: 48px;
                     color: $primaryLightColor;
@@ -3057,7 +3053,7 @@ body {
         .ui-fileupload-buttonbar {
             padding: $headerPadding;
             
-            .ui-icon-arrowreturnthick-1-n {
+            .fa-arrowreturnthick-1-n {
                 @include icon_override('file_upload');
             }
             
@@ -3072,7 +3068,7 @@ body {
         
         .ui-fileupload-content {
             .ui-messages-error {
-                .ui-icon {
+                .fa {
                     color: #ffffff;
                 }
             }
@@ -3215,17 +3211,17 @@ body {
                         }
                     }
                     
-                    .ui-icon-arrow-1-e {
+                    .fa-arrow-1-e {
                         @include icon-override("play_arrow"); @include rotate(90deg);
                     }
-                    .ui-icon-arrowstop-1-e {
+                    .fa-arrowstop-1-e {
                         @include icon-override("skip_previous"); @include rotate(-90deg);
                         
                     }
-                    .ui-icon-arrow-1-w {
+                    .fa-arrow-1-w {
                         @include icon-override("play_arrow"); @include rotate(-90deg);
                     }
-                    .ui-icon-arrowstop-1-w {
+                    .fa-arrowstop-1-w {
                         @include icon-override("skip_next"); @include rotate(-90deg);
                     }
                 }

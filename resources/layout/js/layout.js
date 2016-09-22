@@ -167,8 +167,7 @@ Ultima = {
             
             $this.profileMenu.slideToggle();
             $this.profileMenu.prev('.profile').toggleClass('profile-expanded');
-            $this.setInlineProfileState(!expanded);
-            
+          
             setTimeout(function() {
                 $(".nano").nanoScroller();
             }, 500);

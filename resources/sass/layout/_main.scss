@@ -242,7 +242,7 @@ body {
             background-color: $darkMenuBgColor;
             
             .profile {
-                background-image: url("\#{resource['ultima-layout:images/profile-bg-dark.png']}");
+                background-image: url("../images/profile-bg-dark.png");
             
                 .profile-name {
                     color: #ffffff;

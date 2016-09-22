@@ -924,7 +924,7 @@ body {
   .layout-container .layout-menu.layout-menu-dark {
     background-color: #424242; }
     .layout-container .layout-menu.layout-menu-dark .profile {
-      background-image: url("#{resource['ultima-layout:images/profile-bg-dark.png']}"); }
+      background-image: url("../images/profile-bg-dark.png"); }
       .layout-container .layout-menu.layout-menu-dark .profile .profile-name {
         color: #ffffff; }
       .layout-container .layout-menu.layout-menu-dark .profile i {
