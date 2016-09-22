@@ -1,6 +1,7 @@
-<div class="layout-wrapper">
+<div [ngClass]="{'layout-wrapper':true,'layout-compact':layoutCompact}">
     
-    <div class="layout-container menu-layout-static">
+    <div [ngClass]="{'layout-container':true,'menu-layout-static':(layoutMode=='static'||layoutMode=='horizontal'),
+            'menu-layout-overlay':(layoutMode=='overlay'),'menu-layout-horizontal':(layoutMode=='horizontal')}">
         <!-- Top Bar -->
         <div class="topbar clearfix">
             <div class="topbar-left">            
@@ -16,7 +17,7 @@
                     <i class="material-icons">menu</i>
                 </a>
                 <ul class="topbar-items fadeInDown animated">
-                    <li class="profile-item">
+                    <li class="profile-item" *ngIf="profileMode=='top'||layoutMode=='horizontal'">
                         <a href="#">                            
                             <div class="profile-image"></div>
                             <span class="topbar-item-name">Jane Williams</span>
@@ -166,18 +167,18 @@
         </div>
         
         <!-- Menu -->
-        <div class="layout-menu">
+        <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}">
             <div class="nano">
                 <div class="nano-content menu-scroll-content">
-                    <div class="profile">
+                    <div class="profile" *ngIf="profileMode=='inline'&&layoutMode!='horizontal'">
                         <div class="profile-image"></div>
                         <a id="profile-options" href="#">
                             <span class="profile-name">Jane Williams</span>
-                            <i class="material-icons"></i>
+                            <i class="material-icons">keyboard_arrow_down</i>
                         </a>
                     </div>
 
-                    <ul id="profile-menu" class="ultima-menu">
+                    <ul id="profile-menu" class="ultima-menu" *ngIf="profileMode=='inline'">
                         <li role="menuitem">
                             <a href="#" class="ripplelink">
                                 <i class="material-icons">person</i>
@@ -224,13 +225,15 @@
                         </li>
                         <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">settings_application</i><span>Customization</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li role="menuitem"><a href="#"><i class="material-icons">fiber_manual_record</i><span>Compact Size</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">fiber_smart_record</i><span>Material Size</span></a></li><li role="menuitem"><a href="#"><i class="material-icons">menu</i><span>Static Menu</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">exit_to_app</i><span>Overlay Menu</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">border_horizontal</i><span>Horizontal Menu</span></a></li><li role="menuitem"><a href="#"><i class="material-icons">label_outline</i><span>Light Menu</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">label</i><span>Dark Menu</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">contacts</i><span>Inline Profile</span></a></li>
-                                <li role="menuitem"><a href="#"><i class="material-icons">person_pin</i><span>Top Profile</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="layoutCompact=true;$event.preventDefault()"><i class="material-icons">fiber_manual_record</i><span>Compact Size</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="layoutCompact=false;$event.preventDefault()"><i class="material-icons">fiber_smart_record</i><span>Material Size</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="layoutMode='static';$event.preventDefault()"><i class="material-icons">menu</i><span>Static Menu</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="layoutMode='overlay';$event.preventDefault()"><i class="material-icons">exit_to_app</i><span>Overlay Menu</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="layoutMode='horizontal';$event.preventDefault()"><i class="material-icons">border_horizontal</i><span>Horizontal Menu</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="darkMenu=false;$event.preventDefault()"><i class="material-icons">label_outline</i><span>Light Menu</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="darkMenu=true;$event.preventDefault()"><i class="material-icons">label</i><span>Dark Menu</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="profileMode='inline';$event.preventDefault()"><i class="material-icons">contacts</i><span>Inline Profile</span></a></li>
+                                <li role="menuitem"><a href="#" (click)="profileMode='top';$event.preventDefault()"><i class="material-icons">person_pin</i><span>Top Profile</span></a></li>
                             </ul>
                         </li>
                         <li id="menuform:um_components" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">list</i><span>Components</span><i class="material-icons">keyboard_arrow_down</i></a>

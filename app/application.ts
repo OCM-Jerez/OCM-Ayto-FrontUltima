@@ -8,6 +8,14 @@ declare var Ultima: any;
 })
 export class Application implements AfterViewInit {
 
+    layoutCompact: boolean = true;
+
+    layoutMode: string = 'static';
+    
+    darkMenu: boolean = false;
+    
+    profileMode: string = 'inline';
+
     constructor(private el: ElementRef) {}
 
     ngAfterViewInit() {
