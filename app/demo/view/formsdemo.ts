@@ -25,6 +25,8 @@ export class FormsDemo implements OnInit {
     
     cities: SelectItem[];
     
+    citiesListbox: SelectItem[];
+    
     selectedCity1: any;
     
     selectedCity2: any;
@@ -61,12 +63,14 @@ export class FormsDemo implements OnInit {
         this.carOptions.push({label: 'Volvo', value: 'Volvo'});
         
         this.cities = [];
-        this.cities.push({label:'Select City', value:null});
+        this.cities.push({label:'Select City', value:0});
         this.cities.push({label:'New York', value:{id:1, name: 'New York', code: 'NY'}});
         this.cities.push({label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}});
         this.cities.push({label:'London', value:{id:3, name: 'London', code: 'LDN'}});
         this.cities.push({label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}});
         this.cities.push({label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}});
+        
+        this.citiesListbox = this.cities.slice(1);
         
         this.types = [];
         this.types.push({label: 'Apartment', value: 'Apartment'});

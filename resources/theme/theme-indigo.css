@@ -3330,16 +3330,16 @@ body {
       width: 40px;
       margin-right: 0;
       display: inline-block; }
-  body .ui-selectonelistbox {
+  body .ui-listbox {
     background-color: #ffffff;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px; }
-    body .ui-selectonelistbox.ui-inputtext {
+    body .ui-listbox.ui-inputtext {
       padding: 0; }
-    body .ui-selectonelistbox .ui-selectlistbox-list {
+    body .ui-listbox .ui-listbox-list {
       padding: 0; }
-    body .ui-selectonelistbox .ui-selectlistbox-item {
+    body .ui-listbox .ui-listbox-item {
       overflow: hidden;
       font-size: 16px;
       padding: 10px 14px;
@@ -3353,12 +3353,15 @@ body {
       -moz-border-radius: 0px;
       -webkit-border-radius: 0px;
       border-radius: 0px; }
-      body .ui-selectonelistbox .ui-selectlistbox-item.ui-state-hover {
+      body .ui-listbox .ui-listbox-item.ui-state-hover {
         background-color: #e8e8e8;
         color: #000000; }
-    body .ui-selectonelistbox .ui-selectlistbox-filter-container {
+      body .ui-listbox .ui-listbox-item.ui-state-highlight {
+        background-color: #E91E63;
+        color: #ffffff; }
+    body .ui-listbox .ui-listbox-filter-container {
       padding: 10px 16px; }
-      body .ui-selectonelistbox .ui-selectlistbox-filter-container .fa {
+      body .ui-listbox .ui-listbox-filter-container .fa {
         top: 8px;
         right: 8px; }
   body .ui-multiselectlistbox .ui-multiselectlistbox-header {

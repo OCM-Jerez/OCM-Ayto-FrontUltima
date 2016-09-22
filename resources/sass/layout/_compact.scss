@@ -300,13 +300,13 @@ body {
             }
         }
         
-        .ui-selectonelistbox {            
-            .ui-selectlistbox-item {
+        .ui-listbox {            
+            .ui-listbox-item {
                 font-size: $c-inputOptionFontSize;
                 padding: $c-inputOptionPadding;
             }
             
-            .ui-selectlistbox-filter-container {
+            .ui-listbox-filter-container {
                 padding: $c-inputHeaderPadding;
             }
         }

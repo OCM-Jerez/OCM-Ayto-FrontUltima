@@ -1500,10 +1500,10 @@ body .layout-wrapper.layout-compact {
     width: 40px; }
     body .layout-wrapper.layout-compact .ui-orderlist .ui-orderlist-controls .ui-button.ui-button-icon-only {
       width: 32px; }
-  body .layout-wrapper.layout-compact .ui-selectonelistbox .ui-selectlistbox-item {
+  body .layout-wrapper.layout-compact .ui-listbox .ui-listbox-item {
     font-size: 14px;
     padding: 6px 10px; }
-  body .layout-wrapper.layout-compact .ui-selectonelistbox .ui-selectlistbox-filter-container {
+  body .layout-wrapper.layout-compact .ui-listbox .ui-listbox-filter-container {
     padding: 6px 10px; }
   body .layout-wrapper.layout-compact .ui-multiselectlistbox .ui-multiselectlistbox-header {
     font-size: 14px;

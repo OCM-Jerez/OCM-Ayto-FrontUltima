@@ -108,7 +108,7 @@
                     <label for="showIcon">Button</label>
                 </div>
                 <div class="ui-g-12">
-                    <p-calendar id="showIcon" showAnim="slideDown" [showIcon]="true"></p-calendar>
+                    <p-calendar id="showIcon" [showIcon]="true"></p-calendar>
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@
         
         <div class="card card-w-title">
             <h1>Listbox</h1>
-            <p-listbox [options]="cities" [(ngModel)]="selectedCity2"></p-listbox>
+            <p-listbox [options]="citiesListbox" [(ngModel)]="selectedCity2"></p-listbox>
         </div>
         
         <div class="card card-w-title">

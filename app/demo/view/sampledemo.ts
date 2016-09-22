@@ -22,7 +22,7 @@ export class SampleDemo implements OnInit {
     
     radioValue: string;
     
-    checkboxValues: string[];
+    checkboxValues: string[] = [];
     
     splitButtonItems: MenuItem[];
     

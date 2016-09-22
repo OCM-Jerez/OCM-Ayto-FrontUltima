@@ -348,7 +348,7 @@ body {
         }
     }
     
-    .ui-selectonelistbox {
+    .ui-listbox {
         background-color: #ffffff;
         @include border-radius(3px);
         
@@ -356,11 +356,11 @@ body {
             padding: 0;
         }
         
-        .ui-selectlistbox-list {
+        .ui-listbox-list {
             padding: 0;
         }
         
-        .ui-selectlistbox-item {
+        .ui-listbox-item {
             overflow: hidden;
             font-size: $inputOptionFontSize;
             padding: $inputOptionPadding;
@@ -372,9 +372,14 @@ body {
             &.ui-state-hover {
                 @include hover-element();
             }
+            
+            &.ui-state-highlight {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
         }
         
-        .ui-selectlistbox-filter-container {
+        .ui-listbox-filter-container {
             padding: $inputHeaderPadding;
             
             .fa {
