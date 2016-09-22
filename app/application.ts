@@ -8,7 +8,7 @@ declare var Ultima: any;
 })
 export class Application implements AfterViewInit {
 
-    layoutCompact: boolean = true;
+    layoutCompact: boolean = false;
 
     layoutMode: string = 'static';
     

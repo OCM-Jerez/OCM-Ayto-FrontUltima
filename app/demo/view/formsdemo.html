@@ -71,7 +71,7 @@
         </div>
         
         <div class="card card-w-title">
-            <h1>SelectCheckBoxMenu</h1>
+            <h1>MultiSelect</h1>
             <p-multiSelect [options]="carOptions" [(ngModel)]="selectedMultiSelectCars"></p-multiSelect>
         </div>
 
@@ -140,7 +140,7 @@
         
         <div class="card card-w-title">
             <h1>Dropdown</h1>
-            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1"></p-dropdown>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false"></p-dropdown>
         </div>
         
         <div class="card card-w-title">
@@ -171,8 +171,9 @@
     
     <div class="ui-g-12">
         <div class="card card-w-title">
-        <h1>Editor</h1>
-        <p-editor [style]="{'height':'320px'}"></p-editor>
+            <h1>Editor</h1>
+            <p-editor [style]="{'height':'320px'}"></p-editor>
+        </div>
     </div>
     
     <div class="ui-g-12 ui-g-nopad">

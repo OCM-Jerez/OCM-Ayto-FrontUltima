@@ -1167,7 +1167,7 @@ body {
                 
                 .fa {
                     color: $textSecondaryColor;
-                    margin-top: -16px;
+                    margin-top: -12px;
                 }
             }
         }
@@ -1209,12 +1209,12 @@ body {
         }
     }
 
-    .ui-selectonemenu {
+    .ui-dropdown {
         border-bottom: 1px solid #bdbdbd;
         box-sizing: border-box;
         @include border-radius(0);        
         
-        .ui-selectonemenu-trigger {
+        .ui-dropdown-trigger {
             height: 24px;
             width: 24px;
             font-size: 24px;
@@ -1224,13 +1224,14 @@ body {
             margin-right: 0;
             
             .fa {
+                color: $textSecondaryColor;
                 height: 24px;
                 width: 24px;
-                margin-top: -8px;
+                margin-top: 0;
             }
         }
         
-        .ui-selectonemenu-label {
+        .ui-dropdown-label {
             &.ui-inputtext {
                 font: $inputFontSize "Roboto","Helvetica Neue",sans-serif;
             }
@@ -1238,14 +1239,14 @@ body {
         }
     }
     
-    .ui-selectonemenu-panel {
+    .ui-dropdown-panel {
         @include border-radius(0);
 
-        .ui-selectonemenu-list {
+        .ui-dropdown-list {
             padding:0;
         }
         
-        .ui-selectonemenu-item {
+        .ui-dropdown-item {
             margin: 0;
             font-size: $inputOptionFontSize;
             padding: $inputOptionPadding;
@@ -1255,9 +1256,14 @@ body {
             &.ui-state-hover {
                 @include hover-element();
             }
+            
+            &.ui-state-highlight {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
         }
         
-        .ui-selectonemenu-item-group {
+        .ui-dropdown-item-group {
             padding: 10px;
         }
         
@@ -1265,7 +1271,7 @@ body {
             @include overlay-input-shadow();
         }
         
-        .ui-selectonemenu-filter-container {
+        .ui-dropdown-filter-container {
             .fa {
                 top: 5px;
                 right: 8px;
@@ -1273,16 +1279,20 @@ body {
         }
     }
     
-    .ui-selectcheckboxmenu {
+    .ui-multiselect {
         border-bottom: 1px solid #bdbdbd;
         box-sizing: border-box;
-        @include border-radius(0);    
+        @include border-radius(0);  
         
-        .ui-selectcheckboxmenu-trigger {
+        .ui-multiselect-label {
+            padding: 0px 2px 0px 2px;
+        }
+                
+        .ui-multiselect-trigger {
             height: 24px;
             width: 24px;
             font-size: 24px;
-            margin-top: 8px;
+            margin-top: 6px;
             padding: 0;
             margin-right: -2px;
             
@@ -1295,19 +1305,19 @@ body {
         } 
     }
     
-    .ui-selectcheckboxmenu-panel {
+    .ui-multiselect-panel.ui-widget {
         padding: 0;
         @include border-radius(0);
-        
         @include overlay-input-shadow();
                 
-        .ui-selectcheckboxmenu-header {
+        .ui-multiselect-header {
             @include border-radius(0);
             padding: $inputHeaderPadding;
             
             .ui-chkbox {
                 float: none;
                 margin: 0 8px 0 -2px;
+                position: static;
                 
                 .ui-chkbox-box {
                     border-color: #ffffff;
@@ -1329,11 +1339,12 @@ body {
                 }
             }
 
-            .ui-selectcheckboxmenu-filter-container {
+            .ui-multiselect-filter-container {
                 width: 70%;
                 display: inline-block;
                 vertical-align: middle;
                 float: none;
+                margin-left: 0;
                 
                 .fa {
                     top: -2px;
@@ -1352,8 +1363,10 @@ body {
                 }  
             }
             
-            .ui-selectcheckboxmenu-close {
+            .ui-multiselect-close {
                 margin-right: -6px;
+                position: static;
+                float: right;
                 
                 span {
                     color: #ffffff;
@@ -1365,12 +1378,13 @@ body {
             }
         }
         
-        .ui-selectcheckboxmenu-item {
+        .ui-multiselect-item {
             font-size: $inputOptionFontSize;
             padding: $inputOptionPadding;
             
             label {
                 padding-left: 28px;
+                padding-top: 0px;
             }
             
             .ui-chkbox {
@@ -1380,8 +1394,8 @@ body {
     }
     
     .ui-fluid {
-        .ui-selectonemenu {            
-            .ui-selectonemenu-trigger {
+        .ui-dropdown {            
+            .ui-dropdown-trigger {
                 width: 24px;
                 margin-right: 4px;
             }
@@ -1501,13 +1515,13 @@ body {
         
         .ui-spinner-up {
             .fa {
-                top: 6px;
+                top: 4px;
             }
         }
         
         .ui-spinner-down {
             .fa {
-                top: 2px;
+                top: 1px;
             }
         }
         
@@ -1987,11 +2001,16 @@ body {
     .ui-accordion {
         .ui-accordion-header {
             background-color: $primaryColor;
-            padding: $headerPadding;
-            padding-left: 40px;
+            padding: 0;
             color:#ffffff;
             font-size: $headerFontSize;
             @include transition(background-color .3s);
+            
+            > a {
+                padding: $headerPadding;
+                padding-left: 40px;
+                color: #ffffff;
+            }
             
             &.ui-state-hover {
                 background-color: $primaryDarkColor;
@@ -2000,23 +2019,19 @@ body {
             &.ui-state-active {
                 background-color: $accentColor;
                 color: $accentTextColor;
-                
-                &.ui-tabs-outline {
-                    outline: 0 none;
-                    background-color: lighten($accentColor, 10%);
+                @include border-radius-bottom(0);
+                                
+                > a {
+                    color: $accentTextColor;
                 }
             }
             
-            .fa-triangle-1-e {
+            .fa-caret-right {
                 margin-top: -12px;
             }
             
-            .fa-triangle-1-s {
+            .fa-caret-down {
                 margin-top: -12px;
-            }
-            
-            &.ui-tabs-outline {
-                background-color: lighten($primaryColor, 10%);
             }
         }
         

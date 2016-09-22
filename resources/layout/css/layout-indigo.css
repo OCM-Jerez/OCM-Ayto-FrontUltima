@@ -1410,15 +1410,20 @@ body .layout-wrapper.layout-compact {
     body .layout-wrapper.layout-compact .card h4 {
       font-size: 16px; }
   body .layout-wrapper.layout-compact .ui-panel .ui-panel-titlebar {
+    max-height: 18px;
     padding: 8px 14px; }
     body .layout-wrapper.layout-compact .ui-panel .ui-panel-titlebar .ui-panel-title {
       line-height: 18px; }
     body .layout-wrapper.layout-compact .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon {
       position: relative;
-      top: 4px;
+      top: -3px;
       width: 24px;
       height: 24px;
       margin: 0; }
+      body .layout-wrapper.layout-compact .ui-panel .ui-panel-titlebar .ui-panel-titlebar-icon span {
+        position: relative;
+        top: 2px;
+        left: 2px; }
   body .layout-wrapper.layout-compact .ui-panel .ui-panel-content {
     padding: 8px 14px; }
   body .layout-wrapper.layout-compact .ui-panel .ui-panel-footer {
@@ -1699,34 +1704,35 @@ body .layout-wrapper.layout-compact {
       height: 20px;
       width: 20px; }
     body .layout-wrapper.layout-compact .ui-autocomplete .ui-autocomplete-dropdown .fa {
-      margin-top: -16px; }
+      margin-top: -12px; }
   body .layout-wrapper.layout-compact .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-input-token > input {
     font-size: 14px; }
   body .layout-wrapper.layout-compact .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-token .ui-autocomplete-token-icon {
     margin-top: -10px; }
-  body .layout-wrapper.layout-compact .ui-selectonemenu .ui-selectonemenu-trigger {
+  body .layout-wrapper.layout-compact .ui-dropdown .ui-dropdown-trigger {
     height: 20px;
     width: 20px;
     top: 4px; }
-    body .layout-wrapper.layout-compact .ui-selectonemenu .ui-selectonemenu-trigger .fa {
+    body .layout-wrapper.layout-compact .ui-dropdown .ui-dropdown-trigger .fa {
       height: 20px;
       width: 20px;
       margin-top: -8px; }
-  body .layout-wrapper.layout-compact .ui-selectonemenu-panel .ui-selectonemenu-item {
+  body .layout-wrapper.layout-compact .ui-dropdown-panel .ui-dropdown-item {
     font-size: 14px;
     padding: 6px 10px; }
-  body .layout-wrapper.layout-compact .ui-selectonemenu-panel .ui-selectonemenu-item-group {
+  body .layout-wrapper.layout-compact .ui-dropdown-panel .ui-dropdown-item-group {
     padding: 8px; }
-  body .layout-wrapper.layout-compact .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger {
+  body .layout-wrapper.layout-compact .ui-multiselect .ui-multiselect-trigger {
     height: 20px;
     width: 20px;
-    font-size: 20px; }
-    body .layout-wrapper.layout-compact .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger .fa {
+    font-size: 20px;
+    margin-top: 4px; }
+    body .layout-wrapper.layout-compact .ui-multiselect .ui-multiselect-trigger .fa {
       height: 20px;
       width: 20px; }
-  body .layout-wrapper.layout-compact .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header {
+  body .layout-wrapper.layout-compact .ui-multiselect-panel .ui-multiselect-header {
     padding: 6px 10px; }
-  body .layout-wrapper.layout-compact .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-item {
+  body .layout-wrapper.layout-compact .ui-multiselect-panel .ui-multiselect-item {
     font-size: 14px;
     padding: 6px 10px; }
   body .layout-wrapper.layout-compact #keypad-div .keypad-key {
@@ -1745,7 +1751,7 @@ body .layout-wrapper.layout-compact {
     height: 12px;
     padding: 0; }
   body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-up .fa {
-    top: 6px; }
+    top: 4px; }
   body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-down .fa {
     top: 4px; }
   body .layout-wrapper.layout-compact .ui-fluid .ui-spinner .ui-spinner-button {
@@ -1798,12 +1804,13 @@ body .layout-wrapper.layout-compact {
         margin-right: 4px;
         margin-top: 1px; }
   body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header {
-    padding: 8px 14px;
-    padding-left: 36px;
     font-size: 14px; }
-    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-triangle-1-e {
+    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header > a {
+      padding: 8px 14px;
+      padding-left: 36px; }
+    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-caret-right {
       margin-top: -10px; }
-    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-triangle-1-s {
+    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-caret-down {
       margin-top: -10px; }
   body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-content {
     padding: 8px 14px;
