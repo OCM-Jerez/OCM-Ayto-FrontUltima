@@ -204,7 +204,7 @@ body {
                 width: 60px;
                 height: 60px;
                 margin: 0 auto 5px auto;
-                background: url("../images/avatar2x.png") top left no-repeat;
+                background: url("../images/avatar.png") top left no-repeat;
                 background-size: 60px 60px;
             }
             
@@ -504,7 +504,7 @@ body {
                     .profile-image {
                         width: 36px;
                         height: 36px;
-                        background: url("\#{resource['ultima-layout:images/avatar2x.png']}") top left no-repeat;
+                        background: url("../images/avatar.png") top left no-repeat;
                         background-size: 36px 36px;
                     }
                 }
@@ -946,7 +946,7 @@ body {
                                 vertical-align: middle;
                                 width: 24px;
                                 height: 24px;
-                                background: url("../images/avatar2x.png") top left no-repeat;
+                                background: url("../images/avatar.png") top left no-repeat;
                                 background-size: 24px 24px;
                                 margin-right: 14px;
                             }

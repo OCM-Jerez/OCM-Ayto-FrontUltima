@@ -892,7 +892,7 @@ body {
       width: 60px;
       height: 60px;
       margin: 0 auto 5px auto;
-      background: url("../images/avatar2x.png") top left no-repeat;
+      background: url("../images/avatar.png") top left no-repeat;
       background-size: 60px 60px; }
     .layout-container .layout-menu .profile .profile-name {
       display: inline-block;
@@ -1100,7 +1100,7 @@ body {
       .layout-container .topbar-items > li.profile-item .profile-image {
         width: 36px;
         height: 36px;
-        background: url("#{resource['ultima-layout:images/avatar2x.png']}") top left no-repeat;
+        background: url("../images/avatar.png") top left no-repeat;
         background-size: 36px 36px; }
       .layout-container .topbar-items > li > ul {
         position: absolute;
@@ -1347,7 +1347,7 @@ body {
       vertical-align: middle;
       width: 24px;
       height: 24px;
-      background: url("../images/avatar2x.png") top left no-repeat;
+      background: url("../images/avatar.png") top left no-repeat;
       background-size: 24px 24px;
       margin-right: 14px; }
     .layout-container .topbar .topbar-right .topbar-items > li.profile-item span {

@@ -1,6 +1,6 @@
-import {Component,AfterViewInit} from '@angular/core';
+import {Component,AfterViewInit,ElementRef} from '@angular/core';
 
-declare var Rio: any;
+declare var Ultima: any;
 
 @Component({
     selector: 'my-app',
@@ -8,7 +8,9 @@ declare var Rio: any;
 })
 export class Application implements AfterViewInit {
 
+    constructor(private el: ElementRef) {}
+
     ngAfterViewInit() {
-        //Rio.init();
+        Ultima.init(this.el.nativeElement);
     }
 }

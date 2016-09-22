@@ -25,25 +25,25 @@
                         <ul class="ultima-menu animated">
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE7FD;</i>
+                                    <i class="material-icons">person</i>
                                     <span>Profile</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE32A;</i>
+                                    <i class="material-icons">security</i>
                                     <span>Privacy</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE8B9;</i>
+                                    <i class="material-icons">settings_applications</i>
                                     <span>Settings</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE8AC;</i>
+                                    <i class="material-icons">power_settings_new</i>
                                     <span>Logout</span>
                                 </a>
                             </li>
@@ -51,31 +51,31 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="topbar-icon material-icons">&#xE8B8;</i>
+                            <i class="topbar-icon material-icons">settings</i>
                             <span class="topbar-item-name">Settings</span>
                         </a>
                         <ul class="ultima-menu animated">
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE40A;</i>
+                                    <i class="material-icons">palette</i>
                                     <span>Change Theme</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE87E;</i>
+                                    <i class="material-icons">favorite_border</i>
                                     <span>Favorites</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE897;</i>
+                                    <i class="material-icons">lock</i>
                                     <span>Lock Screen</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE1BC;</i>
+                                    <i class="material-icons">wallpaper</i>
                                     <span>Wallpaper</span>
                                 </a>
                             </li>
@@ -83,7 +83,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="topbar-icon material-icons animated swing">&#xE0C9;</i>
+                            <i class="topbar-icon material-icons animated swing">message</i>
                             <span class="topbar-badge animated rubberBand">5</span>
                             <span class="topbar-item-name">Messages</span>
                         </a>
@@ -122,32 +122,32 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="topbar-icon material-icons">&#xE425;</i>
+                            <i class="topbar-icon material-icons">timer</i>
                             <span class="topbar-badge animated rubberBand">4</span>
                             <span class="topbar-item-name">Notifications</span>
                         </a>
                         <ul class="ultima-menu animated">
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE868;</i>
+                                    <i class="material-icons">bug_report</i>
                                     <span>Pending tasks</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE878;</i>
+                                    <i class="material-icons">event</i>
                                     <span>Meeting today at 3pm</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE2C4;</i>
+                                    <i class="material-icons">file_download</i>
                                     <span>Download documents</span>
                                 </a>
                             </li>
                             <li role="menuitem">
                                 <a href="#">
-                                    <i class="material-icons">&#xE539;</i>
+                                    <i class="material-icons">flight</i>
                                     <span>Book flight</span>
                                 </a>
                             </li>
@@ -157,7 +157,7 @@
                         <span class="md-inputfield">
                             <input type="text">
                             <label>Search</label>
-                            <i class="topbar-icon material-icons">&#xE8B6;</i>
+                            <i class="topbar-icon material-icons">search</i>
                         </span>
                         
                     </li>
@@ -203,150 +203,98 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="ultima-menu clearfix">
-                        <li role="menuitem"><a href="/ultima/dashboard.xhtml"><i class="material-icons"></i><span>Dashboard</span></a></li>
-                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">palette</i><span>Themes</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                    <ul id="main-menu" class="ultima-menu clearfix">
+                        <li role="menuitem"><a [routerLink]="['/']"><i class="material-icons"></i><span>Dashboard</span></a></li>
+                        <li role="menuitem">
+                            <a href="#" class="ripplelink"><i class="material-icons">palette</i><span>Themes</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme1':'menuform:theme1'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Indigo - Pink</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme2':'menuform:theme2'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Brown - Green</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme3':'menuform:theme3'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Blue - Amber</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme4':'menuform:theme4'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Blue Grey - Green</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme5':'menuform:theme5'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Dark - Blue</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme6':'menuform:theme6'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Dark - Green</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme7':'menuform:theme7'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Green - Yellow</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme8':'menuform:theme8'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Purple - Cyan</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme9':'menuform:theme9'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Purple - Amber</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme10':'menuform:theme10'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Teal - Lime</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme11':'menuform:theme11'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Cyan - Amber</span></a>
-                                </li>
-                                <li role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:theme12':'menuform:theme12'}).submit('menuform');return false;"><i class="material-icons">brush</i><span>Grey - Deep Orange</span></a>
-                                </li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Indigo - Pink</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Brown - Green</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Blue - Amber</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Blue Grey - Green</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Dark - Blue</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Dark - Green</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Green - Yellow</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Purple - Cyan</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Purple - Amber</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Teal - Lime</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Cyan - Amber</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">brush</i><span>Grey - Deep Orange</span></a></li>
                             </ul>
                         </li>
-                        <li id="menuform:um_customization" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">settings_application</i><span>Customization</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">settings_application</i><span>Customization</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li id="menuform:custom1" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom1':'menuform:custom1'}).submit('menuform');return false;"><i class="material-icons">fiber_manual_record</i><span>Compact Size</span></a>
-                                </li>
-                                <li id="menuform:custom2" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom2':'menuform:custom2'}).submit('menuform');return false;"><i class="material-icons">fiber_smart_record</i><span>Material Size</span></a>
-                                </li>
-                                <li id="menuform:custom3" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom3':'menuform:custom3'}).submit('menuform');return false;"><i class="material-icons">menu</i><span>Static Menu</span></a>
-                                </li>
-                                <li id="menuform:custom4" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom4':'menuform:custom4'}).submit('menuform');return false;"><i class="material-icons">exit_to_app</i><span>Overlay Menu</span></a>
-                                </li>
-                                <li id="menuform:custom5" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom5':'menuform:custom5'}).submit('menuform');return false;"><i class="material-icons">border_horizontal</i><span>Horizontal Menu</span></a>
-                                </li>
-                                <li id="menuform:custom6" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom6':'menuform:custom6'}).submit('menuform');return false;"><i class="material-icons">label_outline</i><span>Light Menu</span></a>
-                                </li>
-                                <li id="menuform:custom7" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom7':'menuform:custom7'}).submit('menuform');return false;"><i class="material-icons">label</i><span>Dark Menu</span></a>
-                                </li>
-                                <li id="menuform:custom8" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom8':'menuform:custom8'}).submit('menuform');return false;"><i class="material-icons">contacts</i><span>Inline Profile</span></a>
-                                </li>
-                                <li id="menuform:custom9" role="menuitem"><a href="#" onclick="PrimeFaces.addSubmitParam('menuform',{'menuform:custom9':'menuform:custom9'}).submit('menuform');return false;"><i class="material-icons">person_pin</i><span>Top Profile</span></a>
-                                </li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">fiber_manual_record</i><span>Compact Size</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">fiber_smart_record</i><span>Material Size</span></a></li><li role="menuitem"><a href="#"><i class="material-icons">menu</i><span>Static Menu</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">exit_to_app</i><span>Overlay Menu</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">border_horizontal</i><span>Horizontal Menu</span></a></li><li role="menuitem"><a href="#"><i class="material-icons">label_outline</i><span>Light Menu</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">label</i><span>Dark Menu</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">contacts</i><span>Inline Profile</span></a></li>
+                                <li role="menuitem"><a href="#"><i class="material-icons">person_pin</i><span>Top Profile</span></a></li>
                             </ul>
                         </li>
-                        <li id="menuform:um_components" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">list</i><span>Components</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                        <li id="menuform:um_components" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">list</i><span>Components</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li id="menuform:um_sample" role="menuitem"><a href="/ultima/sample.xhtml"><i class="material-icons">desktop_mac</i><span>Sample Page</span></a>
-                                </li>
-                                <li id="menuform:um_forms" role="menuitem"><a href="/ultima/forms.xhtml"><i class="material-icons">input</i><span>Forms</span></a>
-                                </li>
-                                <li id="menuform:um_data" role="menuitem"><a href="/ultima/data.xhtml"><i class="material-icons">grid_on</i><span>Data</span></a>
-                                </li>
-                                <li id="menuform:um_panels" role="menuitem"><a href="/ultima/panel.xhtml"><i class="material-icons">content_paste</i><span>Panels</span></a>
-                                </li>
-                                <li id="menuform:um_overlays" role="menuitem"><a href="/ultima/overlay.xhtml"><i class="material-icons">content_copy</i><span>Overlays</span></a>
-                                </li>
-                                <li id="menuform:um_menus" role="menuitem"><a href="/ultima/menu.xhtml"><i class="material-icons">menu</i><span>Menus</span></a>
-                                </li>
-                                <li id="menuform:um_messages" role="menuitem"><a href="/ultima/messages.xhtml"><i class="material-icons">message</i><span>Messages</span></a>
-                                </li>
-                                <li id="menuform:um_charts" role="menuitem"><a href="/ultima/charts.xhtml"><i class="material-icons">insert_chart</i><span>Charts</span></a>
-                                </li>
-                                <li id="menuform:um_file" role="menuitem"><a href="/ultima/file.xhtml"><i class="material-icons">attach_file</i><span>File</span></a>
-                                </li>
-                                <li id="menuform:um_misc" role="menuitem"><a href="/ultima/misc.xhtml"><i class="material-icons">toys</i><span>Misc</span></a>
-                                </li>
+                                <li role="menuitem"><a [routerLink]="['/sample']"><i class="material-icons">desktop_mac</i><span>Sample Page</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/forms']"><i class="material-icons">input</i><span>Forms</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/data']"><i class="material-icons">grid_on</i><span>Data</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/panels']"><i class="material-icons">content_paste</i><span>Panels</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/overlays']"><i class="material-icons">content_copy</i><span>Overlays</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/menus']"><i class="material-icons">menu</i><span>Menus</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/messages']"><i class="material-icons">message</i><span>Messages</span></a></li>
+                                <li role="menuitem"><a href="/ultima/charts.xhtml"><i class="material-icons">insert_chart</i><span>Charts</span></a></li>
+                                <li role="menuitem"><a href="/ultima/file.xhtml"><i class="material-icons">attach_file</i><span>File</span></a></li>
+                                <li role="menuitem"><a [routerLink]="['/misc']"><i class="material-icons">toys</i><span>Misc</span></a></li>
                             </ul>
                         </li>
-                        <li id="menuform:um_default" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">get_app</i><span>Template Pages</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                        <li id="menuform:um_default" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">get_app</i><span>Template Pages</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li id="menuform:um_db_landing" role="menuitem"><a href="/ultima/landing.xhtml"><i class="material-icons">flight_land</i><span>Landing</span></a>
-                                </li>
-                                <li id="menuform:um_empty" role="menuitem"><a href="/ultima/empty.xhtml"><i class="material-icons">hourglass_empty</i><span>Empty Page</span></a>
-                                </li>
-                                <li id="menuform:um_login" role="menuitem"><a href="/ultima/login.xhtml"><i class="material-icons">verified_user</i><span>Login Page</span></a>
-                                </li>
-                                <li id="menuform:um_error" role="menuitem"><a href="/ultima/error.xhtml"><i class="material-icons">error</i><span>Error Page</span></a>
-                                </li>
-                                <li id="menuform:um_404" role="menuitem"><a href="/ultima/404.xhtml"><i class="material-icons">error_outline</i><span>404 Page</span></a>
-                                </li>
-                                <li id="menuform:um_access" role="menuitem"><a href="/ultima/access.xhtml"><i class="material-icons">security</i><span>Access Denied Page</span></a>
-                                </li>
+                                <li role="menuitem"><a href="/ultima/landing.xhtml"><i class="material-icons">flight_land</i><span>Landing</span></a></li>
+                                <li role="menuitem"><a href="/ultima/empty.xhtml"><i class="material-icons">hourglass_empty</i><span>Empty Page</span></a></li>
+                                <li role="menuitem"><a href="/ultima/login.xhtml"><i class="material-icons">verified_user</i><span>Login Page</span></a></li>
+                                <li role="menuitem"><a href="/ultima/error.xhtml"><i class="material-icons">error</i><span>Error Page</span></a></li>
+                                <li role="menuitem"><a href="/ultima/404.xhtml"><i class="material-icons">error_outline</i><span>404 Page</span></a></li>
+                                <li role="menuitem"><a href="/ultima/access.xhtml"><i class="material-icons">security</i><span>Access Denied Page</span></a></li>
                             </ul>
                         </li>
-                        <li id="menuform:um_hierarchy" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">menu</i><span>Menu Hierarchy</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">menu</i><span>Menu Hierarchy</span><i class="material-icons">keyboard_arrow_down</i></a>
                             <ul role="menu">
-                                <li id="menuform:um_sm1" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1</span><i class="material-icons">keyboard_arrow_down</i></a>
                                     <ul role="menu">
-                                        <li id="menuform:um_sm11" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.1</span><i class="material-icons">keyboard_arrow_down</i></a>
                                             <ul role="menu">
-                                                <li id="menuform:um_lnk111" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.1</span></a>
-                                                </li>
-                                                <li id="menuform:um_lnk112" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.2</span></a>
-                                                </li>
-                                                <li id="menuform:um_lnk113" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.3</span></a>
-                                                </li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.1</span></a></li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.2</span></a></li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.1.3</span></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menuform:um_sm12" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 1.2</span><i class="material-icons">keyboard_arrow_down</i></a>
                                             <ul role="menu">
-                                                <li id="menuform:um_lnk121" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.2.1</span></a>
-                                                </li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 1.2.1</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
-                                <li id="menuform:um_sm2" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2</span><i class="material-icons">keyboard_arrow_down</i></a>
                                     <ul role="menu">
-                                        <li id="menuform:um_sm21" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.1</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                        <li ole="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.1</span><i class="material-icons">keyboard_arrow_down</i></a>
                                             <ul role="menu">
-                                                <li id="menuform:um_lnk211" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.1.1</span></a>
-                                                </li>
-                                                <li id="menuform:um_lnk212" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.1.2</span></a>
-                                                </li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.1.1</span></a></li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.1.2</span></a></li>
                                             </ul>
                                         </li>
-                                        <li id="menuform:um_sm22" role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.2</span><span class="ink animate"></span><i class="material-icons">&#xE313;</i></a>
+                                        <li role="menuitem"><a href="#" class="ripplelink"><i class="material-icons">subject</i><span>Submenu 2.2</span><i class="material-icons">keyboard_arrow_down</i></a>
                                             <ul role="menu">
-                                                <li id="menuform:um_lnk221" role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.2.1</span></a>
-                                                </li>
+                                                <li role="menuitem"><a href="#"><i class="material-icons">subject</i><span>Link 2.2.1</span></a></li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
-                        <li id="menuform:um_utils" role="menuitem"><a href="/ultima/utils.xhtml"><i class="material-icons">build</i><span>Utils</span></a>
-                        </li>
-                        <li id="menuform:um_doc" role="menuitem"><a href="/ultima/docs.xhtml"><i class="material-icons">find_in_page</i><span>Documentation</span></a>
-                        </li>
+                        <li role="menuitem"><a href="/ultima/utils.xhtml"><i class="material-icons">build</i><span>Utils</span></a></li>
+                        <li role="menuitem"><a href="/ultima/docs.xhtml"><i class="material-icons">find_in_page</i><span>Documentation</span></a></li>
                     </ul>
-                    <script id="menuform:j_idt33_s" type="text/javascript">
-                        PrimeFaces.cw("Ultima", "me", {
-                            id: "menuform:j_idt33"
-                        });
-                    </script>
                 </div>
             </div>
         </div>
