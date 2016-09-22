@@ -1133,7 +1133,7 @@ body {
         .ui-autocomplete-list {
             padding: 0;
             
-            .ui-autocomplete-item {
+            .ui-autocomplete-list-item {
                 @include transition(background-color .3s);
                 font-size: $inputOptionFontSize;
                 padding: $inputOptionPadding;

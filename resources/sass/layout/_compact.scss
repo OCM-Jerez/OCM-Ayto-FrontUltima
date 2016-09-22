@@ -85,7 +85,7 @@ body {
             font-size: $c-headerFontSize;
         }
         
-        .ui-icon {
+        .fa {
             font-size: 20px;
         }
         
@@ -165,7 +165,7 @@ body {
                 width: 32px;
                 height: 32px;
                 
-                .ui-icon {
+                .fa {
                     width: $c-iconFontSize;
                     height: $c-iconFontSize;
                     font-size: $c-iconFontSize;
@@ -176,7 +176,7 @@ body {
             
             &.ui-button-text-icon-left,
             &.ui-button-text-icon-right {
-                .ui-icon {
+                .fa {
                     width: $c-iconFontSize;
                     height: $c-iconFontSize;
                     font-size: $c-iconFontSize;
@@ -260,7 +260,7 @@ body {
             .ui-picklist-filter-container {
                 padding: $c-inputHeaderPadding;
                                 
-                .ui-icon {
+                .fa {
                     top: 8px;
                 }
             }
@@ -418,7 +418,7 @@ body {
                     .ui-sortable-column-icon {
                         margin: -4px 0 0 0;
                         
-                        &.ui-icon-carat-2-n-s {
+                        &.fa-carat-2-n-s {
                             margin-left: 4px;
                         }
                     }
@@ -439,7 +439,7 @@ body {
                 }
             }
             
-            > .ui-icon-arrowthick-1-s {
+            > .fa-arrowthick-1-s {
                 font-size: 18px;
             }
             
@@ -486,7 +486,7 @@ body {
         
         .ui-autocomplete-panel {            
             .ui-autocomplete-list {                
-                .ui-autocomplete-item {
+                .ui-autocomplete-list-item {
                     font-size: $c-inputOptionFontSize;
                     padding: $c-inputOptionPadding;
                 }
@@ -506,6 +506,10 @@ body {
                     @include no-shadow();
                     height: 20px;
                     width: 20px;
+                }
+                
+                .fa {
+                    margin-top: -16px;
                 }
             }
             
@@ -530,7 +534,7 @@ body {
                 width: $c-iconFontSize;
                 top: 4px;
                 
-                .ui-icon {
+                .fa {
                     height: $c-iconFontSize;
                     width: $c-iconFontSize;
                     margin-top: -8px;
@@ -555,7 +559,7 @@ body {
                 width: $c-iconFontSize;
                 font-size: $c-iconFontSize;
                 
-                .ui-icon {
+                .fa {
                     height: $c-iconFontSize;
                     width: $c-iconFontSize;
                 }
@@ -590,7 +594,7 @@ body {
             .ui-selectlistbox-filter-container {
                 padding: $c-inputHeaderPadding;
                 
-                .ui-icon {
+                .fa {
                     top: 4px;
                     right: 10px;
                 }
@@ -605,13 +609,13 @@ body {
             }
                      
             .ui-spinner-up {
-                .ui-icon {
+                .fa {
                     top: 6px;
                 }
             }
             
             .ui-spinner-down {
-                .ui-icon {
+                .fa {
                     top: 4px;
                 }
             }
@@ -737,11 +741,11 @@ body {
                 padding-left: 36px;
                 font-size: $c-headerFontSize;
                 
-                .ui-icon-triangle-1-e {
+                .fa-triangle-1-e {
                     margin-top: -10px;
                 }
                 
-                .ui-icon-triangle-1-s {
+                .fa-triangle-1-s {
                     margin-top: -10px;
                 }
             }
@@ -763,7 +767,7 @@ body {
                         padding: $c-headerPadding;
                     }
                     
-                    > .ui-icon-close {
+                    > .fa-close {
                         margin: 7px 0 0 0;
                     }
                 }
@@ -833,10 +837,10 @@ body {
                             font-size: 14px;
                             padding: 6px 10px;
                             
-                            .ui-icon {
+                            .fa {
                                 font-size: 20px;
                                 
-                                &.ui-icon-triangle-1-s, &.ui-icon-triangle-1-e {
+                                &.fa-triangle-1-s, &.fa-triangle-1-e {
                                     margin: -12px 0 0 0px;
                                 }
                             }
@@ -870,14 +874,14 @@ body {
                     li {
                         &.ui-widget-header {
                             padding-left: 30px;
-                            .ui-icon {
+                            .fa {
                                 color: #ffffff;
                                 
-                                &.ui-icon-triangle-1-s {
+                                &.fa-triangle-1-s {
                                     margin-top: -10px;
                                 }
                                 
-                                &.ui-icon-triangle-1-e {
+                                &.fa-triangle-1-e {
                                     margin-top: -10px;
                                 }
                             }
@@ -887,7 +891,7 @@ body {
             }
             
             &.ui-tieredmenu {
-                .ui-icon-triangle-1-e {
+                .fa-triangle-1-e {
                     top: 6px;
                 }
             }
@@ -922,7 +926,7 @@ body {
                     font-size: $c-fontSize;
                 }
                 
-                .ui-icon {
+                .fa {
                     color: #ffffff;
                     margin-top: -10px;
                 }
@@ -935,7 +939,7 @@ body {
                         min-height: 30px;
                         line-height: $c-lineHeight;
                         
-                        .ui-icon {
+                        .fa {
                             position: static;
                             display: inline-block;
                             vertical-align: middle;

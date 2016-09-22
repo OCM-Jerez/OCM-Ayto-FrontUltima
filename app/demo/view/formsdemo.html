@@ -44,11 +44,11 @@
         
         <div class="card card-w-title">
             <h1>AutoComplete</h1>            
-            <div class="ui-g">
+            <div class="ui-g form-group">
                 <div class="ui-g-12">
                     <label for="acSimple">Simple</label>
                 </div>
-                <div class="ui-g-12">
+                <div class="ui-g-12" style="margin-bottom:10px">
                     <p-autoComplete id="acSimple" [(ngModel)]="country" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [size]="30"
                         placeholder="Countries" [minLength]="1"></p-autoComplete>
                 </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="ui-g-12">
                     <p-autoComplete id="acAdvanced" [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
-                        [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true">
+                        [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true" (onDropdownClick)="handleACDropdownClick($event)">
                         <template let-brand>
                             <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
                                 <img src="resources/demo/images/car/{{brand}}.gif" style="width:32px;display:inline-block;margin:5px 0 2px 5px"/>

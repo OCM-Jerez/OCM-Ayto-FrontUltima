@@ -66,6 +66,9 @@
 .fa-check:before {
   content: "check"; }
 
+.fa-caret-down:before {
+  content: "keyboard_arrow_down"; }
+
 .ui-icon-carat-2-n-s:before {
   content: "sort"; }
 
@@ -3965,7 +3968,7 @@ body {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
     body .ui-autocomplete-panel .ui-autocomplete-list {
       padding: 0; }
-      body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-item {
+      body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item {
         -moz-transition: background-color 0.3s;
         -o-transition: background-color 0.3s;
         -webkit-transition: background-color 0.3s;
@@ -3975,7 +3978,7 @@ body {
         -moz-border-radius: 0;
         -webkit-border-radius: 0;
         border-radius: 0; }
-        body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-item .ui-autocomplete-query {
+        body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item .ui-autocomplete-query {
           font-weight: 700; }
       body .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-group {
         padding: 10px 14px; }

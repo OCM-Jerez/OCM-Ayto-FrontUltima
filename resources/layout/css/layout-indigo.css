@@ -1390,7 +1390,7 @@ body .layout-wrapper.layout-compact {
     font-size: 14px; }
   body .layout-wrapper.layout-compact .ui-widget-header {
     font-size: 14px; }
-  body .layout-wrapper.layout-compact .ui-icon {
+  body .layout-wrapper.layout-compact .fa {
     font-size: 20px; }
   body .layout-wrapper.layout-compact .card {
     padding: 16px;
@@ -1434,13 +1434,13 @@ body .layout-wrapper.layout-compact {
     body .layout-wrapper.layout-compact .ui-button.ui-button-icon-only {
       width: 32px;
       height: 32px; }
-      body .layout-wrapper.layout-compact .ui-button.ui-button-icon-only .ui-icon {
+      body .layout-wrapper.layout-compact .ui-button.ui-button-icon-only .fa {
         width: 20px;
         height: 20px;
         font-size: 20px;
         margin-top: -10px;
         margin-left: -10px; }
-    body .layout-wrapper.layout-compact .ui-button.ui-button-text-icon-left .ui-icon, body .layout-wrapper.layout-compact .ui-button.ui-button-text-icon-right .ui-icon {
+    body .layout-wrapper.layout-compact .ui-button.ui-button-text-icon-left .fa, body .layout-wrapper.layout-compact .ui-button.ui-button-text-icon-right .fa {
       width: 20px;
       height: 20px;
       font-size: 20px;
@@ -1486,7 +1486,7 @@ body .layout-wrapper.layout-compact {
       margin-bottom: 4px; }
   body .layout-wrapper.layout-compact .ui-picklist .ui-picklist-filter-container {
     padding: 6px 10px; }
-    body .layout-wrapper.layout-compact .ui-picklist .ui-picklist-filter-container .ui-icon {
+    body .layout-wrapper.layout-compact .ui-picklist .ui-picklist-filter-container .fa {
       top: 8px; }
   body .layout-wrapper.layout-compact .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .ui-button.ui-button-icon-only {
     margin-bottom: 4px; }
@@ -1658,13 +1658,13 @@ body .layout-wrapper.layout-compact {
     padding: 6px 10px; }
     body .layout-wrapper.layout-compact .ui-datatable thead th .ui-sortable-column-icon {
       margin: -4px 0 0 0; }
-      body .layout-wrapper.layout-compact .ui-datatable thead th .ui-sortable-column-icon.ui-icon-carat-2-n-s {
+      body .layout-wrapper.layout-compact .ui-datatable thead th .ui-sortable-column-icon.fa-carat-2-n-s {
         margin-left: 4px; }
   body .layout-wrapper.layout-compact .ui-datatable tfoot td {
     padding: 6px 10px; }
   body .layout-wrapper.layout-compact .ui-datatable tbody tr.ui-widget-content td {
     padding: 6px 10px; }
-  body .layout-wrapper.layout-compact .ui-datatable > .ui-icon-arrowthick-1-s {
+  body .layout-wrapper.layout-compact .ui-datatable > .fa-arrowthick-1-s {
     font-size: 18px; }
   body .layout-wrapper.layout-compact .ui-datatable.ui-datatable-scrollable .ui-datatable-scrollable-theadclone th {
     padding-top: 0;
@@ -1684,7 +1684,7 @@ body .layout-wrapper.layout-compact {
       margin-top: 2px; }
   body .layout-wrapper.layout-compact .ui-dialog .ui-dialog-content {
     padding: 8px 14px; }
-  body .layout-wrapper.layout-compact .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-item {
+  body .layout-wrapper.layout-compact .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item {
     font-size: 14px;
     padding: 6px 10px; }
   body .layout-wrapper.layout-compact .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-group {
@@ -1698,6 +1698,8 @@ body .layout-wrapper.layout-compact {
       -moz-box-shadow: none;
       height: 20px;
       width: 20px; }
+    body .layout-wrapper.layout-compact .ui-autocomplete .ui-autocomplete-dropdown .fa {
+      margin-top: -16px; }
   body .layout-wrapper.layout-compact .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-input-token > input {
     font-size: 14px; }
   body .layout-wrapper.layout-compact .ui-autocomplete.ui-autocomplete-multiple .ui-autocomplete-token .ui-autocomplete-token-icon {
@@ -1706,7 +1708,7 @@ body .layout-wrapper.layout-compact {
     height: 20px;
     width: 20px;
     top: 4px; }
-    body .layout-wrapper.layout-compact .ui-selectonemenu .ui-selectonemenu-trigger .ui-icon {
+    body .layout-wrapper.layout-compact .ui-selectonemenu .ui-selectonemenu-trigger .fa {
       height: 20px;
       width: 20px;
       margin-top: -8px; }
@@ -1719,7 +1721,7 @@ body .layout-wrapper.layout-compact {
     height: 20px;
     width: 20px;
     font-size: 20px; }
-    body .layout-wrapper.layout-compact .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger .ui-icon {
+    body .layout-wrapper.layout-compact .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger .fa {
       height: 20px;
       width: 20px; }
   body .layout-wrapper.layout-compact .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header {
@@ -1735,16 +1737,16 @@ body .layout-wrapper.layout-compact {
     padding: 6px 10px; }
   body .layout-wrapper.layout-compact .ui-selectmanymenu .ui-selectlistbox-filter-container {
     padding: 6px 10px; }
-    body .layout-wrapper.layout-compact .ui-selectmanymenu .ui-selectlistbox-filter-container .ui-icon {
+    body .layout-wrapper.layout-compact .ui-selectmanymenu .ui-selectlistbox-filter-container .fa {
       top: 4px;
       right: 10px; }
   body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-button {
     width: 18px;
     height: 12px;
     padding: 0; }
-  body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-up .ui-icon {
+  body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-up .fa {
     top: 6px; }
-  body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-down .ui-icon {
+  body .layout-wrapper.layout-compact .ui-spinner .ui-spinner-down .fa {
     top: 4px; }
   body .layout-wrapper.layout-compact .ui-fluid .ui-spinner .ui-spinner-button {
     width: 25px;
@@ -1799,9 +1801,9 @@ body .layout-wrapper.layout-compact {
     padding: 8px 14px;
     padding-left: 36px;
     font-size: 14px; }
-    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .ui-icon-triangle-1-e {
+    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-triangle-1-e {
       margin-top: -10px; }
-    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .ui-icon-triangle-1-s {
+    body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-header .fa-triangle-1-s {
       margin-top: -10px; }
   body .layout-wrapper.layout-compact .ui-accordion .ui-accordion-content {
     padding: 8px 14px;
@@ -1810,7 +1812,7 @@ body .layout-wrapper.layout-compact {
     padding: 8px 14px; }
   body .layout-wrapper.layout-compact .ui-tabs .ui-tabs-nav > li > a {
     padding: 8px 14px; }
-  body .layout-wrapper.layout-compact .ui-tabs .ui-tabs-nav > li > .ui-icon-close {
+  body .layout-wrapper.layout-compact .ui-tabs .ui-tabs-nav > li > .fa-close {
     margin: 7px 0 0 0; }
   body .layout-wrapper.layout-compact .ui-tabs .ui-tabs-panel {
     padding: 8px 14px; }
@@ -1842,9 +1844,9 @@ body .layout-wrapper.layout-compact {
   body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 {
     font-size: 14px;
     padding: 6px 10px; }
-    body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .ui-icon {
+    body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .fa {
       font-size: 20px; }
-      body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .ui-icon.ui-icon-triangle-1-s, body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .ui-icon.ui-icon-triangle-1-e {
+      body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .fa.fa-triangle-1-s, body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-widget-header h3 .fa.fa-triangle-1-e {
         margin: -12px 0 0 0px; }
   body .layout-wrapper.layout-compact .ui-menu .ui-menu-list li.ui-menuitem .ui-menuitem-link {
     font-size: 14px;
@@ -1860,13 +1862,13 @@ body .layout-wrapper.layout-compact {
     box-sizing: border-box; }
   body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header {
     padding-left: 30px; }
-    body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .ui-icon {
+    body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .fa {
       color: #ffffff; }
-      body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .ui-icon.ui-icon-triangle-1-s {
+      body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .fa.fa-triangle-1-s {
         margin-top: -10px; }
-      body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .ui-icon.ui-icon-triangle-1-e {
+      body .layout-wrapper.layout-compact .ui-menu.ui-menu-toggleable .ui-menu-list li.ui-widget-header .fa.fa-triangle-1-e {
         margin-top: -10px; }
-  body .layout-wrapper.layout-compact .ui-menu.ui-tieredmenu .ui-icon-triangle-1-e {
+  body .layout-wrapper.layout-compact .ui-menu.ui-tieredmenu .fa-triangle-1-e {
     top: 6px; }
   body .layout-wrapper.layout-compact .ui-menu.ui-menubar .ui-menubar-options {
     padding: 6px 10px; }
@@ -1884,14 +1886,14 @@ body .layout-wrapper.layout-compact {
   body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header a {
     padding: 6px 10px 6px 36px;
     font-size: 14px; }
-  body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header .ui-icon {
+  body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header .fa {
     color: #ffffff;
     margin-top: -10px; }
   body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-content .ui-menuitem .ui-menuitem-link {
     padding: 6px 10px;
     min-height: 30px;
     line-height: 18px; }
-    body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-content .ui-menuitem .ui-menuitem-link .ui-icon {
+    body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-content .ui-menuitem .ui-menuitem-link .fa {
       position: static;
       display: inline-block;
       vertical-align: middle;
