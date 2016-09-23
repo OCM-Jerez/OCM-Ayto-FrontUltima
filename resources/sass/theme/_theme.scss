@@ -2059,10 +2059,10 @@ body {
         padding: 10px;
     }
     
-    .ui-tabs {
+    .ui-tabview {
         padding: 0;
         
-        .ui-tabs-nav {
+        .ui-tabview-nav {
             background-color: #ffffff;
             border: 0 none;
             @include border-radius(0px);
@@ -2082,6 +2082,10 @@ body {
                 > .fa-close {
                     margin: 8px 0 0 0;
                     @include transition(color .3s);
+                    color: $textSecondaryColor;
+                }
+                
+                .ui-tabview-left-icon, .ui-tabview-right-icon {
                     color: $textSecondaryColor;
                 }
                 
@@ -2109,19 +2113,19 @@ body {
                     }
                 }
                 
-                &.ui-tabs-outline {
+                &.ui-tabview-outline {
                     outline: 0 none;
                     border-color: $accentLightColor;
                 }
             }
         }
         
-        .ui-tabs-panel {
+        .ui-tabview-panel {
             padding: $contentPadding;
         }
         
-        &.ui-tabs-top {
-            > .ui-tabs-nav {
+        &.ui-tabview-top {
+            > .ui-tabview-nav {
                 padding: 0;
                 margin: 0;
                 @include border-radius-top(4px);
@@ -2134,8 +2138,8 @@ body {
             }
         }
         
-        &.ui-tabs-bottom {
-            > .ui-tabs-nav {
+        &.ui-tabview-bottom {
+            > .ui-tabview-nav {
                 padding: 0;
                 margin: 0;
                 @include border-radius-bottom(4px);
@@ -2147,8 +2151,8 @@ body {
             }
         }
         
-        &.ui-tabs-left {
-            > .ui-tabs-nav {
+        &.ui-tabview-left {
+            > .ui-tabview-nav {
                 padding: 0;
                 margin: 0;
                 @include border-radius-left(4px);
@@ -2166,8 +2170,8 @@ body {
             }
         }
         
-        &.ui-tabs-right {
-            > .ui-tabs-nav {
+        &.ui-tabview-right {
+            > .ui-tabview-nav {
                 padding: 0;
                 @include border-radius-right(4px);
                 border-left: 1px solid $dividerColor;
@@ -2190,9 +2194,9 @@ body {
             }
         }
         
-        &.ui-tabs-scrollable {
-            .ui-tabs-navscroller {
-                > .ui-tabs-navscroller-btn {
+        &.ui-tabview-scrollable {
+            .ui-tabview-navscroller {
+                > .ui-tabview-navscroller-btn {
                     outline: 0 none;
                     width: 18px;
                     display: block;
@@ -2210,7 +2214,7 @@ body {
                     }
                 }
                 
-                > .ui-tabs-navscroller-btn-left {
+                > .ui-tabview-navscroller-btn-left {
                     z-index: 1;
                     left: 0;
                     border-right: 1px solid $dividerColor;
@@ -2222,7 +2226,7 @@ body {
                     }
                 }
                 
-                > .ui-tabs-navscroller-btn-right {
+                > .ui-tabview-navscroller-btn-right {
                     z-index: 1;
                     right: 0;
                     border-left: 1px solid $dividerColor;
@@ -2235,16 +2239,16 @@ body {
                     }
                 }
                 
-                .ui-tabs-nav {
+                .ui-tabview-nav {
                     > li {
                         margin: 0;
                     }
                 }
             }
             
-            &.ui-tabs-top {
-                .ui-tabs-navscroller {
-                    > .ui-tabs-nav {
+            &.ui-tabview-top {
+                .ui-tabview-navscroller {
+                    > .ui-tabview-nav {
                         border-bottom: 1px solid $dividerColor;
                         
                         > li {
@@ -2253,16 +2257,16 @@ body {
                         }
                     }
                     
-                    > .ui-tabs-navscroller-btn-left {
+                    > .ui-tabview-navscroller-btn-left {
                         border-top: 0 none;
                         border-bottom: 1px solid $dividerColor;
                     }
                 }
             }
             
-            &.ui-tabs-bottom {
-                .ui-tabs-navscroller {                    
-                    > .ui-tabs-nav {
+            &.ui-tabview-bottom {
+                .ui-tabview-navscroller {                    
+                    > .ui-tabview-nav {
                         border-top: 1px solid $dividerColor;
                                                 
                         > li {
@@ -2271,12 +2275,12 @@ body {
                         }
                     }
                     
-                    > .ui-tabs-navscroller-btn-left {
+                    > .ui-tabview-navscroller-btn-left {
                         border-bottom: 0 none;
                         border-top: 1px solid $dividerColor;
                     }
                     
-                    > .ui-tabs-navscroller-btn-right {
+                    > .ui-tabview-navscroller-btn-right {
                         border-top: 1px solid $dividerColor;
                     }
                 }
