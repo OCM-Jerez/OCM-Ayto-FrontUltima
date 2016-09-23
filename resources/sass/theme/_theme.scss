@@ -2263,19 +2263,31 @@ body {
     .ui-breadcrumb {
         padding: $inputHeaderPadding;
         
-        a {
-            color: #ffffff;
-            font-size: $inputHeaderFontSize;
-        }
-        
-        li:first-child {
-            a {
-                position: relative;
-                font-size: $iconFontSize;
-                margin-top: 0;
+        ul {
+            li {
+                a {
+                    color: #ffffff;
+                    font-size: $inputHeaderFontSize;
+                }
                 
-                span {
-                    display: none;
+                &:first-child {            
+                    a {
+                        position: relative;
+                        font-size: $iconFontSize;
+                        margin-top: 0;
+                        
+                        span {
+                            display: none;
+                        }
+                    }
+                    
+                    &.fa {
+                        margin: 2px 4px 0 0;
+                    }
+                }
+                
+                &.fa {
+                    margin: 2px 0 0 0;
                 }
             }
         }
@@ -2565,6 +2577,10 @@ body {
                 padding: 10px 16px 10px 42px;
                 color: #ffffff;
                 font-size: $fontSize;
+                
+                &.ui-panelmenu-headerlink-hasicon {
+                    padding-left: 4.2em;
+                }
             }
             
             .fa {
@@ -2612,7 +2628,6 @@ body {
                         position: static;
                         display: inline-block;
                         vertical-align: middle;
-                        margin-right: 12px;
                     }
                 }
             }

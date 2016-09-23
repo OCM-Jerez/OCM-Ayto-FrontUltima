@@ -12,9 +12,11 @@ export class MenusDemo implements OnInit {
     
     private items: MenuItem[];
     
-    private tabmenuItems: MenuItem[];
+    private tabMenuItems: MenuItem[];
     
     private megaMenuItems: MenuItem[];
+    
+    private panelMenuItems: MenuItem[];
 
     ngOnInit() {
         this.breadcrumbItems = [];
@@ -27,21 +29,21 @@ export class MenusDemo implements OnInit {
         this.breadcrumbItems.push({label:'Squad'});
         this.breadcrumbItems.push({label:'Lionel Messi', url: 'https://en.wikipedia.org/wiki/Lionel_Messi'});
         
-        this.tabmenuItems = [
-            {label: 'Stats', icon: 'fa-bar-chart'},
-            {label: 'Calendar', icon: 'fa-calendar'},
-            {label: 'Documentation', icon: 'fa-book'},
-            {label: 'Support', icon: 'fa-support'},
-            {label: 'Social', icon: 'fa-twitter'}
+        this.tabMenuItems = [
+            {label: 'Stats', icon: 'ui-icon-insert-chart'},
+            {label: 'Calendar', icon: 'ui-icon-date-range'},
+            {label: 'Documentation', icon: 'ui-icon-book'},
+            {label: 'Support', icon: 'ui-icon-help-outline'},
+            {label: 'Social', icon: 'ui-icon-public'}
         ];
         
         this.tieredItems = [
             {
                 label: 'File',
-                icon: 'fa-file-o',
+                icon: 'ui-icon-folder',
                 items: [{
                         label: 'New', 
-                        icon: 'fa-plus',
+                        icon: 'ui-icon-plus',
                         items: [
                             {label: 'Project'},
                             {label: 'Other'},
@@ -53,22 +55,22 @@ export class MenusDemo implements OnInit {
             },
             {
                 label: 'Edit',
-                icon: 'fa-edit',
+                icon: 'ui-icon-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    {label: 'Undo', icon: 'ui-icon-undo'},
+                    {label: 'Redo', icon: 'ui-icon-redo'}
                 ]
             },
             {
                 label: 'Help',
-                icon: 'fa-question',
+                icon: 'ui-icon-help-outline',
                 items: [
                     {
                         label: 'Contents'
                     },
                     {
                         label: 'Search', 
-                        icon: 'fa-search', 
+                        icon: 'ui-icon-search', 
                         items: [
                             {
                                 label: 'Text', 
@@ -86,48 +88,48 @@ export class MenusDemo implements OnInit {
             },
             {
                 label: 'Actions',
-                icon: 'fa-gear',
+                icon: 'ui-icon-settings',
                 items: [
                     {
                         label: 'Edit',
-                        icon: 'fa-refresh',
+                        icon: 'ui-icon-refresh',
                         items: [
-                            {label: 'Save', icon: 'fa-save'},
-                            {label: 'Update', icon: 'fa-save'},
+                            {label: 'Save', icon: 'ui-icon-save'},
+                            {label: 'Update', icon: 'ui-icon-update'},
                         ]
                     },
                     {
                         label: 'Other',
                         icon: 'fa-phone',
                         items: [
-                            {label: 'Delete', icon: 'fa-minus'}
+                            {label: 'Delete', icon: 'ui-icon-delete'}
                         ]
                     }
                 ]
             },
             {
-                label: 'Quit', icon: 'fa-minus'
+                label: 'Quit', icon: 'ui-icon-power-settings-new'
             }
         ];
         
         this.items = [{
             label: 'File',
             items: [
-                {label: 'New', icon: 'fa-plus'},
-                {label: 'Open', icon: 'fa-download'}
+                {label: 'New', icon: 'ui-icon-plus'},
+                {label: 'Open', icon: 'ui-icon-open-in-browser'}
             ]
         },
         {
             label: 'Edit',
             items: [
-                {label: 'Undo', icon: 'fa-refresh'},
-                {label: 'Redo', icon: 'fa-repeat'}
+                {label: 'Undo', icon: 'ui-icon-undo'},
+                {label: 'Redo', icon: 'ui-icon-redo'}
             ]
         }];
         
         this.megaMenuItems = [
             {
-                label: 'TV', icon: 'fa-check',
+                label: 'TV', icon: 'ui-icon-tv',
                 items: [
                     [
                         {
@@ -152,7 +154,7 @@ export class MenusDemo implements OnInit {
                 ]
             },
             {
-                label: 'Sports', icon: 'fa-soccer-ball-o',
+                label: 'Sports', icon: 'ui-icon-alarm',
                 items: [
                     [
                         {
@@ -188,7 +190,7 @@ export class MenusDemo implements OnInit {
                 ]
             },
             {
-                label: 'Entertainment', icon: 'fa-child',
+                label: 'Entertainment', icon: 'ui-icon-stars',
                 items: [
                     [
                         {
@@ -213,7 +215,7 @@ export class MenusDemo implements OnInit {
                 ]
             },
             {
-                label: 'Technology', icon: 'fa-gears',
+                label: 'Technology', icon: 'ui-icon-phone-android',
                 items: [
                     [
                         {
@@ -224,17 +226,85 @@ export class MenusDemo implements OnInit {
                             label: 'Technology 2',
                             items: [{label: 'Technology 2.1'},{label: 'Technology 2.2'}]
                         },
-                        {
-                            label: 'Technology 3',
-                            items: [{label: 'Technology 3.1'},{label: 'Technology 3.2'}]
-                        }
                     ],
                     [
                         {
                             label: 'Technology 4',
-                            items: [{label: 'Technology 4.1'},{label: 'Technology 4.2'}]
+                            items: [{label: 'Technology 3.1'},{label: 'Technology 3.2'}]
                         }  
                     ]
+                ]
+            }
+        ];
+        
+        this.panelMenuItems = [
+            {
+                label: 'File',
+                icon: 'ui-icon-insert-drive-file',
+                items: [{
+                        label: 'New', 
+                        icon: 'ui-icon-add',
+                        items: [
+                            {label: 'Project'},
+                            {label: 'Other'},
+                        ]
+                    },
+                    {label: 'Open'},
+                    {label: 'Quit'}
+                ]
+            },
+            {
+                label: 'Edit',
+                icon: 'ui-icon-edit',
+                items: [
+                    {label: 'Undo', icon: 'ui-icon-undo'},
+                    {label: 'Redo', icon: 'ui-icon-redo'}
+                ]
+            },
+            {
+                label: 'Help',
+                icon: 'ui-icon-help-outline',
+                items: [
+                    {
+                        label: 'Contents'
+                    },
+                    {
+                        label: 'Search', 
+                        icon: 'ui-icon-search', 
+                        items: [
+                            {
+                                label: 'Text', 
+                                items: [
+                                    {
+                                        label: 'Workspace'
+                                    }
+                                ]
+                            },
+                            {
+                                label: 'File'
+                            }
+                    ]}
+                ]
+            },
+            {
+                label: 'Actions',
+                icon: 'ui-icon-settings',
+                items: [
+                    {
+                        label: 'Edit',
+                        icon: 'ui-icon-edit',
+                        items: [
+                            {label: 'Save', icon: 'ui-icon-save'},
+                            {label: 'Update', icon: 'ui-icon-update'},
+                        ]
+                    },
+                    {
+                        label: 'Other',
+                        icon: 'ui-icon-list',
+                        items: [
+                            {label: 'Delete', icon: 'ui-icon-delete'}
+                        ]
+                    }
                 ]
             }
         ];
