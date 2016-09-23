@@ -1947,11 +1947,11 @@ body .layout-wrapper.layout-compact {
       margin: -4px 0 0 0; }
   body .layout-wrapper.layout-compact .ui-treetable tfoot td {
     padding: 6px 10px; }
-  body .layout-wrapper.layout-compact .ui-treetable tbody tr td {
+  body .layout-wrapper.layout-compact .ui-treetable tbody .ui-treetable-row td {
     padding: 6px 10px; }
-    body .layout-wrapper.layout-compact .ui-treetable tbody tr td .ui-treetable-toggler {
+    body .layout-wrapper.layout-compact .ui-treetable tbody .ui-treetable-row td .ui-treetable-toggler {
       margin: 0 4px; }
-    body .layout-wrapper.layout-compact .ui-treetable tbody tr td .ui-chkbox {
+    body .layout-wrapper.layout-compact .ui-treetable tbody .ui-treetable-row td .ui-chkbox {
       margin-right: 8px; }
   body .layout-wrapper.layout-compact .ui-lightbox .ui-lightbox-caption {
     padding: 8px 14px; }

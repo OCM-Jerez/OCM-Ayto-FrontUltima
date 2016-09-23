@@ -1046,7 +1046,7 @@ body {
             }
             
             tbody {                        
-                tr {
+                .ui-treetable-row {
                     td {
                         padding: $c-dtPadding;
                         
