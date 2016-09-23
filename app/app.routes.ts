@@ -12,7 +12,7 @@ import {MiscDemo} from './demo/view/miscdemo';
 import {EmptyDemo} from './demo/view/emptydemo';
 import {ChartsDemo} from './demo/view/chartsdemo';
 import {FileDemo} from './demo/view/filedemo';
-import {Setup} from './setup';
+import {UtilsDemo} from './demo/view/utilsdemo';
 
 export const routes: Routes = [
     {path: '', component: DashboardDemo},
@@ -27,7 +27,7 @@ export const routes: Routes = [
     {path: 'empty', component: EmptyDemo},
     {path: 'charts', component: ChartsDemo},
     {path: 'file', component: FileDemo},
-    {path: 'setup', component: Setup}
+    {path: 'utils', component: UtilsDemo}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);
