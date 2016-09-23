@@ -1815,9 +1815,7 @@ body {
 
     /* Messages */
     .ui-messages {
-        > div {
-            padding: $headerPadding;
-        }
+        padding: $headerPadding;
         
         ul {
             display: inline-block;
@@ -1846,6 +1844,12 @@ body {
             background-color: #212121;
             border-color: #212121;
             color: #ffffff;
+        }
+        
+        .ui-messages-close {
+            text-decoration: none;
+            color: #fff;
+            right: 10px;
         }
     }
 
@@ -1878,75 +1882,14 @@ body {
     }
 
     /* Info */
-    .ui-messages .ui-messages-info-icon,.ui-message .ui-message-info-icon {
+    .ui-messages .ui-messages-icon {
         background: none;
         @include material-icon("info");
         font-size: 28px;
         color: #fff;
         margin-top: -2px;
     }
-
-    .ui-message .ui-message-info-icon {
-        margin-top: 3px;
-        font-size: 18px;
-        right: 1px;
-    }
-
-    /* Error */
-    .ui-messages .ui-messages-error-icon, .ui-message .ui-message-error-icon {
-        background: none;
-        @include material-icon("error");
-        font-size: 28px;
-        color: #fff;
-        margin-top: -2px;
-    }
-
-    .ui-message .ui-message-error-icon {
-        margin-top: 3px;
-        font-size: 18px;
-        right: 1px;
-    }
-
-    /* Warn */
-    .ui-messages .ui-messages-warn-icon,.ui-message .ui-message-warn-icon {
-        background: none;
-        @include material-icon("warning");
-        font-size: 28px;
-        color: $textColor;
-        margin-top: -2px;
-    }
     
-    .ui-messages .ui-messages-warn {
-        .ui-messages-close {
-            color: $textColor; 
-        }
-    }
-
-    .ui-message .ui-message-warn-icon {
-        margin-top: 3px;
-        font-size: 18px;
-        right: 1px;
-    }
-
-    /* Fatal */
-    .ui-messages .ui-messages-fatal-icon,.ui-message .ui-message-fatal-icon {
-        background: none;
-        @include material-icon("error");
-        font-size: 28px;
-        color: #fff;
-        margin-top: -2px;
-    }
-
-    .ui-message .ui-message-fatal-icon {
-        margin-top: 3px;
-        font-size: 18px;
-    }
-
-    .ui-messages-close {
-        text-decoration: none;
-        color: #fff;
-    }
-
     .ui-growl {
         top: 90px;
         
@@ -1962,8 +1905,7 @@ body {
         .ui-growl-item {
             .ui-growl-image {
                 background: none;
-                color: #ffffff;
-                padding: 4px;         
+                color: #ffffff;      
     
                 &.ui-growl-image-info {
                     @include material-icon("info");        

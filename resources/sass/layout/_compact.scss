@@ -483,11 +483,18 @@ body {
                 
                 .ui-dialog-titlebar-icon {
                     margin-top: 2px;
+                    height: $c-iconFontSize;
                 }
             }
             
             .ui-dialog-content {
                 padding: $c-contentPadding;
+            }
+        }
+        
+        .ui-overlaypanel {
+            .ui-overlaypanel-close {
+                padding: 2px 4px;
             }
         }
         
@@ -716,12 +723,10 @@ body {
         
         /* Messages */
         .ui-messages {
-            > div {
-                padding: $c-headerPadding;
-                
-                > span {
-                    font-size: 24px;
-                }
+            padding: $c-headerPadding;
+            
+            > span {
+                font-size: 24px;
             }
         }
 

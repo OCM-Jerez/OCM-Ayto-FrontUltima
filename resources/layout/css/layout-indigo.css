@@ -1686,9 +1686,12 @@ body .layout-wrapper.layout-compact {
     padding: 8px 14px;
     font-size: 16px; }
     body .layout-wrapper.layout-compact .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-icon {
-      margin-top: 2px; }
+      margin-top: 2px;
+      height: 20px; }
   body .layout-wrapper.layout-compact .ui-dialog .ui-dialog-content {
     padding: 8px 14px; }
+  body .layout-wrapper.layout-compact .ui-overlaypanel .ui-overlaypanel-close {
+    padding: 2px 4px; }
   body .layout-wrapper.layout-compact .ui-autocomplete-panel .ui-autocomplete-list .ui-autocomplete-list-item {
     font-size: 14px;
     padding: 6px 10px; }
@@ -1790,9 +1793,9 @@ body .layout-wrapper.layout-compact {
       margin-top: 42px; }
   body .layout-wrapper.layout-compact .ui-fluid .ui-calendar .ui-datepicker-trigger.ui-button {
     top: -6px; }
-  body .layout-wrapper.layout-compact .ui-messages > div {
+  body .layout-wrapper.layout-compact .ui-messages {
     padding: 8px 14px; }
-    body .layout-wrapper.layout-compact .ui-messages > div > span {
+    body .layout-wrapper.layout-compact .ui-messages > span {
       font-size: 24px; }
   body .layout-wrapper.layout-compact .ui-message {
     min-height: 20px; }
