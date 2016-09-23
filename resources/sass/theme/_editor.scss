@@ -341,7 +341,7 @@
   text-decoration: underline;
 }
 .ql-editor blockquote {
-  border-left: 4px solid #e8e8e8;
+  border-left: 4px solid $dividerColor;
   margin-bottom: 5px;
   margin-top: 5px;
   padding-left: 16px;
@@ -427,8 +427,8 @@
   top: 0;
 }
 .ql-snow .ql-image-tooltip .ql-empty.ql-preview::before {
-  border: 1px dashed #e8e8e8;
-  color: #e8e8e8;
+  border: 1px dashed $dividerColor;
+  color: $dividerColor;
   content: 'Preview';
   display: block;
   line-height: 200px;
@@ -462,7 +462,7 @@
   margin-left: 8px;
 }
 .ql-snow .ql-link-tooltip a.ql-action::after {
-  border-right: 1px solid #e8e8e8;
+  border-right: 1px solid $dividerColor;
   content: 'Edit';
   margin-left: 8px;
   padding-right: 8px;
@@ -487,7 +487,7 @@
   padding-right: 0px;
 }
 .ql-toolbar.ql-snow {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $dividerColor;
   box-sizing: border-box;
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 8px;
@@ -506,7 +506,7 @@
 .ql-toolbar.ql-snow .ql-picker-label.ql-active,
 .ql-toolbar.ql-snow .ql-picker-item:hover,
 .ql-toolbar.ql-snow .ql-picker-item.ql-selected {
-  color: #e8e8e8;
+  color: $dividerColor;
 }
 .ql-toolbar.ql-snow button:hover .ql-fill,
 .ql-toolbar.ql-snow button.ql-active .ql-fill,
@@ -520,7 +520,7 @@
 .ql-toolbar.ql-snow .ql-picker-label.ql-active .ql-stroke.ql-fill,
 .ql-toolbar.ql-snow .ql-picker-item:hover .ql-stroke.ql-fill,
 .ql-toolbar.ql-snow .ql-picker-item.ql-selected .ql-stroke.ql-fill {
-  fill: #e8e8e8;
+  fill: $dividerColor;
 }
 .ql-toolbar.ql-snow button:hover .ql-stroke,
 .ql-toolbar.ql-snow button.ql-active .ql-stroke,
@@ -534,7 +534,7 @@
 .ql-toolbar.ql-snow .ql-picker-label.ql-active .ql-stroke-mitter,
 .ql-toolbar.ql-snow .ql-picker-item:hover .ql-stroke-mitter,
 .ql-toolbar.ql-snow .ql-picker-item.ql-selected .ql-stroke-mitter {
-  stroke: #e8e8e8;;
+  stroke: $dividerColor;;
 }
 .ql-toolbar.ql-snow .ql-stroke {
   stroke: #ffffff;
@@ -578,7 +578,7 @@
 .ql-toolbar.ql-snow .ql-picker-label svg {
   float: right;
   height: 18px;
-  margin-top: 2px;
+  margin-top: 3px;
   width: 18px;
 }
 .ql-toolbar.ql-snow .ql-picker-label::before {
@@ -600,15 +600,15 @@
   padding-top: 5px;
 }
 .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label {
-  border-color: #e8e8e8;
-  color: #e8e8e8;
+  border-color: $dividerColor;
+  color: $dividerColor;
   z-index: 2;
 }
 .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-fill {
-  fill: #e8e8e8;
+  fill: $dividerColor;
 }
 .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label .ql-stroke {
-  stroke: #e8e8e8;
+  stroke: $dividerColor;
 }
 .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
   border-color: $primaryDarkColor;
@@ -777,18 +777,18 @@
 }
 .ql-snow .ql-tooltip {
   background-color: #fff;
-  border: 1px solid #e8e8e8;
+  border: 1px solid $dividerColor;
   box-shadow: 0px 0px 5px #ddd;
   color: #444;
 }
 .ql-snow .ql-tooltip input[type=text] {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $dividerColor;
   font-size: 13px;
   margin: 0px;
   padding: 3px 5px;
 }
 .ql-container.ql-snow {
-  border: 1px solid #e8e8e8;
+  border: 1px solid $dividerColor;
 }
 .ql-container.ql-snow a {
   color: #06c;

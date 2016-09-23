@@ -781,7 +781,7 @@ body {
         }
     }
     
-    .ui-button {
+    .ui-button, .ui-datepicker-buttonpane > button {
         overflow: hidden;
         background-color: $primaryColor;
         color: #ffffff;
@@ -1637,8 +1637,8 @@ body {
     
     .ui-calendar {
         .ui-datepicker-trigger {
-            top: 6px;
-            right: 28px;
+            top: -3px;
+            right: 0px;
             background-color: transparent;
             color: $textColor;
             height: 24px;
@@ -1805,10 +1805,15 @@ body {
         
     }
     
+    #ui-datepicker-div {
+        @include overlay-input-shadow();
+    }
+    
     .ui-fluid {
         .ui-calendar {
             .ui-datepicker-trigger.ui-button {
-                top: -6px;
+                top: -3px;
+                right: 0px;
                 width: 24px;
             }
         }

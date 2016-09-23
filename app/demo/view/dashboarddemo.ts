@@ -16,6 +16,8 @@ export class DashboardDemo implements OnInit {
     chartData: any;
     
     events: any[];
+    
+    selectedCity: any;
 
     constructor(private carService: CarService, private eventService: EventService) { }
     

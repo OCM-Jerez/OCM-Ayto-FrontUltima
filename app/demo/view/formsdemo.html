@@ -79,36 +79,21 @@
             <h1>Calendar</h1>
             <p-calendar [inline]="true"></p-calendar> 
             
-            <div class="ui-g">
+            <div class="ui-g form-group" style="margin-top:20px">
                 <div class="ui-g-12">
-                    <label for="popup">Popup</label>
+                    <p-calendar id="popup" placeholder="Popup"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <p-calendar id="popup"></p-calendar>
+                    <p-calendar id="multiple" [numberOfMonths]="3" placeholder="Multiple"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <label for="multiple">Multiple</label>
+                    <p-calendar id="datetime" dateFormat="mm/dd/yy" timeFormat="HH:mm" placeholder="DateTime"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <p-calendar id="multiple" [numberOfMonths]="3"></p-calendar>
+                    <p-calendar id="time" dateFormat="mm/dd/yy" timeFormat="HH:mm:ss" [timeOnly]="true" placeholder="Time"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <label for="popup">DateTime</label>
-                </div>
-                <div class="ui-g-12">
-                    <p-calendar id="datetime" dateFormat="mm/dd/yy" timeFormat="HH:mm"></p-calendar>
-                </div>
-                <div class="ui-g-12">
-                    <label for="time">Time</label>
-                </div>
-                <div class="ui-g-12">
-                    <p-calendar id="time" dateFormat="mm/dd/yy" timeFormat="HH:mm:ss" [timeOnly]="true"></p-calendar>
-                </div>
-                <div class="ui-g-12">
-                    <label for="showIcon">Button</label>
-                </div>
-                <div class="ui-g-12">
-                    <p-calendar id="showIcon" [showIcon]="true"></p-calendar>
+                    <p-calendar id="showIcon" [showIcon]="true" placeholder="Button"></p-calendar>
                 </div>
             </div>
         </div>
