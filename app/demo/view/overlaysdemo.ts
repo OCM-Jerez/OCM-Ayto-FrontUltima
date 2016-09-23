@@ -16,7 +16,7 @@ export class OverlaysDemo implements OnInit {
     constructor(private carService: CarService, private confirmationService: ConfirmationService) { }
 
     ngOnInit() {
-        this.carService.getCarsSmall().then(cars => this.cars = cars);
+        this.carService.getCarsSmall().then(cars => this.cars = cars.splice(0,5));
         
         this.images = [];
         this.images.push({source:'resources/demo/images/sopranos/sopranos1.jpg', thumbnail: 'resources/demo/images/sopranos/sopranos1_small.jpg', title:'Nature 1'});
@@ -27,7 +27,7 @@ export class OverlaysDemo implements OnInit {
     
     confirm() {
         this.confirmationService.confirm({
-            message: 'Are you sure that you want to perform this action?'
+            message: 'Are you sure to perform this action?'
         });
     }
 }

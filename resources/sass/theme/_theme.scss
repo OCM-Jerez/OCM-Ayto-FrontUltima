@@ -2926,6 +2926,7 @@ body {
                 padding: 0;
                 @include border-radius(50%);
                 @include transition(background-color .3s);
+                height: $iconFontSize;
                 
                 &.ui-state-hover, &.ui-state-focus {
                     @include hover-element();
@@ -2952,6 +2953,7 @@ body {
                 background-color: #ffffff;
                 color: $textColor;
                 @include no-shadow();
+                width: auto;
                 
                 .fa {
                     color: $textSecondaryColor;

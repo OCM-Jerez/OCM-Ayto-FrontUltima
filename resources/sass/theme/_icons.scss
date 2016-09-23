@@ -15,9 +15,10 @@
 .fa-caret-right {@include icon-override("keyboard_arrow_right");}
 .fa-caret-left {@include icon-override("keyboard_arrow_left");}
 .fa-search {@include icon-override("search");}
-.fa-close {@include icon-override("cancel");}
+.fa-close {@include icon-override("close");}
 .fa-minus {@include icon-override("remove");}
 .fa-plus {@include icon-override("add");}
+.fa-check {@include icon-override("check");}
 
 .ui-icon-carat-2-n-s {@include icon-override("sort");}
 .ui-icon-triangle-1-n { @include icon-override("keyboard_arrow_up"); }
