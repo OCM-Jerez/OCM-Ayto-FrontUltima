@@ -2731,8 +2731,14 @@ body {
     }
     
     .fc {
-        .fc-button-group {
-            .fa {
+        .fc-button-group {            
+            .ui-icon-circle-triangle-e {
+                @include material-icon("play_circle_outline");
+                margin-top: 3px;
+            }
+            
+            .ui-icon-circle-triangle-w {
+                @include material-icon("play_circle_outline"); @include rotate(180deg);
                 margin-top: 3px;
             }
             

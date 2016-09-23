@@ -42,6 +42,8 @@ export class DataDemo implements OnInit {
     events: any[];
     
     selectedNode: TreeNode;
+    
+    scheduleHeader: any;
 
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) { }
     
@@ -65,5 +67,11 @@ export class DataDemo implements OnInit {
             {vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown'},
             {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black'}
         ];
+        
+        this.scheduleHeader = {
+			left: 'prev,next today',
+			center: 'title',
+			right: 'month,agendaWeek,agendaDay'
+		};
     }
 }

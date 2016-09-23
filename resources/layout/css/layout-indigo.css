@@ -793,6 +793,7 @@ body {
         word-wrap: normal;
         white-space: nowrap;
         direction: ltr;
+        text-indent: 0;
         /* Support for all WebKit browsers. */
         -webkit-font-smoothing: antialiased;
         /* Support for Safari and Chrome. */
@@ -965,6 +966,7 @@ body {
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
+    text-indent: 0;
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
@@ -1535,6 +1537,7 @@ body .layout-wrapper.layout-compact {
       word-wrap: normal;
       white-space: nowrap;
       direction: ltr;
+      text-indent: 0;
       /* Support for all WebKit browsers. */
       -webkit-font-smoothing: antialiased;
       /* Support for Safari and Chrome. */
@@ -1566,6 +1569,7 @@ body .layout-wrapper.layout-compact {
       word-wrap: normal;
       white-space: nowrap;
       direction: ltr;
+      text-indent: 0;
       /* Support for all WebKit browsers. */
       -webkit-font-smoothing: antialiased;
       /* Support for Safari and Chrome. */
@@ -1597,6 +1601,7 @@ body .layout-wrapper.layout-compact {
       word-wrap: normal;
       white-space: nowrap;
       direction: ltr;
+      text-indent: 0;
       /* Support for all WebKit browsers. */
       -webkit-font-smoothing: antialiased;
       /* Support for Safari and Chrome. */
@@ -1628,6 +1633,7 @@ body .layout-wrapper.layout-compact {
       word-wrap: normal;
       white-space: nowrap;
       direction: ltr;
+      text-indent: 0;
       /* Support for all WebKit browsers. */
       -webkit-font-smoothing: antialiased;
       /* Support for Safari and Chrome. */
