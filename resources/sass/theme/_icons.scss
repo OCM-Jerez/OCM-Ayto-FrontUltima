@@ -20,7 +20,9 @@
 .fa-plus {@include icon-override("add");}
 .fa-check {@include icon-override("check");}
 .fa-info-circle {@include icon-override("info");}
-.fa-upload {@include icon-override("file_upload");}
+.fa-upload  {@include icon-override("file_upload");}
+.fa-chevron-circle-left {@include icon-override("chevron_left");}
+.fa-chevron-circle-right {@include icon-override("chevron_right");}
 
 .ui-icon-carat-2-n-s {@include icon-override("sort");}
 .ui-icon-triangle-1-n { @include icon-override("keyboard_arrow_up"); }
