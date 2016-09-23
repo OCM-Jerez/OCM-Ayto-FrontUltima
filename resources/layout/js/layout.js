@@ -336,6 +336,36 @@ Ultima = {
     
 };
 
+/* Ripple */
+$(function() {     
+
+    var ink, d, x, y;
+    $(document.body).off('mousedown.ripple','.ripplelink,.ultima-menu a, .ui-button,.ui-listbox-item')
+            .on('mousedown.ripple','.ripplelink,.ultima-menu a,.ui-button,.ui-listbox-item', null, function(e){
+        var element = $(this);
+        
+        if(element.find(".ink").length === 0){
+            if(element.hasClass('ripplelink'))
+                element.children('span').after("<span class='ink'></span>");
+            else
+                element.append("<span class='ink'></span>");
+        }
+             
+        ink = $(this).find(".ink");
+        ink.removeClass("animate");
+         
+        if(!ink.height() && !ink.width()){
+            d = Math.max($(this).outerWidth(), $(this).outerHeight());
+            ink.css({height: d, width: d});
+        }
+         
+        x = e.pageX - $(this).offset().left - ink.width()/2;
+        y = e.pageY - $(this).offset().top - ink.height()/2;
+         
+        ink.css({top: y+'px', left: x+'px', 'pointer-events': 'none'}).addClass("animate");
+    });
+});
+
 /* JS extensions to support material animations 
 if(PrimeFaces.widget.InputSwitch) {
     PrimeFaces.widget.InputSwitch.prototype.toggle = function() {
