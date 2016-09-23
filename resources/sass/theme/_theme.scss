@@ -254,6 +254,11 @@ body {
             &.ui-state-hover {
                 @include hover-element();
             }
+            
+            &.ui-state-highlight {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
         }
         
         .ui-picklist-buttons {
@@ -648,7 +653,11 @@ body {
                     border: 0 none;
                 }
                 
-                &.ui-state-highlight {
+                &.ui-state-hover {
+                    @include hover-element();
+                }
+                
+                &.ui-state-highlight{
                     background-color: $accentColor;
                     color: $accentTextColor;
                 }
@@ -658,10 +667,6 @@ body {
                         color: $accentTextColor;
                     }
                 }
-            }
-            
-            tr.ui-state-hover {
-                @include hover-element();
             }
             
             tr.ui-state-error {
@@ -2753,46 +2758,50 @@ body {
         }
         
         thead {
-            th {
-                background-color: #ffffff;
-                padding: 10px 14px;
-                border: 0 none;
-                
-                .fa {
-                    color: $textSecondaryColor;
-                }
-                
-                &:first-child {
-                    border-left: 1px solid $dividerColor;
-                }
-                
-                &:last-child {
-                    border-right: 1px solid $dividerColor;
-                }
-                
-                &.ui-state-hover {
-                    @include hover-element();
-                }
-                
-                .ui-sortable-column-icon {
-                    vertical-align: middle;
-                    margin: -4px 0 0 0;
-                }
-                
-                &.ui-state-active {
-                    background-color: $accentColor;
-                    color: $accentTextColor;
+            tr {
+                border-bottom: 1px solid $dividerColor;
+            
+                th {
+                    background-color: #ffffff;
+                    padding: 10px 14px;
+                    border: 0 none;
                     
                     .fa {
-                        color: $accentTextColor;
+                        color: $textSecondaryColor;
                     }
-                }
-                
-                .ui-column-resizer {
-                    @include material-icon("code");
-                    font-size: 16px;
-                    color: $textSecondaryColor;
-                }
+                    
+                    &:first-child {
+                        border-left: 1px solid $dividerColor;
+                    }
+                    
+                    &:last-child {
+                        border-right: 1px solid $dividerColor;
+                    }
+                    
+                    &.ui-state-hover {
+                        @include hover-element();
+                    }
+                    
+                    .ui-sortable-column-icon {
+                        vertical-align: middle;
+                        margin: -4px 0 0 0;
+                    }
+                    
+                    &.ui-state-active {
+                        background-color: $accentColor;
+                        color: $accentTextColor;
+                        
+                        .fa {
+                            color: $accentTextColor;
+                        }
+                    }
+                    
+                    .ui-column-resizer {
+                        @include material-icon("code");
+                        font-size: 16px;
+                        color: $textSecondaryColor;
+                    }
+                }    
             }
         }
         
@@ -2804,7 +2813,9 @@ body {
         }
         
         tbody {                        
-            tr {
+            .ui-treetable-row {
+                background-color: #ffffff;
+                
                 td {
                     border: 0 none;
                     padding: 10px 14px;
@@ -2819,6 +2830,10 @@ body {
                     .ui-chkbox {
                         margin-right: 8px;
                     }
+                    
+                    &.ui-treetable-child-table-container {
+                        padding: 0;
+                    }
                 }
 
                 &.ui-state-hover {
@@ -2826,6 +2841,9 @@ body {
                 }
                 
                 &.ui-state-highlight {
+                    background-color: $accentColor;
+                    color: $accentTextColor;
+                    
                     .ui-chkbox {
                         .ui-chkbox-box {
                             border-color: $accentTextColor;

@@ -1,4 +1,4 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,ViewEncapsulation} from '@angular/core';
 import {CarService} from '../service/carservice';
 import {NodeService} from '../service/nodeservice';
 import {EventService} from '../service/eventservice';
@@ -6,7 +6,20 @@ import {Car} from '../domain/car';
 import {TreeNode} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/datademo.html'
+    templateUrl: 'app/demo/view/datademo.html',
+    styles: [`                
+        .cars-datalist ul {
+            margin: 0;
+            padding: 0;
+        }
+    
+        @media (max-width:640px) {
+            .cars-datalist .text-column {
+                text-align: center;
+            }
+        }
+    `],
+    encapsulation: ViewEncapsulation.None
 })
 export class DataDemo implements OnInit {
 
@@ -27,6 +40,8 @@ export class DataDemo implements OnInit {
     files2: TreeNode[];
     
     events: any[];
+    
+    selectedNode: TreeNode;
 
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) { }
     

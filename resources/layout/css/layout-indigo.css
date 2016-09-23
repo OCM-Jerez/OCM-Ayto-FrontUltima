@@ -1896,6 +1896,8 @@ body .layout-wrapper.layout-compact {
   body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header a {
     padding: 6px 10px 6px 36px;
     font-size: 14px; }
+    body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header a.ui-panelmenu-headerlink-hasicon {
+      padding-left: 4em; }
   body .layout-wrapper.layout-compact .ui-panelmenu .ui-panelmenu-header .fa {
     color: #ffffff;
     margin-top: -10px; }

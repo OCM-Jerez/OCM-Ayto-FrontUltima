@@ -3,7 +3,7 @@
         <div class="card card-w-title">
             <h1>DataTable</h1>
             <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" 
-                [paginator]="true" rows="10" [responsive]="true">
+                [paginator]="true" [rows]="10" [responsive]="true">
                 <header>List of Cars</header>
                 <p-column field="vin" header="Vin" [sortable]="true"></p-column>
                 <p-column field="year" header="Year" [sortable]="true"></p-column>
@@ -35,7 +35,8 @@
     <div class="ui-g-12 ui-md-8">
         <div class="card card-w-title">
             <h1>PickList</h1>
-            <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true">
+            <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true"
+                [sourceStyle]="{'height':'250px'}" [targetStyle]="{'height':'250px'}">
                 <template let-car>
                     <div class="ui-helper-clearfix">
                         <img src="resources/demo/images/car/{{car.brand}}.gif" style="display:inline-block;margin:2px 0 2px 2px"/>
@@ -63,7 +64,7 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>TreeTable</h1>
-            <p-treeTable [value]="files1">
+            <p-treeTable [value]="files1" selectionMode="single" [(selection)]="selectedNode">
                 <header>Basic</header>
                 <p-column field="name" header="Name"></p-column>
                 <p-column field="size" header="Size"></p-column>
@@ -75,28 +76,18 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>DataList - Paginator</h1>
-            <p-dataList [value]="cars" [paginator]="true" [rows]="5">
+            <p-dataList [value]="cars" [paginator]="true" [rows]="5" styleClass="cars-datalist">
                 <header>
                     List of Cars
                 </header>
                 <template let-car>
-                    <div class="ui-g ui-fluid" style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
-                        <div class="ui-g-12 ui-md-3" style="text-align:center">
-                            <img src="resources/demo/images/car/{{car.brand}}-big.gif">
+                    <div style="border-bottom: 1px solid #bdbdbd" class="clearfix car-item">
+                        <img src="resources/demo/images/car/{{car.brand}}.gif" width="48" style="display:inline-block;margin:24px;vertical-align:middle"/>
+                        <div class="car-details" style="display:inline-block;vertical-align:middle">
+                            <p>{{car.brand}}</p>
+                            <p style="color:#757575">{{car.year}} - {{car.color}}</p>
                         </div>
-                        <div class="ui-g-12 ui-md-9">
-                            <div class="ui-g-2">Vin: </div>
-                            <div class="ui-g-10">{{car.vin}}</div>
-                            
-                            <div class="ui-g-2">Year: </div>
-                            <div class="ui-g-10">{{car.year}}</div>
-                            
-                            <div class="ui-g-2">Brand: </div>
-                            <div class="ui-g-10">{{car.brand}}</div>
-                            
-                            <div class="ui-g-2">Color: </div>
-                            <div class="ui-g-10">{{car.color}}</div>
-                        </div>
+                        <button type="button" pButton icon="ui-icon-search" style="margin:24px 24px 0 0;float:right"></button>
                     </div>
                 </template>
             </p-dataList>
@@ -106,25 +97,23 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>Carousel</h1>
-            <p-carousel headerText="Cars" [value]="cars">
+            <p-carousel headerText="Cars" [value]="carouselCars">
                 <template let-car>
-                    <div class="ui-grid ui-grid-responsive" style="text-align:Center">
-                        <div class="ui-g">
-                            <div class="ui-g-12">
-                                <img src="resources/demo/images/car/{{car.brand}}.gif" />
-                            </div>
+                    <div class="ui-g" style="text-align:center">
+                        <div class="ui-g-12" style="text-align:Center">
+                            <img src="resources/demo/images/car/{{car.brand}}.gif" />
                         </div>
                         <div class="ui-g-6">Vin: </div>
-                        <div class="ui-g-6">{{car.vin}}</div>
+                        <div class="ui-g-6" style="font-weight:bold">{{car.vin}}</div>
                         
                         <div class="ui-g-6">Year: </div>
-                        <div class="ui-g-6">{{car.year}}</div>
+                        <div class="ui-g-6" style="font-weight:bold">{{car.year}}</div>
                         
                         <div class="ui-g-6">Brand: </div>
-                        <div class="ui-g-6">{{car.brand}}</div>
+                        <div class="ui-g-6" style="font-weight:bold">{{car.brand}}</div>
                         
                         <div class="ui-g-6">Color: </div>
-                        <div class="ui-g-6">{{car.color}}</div>
+                        <div class="ui-g-6" style="font-weight:bold">{{car.color}}</div>
                     </div>
                 </template>
             </p-carousel>

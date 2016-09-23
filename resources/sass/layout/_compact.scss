@@ -940,6 +940,10 @@ body {
                 a {
                     padding: 6px 10px 6px 36px;
                     font-size: $c-fontSize;
+                    
+                    &.ui-panelmenu-headerlink-hasicon {
+                        padding-left: 4em;
+                    }
                 }
                 
                 .fa {

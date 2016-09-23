@@ -26,6 +26,10 @@
 .fa-home {@include icon-override("home");}
 .fa-chevron-right {@include icon-override("chevron_right");}
 .fa-chevron-left {@include icon-override("chevron_left");}
+.fa-circle-o{@include icon-override("radio_button_unchecked");}
+.fa-dot-circle-o{@include icon-override("radio_button_checked");}
+.fa-arrow-circle-right {@include icon-override("play_circle_outline"); }
+.fa-arrow-circle-left {@include icon-override("play_circle_outline"); @include rotate(180deg);}
 
 .ui-icon-carat-2-n-s {@include icon-override("sort");}
 .ui-icon-triangle-1-n { @include icon-override("keyboard_arrow_up"); }
