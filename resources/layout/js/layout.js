@@ -340,8 +340,8 @@ Ultima = {
 $(function() {     
 
     var ink, d, x, y;
-    $(document.body).off('mousedown.ripple','.ripplelink,.layout-menu .ultima-menu li a, .ui-button,.ui-listbox-item')
-            .on('mousedown.ripple','.ripplelink,.layout-menu .ultima-menu li a,.ui-button,.ui-listbox-item', null, function(e){
+    $(document.body).off('mousedown.ripple','.ripplelink, .ui-button,.ui-listbox-item')
+            .on('mousedown.ripple','.ripplelink,.ui-button,.ui-listbox-item', null, function(e){
         var element = $(this);
         
         if(element.find(".ink").length === 0){
