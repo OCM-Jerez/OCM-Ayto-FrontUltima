@@ -28,7 +28,7 @@ Ultima = {
     _bindEvents: function() {
         var $this = this;
         
-        this.menuButton.on('click', function(e) {
+        this.menuButton.off('click.ultima').on('click.ultima', function(e) {
             $this.menuButton.toggleClass('menu-button-rotate');
             $this.topbarItems.removeClass('topbar-items-visible');
             
@@ -68,7 +68,7 @@ Ultima = {
             e.preventDefault();
         });
         
-        this.topbarMenuButton.on('click', function(e) {
+        this.topbarMenuButton.off('click.ultima').on('click.ultima', function(e) {
             $this.topbarMenuClick = true;
             $this.topbarItems.find('ul').removeClass('fadeInDown fadeOutUp');
             
@@ -92,7 +92,7 @@ Ultima = {
             e.preventDefault();
         });
         
-        this.menulinks.off('click').on('click', function(e) {
+        this.menu.off('click.ultima').on('click.ultima', 'a', function(e) {
             var link = $(this),
             item = link.parent(),
             submenu = item.children('ul'),
@@ -142,7 +142,7 @@ Ultima = {
             }
         });
         
-        this.menu.find('> li').on('mouseenter', function(e) {    
+        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','li', function(e) {    
             if($this.isHorizontal() && $this.isDesktop()) {
                 var item = $(this),
                 link = item.children('a'),
@@ -161,7 +161,7 @@ Ultima = {
             }
         });
         
-        this.profileButton.on('click', function(e) {
+        this.profileButton.off('click.ultima').on('click.ultima', function(e) {
             var profile = $this.profileMenu.prev('.profile'),
             expanded = profile.hasClass('profile-expanded');
             
@@ -174,8 +174,8 @@ Ultima = {
             
             e.preventDefault();
         });
-        
-        this.topbarLinks.on('click', function(e) {
+                
+        this.topbar.off('click.ultima').on('click.ultima','.topbar-items > li > a', function(e) {
             var link = $(this),
             item = link.parent(),
             submenu = link.next();
@@ -213,11 +213,11 @@ Ultima = {
             e.preventDefault();         
         });
         
-        $this.topbarItems.children('.search-item').on('click', function(e) {
+        $this.topbarItems.children('.search-item').off('click.ultima').on('click.ultima', function(e) {
             $this.topbarLinkClick = true;
         });
         
-        $(document.body).on('click', function() {
+        $(document.body).off('click.ultima').on('click', function() {
             if($this.isHorizontal() && !$this.horizontalMenuClick && $this.isDesktop()) {
                 $this.menu.find('.active-menuitem').removeClass('active-menuitem');
                 $this.menu.find('ul:visible').hide();
@@ -340,8 +340,8 @@ Ultima = {
 $(function() {     
 
     var ink, d, x, y;
-    $(document.body).off('mousedown.ripple','.ripplelink,.ultima-menu a, .ui-button,.ui-listbox-item')
-            .on('mousedown.ripple','.ripplelink,.ultima-menu a,.ui-button,.ui-listbox-item', null, function(e){
+    $(document.body).off('mousedown.ripple','.ripplelink,.layout-menu .ultima-menu li a, .ui-button,.ui-listbox-item')
+            .on('mousedown.ripple','.ripplelink,.layout-menu .ultima-menu li a,.ui-button,.ui-listbox-item', null, function(e){
         var element = $(this);
         
         if(element.find(".ink").length === 0){
