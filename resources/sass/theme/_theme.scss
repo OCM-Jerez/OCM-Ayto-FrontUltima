@@ -3204,7 +3204,7 @@ body {
     p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
     p-selectbutton.ng-dirty.ng-invalid .ui-button,
     p-togglebutton.ng-dirty.ng-invalid .ui-button {
-        border-bottom-color: #e62a10;
+        border-bottom-color: $invalidInputBorderColor;
     }
 }
 
