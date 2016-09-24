@@ -107,7 +107,7 @@ Ultima = {
                     item.removeClass('active-menuitem');
                     
                     if(horizontal) {
-                        if(item.parent().is($this.jq)) {
+                        if(item.parent().is($this.menu)) {
                             $this.menuActive = false;
                         }
                         
@@ -142,7 +142,7 @@ Ultima = {
             }
         });
         
-        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','li', function(e) {    
+        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li', function(e) {    
             if($this.isHorizontal() && $this.isDesktop()) {
                 var item = $(this),
                 link = item.children('a'),
