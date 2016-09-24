@@ -340,7 +340,7 @@ Ultima = {
 $(function() {     
 
     var ink, d, x, y;
-    $(document.body).off('mousedown.ripple','.ripplelink, .ui-button,.ui-listbox-item')
+    $(document.body).off('mousedown.ripple')
             .on('mousedown.ripple','.ripplelink,.ui-button,.ui-listbox-item', null, function(e){
         var element = $(this);
         
