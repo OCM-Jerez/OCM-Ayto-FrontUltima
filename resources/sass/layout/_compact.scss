@@ -651,8 +651,8 @@ body {
         
         .ui-calendar {
             .ui-datepicker-trigger {
-                top: 4px;
-                right: 25px;
+                top: -2px;
+                right: -4px;
                 height: $c-iconFontSize;
                 height: $c-iconFontSize;
             }
@@ -716,7 +716,7 @@ body {
         .ui-fluid {
             .ui-calendar {
                 .ui-datepicker-trigger.ui-button {
-                    top: -6px;
+                    top: -2px;
                 }
             }
         }
