@@ -716,14 +716,18 @@ body {
             }
         }
         
-        > .fa-arrowthick-1-s {
-            font-size: 18px;
-            color: $accentColor;
+        .ui-datatable-tablewrapper {
+            > .fa-arrow-down {
+                margin-left: -4px;
+                margin-top: -4px;
+            }
+            
+            > .fa-arrow-up {
+                margin-top: -4px;
+                margin-left: -4px;
+            }
         }
         
-        > .fa-arrowthick-1-n {
-            display: none !important;
-        }
         
         &.ui-datatable-scrollable {
             .ui-datatable-scrollable-header,  .ui-datatable-scrollable-footer {
