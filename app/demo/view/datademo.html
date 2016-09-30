@@ -2,13 +2,13 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>DataTable</h1>
-            <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" 
-                [paginator]="true" [rows]="10" [responsive]="true">
+            <p-dataTable [value]="cars"
+                [paginator]="true" [rows]="10" [responsive]="true" editable="true">
                 <header>List of Cars</header>
-                <p-column field="vin" header="Vin" [sortable]="true"></p-column>
-                <p-column field="year" header="Year" [sortable]="true"></p-column>
-                <p-column field="brand" header="Brand" [sortable]="true"></p-column>
-                <p-column field="color" header="Color" [sortable]="true"></p-column>
+                <p-column field="vin" header="Vin" [sortable]="true" [editable]="true"></p-column>
+                <p-column field="year" header="Year" [sortable]="true" [editable]="true"></p-column>
+                <p-column field="brand" header="Brand" [sortable]="true" [editable]="true"></p-column>
+                <p-column field="color" header="Color" [sortable]="true" [editable]="true"></p-column>
             </p-dataTable>
         </div>
     </div>

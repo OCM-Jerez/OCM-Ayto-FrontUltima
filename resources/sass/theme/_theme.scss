@@ -647,6 +647,11 @@ body {
                         border-color: #e62a10;
                         color: #ffffff;
                     }
+                    
+                    input.ui-cell-editor {
+                        padding: 2px 2px 1px 2px;
+                        font-size: $inputFontSize;
+                    }
                  }
                 
                 &.ui-widget-content {
@@ -1014,6 +1019,13 @@ body {
         }
     }
     
+    .ui-togglebutton {
+        &.ui-state-active {
+            background-color: $accentColor;
+            color: $accentTextColor;
+        }
+    }
+    
     .ui-splitbutton {
         @include border-radius(4px);
         -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
@@ -1181,7 +1193,7 @@ body {
             .ui-autocomplete-multiple-container {
                 &.ui-inputtext {
                     box-sizing: border-box;
-                    padding: 2px 2px 1px 2px;
+                    padding: 2px 2px 0px 2px;
                 }
                 
                 &.ui-state-focus {
@@ -1199,6 +1211,7 @@ body {
                     padding: 0;
                     font-size: $fontSize;
                     margin: 0;
+                    vertical-align: bottom;
                 }
             }
             
@@ -3241,17 +3254,17 @@ body {
                         }
                     }
                     
-                    .fa-arrow-1-e {
+                    .fa-angle-right {
                         @include icon-override("play_arrow"); @include rotate(90deg);
                     }
-                    .fa-arrowstop-1-e {
+                    .fa-angle-double-right {
                         @include icon-override("skip_previous"); @include rotate(-90deg);
                         
                     }
-                    .fa-arrow-1-w {
+                    .fa-angle-left {
                         @include icon-override("play_arrow"); @include rotate(-90deg);
                     }
-                    .fa-arrowstop-1-w {
+                    .fa-angle-double-left {
                         @include icon-override("skip_next"); @include rotate(-90deg);
                     }
                 }

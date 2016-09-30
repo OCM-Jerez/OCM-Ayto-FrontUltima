@@ -23,6 +23,7 @@
 .fa-upload  {@include icon-override("file_upload");}
 .fa-chevron-circle-left {@include icon-override("chevron_left");}
 .fa-chevron-circle-right {@include icon-override("chevron_right");}
+.fa-chevron-circle-down {@include icon-override("chevron_right"); @include rotate(90deg);}
 .fa-home {@include icon-override("home");}
 .fa-chevron-right {@include icon-override("chevron_right");}
 .fa-chevron-left {@include icon-override("chevron_left");}
