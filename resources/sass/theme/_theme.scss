@@ -591,6 +591,12 @@ body {
                         }
                     }
                 }
+                
+                &.ui-selection-column {
+                    .ui-chkbox-box {
+                        box-sizing: content-box;
+                    }
+                }
             }
             
             tr {
@@ -651,6 +657,12 @@ body {
                     input.ui-cell-editor {
                         padding: 2px 2px 1px 2px;
                         font-size: $inputFontSize;
+                    }
+                    
+                    &.ui-selection-column {
+                        .ui-chkbox-box, .ui-radiobutton-box {
+                            box-sizing: content-box;
+                        }
                     }
                  }
                 
