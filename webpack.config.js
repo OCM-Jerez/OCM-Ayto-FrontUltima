@@ -4,7 +4,8 @@ module.exports = {
     entry: {
         'polyfills': './app/polyfills.js',
         'vendor': './app/vendor.js',
-        'app': './app/boot.js'
+        'app': './app/boot.js',
+        'login.app': './login/login.js'
     },
     output: {
         path: __dirname,
