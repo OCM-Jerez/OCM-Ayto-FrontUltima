@@ -81,6 +81,7 @@ import {EmptyDemo} from './demo/view/emptydemo';
 import {ChartsDemo} from './demo/view/chartsdemo';
 import {FileDemo} from './demo/view/filedemo';
 import {UtilsDemo} from './demo/view/utilsdemo';
+import {Documentation} from './demo/view/documentation';
 
 import {CarService} from './demo/service/carservice';
 import {CountryService} from './demo/service/countryservice';
@@ -170,7 +171,8 @@ import {NodeService} from './demo/service/nodeservice';
         ChartsDemo,
         EmptyDemo,
         FileDemo,
-        UtilsDemo
+        UtilsDemo,
+        Documentation
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
