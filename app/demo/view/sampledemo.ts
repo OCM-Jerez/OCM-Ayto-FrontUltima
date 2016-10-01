@@ -73,9 +73,9 @@ export class SampleDemo implements OnInit {
         this.cities.push({label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}});
                 
         this.splitButtonItems = [
-            {label: 'Update', icon: 'fa-refresh'},
-            {label: 'Delete', icon: 'fa-close'},
-            {label: 'Home', icon: 'fa-home', url: 'http://www.primefaces.org/primeng'}
+            {label: 'Update', icon: 'ui-icon-update'},
+            {label: 'Delete', icon: 'ui-icon-close'},
+            {label: 'Home', icon: 'ui-icon-home', url: 'http://www.primefaces.org/primeng'}
         ];
         
         this.carOptions = [];
@@ -98,25 +98,25 @@ export class SampleDemo implements OnInit {
         this.menuItems = [{
             label: 'File',
             items: [
-                {label: 'New', icon: 'fa-plus'},
-                {label: 'Open', icon: 'fa-download'}
+                {label: 'New', icon: 'ui-icon-plus'},
+                {label: 'Open', icon: 'ui-icon-open-in-browser'}
             ]
         },
         {
             label: 'Edit',
             items: [
-                {label: 'Undo', icon: 'fa-refresh'},
-                {label: 'Redo', icon: 'fa-repeat'}
+                {label: 'Undo', icon: 'ui-icon-undo'},
+                {label: 'Redo', icon: 'ui-icon-redo'}
             ]
         }];
         
         this.panelMenuItems = [
             {
                 label: 'File',
-                icon: 'fa-file-o',
+                icon: 'ui-icon-insert-drive-file',
                 items: [{
                         label: 'New', 
-                        icon: 'fa-plus',
+                        icon: 'ui-icon-add',
                         items: [
                             {label: 'Project'},
                             {label: 'Other'},
@@ -128,22 +128,22 @@ export class SampleDemo implements OnInit {
             },
             {
                 label: 'Edit',
-                icon: 'fa-edit',
+                icon: 'ui-icon-edit',
                 items: [
-                    {label: 'Undo', icon: 'fa-mail-forward'},
-                    {label: 'Redo', icon: 'fa-mail-reply'}
+                    {label: 'Undo', icon: 'ui-icon-undo'},
+                    {label: 'Redo', icon: 'ui-icon-redo'}
                 ]
             },
             {
                 label: 'Help',
-                icon: 'fa-question',
+                icon: 'ui-icon-help-outline',
                 items: [
                     {
                         label: 'Contents'
                     },
                     {
                         label: 'Search', 
-                        icon: 'fa-search', 
+                        icon: 'ui-icon-search', 
                         items: [
                             {
                                 label: 'Text', 
@@ -161,21 +161,21 @@ export class SampleDemo implements OnInit {
             },
             {
                 label: 'Actions',
-                icon: 'fa-gear',
+                icon: 'ui-icon-settings',
                 items: [
                     {
                         label: 'Edit',
-                        icon: 'fa-refresh',
+                        icon: 'ui-icon-edit',
                         items: [
-                            {label: 'Save', icon: 'fa-save'},
-                            {label: 'Update', icon: 'fa-save'},
+                            {label: 'Save', icon: 'ui-icon-save'},
+                            {label: 'Update', icon: 'ui-icon-update'},
                         ]
                     },
                     {
                         label: 'Other',
-                        icon: 'fa-phone',
+                        icon: 'ui-icon-list',
                         items: [
-                            {label: 'Delete', icon: 'fa-minus'}
+                            {label: 'Delete', icon: 'ui-icon-delete'}
                         ]
                     }
                 ]
