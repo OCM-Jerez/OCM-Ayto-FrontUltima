@@ -1,9 +1,17 @@
 .landing-wrapper {
+    
+    .ui-button {   
+        @include border-radius(3px);
+             
+        &:hover {
+            background-color: $accentDarkColor;
+        }
+    }
         
     #header {
         width: 100%;
         min-height: 400px;
-        background:  url("\#{resource['ultima-layout:images/landing/landing-header.png']}") top left no-repeat #f7f7f7;
+        background:  url("../images/landing/landing-header.png") top left no-repeat #f7f7f7;
         background-size: 100% auto;
         
         .header-top {
@@ -16,7 +24,7 @@
                 vertical-align: middle;
                 width: 200px;
                 height: 30px;
-                background: url("\#{resource['ultima-layout:images/logo.png']}") top left no-repeat;
+                background: url("../images/logo.png") top left no-repeat;
             }
             
             #menu {
@@ -45,10 +53,15 @@
             }
             
             #menu-button {
+                height: 36px;
+                margin-top: -2px;
                 float: right;
-                font-size: 36px;
                 color: #ffffff;
                 display: none;
+                
+                i {
+                    font-size: 36px;
+                }
             }
         }
         
@@ -115,7 +128,7 @@
     }
     
     #promotion {
-        background:  url("\#{resource['ultima-layout:images/landing/promotion.png']}") top left no-repeat;
+        background: url("../images/landing/promotion.png") top left no-repeat;
         background-size: 100% auto;
         
         .ui-lg-8 {
@@ -446,7 +459,7 @@
         .header {
             .header-top {
                 .logo {
-                    background: url("\#{resource['ultima-layout:images/logo2x.png']}") top left no-repeat;
+                    background: url("../images/logo2x.png") top left no-repeat;
                     background-size: 200px 30px;
                 }
             }
