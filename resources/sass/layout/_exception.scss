@@ -32,6 +32,14 @@
         }
     }
     
+    .ui-button {   
+        @include border-radius(3px);
+             
+        &:hover {
+            background-color: $accentDarkColor;
+        }
+    }
+    
     &.error-page {
         .exception-type {
             background-color: #e62a10;
