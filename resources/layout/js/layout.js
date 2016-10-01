@@ -120,15 +120,28 @@ Ultima = {
             }
             else {                
                 if(horizontal) {
-                    $this.deactivateItems(item.siblings());
-                    item.addClass('active-menuitem');
-                    $this.menuActive = true;
-                    submenu.show();
+                    if(submenu.length) {
+                        $this.deactivateItems(item.siblings());
+                        item.addClass('active-menuitem');
+                        $this.menuActive = true;
+                        submenu.show();
+                    }
+                    else {
+                        $this.deactivateHorizontalMenu();
+                    }
                 }
                 else {
                     $this.deactivateItems(item.siblings(), true);
                     $this.activate(item);
                 }
+            }
+            
+            if($this.isOverlay()||!$this.isDesktop()) {
+                if(!submenu.length) {
+                    $this.container.removeClass('layout-menu-overlay-active layout-menu-static-active');
+                    $this.disableModal();
+                    $this.menuButton.toggleClass('menu-button-rotate');
+                }                
             }
             
             if(!horizontal) {
@@ -219,9 +232,7 @@ Ultima = {
         
         $(document.body).off('click.ultima').on('click', function() {
             if($this.isHorizontal() && !$this.horizontalMenuClick && $this.isDesktop()) {
-                $this.menu.find('.active-menuitem').removeClass('active-menuitem');
-                $this.menu.find('ul:visible').hide();
-                $this.menuActive = false;
+                $this.deactivateHorizontalMenu();
             }
             
             if(!$this.topbarMenuClick && !$this.topbarLinkClick) {
@@ -236,6 +247,12 @@ Ultima = {
             $this.topbarLinkClick = false;
             $this.topbarMenuClick = false;
         });
+    },
+    
+    deactivateHorizontalMenu() {
+        this.menu.find('.active-menuitem').removeClass('active-menuitem');
+        this.menu.find('ul:visible').hide();
+        this.menuActive = false;
     },
     
     activate: function(item) {
@@ -319,6 +336,10 @@ Ultima = {
     
     isHorizontal: function() {
         return this.container.hasClass('menu-layout-horizontal');
+    },
+    
+    isOverlay: function() {
+        return this.container.hasClass('menu-layout-overlay');
     },
     
     isTablet: function() {
