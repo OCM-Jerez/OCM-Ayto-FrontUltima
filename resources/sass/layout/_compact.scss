@@ -1126,6 +1126,45 @@ body {
                         > li {
                             > ul {
                                 top: 36px;
+                                
+                                li {
+                                    a {
+                                        padding: 8px 16px 8px 16px;
+                                        font-size: $c-fontSize;
+                                    }
+                                    
+                                    ul {
+                                        li {
+                                            a {
+                                                padding-left: 32px;
+                                            }
+                                        }
+                                        
+                                        ul {
+                                            li {
+                                                a {
+                                                    padding-left: 48px;
+                                                }
+                                            }
+                                            
+                                            ul {
+                                                li {
+                                                    a {
+                                                        padding-left: 64px;
+                                                    }
+                                                }
+                                                
+                                                ul {
+                                                    li {
+                                                        a {
+                                                            padding-left: 80px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
