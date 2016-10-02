@@ -21,6 +21,10 @@ Ultima = {
         this.topbarMenuClick = false;
 
         this._bindEvents();
+        
+        if(!this.container.hasClass('menu-layout-horizontal')) {
+            this.restoreMenuState();
+        }
                 
         this.menuWrapper.children('.nano').nanoScroller({flash:true});
     },
@@ -38,11 +42,9 @@ Ultima = {
                 
                 if($this.container.hasClass('layout-menu-overlay-active')) {
                     $this.enableModal();
-                    $this.enableSwipe();
                 }
                 else {
                     $this.disableModal();
-                    $this.disableSwipe();
                 }
             }
             //static
@@ -54,13 +56,11 @@ Ultima = {
                     if($this.container.hasClass('layout-menu-static-active')) {
                         $this.container.removeClass('layout-menu-static-active');
                         $this.disableModal();
-                        $this.disableSwipe();
                     }
                     else {
                         $this.container.addClass('layout-menu-static-active');
                         $this.container.removeClass('layout-menu-static-inactive');
                         $this.enableModal();
-                        $this.enableSwipe();
                     }
                 }
             }
@@ -320,20 +320,7 @@ Ultima = {
     disableModal: function() {
         this.modal.remove();
     },
-    
-    enableSwipe: function() {
-        /*var $this = this;
-        this.menuWrapper.swipe({
-            swipeLeft: function() {
-                $this.menuButton.click();
-            }
-        });*/
-    },
-    
-    disableSwipe: function() {
-        /*this.menuWrapper.swipe('destroy');*/
-    },
-    
+        
     isHorizontal: function() {
         return this.container.hasClass('menu-layout-horizontal');
     },
@@ -353,6 +340,33 @@ Ultima = {
 
     isMobile: function() {
         return window.innerWidth <= 640;
+    },
+    
+    restoreMenuState: function() {
+        var $this = this;
+        setTimeout(function() {
+            var activeMenuLink = $this.menu.find('a.active-menulink');
+            if(activeMenuLink.length) {
+                var menuitem = activeMenuLink.parent();
+                $this.restoreMenuitem(menuitem);
+                
+                var parentList = menuitem.parent();
+                while(parentList.get(0) != $this.menu.get(0)) {
+                    var parentItem = parentList.parent();
+                    $this.restoreMenuitem(parentItem);
+                    parentList = parentItem.parent();
+                }
+            }
+        }, 50);
+    },
+    
+    restoreMenuitem: function(item) {
+        item.addClass('active-menuitem');
+        
+        var submenu = item.children('ul');
+        if(submenu.length) {
+            submenu.show();
+        }
     }
     
 };
