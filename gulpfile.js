@@ -13,6 +13,9 @@ gulp.task('build', function() {
         '!app/**/*.js',
         '!app/**/*.map',
         '!app/**/*.d.ts',
+        '!login/**/*.js',
+        '!login/**/*.map',
+        '!login/**/*.d.ts',
         '**'
     ]).pipe(zip('ultima.zip'))
       .pipe(gulp.dest('.'));
