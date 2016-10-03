@@ -172,12 +172,12 @@
             <!-- Left Side -->
             <div class="card card-w-title">
                 <h1>DataGrid</h1>
-                <p-dataGrid [value]="carsLarge" [columns]="4" [paginator]="true" [rows]="20">
+                <p-dataGrid [value]="carsLarge" [paginator]="true" [rows]="20">
                     <header>
                         List of Cars
                     </header>
                     <template let-car>
-                        <div style="padding:3px">
+                        <div style="padding:3px" class="ui-g-12 ui-md-3">
                             <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
                                 <img src="resources/demo/images/car/{{car.brand}}.gif">
                                 <div class="car-detail">{{car.year}} - {{car.color}}</div>
