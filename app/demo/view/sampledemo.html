@@ -35,10 +35,10 @@
                     </div>
                     
                     <div class="ui-g-12 ui-md-2">
-                        <label for="mask">Mask</label>
+                        <label for="dropdown">Dropdown</label>
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <p-inputMask mask="dd/mm/yyyy" placeholder="Date"></p-inputMask>
+                        <p-dropdown id="dropdown" [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false"></p-dropdown>
                     </div>
                     <div class="ui-g-12 ui-md-2">
                         <label for="password">Password</label>
@@ -48,10 +48,10 @@
                     </div>
                     
                     <div class="ui-g-12 ui-md-2">
-                        <label for="dropdown">Dropdown</label>
+                        <label for="mask">Mask</label>
                     </div>
                     <div class="ui-g-12 ui-md-4">
-                        <p-dropdown id="dropdown" [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false"></p-dropdown>
+                        <p-inputMask mask="99/99/9999" slotChar="dd/mm/yyyy" placeholder="Date"></p-inputMask>
                     </div>
                     <div class="ui-g-12 ui-md-2">
                         <label for="spinner">Spinner</label>
@@ -144,14 +144,16 @@
                         </div>
                         <div class="ui-g-12">
                             <span class="md-inputfield">
-                                <input type="password" pPassword>
+                                <input type="password" pInputText>
                                 <label>Password</label>
                             </span>
                         </div>
                     </div>
                     
                     <footer>
-                        <button type="button" label="Login" icon="ui-icon-person" (click)="dialogVisible=false"></button>
+                        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                            <button type="button" label="Login" icon="ui-icon-person" (click)="dialogVisible=false" pButton></button>
+                        </div>
                     </footer>
                 </p-dialog>
             </div>

@@ -24,10 +24,6 @@
         <div class="card card-w-title">
             <h1>TieredMenu</h1>
             <p-tieredMenu [model]="tieredItems" [style]="{'width':'250px','margin-bottom':'20px'}"></p-tieredMenu>
-            
-            <h1>Overlay</h1>
-            <p-tieredMenu #tmenu [model]="tieredItems" [popup]="true" [style]="{'width':'250px'}"></p-tieredMenu>
-            <button #btn type="button" pButton icon="ui-icon-open-in-new" label="Show" (click)="tmenu.toggle($event)" style="width:auto"></button>
         </div>
     </div>
     <div class="ui-g-12 ui-lg-6">

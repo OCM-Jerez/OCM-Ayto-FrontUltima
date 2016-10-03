@@ -54,6 +54,8 @@ export class SampleDemo implements OnInit {
     
     carouselCars: Car[];
     
+    maskValue: string;
+    
     constructor(private carService: CarService, private countryService: CountryService, private nodeService: NodeService) { }
     
     ngOnInit() {
