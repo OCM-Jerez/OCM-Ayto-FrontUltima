@@ -963,10 +963,14 @@ body {
                             position: static;
                             display: inline-block;
                             vertical-align: middle;
-                            margin-right: 6px;
+                            margin-right: 0px;
                         }
                     }
                 }
+            }
+
+            .ui-menu-parent .ui-menu-list {
+                margin-left: 24px;
             }
         }
         
