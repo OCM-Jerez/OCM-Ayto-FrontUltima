@@ -249,7 +249,7 @@ Ultima = {
         });
     },
     
-    deactivateHorizontalMenu() {
+    deactivateHorizontalMenu: function() {
         this.menu.find('.active-menuitem').removeClass('active-menuitem');
         this.menu.find('ul:visible').hide();
         this.menuActive = false;
