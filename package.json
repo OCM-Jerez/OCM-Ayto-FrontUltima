@@ -1,6 +1,6 @@
 {
   "name": "primeng-ultima",
-  "version": "1.0.1",
+  "version": "1.0.2-SNAPSHOT",
   "scripts": {
     "postinstall": "npm run typings install",
     "tsc": "tsc",
