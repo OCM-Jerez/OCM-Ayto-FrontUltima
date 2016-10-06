@@ -155,10 +155,10 @@ Ultima = {
             }
         });
         
-        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li', function(e) {    
+        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li > a', function(e) {    
             if($this.isHorizontal() && $this.isDesktop()) {
-                var item = $(this),
-                link = item.children('a'),
+                var link = $(this),
+                item = link.parent(),
                 submenu = item.children('ul');
                 
                 if(!item.hasClass('active-menuitem')) {
