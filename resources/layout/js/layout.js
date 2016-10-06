@@ -230,16 +230,12 @@ Ultima = {
             $this.topbarLinkClick = true;
         });
         
-        $(document.body).off('click.ultima').on('click', function() {
+        $(document.body).off('click.ultima').on('click.ultima', function() {
             if($this.isHorizontal() && !$this.horizontalMenuClick && $this.isDesktop()) {
                 $this.deactivateHorizontalMenu();
             }
-            
             if(!$this.topbarMenuClick && !$this.topbarLinkClick) {
                 $this.topbarItems.find('.active-top-menu').removeClass('active-top-menu');
-            }
-            
-            if(!$this.topbarMenuClick && !$this.topbarLinkClick) {
                 $this.topbarItems.removeClass('topbar-items-visible');
             }
             
