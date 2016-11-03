@@ -782,13 +782,6 @@ body {
         display: block;
         position:relative; 
         
-        input:focus ~ label,
-        input.ui-state-filled ~ label {
-          top:-20px;
-          font-size:12px;
-          color:$primaryColor;
-        }
-        
         label {
           color:#999; 
           font-weight:normal;
@@ -799,6 +792,15 @@ body {
           transition: 0.3s ease all; 
           -moz-transition: 0.3s ease all; 
           -webkit-transition: 0.3s ease all;
+        }
+        
+        input:focus ~ label,
+        input.ui-state-filled ~ label,
+        .ui-inputwrapper-focus ~ label,
+        .ui-inputwrapper-filled ~ label {
+          top:-20px;
+          font-size:12px;
+          color:$primaryColor;
         }
     }
     
