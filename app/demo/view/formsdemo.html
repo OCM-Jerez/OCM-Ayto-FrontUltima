@@ -81,13 +81,10 @@
                     <p-calendar id="popup" placeholder="Popup"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <p-calendar id="multiple" [numberOfMonths]="3" placeholder="Multiple"></p-calendar>
+                    <p-calendar id="datetime" dateFormat="mm/dd/yy" showTime="true" placeholder="DateTime"></p-calendar>
                 </div>
                 <div class="ui-g-12">
-                    <p-calendar id="datetime" dateFormat="mm/dd/yy" timeFormat="HH:mm" placeholder="DateTime"></p-calendar>
-                </div>
-                <div class="ui-g-12">
-                    <p-calendar id="time" dateFormat="mm/dd/yy" timeFormat="HH:mm:ss" [timeOnly]="true" placeholder="Time"></p-calendar>
+                    <p-calendar id="time" showTime="true" [timeOnly]="true" placeholder="Time"></p-calendar>
                 </div>
                 <div class="ui-g-12">
                     <p-calendar id="showIcon" [showIcon]="true" placeholder="Button"></p-calendar>
