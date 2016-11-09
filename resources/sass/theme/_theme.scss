@@ -250,6 +250,7 @@ body {
             padding: $inputOptionPadding;
             margin: 0;
             @include border-radius(0px);
+            color: $textColor;
             
             &.ui-state-hover {
                 @include hover-element();
@@ -333,7 +334,8 @@ body {
                 padding: $inputOptionPadding;
                 margin: 0;
                 @include border-radius(0px);
-                
+                color: $textColor;
+
                 &.ui-state-hover {
                     @include hover-element();
                 }
@@ -374,6 +376,7 @@ body {
             @include rippleitem();
             @include transition(background-color .3s);
             @include border-radius(0px);
+            color: $textColor;
 
             &.ui-state-hover {
                 @include hover-element();
@@ -1174,6 +1177,7 @@ body {
                 font-size: $inputOptionFontSize;
                 padding: $inputOptionPadding;
                 @include border-radius(0);
+                color: $textColor;
                 
                 .ui-autocomplete-query {
                     font-weight: 700;
@@ -1288,6 +1292,7 @@ body {
             padding: $inputOptionPadding;
             @include transition(background-color .3s);
             @include border-radius(0);
+            color: $textColor;
             
             &.ui-state-hover {
                 @include hover-element();
@@ -1417,6 +1422,7 @@ body {
         .ui-multiselect-item {
             font-size: $inputOptionFontSize;
             padding: $inputOptionPadding;
+            color: $textColor;
             
             label {
                 padding-left: 28px;
@@ -2461,6 +2467,7 @@ body {
                             display: inline-block;
                             vertical-align: middle;
                             float: none;
+                            color: $textColor;
                         }
                         
                         .ui-menuitem-text {
