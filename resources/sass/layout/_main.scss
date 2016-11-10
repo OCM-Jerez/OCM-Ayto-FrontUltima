@@ -921,6 +921,7 @@ body {
                                 color: $textColor;
                                 
                                 &:focus {
+                                    margin-bottom: -1px;
                                     border-color: $dividerColor;
                                 }
                             }
@@ -971,9 +972,7 @@ body {
 }
 
 @media (max-width: 399px) {
-    
     .layout-container {
-        
         .topbar {
             .topbar-right {
                 #topbar-menu-button {
