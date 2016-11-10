@@ -3232,6 +3232,17 @@ body {
         }
     }
     
+    .ui-inplace {
+        .ui-inplace-display {
+            @include transition(background-color .3s);
+            @include border-radius(3px);
+            
+            &.ui-state-hover {
+                background-color: $hoverBgColor;
+            }
+        }
+    }
+    
     /* Validation */
     .ui-inputtext.ng-dirty.ng-invalid,
     p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
