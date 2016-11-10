@@ -1,16 +1,22 @@
 <div class="ui-g">
     <div class="ui-g-12">
-        <div class="card docs">
+        <div class="card docs">            
             <h1>Layout</h1>
             <p>Ultima consists of 3 main parts; the html template, layout resources and theme resources. application.html inside app folder is the html template for the base layout having a router-outlet 
                 for routing. Required resources for layout are placed inside the resources/layout folder and similarly theme resources are inside resources/theme folder. 
-                To install ultima, use the application.html content as your main template and copy the layout-theme resources to get the styling and functionality.
-                CSS and JS resources that belong to layout-theme are loaded with link-script tags in index.html of sample application however you may also use a bundler like webpack to install them.
+                To install ultima, use the application.html content as your main template and copy the layout-theme resources to your application to get the styling and functionality.
+                CSS and JS resources that belong to layout-theme are loaded with link-script tags in index.html of sample application however you may also use a bundler like webpack to install them as well.
             </p>
+            
+            <p style="background-color: #e8e8e8; padding: 8px 14px">If you have an existing CLI application, see the CLI section below for integration.</p>
             
             <h1>Initialize</h1>
             <p>After the view of your application is initialized, call Ultima.init by passing the native element to initiate the layout.</p>
 <pre>
+import &#123;Component,AfterViewInit,ElementRef&#125; from '@angular/core';
+
+declare var Ultima: any;
+    
 @Component(&#123;
     selector: 'my-app',
     templateUrl: 'app/application.html'
@@ -245,13 +251,14 @@ export class Application implements AfterViewInit &#123;
             </ul>                 
         </div>
         <div class="card docs">
-            <h1>Angular CLI with Ultima</h1>
-            <p>For creating a project with using angular-cli, we need to download the angular-cli.</p>
+            <h1>Angular CLI Integration</h1>
+            <p>If you have an existing application, skip to the "Integration with an Existing CLI Application" section. 
+                For creating a project with using angular-cli, we need to download the angular-cli.</p>
 <pre>
 npm install -g angular-cli
 </pre>
             <p>After we successfully download the cli, we can access our cli commands from anywhere.</p>
-            <h1>Creating an Empty Project with Angular CLI</h1>
+            <h2>Creating an Empty Project with Angular CLI</h2>
 <pre>
 ng new ultima-with-cli
 cd ultima-with-cli
@@ -272,6 +279,7 @@ npm install font-awesome --save
 @import url('../node_modules/primeng/resources/primeng.min.css');
 @import url('../node_modules/font-awesome/css/font-awesome.min.css');
 </pre>
+        <h1>Integration with an Existing CLI Application</h1>
         <p>Now we are ready for Ultima setup.We need to inject our ultima files and folders to our CLI project.
            First step is our layout for Ultima.In Ultima project under the app folder we have our root application.
            application.ts and application.html we need to add these two files to our cli project.After this step

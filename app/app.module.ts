@@ -57,6 +57,7 @@ import {SlideMenuModule} from 'primeng/primeng';
 import {SliderModule} from 'primeng/primeng';
 import {SpinnerModule} from 'primeng/primeng';
 import {SplitButtonModule} from 'primeng/primeng';
+import {StepsModule} from 'primeng/primeng';
 import {TabMenuModule} from 'primeng/primeng';
 import {TabViewModule} from 'primeng/primeng';
 import {TerminalModule} from 'primeng/primeng';
@@ -146,6 +147,7 @@ import {NodeService} from './demo/service/nodeservice';
         SliderModule,
         SpinnerModule,
         SplitButtonModule,
+        StepsModule,
         TabMenuModule,
         TabViewModule,
         TerminalModule,

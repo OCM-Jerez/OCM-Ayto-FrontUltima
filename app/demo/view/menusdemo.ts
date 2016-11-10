@@ -1,8 +1,14 @@
-import {Component,OnInit} from '@angular/core';
+import {Component,OnInit,ViewEncapsulation} from '@angular/core';
 import {MenuItem} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/menusdemo.html'
+    templateUrl: 'app/demo/view/menusdemo.html',
+    styles: [`
+        .ui-steps-item {
+            width: 25%
+        }
+    `],
+    encapsulation: ViewEncapsulation.None
 })
 export class MenusDemo implements OnInit {
 
@@ -17,6 +23,8 @@ export class MenusDemo implements OnInit {
     private megaMenuItems: MenuItem[];
     
     private panelMenuItems: MenuItem[];
+    
+    private stepsItems: MenuItem[];
 
     ngOnInit() {
         this.breadcrumbItems = [];
@@ -306,6 +314,21 @@ export class MenusDemo implements OnInit {
                         ]
                     }
                 ]
+            }
+        ];
+        
+        this.stepsItems = [
+            {
+                label: 'Personal'
+            },
+            {
+                label: 'Seat'
+            },
+            {
+                label: 'Payment'
+            },
+            {
+                label: 'Confirmation'
             }
         ];
     }
