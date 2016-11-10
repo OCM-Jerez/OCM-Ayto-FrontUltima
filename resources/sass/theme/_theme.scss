@@ -1711,6 +1711,7 @@ body {
                 font-size: 24px;
                 right: 8px;
                 @include material-icon("play_circle_outline");
+                color: #ffffff;
                 
                 .fa {
                     display: none;
@@ -1728,6 +1729,7 @@ body {
                 @include material-icon("play_circle_outline");
                 @include rotate(180deg);
                 left: 8px;
+                color: #ffffff;
                 
                 .fa {
                     display: none;
