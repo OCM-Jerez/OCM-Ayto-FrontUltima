@@ -1895,6 +1895,12 @@ body {
             color: #ffffff;
         }
         
+        .ui-messages-success {
+            background-color: #8BC34A;
+            border-color: #8BC34A;
+            color: #ffffff;
+        }
+        
         .ui-messages-close {
             text-decoration: none;
             color: #fff;
@@ -1933,10 +1939,25 @@ body {
     /* Info */
     .ui-messages .ui-messages-icon {
         background: none;
-        @include material-icon("info");
         font-size: 28px;
         color: #fff;
         margin-top: -2px;
+        
+        &.fa-info {
+            @include material-icon("info");
+        }
+        
+        &.fa-warning {
+            @include material-icon("warning");
+        }
+        
+        &.fa-close {
+            @include material-icon("error_outline");
+        }
+        
+        &.fa-check {
+            @include material-icon("check_circle");
+        }
     }
     
     .ui-growl {
@@ -1954,27 +1975,24 @@ body {
         .ui-growl-item {
             .ui-growl-image {
                 background: none;
-                color: #ffffff;      
-    
-                &.ui-growl-image-info {
-                    @include material-icon("info");        
-                    font-size: 36px;
+                color: #ffffff;  
+                font-size: 36px;
+                
+                &.fa-info-circle {
+                    @include material-icon("info");
                 }
                 
-                &.ui-growl-image-error {
-                    @include material-icon("error");
-                    font-size: 36px;
+                &.fa-warning {
+                    @include material-icon("warning");
                 }
                 
-                &.ui-growl-image-warn {
-                    @include material-icon("warn");
-                    font-size: 36px;
+                &.fa-close {
+                    @include material-icon("error_outline");
                 }
                 
-                &.ui-growl-image-fatal {
-                    @include material-icon("fatal");
-                    font-size: 36px;
-                }
+                &.fa-check {
+                    @include material-icon("check_circle");
+                }   
             }
             
             .ui-growl-message {

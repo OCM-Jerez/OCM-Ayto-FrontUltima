@@ -22,6 +22,11 @@ export class MessagesDemo {
         this.msgs = [];
         this.msgs.push({severity:'error', summary:'Error Message', detail:'Validation failed'});
     }
+    
+    showSuccess() {
+        this.msgs = [];
+        this.msgs.push({severity:'success', summary:'Success Message', detail:'Message sent'});
+    }
 
     showMultiple() {
         this.msgs = [];
