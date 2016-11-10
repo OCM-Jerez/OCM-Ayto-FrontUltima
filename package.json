@@ -6,7 +6,7 @@
     "tsc:w": "tsc -w",
     "webpack": "webpack",
     "webpack:w": "webpack -w",
-    "webpack-dev-server": "webpack-dev-server",
+    "webpack-dev-server": "webpack-dev-server --inline",
     "start": "npm run webpack-dev-server"
   },
   "license": "ISC",
