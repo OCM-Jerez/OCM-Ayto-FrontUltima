@@ -3160,65 +3160,6 @@ body {
         }
     }
     
-    .ui-log {
-        .ui-log-header {
-            padding: $headerPadding;
-            height: auto;
-            
-            > .ui-log-button {
-                line-height: 16px;
-                position: static;
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 4px;
-                border: 1px solid transparent;
-                padding: 1px 3px;
-                @include border-radius(50%);
-                @include transition(background-color .3s);
-                
-                &.ui-state-hover {
-                    background-color: $primaryLightColor;
-                }
-            }
-        }
-    }
-    
-    .ui-tagcloud {
-        li {
-            margin: 4px 0px;
-            
-            a {
-                @include transition(background-color .3s);
-                @include border-radius(3px);
-                
-                &:hover {
-                    @include hover-element();
-                }
-            } 
-        }
-    }
-    
-    .timeline-frame {
-        .timeline-event {
-            border-color: $dividerColor;
-            background-color: #ffffff;
-            
-            &.ui-state-active {
-                background-color: $accentColor;
-                border-color: $accentColor;
-                color: $accentTextColor;
-            }
-        }
-        
-        .timeline-axis {
-            border-color: $dividerColor;
-        }
-        
-        .timeline-navigation {
-            height: 36px;
-        }
-    }
-    
     .ui-tooltip {
         @include opacity(.9);
         font-size: $fontSize - 2px;
