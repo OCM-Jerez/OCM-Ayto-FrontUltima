@@ -432,10 +432,6 @@ body {
             box-sizing: border-box;
             color: #ffffff;
             
-            span {
-                display: none;
-            }
-            
             &.ui-state-hover {
                 background-color: $primaryLightColor;
                 @include border-radius(50%);
