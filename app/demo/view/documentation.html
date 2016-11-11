@@ -264,26 +264,25 @@ ng new ultima-with-cli
 cd ultima-with-cli
 ng serve
 </pre>
-        <p>We created an empty cli project called ultima-with-cli.Now we will add primeng and ultima to our project.</p>
+        <p>We created an empty cli project called ultima-with-cli.Now we will add primeng and ultima to our project.If you have an existing
+            cli project then you can skip the above section.
+        </p>
         <p>In our project directory:</p>
 <pre>
 npm install primeng --save
-npm install font-awesome --save
 </pre>
-        <p>This command will install primeng and it updates our package.json file aswell.
-            And we need font-awesome for our icons.Now we will add our css files to cli project.
+        <p>This command will install primeng and it updates our package.json file aswell.Now we will add our css files to cli project.
             After we created our cli project inside of our project we have a folder called src.This folder contains all of our project.
             Inside of src there is a file called styles.css.We will import our neccessary css files to the styles.css with @import.
         </p>
 <pre>
 @import url('../node_modules/primeng/resources/primeng.min.css');
-@import url('../node_modules/font-awesome/css/font-awesome.min.css');
 </pre>
         <h1>Integration with an Existing CLI Application</h1>
         <p>Now we are ready for Ultima setup.We need to inject our ultima files and folders to our CLI project.
            First step is our layout for Ultima.In Ultima project under the app folder we have our root application.
            application.ts and application.html we need to add these two files to our cli project.After this step
-            we are ready for importing our layout and theme css files.Inside our project there is a confi file called
+            we are ready for importing our layout and theme css files.Inside our project there is a config file called
             angular-cli.json.Inside of this file we have styles array for styles and scripts array for scripts.When we 
             add our css and js files to config angular-cli automatically bundles our all css and js files.For example
             for using Ultima with blue theme and layout we need to add these paths to the styles array.</p>
@@ -304,7 +303,9 @@ npm install font-awesome --save
         "./app/shared/resources/layout/js/swipe.js"
       ]
 </pre>
-        <p>Of course before all of these we need to transport necessary files and folders from Ultima to our angular-cli project.</p>
+        <p>Of course before all of these we need to transport necessary files and folders from Ultima to our angular-cli project.
+           When we transport necessary files and folders we need to add primeng components to the app.modules.ts for using them.
+        </p>
         <h1>Layout</h1>
         <p>Earlier we talked about transporting Ultima root to our project (application.ts and application.html).In our project we have
             app.component.ts and app.component.html for root.What app.component.ts should look like:
