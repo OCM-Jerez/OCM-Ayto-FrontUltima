@@ -31,7 +31,7 @@
                     </div>
                     <div class="ui-g-12 ui-md-4">
                         <p-autoComplete [(ngModel)]="country" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name"
-                            placeholder="Countries"></p-autoComplete>
+                            placeholder="Countries" [minLength]="1"></p-autoComplete>
                     </div>
                     
                     <div class="ui-g-12 ui-md-2">
