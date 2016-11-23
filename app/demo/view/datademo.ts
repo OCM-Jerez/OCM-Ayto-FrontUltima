@@ -23,7 +23,11 @@ import {TreeNode} from 'primeng/primeng';
 })
 export class DataDemo implements OnInit {
 
-    cars: Car[];
+    cars1: Car[];
+    
+    cars2: Car[];
+    
+    cars3: Car[];
     
     selectedCar: Car;
     
@@ -48,7 +52,9 @@ export class DataDemo implements OnInit {
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) { }
     
     ngOnInit() {
-        this.carService.getCarsMedium().then(cars => this.cars = cars);
+        this.carService.getCarsMedium().then(cars => this.cars1 = cars);
+        this.carService.getCarsMedium().then(cars => this.cars2 = cars);
+        this.carService.getCarsMedium().then(cars => this.cars3 = cars);
         this.carService.getCarsMedium().then(cars => this.sourceCars = cars);
         this.targetCars = [];
         this.carService.getCarsSmall().then(cars => this.orderListCars = cars);

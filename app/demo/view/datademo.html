@@ -2,7 +2,7 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>DataTable</h1>
-            <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar" 
+            <p-dataTable [value]="cars1" selectionMode="single" [(selection)]="selectedCar" 
                 [paginator]="true" [rows]="10" [responsive]="true">
                 <header>List of Cars</header>
                 <p-column field="vin" header="Vin" [sortable]="true"></p-column>
@@ -16,7 +16,7 @@
         <!-- Left Side -->
         <div class="card card-w-title">
             <h1>DataGrid</h1>
-            <p-dataGrid [value]="cars" [paginator]="true" [rows]="9">
+            <p-dataGrid [value]="cars2" [paginator]="true" [rows]="9">
                 <header>
                     Grid of Cars
                 </header>
@@ -76,7 +76,7 @@
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>DataList - Paginator</h1>
-            <p-dataList [value]="cars" [paginator]="true" [rows]="5" styleClass="cars-datalist">
+            <p-dataList [value]="cars3" [paginator]="true" [rows]="5" styleClass="cars-datalist">
                 <header>
                     List of Cars
                 </header>
