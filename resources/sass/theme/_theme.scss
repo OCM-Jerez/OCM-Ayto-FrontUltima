@@ -796,7 +796,8 @@ body {
         input:focus ~ label,
         input.ui-state-filled ~ label,
         .ui-inputwrapper-focus ~ label,
-        .ui-inputwrapper-filled ~ label {
+        .ui-inputwrapper-filled ~ label,
+        .input:-webkit-autofill ~ label {
           top:-20px;
           font-size:12px;
           color:$primaryColor;
