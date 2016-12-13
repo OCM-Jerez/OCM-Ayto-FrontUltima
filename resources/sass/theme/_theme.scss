@@ -807,6 +807,20 @@ body {
           font-size:12px;
           color:$primaryColor;
         }
+
+        input.ng-invalid ~ label {
+            color: #e62a10;
+        }
+        
+        .ui-message {
+            &.ui-messages-error {
+                background-color: transparent;
+                border: 0 none;
+                margin: 0px;
+                color: #e62a10;
+                font-size: $errorMessageFontSize;
+            }
+        }
     }
     
     .ui-button, .ui-datepicker-buttonpane > button {

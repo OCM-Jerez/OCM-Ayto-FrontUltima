@@ -209,6 +209,14 @@ body {
         .ui-inputtext {
             font-size: $c-inputFontSize;
         }
+
+        .md-inputfield {
+            .ui-message {
+                &.ui-messages-error {
+                    font-size: $c-errorMessageFontSize;
+                }
+            }
+        }
         
         .ui-chkbox {
             line-height: 18px;
