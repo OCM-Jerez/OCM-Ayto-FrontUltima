@@ -26,7 +26,12 @@
                     <input type="text" pInputText placeholder="Disabled" disabled="disabled">
                 </div>
                 <div class="ui-g-12 ui-md-4">
-                    <input type="text" pInputText class="ng-dirty ng-invalid" readonly="true" placeholder="Invalid">
+                    <span class="md-inputfield">
+                        <input type="text" pInputText class="ng-dirty ng-invalid" readonly="true" placeholder="Invalid">
+                        <div class="ui-message ui-messages-error ui-corner-all">
+                            This field is required
+                        </div>
+                    </span>
                 </div>
                 <div class="ui-g-12 ui-md-4">
                     <input type="text" pInputText>
