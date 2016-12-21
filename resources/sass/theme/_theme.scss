@@ -339,6 +339,11 @@ body {
                 &.ui-state-hover {
                     @include hover-element();
                 }
+                
+                &.ui-state-highlight {
+                    background-color: $accentColor;
+                    color: $accentTextColor;
+                }
             }
         }
         
@@ -1084,6 +1089,14 @@ body {
             
             .fa {
                 margin-left: -12px;
+            }
+        }
+    }
+    
+    .ui-fluid {
+        .ui-splitbutton {
+            .ui-button:first-child {
+                width: calc(100% - 32px);
             }
         }
     }
