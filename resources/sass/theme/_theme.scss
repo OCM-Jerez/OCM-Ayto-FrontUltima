@@ -2694,18 +2694,13 @@ body {
             margin-bottom: 1px;
             
             a {
-                padding: 10px 16px 10px 42px;
+                padding: 10px 16px;
                 color: #ffffff;
                 font-size: $fontSize;
-                
-                &.ui-panelmenu-headerlink-hasicon {
-                    padding-left: 4.2em;
-                }
             }
             
             .fa {
                 color: #ffffff;
-                margin-top: -12px;
             }
             
             &.ui-state-active {

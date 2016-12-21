@@ -946,17 +946,12 @@ body {
         .ui-panelmenu {
             .ui-panelmenu-header {                
                 a {
-                    padding: 6px 10px 6px 36px;
+                    padding: 6px 10px;
                     font-size: $c-fontSize;
-                    
-                    &.ui-panelmenu-headerlink-hasicon {
-                        padding-left: 4em;
-                    }
                 }
                 
                 .fa {
                     color: #ffffff;
-                    margin-top: -10px;
                 }
             }
             
