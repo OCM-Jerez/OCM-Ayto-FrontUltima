@@ -211,11 +211,13 @@ body {
             
             .ui-fieldset-toggler {
                 padding: 12px;
+                height: 48px;
+                width: 48px;
                 background-color: $primaryColor;
                 color: #ffffff;
                 @include border-radius(50%);
                 @include transition(background-color .3s);
-                margin-top: -12px;
+                margin-top: -4px;
                 margin-right: 8px;
                 @include content-shadow();
                 
