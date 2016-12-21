@@ -1105,12 +1105,14 @@ body {
         
         .ui-chkbox-box {
             border: 2px solid #757575;
+            width: 20px;
+            height: 20px;
             @include transition(background-color .3s);
             
             .ui-chkbox-icon {
                 font-size: 20px;
                 margin-left: -2px;
-                margin-top: -2px;
+                margin-top: -1px;
             }
             
             &.ui-state-active {
@@ -1133,6 +1135,8 @@ body {
         
         .ui-radiobutton-box {
             border: 2px solid #757575;
+            width: 20px;
+            height: 20px;
             @include transition(box-shadow .3s);
             @include border-radius(50%);
             
@@ -1150,8 +1154,8 @@ body {
                 box-sizing: border-box;
                 position: absolute;
                 @include border-radius(50%);
-                top: -4px;
-                left: -3px;
+                top: 0;
+                left: 0;
                 width: 20px;
                 height: 20px;
                 transition: -webkit-transform ease .28s;
