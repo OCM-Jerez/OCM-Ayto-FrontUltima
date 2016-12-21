@@ -1784,13 +1784,13 @@ body {
                 box-sizing: border-box;
                 
                 a,span {
-                    padding: .2em;
+                    padding: 4px;
                     margin: 0;
                     text-align: center;
                     color: $textColor;
                     display: inline-block;
-                    height: 28px;
-                    width: 28px;
+                    height: 36px;
+                    width: 36px;
                     line-height: 28px;
                     @include border-radius(50%);
                     
