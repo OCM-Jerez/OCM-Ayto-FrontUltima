@@ -1156,7 +1156,9 @@ body {
             @include border-radius(50%);
             
             &.ui-state-focus {
+                border-color: $primaryColor;
                 @include content-shadow();
+                @include transition(box-shadow .3s,background-color .3s);
             }
             
             &.ui-state-active {
@@ -1287,7 +1289,8 @@ body {
     .ui-dropdown {
         border-bottom: 1px solid #bdbdbd;
         box-sizing: border-box;
-        @include border-radius(0);        
+        @include border-radius(0); 
+        @include transition(border-color .3s);      
         
         .ui-dropdown-trigger {
             height: 24px;
@@ -1310,7 +1313,10 @@ body {
             &.ui-inputtext {
                 font: $inputFontSize "Roboto","Helvetica Neue",sans-serif;
             }
-            
+        }
+        
+        &.ui-state-focus {
+            border-bottom: 2px solid $primaryColor;
         }
     }
     
@@ -1358,7 +1364,8 @@ body {
     .ui-multiselect {
         border-bottom: 1px solid #bdbdbd;
         box-sizing: border-box;
-        @include border-radius(0);  
+        @include border-radius(0);
+        @include transition(border-color .3s); 
         
         .ui-multiselect-label {
             padding: 0px 2px 0px 2px;
@@ -1379,6 +1386,10 @@ body {
                 color: $textSecondaryColor;
             }
         } 
+        
+        &.ui-state-focus {
+            border-bottom: 2px solid $primaryColor;
+        }
     }
     
     .ui-multiselect-panel.ui-widget {
