@@ -317,7 +317,7 @@ body {
     }
 
     .layout-main {
-        padding: 6em 1em 1em 1em;
+        padding: 96px 16px 16px 16px;
         @include transition(margin-left .3s);
     }
     
@@ -649,7 +649,7 @@ body {
                         > ul {
                             z-index: 100;
                             position: absolute;
-                            top: 45px;
+                            top: 41px;
                             left: 0px;
                             display: none;
                             width: 250px;

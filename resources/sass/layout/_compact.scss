@@ -4,3 +4,32 @@ body {
         line-height: $c-lineHeight;
     }
 }
+
+@media (min-width: 1025px) {
+    
+    .layout-wrapper.layout-compact {
+        .layout-container {
+            &.menu-layout-horizontal {
+                .layout-menu {                            
+                    ul.ultima-menu {                    
+                        > li {
+                            > ul {
+                                top: 35px;
+                                
+                                li {
+                                    span {
+                                        font-size: $c-fontSize;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .layout-main {
+                    padding-top: 130px;
+                }
+            }
+        }
+    }
+}
