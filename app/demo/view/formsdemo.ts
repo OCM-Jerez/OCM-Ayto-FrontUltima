@@ -17,7 +17,7 @@ export class FormsDemo implements OnInit {
     
     filteredBrands: any[];
     
-    brand: string;
+    selectedBrands: string[];
     
     carOptions: SelectItem[];
     

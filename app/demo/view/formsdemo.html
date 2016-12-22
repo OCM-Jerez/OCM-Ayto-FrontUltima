@@ -1,4 +1,4 @@
-<div class="ui-g ui-fluid">
+<div class="ui-g ui-fluids">
     <div class="ui-g-12 ui-lg-6">
         <!-- Left Side -->
         <div class="card card-w-title">
@@ -52,17 +52,17 @@
                 </div>
                 <div class="ui-g-12" style="margin-bottom:10px">
                     <p-autoComplete id="acSimple" [(ngModel)]="country" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [size]="30"
-                        placeholder="Countries" [minLength]="1" multiple="multiple"></p-autoComplete>
+                        placeholder="Countries" [minLength]="1"></p-autoComplete>
                 </div>
                 
                 <div class="ui-g-12">
                     <label for="acAdvanced">Advanced</label>
                 </div>
                 <div class="ui-g-12">
-                    <p-autoComplete id="acAdvanced" [(ngModel)]="brand" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
-                        [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true" (onDropdownClick)="handleACDropdownClick($event)">
+                    <p-autoComplete id="acAdvanced" [(ngModel)]="selectedBrands" [suggestions]="filteredBrands" (completeMethod)="filterBrands($event)" [size]="30"
+                        [minLength]="1" placeholder="Hint: type 'v' or 'f'" [dropdown]="true" (onDropdownClick)="handleACDropdownClick($event)" multiple="true">
                         <template let-brand>
-                            <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
+                            <div class="ui-helper-clearfix">
                                 <img src="resources/demo/images/car/{{brand}}.gif" style="width:32px;display:inline-block;margin:5px 0 2px 5px"/>
                                 <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{brand}}</div>
                             </div>
@@ -96,7 +96,13 @@
                 </div>
             </div>
         </div>
+        
+        <div class="card card-w-title">
+            <h1>Chips</h1>
+            <p-chips></p-chips>
+        </div>
     </div>
+    
     <div class="ui-g-12 ui-lg-6">
         <!-- Right Side -->
         <div class="card card-w-title">
@@ -124,7 +130,7 @@
         
         <div class="card card-w-title">
             <h1>Dropdown</h1>
-            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false"></p-dropdown>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedCity1" [autoWidth]="false" filter="true"></p-dropdown>
         </div>
         
         <div class="card card-w-title">
@@ -144,17 +150,12 @@
         
         <div class="card card-w-title">
             <h1>Listbox</h1>
-            <p-listbox [options]="citiesListbox" [(ngModel)]="selectedCity2"></p-listbox>
+            <p-listbox [options]="citiesListbox" [(ngModel)]="selectedCity2" filter="true"></p-listbox>
         </div>
         
         <div class="card card-w-title">
             <h1>Rating</h1>
             <p-rating [(ngModel)]="ratingValue"></p-rating>
-        </div>
-        
-        <div class="card card-w-title">
-            <h1>Chips</h1>
-            <p-chips></p-chips>
         </div>
     </div>
     

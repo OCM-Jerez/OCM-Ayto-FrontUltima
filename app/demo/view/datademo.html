@@ -3,7 +3,7 @@
         <div class="card card-w-title">
             <h1>DataTable</h1>
             <p-dataTable [value]="cars1" selectionMode="single" [(selection)]="selectedCar" 
-                [paginator]="true" [rows]="10" [responsive]="true">
+                [paginator]="true" [rows]="10" [responsive]="true" reorderableColumns="true">
                 <header>List of Cars</header>
                 <p-column field="vin" header="Vin" [sortable]="true"></p-column>
                 <p-column field="year" header="Year" [sortable]="true"></p-column>

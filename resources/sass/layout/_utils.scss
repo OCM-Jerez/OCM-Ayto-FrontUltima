@@ -13,36 +13,36 @@
     @include content-shadow();
     @include border-radius(2px);
     background: #ffffff;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 1em;
+    margin-bottom: 1em;
     box-sizing: border-box;
     
     &.card-w-title {
-        padding-bottom: 32px;
+        padding-bottom: 2em;
     }
     
     h1 {
-        font-size: 24px;
+        font-size: 1.5em;
         font-weight: 400;
-        margin: 24px 0;
+        margin: 1em 0;
         
         &:first-child {
-            margin-top: 16px;
+            margin-top: .667em;
         }
     }
     
     h2 {
-        font-size: 22px;
+        font-size: 1.375em;
         font-weight: 400;
     }
     
     h3 {
-        font-size: 20px;
+        font-size: 1.250em;
         font-weight: 400;
     }
     
     h4 {
-        font-size: 18px;
+        font-size: 1.125em;
         font-weight: 400;
     }
 }
@@ -138,41 +138,24 @@
 .ui-g {
     &.form-group {
         > div {
-            padding: 12px 16px;
-        }
-    }
-}
-
-.ui-panelgrid {
-    &.form-group {
-        .ui-panelgrid-cell {
-            padding: 12px 16px;
-        }
-    }
-}
-
-.ui-selectoneradio, .ui-selectmanycheckbox  {
-    &.form-group {
-        .ui-grid-row > div {
-            padding: 8px 16px;
+            padding: .75em 1em;
         }
     }
 }
 
 /* Ripple */
 /* Ripple Effect Style like Google Material Buttons Effect*/
-
 .ripplelink{
-  /* display:block; */
-  /*color:#fff;*/
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  z-index:0;
+    /* display:block; */
+    /*color:#fff;*/
+    text-decoration:none;
+    position:relative;
+    overflow:hidden;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    z-index:0;
 }
 
 .ripplelink:hover{
