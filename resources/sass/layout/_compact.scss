@@ -555,11 +555,13 @@ body {
                 height: $c-iconFontSize;
                 width: $c-iconFontSize;
                 top: 4px;
+                margin-right: 0;
                 
                 .fa {
                     height: $c-iconFontSize;
                     width: $c-iconFontSize;
                     margin-top: -8px;
+                    margin-left: 0;
                 }
             }
         }
@@ -649,6 +651,16 @@ body {
                 .ui-spinner-button {
                     width: 25px;
                     height: 12px;
+                    
+                    .fa {
+                        left: 18px;
+                    }
+                }
+                
+                .ui-spinner-up {
+                    .fa {
+                        top: 4px;
+                    }
                 }
                 
                 .ui-spinner-input {
