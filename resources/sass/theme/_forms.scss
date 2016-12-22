@@ -155,9 +155,7 @@ body {
         .fa {
             color: #ffffff;
         }
-        
-        
-        
+
         &.ui-button-icon-only {
             @include border-radius(50%);
             width: 2.5em;
@@ -904,12 +902,12 @@ body {
     
     .ui-calendar {
         .ui-datepicker-trigger {
-            top: -3px;
-            right: 0px;
+            bottom: 2px;
+            right: 0;
             background-color: transparent;
             color: $textColor;
-            height: 24px;
-            width: 24px;
+            height: 1.5em;
+            width: 1.5em;
             @include no-shadow();
             @include border-radius(0);
             
@@ -938,10 +936,10 @@ body {
             .ui-datepicker-next {
                 cursor: pointer;
                 top: .5em;
-                font-size: 1.5em;
                 right: .2em;  
                 @include material-icon("play_circle_outline");
                 color: #ffffff;
+                font-size: 1.5em;
                 
                 .fa {
                     display: none;
@@ -951,11 +949,11 @@ body {
             .ui-datepicker-prev {
                 cursor: pointer;
                 top: .5em;
-                font-size: 1.5em;
                 left: .2em;  
                 @include material-icon("play_circle_outline");
                 @include rotate(180deg);
                 color: #ffffff;
+                font-size: 1.5em;
                 
                 .fa {
                     display: none;
