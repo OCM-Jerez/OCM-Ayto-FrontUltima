@@ -193,7 +193,7 @@ body {
                 
         .profile {
             box-sizing: border-box;
-            padding-top: 30px;
+            padding-top: 2em;
             width: 250px;
             height: 145px;
             text-align: center;
@@ -215,7 +215,7 @@ body {
                 display: inline-block;
                 color: $textColor;
                 vertical-align: middle;
-                font-size: 16px;
+                font-size: 1em;
             }
             
             i {
