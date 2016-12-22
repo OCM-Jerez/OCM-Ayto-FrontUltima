@@ -117,7 +117,6 @@ body {
         padding: $headerPadding;
         
         > a {
-            margin-top: -1px;
             box-sizing: border-box;
             color: #ffffff;
             
@@ -129,60 +128,43 @@ body {
         }
         
         .ui-paginator-next {
-            padding: 0 .375em;
+            padding: 0;
             vertical-align: middle;
             @include material-icon("navigate_next");
             font-size: 1.5em;
-            
-            &:before {
-                position: relative;
-                left: -.375em;
-            }
         }
 
         .ui-paginator-last {
-            padding: 0 .375em;
+            padding: 0;
             vertical-align: middle;
             @include material-icon("last_page");
             font-size: 1.5em;
-            
-            &:before {
-                position: relative;
-                left: -.375em;
-            }
         }
 
         .ui-paginator-prev {
-            padding: 0 .375em;
+            padding: 0;
             vertical-align: middle;
             @include material-icon("navigate_before");
             font-size: 1.5em;
-            
-            &:before {
-                position: relative;
-                left: -.375em;
-            }
         }
 
         .ui-paginator-first {
-            padding: 0 .375em;
+            padding: 0;
             vertical-align: middle;
             @include material-icon("first_page");
             font-size: 1.5em;
-            
-            &:before {
-                position: relative;
-                left: -.313em;
-            }
         }
         
         .ui-paginator-pages {
             vertical-align: middle;
-            margin: 0 6px 0 12px;
+            margin: 0 .375em 0 .375em;
             
             a {
+                padding: 0;
                 color: #ffffff;
-                padding: 1px 8px;
+                min-width: 1.5em;
+                min-height: 1.5em;
+                line-height: 1.5em;
                 @include border-radius(50%);
                 @include transition(background-color .3s);
                 
