@@ -27,7 +27,7 @@
                 </div>
                 <div class="ui-g-12 ui-md-4">
                     <span class="md-inputfield">
-                        <input type="text" pInputText class="ng-dirty ng-invalid" readonly="true" placeholder="Invalid">
+                        <input type="text" pInputText class="ng-dirty ng-invalid" placeholder="Invalid">
                         <div class="ui-message ui-messages-error ui-corner-all">
                             This field is required
                         </div>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="ui-g-12" style="margin-bottom:10px">
                     <p-autoComplete id="acSimple" [(ngModel)]="country" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" field="name" [size]="30"
-                        placeholder="Countries" [minLength]="1"></p-autoComplete>
+                        placeholder="Countries" [minLength]="1" multiple="multiple"></p-autoComplete>
                 </div>
                 
                 <div class="ui-g-12">
@@ -150,6 +150,11 @@
         <div class="card card-w-title">
             <h1>Rating</h1>
             <p-rating [(ngModel)]="ratingValue"></p-rating>
+        </div>
+        
+        <div class="card card-w-title">
+            <h1>Chips</h1>
+            <p-chips></p-chips>
         </div>
     </div>
     

@@ -13,6 +13,7 @@ import {CalendarModule} from 'primeng/primeng';
 import {CarouselModule} from 'primeng/primeng';
 import {ChartModule} from 'primeng/primeng';
 import {CheckboxModule} from 'primeng/primeng';
+import {ChipsModule} from 'primeng/primeng';
 import {CodeHighlighterModule} from 'primeng/primeng';
 import {ConfirmDialogModule} from 'primeng/primeng';
 import {SharedModule} from 'primeng/primeng';
@@ -103,6 +104,7 @@ import {NodeService} from './demo/service/nodeservice';
         CarouselModule,
         ChartModule,
         CheckboxModule,
+        ChipsModule,
         CodeHighlighterModule,
         ConfirmDialogModule,
         SharedModule,
