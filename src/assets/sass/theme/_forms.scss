@@ -1032,10 +1032,13 @@ body {
             > div {
                 a {            
                     height: 1.5em;
+                    
+                    > span {
+                        display: inline-block;
+                        margin-bottom: .25em;
+                    }
                            
-                    .fa {
-                        font-size: 1.5em;
-                        
+                    .fa {                        
                         &.fa-angle-up {
                             @include rotate(0);
                             @include material-icon("keyboard_arrow_up");
