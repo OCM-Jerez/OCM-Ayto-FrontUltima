@@ -75,6 +75,7 @@ body {
     }
     
     .ui-listbox {
+        min-width: 12.5em;
         background-color: #ffffff;
         @include border-radius($borderRadius);
         
@@ -108,17 +109,23 @@ body {
         
         .ui-listbox-header {
             @include border-radius(0);
+            padding: $inputHeaderPadding;
             
-            .ui-listbox-filter-container {
-                padding: $inputHeaderPadding;
-
+            .ui-chkbox {
+                .ui-chkbox-box {
+                    border-color: #ffffff;
+                }
+            }
+            
+            .ui-listbox-filter-container {                
                 .ui-inputtext {
                     color: #ffffff;
+                    padding-left: 1.5em;
                 }
                 
                 .fa {
-                    top: .375em;
-                    left: .625em;
+                    top: 0;
+                    left: 0;
                     font-size: 1.5em;
                 }
             }
