@@ -16,6 +16,8 @@ export class MiscDemo implements OnInit,OnDestroy {
     
     interval: any;
     
+    response: string;
+    
     ngOnInit() {
         this.interval = setInterval(() => {
             this.value = this.value + Math.floor(Math.random() * 10) + 1;
@@ -39,6 +41,13 @@ export class MiscDemo implements OnInit,OnDestroy {
         this.images.push({source:'assets/demo/images/nature/nature10.jpg', alt:'Description for Image 10', title:'Title 10'});
         this.images.push({source:'assets/demo/images/nature/nature11.jpg', alt:'Description for Image 11', title:'Title 11'});
         this.images.push({source:'assets/demo/images/nature/nature12.jpg', alt:'Description for Image 12', title:'Title 12'});
+    }
+    
+    onCommand(event) {
+        if(event.command === 'date')
+            this.response = new Date().toDateString();
+        else
+            this.response = 'Unknown command: ' + event.command;
     }
     
     ngOnDestroy() {
