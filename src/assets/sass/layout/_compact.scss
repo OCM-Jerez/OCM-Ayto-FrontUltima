@@ -2,6 +2,22 @@ body {
     .layout-wrapper.layout-compact {
         font-size: $c-fontSize;
         line-height: $c-lineHeight;
+        
+        .layout-container {
+            .ultima-menu {
+                li {
+                    ul {
+                        li {
+                            a {
+                                span {
+                                    font-size: $c-fontSize;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

@@ -1538,6 +1538,8 @@ body {
 body .layout-wrapper.layout-compact {
   font-size: 14px;
   line-height: 18px; }
+  body .layout-wrapper.layout-compact .layout-container .ultima-menu li ul li a span {
+    font-size: 14px; }
 
 @media (min-width: 1025px) {
   .layout-wrapper.layout-compact .layout-container.menu-layout-horizontal .layout-menu ul.ultima-menu > li > ul {
