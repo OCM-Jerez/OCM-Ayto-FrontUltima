@@ -143,13 +143,20 @@ body {
                 }
                 
                 > .fa-close {
-                    margin: .5em 0 0 0;
+                    margin: .325em 0 0 0;
                     @include transition(color .3s);
                     color: $textSecondaryColor;
                 }
                 
                 .ui-tabview-left-icon, .ui-tabview-right-icon {
                     color: $textSecondaryColor;
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                
+                .ui-tabview-title {
+                    line-height: 1.5em;
+                    vertical-align: middle;
                 }
                 
                 &.ui-state-default {
