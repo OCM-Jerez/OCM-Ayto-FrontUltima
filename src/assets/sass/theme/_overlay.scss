@@ -10,10 +10,10 @@ body {
             padding: $headerPadding;
             
             .ui-dialog-title {
-                font-weight: 700;
                 font-size: 1.25em;
                 letter-spacing: .005em;
                 margin-top: .25em;
+                line-height: 2em;
             }
             
             .ui-dialog-titlebar-icon {
