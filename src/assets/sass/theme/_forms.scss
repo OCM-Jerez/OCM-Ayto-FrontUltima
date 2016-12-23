@@ -1101,6 +1101,10 @@ body {
             
             .ui-chips-input-token {
                 padding-bottom: 2px;
+                
+                input.ui-state-disabled {
+                    display: none;
+                }
             }
             
             .ui-chips-token {
