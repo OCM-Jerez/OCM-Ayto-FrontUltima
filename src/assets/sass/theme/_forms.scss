@@ -963,12 +963,18 @@ body {
                     display: none;
                 }
             }
+            
+            .ui-datepicker-month,
+            .ui-datepicker-year {
+                font-size: $fontSize - 2;   
+            }
         }
         
         table {
             table-layout: fixed;
             border-spacing: 0;
             border-collapse: collapse;
+            font-size: $fontSize - 2;
         }
         
         thead {
