@@ -654,10 +654,14 @@ body {
         @include border-radius(0);
         @include transition(border-color .3s); 
         
-        .ui-multiselect-label {
-            padding: 0px 2px 0px 2px;
+        .ui-multiselect-label-container {
+            padding-right: 1.5em;
+            
+            .ui-multiselect-label {
+                padding: 0px 2px 0px 2px;
+            }
         }
-                
+            
         .ui-multiselect-trigger {
             height: 1.5em;
             width: 1.5em;
@@ -976,7 +980,7 @@ body {
         
         tbody {
             td {
-                padding: .125em;
+                padding: .25em .125em;
                 box-sizing: border-box;
                 
                 a,span {
