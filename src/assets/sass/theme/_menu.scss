@@ -8,10 +8,6 @@ body {
                     color: #ffffff;
                     font-size: $inputHeaderFontSize;
                 }
-                                
-                &.fa {
-                    font-size: 1.5em;
-                }
             }
         }
     }
@@ -103,10 +99,6 @@ body {
                         font-size: $fontSize;
                         padding: 0;
                         font-weight: 400;
-                        
-                        .fa {
-                            font-size: 1.5em;
-                        }
                     }
                 }
                 
@@ -134,7 +126,6 @@ body {
                         }
                         
                         .ui-menuitem-icon {
-                            font-size: 1.5em;
                             margin-right: .417em;
                             display: inline-block;
                             vertical-align: middle;
@@ -185,10 +176,6 @@ body {
             .ui-menu-child {
                 padding: .5em 0;
             }
-            
-            .ui-submenu-icon {
-                font-size: 1.5em;
-            }
         }
         
         &.ui-menubar {
@@ -210,10 +197,6 @@ body {
             
             .ui-menubar-options {
                 padding: .625em 1em;
-            }
-            
-            .ui-submenu-icon {
-                font-size: 1.5em;
             }
         }
         
@@ -314,7 +297,6 @@ body {
             
             .fa {
                 color: #ffffff;
-                font-size: 1.5em;
             }
             
             &.ui-state-active {
@@ -357,7 +339,6 @@ body {
                         position: static;
                         display: inline-block;
                         vertical-align: middle;
-                        font-size: 1.5em,
                     }
                 }
             }

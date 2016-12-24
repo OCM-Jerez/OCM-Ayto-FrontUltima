@@ -135,28 +135,24 @@ body {
             padding: 0;
             vertical-align: middle;
             @include material-icon("navigate_next");
-            font-size: 1.5em;
         }
 
         .ui-paginator-last {
             padding: 0;
             vertical-align: middle;
             @include material-icon("last_page");
-            font-size: 1.5em;
         }
 
         .ui-paginator-prev {
             padding: 0;
             vertical-align: middle;
             @include material-icon("navigate_before");
-            font-size: 1.5em;
         }
 
         .ui-paginator-first {
             padding: 0;
             vertical-align: middle;
             @include material-icon("first_page");
-            font-size: 1.5em;
         }
         
         .ui-paginator-pages {
@@ -639,7 +635,6 @@ body {
                         vertical-align: middle;
                         margin: 0 .167em;
                         float: none;
-                        font-size: 1.5em;
                     }
                     
                     .ui-chkbox {

@@ -126,7 +126,6 @@ body {
                 .fa {
                     top: 0;
                     left: 0;
-                    font-size: 1.5em;
                 }
             }
         }
@@ -169,22 +168,10 @@ body {
             height: 2.5em;
             
             .fa {
-                width: 1em;
-                height: 1em;
-                font-size: 1.5em;
                 margin-left: -.5em;
             }
         }
-        
-        &.ui-button-text-icon-left,
-        &.ui-button-text-icon-right {
-            .fa {
-                width: 1em;
-                height: 1em;
-                font-size: 1.5em;
-            }
-        }
-                
+                        
         &.ui-button-text-icon-left {
             padding-left: 2.5em;
         }
@@ -564,10 +551,6 @@ body {
                     display: inline-block;
                     vertical-align: middle;
                 }
-                
-                .ui-autocomplete-token-icon {
-                    font-size: 1.5em;
-                }
             }
         }
     }
@@ -688,10 +671,12 @@ body {
         padding: 0;
         @include border-radius(0);
         @include overlay-input-shadow();
+        min-width: 12.5em;
                 
         .ui-multiselect-header {
             @include border-radius(0);
             padding: $inputHeaderPadding;
+            position: relative;
             
             .ui-chkbox {
                 float: none;
@@ -727,9 +712,8 @@ body {
                 
                 .fa {
                     top: 0;
-                    color: #ffffff;
-                    font-size: 1.5em;
                     left: 0;
+                    color: #ffffff;
                 }  
                 
                 .ui-inputtext {
@@ -745,15 +729,21 @@ body {
             }
             
             .ui-multiselect-close {
-                margin-right: -.5em;
-                position: static;
-                float: right;
-                font-size: 1.5em;
+                position: absolute;
+                right: .5em;
+                top: .625em;
+                height: 1.5em;
+                width: 1.5em;
                 
                 span {
                     color: #ffffff;
                 }
-
+                
+                &:hover {
+                    background-color: $primaryLightColor;
+                    @include border-radius(50%);
+                    @include transition(background-color .3s);
+                }
             }
         }
         
@@ -785,7 +775,6 @@ body {
             
             .fa {
                 top: 0px;
-                font-size: 1.5em;
                 height: .5em;
                 color: $textSecondaryColor;
             }
@@ -940,10 +929,9 @@ body {
             .ui-datepicker-next {
                 cursor: pointer;
                 top: .5em;
-                right: .2em;  
+                right: .2em;
                 @include material-icon("play_circle_outline");
                 color: #ffffff;
-                font-size: 1.5em;
                 
                 .fa {
                     display: none;
@@ -957,15 +945,14 @@ body {
                 @include material-icon("play_circle_outline");
                 @include rotate(180deg);
                 color: #ffffff;
-                font-size: 1.5em;
                 
                 .fa {
                     display: none;
                 }
             }
             
-            .ui-datepicker-month,
-            .ui-datepicker-year {
+            select.ui-datepicker-month,
+            select.ui-datepicker-year {
                 font-size: $fontSize - 2;   
             }
         }
@@ -1063,7 +1050,6 @@ body {
         
         .ui-rating-cancel {
             text-indent: 0;
-            font-size: 1.5em;
             
             a {
                 color: $textSecondaryColor;
@@ -1074,7 +1060,6 @@ body {
         
         .ui-rating-star {
             text-indent: 0;
-            font-size: 1.5em;
             
             a {
                 color: $textSecondaryColor;
@@ -1116,10 +1101,6 @@ body {
                 .ui-chips-token-label {
                     display: inline-block;
                     vertical-align: middle;
-                }
-                
-                .ui-chips-token-icon {
-                    font-size: 1.5em;
                 }
             }
         }

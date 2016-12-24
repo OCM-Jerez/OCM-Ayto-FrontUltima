@@ -30,9 +30,9 @@ body {
                 }
                 
                 .fa {
+                    margin-top: .25em;
+                    line-height: 1.25em;
                     color: $textSecondaryColor;
-                    font-size: 1.5em;
-                    line-height: inherit;
                     display: inline-block;
                 }
                 
@@ -85,17 +85,15 @@ body {
             .ui-lightbox-close {
                 @include border-radius(50%);
                 @include transition(background-color .3s);
-                font-size: $textColor;
                 padding: 0;
                 margin: 0;
-                line-height: $textColor;
-                width: 1em;
-                height: 1em;
-                font-size: 1.5em;
+                width: 1.5em;
+                height: 1.5em;
                             
-                &.ui-state-hover {
-                    @include hover-element-primary();
-                    padding: 0;
+                &:hover {
+                    background-color: $primaryLightColor;
+                    @include border-radius(50%);
+                    @include transition(background-color .3s);
                 }
             }
         }
@@ -132,7 +130,6 @@ body {
             
             span {
                 color: $accentTextColor;
-                font-size: 1.5em;
                 line-height: inherit;
             }
             
