@@ -404,6 +404,16 @@ body {
                     }
                 }
             }
+            
+            tr.ui-rowgroup-header {
+                td {
+                    a {
+                        height: 1.5em;
+                        vertical-align: top;
+                        display: inline-block;
+                    }
+                }
+            }
         }        
         
         &.ui-datatable-scrollable {
