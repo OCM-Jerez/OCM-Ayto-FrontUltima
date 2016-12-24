@@ -46,7 +46,7 @@ export class DataDemo implements OnInit {
     events: any[];
     
     selectedNode: TreeNode;
-    
+        
     scheduleHeader: any;
 
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) { }

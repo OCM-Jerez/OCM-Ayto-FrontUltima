@@ -477,16 +477,20 @@ body {
                 margin: 0 .25em;
             }
             
+            .ui-chkbox {
+                margin: 0 .25em;
+            }
+            
             .ui-treenode-label {
                 margin: 0;
                 vertical-align: middle;
+                
+                &.ui-state-hover {
+                    @include hover-element();
+                }
             }
         }
-        
-        .ui-tree-droppoint.ui-state-hover {
-            background-color: $accentColor;
-        }
-        
+                
         &.ui-tree-horizontal {
             padding-left: 0;
             padding-right: 0;
@@ -502,6 +506,10 @@ body {
                 .ui-treenode-icon  {
                     vertical-align: top;
                     margin-right: .25em;
+                }
+                
+                &.ui-state-hover {
+                    @include hover-element();
                 }
                 
                 &.ui-state-highlight {
