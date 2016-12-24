@@ -27,8 +27,8 @@ export class AppComponent {
         let themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
         let layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
         
-        themeLink.href = 'resources/theme/theme-' + theme +'.css';
-        layoutLink.href = 'resources/layout/css/layout-' + theme +'.css';
+        themeLink.href = 'assets/theme/theme-' + theme +'.css';
+        layoutLink.href = 'assets/layout/css/layout-' + theme +'.css';
         event.preventDefault();
     }
 
