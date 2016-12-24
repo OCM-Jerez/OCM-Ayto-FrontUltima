@@ -120,6 +120,10 @@ body {
             box-sizing: border-box;
             color: #ffffff;
             
+            .fa {
+                display: none;
+            }
+            
             &.ui-state-hover {
                 background-color: $primaryLightColor;
                 @include border-radius(50%);
@@ -281,7 +285,7 @@ body {
         }
         
         tfoot {
-            td {
+            th {
                 padding: .625em .875em;
                 border: 1px solid #bdbdbd;
                 background-color: #ffffff;
