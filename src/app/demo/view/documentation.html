@@ -1,24 +1,94 @@
 <div class="ui-g">
     <div class="ui-g-12">
         <div class="card docs"> 
-            <h1>Running the Demo</h1>
-            <p>Extract the contents of the ultima zip file and then run;</p>   
+            
+            <h1>Getting Started</h1>
+            <p>Ultima is distributed as an Angular CLI project. If you don't have CLI installed already run the following commands to set it up. In case
+            you have an application that do not use CLI, skip the <a href="#noncli">Integration with an Existing Non CLI Application</a> part.</p>
 <pre>
-npm install
-npm start
+npm install -g angular-cli
 </pre>
-            <p>Navigate to http://localhost:8080 to view the demo in your local environment.</p>
-                    
-            <h1>Layout</h1>
-            <p>Ultima consists of 3 main parts; the application layout component, layout resources and theme resources. application.html inside app folder is the html template for the base layout having a router-outlet 
-                for routing. Required resources for layout are placed inside the resources/layout folder and similarly theme resources are inside resources/theme folder. 
-                To install ultima, use the application.html content as your main template and copy the layout-theme resources to your application to get the styling and functionality.
-                CSS and JS resources that belong to layout-theme are loaded with link-script tags in index.html of sample application however you may also use a bundler like webpack to install them as well.
+
+            <p>Once CLI is ready in your system, extract the contents of the ultima zip file distribution, cd to the directory, 
+            install the libraries from npm and then execute "ng serve" to run the application in your local environment at http://localhost:4200/.</p>
+<pre>
+cd ultima
+npm install
+ng serve
+</pre>
+
+            <p>That's it, you may now start with the development of your application.</p>
+
+            <h1>Important CLI Commands</h1>
+            <p>Following commands are derived from CLI.</p>
+<pre>
+Run 'ng serve' for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+Run 'ng generate component component-name' to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+
+Run 'ng build' to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+Run 'ng test' to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Run 'ng e2e' to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+Run 'ng help' for more options.
+</pre>            
+                                    
+            <h1>Template</h1>
+            <p>Ultima consists of 3 main parts; the application layout component, layout resources and theme resources for PrimeNG components. <i>app.component.html</i> inside app folder is the html template for the base layout having a router-outlet 
+                for routing. Required resources for layout are placed inside the <i>src/assets/layout</i> folder and similarly theme resources are inside <i>src/assets/theme</i> folder. 
             </p>
             
-            <p style="background-color: #e8e8e8; padding: 8px 14px">If you have an existing CLI application, see the CLI section below for integration.</p>
+            <h1>Integration with an Existing CLI Project</h1>
+            <p>To setup Ultima in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name 
+                and replace the contents of app.component.ts, app.component.html with their counterparts in Ultima under <i>src/app</i> folder.</p>
             
-            <h1>Initialize</h1>
+            <p>Dependencies of Ultima are listed below and needs to be added to package.json</p>
+<pre>
+"primeng": "^1.1.2",             //required: PrimeNG components
+"jquery": "^3.1.1",              //required: layout functionality
+"chart.js": "^2.4.0",            //optional: chart component
+"fullcalendar": "^3.1.0",        //optional: schedule component
+"moment": "^2.17.1",             //optional: chart and schedule component
+"quill": "^1.1.8",               //optional: editor component
+</pre>
+                        
+            <p>Add PrimeNG CSS at styles section in angular-cli.json</p>
+
+<pre>
+"styles": [
+  ...
+  "../node_modules/primeng/resources/primeng.css",        //required: PrimeNG components
+  "../node_modules/fullcalendar/dist/fullcalendar.css",   //optional: schedule component
+  ...
+],
+</pre>
+
+            <p>Add the following scripts to your angular-cli.json</p>
+<pre>
+"scripts": [
+    "../node_modules/jquery/dist/jquery.js",             //required: Layout functionality
+    "assets/layout/js/layout.js",                        //required: Layout functionality
+    "assets/layout/js/ripple.js",                        //optional: Ripple effect
+    "assets/layout/js/nanoscroller.js",                  //required: Scrollbar of menu
+    "assets/layout/js/swipe.js",                         //optional: Swipe of menu in mobile mode
+    "../node_modules/moment/moment.js",                  //optional for chart and schedule component
+    "../node_modules/chart.js/dist/Chart.js",            //optional for chart component
+    "../node_modules/fullcalendar/dist/fullcalendar.js", //optional for schedule
+    "../node_modules/quill/dist/quill.js"                //optional for editor component
+    ...
+]
+</pre>
+
+            <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
+            the fly by changing the path however if this is not a requirement, you may also add them to the styles configuration so they go inside the bundle.</p>
+
+            <h1 id="noncli">Integration with an Existing Non-CLI Project</h1>
+            <p>For an existing project that do not use CLI, setup steps are more or less similar. Start with installing the dependencies listed above in package.json</p>
+            <p>Copy the <i>src/assets</i> folder to your application and include the resources listed above with a module bundler like webpack or using link-script tags.</p>
+            <p>Finally copy the contents of app.component.html to your application's main component template such as <i>app/application.html</i>.</p>
+            
             <p>After the view of your application is initialized, call Ultima.init by passing the native element to initiate the layout.</p>
 <pre>
 import &#123;Component,AfterViewInit,ElementRef&#125; from '@angular/core';
@@ -65,8 +135,7 @@ export class Application implements AfterViewInit &#123;
             <p>A custom theme can be developed by the following steps.</p>
             <ul>
                 <li>Choose a custom theme name such as theme-myown.</li>
-                <li>Create a folder named theme-myown and place an empty theme.scss inside</li>
-                <li>Copy the sass folder from the distribution to your application.</li>
+                <li>Create a file named theme-myown.scss under <i>assets/theme folder</i>.</li>
                 <li>Define the variables listed below and import the <i>/sass/theme/_theme.scss</i> file.</li>
                 <li>Build the scss to generate css</li>
                 <li>Include the generated theme.css to your page.</li>
@@ -90,19 +159,19 @@ $accentTextColor: #212121;
             <p> An example sass command to compile the css would be;</p>
                 
 <pre>
-sass resources/theme-myown/theme.scss resources/theme-myown/theme.css  --sourcemap=none
+sass src/assets/theme-myown/theme.scss src/assets/theme-myown/theme.css
 </pre> 
 
             <p>Watch mode is handy to avoid compiling everytime when a change is made, instead use the following command
             so that sass generates the file whenever you make a customization. This builds all css files whenever a change is made to any scss file.</p>
 <pre>
 sass -w resources/ --sourcemap=none
-</pre> 
+</pre>
 
             <p>Same can also be applied to layout itself;</p>
             <ul>
                 <li>Choose a layout name such as layout-myown.</li>
-                <li>Create an empty file named layout-myown.scss inside a folder like resources/layout/css folder.</li>
+                <li>Create an empty file named layout-myown.scss inside <i>assets/layout/css</i> folder.</li>
                 <li>Define the variables listed below and import the <i>/sass/layout/_layout.scss</i> file.</li>
                 <li>Build the scss to generate css</li>
                 <li>Serve the css by importing it using a link tag or a bundler.</li>
@@ -155,14 +224,12 @@ $hoverTextColor: #000000;
 $dividerColor: #bdbdbd;
 $dividerLightColor: #cacaca;
 $grayBgColor: #757575;
-$iconFontSize: 1em;
+$iconFontSize: 1.5em;
 $invalidInputBorderColor: #e62a10;
-$errorMessageFontSize: .075em;
 
 /* Compact */
 $c-fontSize: 14px;
 $c-lineHeight: 18px;
-$c-errorMessageFontSize: 10px;
 </pre>        
 
                                     
@@ -236,9 +303,14 @@ export class Application implements AfterViewInit &#123;
             available inside primeng.css.</p> 
             
             <h1>Migration Guide</h1>
+            <p>1.0.3 to 1.1</p>
+            <ul>
+                <li>Update css files of layout and theme.</li>
+            </ul> 
+            
             <p>1.0.2 to 1.0.3</p>
             <ul>
-                <li>Update css files of layout and theme</li>
+                <li>Update css files of layout and theme.</li>
             </ul> 
             
             <p>1.0.1 to 1.0.2</p>
@@ -250,79 +322,6 @@ export class Application implements AfterViewInit &#123;
             <ul>
                 <li>Update layout.js</li>
             </ul>                 
-        </div>
-        <div class="card docs">
-            <h1>Angular CLI Integration</h1>
-            <p>If you have an existing application, skip to the "Integration with an Existing CLI Application" section. 
-                For creating a project with using angular-cli, we need to download and install the angular-cli.</p>
-<pre>
-npm install -g angular-cli
-</pre>
-            <h2>Creating an Empty Project with Angular CLI</h2>
-            <p>Run the following commands to create the application and run it.</p>
-<pre>
-ng new ultima-with-cli
-cd ultima-with-cli
-ng serve
-</pre>
-        <p>Now install PrimeNG.</p>
-<pre>
-npm install primeng --save
-</pre>
-         <p>Locate the styles.css inside the src folder and add the css of PrimeNG.</p>
-<pre>
-@import url('../node_modules/primeng/resources/primeng.min.css');
-</pre>
-
-        <p>For a sample quickstart on PrimeNG with CLI, visit <a href="https://github.com/primefaces/primeng-quickstart-cli">primeng-quickstart-cli</a> at GitHub.</p>
-
-        <h1>Integration Ultima with an Existing CLI Application</h1>
-        <p>We need to copy the ultima resources to the CLI project.
-           First step is the main layout for Ultima located in the app folder. Copy the content of ultima/app/application.html and ultima/app/application.ts 
-           to cli applications src/app/app.component.html and app.component.ts files respectively.</p>
-           
-           <p>Next step is to install the assets of Ultima. Copy the respurces/layout and resources/theme folders of Ultima to
-               app/assets folder of your application, then locate angular-cli.json at the root of your cli application and add following styles and scripts.
-           </p>
-<pre>
-"styles": [
-        "styles.css",
-        "./app/assets/theme/theme-blue.css",
-        "./app/assets/layout/css/layout-blue.css"
-      ]
-</pre>
-<pre>
-"scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",   
-        "./app/assets/layout/js/layout.js",
-        "./app/assets/layout/js/nanoscroller.js",
-        "./app/assets/layout/js/ripple.js"
-      ]
-</pre>
-        <h1>Layout</h1>
-        <p>In CLI, the main application component initialize the Ultima layout.</p>
-<pre>
-import &#123; Component, AfterViewInit, ElementRef &#125; from '@angular/core';
-
-declare var Ultima: any;
-
-@Component(&#123;
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-&#125;)
-export class AppComponent implements AfterViewInit &#123;
-
-  constructor(private el: ElementRef) &#123;&#125;
-
-  ngAfterViewInit() &#123;
-        Ultima.init(this.el.nativeElement);
-    &#125;
-&#125;
-</pre>
-
-        <h1>Run</h1>
-        <p>Run ng-serve to test the Ultima setup.</p>
         </div>
     </div>
 </div>
