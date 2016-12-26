@@ -486,6 +486,10 @@ body {
                 .ui-autocomplete-query {
                     font-weight: 700;
                 }
+                
+                &.ui-state-highlight {
+                    color: $accentTextColor;
+                }
             }
             
             .ui-autocomplete-group {
