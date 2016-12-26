@@ -1139,6 +1139,18 @@ body {
         }
     }
     
+    .ui-editor-container {
+        .ui-editor-toolbar {
+            background-color: #e8e8e8;
+        }
+        
+        .ql-picker.ql-expanded {
+            .ql-picker-label {
+                color: #444444;
+            }
+        }
+    }
+    
     /* Validation */
     .ui-inputtext.ng-dirty.ng-invalid,
     p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
