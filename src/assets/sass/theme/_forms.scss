@@ -752,6 +752,11 @@ body {
             font-size: $inputOptionFontSize;
             padding: $inputOptionPadding;
             color: $textColor;
+            @include border-radius(0);
+            
+            &.ui-state-hover {
+                @include hover-element();
+            }
         }
     }
         
@@ -1000,9 +1005,8 @@ body {
                 
                 &.ui-datepicker-today {
                     a,span {
-                        color: $textColor;
-                        background-color: #ffffff;
-                        border: 1px solid $accentColor;
+                        color: #ffffff;
+                        background: lighten($primaryColor,20%);
                         
                         &.ui-state-active {
                             color: #ffffff;
