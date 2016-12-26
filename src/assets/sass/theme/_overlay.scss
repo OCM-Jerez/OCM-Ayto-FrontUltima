@@ -17,21 +17,20 @@ body {
             }
             
             .ui-dialog-titlebar-icon {
+                border: 0 none;
                 padding: 0;
                 @include border-radius(50%);
                 @include transition(background-color .3s);
-                height: 2em;
-                width: 2em;
-                line-height: 2em;
+                height: 1.5em;
+                width: 1.5em;
                 text-align: center;
+                margin-top: .5em;
                 
                 &.ui-state-hover, &.ui-state-focus {
                     @include hover-element();
                 }
                 
                 .fa {
-                    margin-top: .25em;
-                    line-height: 1.25em;
                     color: $textSecondaryColor;
                     display: inline-block;
                 }
@@ -44,6 +43,10 @@ body {
                     @include icon_override('fullscreen_exit');
                 }
             }
+        }
+        
+        .ui-dialog-content {
+            padding: $contentPadding;
         }
         
         .ui-dialog-buttonpane, .ui-dialog-footer {

@@ -168,12 +168,13 @@ body {
                 @include border-radius(50%);
                 @include transition(background-color .3s);
                 
-                &.ui-state-active {
-                    color: $accentTextColor;
-                }
-                
                 &.ui-state-hover {
                     background-color: $primaryLightColor;
+                }        
+                
+                &.ui-state-active {
+                    background-color: $accentColor;
+                    color: $accentTextColor;
                 }
             }
         }
