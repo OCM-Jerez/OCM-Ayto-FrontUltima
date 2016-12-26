@@ -18,6 +18,13 @@ body {
                 }
             }
         }
+        
+        .ui-radiobutton {
+            .ui-radiobutton-box {
+                width: 18px;
+                height: 18px;
+            }
+        }
     }
 }
 

@@ -445,12 +445,7 @@ body {
             .ui-radiobutton-icon {
                 display: block;
                 box-sizing: border-box;
-                position: absolute;
                 @include border-radius(50%);
-                top: 0;
-                left: 0;
-                width: 1.25em;
-                height: 1.25em;
                 font-size: 1em;
                 transition: -webkit-transform ease .28s;
                 transition: transform ease .28s;
