@@ -1,7 +1,7 @@
 import {Component,ViewEncapsulation} from '@angular/core';
 
 @Component({
-    templateUrl: 'app/demo/view/utilsdemo.html',
+    templateUrl: './utilsdemo.html',
     styles: [`                
         .icon-grid div.ui-g-12 {
             color: #757575;

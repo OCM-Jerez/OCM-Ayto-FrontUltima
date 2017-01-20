@@ -5,7 +5,7 @@ import {Car} from '../domain/car';
 import {SelectItem} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/dashboard.html'
+    templateUrl: './dashboard.html'
 })
 export class DashboardDemo implements OnInit {
     

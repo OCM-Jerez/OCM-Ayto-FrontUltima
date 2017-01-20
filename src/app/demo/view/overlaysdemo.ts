@@ -4,7 +4,7 @@ import {CarService} from '../service/carservice';
 import {ConfirmationService} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/overlaysdemo.html',
+    templateUrl: './overlaysdemo.html',
     providers: [ConfirmationService]
 })
 export class OverlaysDemo implements OnInit {

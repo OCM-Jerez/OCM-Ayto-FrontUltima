@@ -6,7 +6,7 @@ import {Car} from '../domain/car';
 import {TreeNode} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/datademo.html',
+    templateUrl: './datademo.html',
     styles: [`                
         .cars-datalist ul {
             margin: 0;

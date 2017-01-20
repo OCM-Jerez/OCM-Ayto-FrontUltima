@@ -6,7 +6,7 @@ import {Car} from '../domain/car';
 import {SelectItem,MenuItem,TreeNode} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/sampledemo.html'
+    templateUrl: './sampledemo.html'
 })
 export class SampleDemo implements OnInit {
     

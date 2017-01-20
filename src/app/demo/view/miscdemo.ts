@@ -6,7 +6,7 @@ import {Car} from '../domain/car';
 import {TreeNode} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/miscdemo.html'
+    templateUrl: './miscdemo.html'
 })
 export class MiscDemo implements OnInit,OnDestroy {
     

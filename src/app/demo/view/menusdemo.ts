@@ -2,7 +2,7 @@ import {Component,OnInit,ViewEncapsulation} from '@angular/core';
 import {MenuItem} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/menusdemo.html',
+    templateUrl: './menusdemo.html',
     styles: [`
         .ui-steps-item {
             width: 25%

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Message} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/filedemo.html'
+    templateUrl: './filedemo.html'
 })
 export class FileDemo {
     

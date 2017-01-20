@@ -180,28 +180,15 @@
 
                     <ul id="profile-menu" class="ultima-menu" [hidden]="profileMode!='inline'">
                         <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">person</i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">security</i>
-                                <span>Privacy</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">settings_application</i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">power_settings_new</i>
-                                <span>Logout</span>
-                            </a>
+                            <a href="#" class="ripplelink"><i class="material-icons">translate</i><span>Change Culture</span><i class="material-icons">keyboard_arrow_down</i></a>
+                            <ul role="menu">
+                                <li role="menuitem">
+                                    <a (click)="ChangeCulture('fr','CA', 'CAD')" class="ripplelink">Français</a>
+                                </li>
+                                <li role="menuitem">
+                                    <a (click)="ChangeCulture('en','CA', 'CAD')" class="ripplelink">English</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <ul id="main-menu" class="ultima-menu clearfix">

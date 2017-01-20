@@ -2,7 +2,7 @@ import {Component,OnInit} from '@angular/core';
 import {MenuItem} from 'primeng/primeng';
 
 @Component({
-    templateUrl: 'app/demo/view/panelsdemo.html'
+    templateUrl: './panelsdemo.html'
 })
 export class PanelsDemo implements OnInit {
     

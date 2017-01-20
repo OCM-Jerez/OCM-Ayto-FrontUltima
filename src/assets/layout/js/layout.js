@@ -155,7 +155,7 @@ Ultima = {
             }
         });
         
-        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li > a', function(e) {    
+        this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li > a', function(e) {
             if($this.isHorizontal() && $this.isDesktop()) {
                 var link = $(this),
                 item = link.parent(),

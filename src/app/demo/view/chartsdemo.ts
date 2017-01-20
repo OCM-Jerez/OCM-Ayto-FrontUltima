@@ -1,7 +1,7 @@
 import {Component,OnInit} from '@angular/core';
 
 @Component({
-    templateUrl: 'app/demo/view/chartsdemo.html'
+    templateUrl: './chartsdemo.html'
 })
 export class ChartsDemo implements OnInit {
     
