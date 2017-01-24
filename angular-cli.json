@@ -24,8 +24,8 @@
       ],
       "scripts": [
           "../node_modules/jquery/dist/jquery.js",
-          "assets/layout/js/nanoscroller.js",
-          "assets/layout/js/swipe.js",
+          "../node_modules/nanoscroller/bin/javascripts/jquery.nanoscroller.js",
+          "assets/layout/js/ripple.js",
           "../node_modules/moment/moment.js",
           "../node_modules/chart.js/dist/Chart.js",
           "../node_modules/fullcalendar/dist/fullcalendar.js",
