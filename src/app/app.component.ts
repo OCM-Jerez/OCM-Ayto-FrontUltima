@@ -1,35 +1,126 @@
-import {Component,AfterViewInit,ElementRef} from '@angular/core';
+import {Component,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
 
-declare var Ultima: any;
+enum MenuOrientation {
+    STATIC,
+    OVERLAY,
+    HORIZONTAL
+};
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
     
     layoutCompact: boolean = false;
 
-    layoutMode: string = 'static';
+    layoutMode: MenuOrientation = MenuOrientation.STATIC;
     
     darkMenu: boolean = false;
     
     profileMode: string = 'inline';
 
+    rotateMenuButton: boolean;
+
+    topbarItemsActive: boolean;
+
+    overlayMenuActive: boolean;
+
+    staticMenuDesktopInactive: boolean;
+
+    staticMenuMobileActive: boolean;
+
+    layoutContainer: HTMLDivElement;
+
+    modal: HTMLDivElement;
+
+    @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
+
     constructor(private el: ElementRef) {}
 
     ngAfterViewInit() {
-        Ultima.init(this.el.nativeElement);
+        this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
+    }
+
+    onMenuButtonClick(event) {
+        this.rotateMenuButton = !this.rotateMenuButton;
+        this.topbarItemsActive = false;
+
+        if(this.layoutMode === MenuOrientation.OVERLAY) {
+            this.overlayMenuActive = !this.overlayMenuActive;
+
+            if(this.overlayMenuActive)
+                this.enableModal();
+            else
+                this.disableModal();
+        }
+        else {
+            if(this.isDesktop()) {
+                this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
+            }
+            else {
+                if(this.staticMenuMobileActive) {
+                    this.staticMenuMobileActive = false;
+                    this.disableModal();
+                }
+                else {
+                    this.staticMenuMobileActive = true;
+                    this.enableModal();
+                }
+            }
+        }
+
+        event.preventDefault();
+    }
+
+    enableModal() {
+        this.modal = document.createElement("div");
+        this.modal.className = 'layout-mask';
+        this.layoutContainer.appendChild(this.modal);
     }
     
-    changeTheme(event, theme) {
-        let themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
-        let layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
-        
-        themeLink.href = 'assets/theme/theme-' + theme +'.css';
-        layoutLink.href = 'assets/layout/css/layout-' + theme +'.css';
-        event.preventDefault();
+    disableModal() {
+        if(this.modal) {
+            this.layoutContainer.removeChild(this.modal);
+        }
+    }
+
+    isTablet() {
+        let width = window.innerWidth;
+        return width <= 1024 && width > 640;
+    }
+
+    isDesktop() {
+        return window.innerWidth > 1024;
+    }
+
+    isMobile() {
+        return window.innerWidth <= 640;
+    }
+
+    isOverlay() {
+        return this.layoutMode === MenuOrientation.OVERLAY;
+    }
+
+    isHorizontal() {
+        return this.layoutMode === MenuOrientation.HORIZONTAL;
+    }
+
+    changeToStaticMenu() {
+        this.layoutMode = MenuOrientation.STATIC;
+    }
+
+    changeToOverlayMenu() {
+        this.layoutMode = MenuOrientation.OVERLAY;
+    }
+
+    changeToHorizontalMenu() {
+        this.layoutMode = MenuOrientation.HORIZONTAL;
+    }
+
+    ngOnDestroy() {
+        this.disableModal();    
     }
 
 }

@@ -71,6 +71,7 @@ import {TreeModule} from 'primeng/primeng';
 import {TreeTableModule} from 'primeng/primeng';
 
 import {AppComponent}  from './app.component';
+import {AppMenuComponent,AppSubMenu}  from './app.menu.component';
 import {DashboardDemo} from './demo/view/dashboarddemo';
 import {SampleDemo} from './demo/view/sampledemo';
 import {FormsDemo} from './demo/view/formsdemo';
@@ -163,6 +164,8 @@ import {NodeService} from './demo/service/nodeservice';
     ],
     declarations: [
         AppComponent,
+        AppMenuComponent,
+        AppSubMenu,
         DashboardDemo,
         SampleDemo,
         FormsDemo,
