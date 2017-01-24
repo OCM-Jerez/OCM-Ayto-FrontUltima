@@ -161,7 +161,7 @@
             <div class="card card-w-title">
                 <h1>DataTable</h1>
                 <p-dataTable [value]="cars" selectionMode="single" [(selection)]="selectedCar3">
-                    <header>DataTable</header>
+                    <p-header>DataTable</p-header>
                     <p-column field="vin" header="Vin"></p-column>
                     <p-column field="year" header="Year"></p-column>
                     <p-column field="brand" header="Brand"></p-column>
@@ -175,10 +175,10 @@
             <div class="card card-w-title">
                 <h1>DataGrid</h1>
                 <p-dataGrid [value]="carsLarge" [paginator]="true" [rows]="20">
-                    <header>
+                    <p-header>
                         List of Cars
-                    </header>
-                    <template let-car>
+                    </p-header>
+                    <template let-car pTemplate="item">
                         <div style="padding:3px" class="ui-g-12 ui-md-3">
                             <p-panel [header]="car.vin" [style]="{'text-align':'center'}">
                                 <img src="assets/demo/images/car/{{car.brand}}.gif">
@@ -219,7 +219,7 @@
             <div class="card card-w-title">
                 <h1>PickList</h1>
                 <p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected" [responsive]="true">
-                    <template let-car>
+                    <template let-car pTemplate="item">
                         <span>{{car.brand}}</span>
                     </template>
                 </p-pickList>
@@ -228,7 +228,7 @@
             <div class="card card-w-title">
                 <h1>OrderList</h1>
                 <p-orderList [value]="orderListCars" [listStyle]="{'height':'250px'}" [responsive]="true" header="OrderList">
-                    <template let-car>
+                    <template let-car pTemplate="item">
                         <div class="ui-helper-clearfix">
                             <img src="assets/demo/images/car/{{car.brand}}.gif" style="display:inline-block;margin:2px 0 2px 2px" />
                             <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</div>
@@ -272,7 +272,7 @@
             <div class="card card-w-title">
                 <h1>Carousel</h1>
                 <p-carousel headerText="Cars" [value]="carouselCars">
-                    <template let-car>
+                    <template let-car pTemplate="item">
                         <div class="ui-g" style="text-align:center">
                             <div class="ui-g-12" style="text-align:Center">
                                 <img src="assets/demo/images/car/{{car.brand}}.gif" />
