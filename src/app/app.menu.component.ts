@@ -7,10 +7,12 @@ import {AppComponent} from './app.component';
 @Component({
     selector: 'app-menu',
     template: `
-        <ul app-submenu [item]="model" root="true" class="ultima-menu clearfix"></ul>
+        <ul app-submenu [item]="model" root="true" class="ultima-menu clearfix" [reset]="reset"></ul>
     `
 })
 export class AppMenuComponent implements OnInit {
+
+    @Input() reset: boolean;
 
     model: MenuItem[];
 
@@ -168,6 +170,8 @@ export class AppSubMenu {
     @Input() item: MenuItem;
     
     @Input() root: boolean;
+
+    _reset: boolean;
         
     activeIndex: number;
         
@@ -204,5 +208,17 @@ export class AppSubMenu {
     
     isActive(index: number): boolean {
         return this.activeIndex === index;
+    }
+
+    @Input() get reset(): boolean {
+        return this._reset;
+    }
+
+    set reset(val:boolean) {
+        this._reset = val;
+
+        if(this._reset) {
+            this.activeIndex = null;
+        }
     }
 }

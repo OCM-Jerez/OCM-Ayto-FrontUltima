@@ -7,6 +7,7 @@
             'menu-layout-horizontal': isHorizontal(),
             'layout-menu-static-inactive': staticMenuDesktopInactive,
             'layout-menu-static-active': staticMenuMobileActive}">
+
         <!-- Top Bar -->
         <div class="topbar clearfix">
             <div class="topbar-left">            
@@ -173,11 +174,11 @@
         </div>
         
         <!-- Menu -->
-        <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}">
+        <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
             <div class="nano">
                 <div class="nano-content menu-scroll-content">
                     <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile>
-                    <app-menu></app-menu>
+                    <app-menu [reset]="resetMenu"></app-menu>
                 </div>
             </div>
         </div>

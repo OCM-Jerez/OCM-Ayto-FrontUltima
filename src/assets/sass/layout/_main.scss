@@ -233,8 +233,9 @@ body {
         
         .profile-menu {
             border-bottom: 1px solid #d6d5d5;
+            overflow: hidden;
 
-             li:first-child {
+            li:first-child {
                 margin-top: 1em;
             }
             
@@ -327,7 +328,6 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
-        overflow: hidden;
         
         li {
             a {
@@ -713,6 +713,10 @@ body {
                                         color: $primaryColor;
                                         background-color: #e8e8e8;
                                     }
+
+                                     > ul {
+                                        display: block;
+                                    }
                                 }
                             }
                         }
@@ -725,6 +729,10 @@ body {
                                 i {
                                     color: $accentTextColor;
                                 }
+                            }
+
+                            > ul {
+                                display: block;
                             }
                         }
                     }

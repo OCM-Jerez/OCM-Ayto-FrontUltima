@@ -35,11 +35,15 @@ export class AppComponent implements AfterViewInit {
 
     modal: HTMLDivElement;
 
+    menuClick: boolean;
+
     topbarItemClick: boolean;
 
     activeTopbarItem: any;
 
     documentClickListener: Function;
+
+    resetMenu: boolean;
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
 
@@ -48,14 +52,19 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
 
-        //hides the overlay menu and top menu if outside is clicked
+        //hides the horizontal submenus or top menu if outside is clicked
         this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {
             if(!this.topbarItemClick) {
                 this.activeTopbarItem = null;
                 this.topbarMenuActive = false;
             }
 
+            if(!this.menuClick) {
+                this.resetMenu = true;
+            }
+
             this.topbarItemClick = false;
+            this.menuClick = false;
         });
     }
 
@@ -88,6 +97,11 @@ export class AppComponent implements AfterViewInit {
         }
 
         event.preventDefault();
+    }
+
+    onMenuClick($event) {
+        this.menuClick = true;
+        this.resetMenu = false;
     }
 
     onTopbarMenuButtonClick(event) {
