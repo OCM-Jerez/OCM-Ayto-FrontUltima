@@ -218,65 +218,53 @@ body {
             padding: $headerPadding;
         }
         
-        thead {
-            th {
-                padding: .625em .875em;
-                border: 0 none;
-                border-top: 1px solid #bdbdbd;
-                background-color: #ffffff;
-                
-                &:first-child {
-                    border-left: 1px solid #bdbdbd;
-                }
-                
-                &:last-child {
-                    border-right: 1px solid #bdbdbd;
-                }
-                
-                &.ui-sortable-column:not(.ui-state-active):hover {
-                    @include hover-element();
-                }
-                
-                .ui-sortable-column-icon {
-                    vertical-align: middle;
-                    margin: -.25em 0 0 0;
-                    color: $textSecondaryColor;
-                }
-                
-                .ui-column-resizer {
-                    @include material-icon("code");
-                    font-size: 1em;
-                    color: $textSecondaryColor;
-                }
-                
-                &.ui-state-active,&.ui-state-highlight {
-                    background-color: $accentColor;
-                    color: $accentTextColor;
-                    border-top-color: $accentColor;
-                    
-                    .fa {
-                        color: $accentTextColor;
+        .ui-datatable-thead {
+            > tr {
+                 border-color: $dividerLightColor;
+
+                 th {
+                    padding: .625em .875em;
+                    background-color: #ffffff;
+                                    
+                    &.ui-sortable-column:not(.ui-state-active):hover {
+                        @include hover-element();
                     }
                     
-                    .ui-inputtext {
+                    .ui-sortable-column-icon {
+                        vertical-align: middle;
+                        margin: -.25em 0 0 0;
+                        color: $textSecondaryColor;
+                    }
+                    
+                    .ui-column-resizer {
+                        @include material-icon("code");
+                        font-size: 1em;
+                        color: $textSecondaryColor;
+                    }
+                    
+                    &.ui-state-active,&.ui-state-highlight {
+                        background-color: $accentColor;
                         color: $accentTextColor;
+                        border-top-color: $accentColor;
                         
-                        &.ui-state-focus {
-                            border-color: $accentTextColor;
+                        .fa {
+                            color: $accentTextColor;
+                        }
+                        
+                        .ui-inputtext {
+                            color: $accentTextColor;
+                            
+                            &.ui-state-focus {
+                                border-color: $accentTextColor;
+                            }
                         }
                     }
-                }
-                
-                &.ui-selection-column {
-                    .ui-chkbox-box {
-                        box-sizing: content-box;
+                    
+                    &.ui-selection-column {
+                        .ui-chkbox-box {
+                            box-sizing: content-box;
+                        }
                     }
-                }
-            }
-            
-            tr {
-                th {
-                    border: 1px solid #bdbdbd;
                 }
             }
         }
@@ -300,8 +288,9 @@ body {
             }
                                
             tr {
+                border: 1px solid $dividerLightColor;
+
                 td {
-                    border: 1px solid $dividerLightColor;
                     padding: .625em .875em;
                     
                     .ui-row-toggler  {
@@ -337,12 +326,9 @@ body {
                     }
                 }
                 
-                &.ui-widget-content {
-                    border: 0 none;
-                }
-                
                 &.ui-state-highlight{
                     background-color: $accentColor;
+                    border-color: $accentColor;
                     color: $accentTextColor;
                 }
                 
