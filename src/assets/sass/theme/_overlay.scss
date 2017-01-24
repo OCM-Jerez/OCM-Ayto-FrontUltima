@@ -62,7 +62,7 @@ body {
                     color: $textSecondaryColor;
                 }
                 
-                &.ui-state-hover {
+                &:hover {
                     @include hover-element();
                 }
             }

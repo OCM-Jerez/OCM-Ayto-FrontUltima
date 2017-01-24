@@ -84,7 +84,7 @@ body {
                 color: #ffffff;
             }
             
-            &.ui-state-hover {
+            &:not(.ui-state-active):not(.ui-state-disabled):hover {
                 background-color: $primaryDarkColor;
             }
             
@@ -164,7 +164,7 @@ body {
                     }
                 }
                 
-                &.ui-state-hover {
+                &:not(.ui-state-active):not(.ui-state-disabled):hover {
                     background-color: #ffffff;
                 }
                 

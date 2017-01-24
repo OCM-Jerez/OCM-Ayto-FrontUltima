@@ -105,11 +105,7 @@ body {
                 &.ui-menuitem {
                     margin: 0;
                     @include border-radius(0);
-                    
-                    &.ui-state-hover {
-                        @include hover-element();
-                    }
-                    
+                                        
                     .ui-menuitem-link {
                         border: 0 none;
                         padding: .625em 1em;
@@ -121,7 +117,7 @@ body {
                         @include border-radius(0);
                         position: relative;
                         
-                        &.ui-state-hover {
+                        &:hover {
                             @include hover-element();
                         }
                         
@@ -137,6 +133,12 @@ body {
                             display: inline-block;
                             vertical-align: middle;
                             float: none;
+                        }
+                    }
+
+                    &.ui-menuitem-active {
+                        > .ui-menuitem-link {
+                            @include hover-element();
                         }
                     }
                 }
@@ -263,7 +265,7 @@ body {
                    }
                }
                
-               &.ui-state-hover {
+               &:not(.ui-state-active):hover {
                    background-color: #ffffff;
                }
                
@@ -325,7 +327,7 @@ body {
                     @include border-radius(0);
                     position: relative;
                     
-                    &.ui-state-hover {
+                    &:hover {
                         @include hover-element();
                     }
                                         

@@ -9,6 +9,7 @@ body {
         @include transition(border-color .3s);
         @include border-radius(0px);
         
+        &:focus,
         &.ui-state-focus {
             border-width: 0 0 2px 0;
             border-color: $primaryColor;  
@@ -109,7 +110,7 @@ body {
             @include transition(background-color .3s);
             @include border-radius(0);
 
-            &.ui-state-hover {
+            &:not(.ui-state-highlight):hover {
                 @include hover-element();
             }
             
@@ -156,11 +157,11 @@ body {
     	box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         @include transition(background-color .3s);
         
-        &.ui-state-hover {
+        &:enabled:hover {
             background-color: $primaryDarkColor;   
         }
         
-        &.ui-state-focus {
+        &:focus {
             outline: 0 none;
             background-color: lighten($primaryColor,10%);
         }
@@ -196,11 +197,11 @@ body {
             background-color: $accentColor;
             color: $accentTextColor;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: $accentDarkColor;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten($accentColor,10%);
             }
@@ -209,11 +210,11 @@ body {
         &.blue-grey-btn {
             background-color: #607D8B;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #37474F;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#607D8B,10%);
             }
@@ -222,11 +223,11 @@ body {
         &.cyan-btn {
             background-color: #00BCD4;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #00838F;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#00BCD4,10%);
             }
@@ -235,11 +236,11 @@ body {
         &.teal-btn {
             background-color: #009688;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #00695C;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#009688,10%);
             }
@@ -248,11 +249,11 @@ body {
         &.red-btn {
             background-color: #F44336;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #C62828;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#F44336,10%);
             }
@@ -261,11 +262,11 @@ body {
         &.green-btn {
             background-color: #4CAF50;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #2E7D32;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#4CAF50,10%);
             }
@@ -274,11 +275,11 @@ body {
         &.deep-orange-btn {
             background-color: #FF5722;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #D84315;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#FF5722,10%);
             }
@@ -287,11 +288,11 @@ body {
         &.purple-btn {
             background-color: #673AB7;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #4527A0;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#673AB7,10%);
             }
@@ -300,11 +301,11 @@ body {
         &.pink-btn {
             background-color: #E91E63;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #AD1457;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#E91E63,10%);
             }
@@ -314,11 +315,11 @@ body {
             background-color: #FFC107;
             color: #212121;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #FF8F00;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#FFC107,10%);
             }
@@ -327,11 +328,11 @@ body {
         &.orange-btn {
             background-color: #FF9800;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #EF6C00;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#FF9800,10%);
             }
@@ -340,11 +341,11 @@ body {
         &.brown-btn {
             background-color: #795548;
             
-            &.ui-state-hover {
+            &:enabled:hover {
                 background-color: #4E342E;   
             }
             
-            &.ui-state-focus {
+            &:focus {
                 outline: 0 none;
                 background-color: lighten(#795548,10%);
             }
@@ -356,13 +357,23 @@ body {
     }
     
     .ui-buttonset {
-        .ui-state-active {
-            background-color: $accentColor;
-            color: $accentTextColor;
+        .ui-button {
+            &:not(.ui-state-disabled):not(.ui-state-active):hover {
+                background-color: $primaryDarkColor;
+            }
+
+            &.ui-state-active {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
         }
     }
     
     .ui-togglebutton {
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+            background-color: $primaryDarkColor;
+        }
+
         &.ui-state-active {
             background-color: $accentColor;
             color: $accentTextColor;
@@ -378,7 +389,7 @@ body {
         > .ui-button {
             @include no-shadow();
             
-            &.ui-state-active {
+            &:active {
                 background-color: lighten($primaryColor,10%);
             }
         }
@@ -614,7 +625,7 @@ body {
             @include transition(background-color .3s);
             @include border-radius(0);
             
-            &.ui-state-hover {
+            &:hover {
                 @include hover-element();
             }
             
@@ -765,7 +776,7 @@ body {
             color: $textColor;
             @include border-radius(0);
             
-            &.ui-state-hover {
+            &:hover {
                 @include hover-element();
             }
         }
@@ -874,7 +885,6 @@ body {
             transform: scale(.7);
             @include transition(all .4s cubic-bezier(.25,.8,.25,1));
             
-            &.ui-state-hover,
             &.ui-state-focus {
                 transform: scale(1);
             } 
@@ -907,6 +917,14 @@ body {
         .ui-slider-range {
             background-color: $accentColor;
             color: $accentTextColor;
+        }
+
+        &:not(.ui-state-disabled) {
+            .ui-slider-handle {
+                &:hover {
+                    transform: scale(1);
+                }
+            }
         }
     }
     
@@ -1002,15 +1020,17 @@ body {
                     height: 2.250em;
                     width: 2.250em;
                     @include border-radius(50%);
-                    
-                    &.ui-state-hover {
-                        @include hover-element();
-                    }
-                    
+                                        
                     &.ui-state-active {
                         color: #ffffff;
                         background-color: $accentColor;
                         color: $accentTextColor;
+                    }
+                }
+
+                &:not(.ui-state-disabled) {
+                    a:hover,span:hover {
+                        @include hover-element();
                     }
                 }
                 
@@ -1139,7 +1159,7 @@ body {
             .ui-button {
                 background-color: $accentColor;
                 
-                &.ui-state-hover {
+                &:enabled:hover {
                     background-color: $accentDarkColor;
                 }
             }

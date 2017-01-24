@@ -39,7 +39,7 @@ body {
             @include transition(background-color .3s);
             @include border-radius(3px);
             
-            &.ui-state-hover {
+            &:hover {
                 background-color: $hoverBgColor;
             }
         }

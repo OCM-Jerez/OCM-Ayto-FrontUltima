@@ -16,7 +16,7 @@ body {
             @include border-radius(0);
             color: $textColor;
             
-            &.ui-state-hover {
+            &:not(.ui-state-highlight):hover {
                 @include hover-element();
             }
             
@@ -87,7 +87,7 @@ body {
                 @include border-radius(0);
                 color: $textColor;
 
-                &.ui-state-hover {
+                &:not(.ui-state-highlight):hover {
                     @include hover-element();
                 }
                 
@@ -124,7 +124,7 @@ body {
                 display: none;
             }
             
-            &.ui-state-hover {
+            &:not(.ui-state-disabled):not(.ui-state-active):hover {
                 background-color: $primaryLightColor;
                 @include border-radius(50%);
                 @include transition(background-color .3s);
@@ -168,7 +168,7 @@ body {
                 @include border-radius(50%);
                 @include transition(background-color .3s);
                 
-                &.ui-state-hover {
+                &:not(.ui-state-active):hover {
                     background-color: $primaryLightColor;
                 }        
                 
@@ -233,7 +233,7 @@ body {
                     border-right: 1px solid #bdbdbd;
                 }
                 
-                &.ui-state-hover {
+                &.ui-sortable-column:not(.ui-state-active):hover {
                     @include hover-element();
                 }
                 
@@ -289,14 +289,10 @@ body {
             }
         }
         
-        tbody {     
+        tbody { 
             tr.ui-datatable-even {
                 background-color: #f4f4f4;
-                
-                &.ui-state-hover {
-                    @include hover-element();
-                }
-                
+                                
                 &.ui-state-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
@@ -339,14 +335,10 @@ body {
                             box-sizing: content-box;
                         }
                     }
-                 }
+                }
                 
                 &.ui-widget-content {
                     border: 0 none;
-                }
-                
-                &.ui-state-hover {
-                    @include hover-element();
                 }
                 
                 &.ui-state-highlight{
@@ -409,6 +401,12 @@ body {
                         vertical-align: top;
                         display: inline-block;
                     }
+                }
+            }
+
+            &.ui-datatable-hoverable-rows {
+                > tr.ui-widget-content:not(.ui-state-highlight):hover {
+                    @include hover-element();
                 }
             }
         }        
@@ -494,9 +492,11 @@ body {
             
             .ui-treenode-label {
                 margin: 0;
-                vertical-align: middle;
-                
-                &.ui-state-hover {
+                vertical-align: middle;                
+            }
+
+            &.ui-treenode-selectable {
+                .ui-treenode-label:not(.ui-state-highlight):hover {
                     @include hover-element();
                 }
             }
@@ -518,8 +518,8 @@ body {
                     vertical-align: top;
                     margin-right: .25em;
                 }
-                
-                &.ui-state-hover {
+
+                &.ui-treenode-selectable:hover {
                     @include hover-element();
                 }
                 
@@ -589,10 +589,6 @@ body {
                         border-right: 1px solid $dividerColor;
                     }
                     
-                    &.ui-state-hover {
-                        @include hover-element();
-                    }
-                    
                     .ui-sortable-column-icon {
                         vertical-align: middle;
                         margin: -.25em 0 0 0;
@@ -647,7 +643,7 @@ body {
                     }
                 }
 
-                &.ui-state-hover {
+                &.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
                     @include hover-element();
                 }
                 
