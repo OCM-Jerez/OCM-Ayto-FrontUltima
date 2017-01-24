@@ -141,7 +141,7 @@ export class AppMenuComponent implements OnInit {
     selector: '[app-submenu]',
     template: `
         <template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
-            <li [ngClass]="{'active-menuitem': isActive(i)}">
+            <li [ngClass]="{'active-menuitem': isActive(i), 'active-menuitem-route': isActiveRoute(child)}">
                 <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
@@ -207,6 +207,11 @@ export class AppSubMenu {
     
     isActive(index: number): boolean {
         return this.activeIndex === index;
+    }
+
+    isActiveRoute(item: MenuItem) {
+        console.log('x');
+        return item.routerLink && this.router.isActive(this.router.createUrlTree(item.routerLink), true);
     }
 
     @Input() get reset(): boolean {

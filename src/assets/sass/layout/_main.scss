@@ -285,6 +285,12 @@ body {
                             background-color: $accentColor;
                         }
                     }
+
+                    &.active-menuitem-route {
+                        > a {
+                            background-color: lighten($accentColor, 10%);
+                        }
+                    }
                 }
             }                    
         }
@@ -381,6 +387,13 @@ body {
                     }
                 }
             }
+
+            &.active-menuitem-route {
+                > a {
+                    background-color: darken(#e8e8e8, 10%);
+                }
+            }
+            
             
             ul {
                 padding: 0;
