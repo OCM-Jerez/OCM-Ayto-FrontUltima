@@ -42,7 +42,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Customization', icon: 'settings_application',
                 items: [
                     {label: 'Compact Size', icon: 'fiber_manual_record', command: () => this.app.layoutCompact = true},
-                    {label: 'Compact Size', icon: 'fiber_smart_record',  command: () => this.app.layoutCompact = false},
+                    {label: 'Material Size', icon: 'fiber_smart_record',  command: () => this.app.layoutCompact = false},
                     {label: 'Static Menu', icon: 'menu',  command: () => this.app.changeToStaticMenu()},
                     {label: 'Overlay Menu', icon: 'exit_to_app',  command: () => this.app.changeToOverlayMenu()},
                     {label: 'Horizontal Menu', icon: 'border_horizontal',  command: () => this.app.changeToHorizontalMenu()},
@@ -143,7 +143,7 @@ export class AppMenuComponent implements OnInit {
     template: `
         <template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)">
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
