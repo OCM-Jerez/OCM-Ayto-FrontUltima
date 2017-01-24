@@ -32,7 +32,7 @@ Ultima = {
     _bindEvents: function() {
         var $this = this;
         
-        this.menuButton.off('click.ultima').on('click.ultima', function(e) {
+        /*this.menuButton.off('click.ultima').on('click.ultima', function(e) {
             $this.menuButton.toggleClass('menu-button-rotate');
             $this.topbarItems.removeClass('topbar-items-visible');
             
@@ -66,9 +66,9 @@ Ultima = {
             }
             
             e.preventDefault();
-        });
+        });*/
         
-        this.topbarMenuButton.off('click.ultima').on('click.ultima', function(e) {
+        /*this.topbarMenuButton.off('click.ultima').on('click.ultima', function(e) {
             $this.topbarMenuClick = true;
             $this.topbarItems.find('ul').removeClass('fadeInDown fadeOutUp');
             
@@ -90,9 +90,9 @@ Ultima = {
             }
             
             e.preventDefault();
-        });
+        });*/
         
-        this.menu.off('click.ultima').on('click.ultima', 'a', function(e) {
+        /*this.menu.off('click.ultima').on('click.ultima', 'a', function(e) {
             var link = $(this),
             item = link.parent(),
             submenu = item.children('ul'),
@@ -153,7 +153,7 @@ Ultima = {
             if(submenu.length) {
                 e.preventDefault();
             }
-        });
+        });*/
         
         this.menu.off('mouseenter.ultima').on('mouseenter.ultima','> li > a', function(e) {
             if($this.isHorizontal() && $this.isDesktop()) {
@@ -174,7 +174,7 @@ Ultima = {
             }
         });
         
-        this.profileButton.off('click.ultima').on('click.ultima', function(e) {
+        /*this.profileButton.off('click.ultima').on('click.ultima', function(e) {
             var profile = $this.profileMenu.prev('.profile'),
             expanded = profile.hasClass('profile-expanded');
             
@@ -224,9 +224,9 @@ Ultima = {
             }   
             
             e.preventDefault();         
-        });
+        });*/
         
-        $this.topbarItems.children('.search-item').off('click.ultima').on('click.ultima', function(e) {
+        /*$this.topbarItems.children('.search-item').off('click.ultima').on('click.ultima', function(e) {
             $this.topbarLinkClick = true;
         });
         
@@ -242,7 +242,7 @@ Ultima = {
             $this.horizontalMenuClick = false;
             $this.topbarLinkClick = false;
             $this.topbarMenuClick = false;
-        });
+        });*/
     },
     
     deactivateHorizontalMenu: function() {

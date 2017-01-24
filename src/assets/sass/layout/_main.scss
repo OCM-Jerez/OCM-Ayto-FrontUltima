@@ -231,10 +231,12 @@ body {
             }
         }
         
-        #profile-menu {
-            margin-top: 1em;
+        .profile-menu {
             border-bottom: 1px solid #d6d5d5;
-            display: none;
+
+             li:first-child {
+                margin-top: 1em;
+            }
             
             li:last-child {
                 margin-bottom: 1em;
@@ -325,6 +327,7 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
+        overflow: hidden;
         
         li {
             a {

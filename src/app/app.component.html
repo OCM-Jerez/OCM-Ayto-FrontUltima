@@ -1,8 +1,8 @@
 <div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}">
-    
+
     <div #layoutContainer class="layout-container" 
-            [ngClass]="{'menu-layout-static': layoutMode !== isOverlay(),
-            'menu-layout-overlay': layoutMode === isOverlay(),
+            [ngClass]="{'menu-layout-static': !isOverlay(),
+            'menu-layout-overlay': isOverlay(),
             'layout-menu-overlay-active': overlayMenuActive,
             'menu-layout-horizontal': isHorizontal(),
             'layout-menu-static-inactive': staticMenuDesktopInactive,
@@ -18,17 +18,18 @@
                     <i></i>
                 </a>
                 
-                <a id="topbar-menu-button" href="#">
+                <a id="topbar-menu-button" href="#" (click)="onTopbarMenuButtonClick($event)">
                     <i class="material-icons">menu</i>
                 </a>
-                <ul class="topbar-items fadeInDown animated">
-                    <li class="profile-item" [hidden]="profileMode!='top'&&layoutMode!='horizontal'">
-                        <a href="#">                            
+                <ul class="topbar-items animated fadeInDown" [ngClass]="{'topbar-items-visible': topbarMenuActive}">
+                    <li #profile class="profile-item" [hidden]="profileMode!='top'&&layoutMode!='horizontal'"
+                        [ngClass]="{'active-top-menu':activeTopbarItem === profile}">
+                        <a href="#" (click)="onTopbarItemClick($event,profile)">                            
                             <div class="profile-image"></div>
                             <span class="topbar-item-name">Jane Williams</span>
                         </a>
                         
-                        <ul class="ultima-menu animated">
+                        <ul class="ultima-menu animated fadeInDown">
                             <li role="menuitem">
                                 <a href="#">
                                     <i class="material-icons">person</i>
@@ -55,12 +56,12 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li #settings [ngClass]="{'active-top-menu':activeTopbarItem === settings}">
+                        <a href="#" (click)="onTopbarItemClick($event,settings)"> 
                             <i class="topbar-icon material-icons">settings</i>
                             <span class="topbar-item-name">Settings</span>
                         </a>
-                        <ul class="ultima-menu animated">
+                        <ul class="ultima-menu animated fadeInDown">
                             <li role="menuitem">
                                 <a href="#">
                                     <i class="material-icons">palette</i>
@@ -87,13 +88,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li #messages [ngClass]="{'active-top-menu':activeTopbarItem === messages}">
+                        <a href="#" (click)="onTopbarItemClick($event,messages)"> 
                             <i class="topbar-icon material-icons animated swing">message</i>
                             <span class="topbar-badge animated rubberBand">5</span>
                             <span class="topbar-item-name">Messages</span>
                         </a>
-                        <ul class="ultima-menu animated">
+                        <ul class="ultima-menu animated fadeInDown">
                             <li role="menuitem">
                                 <a href="#" class="topbar-message">
                                     <img src="assets/layout/images/avatar1.png" width="35"/>
@@ -126,13 +127,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
+                    <li #notifications [ngClass]="{'active-top-menu':activeTopbarItem === notifications}">
+                        <a href="#" (click)="onTopbarItemClick($event,notifications)"> 
                             <i class="topbar-icon material-icons">timer</i>
                             <span class="topbar-badge animated rubberBand">4</span>
                             <span class="topbar-item-name">Notifications</span>
                         </a>
-                        <ul class="ultima-menu animated">
+                        <ul class="ultima-menu animated fadeInDown">
                             <li role="menuitem">
                                 <a href="#">
                                     <i class="material-icons">bug_report</i>
@@ -159,13 +160,13 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="search-item">
+                    <li #search class="search-item" [ngClass]="{'active-top-menu':activeTopbarItem === search}"
+                        (click)="onTopbarItemClick($event,search)">
                         <span class="md-inputfield">
                             <input type="text">
                             <label>Search</label>
                             <i class="topbar-icon material-icons">search</i>
                         </span>
-                        
                     </li>
                 </ul>
             </div>
@@ -175,40 +176,7 @@
         <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}">
             <div class="nano">
                 <div class="nano-content menu-scroll-content">
-                    <div class="profile" [hidden]="profileMode!='inline'||layoutMode=='horizontal'">
-                        <div class="profile-image"></div>
-                        <a id="profile-options" href="#">
-                            <span class="profile-name">Jane Williams</span>
-                            <i class="material-icons">keyboard_arrow_down</i>
-                        </a>
-                    </div>
-
-                    <ul id="profile-menu" class="ultima-menu" [hidden]="profileMode!='inline'">
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">person</i>
-                                <span>Profile</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">security</i>
-                                <span>Privacy</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">settings_application</i>
-                                <span>Settings</span>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" class="ripplelink">
-                                <i class="material-icons">power_settings_new</i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile>
                     <app-menu></app-menu>
                 </div>
             </div>

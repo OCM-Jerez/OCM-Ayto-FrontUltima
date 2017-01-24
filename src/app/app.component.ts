@@ -1,4 +1,4 @@
-import {Component,AfterViewInit,ElementRef,ViewChild} from '@angular/core';
+import {Component,AfterViewInit,ElementRef,Renderer,ViewChild} from '@angular/core';
 
 enum MenuOrientation {
     STATIC,
@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
 
     rotateMenuButton: boolean;
 
-    topbarItemsActive: boolean;
+    topbarMenuActive: boolean;
 
     overlayMenuActive: boolean;
 
@@ -35,17 +35,33 @@ export class AppComponent implements AfterViewInit {
 
     modal: HTMLDivElement;
 
+    topbarItemClick: boolean;
+
+    activeTopbarItem: any;
+
+    documentClickListener: Function;
+
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
 
-    constructor(private el: ElementRef) {}
+    constructor(public renderer: Renderer) {}
 
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
+
+        //hides the overlay menu and top menu if outside is clicked
+        this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {
+            if(!this.topbarItemClick) {
+                this.activeTopbarItem = null;
+                this.topbarMenuActive = false;
+            }
+
+            this.topbarItemClick = false;
+        });
     }
 
     onMenuButtonClick(event) {
         this.rotateMenuButton = !this.rotateMenuButton;
-        this.topbarItemsActive = false;
+        this.topbarMenuActive = false;
 
         if(this.layoutMode === MenuOrientation.OVERLAY) {
             this.overlayMenuActive = !this.overlayMenuActive;
@@ -70,6 +86,29 @@ export class AppComponent implements AfterViewInit {
                 }
             }
         }
+
+        event.preventDefault();
+    }
+
+    onTopbarMenuButtonClick(event) {
+        this.topbarItemClick = true;
+        this.topbarMenuActive = !this.topbarMenuActive;
+        
+        if(this.overlayMenuActive || this.staticMenuMobileActive) {
+            this.rotateMenuButton = false;
+            this.overlayMenuActive = false;
+            this.staticMenuMobileActive = false;
+            this.disableModal();
+        }
+    }
+
+    onTopbarItemClick(event, item) {
+        this.topbarItemClick = true;
+
+        if(this.activeTopbarItem === item)
+            this.activeTopbarItem = null;
+        else
+            this.activeTopbarItem = item;
 
         event.preventDefault();
     }
@@ -120,7 +159,11 @@ export class AppComponent implements AfterViewInit {
     }
 
     ngOnDestroy() {
-        this.disableModal();    
+        this.disableModal();
+
+        if(this.documentClickListener) {
+            this.documentClickListener();
+        }  
     }
 
 }

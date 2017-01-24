@@ -47,7 +47,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Light Menu', icon: 'label_outline',  command: () => this.app.darkMenu = false},
                     {label: 'Dark Menu', icon: 'label',  command: () => this.app.darkMenu = true},
                     {label: 'Inline Profile', icon: 'contacts',  command: () => this.app.profileMode = 'inline'},
-                    {label: 'Dark Profile', icon: 'person_pin',  command: () => this.app.profileMode = 'top'},
+                    {label: 'Top Profile', icon: 'person_pin',  command: () => this.app.profileMode = 'top'},
                 ]
             },
             {
