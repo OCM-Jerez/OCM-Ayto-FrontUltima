@@ -806,6 +806,11 @@ body {
                 height: .5em;
                 color: $textSecondaryColor;
             }
+
+            &:enabled:hover,
+            &:active {
+                background-color: #ffffff;
+            }
         }
         
         .ui-spinner-up {
@@ -830,6 +835,10 @@ body {
             .ui-spinner-button {
                 width: 1em;
                 height: .75em;
+
+                .fa {
+                    left: auto;
+                }
             }
         }
     }
