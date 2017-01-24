@@ -141,8 +141,15 @@ export class AppMenuComponent implements OnInit {
     selector: '[app-submenu]',
     template: `
         <template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
-            <li [ngClass]="{'active-menuitem': isActive(i), 'active-menuitem-route': isActiveRoute(child)}">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink">
+            <li [ngClass]="{'active-menuitem': isActive(i)}">
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink">
+                    <i class="material-icons">{{child.icon}}</i>
+                    <span>{{child.label}}</span>
+                    <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
+                </a>
+
+                <a (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="child.routerLink"
+                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
@@ -183,11 +190,7 @@ export class AppSubMenu {
         }
         
         this.activeIndex = (this.activeIndex === index) ? null : index;
-        
-        if(!item.url||item.routerLink) {
-            event.preventDefault();
-        }
-        
+                
         if(item.command) {
             if(!item.eventEmitter) {
                 item.eventEmitter = new EventEmitter();
@@ -200,18 +203,13 @@ export class AppSubMenu {
             });
         }
 
-        if(item.routerLink) {
-            this.router.navigate(item.routerLink);
+        if(item.items) {
+            event.preventDefault();
         }
     }
     
     isActive(index: number): boolean {
         return this.activeIndex === index;
-    }
-
-    isActiveRoute(item: MenuItem) {
-        console.log('x');
-        return item.routerLink && this.router.isActive(this.router.createUrlTree(item.routerLink), true);
     }
 
     @Input() get reset(): boolean {

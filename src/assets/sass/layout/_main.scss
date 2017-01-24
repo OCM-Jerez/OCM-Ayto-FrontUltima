@@ -277,18 +277,16 @@ body {
                         &:hover {
                             background-color: $darkMenuHoverColor;
                         }
+
+                         &.active-menuitem-routerlink {
+                            background-color: lighten($accentColor, 10%);
+                         }
                     }
                     
                     &.active-menuitem {
                         > a {
                             color: $accentTextColor;
                             background-color: $accentColor;
-                        }
-                    }
-
-                    &.active-menuitem-route {
-                        > a {
-                            background-color: lighten($accentColor, 10%);
                         }
                     }
                 }
@@ -375,6 +373,10 @@ body {
                     display: inline-block;
                     vertical-align: middle;
                 }
+
+                &.active-menuitem-routerlink {
+                    background-color: darken(#e8e8e8, 10%);
+                }
             }
             
             &.active-menuitem {
@@ -388,13 +390,6 @@ body {
                 }
             }
 
-            &.active-menuitem-route {
-                > a {
-                    background-color: darken(#e8e8e8, 10%);
-                }
-            }
-            
-            
             ul {
                 padding: 0;
                 margin: 0;
