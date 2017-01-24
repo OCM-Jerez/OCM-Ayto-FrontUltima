@@ -157,7 +157,7 @@ body {
     	box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
         @include transition(background-color .3s);
         
-        &:enabled:hover {
+        &:enabled:not(:focus):hover {
             background-color: $primaryDarkColor;   
         }
         
@@ -197,7 +197,7 @@ body {
             background-color: $accentColor;
             color: $accentTextColor;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: $accentDarkColor;   
             }
             
@@ -210,7 +210,7 @@ body {
         &.blue-grey-btn {
             background-color: #607D8B;
             
-            &:enabled:hover {
+           &:enabled:not(:focus):hover {
                 background-color: #37474F;   
             }
             
@@ -223,7 +223,7 @@ body {
         &.cyan-btn {
             background-color: #00BCD4;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #00838F;   
             }
             
@@ -236,7 +236,7 @@ body {
         &.teal-btn {
             background-color: #009688;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #00695C;   
             }
             
@@ -249,7 +249,7 @@ body {
         &.red-btn {
             background-color: #F44336;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #C62828;   
             }
             
@@ -262,7 +262,7 @@ body {
         &.green-btn {
             background-color: #4CAF50;
             
-            &:enabled:hover {
+           &:enabled:not(:focus):hover {
                 background-color: #2E7D32;   
             }
             
@@ -275,7 +275,7 @@ body {
         &.deep-orange-btn {
             background-color: #FF5722;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #D84315;   
             }
             
@@ -288,7 +288,7 @@ body {
         &.purple-btn {
             background-color: #673AB7;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #4527A0;   
             }
             
@@ -301,7 +301,7 @@ body {
         &.pink-btn {
             background-color: #E91E63;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #AD1457;   
             }
             
@@ -315,7 +315,7 @@ body {
             background-color: #FFC107;
             color: #212121;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #FF8F00;   
             }
             
@@ -328,7 +328,7 @@ body {
         &.orange-btn {
             background-color: #FF9800;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #EF6C00;   
             }
             
@@ -341,7 +341,7 @@ body {
         &.brown-btn {
             background-color: #795548;
             
-            &:enabled:hover {
+            &:enabled:not(:focus):hover {
                 background-color: #4E342E;   
             }
             
