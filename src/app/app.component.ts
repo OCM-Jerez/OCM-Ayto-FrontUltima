@@ -6,6 +6,8 @@ enum MenuOrientation {
     HORIZONTAL
 };
 
+declare var jQuery: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -33,6 +35,8 @@ export class AppComponent implements AfterViewInit {
 
     layoutContainer: HTMLDivElement;
 
+    layoutMenuScroller: HTMLDivElement;
+
     modal: HTMLDivElement;
 
     menuClick: boolean;
@@ -47,10 +51,13 @@ export class AppComponent implements AfterViewInit {
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
 
+    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
+
     constructor(public renderer: Renderer) {}
 
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
+        this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
 
         //hides the horizontal submenus or top menu if outside is clicked
         this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {
@@ -66,6 +73,8 @@ export class AppComponent implements AfterViewInit {
             this.topbarItemClick = false;
             this.menuClick = false;
         });
+
+        jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
     }
 
     onMenuButtonClick(event) {
@@ -102,6 +111,12 @@ export class AppComponent implements AfterViewInit {
     onMenuClick($event) {
         this.menuClick = true;
         this.resetMenu = false;
+
+        if(!this.isHorizontal()) {
+            setTimeout(function() {
+                jQuery(this.layoutMenuScroller).nanoScroller();
+            }, 500);
+        }
     }
 
     onTopbarMenuButtonClick(event) {
@@ -178,6 +193,8 @@ export class AppComponent implements AfterViewInit {
         if(this.documentClickListener) {
             this.documentClickListener();
         }  
+
+        jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
     }
 
 }

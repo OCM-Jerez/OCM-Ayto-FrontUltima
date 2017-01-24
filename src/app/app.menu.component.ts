@@ -24,18 +24,18 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Themes', icon: 'palette',
                 items: [
-                    {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme(event, 'indigo')}},
-                    {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme(event, 'brown')}},
-                    {label: 'Blue - Amber', icon: 'brush', command: (event) => {this.changeTheme(event, 'blue')}},
-                    {label: 'Blue Grey - Green', icon: 'brush', command: (event) => {this.changeTheme(event, 'blue-grey')}},
-                    {label: 'Dark - Blue', icon: 'brush', command: (event) => {this.changeTheme(event, 'dark-blue')}},
-                    {label: 'Dark - Green', icon: 'brush', command: (event) => {this.changeTheme(event, 'dark-green')}},
-                    {label: 'Green - Yellow', icon: 'brush', command: (event) => {this.changeTheme(event, 'green')}},
-                    {label: 'Purple - Cyan', icon: 'brush', command: (event) => {this.changeTheme(event, 'purple-cyan')}},
-                    {label: 'Purple - Amber', icon: 'brush', command: (event) => {this.changeTheme(event, 'purple-amber')}},
-                    {label: 'Teal - Lime', icon: 'brush', command: (event) => {this.changeTheme(event, 'teal')}},
-                    {label: 'Cyan - Amber', icon: 'brush', command: (event) => {this.changeTheme(event, 'cyan')}},
-                    {label: 'Grey - Deep Orange', icon: 'brush', command: (event) => {this.changeTheme(event, 'grey')}}
+                    {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme('indigo')}},
+                    {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme('brown')}},
+                    {label: 'Blue - Amber', icon: 'brush', command: (event) => {this.changeTheme('blue')}},
+                    {label: 'Blue Grey - Green', icon: 'brush', command: (event) => {this.changeTheme('blue-grey')}},
+                    {label: 'Dark - Blue', icon: 'brush', command: (event) => {this.changeTheme('dark-blue')}},
+                    {label: 'Dark - Green', icon: 'brush', command: (event) => {this.changeTheme('dark-green')}},
+                    {label: 'Green - Yellow', icon: 'brush', command: (event) => {this.changeTheme('green')}},
+                    {label: 'Purple - Cyan', icon: 'brush', command: (event) => {this.changeTheme('purple-cyan')}},
+                    {label: 'Purple - Amber', icon: 'brush', command: (event) => {this.changeTheme('purple-amber')}},
+                    {label: 'Teal - Lime', icon: 'brush', command: (event) => {this.changeTheme('teal')}},
+                    {label: 'Cyan - Amber', icon: 'brush', command: (event) => {this.changeTheme('cyan')}},
+                    {label: 'Grey - Deep Orange', icon: 'brush', command: (event) => {this.changeTheme('grey')}}
                 ]
             },
             {
@@ -128,13 +128,12 @@ export class AppMenuComponent implements OnInit {
         ];
     }
 
-    changeTheme(event, theme) {
+    changeTheme(theme) {
         let themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
         let layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
         
         themeLink.href = 'assets/theme/theme-' + theme +'.css';
         layoutLink.href = 'assets/layout/css/layout-' + theme +'.css';
-        event.preventDefault();
     }
 }
 
