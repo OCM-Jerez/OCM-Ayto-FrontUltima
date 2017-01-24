@@ -174,8 +174,8 @@ export class AppSubMenu {
     _reset: boolean;
         
     activeIndex: number;
-        
-    constructor(public router: Router, public location: Location) {}
+
+    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent, public router: Router, public location: Location) {}
         
     itemClick(event: Event, item: MenuItem, index: number) {
         if(item.disabled) {
@@ -217,7 +217,7 @@ export class AppSubMenu {
     set reset(val:boolean) {
         this._reset = val;
 
-        if(this._reset) {
+        if(this._reset && this.app.isHorizontal()) {
             this.activeIndex = null;
         }
     }
