@@ -71,7 +71,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'Template Pages', icon: 'get_app',
                 items: [
                     {label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']},
-                    {label: 'Landing Page', icon: 'flight_land', routerLink: ['/empty']},
+                    {label: 'Landing Page', icon: 'flight_land', url: 'landing.html'},
                     {label: 'Login Page', icon: 'verified_user', url: 'login.html'},
                     {label: 'Error Page', icon: 'error', url: 'error.html'},
                     {label: '404 Page', icon: 'error_outline', url: '404.html'},
@@ -203,7 +203,7 @@ export class AppSubMenu {
             });
         }
 
-        if(item.items) {
+        if(item.items || !item.url) {
             event.preventDefault();
         }
     }

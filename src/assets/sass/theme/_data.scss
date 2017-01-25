@@ -277,7 +277,7 @@ body {
             }
         }
         
-        tbody { 
+        .ui-datatable-data { 
             tr.ui-datatable-even {
                 background-color: #f4f4f4;
                                 
@@ -392,6 +392,7 @@ body {
 
             &.ui-datatable-hoverable-rows {
                 > tr.ui-widget-content:not(.ui-state-highlight):hover {
+                    cursor: pointer;
                     @include hover-element();
                 }
             }

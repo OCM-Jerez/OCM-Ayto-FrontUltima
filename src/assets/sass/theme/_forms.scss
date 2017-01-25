@@ -134,6 +134,10 @@ body {
                 .ui-inputtext {
                     color: #ffffff;
                     padding-left: 1.5em;
+
+                    &:focus {
+                        border-bottom-color: #ffffff;
+                    }
                 }
                 
                 .fa {
@@ -647,6 +651,10 @@ body {
             
             input {
                 color: #ffffff;
+
+                &:focus {
+                    border-bottom-color: #ffffff;
+                }
             }
             
             .fa {
@@ -746,7 +754,7 @@ body {
                     box-sizing: border-box;
                     
                     &:focus {
-                        border-color: #ffffff;
+                        border-bottom-color: #ffffff;
                     }
                 }  
             }
@@ -776,7 +784,7 @@ body {
             color: $textColor;
             @include border-radius(0);
             
-            &:hover {
+            &:not(.ui-state-highlight):hover {
                 @include hover-element();
             }
         }
@@ -1046,7 +1054,7 @@ body {
                 }
 
                 &:not(.ui-state-disabled) {
-                    a:hover,span:hover {
+                    a:not(.ui-state-active):hover,span:not(.ui-state-active):hover {
                         @include hover-element();
                     }
                 }
