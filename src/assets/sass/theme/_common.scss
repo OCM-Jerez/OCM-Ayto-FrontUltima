@@ -47,10 +47,12 @@ body {
         }
     }
 
+    .ui-widget:disabled,
     .ui-state-disabled {
         opacity: .35;
         filter: Alpha(Opacity=35);
         background-image: none;
+        cursor: auto !important;
     }
 
     .ui-corner-all {

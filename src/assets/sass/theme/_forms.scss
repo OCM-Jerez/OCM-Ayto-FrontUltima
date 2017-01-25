@@ -16,7 +16,7 @@ body {
             padding-bottom: 0px;
         }
         
-        &.ui-state-disabled {
+        &:disabled {
             border-bottom: 1px dotted;
         }
         
@@ -1039,6 +1039,19 @@ body {
             td {
                 padding: .25em .125em;
                 box-sizing: border-box;
+
+                &.ui-datepicker-today {
+                    a,span {
+                        color: #ffffff;
+                        background: lighten($primaryColor,20%);
+                        
+                        &.ui-state-active {
+                            color: #ffffff;
+                            background-color: $accentColor;
+                            color: $accentTextColor;
+                        }
+                    }
+                }
                 
                 a,span {
                     padding: .25em;
@@ -1055,26 +1068,11 @@ body {
                         background-color: $accentColor;
                         color: $accentTextColor;
                     }
-                }
 
-                &:not(.ui-state-disabled) {
-                    a:not(.ui-state-active):hover,span:not(.ui-state-active):hover {
+                    &:not(.ui-state-active):not(.ui-state-highlight):hover {
                         @include hover-element();
                     }
-                }
-                
-                &.ui-datepicker-today {
-                    a,span {
-                        color: #ffffff;
-                        background: lighten($primaryColor,20%);
-                        
-                        &.ui-state-active {
-                            color: #ffffff;
-                            background-color: $accentColor;
-                            color: $accentTextColor;
-                        }
-                    }
-                }
+                }                
             }
         }
                 
