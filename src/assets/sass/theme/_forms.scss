@@ -611,6 +611,10 @@ body {
         
         &.ui-state-focus {
             border-bottom: 2px solid $primaryColor;
+
+            .ui-dropdown-label {
+                padding-bottom: 0;
+            }
         }
     }
     
