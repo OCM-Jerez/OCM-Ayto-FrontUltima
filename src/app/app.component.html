@@ -10,7 +10,7 @@
 
         <app-topbar></app-topbar>
 
-        <div [ngClass]="{'layout-menu':true,'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
+        <div class="layout-menu" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
             <div #layoutMenuScroller class="nano">
                 <div class="nano-content menu-scroll-content">
                     <inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></inline-profile>
