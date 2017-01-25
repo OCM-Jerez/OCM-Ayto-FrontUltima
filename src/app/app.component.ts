@@ -73,8 +73,10 @@ export class AppComponent implements AfterViewInit {
             this.topbarItemClick = false;
             this.menuClick = false;
         });
-
-        jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
+        
+        setTimeout(() => {
+            jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
+        }, 10);
     }
 
     onMenuButtonClick(event) {
@@ -113,7 +115,7 @@ export class AppComponent implements AfterViewInit {
         this.resetMenu = false;
 
         if(!this.isHorizontal()) {
-            setTimeout(function() {
+            setTimeout(() => {
                 jQuery(this.layoutMenuScroller).nanoScroller();
             }, 500);
         }
