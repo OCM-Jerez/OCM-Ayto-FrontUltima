@@ -177,9 +177,11 @@ body {
                     overflow-x: hidden;
                 }  
                 
-                > ul:last-child {
-                    margin-top: 16px;
-                    padding-bottom: 120px;
+                ul.ultima-menu {
+                    &.clearfix {
+                        margin-top: 16px;
+                        padding-bottom: 120px;
+                    }
                 }
             }
             
@@ -622,9 +624,11 @@ body {
                             overflow-x: visible;
                         }  
                         
-                        ul:last-child {
-                            margin-top: 0px;
-                            padding-bottom: 0px;
+                        ul.ultima-menu {
+                            &.clearfix {
+                                margin-top: 0px;
+                                padding-bottom: 0px;
+                            }
                         }
                     }
                     
@@ -634,7 +638,7 @@ body {
                 }
                 
                 ul.ultima-menu {
-                    &:last-child {
+                    &.clearfix {
                         margin-top: 0;
                     }
                     
