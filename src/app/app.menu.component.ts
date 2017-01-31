@@ -184,13 +184,16 @@ export class AppSubMenu {
     constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent, public router: Router, public location: Location) {}
         
     itemClick(event: Event, item: MenuItem, index: number) {
+        //avoid processing disabled items
         if(item.disabled) {
             event.preventDefault();
             return true;
         }
         
+        //activate current item and deactivate active sibling if any
         this.activeIndex = (this.activeIndex === index) ? null : index;
                 
+        //execute command
         if(item.command) {
             if(!item.eventEmitter) {
                 item.eventEmitter = new EventEmitter();
@@ -203,9 +206,16 @@ export class AppSubMenu {
             });
         }
 
-        if(item.items || !item.url) {
+        //prevent hash change
+        if(item.items) {
             event.preventDefault();
         }
+        
+        //hide overlay submenus in horizontal layout
+        if(this.app.isHorizontal() && !item.items)
+            this.app.resetMenu = true;
+        else
+            this.app.resetMenu = false;
     }
     
     isActive(index: number): boolean {

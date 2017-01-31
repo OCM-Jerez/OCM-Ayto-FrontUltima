@@ -60,13 +60,13 @@ export class AppComponent implements AfterViewInit {
         this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
 
         //hides the horizontal submenus or top menu if outside is clicked
-        this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {
+        this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {            
             if(!this.topbarItemClick) {
                 this.activeTopbarItem = null;
                 this.topbarMenuActive = false;
             }
 
-            if(!this.menuClick) {
+            if(!this.menuClick && this.isHorizontal()) {
                 this.resetMenu = true;
             }
 
@@ -112,7 +112,6 @@ export class AppComponent implements AfterViewInit {
 
     onMenuClick($event) {
         this.menuClick = true;
-        this.resetMenu = false;
 
         if(!this.isHorizontal()) {
             setTimeout(() => {
