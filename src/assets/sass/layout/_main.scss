@@ -361,7 +361,7 @@ body {
                 
                 i:last-child {
                     float: right;
-                    font-size: 1.250em;
+                    font-size: $fontSize + 4;
                     margin-top: .15em;
                     margin-right: -.15em;
                     @include transition(transform .3s);

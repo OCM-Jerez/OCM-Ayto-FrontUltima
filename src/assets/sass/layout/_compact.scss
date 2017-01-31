@@ -6,6 +6,12 @@ body {
         .layout-container {
             .ultima-menu {
                 li {
+                    a {
+                        i:last-child {
+                            font-size: $c-fontSize + 4;
+                        }
+                    }
+                    
                     ul {
                         li {
                             a {
