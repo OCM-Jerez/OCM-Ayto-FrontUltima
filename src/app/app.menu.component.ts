@@ -14,7 +14,7 @@ export class AppMenuComponent implements OnInit {
 
     @Input() reset: boolean;
 
-    model: MenuItem[];
+    model: any[];
 
     constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent) {}
     
@@ -141,7 +141,7 @@ export class AppMenuComponent implements OnInit {
     selector: '[app-submenu]',
     template: `
         <template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
-            <li [ngClass]="{'active-menuitem': isActive(i)}">
+            <li [ngClass]="{'active-menuitem': isActive(i)}" *ngIf="child.visible === false ? false : true">
                 <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
