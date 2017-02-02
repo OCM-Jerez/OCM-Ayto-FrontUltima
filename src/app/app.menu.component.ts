@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 @Component({
     selector: 'app-menu',
     template: `
-        <ul app-submenu [item]="model" root="true" class="ultima-menu ultima-main-menu clearfix" [reset]="reset"></ul>
+        <ul app-submenu [item]="model" root="true" class="ultima-menu ultima-main-menu clearfix" [reset]="reset" visible="true"></ul>
     `
 })
 export class AppMenuComponent implements OnInit {
@@ -142,19 +142,19 @@ export class AppMenuComponent implements OnInit {
     template: `
         <template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" *ngIf="child.visible === false ? false : true">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink">
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink" [attr.tabindex]="!visible ? '-1' : null">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
 
                 <a (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="child.routerLink"
-                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}">
+                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
-                <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'"></ul>
+                <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'" [visible]="isActive(i)"></ul>
             </li>
         </template>
     `,
@@ -176,6 +176,8 @@ export class AppSubMenu {
     @Input() item: MenuItem;
     
     @Input() root: boolean;
+    
+    @Input() visible: boolean;
 
     _reset: boolean;
         
