@@ -207,7 +207,7 @@ export class AppSubMenu {
         }
 
         //prevent hash change
-        if(item.items) {
+        if(item.items || !item.url) {
             event.preventDefault();
         }
         
