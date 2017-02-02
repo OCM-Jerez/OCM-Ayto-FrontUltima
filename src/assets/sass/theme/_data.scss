@@ -230,9 +230,13 @@ body {
                         @include hover-element();
                     }
                     
+                    .ui-column-title {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    
                     .ui-sortable-column-icon {
                         vertical-align: middle;
-                        margin: -.25em 0 0 0;
                         color: $textSecondaryColor;
                     }
                     
