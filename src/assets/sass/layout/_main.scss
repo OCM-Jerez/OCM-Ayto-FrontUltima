@@ -281,7 +281,19 @@ body {
                         }
 
                          &.active-menuitem-routerlink {
-                            background-color: lighten($accentColor, 10%);
+                            color: $darkMenuRouterLinkActiveColor;
+                            
+                            i {
+                                color: $darkMenuRouterLinkActiveColor;
+                            }
+                            
+                            &:hover {
+                                color: #ffffff;
+                                
+                                > i {
+                                    color: #ffffff;
+                                }
+                            }
                          }
                     }
                     
@@ -377,7 +389,19 @@ body {
                 }
 
                 &.active-menuitem-routerlink {
-                    background-color: darken(#e8e8e8, 10%);
+                    color: $lightMenuRouterLinkActiveColor;
+                    
+                    > i {
+                        color: $lightMenuRouterLinkActiveColor;
+                    }
+                    
+                    &:hover {
+                        color: $textColor;
+                        
+                        > i {
+                            color: #757575;
+                        }
+                    }
                 }
             }
             
@@ -661,6 +685,22 @@ body {
                                     color: $textColor;
                                 }
                             }
+                            
+                            &.active-menuitem-routerlink {
+                                color: $horizontalLightMenuRouterLinkActiveColor;
+                                
+                                > i {
+                                    color: $horizontalLightMenuRouterLinkActiveColor;
+                                }
+                                
+                                &:hover {
+                                    color: $textColor;
+                                    
+                                    i {
+                                        color: $textColor;
+                                    }
+                                }
+                            }
                         }
                         
                         > ul {
@@ -762,10 +802,27 @@ body {
                                 
                                 &:hover {
                                     background-color: $darkMenuHoverColor;
+                                    color: #ffffff;
                                     
                                     i {
                                         color: #ffffff;
                                     }
+                                }
+                                
+                                &.active-menuitem-routerlink {
+                                   color: $darkMenuRouterLinkActiveColor;
+                                   
+                                   i {
+                                       color: $darkMenuRouterLinkActiveColor;
+                                   }
+                                   
+                                   &:hover {
+                                       color: #ffffff;
+                                       
+                                       i {
+                                           color: #ffffff;
+                                       }
+                                   }
                                 }
                             }
                             

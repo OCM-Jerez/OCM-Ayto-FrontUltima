@@ -982,6 +982,10 @@ body {
             .fa {
                 color: $textSecondaryColor;
             }
+            
+            &:enabled:hover {
+                background-color: transparent;
+            }
         }
     }
 
