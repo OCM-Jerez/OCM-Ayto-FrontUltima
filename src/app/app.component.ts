@@ -112,6 +112,7 @@ export class AppComponent implements AfterViewInit {
 
     onMenuClick($event) {
         this.menuClick = true;
+        this.resetMenu = false;
 
         if(!this.isHorizontal()) {
             setTimeout(() => {
