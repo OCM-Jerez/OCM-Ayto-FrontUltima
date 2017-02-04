@@ -322,6 +322,10 @@ body {
                 z-index: 999999999;
                 margin-left: 0px;
             }
+            
+            .layout-mask {
+                display: block;
+            }
         }  
         
         .topbar {
@@ -342,6 +346,10 @@ body {
     .layout-main {
         padding: 96px 16px 16px 16px;
         @include transition(margin-left .3s);
+    }
+    
+    .layout-mask {
+        display: none;
     }
     
     .ultima-menu {
@@ -891,6 +899,10 @@ body {
                 
                 .layout-main {
                     margin-left: 0;
+                }
+                
+                .layout-mask {
+                    display: block;
                 }
             }
         }
