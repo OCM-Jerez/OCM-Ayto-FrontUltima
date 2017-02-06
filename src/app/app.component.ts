@@ -37,8 +37,6 @@ export class AppComponent implements AfterViewInit {
 
     layoutMenuScroller: HTMLDivElement;
 
-    modal: HTMLDivElement;
-
     menuClick: boolean;
 
     topbarItemClick: boolean;

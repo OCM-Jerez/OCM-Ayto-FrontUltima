@@ -209,15 +209,20 @@ export class AppSubMenu {
         }
 
         //prevent hash change
-        if(item.items || !item.url) {
+        if(item.items || (!item.url && !item.routerLink)) {
             event.preventDefault();
         }
         
-        //hide overlay submenus in horizontal layout
+        //hide overlay submenus in horizontal layout 
         if(this.app.isHorizontal() && !item.items)
             this.app.resetMenu = true;
         else
             this.app.resetMenu = false;
+            
+        //hide menu in overlay mode
+        if(this.app.isOverlay() && !item.items) {
+            this.app.overlayMenuActive = false;
+        }
     }
     
     isActive(index: number): boolean {
