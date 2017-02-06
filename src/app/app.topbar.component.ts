@@ -160,7 +160,7 @@ import {AppComponent} from './app.component';
                     <li #search class="search-item" [ngClass]="{'active-top-menu':app.activeTopbarItem === search}"
                         (click)="app.onTopbarItemClick($event,search)">
                         <span class="md-inputfield">
-                            <input type="text">
+                            <input type="text" pInputText>
                             <label>Search</label>
                             <i class="topbar-icon material-icons">search</i>
                         </span>
