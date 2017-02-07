@@ -1,10 +1,10 @@
-import { UltimaCliPage } from './app.po';
+import { UltimaPage } from './app.po';
 
-describe('ultima-cli App', function() {
-  let page: UltimaCliPage;
+describe('ultima App', function() {
+  let page: UltimaPage;
 
   beforeEach(() => {
-    page = new UltimaCliPage();
+    page = new UltimaPage();
   });
 
   it('should display message saying app works', () => {

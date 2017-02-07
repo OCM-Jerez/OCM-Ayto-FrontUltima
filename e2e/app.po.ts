@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class UltimaCliPage {
+export class UltimaPage {
   navigateTo() {
     return browser.get('/');
   }
