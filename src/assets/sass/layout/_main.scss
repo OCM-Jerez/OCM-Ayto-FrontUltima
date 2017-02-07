@@ -92,12 +92,6 @@ body {
                     @include transition(all .3s);
                     font-size: 36px;
                 }
-                                
-                &.menu-button-rotate {
-                    i {
-                        @include rotate(180deg);
-                    }
-                }
             }
             
             #topbar-menu-button {
@@ -326,6 +320,16 @@ body {
             .layout-mask {
                 display: block;
             }
+            
+            .topbar {                
+                .topbar-right {                
+                    #menu-button {
+                        i {
+                            @include rotate(0deg);
+                        }
+                    }
+                }
+            } 
         }  
         
         .topbar {
@@ -335,7 +339,7 @@ body {
                 #menu-button {
                     i {
                         font-size: 36px !important;
-                        @include material-icon("chevron_right");
+                        @include rotate(180deg);
                     }
                 }
             }
@@ -603,6 +607,16 @@ body {
             }
             
             &.layout-menu-static-inactive {
+                .topbar {
+                    .topbar-right {                
+                        #menu-button {                            
+                            i {
+                                @include rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                
                 .layout-menu {
                     margin-left: -250px;
                 }
@@ -870,12 +884,6 @@ body {
                         i {
                             @include rotate(180deg);
                         }
-                        
-                        &.menu-button-rotate {
-                            i {
-                                @include rotate(0deg);
-                            }
-                        }
                     }
                 }
             }
@@ -895,6 +903,14 @@ body {
                 
                 .topbar {
                     z-index: 999999998;
+                    
+                    .topbar-right {
+                        #menu-button {                            
+                            i {
+                                @include rotate(0);
+                            }
+                        }
+                    }
                 }
                 
                 .layout-main {

@@ -85,17 +85,10 @@ export class AppComponent implements AfterViewInit {
             this.overlayMenuActive = !this.overlayMenuActive;
         }
         else {
-            if(this.isDesktop()) {
+            if(this.isDesktop())
                 this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
-            }
-            else {
-                if(this.staticMenuMobileActive) {
-                    this.staticMenuMobileActive = false;
-                }
-                else {
-                    this.staticMenuMobileActive = true;
-                }
-            }
+            else
+                this.staticMenuMobileActive = !this.staticMenuMobileActive;
         }
 
         event.preventDefault();
@@ -121,6 +114,8 @@ export class AppComponent implements AfterViewInit {
             this.overlayMenuActive = false;
             this.staticMenuMobileActive = false;
         }
+        
+        event.preventDefault();
     }
 
     onTopbarItemClick(event, item) {
