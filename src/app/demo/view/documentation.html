@@ -400,7 +400,15 @@ $c-lineHeight: 18px;
             <p>It is suggested to write your customizations in styles.scss file or another file instead of adding them to the
                 scss files under sass folders to avoid maintenance issues after an update.</p>
             
-            <h1>Migration Guide</h1>            
+            <h1>Migration Guide</h1> 
+            <p>2.0.2 to 2.0.3</p>
+            <ul>
+                <li>Update AppSubmenu component in app.menu.component.ts by replacing the itemClick method implementation.</li>
+                <li>Update layout css files, there are no changes on themes.</li>
+                <li>Update app.component.ts by changing onTopbarMenuButtonClick method implementation to add <i>event.preventDefault()</i> at the end.</li>
+                <li>Remove [ngClass]="{'menu-button-rotate': app.rotateMenuButton}" from menu-button in app.topbar.component.ts.</li>
+            </ul> 
+                       
             <p>2.0.1 to 2.0.2</p>
             <ul>
                 <li>Update AppSubmenu component in app.menu.component.ts</li>
