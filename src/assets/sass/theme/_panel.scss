@@ -264,3 +264,13 @@ body {
         }
     }
 }
+
+@media (max-width: 640px) {
+    body {
+        .ui-toolbar {
+            .ui-toolbar-group-right {
+                margin-top: 1em;
+            }
+        }
+    }
+}

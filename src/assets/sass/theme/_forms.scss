@@ -1258,5 +1258,18 @@ body {
                 }
             }
         }
+        .ui-splitbutton {
+            > .ui-button {
+                display: inline-block;
+
+                &:first-child {
+                    @include border-radius-top(0);
+                }
+                
+                &:last-child {
+                    @include border-radius-bottom(0);
+                }
+            }
+        }
     }
 }
