@@ -10,13 +10,24 @@
     <title>PrimeNG - ULTIMA</title>
 
     <!-- Layout CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/theme/theme-indigo.css">
-    <link rel="stylesheet" type="text/css" href="assets/layout/css/layout-indigo.css">
-    <link rel="stylesheet" type="text/css" href="assets/template-pages/primeng.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/theme-indigo.css">
+    <link rel="stylesheet" type="text/css" href="../layout/css/layout-indigo.css">
+    <link rel="stylesheet" type="text/css" href="primeng.min.css">
     
     <!-- Ripple -->
-    <script src="assets/template-pages/jquery.js"></script>
-    <script src="assets/layout/js/ripple.js"></script>
+    <script src="jquery.js"></script>
+    <script src="../layout/js/ripple.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('input').on('blur', function(e) {
+                var el = $(this);
+                if(el.val() != '')
+                    el.addClass('ui-state-filled');
+                else
+                    el.removeClass('ui-state-filled');
+            });
+        });
+    </script>
   </head>
 
   <!-- 3. Display the application -->
@@ -24,7 +35,7 @@
       <div class="card login-panel ui-fluid">
           <div class="ui-g">
               <div class="ui-g-12">
-                  <img src="assets/layout/images/logo-ultima.svg">
+                  <img src="../layout/images/logo-ultima.svg">
               </div>
               <div class="ui-g-12">
                     <span class="md-inputfield">
