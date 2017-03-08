@@ -46,8 +46,8 @@ export class FormsDemo implements OnInit {
     types: SelectItem[];
     
     splitButtonItems: MenuItem[];
-    
-    constructor(private countryService: CountryService) { }
+            
+    constructor(private countryService: CountryService) {}
     
     ngOnInit() {
         this.carOptions = [];
