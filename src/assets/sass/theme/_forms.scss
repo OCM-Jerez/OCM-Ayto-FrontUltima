@@ -1153,6 +1153,10 @@ body {
     .ui-chips {
         > ul.ui-inputtext {
             padding: 2px 2px 1px 2px;
+
+            &.ui-state-disabled {
+                border-bottom: 1px dotted;
+            }
             
             &.ui-state-focus {
                 padding-bottom: 0;
@@ -1161,7 +1165,7 @@ body {
             .ui-chips-input-token {
                 padding-bottom: 2px;
                 
-                input.ui-state-disabled {
+                input:disabled {
                     width: 0;
                 }
             }
