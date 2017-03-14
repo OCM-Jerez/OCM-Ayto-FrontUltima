@@ -240,12 +240,6 @@ body {
                         color: $textSecondaryColor;
                     }
                     
-                    .ui-column-resizer {
-                        @include material-icon("code");
-                        font-size: 1em;
-                        color: $textSecondaryColor;
-                    }
-                    
                     &.ui-state-active,&.ui-state-highlight {
                         background-color: $accentColor;
                         color: $accentTextColor;
