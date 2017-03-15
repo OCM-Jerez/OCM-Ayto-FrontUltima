@@ -401,6 +401,24 @@ $c-lineHeight: 18px;
                 scss files under sass folders to avoid maintenance issues after an update.</p>
             
             <h1>Migration Guide</h1> 
+            <p>2.0.5 to 2.1</p>
+            <ul>
+                <li>Project is updated to CLI RC2, Angular 4-RC3 and PrimeNG 4-RC1.</li>
+                <li>Add <i class="inline-code">import &#123;trigger,state,style,transition,animate&#125; from '@angular/animations';</i> to app.menu.components.ts and remove these imports from 'angular/core'.</li>
+                <li>Add <i class="inline-code">import &#123;BrowserAnimationsModule&#125; from '@angular/platform-browser/animations';</i> to app.module.ts and import the module to your application.</li>
+                <li>Update theme css files, there are no changes to the layout.</li>
+            </ul>
+            
+            <p>2.0.4 to 2.0.5</p>
+            <ul>
+                <li>No change required, missing .angular-cli.json file in 2.0.4 is added.</li>
+            </ul>
+            
+            <p>2.0.3 to 2.0.4</p>
+            <ul>
+                <li>No change required, only CLI version is updated to RC</li>
+            </ul>
+            
             <p>2.0.2 to 2.0.3</p>
             <ul>
                 <li>Update AppSubmenu component in app.menu.component.ts by replacing the itemClick method implementation.</li>
