@@ -105,6 +105,7 @@ body {
             .ui-button {
                 &.ui-button-icon-only {
                     width: 2.5em;
+                    margin-bottom: .5em;
                     margin-right: 0;
                     display: inline-block;
                 }
@@ -429,6 +430,8 @@ body {
     }
     
     .ui-carousel {
+        padding: 0;
+                
         .ui-carousel-header{
             padding: $headerPadding;
             font-size: $headerFontSize;
@@ -440,6 +443,14 @@ body {
             
             .fa {
                 color: #ffffff;
+            }
+            
+            .ui-carousel-button {
+                margin: -1px 0 0 0;
+            }
+            
+            .ui-carousel-page-links {
+                margin: -1px 0 0 0;
             }
         }
     }
@@ -539,7 +550,7 @@ body {
         
         .fc-event {
             background-color: $primaryLightColor;
-            color: $textColor;
+            color: #ffffff;
         }
     
         table {

@@ -151,6 +151,12 @@
             padding: .75em 1em;
         }
     }
+    
+    &.form-group-m {
+        > div {
+            padding: 1em;
+        }
+    }
 }
 
 /* Ripple */
