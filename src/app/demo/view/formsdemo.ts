@@ -46,6 +46,10 @@ export class FormsDemo implements OnInit {
     types: SelectItem[];
     
     splitButtonItems: MenuItem[];
+    
+    radioValue: string;
+    
+    selectedType: string;
             
     constructor(private countryService: CountryService) {}
     
