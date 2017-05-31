@@ -31,6 +31,7 @@ import {Component} from '@angular/core';
             height: 0;
             padding-bottom: 56.25%;
         }
+        
         .video-container iframe {
             position: absolute;
             top: 0;
