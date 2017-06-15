@@ -108,7 +108,7 @@ export class MenusDemo implements OnInit {
                     },
                     {
                         label: 'Other',
-                        icon: 'fa-phone',
+                        icon: 'ui-icon-list',
                         items: [
                             {label: 'Delete', icon: 'ui-icon-delete'}
                         ]
@@ -308,7 +308,7 @@ export class MenusDemo implements OnInit {
                     },
                     {
                         label: 'Other',
-                        icon: 'ui-icon-list',
+                        icon: 'ui-icon-phone-android',
                         items: [
                             {label: 'Delete', icon: 'ui-icon-delete'}
                         ]
