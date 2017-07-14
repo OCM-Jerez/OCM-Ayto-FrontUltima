@@ -23,7 +23,7 @@ export class AppMenuComponent implements OnInit {
         this.model = [
             {label: 'Dashboard', icon: 'dashboard', routerLink: ['/']},
             {
-                label: 'Themes', icon: 'palette',
+                label: 'Themes', icon: 'palette', badge: '6',
                 items: [
                     {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme('indigo')}},
                     {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme('brown')}},
@@ -54,7 +54,7 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Components', icon: 'list',
+                label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge',
                 items: [
                     {label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/sample']},
                     {label: 'Forms', icon: 'input', routerLink: ['/forms']},
@@ -142,10 +142,11 @@ export class AppMenuComponent implements OnInit {
     selector: '[app-submenu]',
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
-            <li [ngClass]="{'active-menuitem': isActive(i)}" *ngIf="child.visible === false ? false : true">
+            <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
                 <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
+                    <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
 
@@ -153,6 +154,7 @@ export class AppMenuComponent implements OnInit {
                     [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
+                    <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
                 <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'" [visible]="isActive(i)" [reset]="reset"></ul>
@@ -198,15 +200,7 @@ export class AppSubMenu {
                 
         //execute command
         if(item.command) {
-            if(!item.eventEmitter) {
-                item.eventEmitter = new EventEmitter();
-                item.eventEmitter.subscribe(item.command);
-            }
-            
-            item.eventEmitter.emit({
-                originalEvent: event,
-                item: item
-            });
+            item.command({originalEvent: event, item: item});
         }
 
         //prevent hash change

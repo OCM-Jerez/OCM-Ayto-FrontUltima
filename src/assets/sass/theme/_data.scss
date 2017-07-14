@@ -69,6 +69,47 @@ body {
         }
     }
     
+    .ui-organizationchart {
+        .ui-organizationchart-node-content {
+            &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
+                @include hover-element();
+            }
+        }
+        .ui-organizationchart-line-down {
+            background-color: $dividerColor;
+        }
+        
+        .ui-organizationchart-line-left {
+            border-right: 1px solid $dividerColor;
+        }
+        
+        .ui-organizationchart-line-right {
+            
+        }
+        
+        .ui-organizationchart-line-top {
+            border-top: 1px solid $dividerColor;
+        }
+        
+        .ui-organizationchart-node-content {
+            border-color: $dividerColor;
+        }
+        
+        .ui-organizationchart-node-content .ui-node-toggler {
+            bottom: -1.3em;
+            margin-left: -.75em;
+            color: $dividerColor;
+            
+            .fa-chevron-down {
+                @include material-icon("keyboard_arrow_down");
+            }
+            
+            .fa-chevron-up {
+                @include material-icon("keyboard_arrow_up");
+            }
+        }
+    }
+    
     .ui-orderlist {
         .ui-orderlist-caption {
             font-size: $inputHeaderFontSize;
