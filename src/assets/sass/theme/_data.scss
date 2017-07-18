@@ -74,6 +74,14 @@ body {
             &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
                 @include hover-element();
             }
+            
+            &.ui-state-highlight {
+                .ui-node-toggler {
+                    i {
+                        color: $textColor;
+                    }
+                }
+            }
         }
         .ui-organizationchart-line-down {
             background-color: $dividerColor;
