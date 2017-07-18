@@ -1259,6 +1259,19 @@ body {
         }
     }
     
+    .ui-fileupload-choose {
+        &.ui-button {
+            &:not(.ui-state-disabled):hover,
+            &:not(.ui-state-disabled):focus {
+                background-color: darken($accentColor, 5%);
+            }
+            
+            &:not(.ui-state-disabled):active {
+                background-color: darken($accentColor, 10%);
+            }
+        }
+    }
+    
     .ui-editor-container {
         .ui-editor-toolbar {
             background-color: #e8e8e8;
