@@ -78,7 +78,7 @@ body {
             &.ui-state-highlight {
                 .ui-node-toggler {
                     i {
-                        color: $textColor;
+                        color: darken($accentColor, 25%);
                     }
                 }
             }
