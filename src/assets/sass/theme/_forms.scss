@@ -1261,8 +1261,7 @@ body {
     
     .ui-fileupload-choose {
         &.ui-button {
-            &:not(.ui-state-disabled):hover,
-            &:not(.ui-state-disabled):focus {
+            &:not(.ui-state-disabled):hover {
                 background-color: darken($accentColor, 5%);
             }
             
