@@ -54,7 +54,7 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
             {
-                label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge',
+                label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'teal-badge',
                 items: [
                     {label: 'Sample Page', icon: 'desktop_mac', routerLink: ['/sample']},
                     {label: 'Forms', icon: 'input', routerLink: ['/forms']},
