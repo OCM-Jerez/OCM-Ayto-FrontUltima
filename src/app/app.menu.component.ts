@@ -1,4 +1,4 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild,Inject,forwardRef} from '@angular/core';
+import {Component,Input,OnInit,EventEmitter,ViewChild,Inject,Renderer,forwardRef} from '@angular/core';
 import {trigger,state,style,transition,animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
@@ -47,6 +47,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Static Menu', icon: 'menu',  command: () => this.app.changeToStaticMenu()},
                     {label: 'Overlay Menu', icon: 'exit_to_app',  command: () => this.app.changeToOverlayMenu()},
                     {label: 'Horizontal Menu', icon: 'border_horizontal',  command: () => this.app.changeToHorizontalMenu()},
+                    {label: 'Slim Menu', icon: 'border_horizontal',  command: () => this.app.changeToSlimMenu()},
                     {label: 'Light Menu', icon: 'label_outline',  command: () => this.app.darkMenu = false},
                     {label: 'Dark Menu', icon: 'label',  command: () => this.app.darkMenu = true},
                     {label: 'Inline Profile', icon: 'contacts',  command: () => this.app.profileMode = 'inline'},
@@ -157,7 +158,12 @@ export class AppMenuComponent implements OnInit {
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
-                <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'" [visible]="isActive(i)" [reset]="reset"></ul>
+                
+                <div *ngIf="app.isSlim()" class="layout-menu-tooltip">
+                    <div class="layout-menu-tooltip-arrow"></div>
+                    <div class="layout-menu-tooltip-text">{{child.label}}</div>
+                </div>
+                <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? ((app.isSlim() && root) ? 'show' : 'visible') : ((app.isSlim() && root) ? 'hide' : 'hidden')" [visible]="isActive(i)" [reset]="reset"></ul>
             </li>
         </ng-template>
     `,
@@ -169,6 +175,14 @@ export class AppMenuComponent implements OnInit {
             state('visible', style({
                 height: '*'
             })),
+            state('hide', style({
+                height: '0px'
+            })),
+            state('show', style({
+                height: '*'
+            })),
+            transition('show => hide', animate('0ms cubic-bezier(0.86, 0, 0.07, 1)')),
+            transition('hide => show', animate('0ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('visible => hidden', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hidden => visible', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
         ])
@@ -185,10 +199,23 @@ export class AppSubMenu {
     _reset: boolean;
         
     activeIndex: number;
+    
+    documentClickListener: Function;
+    
+    menuItemClick: boolean;
 
-    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent, public router: Router, public location: Location) {}
+    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent, public router: Router, public location: Location,public renderer: Renderer) {}
+    
+    ngAfterViewInit() {
+        this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => { 
+            if(!this.app.menuClick && this.app.isSlim()) {
+                this.activeIndex = null;
+            }
+        });
+    }
         
     itemClick(event: Event, item: MenuItem, index: number) {
+        this.menuItemClick = true;
         //avoid processing disabled items
         if(item.disabled) {
             event.preventDefault();

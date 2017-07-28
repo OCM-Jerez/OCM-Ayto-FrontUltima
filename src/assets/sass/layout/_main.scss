@@ -145,6 +145,21 @@ body {
                     }
                 }
             }
+            
+            .rightpanel-btn {
+                float: right;
+                margin-top: 4px;
+                
+                i {
+                    font-size: 36px;
+                    color: $accentTextColor;
+                    @include transition(all .3s);
+
+                    &:hover {
+                      color: darken($accentTextColor, 10%);
+                    }
+                }
+            }
         }
     }
     
@@ -325,6 +340,40 @@ body {
             font-weight: 700;
             line-height: 16px;
             @include border-radius(50%);
+        }
+    }
+    
+    .layout-menu-tooltip {
+        display:none;
+        padding: 0 5px;
+        position: absolute;
+        left: 76px;
+        top: 16px;
+        z-index: 101;
+        line-height: 1;
+        
+        .layout-menu-tooltip-text {
+           padding: 6px 8px;
+           font-weight: 700;
+           background-color: lighten($darkMenuBgColor, 10%);
+           color: #ffffff;
+           min-width: 75px;
+           white-space: nowrap;
+           text-align: center;
+           @include overlay-content-shadow();
+        }
+        
+        .layout-menu-tooltip-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            top: 50%;
+            left: 0;
+            margin-top: -5px;
+            border-width: 5px 5px 5px 0;
+            border-right-color: lighten($darkMenuBgColor, 10%);
         }
     }
         
@@ -557,6 +606,46 @@ body {
             span {
                 vertical-align: middle;
                 display: inline-block;
+            }
+        }
+    }
+    
+    .layout-rightpanel {
+        position: fixed;
+        top: 75px;
+        height: 100%;
+        right: -240px;
+        width: 240px;
+        z-index: 10;
+        background-color: #ffffff;
+        @include transition(right .3s);
+        @include overlay-content-shadow();
+
+        &.layout-rightpanel-active {
+            right: 0;
+            -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+            transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+            z-index: 10;
+        }
+
+        .layout-rightpanel-content {
+            padding: 14px;
+        }
+        
+        .nano {
+            .right-panel-scroll-content {
+                display: block;
+                height: 100%;
+                position: relative;
+
+                .layout-rightpanel-content {
+                    padding-bottom: 120px;
+                }
+            }
+            
+            & > .nano-pane > .nano-slider {
+                background-color: #aaa;
+                opacity: 0.3;
             }
         }
     }
@@ -940,6 +1029,325 @@ body {
                 display: none;
             }
         }
+        
+        &.menu-layout-slim {
+            .topbar {
+                .topbar-left {
+                    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+                    background-color: $primaryColor;
+                }
+                .topbar-right {
+                    #menu-button { 
+                        display: none;
+                    }
+                }
+            }
+            
+            .layout-main {
+                margin-left: 75px;
+            }
+            
+            .layout-menu {
+                width: 75px;
+                overflow: visible;
+                z-index: 100;
+                
+                .profile {
+                    width: 75px;
+                    height: 75px;
+                    padding: 17px;
+                    cursor: pointer;
+                    
+                    .profile-image {
+                        width: 40px;
+                        height: 40px;
+                        background-size: 40px 40px;
+                    }
+                    
+                    #profile-options {
+                        width: 75px;
+                        height: 75px;
+                    }
+                    
+                    i, span {
+                        display: none;
+                    }
+                }
+                
+                &.layout-menu-dark {    
+                    ul.ultima-menu {    
+                        background-color: $darkMenuBgColor;
+                                
+                        li {
+                            a {
+                                color: #ffffff;
+                                
+                                &:hover {
+                                    background-color: $darkMenuHoverColor;
+                                    
+                                    i {
+                                        color: #ffffff;
+                                    }
+                                }
+                            }
+                            
+                            &.active-menuitem {
+                                > a {
+                                    color: $accentTextColor;
+                                    background-color: $accentColor;
+                                }
+                            }
+                            
+                            ul {
+                                background-color: $darkMenuBgColor;
+                            }
+                        }
+                    }                    
+                }
+                
+                .nano {
+                    .nano-content {
+                        ul.ultima-menu {
+                            &.ultima-main-menu {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+                
+                .profile + ul.ultima-menu {
+                    @include overlay-content-shadow();
+                    background-color: #ffffff;
+                    position: absolute;
+                    top: 0;
+                    left: 76px;
+                    min-width: 210px;
+                    
+                    &.profile-menu {
+                        margin-top: 0;
+                        
+                        > li:last-child {
+                            margin: 0;
+                        }
+                        
+                        > li {
+                            > a {
+                                text-align: left;
+                                padding: 8px 16px 8px 16px;
+                                
+                                i:first-child {
+                                    font-size: 20px;
+                                    padding: 0;
+                                    margin-right: 12px;
+                                }
+                                
+                                span {
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                }
+                                
+                                i:last-child {
+                                    display: inline-block;
+                                    margin-left: 12px;
+                                }
+                            }
+                        }
+                        
+                        > li:first-child {
+                            margin: 0;
+                        }
+                    }
+                    
+                    li {
+                        ul {
+                            li {
+                                a {
+                                    padding-left: 32px;
+                                }
+                            }
+                            
+                            ul {
+                                li {
+                                    a {
+                                        padding-left: 48px;
+                                    }
+                                }
+                                
+                                ul {
+                                    li {
+                                        a {
+                                            padding-left: 64px;
+                                        }
+                                    }
+                                    
+                                    ul {
+                                        li {
+                                            a {
+                                                padding: 80px;
+                                            }
+                                        }
+                                        
+                                        ul {
+                                            li {
+                                                a {
+                                                    padding: 96px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                .nano {
+                    overflow: visible;
+                    
+                    .nano-content {
+                        overflow: visible;
+                        margin-right: 0px !important;
+                        outline: none;
+                        
+                        > ul:last-child {
+                            &.ultima-menu {
+                                margin: 0;
+                                padding: 0;
+                            }
+                        }
+                    }
+                    
+                    .nano-pane {
+                        display: none !important;
+                    }
+                }
+                
+                .ultima-menu {
+                    padding: 0;
+                    
+                    li {
+                        a {
+                            .menuitem-badge {
+                                top: 12px;
+                                right: 14px;
+                            }
+                        }
+                    }
+                    
+                    > li {
+                        position: relative;
+                        
+                        > a {
+                            text-align: center;
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-top: 8px;
+                            padding-bottom: 8px;
+                            
+                            i:first-child {
+                                font-size: 24px;
+                                padding: 10px 0;
+                                margin-right: 0;
+                            }
+                            
+                            span:not(.menuitem-badge), i:last-child {
+                                display: none;
+                            }
+                            
+                            &:hover + .layout-menu-tooltip {
+                                display: block;
+                            }
+                        }
+                        
+                        > ul {
+                            @include overlay-content-shadow();
+                            background-color: #ffffff;
+                            position: absolute;
+                            top: 0;
+                            left: 76px;
+                            min-width: 210px;
+                            
+                            li {
+                                a {
+                                    padding-left: 16px;
+                                }
+                                
+                                ul {
+                                    li {
+                                        a {
+                                            padding-left: 32px;
+                                        }
+                                    }
+                                    
+                                    ul {
+                                        li {
+                                            a {
+                                                padding-left: 48px;
+                                            }
+                                        }
+                                        
+                                        ul {
+                                            li {
+                                                a {
+                                                    padding-left: 64px;
+                                                }
+                                            }
+                                            
+                                            ul {
+                                                li {
+                                                    a {
+                                                        padding: 80px;
+                                                    }
+                                                }
+                                                
+                                                ul {
+                                                    li {
+                                                        a {
+                                                            padding: 96px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            &.submenu-top {
+                                top: auto;
+                                bottom: 0px;
+                            }
+                        }
+                        
+                        &.active-menuitem {
+                            > a {
+                                &:hover + .layout-menu-tooltip {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.layout-menu-dark {
+                .layout-menu {
+                    > li {
+                        > ul {
+                            background-color: $darkMenuBgColor;
+                        }
+                    }
+                }
+            }
+            
+            .layout-content {
+                margin-left: 75px;
+            }
+            
+            .layout-footer {
+                margin-left: 75px;
+            }
+        }
     }
 }
 
@@ -996,6 +1404,7 @@ body {
             .topbar-right {
                 #topbar-menu-button {
                     display: block;
+                    right: 55px;
                 }
                 
                 .topbar-items {
