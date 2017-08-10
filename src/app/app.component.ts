@@ -3,8 +3,7 @@ import {Component,AfterViewInit,ElementRef,Renderer,ViewChild} from '@angular/co
 enum MenuOrientation {
     STATIC,
     OVERLAY,
-    HORIZONTAL,
-    SLIM
+    HORIZONTAL
 };
 
 declare var jQuery: any;
@@ -18,7 +17,7 @@ export class AppComponent implements AfterViewInit {
     
     layoutCompact: boolean = false;
 
-    layoutMode: MenuOrientation = MenuOrientation.SLIM;
+    layoutMode: MenuOrientation = MenuOrientation.STATIC;
     
     darkMenu: boolean = false;
     
@@ -41,18 +40,10 @@ export class AppComponent implements AfterViewInit {
     menuClick: boolean;
 
     topbarItemClick: boolean;
-    
-    rightPanelActive: boolean;
-    
-    rightPanelButtonClick: boolean;
-    
-    rightPanelClick: boolean;
 
     activeTopbarItem: any;
 
     documentClickListener: Function;
-    
-    menuButtonClick: boolean;
 
     resetMenu: boolean;
 
@@ -76,19 +67,8 @@ export class AppComponent implements AfterViewInit {
             if(!this.menuClick && this.isHorizontal()) {
                 this.resetMenu = true;
             }
-            
-            if(!this.rightPanelButtonClick && !this.rightPanelClick) {
-                this.rightPanelActive = false;
-            }
-            
-            if(!this.menuClick && !this.menuButtonClick) {
-                this.overlayMenuActive = false;
-            }
 
             this.topbarItemClick = false;
-            this.rightPanelButtonClick = false;
-            this.rightPanelClick = false;
-            this.menuButtonClick = false;
             this.menuClick = false;
         });
         
@@ -99,9 +79,7 @@ export class AppComponent implements AfterViewInit {
 
     onMenuButtonClick(event) {
         this.rotateMenuButton = !this.rotateMenuButton;
-        this.menuButtonClick = true;
         this.topbarMenuActive = false;
-        this.rightPanelActive = false;
 
         if(this.layoutMode === MenuOrientation.OVERLAY) {
             this.overlayMenuActive = !this.overlayMenuActive;
@@ -129,7 +107,6 @@ export class AppComponent implements AfterViewInit {
 
     onTopbarMenuButtonClick(event) {
         this.topbarItemClick = true;
-        this.rightPanelActive = false;
         this.topbarMenuActive = !this.topbarMenuActive;
         
         if(this.overlayMenuActive || this.staticMenuMobileActive) {
@@ -143,8 +120,6 @@ export class AppComponent implements AfterViewInit {
 
     onTopbarItemClick(event, item) {
         this.topbarItemClick = true;
-        this.rightPanelActive = false;
-        this.overlayMenuActive = false;
 
         if(this.activeTopbarItem === item)
             this.activeTopbarItem = null;
@@ -152,17 +127,6 @@ export class AppComponent implements AfterViewInit {
             this.activeTopbarItem = item;
 
         event.preventDefault();
-    }
-    
-    onRightPanelClick() {
-        this.rightPanelClick = true;
-        this.rightPanelActive = true;
-    }
-    
-    onRightPanelButtonClick() {
-        this.rightPanelButtonClick = true;
-        this.overlayMenuActive = false;
-        this.rightPanelActive = !this.rightPanelActive;
     }
 
     isTablet() {
@@ -185,17 +149,9 @@ export class AppComponent implements AfterViewInit {
     isHorizontal() {
         return this.layoutMode === MenuOrientation.HORIZONTAL;
     }
-    
-    isSlim() {
-        return this.layoutMode === MenuOrientation.SLIM;
-    }
 
     changeToStaticMenu() {
         this.layoutMode = MenuOrientation.STATIC;
-    }
-    
-    changeToSlimMenu() {
-        this.layoutMode = MenuOrientation.SLIM;
     }
 
     changeToOverlayMenu() {

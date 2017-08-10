@@ -75,7 +75,6 @@ import {TreeTableModule} from 'primeng/primeng';
 
 import {AppComponent}  from './app.component';
 import {AppMenuComponent,AppSubMenu}  from './app.menu.component';
-import {AppRightPanel}  from './app.rightpanel.component';
 import {AppTopBar}  from './app.topbar.component';
 import {AppFooter}  from './app.footer.component';
 import {InlineProfileComponent}  from './app.profile.component';
@@ -176,7 +175,6 @@ import {NodeService} from './demo/service/nodeservice';
         AppComponent,
         AppMenuComponent,
         AppSubMenu,
-        AppRightPanel,
         AppTopBar,
         AppFooter,
         InlineProfileComponent,
