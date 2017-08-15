@@ -144,7 +144,7 @@ export class AppMenuComponent implements OnInit {
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter($event, child, i)" class="ripplelink" *ngIf="!child.routerLink" 
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="!child.routerLink" 
                     [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
@@ -152,7 +152,7 @@ export class AppMenuComponent implements OnInit {
                     <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
 
-                <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter($event, child, i)" class="ripplelink" *ngIf="child.routerLink"
+                <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="child.routerLink"
                     [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
@@ -164,7 +164,7 @@ export class AppMenuComponent implements OnInit {
                     <div class="layout-menu-tooltip-text">{{child.label}}</div>
                 </div>
                 <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset"
-                    [@children]="app.isSlim()&&root ? isActive(i) ? 'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
+                    [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ? 'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
         </ng-template>
     `,
@@ -234,11 +234,12 @@ export class AppSubMenu {
                 
             this.app.overlayMenuActive = false;
             this.app.staticMenuMobileActive = false;
+            this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }
     
-    onMouseEnter(event: Event, item: MenuItem, index: number) {
-        if(this.root && this.app.menuHoverActive) {
+    onMouseEnter(index: number) {
+        if(this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = index;
         }
     }
