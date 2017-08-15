@@ -61,7 +61,7 @@ declare var jQuery: any;
         </div>
     `
 })
-export class AppRightPanelComponent {
+export class AppRightPanel {
 
     rightPanelMenuScroller: HTMLDivElement;
     

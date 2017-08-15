@@ -1,4 +1,4 @@
-import {Component,Inject,forwardRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {AppComponent} from './app.component';
 
 @Component({
