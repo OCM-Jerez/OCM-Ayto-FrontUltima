@@ -87,6 +87,12 @@
     -moz-box-shadow: $value;
 }
 
+@mixin multi-shadow($value1, $value2) {
+    -webkit-box-shadow: $value1, $value2;
+    -moz-box-shadow: $value1, $value2;
+    box-shadow: $value1, $value2;
+}
+
 @mixin hover-element {
     background-color: $hoverBgColor;
     color: $hoverTextColor;
