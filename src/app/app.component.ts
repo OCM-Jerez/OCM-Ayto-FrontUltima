@@ -49,6 +49,8 @@ export class AppComponent implements AfterViewInit {
     activeTopbarItem: any;
 
     resetMenu: boolean;
+    
+    menuHoverActive: boolean;
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
 
@@ -79,6 +81,8 @@ export class AppComponent implements AfterViewInit {
             if(this.overlayMenuActive || this.staticMenuMobileActive) {
                 this.hideOverlayMenu();
             }
+            
+            this.menuHoverActive = false;
         }
         
         if(!this.rightPanelClick) {

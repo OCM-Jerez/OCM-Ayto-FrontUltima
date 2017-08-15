@@ -1,4 +1,4 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild,Inject,forwardRef} from '@angular/core';
+import {Component,Input,OnInit,EventEmitter,ViewChild} from '@angular/core';
 import {trigger,state,style,transition,animate} from '@angular/animations';
 import {Location} from '@angular/common';
 import {Router} from '@angular/router';
@@ -17,7 +17,7 @@ export class AppMenuComponent implements OnInit {
 
     model: any[];
 
-    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent) {}
+    constructor(public app: AppComponent) {}
     
     ngOnInit() {
         this.model = [
@@ -144,14 +144,15 @@ export class AppMenuComponent implements OnInit {
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="!child.routerLink" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter($event, child, i)" class="ripplelink" *ngIf="!child.routerLink" 
+                    [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
                     <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
 
-                <a (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="child.routerLink"
+                <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter($event, child, i)" class="ripplelink" *ngIf="child.routerLink"
                     [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
@@ -198,9 +199,13 @@ export class AppSubMenu {
         
     activeIndex: number;
 
-    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent, public router: Router, public location: Location) {}
+    constructor(public app: AppComponent) {}
         
-    itemClick(event: Event, item: MenuItem, index: number) {
+    itemClick(event: Event, item: MenuItem, index: number) {        
+        if(this.root) {
+            this.app.menuHoverActive = !this.app.menuHoverActive;
+        }
+        
         //avoid processing disabled items
         if(item.disabled) {
             event.preventDefault();
@@ -229,6 +234,12 @@ export class AppSubMenu {
                 
             this.app.overlayMenuActive = false;
             this.app.staticMenuMobileActive = false;
+        }
+    }
+    
+    onMouseEnter(event: Event, item: MenuItem, index: number) {
+        if(this.root && this.app.menuHoverActive) {
+            this.activeIndex = index;
         }
     }
     

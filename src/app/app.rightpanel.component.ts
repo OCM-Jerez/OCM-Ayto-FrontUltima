@@ -1,4 +1,4 @@
-import {Component,OnInit,ViewChild,ElementRef,Inject,forwardRef} from '@angular/core';
+import {Component,OnInit,ViewChild,ElementRef} from '@angular/core';
 import {AppComponent} from './app.component';
 declare var jQuery: any;
 
@@ -67,7 +67,7 @@ export class AppRightPanelComponent {
     
     @ViewChild('rightPanelMenuScroller') rightPanelMenuScrollerViewChild: ElementRef;
 
-    constructor(@Inject(forwardRef(() => AppComponent)) public app:AppComponent) {}
+    constructor(public app: AppComponent) {}
     
     ngAfterViewInit() {
         this.rightPanelMenuScroller = <HTMLDivElement> this.rightPanelMenuScrollerViewChild.nativeElement;
