@@ -81,6 +81,12 @@
     -moz-box-shadow: none;
 }
 
+@mixin shadow($value) {
+    box-shadow: $value;
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+}
+
 @mixin hover-element {
     background-color: $hoverBgColor;
     color: $hoverTextColor;

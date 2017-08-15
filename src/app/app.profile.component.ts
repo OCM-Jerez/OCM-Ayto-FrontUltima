@@ -8,8 +8,8 @@ import {AppComponent} from './app.component';
     selector: 'inline-profile',
     template: `
         <div class="profile" [ngClass]="{'profile-expanded':active}">
-            <div class="profile-image"></div>
             <a href="#" (click)="onClick($event)">
+                <img class="profile-image" src="assets/layout/images/avatar.png" />
                 <span class="profile-name">Jane Williams</span>
                 <i class="material-icons">keyboard_arrow_down</i>
             </a>

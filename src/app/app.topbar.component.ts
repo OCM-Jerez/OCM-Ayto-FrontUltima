@@ -22,7 +22,7 @@ import {AppComponent} from './app.component';
                         [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">
 
                         <a href="#" (click)="app.onTopbarItemClick($event,profile)">                            
-                            <div class="profile-image"></div>
+                            <img class="profile-image" src="assets/layout/images/avatar.png" />
                             <span class="topbar-item-name">Jane Williams</span>
                         </a>
                         

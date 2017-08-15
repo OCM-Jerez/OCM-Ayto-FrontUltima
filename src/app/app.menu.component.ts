@@ -46,6 +46,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Material Size', icon: 'fiber_smart_record',  command: () => this.app.layoutCompact = false},
                     {label: 'Static Menu', icon: 'menu',  command: () => this.app.changeToStaticMenu()},
                     {label: 'Overlay Menu', icon: 'exit_to_app',  command: () => this.app.changeToOverlayMenu()},
+                    {label: 'Slim Menu', icon: 'more_vert',  command: () => this.app.changeToSlimMenu()},
                     {label: 'Horizontal Menu', icon: 'border_horizontal',  command: () => this.app.changeToHorizontalMenu()},
                     {label: 'Light Menu', icon: 'label_outline',  command: () => this.app.darkMenu = false},
                     {label: 'Dark Menu', icon: 'label',  command: () => this.app.darkMenu = true},
@@ -147,7 +148,7 @@ export class AppMenuComponent implements OnInit {
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
-                    <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
+                    <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
 
                 <a (click)="itemClick($event,child,i)" class="ripplelink" *ngIf="child.routerLink"
@@ -155,8 +156,12 @@ export class AppMenuComponent implements OnInit {
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
-                    <i class="material-icons" *ngIf="child.items">keyboard_arrow_down</i>
+                    <i class="material-icons submenu-icon" *ngIf="child.items">keyboard_arrow_down</i>
                 </a>
+                <div class="layout-menu-tooltip">
+                    <div class="layout-menu-tooltip-arrow"></div>
+                    <div class="layout-menu-tooltip-text">{{child.label}}</div>
+                </div>
                 <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'" [visible]="isActive(i)" [reset]="reset"></ul>
             </li>
         </ng-template>

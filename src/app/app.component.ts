@@ -3,6 +3,7 @@ import {Component,AfterViewInit,ElementRef,Renderer,ViewChild} from '@angular/co
 enum MenuOrientation {
     STATIC,
     OVERLAY,
+    SLIM,
     HORIZONTAL
 };
 
@@ -15,9 +16,9 @@ declare var jQuery: any;
 })
 export class AppComponent implements AfterViewInit {
     
-    layoutCompact: boolean = false;
+    layoutCompact: boolean = true;
 
-    layoutMode: MenuOrientation = MenuOrientation.STATIC;
+    layoutMode: MenuOrientation = MenuOrientation.SLIM;
     
     darkMenu: boolean = false;
     
@@ -149,6 +150,10 @@ export class AppComponent implements AfterViewInit {
     isHorizontal() {
         return this.layoutMode === MenuOrientation.HORIZONTAL;
     }
+    
+    isSlim() {
+        return this.layoutMode === MenuOrientation.SLIM;
+    }
 
     changeToStaticMenu() {
         this.layoutMode = MenuOrientation.STATIC;
@@ -160,6 +165,10 @@ export class AppComponent implements AfterViewInit {
 
     changeToHorizontalMenu() {
         this.layoutMode = MenuOrientation.HORIZONTAL;
+    }
+    
+    changeToSlimMenu() {
+        this.layoutMode = MenuOrientation.SLIM;
     }
 
     ngOnDestroy() {
