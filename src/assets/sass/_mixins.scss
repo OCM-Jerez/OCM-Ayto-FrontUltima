@@ -187,3 +187,9 @@
     -moz-box-sizing: $box-model;
     box-sizing: $box-model;
 }
+
+@mixin flex() {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}

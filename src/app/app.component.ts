@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
     
     layoutCompact: boolean = true;
 
-    layoutMode: MenuOrientation = MenuOrientation.SLIM;
+    layoutMode: MenuOrientation = MenuOrientation.STATIC;
     
     darkMenu: boolean = false;
     
