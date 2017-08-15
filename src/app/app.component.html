@@ -1,4 +1,4 @@
-<div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}">
+<div class="layout-wrapper" [ngClass]="{'layout-compact':layoutCompact}" (click)="onLayoutClick()">
 
     <div #layoutContainer class="layout-container" 
             [ngClass]="{'menu-layout-static': !isOverlay(),
@@ -25,6 +25,8 @@
             
             <app-footer></app-footer>
         </div>
+        
+        <app-rightpanel></app-rightpanel>
         
         <div class="layout-mask"></div>
     </div>

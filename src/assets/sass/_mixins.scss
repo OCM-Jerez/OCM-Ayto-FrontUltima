@@ -181,3 +181,9 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
+@mixin box-sizing($box-model) {
+    -webkit-box-sizing: $box-model;
+    -moz-box-sizing: $box-model;
+    box-sizing: $box-model;
+}

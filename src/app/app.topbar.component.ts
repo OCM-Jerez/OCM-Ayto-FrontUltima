@@ -14,9 +14,14 @@ import {AppComponent} from './app.component';
                     <i></i>
                 </a>
                 
+                <a id="rightpanel-menu-button" href="#" (click)="app.onRightPanelButtonClick($event)">
+                    <i class="material-icons">more_vert</i>
+                </a>
+                
                 <a id="topbar-menu-button" href="#" (click)="app.onTopbarMenuButtonClick($event)">
                     <i class="material-icons">menu</i>
                 </a>
+                                
                 <ul class="topbar-items animated fadeInDown" [ngClass]="{'topbar-items-visible': app.topbarMenuActive}">
                     <li #profile class="profile-item" *ngIf="app.profileMode==='top'||app.isHorizontal()"
                         [ngClass]="{'active-top-menu':app.activeTopbarItem === profile}">

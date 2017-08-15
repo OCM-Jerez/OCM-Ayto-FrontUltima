@@ -33,6 +33,10 @@ export class AppComponent implements AfterViewInit {
     staticMenuDesktopInactive: boolean;
 
     staticMenuMobileActive: boolean;
+    
+    rightPanelActive: boolean;
+    
+    rightPanelClick: boolean;
 
     layoutContainer: HTMLDivElement;
 
@@ -43,8 +47,6 @@ export class AppComponent implements AfterViewInit {
     topbarItemClick: boolean;
 
     activeTopbarItem: any;
-
-    documentClickListener: Function;
 
     resetMenu: boolean;
 
@@ -57,28 +59,39 @@ export class AppComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
         this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
-
-        //hides the horizontal submenus or top menu if outside is clicked
-        this.documentClickListener = this.renderer.listenGlobal('body', 'click', (event) => {            
-            if(!this.topbarItemClick) {
-                this.activeTopbarItem = null;
-                this.topbarMenuActive = false;
-            }
-
-            if(!this.menuClick && this.isHorizontal()) {
-                this.resetMenu = true;
-            }
-
-            this.topbarItemClick = false;
-            this.menuClick = false;
-        });
         
         setTimeout(() => {
             jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
         }, 10);
     }
+    
+    onLayoutClick() {
+        if(!this.topbarItemClick) {
+            this.activeTopbarItem = null;
+            this.topbarMenuActive = false;
+        }
+
+        if(!this.menuClick) {
+            if(this.isHorizontal() || this.isSlim()) {
+                this.resetMenu = true;
+            }
+            
+            if(this.overlayMenuActive || this.staticMenuMobileActive) {
+                this.hideOverlayMenu();
+            }
+        }
+        
+        if(!this.rightPanelClick) {
+            this.rightPanelActive = false;
+        }
+
+        this.topbarItemClick = false;
+        this.menuClick = false;
+        this.rightPanelClick = false;
+    }
 
     onMenuButtonClick(event) {
+        this.menuClick = true;
         this.rotateMenuButton = !this.rotateMenuButton;
         this.topbarMenuActive = false;
 
@@ -110,11 +123,7 @@ export class AppComponent implements AfterViewInit {
         this.topbarItemClick = true;
         this.topbarMenuActive = !this.topbarMenuActive;
         
-        if(this.overlayMenuActive || this.staticMenuMobileActive) {
-            this.rotateMenuButton = false;
-            this.overlayMenuActive = false;
-            this.staticMenuMobileActive = false;
-        }
+        this.hideOverlayMenu();
         
         event.preventDefault();
     }
@@ -128,6 +137,22 @@ export class AppComponent implements AfterViewInit {
             this.activeTopbarItem = item;
 
         event.preventDefault();
+    }
+        
+    onRightPanelButtonClick(event) {
+        this.rightPanelClick = true;
+        this.rightPanelActive = !this.rightPanelActive;
+        event.preventDefault();
+    }
+    
+    onRightPanelClick() {
+        this.rightPanelClick = true;
+    }
+    
+    hideOverlayMenu() {
+        this.rotateMenuButton = false;
+        this.overlayMenuActive = false;
+        this.staticMenuMobileActive = false;
     }
 
     isTablet() {
@@ -172,10 +197,6 @@ export class AppComponent implements AfterViewInit {
     }
 
     ngOnDestroy() {
-        if(this.documentClickListener) {
-            this.documentClickListener();
-        }  
-
         jQuery(this.layoutMenuScroller).nanoScroller({flash:true});
     }
 
