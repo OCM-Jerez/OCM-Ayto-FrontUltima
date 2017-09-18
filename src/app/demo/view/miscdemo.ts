@@ -4,9 +4,12 @@ import {NodeService} from '../service/nodeservice';
 import {EventService} from '../service/eventservice';
 import {Car} from '../domain/car';
 import {TreeNode} from 'primeng/primeng';
+import {TerminalService} from 'primeng/components/terminal/terminalservice';
+import {Subscription}   from 'rxjs/Subscription';
 
 @Component({
-    templateUrl: './miscdemo.html'
+    templateUrl: './miscdemo.html',
+    providers: [TerminalService]
 })
 export class MiscDemo implements OnInit,OnDestroy {
     
@@ -17,6 +20,15 @@ export class MiscDemo implements OnInit,OnDestroy {
     interval: any;
     
     response: string;
+
+    subscription: Subscription;
+
+    constructor(private terminalService: TerminalService) {
+        this.subscription = this.terminalService.commandHandler.subscribe(command => {
+            let response = (command === 'date') ? new Date().toDateString() : 'Unknown command: ' + command;
+            this.terminalService.sendResponse(response);
+        });
+    }
     
     ngOnInit() {
         this.interval = setInterval(() => {
@@ -43,16 +55,13 @@ export class MiscDemo implements OnInit,OnDestroy {
         this.images.push({source:'assets/demo/images/nature/nature12.jpg', alt:'Description for Image 12', title:'Title 12'});
     }
     
-    onCommand(event) {
-        if(event.command === 'date')
-            this.response = new Date().toDateString();
-        else
-            this.response = 'Unknown command: ' + event.command;
-    }
-    
     ngOnDestroy() {
         if(this.interval) {
             clearInterval(this.interval);
+        }
+
+        if(this.subscription) {
+            this.subscription.unsubscribe();
         }
     }
 }
