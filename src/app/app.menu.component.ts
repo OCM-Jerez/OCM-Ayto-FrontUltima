@@ -138,7 +138,9 @@ export class AppMenuComponent implements OnInit {
 }
 
 @Component({
+	/* tslint:disable:component-selector */
     selector: '[app-submenu]',
+	/* tslint:enable:component-selector */
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
