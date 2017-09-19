@@ -1,4 +1,4 @@
-import {Component,OnInit,ViewChild,ElementRef} from '@angular/core';
+import {Component, OnDestroy, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import {AppComponent} from './app.component';
 declare var jQuery: any;
 
@@ -57,27 +57,27 @@ declare var jQuery: any;
                     </div>
                 </div>
             </div>
-            
+
         </div>
     `
 })
-export class AppRightPanel {
+export class AppRightpanelComponent implements OnDestroy, AfterViewInit {
 
     rightPanelMenuScroller: HTMLDivElement;
-    
+
     @ViewChild('rightPanelMenuScroller') rightPanelMenuScrollerViewChild: ElementRef;
 
     constructor(public app: AppComponent) {}
-    
+
     ngAfterViewInit() {
         this.rightPanelMenuScroller = <HTMLDivElement> this.rightPanelMenuScrollerViewChild.nativeElement;
-        
+
         setTimeout(() => {
-            jQuery(this.rightPanelMenuScroller).nanoScroller({flash:true});
+            jQuery(this.rightPanelMenuScroller).nanoScroller({flash: true});
         }, 10);
     }
-    
+
     ngOnDestroy() {
-        jQuery(this.rightPanelMenuScroller).nanoScroller({flash:true});
+        jQuery(this.rightPanelMenuScroller).nanoScroller({flash: true});
     }
 }

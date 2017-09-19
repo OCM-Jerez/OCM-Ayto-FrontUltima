@@ -1,7 +1,5 @@
-import {Component,Input,OnInit,EventEmitter,ViewChild} from '@angular/core';
-import {trigger,state,style,transition,animate} from '@angular/animations';
-import {Location} from '@angular/common';
-import {Router} from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
 import {MenuItem} from 'primeng/primeng';
 import {AppComponent} from './app.component';
 
@@ -18,25 +16,25 @@ export class AppMenuComponent implements OnInit {
     model: any[];
 
     constructor(public app: AppComponent) {}
-    
+
     ngOnInit() {
         this.model = [
             {label: 'Dashboard', icon: 'dashboard', routerLink: ['/']},
             {
                 label: 'Themes', icon: 'palette', badge: '6',
                 items: [
-                    {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme('indigo')}},
-                    {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme('brown')}},
-                    {label: 'Blue - Amber', icon: 'brush', command: (event) => {this.changeTheme('blue')}},
-                    {label: 'Blue Grey - Green', icon: 'brush', command: (event) => {this.changeTheme('blue-grey')}},
-                    {label: 'Dark - Blue', icon: 'brush', command: (event) => {this.changeTheme('dark-blue')}},
-                    {label: 'Dark - Green', icon: 'brush', command: (event) => {this.changeTheme('dark-green')}},
-                    {label: 'Green - Yellow', icon: 'brush', command: (event) => {this.changeTheme('green')}},
-                    {label: 'Purple - Cyan', icon: 'brush', command: (event) => {this.changeTheme('purple-cyan')}},
-                    {label: 'Purple - Amber', icon: 'brush', command: (event) => {this.changeTheme('purple-amber')}},
-                    {label: 'Teal - Lime', icon: 'brush', command: (event) => {this.changeTheme('teal')}},
-                    {label: 'Cyan - Amber', icon: 'brush', command: (event) => {this.changeTheme('cyan')}},
-                    {label: 'Grey - Deep Orange', icon: 'brush', command: (event) => {this.changeTheme('grey')}}
+                    {label: 'Indigo - Pink', icon: 'brush', command: (event) => {this.changeTheme('indigo'); }},
+                    {label: 'Brown - Green', icon: 'brush', command: (event) => {this.changeTheme('brown'); }},
+                    {label: 'Blue - Amber', icon: 'brush', command: (event) => {this.changeTheme('blue'); }},
+                    {label: 'Blue Grey - Green', icon: 'brush', command: (event) => {this.changeTheme('blue-grey'); }},
+                    {label: 'Dark - Blue', icon: 'brush', command: (event) => {this.changeTheme('dark-blue'); }},
+                    {label: 'Dark - Green', icon: 'brush', command: (event) => {this.changeTheme('dark-green'); }},
+                    {label: 'Green - Yellow', icon: 'brush', command: (event) => {this.changeTheme('green'); }},
+                    {label: 'Purple - Cyan', icon: 'brush', command: (event) => {this.changeTheme('purple-cyan'); }},
+                    {label: 'Purple - Amber', icon: 'brush', command: (event) => {this.changeTheme('purple-amber'); }},
+                    {label: 'Teal - Lime', icon: 'brush', command: (event) => {this.changeTheme('teal'); }},
+                    {label: 'Cyan - Amber', icon: 'brush', command: (event) => {this.changeTheme('cyan'); }},
+                    {label: 'Grey - Deep Orange', icon: 'brush', command: (event) => {this.changeTheme('grey'); }}
                 ]
             },
             {
@@ -131,11 +129,11 @@ export class AppMenuComponent implements OnInit {
     }
 
     changeTheme(theme) {
-        let themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
-        let layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
-        
-        themeLink.href = 'assets/theme/theme-' + theme +'.css';
-        layoutLink.href = 'assets/layout/css/layout-' + theme +'.css';
+        const themeLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('theme-css');
+        const layoutLink: HTMLLinkElement = <HTMLLinkElement> document.getElementById('layout-css');
+
+        themeLink.href = 'assets/theme/theme-' + theme + '.css';
+        layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
     }
 }
 
@@ -144,7 +142,8 @@ export class AppMenuComponent implements OnInit {
     template: `
         <ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
             <li [ngClass]="{'active-menuitem': isActive(i)}" [class]="child.badgeStyleClass" *ngIf="child.visible === false ? false : true">
-                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="!child.routerLink" 
+                <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)"
+                   class="ripplelink" *ngIf="!child.routerLink"
                     [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
@@ -153,7 +152,8 @@ export class AppMenuComponent implements OnInit {
                 </a>
 
                 <a (click)="itemClick($event,child,i)" (mouseenter)="onMouseEnter(i)" class="ripplelink" *ngIf="child.routerLink"
-                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
+                    [routerLink]="child.routerLink" routerLinkActive="active-menuitem-routerlink"
+                   [routerLinkActiveOptions]="{exact: true}" [attr.tabindex]="!visible ? '-1' : null" [attr.target]="child.target">
                     <i class="material-icons">{{child.icon}}</i>
                     <span>{{child.label}}</span>
                     <span class="menuitem-badge" *ngIf="child.badge">{{child.badge}}</span>
@@ -164,7 +164,8 @@ export class AppMenuComponent implements OnInit {
                     <div class="layout-menu-tooltip-text">{{child.label}}</div>
                 </div>
                 <ul app-submenu [item]="child" *ngIf="child.items" [visible]="isActive(i)" [reset]="reset"
-                    [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ? 'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
+                    [@children]="(app.isSlim()||app.isHorizontal())&&root ? isActive(i) ?
+                    'visible' : 'hidden' : isActive(i) ? 'visibleAnimated' : 'hiddenAnimated'"></ul>
             </li>
         </ng-template>
     `,
@@ -187,63 +188,62 @@ export class AppMenuComponent implements OnInit {
         ])
     ]
 })
-export class AppSubMenu {
+export class AppSubMenuComponent {
 
     @Input() item: MenuItem;
-    
+
     @Input() root: boolean;
-    
+
     @Input() visible: boolean;
 
     _reset: boolean;
-        
+
     activeIndex: number;
 
     constructor(public app: AppComponent) {}
-        
-    itemClick(event: Event, item: MenuItem, index: number) {        
-        if(this.root) {
+
+    itemClick(event: Event, item: MenuItem, index: number) {
+        if (this.root) {
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
-        
-        //avoid processing disabled items
-        if(item.disabled) {
+
+        // avoid processing disabled items
+        if (item.disabled) {
             event.preventDefault();
             return true;
         }
-        
-        //activate current item and deactivate active sibling if any
+
+        // activate current item and deactivate active sibling if any
         this.activeIndex = (this.activeIndex === index) ? null : index;
-                
-        //execute command
-        if(item.command) {
+
+        // execute command
+        if (item.command) {
             item.command({originalEvent: event, item: item});
         }
 
-        //prevent hash change
-        if(item.items || (!item.url && !item.routerLink)) {
+        // prevent hash change
+        if (item.items || (!item.url && !item.routerLink)) {
             event.preventDefault();
         }
-        
-        //hide menu
-        if(!item.items) {
-            if(this.app.isHorizontal() || this.app.isSlim())
-                this.app.resetMenu = true;
-            else
-                this.app.resetMenu = false;
-                
+
+        // hide menu
+        if (!item.items) {
+            if (this.app.isHorizontal() || this.app.isSlim()) {
+                this.app.resetMenu = true; } else {
+                this.app.resetMenu = false; }
+
             this.app.overlayMenuActive = false;
             this.app.staticMenuMobileActive = false;
             this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }
-    
+
     onMouseEnter(index: number) {
-        if(this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = index;
         }
     }
-    
+
     isActive(index: number): boolean {
         return this.activeIndex === index;
     }
@@ -252,10 +252,10 @@ export class AppSubMenu {
         return this._reset;
     }
 
-    set reset(val:boolean) {
+    set reset(val: boolean) {
         this._reset = val;
 
-        if(this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this._reset && (this.app.isHorizontal() || this.app.isSlim())) {
             this.activeIndex = null;
         }
     }

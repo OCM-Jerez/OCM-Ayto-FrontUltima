@@ -13,13 +13,13 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
         imports: [ RouterTestingModule ],
-        declarations: [ AppComponent, 
-                AppTopBar, 
+        declarations: [ AppComponent,
+                AppTopBar,
                 AppMenuComponent,
                 AppSubMenu,
-                AppFooter, 
-                InlineProfileComponent, 
-                AppRightPanel 
+                AppFooter,
+                InlineProfileComponent,
+                AppRightPanel
             ],
     });
     TestBed.compileComponents();
