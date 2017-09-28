@@ -20,7 +20,7 @@ describe('AppComponent', () => {
                 AppFooterComponent,
                 AppInlineProfileComponent,
                 AppRightpanelComponent
-            ],
+            ]
     });
     TestBed.compileComponents();
   });
