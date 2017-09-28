@@ -1113,7 +1113,7 @@ body {
                 box-sizing: border-box;
 
                 &.ui-datepicker-today {
-                    a,span {
+                    a {
                         color: #ffffff;
                         background: lighten($primaryColor,20%);
                         
@@ -1125,7 +1125,7 @@ body {
                     }
                 }
                 
-                a,span {
+                a {
                     padding: .25em;
                     margin: 0;
                     text-align: center;
@@ -1144,6 +1144,12 @@ body {
 
                     &:not(.ui-state-active):not(.ui-state-highlight):hover {
                         @include hover-element();
+                    }
+                    
+                    span {
+                        display: inline;
+                        padding: 0;
+                        text-align: center;
                     }
                 }                
             }
