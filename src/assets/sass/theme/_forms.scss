@@ -73,6 +73,44 @@ body {
                 font-size: .75em;
             }
         }
+        
+        &.md-inputfield-fill {
+            input {
+                background-color: #f7f7f7;
+                padding-left: 4px;
+                padding-right: 4px;
+                padding-top: 4px;
+            }
+            
+            label {
+                top: 2px;
+            }
+        }
+        
+        &.md-inputfield-box {
+            background-color: #f7f7f7;
+            height: 44px;
+            
+            input {
+                bottom: 0px;
+                position: absolute;
+            }
+            
+            label {
+                top: 24px;
+            }
+            
+            input:focus ~ label,
+            input.ui-state-filled ~ label,
+            .ui-inputwrapper-focus ~ label,
+            .ui-inputwrapper-filled ~ label {
+              top:1px;
+            }
+
+            .input:-webkit-autofill ~ label {
+              top:1px;
+            }
+        }
     }
 
     .ui-material-message {
@@ -83,6 +121,10 @@ body {
                 margin: 0px;
                 color: #e62a10;
                 font-size: .75em;
+                
+                label {
+                    top: 4px;
+                }
             }
         }
     }
