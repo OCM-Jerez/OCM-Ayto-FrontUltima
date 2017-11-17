@@ -75,7 +75,7 @@ body {
                 
                 @include border-radius(50%);
                 @include transition(all $transitionDuration);
-                @include multi-shadow(0 3px 10px rgba(0,0,0,0.23),0 3px 10px rgba(0,0,0,0.16));
+                @include multi-shadow(0 3px 10px rgba(0,0,0,0.23), 0 3px 10px rgba(0,0,0,0.16));
                 
                 &:hover {
                     @include scale(1.2);
@@ -99,7 +99,7 @@ body {
                 @include transition(all $transitionDuration);
                 
                 i {
-                    @include transition(color .5s);
+                    @include transition(color $transitionDuration);
                     font-size: 36px;
                 }
             }
@@ -682,11 +682,11 @@ body {
 
                 .topbar-icon {
                     font-size: 36px;
-                    color: #ffffff;
+                    color: $topbarIconColor;
                     @include transition(color $transitionDuration);
                     
                     &:hover {
-                        color: #e8e8e8;
+                        color: $topbarIconHoverColor;
                     }
                 }
                 
@@ -705,9 +705,9 @@ body {
                     width: 250px;
                     background-color: $topbarSubmenuBgColor;
                     @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
-                    -webkit-animation-duration: .5s;
-                    -moz-animation-duration: .5s;
-                    animation-duration: .5s;
+                    -webkit-animation-duration: $transitionDuration;
+                    -moz-animation-duration: $transitionDuration;
+                    animation-duration: $transitionDuration;
                 }
                 
                 &.active-top-menu {
@@ -820,14 +820,14 @@ body {
                         position: relative;
                         
                         > a {
-                            color: #ffffff;
+                            color: $horizontalLayoutMenuItemTextColor;
                             
                             i {
-                                color: #ffffff;
+                                color: $horizontalLayoutMenuItemTextColor;
                             }
                             
                             &:hover {
-                                background-color: #e8e8e8;
+                                background-color: $horizontalLayoutMenuItemHoverBgColor;
                                 color: $textColor;
                                 
                                 i {
@@ -858,7 +858,7 @@ body {
                             top: 41px;
                             left: 0px;
                             width: 250px;
-                            background-color: #ffffff;
+                            background-color: $horizontalLayoutMenuSubMenuBgColor;
                             @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
                             
                             li {
@@ -911,7 +911,7 @@ body {
                                 &.active-menuitem {
                                     > a {
                                         color: $primaryColor;
-                                        background-color: #e8e8e8;
+                                        background-color: $horizontalLayoutMenuSubMenuActiveBgColor;
                                     }
 
                                      > ul {
@@ -944,14 +944,14 @@ body {
                     ul.ultima-menu {            
                         li {
                             a {
-                                color: #ffffff;
+                                color: $horizontalDarkLayoutMenuItemTextColor;
                                 
                                 &:hover {
                                     background-color: $darkMenuHoverColor;
-                                    color: #ffffff;
+                                    color: $horizontalDarkLayoutMenuItemTextColor;
                                     
                                     i {
-                                        color: #ffffff;
+                                        color: $horizontalDarkLayoutMenuItemTextColor;
                                     }
                                 }
                                 
@@ -963,10 +963,10 @@ body {
                                    }
                                    
                                    &:hover {
-                                       color: #ffffff;
+                                       color: $horizontalDarkLayoutMenuItemTextColor;
                                        
                                        i {
-                                           color: #ffffff;
+                                           color: $horizontalDarkLayoutMenuItemTextColor;
                                        }
                                    }
                                 }
@@ -1091,7 +1091,7 @@ body {
                         }
                         
                         > ul {
-                            background-color: #ffffff;
+                            background-color: $slimLayoutMenuSubMenuBgColor;
                             position: absolute;
                             top: 0;
                             left: 75px;
@@ -1237,12 +1237,10 @@ body {
                     top: 75px;
                     right: 15px;
                     width: 275px;
-                    -webkit-animation-duration: .5s;
-                    -moz-animation-duration: .5s;
-                    animation-duration: .5s;
                     display: none;
-                    background-color: #ffffff;
+                    background-color: $topbarMenuBgColor;
                     @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
+                    @include animation-duration($transitionDuration);
                     list-style-type: none;
                     margin: 0;
                     padding: 0;
@@ -1265,7 +1263,7 @@ body {
                             }
                             
                             &:hover {
-                                background-color: #e8e8e8;
+                                background-color: $topbarIconHoverColor;
                             }
                             
                             .topbar-item-name {

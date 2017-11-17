@@ -168,6 +168,12 @@
     overflow: hidden;
 }
 
+@mixin animation-duration($value) {
+     -webkit-animation-duration: $value;
+    -moz-animation-duration: $value;
+    animation-duration: $value;
+}
+
 @mixin animation($delay, $duration, $animation) {
     -webkit-animation-delay: $delay;
     -webkit-animation-duration: $duration;
