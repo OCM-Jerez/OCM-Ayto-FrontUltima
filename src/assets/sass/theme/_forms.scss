@@ -69,14 +69,14 @@ body {
                 background-color: transparent;
                 border: 0 none;
                 margin: 0px;
-                color: #e62a10;
+                color: $inputErrorTextColor;
                 font-size: .75em;
             }
         }
         
         &.md-inputfield-fill {
             input {
-                background-color: #f7f7f7;
+                background-color: $textboxBgColor;
                 padding-left: 4px;
                 padding-right: 4px;
                 padding-top: 4px;
@@ -88,7 +88,7 @@ body {
         }
         
         &.md-inputfield-box {
-            background-color: #f7f7f7;
+            background-color: $textboxBgColor;
             height: 44px;
             
             input {
