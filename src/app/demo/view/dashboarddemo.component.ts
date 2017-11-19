@@ -3,6 +3,7 @@ import {CarService} from '../service/carservice';
 import {EventService} from '../service/eventservice';
 import {Car} from '../domain/car';
 import {SelectItem} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './dashboard.component.html'

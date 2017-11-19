@@ -1,4 +1,5 @@
 import {Component, ViewEncapsulation} from '@angular/core';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './utilsdemo.component.html',
@@ -35,4 +36,11 @@ import {Component, ViewEncapsulation} from '@angular/core';
     encapsulation: ViewEncapsulation.None
 })
 export class UtilsDemoComponent {
+
+    constructor(private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Utilities' }
+        ]);
+    }
+    
 }

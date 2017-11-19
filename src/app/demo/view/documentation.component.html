@@ -68,8 +68,12 @@ Run 'ng help' for more options.
         &lt;/div&gt;
         
         &lt;div class="layout-main"&gt;
-            &lt;router-outlet&gt;&lt;/router-outlet&gt;
-            
+            &lt;app-breadcrumb&gt;&lt;/app-breadcrumb&gt;
+        
+            &lt;div class="layout-content"&gt;
+                &lt;router-outlet&gt;&lt;/router-outlet&gt;
+            &lt;/div&gt;
+        
             &lt;app-footer&gt;&lt;/app-footer&gt;
         &lt;/div&gt;
         
@@ -446,6 +450,30 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
             <h1>Utilities</h1>
             <p>Ultima provides various helper features such as material iconset compatible with PrimeNG components and helper classes. Visit <a [routerLink]="['/utils']">utils</a> page for details.</p>
                     
+            <h1>Breadcrumb</h1>
+            <p>Ultima has an optional built-in breadcrumb section right below the topbar. The items are dynamically generated using a
+                BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
+                Here is an example component that updates the breadcrumb.</p>
+<pre>
+import &#123;Component&#125; from '@angular/core';
+import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
+
+@Component(&#123;
+    templateUrl: './emptydemo.component.html'
+&#125;)
+export class ControlPanelComponent &#123;
+    
+    constructor(private breadcrumbService: BreadcrumbService) &#123;
+        this.breadcrumbService.setItems([
+            &#123;label: 'Admin'&#125;,
+            &#123;label: 'Control Panel', routerLink: ['/controlpanel']&#125;
+        ]);
+    &#125;
+    
+&#125;
+</pre>
+            <p>Result will be reflected at application breadcrumb component such as "Home Icon" -> "Admin" -> "Control Panel".</p>
+
             <h1>Grid CSS</h1>
             <p>Ultima uses PrimeNG Grid CSS (ui-g-*) throughout the samples, we strongly suggest using Grid CSS as your layout framework as it is well tested and supported by PrimeNG. Grid CSS is
             available inside primeng.css.</p> 

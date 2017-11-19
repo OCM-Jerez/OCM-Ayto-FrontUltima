@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MenuItem} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './menusdemo.component.html',
@@ -25,6 +26,13 @@ export class MenusDemoComponent implements OnInit {
     panelMenuItems: MenuItem[];
 
     stepsItems: MenuItem[];
+
+    constructor(private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Menus', routerLink: ['/menus'] }
+        ]);
+    }
 
     ngOnInit() {
         this.breadcrumbItems = [];

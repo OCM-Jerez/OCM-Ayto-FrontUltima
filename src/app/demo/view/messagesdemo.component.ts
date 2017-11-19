@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Message} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './messagesdemo.component.html'
@@ -7,6 +8,13 @@ import {Message} from 'primeng/primeng';
 export class MessagesDemoComponent {
 
     msgs: Message[] = [];
+
+    constructor(private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Messages', routerLink: ['/messages'] }
+        ]);
+    }
 
     showInfo() {
         this.msgs = [];

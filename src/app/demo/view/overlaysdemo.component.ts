@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Car} from '../domain/car';
 import {CarService} from '../service/carservice';
 import {ConfirmationService} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './overlaysdemo.component.html',
@@ -15,7 +16,13 @@ export class OverlaysDemoComponent implements OnInit {
 
     display: boolean;
 
-    constructor(private carService: CarService, private confirmationService: ConfirmationService) { }
+    constructor(private carService: CarService, private confirmationService: ConfirmationService,
+        private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Overlays', routerLink: ['/overlay'] }
+        ]);
+    }
 
     ngOnInit() {
         this.carService.getCarsSmall().then(cars => this.cars = cars.splice(0, 5));

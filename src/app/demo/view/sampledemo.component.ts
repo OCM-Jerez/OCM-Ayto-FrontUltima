@@ -4,6 +4,7 @@ import {CountryService} from '../service/countryservice';
 import {NodeService} from '../service/nodeservice';
 import {Car} from '../domain/car';
 import {SelectItem, MenuItem, TreeNode} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './sampledemo.component.html'
@@ -62,8 +63,13 @@ export class SampleDemoComponent implements OnInit {
 
     selectedType: string;
 
-    constructor(private carService: CarService, private countryService: CountryService, private nodeService: NodeService) { }
-
+    constructor(private carService: CarService, private countryService: CountryService, private nodeService: NodeService,
+        private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Sample', routerLink: ['/sample'] }
+        ]);
+    }
     ngOnInit() {
         this.carService.getCarsSmall().then(cars => this.cars = cars);
         this.carService.getCarsLarge().then(cars => this.carsLarge = cars);

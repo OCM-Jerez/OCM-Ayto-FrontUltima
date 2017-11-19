@@ -4,6 +4,7 @@ import {NodeService} from '../service/nodeservice';
 import {EventService} from '../service/eventservice';
 import {Car} from '../domain/car';
 import {TreeNode} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './datademo.component.html',
@@ -53,7 +54,13 @@ export class DataDemoComponent implements OnInit {
 
     scheduleHeader: any;
 
-    constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService) { }
+    constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService,
+        private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Data Components', routerLink: ['/data'] }
+        ]);
+     }
 
     ngOnInit() {
         this.carService.getCarsMedium().then(cars => this.cars1 = cars);

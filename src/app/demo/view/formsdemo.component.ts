@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CountryService} from '../service/countryservice';
 import {SelectItem, MenuItem} from 'primeng/primeng';
+import {BreadcrumbService} from '../../breadcrumb.service';
 
 @Component({
     templateUrl: './formsdemo.component.html'
@@ -51,7 +52,12 @@ export class FormsDemoComponent implements OnInit {
 
     color: string;
 
-    constructor(private countryService: CountryService) {}
+    constructor(private countryService: CountryService, private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Components' },
+            { label: 'Forms', routerLink: ['/forms'] }
+        ]);
+    }
 
     ngOnInit() {
         this.carOptions = [];

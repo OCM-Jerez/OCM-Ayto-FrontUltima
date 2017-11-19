@@ -77,6 +77,7 @@ import {AppComponent} from './app.component';
 import {AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
 import {AppTopbarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
+import {AppBreadcrumbComponent } from './app.breadcrumb.component';
 import {AppRightpanelComponent} from './app.rightpanel.component';
 import {AppInlineProfileComponent} from './app.profile.component';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
@@ -98,6 +99,7 @@ import {CarService} from './demo/service/carservice';
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
+import {BreadcrumbService} from './breadcrumb.service';
 
 @NgModule({
     imports: [
@@ -178,6 +180,7 @@ import {NodeService} from './demo/service/nodeservice';
         AppSubMenuComponent,
         AppTopbarComponent,
         AppFooterComponent,
+        AppBreadcrumbComponent,
         AppRightpanelComponent,
         AppInlineProfileComponent,
         DashboardDemoComponent,
@@ -196,7 +199,7 @@ import {NodeService} from './demo/service/nodeservice';
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
-        CarService, CountryService, EventService, NodeService
+        CarService, CountryService, EventService, NodeService, BreadcrumbService
     ],
     bootstrap: [AppComponent]
 })
