@@ -68,6 +68,10 @@ body {
                 }
             }
             
+            .ui-fieldset-legend-text {
+                color: $primaryColor;
+            }
+            
             &.ui-state-focus {
                 background-color: transparent;
             }
@@ -90,7 +94,8 @@ body {
                     vertical-align: middle;
                 }
                 
-                .ui-accordion-toggle-icon {
+                .ui-accordion-toggle-icon,
+                .ui-accordion-header-text {
                     vertical-align: middle;
                 }
             }
