@@ -9,7 +9,7 @@ import { AppInlineProfileComponent } from './app.profile.component';
 import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
-import {BreadcrumbService} from './breadcrumb.service';
+import { BreadcrumbService } from './breadcrumb.service';
 
 describe('AppComponent', () => {
   beforeEach(() => {
