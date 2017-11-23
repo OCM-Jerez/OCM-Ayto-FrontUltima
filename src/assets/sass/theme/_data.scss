@@ -600,15 +600,15 @@ body {
     }
     
     .fc {
-        .fc-button-group {            
+        .fc-toolbar {
             .ui-icon-circle-triangle-e {
                 @include material-icon("play_circle_outline");
-                margin-top: .25em;
+                margin-top: .15em;
             }
             
             .ui-icon-circle-triangle-w {
                 @include material-icon("play_circle_outline"); @include rotate(180deg);
-                margin-top: .25em;
+                margin-top: .15em;
             }
             
             .ui-state-active {

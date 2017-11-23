@@ -7,6 +7,7 @@ import { AppTopbarComponent } from './app.topbar.component';
 import { AppRightpanelComponent} from './app.rightpanel.component';
 import { AppInlineProfileComponent } from './app.profile.component';
 import { AppFooterComponent } from './app.footer.component';
+import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
 
 describe('AppComponent', () => {
@@ -18,6 +19,7 @@ describe('AppComponent', () => {
                 AppMenuComponent,
                 AppSubMenuComponent,
                 AppFooterComponent,
+                AppBreadcrumbComponent,
                 AppInlineProfileComponent,
                 AppRightpanelComponent
             ]
