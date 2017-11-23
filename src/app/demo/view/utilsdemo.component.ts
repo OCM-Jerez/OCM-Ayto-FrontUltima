@@ -42,5 +42,5 @@ export class UtilsDemoComponent {
             { label: 'Utilities' }
         ]);
     }
-    
+
 }
