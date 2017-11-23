@@ -491,6 +491,10 @@ body {
             @include border-radius-left(0);
             @include border-radius-right($borderRadius);
         }
+        
+        .ui-menu {
+            min-width: 100%;
+        }
     }
 
     .ui-fluid {

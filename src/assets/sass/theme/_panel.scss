@@ -84,8 +84,15 @@ body {
             
             > a {
                 padding: $headerPadding;
-                padding-left: 2.5em;
                 color: #ffffff;
+                
+                > {
+                    vertical-align: middle;
+                }
+                
+                .ui-accordion-toggle-icon {
+                    vertical-align: middle;
+                }
             }
             
             &:not(.ui-state-active):not(.ui-state-disabled):hover {
@@ -100,16 +107,6 @@ body {
                 > a {
                     color: $accentTextColor;
                 }
-            }
-            
-            .fa-caret-right {
-                margin-top: -.5em;
-                font-size: 1.5em;
-            }
-            
-            .fa-caret-down {
-                margin-top: -.5em;
-                font-size: 1.5em;
             }
         }
         
