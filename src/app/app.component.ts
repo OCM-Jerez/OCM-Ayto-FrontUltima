@@ -1,4 +1,5 @@
 import {Component, AfterViewInit, ElementRef, Renderer, ViewChild, OnDestroy} from '@angular/core';
+import {BreadcrumbService} from './breadcrumb.service';
 
 enum MenuOrientation {
     STATIC,
@@ -12,7 +13,8 @@ declare var jQuery: any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [BreadcrumbService]
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
 
