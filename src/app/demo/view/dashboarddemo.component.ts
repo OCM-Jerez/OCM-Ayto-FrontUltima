@@ -22,6 +22,8 @@ export class DashboardDemoComponent implements OnInit {
 
     selectedCity: any;
 
+    selectedCar: Car;
+
     constructor(private carService: CarService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
       this.breadcrumbService.setItems([
         {label: ''},
