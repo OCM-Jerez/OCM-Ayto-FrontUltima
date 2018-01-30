@@ -152,7 +152,7 @@ body {
     .layout-menu {
         overflow: auto;
         position: fixed;
-        width: 268px;
+        width: 250px;
         z-index: 99;
         top: 75px;
         height: 100%;
@@ -466,6 +466,11 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
+        width: 268px;
+
+        &.ultima-main-menu {
+            padding-bottom: 120px;
+        }
 
         li {
             a {

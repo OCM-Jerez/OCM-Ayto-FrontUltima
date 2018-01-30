@@ -227,7 +227,7 @@ export class AppSubMenuComponent {
         if (item.items || (!item.url && !item.routerLink)) {
             setTimeout(() => {
               this.app.layoutMenuScrollerViewChild.moveBar();
-            }, 1000);
+            }, 450);
             event.preventDefault();
         }
 
