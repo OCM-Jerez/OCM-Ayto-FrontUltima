@@ -152,7 +152,7 @@ body {
     .layout-menu {
         overflow: auto;
         position: fixed;
-        width: 250px;
+        width: 268px;
         z-index: 99;
         top: 75px;
         height: 100%;
@@ -160,33 +160,21 @@ body {
         @include shadow(3px 0 6px rgba(0,0,0,0.3));
         @include transition(margin-left $transitionDuration);
 
-        > .nano {
-            > .nano-content {
-                &.menu-scroll-content {
-                    display: block;
-                    height: 100%;
-                    position: relative;
-                    overflow: scroll;
-                    overflow-x: hidden;
-                }
-
-                ul.ultima-menu {
-                    &.ultima-main-menu {
-                        margin-top: 16px;
-                        padding-bottom: 120px;
-                    }
-                }
-            }
-
-            .nano-pane {
-                background: transparent;
-
-                .nano-slider {
-                    background-color: $layoutMenuScrollbarBgColor;
-                    @include opacity(.3);
-                }
-            }
+      .ui-scrollpanel {
+        background: transparent;
+        .ui-scrollpanel-bar {
+          background-color: $layoutMenuScrollbarBgColor;
+          @include opacity(.3);
         }
+        .ui-scrollpanel-hidden {
+          display: block;
+          visibility: hidden;
+        }
+
+        .layout-menu {
+          padding-bottom: 120px;
+        }
+      }
 
         .profile {
             box-sizing: border-box;
@@ -675,27 +663,6 @@ body {
             padding: 14px;
         }
 
-        .nano {
-            .right-panel-scroll-content {
-                display: block;
-                height: 100%;
-                position: relative;
-
-                .layout-rightpanel-content {
-                    padding-bottom: 120px;
-                }
-            }
-
-            & > .nano-pane {
-                background: transparent;
-
-                > .nano-slider {
-                    background:  #aaa;
-                    opacity: .3;
-                }
-            }
-        }
-
     }
 }
 
@@ -845,31 +812,6 @@ body {
                 height: auto;
                 background-color: $primaryDarkColor;
                 @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
-
-                > .nano {
-                    overflow: visible;
-
-                    .nano-content {
-                        &.menu-scroll-content {
-                            display: inherit;
-                            height: auto;
-                            position: static;
-                            overflow: visible;
-                            overflow-x: visible;
-                        }
-
-                        ul.ultima-menu {
-                            &.ultima-main-menu {
-                                margin-top: 0px;
-                                padding-bottom: 0px;
-                            }
-                        }
-                    }
-
-                    .nano-pane {
-                        display: none !important;
-                    }
-                }
 
                 ul.ultima-menu {
                     &.ultima-main-menu {
@@ -1093,19 +1035,6 @@ body {
                 overflow: visible;
                 z-index: 100;
                 top: 0;
-
-                .nano {
-                    overflow: visible;
-
-                    .nano-content {
-                        overflow: visible;
-                        margin-right: 0px !important;
-                    }
-
-                    .nano-pane {
-                        display: none !important;
-                    }
-                }
 
                 .profile {
                     width: 100%;

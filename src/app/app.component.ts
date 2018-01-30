@@ -1,4 +1,5 @@
 import {Component, AfterViewInit, ElementRef, Renderer, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
+import { ScrollPanel} from 'primeng/primeng';
 
 enum MenuOrientation {
     STATIC,
@@ -6,8 +7,6 @@ enum MenuOrientation {
     SLIM,
     HORIZONTAL
 }
-
-declare var jQuery: any;
 
 @Component({
   selector: 'app-root',
@@ -53,8 +52,8 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     menuHoverActive: boolean;
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
-
-    @ViewChild('layoutMenuScroller') layoutMenuScrollerViewChild: ElementRef;
+    
+    @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
 
     rippleInitListener: any;
 
@@ -176,11 +175,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
     ngAfterViewInit() {
         this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
-        this.layoutMenuScroller = <HTMLDivElement> this.layoutMenuScrollerViewChild.nativeElement;
-
-        setTimeout(() => {
-            jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
-        }, 10);
+        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
     onLayoutClick() {
@@ -229,12 +224,6 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     onMenuClick($event) {
         this.menuClick = true;
         this.resetMenu = false;
-
-        if (!this.isHorizontal()) {
-            setTimeout(() => {
-                jQuery(this.layoutMenuScroller).nanoScroller();
-            }, 500);
-        }
     }
 
     onTopbarMenuButtonClick(event) {
@@ -315,7 +304,6 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
     ngOnDestroy() {
         this.unbindRipple();
-        jQuery(this.layoutMenuScroller).nanoScroller({flash: true});
     }
 
 }

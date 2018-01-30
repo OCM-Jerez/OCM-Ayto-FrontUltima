@@ -225,6 +225,9 @@ export class AppSubMenuComponent {
 
         // prevent hash change
         if (item.items || (!item.url && !item.routerLink)) {
+            setTimeout(() => {
+              this.app.layoutMenuScrollerViewChild.moveBar();
+            }, 1000);
             event.preventDefault();
         }
 
