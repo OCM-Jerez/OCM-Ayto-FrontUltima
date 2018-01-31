@@ -52,7 +52,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
     menuHoverActive: boolean;
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
-    
+
     @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
 
     rippleInitListener: any;
