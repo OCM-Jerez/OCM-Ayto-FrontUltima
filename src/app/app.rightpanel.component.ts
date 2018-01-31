@@ -7,6 +7,7 @@ import {ScrollPanel} from 'primeng/primeng';
     template: `
         <div class="layout-rightpanel" [ngClass]="{'layout-rightpanel-active': app.rightPanelActive}" (click)="app.onRightPanelClick()">
             <p-scrollPanel #scrollRightPanel [style]="{height: '100%'}">
+              <div class="layout-rightpanel-wrapper">
                 <div class="layout-rightpanel-header">
                     <div class="weather-day">Wednesday</div>
                     <div class="weather-date">Jan 26</div>
@@ -54,6 +55,7 @@ import {ScrollPanel} from 'primeng/primeng';
                         </li>
                     </ul>
                 </div>
+              </div>
             </p-scrollPanel>
         </div>
     `

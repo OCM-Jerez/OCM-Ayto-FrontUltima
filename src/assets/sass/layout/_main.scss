@@ -684,8 +684,9 @@ body {
         .ui-scrollpanel  {
           border-radius: 0;
           border: none;
-          .ui-scrollpanel-wrapper .ui-scrollpanel-content {
-            width: 100%;
+          .layout-rightpanel-wrapper{
+            width: 258px;
+            padding-right: 18px;
           }
         }
 
