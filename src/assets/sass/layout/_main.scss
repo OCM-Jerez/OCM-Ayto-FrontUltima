@@ -162,6 +162,8 @@ body {
 
         .ui-scrollpanel {
             background: transparent;
+            border-radius: 0;
+            border: none;
             .ui-scrollpanel-bar {
                 background-color: $layoutMenuScrollbarBgColor;
                 @include opacity(.3);
