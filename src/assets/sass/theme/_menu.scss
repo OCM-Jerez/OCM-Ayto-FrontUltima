@@ -90,6 +90,9 @@ body {
         &:focus {
             @include hover-element();
         }
+        .ui-menuitem-text {
+          vertical-align: middle;
+        }
     }
 
     .ui-menubar, .ui-contextmenu,
