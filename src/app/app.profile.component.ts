@@ -1,4 +1,5 @@
 import {Component, trigger, state, transition, style, animate} from '@angular/core';
+import {AppComponent} from './app.component';
 
 @Component({
     selector: 'app-inline-profile',
@@ -55,8 +56,13 @@ export class AppInlineProfileComponent {
 
     active: boolean;
 
+    constructor(public app: AppComponent) {}
+
     onClick(event) {
         this.active = !this.active;
+        setTimeout(() => {
+          this.app.layoutMenuScrollerViewChild.moveBar();
+        }, 450);
         event.preventDefault();
     }
 }
