@@ -244,7 +244,8 @@ export class AppSubMenuComponent {
     }
 
     onMouseEnter(index: number) {
-        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())) {
+        if (this.root && this.app.menuHoverActive && (this.app.isHorizontal() || this.app.isSlim())
+          && !this.app.isMobile() && !this.app.isTablet()) {
             this.activeIndex = index;
         }
     }
