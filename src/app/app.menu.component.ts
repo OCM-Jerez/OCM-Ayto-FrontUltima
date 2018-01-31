@@ -180,10 +180,12 @@ export class AppMenuComponent implements OnInit {
                 height: '*'
             })),
             state('visible', style({
-                height: '*'
+                height: '*',
+              'z-index': 100
             })),
             state('hidden', style({
-                height: '0px'
+                height: '0px',
+              'z-index': '*'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
