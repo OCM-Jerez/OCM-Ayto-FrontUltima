@@ -684,6 +684,10 @@ body {
         .ui-scrollpanel  {
           border-radius: 0;
           border: none;
+          .ui-scrollpanel-hidden {
+            display: block;
+            visibility: hidden;
+          }
           .layout-rightpanel-wrapper{
             width: 258px;
             padding-right: 18px;
