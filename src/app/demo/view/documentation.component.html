@@ -3,7 +3,7 @@
         <div class="card docs">
 
             <h1>Current Version</h1>
-            <p>Angular 5 and PrimeNG 5</p>
+            <p>Angular 5.2 and PrimeNG 5.2</p>
 
             <h1>Getting Started</h1>
             <p>Ultima is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
@@ -62,12 +62,10 @@ Run 'ng help' for more options.
         &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
         &lt;div class="layout-menu" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
-            &lt;div #layoutMenuScroller class="nano"&gt;
-                &lt;div class="nano-content menu-scroll-content"&gt;
-                    &lt;inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/inline-profile&gt;
-                    &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
+            &lt;p-scrollPanel #scrollPanel [style]="{height: '100%'}"&gt;
+                &lt;app-inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/app-inline-profile&gt;
+                &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
+            &lt;/p-scrollPanel&gt;
         &lt;/div&gt;
 
         &lt;div class="layout-main"&gt;
@@ -202,7 +200,7 @@ export class AppMenuComponent implements OnInit &#123;
             <p>Dependencies of Ultima are listed below and needs to be added to package.json</p>
 <pre>
 "primeng": "^4.1.0",             //required: PrimeNG components
-"jquery": "^3.1.1",              //optional: schedule and nanoscroller
+"jquery": "^3.1.1",              //optional: schedule
 "chart.js": "^2.4.0",            //optional: chart
 "fullcalendar": "^3.1.0",        //optional: schedule
 "moment": "^2.17.1",             //optional: chart and schedule
@@ -216,7 +214,6 @@ export class AppMenuComponent implements OnInit &#123;
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
     "../node_modules/fullcalendar/dist/fullcalendar.min.css",   //optional: schedule
     "../node_modules/quill/dist/quill.snow.css",                //optional: editor
-    "../node_modules/nanoscroller/bin/css/nanoscroller.css",    //optional: nanoscroller
     "styles.scss"                                               //your styles and overrides
 ],
 </pre>
@@ -224,8 +221,7 @@ export class AppMenuComponent implements OnInit &#123;
             <p>Add the following scripts to your angular-cli.json</p>
 <pre>
 "scripts": [
-    "../node_modules/jquery/dist/jquery.js",                                //optional: schedule and nanoscroller
-    "../node_modules/nanoscroller/bin/javascripts/jquery.nanoscroller.js",  //optional: nanoscroller
+    "../node_modules/jquery/dist/jquery.js",                                //optional: schedule
     "../node_modules/moment/moment.js",                                     //optional: schedule and charts
     "../node_modules/chart.js/dist/Chart.js",                               //optional: charts
     "../node_modules/fullcalendar/dist/fullcalendar.js",                    //optional: schedule
@@ -487,6 +483,16 @@ export class ControlPanelComponent &#123;
             <h1>Migration Guide</h1>
             <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file so that your changes
             are not overriden with an update.</p>
+
+            <p>5.0.0 to 5.2.0</p>
+            <ul>
+              <li>Remove ripple.js.</li>
+              <li>Remove nanoscroll</li>
+              <li>Update TurboTable css and menu components css.</li>
+              <li>Update app.component.ts, app.component.html and app.menu.component.ts.</li>
+              <li>Update layout css files.</li>
+              <li>Update theme css files.</li>
+            </ul>
 
             <p>4.3.0 to 5.0.0</p>
             <ul>
