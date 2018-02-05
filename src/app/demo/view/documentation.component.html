@@ -62,7 +62,7 @@ Run 'ng help' for more options.
         &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
         &lt;div class="layout-menu" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
-            &lt;p-scrollPanel #scrollPanel [style]="{height: '100%'}"&gt;
+            &lt;p-scrollPanel #scrollPanel [style]="&#123;height: '100%'&#125;"&gt;
                 &lt;app-inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/app-inline-profile&gt;
                 &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
             &lt;/p-scrollPanel&gt;
@@ -197,39 +197,22 @@ export class AppMenuComponent implements OnInit &#123;
             <p>To setup Ultima in an existing project, copy the <i>src/assets</i> folder to your projects folder with the same name
                 and replace the contents of app.component.ts, app.component.html with their counterparts in Ultima under <i>src/app</i> folder.</p>
 
-            <p>Dependencies of Ultima are listed below and needs to be added to package.json</p>
+          <p>Install PrimeNG</p>
 <pre>
-"primeng": "^4.1.0",             //required: PrimeNG components
-"jquery": "^3.1.1",              //optional: schedule
-"chart.js": "^2.4.0",            //optional: chart
-"fullcalendar": "^3.1.0",        //optional: schedule
-"moment": "^2.17.1",             //optional: chart and schedule
-"quill": "^1.1.8",               //optional: editor
+npm install primeng@latest --save
 </pre>
 
-            <p>Add PrimeNG CSS at styles section in angular-cli.json</p>
+          <p>Add PrimeNG CSS at styles section in angular-cli.json.</p>
 
 <pre>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
-    "../node_modules/fullcalendar/dist/fullcalendar.min.css",   //optional: schedule
-    "../node_modules/quill/dist/quill.snow.css",                //optional: editor
     "styles.scss"                                               //your styles and overrides
 ],
 </pre>
 
-            <p>Add the following scripts to your angular-cli.json</p>
-<pre>
-"scripts": [
-    "../node_modules/jquery/dist/jquery.js",                                //optional: schedule
-    "../node_modules/moment/moment.js",                                     //optional: schedule and charts
-    "../node_modules/chart.js/dist/Chart.js",                               //optional: charts
-    "../node_modules/fullcalendar/dist/fullcalendar.js",                    //optional: schedule
-    "../node_modules/quill/dist/quill.js"                                   //optional: editor
-],
-</pre>
 
-            <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
+          <p>Last part is adding theme and layout css files, in the CLI app they are defined using link tags in index.html so the demo can switch them on
             the fly by changing the path however if this is not a requirement, you may also add them to the styles configuration so they go inside the bundle.</p>
 
             <h1 id="noncli">Integration with an Existing Non-CLI Project</h1>
@@ -484,17 +467,17 @@ export class ControlPanelComponent &#123;
             <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file so that your changes
             are not overriden with an update.</p>
 
-            <p>5.0.0 to 5.2.0</p>
+            <h4>5.0.0 to 5.2.0</h4>
+            <p>Adds support for PrimeNG 5.2.0 (e.g. TurboTable), replaces nanoscroller with PrimeNG ScrollPanel and reimplements ripple effect to run outside of NgZone for better performance.</p>
             <ul>
-              <li>Remove ripple.js.</li>
-              <li>Remove nanoscroll</li>
-              <li>Update TurboTable css and menu components css.</li>
-              <li>Update app.component.ts, app.component.html and app.menu.component.ts.</li>
+              <li>Remove nanoscroller as it is replaced by ScrollPanel component of PrimeNG.</li>
+              <li>Update app.component.ts.</li>
+              <li>Update app.menu.component.ts and app.menu.component.html.</li>
               <li>Update layout css files.</li>
               <li>Update theme css files.</li>
             </ul>
 
-            <p>4.3.0 to 5.0.0</p>
+            <h4>4.3.0 to 5.0.0</h4>
             <ul>
                 <li>Update app.component.ts and app.component.html.</li>
                 <li>Define breadcrumbservice as a provider in your app.module</li>
@@ -502,36 +485,36 @@ export class ControlPanelComponent &#123;
                 <li>Update theme css files.</li>
             </ul>
 
-            <p>4.2.0 to 4.3.0</p>
+            <h4>4.2.0 to 4.3.0</h4>
             <ul>
                 <li>Update theme css files.</li>
             </ul>
 
-            <p>4.1.1 to 4.2.0</p>
+            <h4>4.1.1 to 4.2.0</h4>
             <ul>
                 <li>Update app.*.ts and app.*.html files under app folder.</li>
                 <li>Update theme css and layout css files.</li>
             </ul>
 
-            <p>4.0.1 to 4.1.0</p>
+            <h4>4.0.1 to 4.1.0</h4>
             <ul>
                 <li>Update layout css files.</li>
                 <li>Update theme css files.</li>
                 <li>Update AppSubmenu component in app.menu.component.ts.</li>
             </ul>
 
-            <p>4.0.0 to 4.0.1</p>
+            <h4>4.0.0 to 4.0.1</h4>
             <ul>
                 <li>Update layout css files.</li>
             </ul>
 
-            <p>2.1 to 4.0.0</p>
+            <h4>2.1 to 4.0.0</h4>
             <ul>
                 <li>Includes version updates to PrimeNG 4 and Angular 4.</li>
                 <li>Update theme css files.</li>
             </ul>
 
-            <p>2.0.5 to 2.1.0</p>
+            <h4>2.0.5 to 2.1.0</h4>
             <ul>
                 <li>Project is updated to CLI RC2, Angular 4-RC3 and PrimeNG 4-RC1.</li>
                 <li>Add <i class="inline-code">import &#123;trigger,state,style,transition,animate&#125; from '@angular/animations';</i> to app.menu.components.ts and remove these imports from 'angular/core'.</li>
@@ -539,17 +522,17 @@ export class ControlPanelComponent &#123;
                 <li>Update theme css files, there are no changes to the layout.</li>
             </ul>
 
-            <p>2.0.4 to 2.0.5</p>
+            <h4>2.0.4 to 2.0.5</h4>
             <ul>
                 <li>No change required, missing .angular-cli.json file in 2.0.4 is added.</li>
             </ul>
 
-            <p>2.0.3 to 2.0.4</p>
+            <h4>2.0.3 to 2.0.4</h4>
             <ul>
                 <li>No change required, only CLI version is updated to RC</li>
             </ul>
 
-            <p>2.0.2 to 2.0.3</p>
+            <h4>2.0.2 to 2.0.3</h4>
             <ul>
                 <li>Update AppSubmenu component in app.menu.component.ts by replacing the itemClick method implementation.</li>
                 <li>Update layout css files, there are no changes on themes.</li>
@@ -557,7 +540,7 @@ export class ControlPanelComponent &#123;
                 <li>Remove [ngClass]="&#123;'menu-button-rotate': app.rotateMenuButton&#125;" from menu-button in app.topbar.component.ts.</li>
             </ul>
 
-            <p>2.0.1 to 2.0.2</p>
+            <h4>2.0.1 to 2.0.2</h4>
             <ul>
                 <li>Update AppSubmenu component in app.menu.component.ts</li>
                 <li>Update layout css files, there are no changes on themes.</li>
@@ -565,14 +548,14 @@ export class ControlPanelComponent &#123;
                 <li>Add pInputText to search input at app.topbar.component.ts</li>
             </ul>
 
-            <p>2.0.0 to 2.0.1</p>
+            <h4>2.0.0 to 2.0.1</h4>
             <ul>
                 <li>Update AppSubmenu component in app.menu.component.ts</li>
                 <li>Update layout css and theme css files.</li>
                 <li>Update app.component.ts.</li>
             </ul>
 
-            <p>1.1.0 to 2.0.0</p>
+            <h4>1.1.0 to 2.0.0</h4>
             <ul>
                 <li>Update PrimeNG to at least 2.0.</li>
                 <li>Replace app.component.ts and app.component.html</li>
@@ -581,22 +564,22 @@ export class ControlPanelComponent &#123;
                 <li>Define menu using PrimeNG MenuModel</li>
             </ul>
 
-            <p>1.0.3 to 1.1.0</p>
+            <h4>1.0.3 to 1.1.0</h4>
             <ul>
                 <li>Update css files of layout and theme.</li>
             </ul>
 
-            <p>1.0.2 to 1.0.3</p>
+            <h4>1.0.2 to 1.0.3</h4>
             <ul>
                 <li>Update css files of layout and theme.</li>
             </ul>
 
-            <p>1.0.1 to 1.0.2</p>
+            <h4>1.0.1 to 1.0.2</h4>
             <ul>
                 <li>Update layout.js</li>
             </ul>
 
-            <p>1.0.0 to 1.0.1</p>
+            <h4>1.0.0 to 1.0.1</h4>
             <ul>
                 <li>Update layout.js</li>
             </ul>
