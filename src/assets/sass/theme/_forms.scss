@@ -491,7 +491,7 @@ body {
             @include border-radius-left(0);
             @include border-radius-right($borderRadius);
         }
-        
+
         .ui-menu {
             min-width: 100%;
         }
@@ -1367,6 +1367,9 @@ body {
     /* InputGroup */
     .ui-inputgroup {
         .ui-inputgroup-addon {
+            &.ui-inputgroup-addon-fill {
+                background-color: $textboxBgColor;
+            }
             border-width: 0 0 1px 0;
             border-color: $inputBorderColor;
             color: $textSecondaryColor;
