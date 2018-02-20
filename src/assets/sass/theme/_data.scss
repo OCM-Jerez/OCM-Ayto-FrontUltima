@@ -294,6 +294,10 @@ body {
           border: 1px solid $dividerLightColor;
         }
 
+        .ui-table-thead tr .ui-inputtext {
+             width: 100%;
+        }
+
         .ui-table-scrollable-header {
             border: none;
         }
