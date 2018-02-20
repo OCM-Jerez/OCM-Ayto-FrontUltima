@@ -294,7 +294,11 @@ body {
           border: 1px solid $dividerLightColor;
         }
 
+        .ui-table-scrollable-header {
+            border: none;
+        }
         .ui-sortable-column {
+            color: $textColor;
             &:not(.ui-state-highlight):hover {
               @include hover-element();
             }
