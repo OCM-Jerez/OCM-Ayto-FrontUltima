@@ -366,6 +366,24 @@ body {
         }
     }
 
+    @media ( max-width: 35em ) {
+        .ui-table-responsive .ui-table-tbody > tr {
+            border-top: 1px solid $dividerLightColor;
+            border-bottom: 1px solid $dividerLightColor;
+
+            &.ui-state-highlight {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
+        }
+    }
+
+    @media screen and (max-width: 40em) {
+        .ui-table-responsive .ui-table-tbody > tr > td {
+            border: 0 none;
+        }
+    }
+
     .ui-datatable {
         .ui-datatable-header,
         .ui-datatable-footer {
