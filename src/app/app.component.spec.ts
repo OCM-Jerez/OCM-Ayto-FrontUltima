@@ -10,12 +10,12 @@ import { AppFooterComponent } from './app.footer.component';
 import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { AppMenuComponent, AppSubMenuComponent } from './app.menu.component';
 import { BreadcrumbService } from './breadcrumb.service';
-import {ScrollPanel} from 'primeng/primeng';
+import { ScrollPanelModule} from 'primeng/primeng';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-        imports: [ RouterTestingModule ],
+        imports: [ RouterTestingModule, ScrollPanelModule ],
         declarations: [ AppComponent,
                 AppTopbarComponent,
                 AppMenuComponent,
@@ -23,8 +23,7 @@ describe('AppComponent', () => {
                 AppFooterComponent,
                 AppBreadcrumbComponent,
                 AppInlineProfileComponent,
-                AppRightpanelComponent,
-                ScrollPanel
+                AppRightpanelComponent
             ],
         providers: [BreadcrumbService]
     });
