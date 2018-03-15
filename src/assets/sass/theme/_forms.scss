@@ -693,6 +693,13 @@ body {
                 }
             }
         }
+        .ui-inputgroup{
+            .md-inputfield {
+                .ui-autocomplete{
+                    top: 5px;
+                }
+            }
+        }
     }
 
     .ui-dropdown {
@@ -1395,6 +1402,12 @@ body {
 
             label {
                 top: 5px;
+            }
+            .ui-inputwrapper-filled ~ label {
+                top:-20px;
+            }
+            .ui-inputwrapper-focus ~ label {
+                top:-20px;
             }
         }
 
