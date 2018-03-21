@@ -65,6 +65,8 @@ body {
         }
 
         .ui-message {
+            position: absolute;
+
             &.ui-messages-error {
                 background-color: transparent;
                 border: 0 none;
@@ -1408,6 +1410,10 @@ body {
             }
             .ui-inputwrapper-focus ~ label {
                 top:-20px;
+            }
+
+            .ui-message {
+                top: 100%;
             }
         }
 
