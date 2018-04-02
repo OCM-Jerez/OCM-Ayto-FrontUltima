@@ -450,7 +450,7 @@ body {
         }
     }
 
-    .ui-buttonset {
+    .ui-buttonset:not(.ui-button-danger,ui-button-secondary,ui-button-success,ui-button-info,ui-button-warning) {
         .ui-button {
             &:not(.ui-state-disabled):not(.ui-state-active):hover {
                 background-color: $primaryDarkColor;
@@ -459,6 +459,18 @@ body {
             &.ui-state-active {
                 background-color: $accentColor;
                 color: $accentTextColor;
+            }
+        }
+
+
+        &.ui-button-danger {
+            &:enabled:not(:focus):hover {
+                background-color: #C62828;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten(#F44336,10%);
             }
         }
     }
