@@ -285,14 +285,14 @@ body {
         .ui-table-tbody > tr > td,
         .ui-table-tfoot > tr > td {
             padding: $contentPadding;
-            color: $textColor;
         }
 
         .ui-table-thead > tr > th,
         .ui-table-tfoot > tr > td {
-          font-weight: 400;
-          background-color: #ffffff;
-          border: 1px solid $dividerLightColor;
+            font-weight: 400;
+            color: $textColor;
+            background-color: #ffffff;
+            border: 1px solid $dividerLightColor;
         }
 
         .ui-table-thead tr .ui-inputtext {
