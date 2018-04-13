@@ -1360,6 +1360,12 @@ body {
                         }
 
                         &.search-item {
+                            input {
+                                background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, desaturate(lighten($primaryColor,25%), 25%), desaturate(lighten($primaryColor,25%), 25%));
+                            }
+                        }
+
+                        &.search-item {
                             text-align: center;
                             width: 100%;
                             display: block;
