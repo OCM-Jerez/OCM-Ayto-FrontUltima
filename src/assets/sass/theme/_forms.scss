@@ -34,6 +34,16 @@ body {
 
     }
 
+    .ui-inputtext:-webkit-autofill {
+        border-color: #bdbdbd;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+
+        &.ui-state-focus {
+            padding-bottom: 0px;
+        }
+    }
+
     .ui-widget-header {
         .ui-inputtext {
             background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
