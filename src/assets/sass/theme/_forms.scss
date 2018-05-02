@@ -1450,6 +1450,19 @@ body {
         }
     }
 
+    .ui-selectbutton {
+        .ui-button {
+            &:not(.ui-state-active):not(.ui-state-disabled):hover {
+                background-color: $primaryDarkColor;
+            }
+
+            &.ui-state-active {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
+        }
+    }
+
     .ui-fluid {
         .ui-inputgroup {
             .ui-button-icon-only {
