@@ -302,6 +302,15 @@ body {
         .ui-table-scrollable-header {
             border: none;
         }
+
+        .ui-table-loading-content {
+            .fa-spin {
+                -webkit-animation: 2s linear infinite fa-spin;
+                animation: 2s linear infinite fa-spin;
+                color: #ffffff;
+            }
+        }
+
         .ui-sortable-column {
             color: $textColor;
             &:not(.ui-state-highlight):hover {
