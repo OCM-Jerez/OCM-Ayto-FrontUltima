@@ -1,3 +1,41 @@
+.pi-arrow-circle-right {@include icon-override-pi("play_circle_outline"); }
+.pi-arrow-circle-left {@include icon-override-pi("play_circle_outline"); @include rotate(180deg);}
+.pi-arrow-down{ @include icon-override-pi("arrow_downward"); }
+.pi-arrow-up { @include icon-override-pi("arrow_upward"); }
+.pi-angle-up {@include icon-override-pi("play_arrow"); @include rotate(-90deg);}
+.pi-angle-double-up { @include icon-override-pi("skip_next"); @include rotate(-90deg);}
+.pi-angle-down {@include icon-override-pi("play_arrow"); @include rotate(90deg);}
+.pi-angle-double-down {@include icon-override-pi("skip_previous"); @include rotate(-90deg);}
+.pi-angle-right {@include icon-override-pi("play_arrow");}
+.pi-angle-double-right {@include icon-override-pi("fast_forward");}
+.pi-angle-left {@include icon-override-pi("play_arrow"); @include rotate(180deg);}
+.pi-angle-double-left {@include icon-override-pi("fast_rewind");}
+.pi-calendar { @include icon-override-pi("date_range"); }
+.pi-caret-up {@include icon-override-pi("keyboard_arrow_up");}
+.pi-caret-down {@include icon-override-pi("keyboard_arrow_down");}
+.pi-caret-right {@include icon-override-pi("keyboard_arrow_right");}
+.pi-caret-left {@include icon-override-pi("keyboard_arrow_left");}
+.pi-check {@include icon-override-pi("check");}
+.pi-chevron-circle-left {@include icon-override-pi("keyboard_arrow_left");}
+.pi-chevron-circle-right {@include icon-override-pi("keyboard_arrow_right");}
+.pi-chevron-circle-down {@include icon-override-pi("keyboard_arrow_down");}
+.pi-chevron-circle-up {@include icon-override-pi("keyboard_arrow_up");}
+.pi-chevron-right {@include icon-override-pi("chevron_right");}
+.pi-chevron-left {@include icon-override-pi("chevron_left");}
+.pi-circle-off{@include icon-override-pi("radio_button_unchecked");}
+.pi-circle-on{@include icon-override-pi("radio_button_checked");}
+.pi-minus {@include icon-override-pi("remove");}
+.pi-plus {@include icon-override-pi("add");}
+.pi-info-circle {@include icon-override-pi("info");}
+.pi-upload  {@include icon-override-pi("file_upload");}
+.pi-home {@include icon-override-pi("home");}
+.pi-times {@include icon-override-pi("close");}
+.pi-search {@include icon-override-pi("search");}
+.pi-sort {@include icon-override-pi("sort");}
+.pi-sort-up {@include icon-override-pi("keyboard_arrow_up");}
+.pi-sort-down {@include icon-override-pi("keyboard_arrow_down");}
+
+/*
 .fa-sort {@include icon-override("sort");}
 .fa-sort-asc {@include icon-override("keyboard_arrow_up");}
 .fa-sort-desc {@include icon-override("keyboard_arrow_down");}
@@ -35,7 +73,7 @@
 .fa-arrow-circle-left {@include icon-override("play_circle_outline"); @include rotate(180deg);}
 .fa-calendar { @include icon-override("date_range"); }
 .fa-arrow-down{ @include icon-override("arrow_downward"); }
-.fa-arrow-up { @include icon-override("arrow_upward"); }
+.fa-arrow-up { @include icon-override("arrow_upward"); }*/
 
 .ui-icon-carat-2-n-s {@include icon-override("sort");}
 .ui-icon-triangle-1-n { @include icon-override("keyboard_arrow_up"); }

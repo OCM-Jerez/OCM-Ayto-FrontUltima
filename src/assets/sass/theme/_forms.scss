@@ -219,7 +219,7 @@ body {
                     padding-left: 1.5em;
                 }
 
-                .fa {
+                .pi {
                     top: 0;
                     left: 0;
                 }
@@ -255,7 +255,7 @@ body {
             line-height: 2.25em;
         }
 
-        .fa {
+        .pi {
             color: #ffffff;
         }
 
@@ -264,7 +264,7 @@ body {
             width: 2.5em;
             height: 2.5em;
 
-            .fa {
+            .pi {
                 margin-left: -.5em;
             }
         }
@@ -605,10 +605,15 @@ body {
                 margin: 0;
             }
 
-            .fa-circle {
+            .pi-circle-on {
+                @include icon-override-pi("circle");
                 background-color: $primaryColor;
                 -webkit-transform: scale(0.5);
                 transform: scale(0.5);
+                top: 50%;
+                left: 50%;
+                margin-top: -.5em;
+                margin-left: -.5em;
             }
         }
     }
@@ -662,7 +667,7 @@ body {
                     display: none;
                 }
 
-                .fa {
+                .pi {
                     color: $textSecondaryColor;
                 }
             }
@@ -748,10 +753,8 @@ body {
             top: 0;
             margin-right: 0;
 
-            .fa {
+            .pi {
                 color: $textSecondaryColor;
-                margin-top: 0;
-                margin-left: 0;
             }
         }
 
@@ -816,7 +819,7 @@ body {
                 }
             }
 
-            .fa {
+            .pi {
                 top: .325em;
                 right: .75em;
                 color: #ffffff;
@@ -845,10 +848,8 @@ body {
             padding: 0;
             top: .063em;
 
-            .fa {
+            .pi {
                 color: $textSecondaryColor;
-                margin-top: auto;
-                margin-left: auto;
             }
         }
 
@@ -900,7 +901,7 @@ body {
                 float: none;
                 margin-left: 0;
 
-                .fa {
+                .pi {
                     top: 0;
                     left: 0;
                 }
@@ -925,6 +926,13 @@ body {
                 width: 1.5em;
 
                 span {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 1em;
+                    height: 1em;
+                    margin-top: -.5em;
+                    margin-left: -.5em;
                     color: #ffffff;
                 }
 
@@ -963,15 +971,15 @@ body {
             z-index: auto;
             @include no-shadow();
 
-            .fa-triangle-1-n {
+            .pi-triangle-1-n {
                 color: $textColor;
             }
 
-            .fa-triangle-1-s {
+            .pi-triangle-1-s {
                 color: $textColor;
             }
 
-            .fa {
+            .pi {
                 top: 0px;
                 height: .5em;
                 color: $textSecondaryColor;
@@ -984,13 +992,13 @@ body {
         }
 
         .ui-spinner-up {
-            .fa {
+            .pi {
                 top: .25em;
             }
         }
 
         .ui-spinner-down {
-            .fa {
+            .pi {
                 top: .167em;
             }
         }
@@ -1006,7 +1014,7 @@ body {
                 width: 1em;
                 height: .75em;
 
-                .fa {
+                .pi {
                     left: auto;
                 }
             }
@@ -1118,7 +1126,7 @@ body {
             @include no-shadow();
             @include border-radius(0);
 
-            .fa {
+            .pi {
                 color: $textSecondaryColor;
             }
 
@@ -1161,7 +1169,7 @@ body {
                 @include transition(background-color .3s);
                 color: #ffffff;
 
-                .fa {
+                .pi {
                     display: none;
                 }
 
@@ -1179,7 +1187,7 @@ body {
                 @include transition(background-color .3s);
                 color: #ffffff;
 
-                .fa {
+                .pi {
                     display: none;
                 }
 
@@ -1268,13 +1276,13 @@ body {
                         margin-bottom: .25em;
                     }
 
-                    .fa {
-                        &.fa-angle-up {
+                    .pi {
+                        &.pi-angle-up {
                             @include rotate(0);
                             @include material-icon("keyboard_arrow_up");
                         }
 
-                        &.fa-angle-down {
+                        &.pi-angle-down {
                             @include rotate(0);
                             @include material-icon("keyboard_arrow_down");
                         }
@@ -1289,19 +1297,20 @@ body {
     }
 
     .ui-rating {
+        font-size: inherit;
         min-height: 1.5em;
 
-        .fa-ban {
+        .pi-ban {
             @include material-icon("cancel");
             color: $textSecondaryColor;
         }
 
-        .fa-star {
+        .pi-star {
             @include material-icon("star");
             color: $textSecondaryColor;
         }
 
-        .fa-star-o {
+        .pi-star-o {
             @include material-icon("star_border");
             color: $textSecondaryColor;
         }
@@ -1355,7 +1364,7 @@ body {
         .ui-fileupload-buttonbar {
             padding: $headerPadding;
 
-            .fa-arrowreturnthick-1-n {
+            .pi-arrowreturnthick-1-n {
                 @include icon_override('file_upload');
             }
 
@@ -1370,7 +1379,7 @@ body {
 
         .ui-fileupload-content {
             .ui-messages-error {
-                .fa {
+                .pi {
                     color: #ffffff;
                 }
             }
