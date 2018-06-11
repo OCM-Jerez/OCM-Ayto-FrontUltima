@@ -313,23 +313,31 @@ body {
 
         .ui-sortable-column {
             color: $textColor;
+
+            a, a:hover {
+                color: $textSecondaryColor;
+            }
+
             &:not(.ui-state-highlight):hover {
-              @include hover-element();
+                @include hover-element();
+
+                a, a:hover {
+                    @include hover-element();
+                }
             }
 
             &.ui-state-highlight {
-              background-color: $accentColor;
-              color: $accentTextColor;
-              border-top-color: $accentColor;
-
-              .pi {
+                background-color: $accentColor;
                 color: $accentTextColor;
-              }
+                border-top-color: $accentColor;
+
+                a, a:hover {
+                    color: $accentTextColor;
+                }
             }
 
             .ui-sortable-column-icon {
-              vertical-align: middle;
-              color: $textSecondaryColor;
+                vertical-align: middle;
             }
         }
 
@@ -839,7 +847,7 @@ body {
             color: $textColor;
 
             a, a:hover {
-                color: $textColor;
+                color: $textSecondaryColor;
             }
 
             &:not(.ui-state-highlight):hover {
@@ -858,15 +866,10 @@ body {
                 a, a:hover {
                     color: $accentTextColor;
                 }
-
-                .pi {
-                    color: $accentTextColor;
-                }
             }
 
             .ui-sortable-column-icon {
                 vertical-align: middle;
-                color: $textSecondaryColor;
             }
         }
 
