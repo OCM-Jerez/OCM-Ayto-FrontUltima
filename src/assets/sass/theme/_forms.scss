@@ -44,7 +44,7 @@ body {
         }
     }
 
-    .ui-widget-header {
+    .ui-widget-header:not(.ui-dataview-header) {
         .ui-inputtext {
             background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
         }

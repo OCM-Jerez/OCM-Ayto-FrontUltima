@@ -28,9 +28,9 @@ export class DataDemoComponent implements OnInit {
 
     cars2: Car[];
 
-    cars3: Car[];
-
     cols: any[];
+
+    cols2: any[];
 
     data: TreeNode[];
 
@@ -56,6 +56,14 @@ export class DataDemoComponent implements OnInit {
 
     scheduleHeader: any;
 
+    sortOptions: SelectItem[];
+
+    sortKey: string;
+
+    sortField: string;
+
+    sortOrder: number;
+
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService,
         private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
@@ -72,8 +80,12 @@ export class DataDemoComponent implements OnInit {
             { field: 'brand', header: 'Brand' },
             { field: 'color', header: 'Color' }
         ];
+        this.cols2 = [
+            { field: 'name', header: 'Name' },
+            { field: 'size', header: 'Size' },
+            { field: 'type', header: 'Type' }
+        ];
         this.carService.getCarsMedium().then(cars => this.cars2 = cars);
-        this.carService.getCarsMedium().then(cars => this.cars3 = cars);
         this.carService.getCarsMedium().then(cars => this.sourceCars = cars);
         this.targetCars = [];
         this.carService.getCarsSmall().then(cars => this.orderListCars = cars);
@@ -125,5 +137,23 @@ export class DataDemoComponent implements OnInit {
                 }
             ]
         }];
+
+        this.sortOptions = [
+            { label: 'Newest First', value: '!year' },
+            { label: 'Oldest First', value: 'year' },
+            { label: 'Brand', value: 'brand' }
+        ];
+    }
+
+    onSortChange(event) {
+        const value = event.value;
+
+        if (value.indexOf('!') === 0) {
+            this.sortOrder = -1;
+            this.sortField = value.substring(1, value.length);
+        } else {
+            this.sortOrder = 1;
+            this.sortField = value;
+        }
     }
 }
