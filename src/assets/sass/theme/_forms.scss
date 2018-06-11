@@ -677,7 +677,9 @@ body {
             }
 
             .pi-circle-on {
-                @include icon-override-pi("circle");
+                &.pi:before {
+                    content: "circle";
+                }
                 background-color: $primaryColor;
                 -webkit-transform: scale(0.5);
                 transform: scale(0.5);
