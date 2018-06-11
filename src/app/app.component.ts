@@ -245,6 +245,10 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
         event.preventDefault();
     }
 
+    onTopbarSubItemClick(event) {
+        event.preventDefault();
+    }
+
     onRightPanelButtonClick(event) {
         this.rightPanelClick = true;
         this.rightPanelActive = !this.rightPanelActive;
