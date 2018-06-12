@@ -9,14 +9,31 @@ import {BreadcrumbService} from '../../breadcrumb.service';
 @Component({
     templateUrl: './datademo.component.html',
     styles: [`
-        .cars-datalist ul {
-            margin: 0;
-            padding: 0;
+        .ui-dataview-layout-options .ui-button {
+            margin-left: .5em;
+        }
+        .ui-dataview .filter-container {
+            text-align: center;
         }
 
-        @media (max-width:640px) {
-            .cars-datalist .text-column {
+        @media (max-width: 40em) {
+            .ui-dataview .car-details, .ui-dataview .search-icon{
                 text-align: center;
+                margin-top: 0;
+            }
+
+            .ui-dataview .filter-container {
+                text-align: left;
+            }
+            .ui-dataview-layout-options.ui-buttonset > .ui-button {
+                margin-left: 0;
+                display: inline-block;
+            }
+            .ui-dataview-layout-options.ui-buttonset > .ui-button:first-child {
+                border-radius: 50%;
+            }
+            .ui-dataview-layout-options.ui-buttonset > .ui-button:last-child {
+                border-radius: 50%;
             }
         }
     `],
@@ -49,19 +66,19 @@ export class DataDemoComponent implements OnInit {
     files1: TreeNode[];
 
     files2: TreeNode[];
-    
+
     files3: TreeNode[];
-    
+
     files4: TreeNode[];
 
     events: any[];
-    
+
     selectedNode1: TreeNode;
-    
+
     selectedNode2: TreeNode;
-    
+
     selectedNode3: TreeNode;
-    
+
     selectedNodes: TreeNode[];
 
     scheduleHeader: any;

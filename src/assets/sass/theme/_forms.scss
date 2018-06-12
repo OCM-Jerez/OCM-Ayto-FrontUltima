@@ -241,7 +241,7 @@ body {
         @include transition(background-color .3s);
         vertical-align: middle;
 
-        &:enabled:not(:focus):hover {
+        &:enabled:not(:focus):not(.ui-state-active):hover {
             background-color: $primaryDarkColor;
         }
 
@@ -648,6 +648,10 @@ body {
         }
     }
 
+    .ui-chkbox-label {
+        margin-left: $inlineSpacing;
+    }
+
     .ui-radiobutton {
         position: relative;
         margin: 0 .25em 0 0;
@@ -696,6 +700,10 @@ body {
                 margin-left: -.5em;
             }
         }
+    }
+
+    .ui-radiobutton-label {
+        margin-left: $inlineSpacing;
     }
 
     .ui-autocomplete-panel {
