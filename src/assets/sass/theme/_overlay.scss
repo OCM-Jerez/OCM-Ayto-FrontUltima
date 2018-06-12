@@ -35,11 +35,11 @@ body {
                     display: inline-block;
                 }
 
-                .pi-extlink {
+                .pi-window-maximize {
                     @include icon_override('fullscreen');
                 }
 
-                .pi-newwin {
+                .pi-window-minimize {
                     @include icon_override('fullscreen_exit');
                 }
             }
