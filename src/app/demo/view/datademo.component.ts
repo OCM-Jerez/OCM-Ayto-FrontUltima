@@ -34,7 +34,7 @@ export class DataDemoComponent implements OnInit {
 
     data: TreeNode[];
 
-    selectedNode1: TreeNode;
+    selectedNodeOrg: TreeNode;
 
     selectedCar: Car;
 
