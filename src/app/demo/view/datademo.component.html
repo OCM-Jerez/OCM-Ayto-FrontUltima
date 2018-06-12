@@ -124,16 +124,31 @@
     </div>
 
     <div class="ui-g-12">
-        <div class="card card-w-title">
-            <h1>Organization Chart</h1>
-            <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNode1"></p-organizationChart>
+        <div class="card">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-6">
+                    <h1>Tree</h1>
+                    <p-tree [value]="files1" selectionMode="single" [(selection)]="selectedNode1" [style]="{width: '100%'}"></p-tree>
+                </div>
+                <div class="ui-g-12 ui-md-6">
+                    <h1>Checkbox Tree</h1>
+                    <p-tree [value]="files2" selectionMode="checkbox" [(selection)]="selectedNodes" [style]="{width: '100%'}"></p-tree>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="card">
+            <h1>Horizontal Tree</h1>
+            <p-tree [value]="files3" selectionMode="single" [(selection)]="selectedNode2" layout="horizontal"></p-tree>
         </div>
     </div>
 
     <div class="ui-g-12">
         <div class="card card-w-title">
             <h1>TreeTable</h1>
-            <p-treeTable [value]="files1" [columns]="cols2" selectionMode="checkbox" [(selection)]="selectedNode">
+            <p-treeTable [value]="files4" [columns]="cols2" selectionMode="checkbox" [(selection)]="selectedNode3">
                 <ng-template pTemplate="header">
                     <tr>
                         <th>Name</th>
@@ -151,6 +166,13 @@
                     </tr>
                 </ng-template>
             </p-treeTable>
+        </div>
+    </div>
+
+    <div class="ui-g-12">
+        <div class="card card-w-title" style="overflow: auto">
+            <h1>Organization Chart</h1>
+            <p-organizationChart [value]="data" selectionMode="single" [(selection)]="selectedNode1"></p-organizationChart>
         </div>
     </div>
 
@@ -177,13 +199,6 @@
                     </div>
                 </ng-template>
             </p-carousel>
-        </div>
-    </div>
-
-    <div class="ui-g-12">
-        <div class="card card-w-title">
-            <h1>Tree</h1>
-            <p-tree [value]="files2"></p-tree>
         </div>
     </div>
     <div class="ui-g-12">

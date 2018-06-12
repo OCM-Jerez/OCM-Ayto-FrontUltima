@@ -49,10 +49,20 @@ export class DataDemoComponent implements OnInit {
     files1: TreeNode[];
 
     files2: TreeNode[];
+    
+    files3: TreeNode[];
+    
+    files4: TreeNode[];
 
     events: any[];
-
-    selectedNode: TreeNode;
+    
+    selectedNode1: TreeNode;
+    
+    selectedNode2: TreeNode;
+    
+    selectedNode3: TreeNode;
+    
+    selectedNodes: TreeNode[];
 
     scheduleHeader: any;
 
@@ -89,8 +99,10 @@ export class DataDemoComponent implements OnInit {
         this.carService.getCarsMedium().then(cars => this.sourceCars = cars);
         this.targetCars = [];
         this.carService.getCarsSmall().then(cars => this.orderListCars = cars);
-        this.nodeService.getFilesystem().then(files => this.files1 = files);
+        this.nodeService.getFiles().then(files => this.files1 = files);
         this.nodeService.getFiles().then(files => this.files2 = files);
+        this.nodeService.getFiles().then(files => this.files3 = files);
+        this.nodeService.getFilesystem().then(files => this.files4 = files);
         this.eventService.getEvents().then(events => {this.events = events; });
 
         this.carouselCars = [
