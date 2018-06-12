@@ -469,16 +469,23 @@ body {
 
 
     .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
-        color: #373a3c;
-        background-color: #f2f2f2;
+        color: $textColor;
+        background-color: #ffffff;
+
+        .ui-button-icon-left {
+            color: $textSecondaryColor;
+        }
+
+        .ui-button-icon-right {
+            color: $textSecondaryColor;
+        }
 
         &:enabled:hover {
-            background-color: #e6e6e6;
-            color: #373a3c;
+            @include hover-element();
         }
 
         &:enabled:focus {
-            background-color: darken(#f2f2f2, 10%);
+            background-color: darken(#ffffff, 10%);
         }
     }
 
