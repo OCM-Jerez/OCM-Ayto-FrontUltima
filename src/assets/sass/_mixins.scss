@@ -145,12 +145,6 @@
     @include material-icon($icon);
 }
 
-@mixin icon-override-pi($icon) {
-    &.pi {
-        @include material-icon($icon);
-    }
-}
-
 @mixin rotate($deg) {
     -webkit-transform: rotate($deg);
     -moz-transform: rotate($deg);
