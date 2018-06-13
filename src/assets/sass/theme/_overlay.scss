@@ -43,6 +43,11 @@ body {
                     @include icon_override('fullscreen_exit');
                 }
             }
+            .ui-dialog-titlebar-maximize {
+                span {
+                    margin-top: -2px;
+                }
+            }
         }
 
         .ui-dialog-content {
