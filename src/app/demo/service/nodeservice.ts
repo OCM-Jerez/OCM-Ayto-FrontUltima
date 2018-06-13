@@ -7,14 +7,14 @@ export class NodeService {
     constructor(private http: HttpClient) {}
 
     getFiles() {
-        return this.http.get('assets/demo/data/files.json')
+        return this.http.get<any>('assets/demo/data/files.json')
                     .toPromise()
                     .then(res => <any[]> res.data)
                     .then(data => data);
     }
 
     getFilesystem() {
-        return this.http.get('assets/demo/data/filesystem.json')
+        return this.http.get<any>('assets/demo/data/filesystem.json')
                     .toPromise()
                     .then(res => <any[]> res.data)
                     .then(data => data);
