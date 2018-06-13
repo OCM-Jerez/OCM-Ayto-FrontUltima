@@ -31,7 +31,7 @@
         "jquery": "3.2.1",
         "moment": "2.18.1",
         "primeicons": "1.0.0-beta.6",
-        "primeng": "6.0.0-beta.1",
+        "primeng": "6.0.0-rc.1",
         "quill": "1.1.8",
         "web-animations-js": "2.3.1"
     },
