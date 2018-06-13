@@ -130,8 +130,8 @@ body {
                     }
 
                     input:focus ~ label {
-                      top:-5px;
-                      font-size:12px;
+                        top:-5px;
+                        font-size:12px;
                     }
 
                     input.ui-state-filled ~ label {
@@ -680,16 +680,16 @@ body {
         }
 
         .ui-scrollpanel  {
-          border-radius: 0;
-          border: none;
-          .ui-scrollpanel-hidden {
-            display: block;
-            visibility: hidden;
-          }
-          .layout-rightpanel-wrapper{
-            width: 258px;
-            padding-right: 18px;
-          }
+            border-radius: 0;
+            border: none;
+            .ui-scrollpanel-hidden {
+                display: block;
+                visibility: hidden;
+            }
+            .layout-rightpanel-wrapper{
+                width: 258px;
+                padding-right: 18px;
+            }
         }
 
     }
@@ -843,14 +843,14 @@ body {
                 @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
 
                 .ui-scrollpanel {
-                  overflow: visible;
-                  border: none;
-                  .ui-scrollpanel-wrapper {
                     overflow: visible;
-                    .ui-scrollpanel-content {
-                      overflow: visible;
+                    border: none;
+                    .ui-scrollpanel-wrapper {
+                        overflow: visible;
+                        .ui-scrollpanel-content {
+                            overflow: visible;
+                        }
                     }
-                  }
                 }
 
                 ul.ultima-menu {
@@ -1096,14 +1096,14 @@ body {
                 }
 
                 .ui-scrollpanel {
-                  border: none;
-                  border-radius: 0;
-                  .ui-scrollpanel-wrapper {
-                    overflow: visible;
-                    .ui-scrollpanel-content {
-                      overflow: visible;
+                    border: none;
+                    border-radius: 0;
+                    .ui-scrollpanel-wrapper {
+                        overflow: visible;
+                        .ui-scrollpanel-content {
+                            overflow: visible;
+                        }
                     }
-                  }
 
                     .ui-scrollpanel-bar {
                         display: none;
