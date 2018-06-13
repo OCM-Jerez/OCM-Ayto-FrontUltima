@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, ElementRef, Renderer, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
+import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
 import { ScrollPanel} from 'primeng/primeng';
 
 enum MenuOrientation {
@@ -59,7 +59,7 @@ export class AppComponent implements AfterViewInit, OnDestroy, OnInit {
 
     rippleMouseDownListener: any;
 
-    constructor(public renderer: Renderer, public zone: NgZone) {}
+    constructor(public renderer2: Renderer2, public zone: NgZone) {}
 
     ngOnInit() {
         this.zone.runOutsideAngular(() => {this.bindRipple(); });
