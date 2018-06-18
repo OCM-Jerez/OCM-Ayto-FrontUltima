@@ -12,16 +12,6 @@ import {BreadcrumbService} from '../../breadcrumb.service';
         .ui-dataview-layout-options .ui-button {
             margin-left: .5em;
         }
-        .ui-dataview-layout-options.ui-buttonset > .ui-button {
-            margin-left: 0;
-            display: inline-block;
-        }
-        .ui-dataview-layout-options.ui-buttonset > .ui-button:first-child {
-            border-radius: 50%;
-        }
-        .ui-dataview-layout-options.ui-buttonset > .ui-button:last-child {
-            border-radius: 50%;
-        }
     `],
     encapsulation: ViewEncapsulation.None
 })
