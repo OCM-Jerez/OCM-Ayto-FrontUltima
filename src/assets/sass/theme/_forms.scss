@@ -602,7 +602,8 @@ body {
         }
 
         .ui-menu {
-            min-width: 100%;
+            width: 100%;
+            min-width: 12.5em;
         }
     }
 
@@ -838,7 +839,7 @@ body {
             width: 1.5em;
             margin-top: 0;
             padding: 0;
-            top: 0;
+            top: 2px;
             margin-right: 0;
 
             .pi {
@@ -934,7 +935,7 @@ body {
             width: 1.5em;
             margin-top: 0;
             padding: 0;
-            top: .063em;
+            top: -2px;
 
             .pi {
                 color: $textSecondaryColor;

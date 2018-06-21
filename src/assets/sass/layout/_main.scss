@@ -171,6 +171,10 @@ body {
                 visibility: hidden;
             }
 
+            .ui-scrollpanel-content {
+                overflow-x: hidden;
+            }
+
             .layout-menu {
                 padding-bottom: 120px;
             }

@@ -3,7 +3,7 @@
         <div class="card docs">
 
             <h1>Current Version</h1>
-            <p>Angular 5.2 and PrimeNG 5.2</p>
+            <p>Angular 6 and PrimeNG 6</p>
 
             <h1>Getting Started</h1>
             <p>Ultima is a true native application template for Angular and is distributed as a CLI project. If you don't have CLI installed already run the following commands to set it up. In case
@@ -200,13 +200,15 @@ export class AppMenuComponent implements OnInit &#123;
           <p>Install PrimeNG</p>
 <pre>
 npm install primeng@latest --save
+npm install primeicons@latest --save
 </pre>
 
-          <p>Add PrimeNG CSS at styles section in angular-cli.json.</p>
+          <p>Add PrimeNG CSS at styles section in angular.json.</p>
 
 <pre>
 "styles": [
     "../node_modules/primeng/resources/primeng.min.css",        //required: PrimeNG components
+    "node_modules/primeicons/primeicons.css",                   //required: PrimeIcons
     "styles.scss"                                               //your styles and overrides
 ],
 </pre>
@@ -309,12 +311,6 @@ $horizontalLightMenuRouterLinkActiveColor: #9fa8da;
 @import '../../sass/layout/_layout';
 </pre>
 
-            <p>Check out the video tutorial that follows the steps above to create the dark-blue theme and layout. It is based on PrimeFaces version but generation part
-                applies to PrimeNG as well.</p>
-
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/XmU7QYFYuPk" frameborder="0"></iframe>
-            </div>
 
             <p>Shared variables between the theme and layout are available in _variables.scss which also define the common settings such as font size.</p>
 <pre>
@@ -466,6 +462,20 @@ export class ControlPanelComponent &#123;
             <h1>Migration Guide</h1>
             <p>For seamless updates and easier maintenance, we suggest keeping your CSS customizations in a separate sass file so that your changes
             are not overriden with an update.</p>
+
+            <h4>5.2.4 to 6.0.0</h4>
+            <p>Brings support for Angular 6 and RxJS 6, adds theming for new components in PrimeNG such as the new TreeTable
+                and improves behaviors of the layout menus.</p>
+            <ul>
+                <li>Add PrimeIcons package.</li>
+                <li>Update app.module.ts and app.component.ts.</li>
+                <li>Update app.topbar.component.ts.</li>
+                <li>Update app.profile.component.ts.</li>
+                <li>Update app.menu.component.ts.</li>
+                <li>Update app.breadcrumb.component.ts and breadcrumb.service.ts.</li>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
 
             <h4>5.2.3 to 5.2.4</h4>
             <ul>
