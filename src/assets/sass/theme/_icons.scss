@@ -573,7 +573,7 @@
 .ui-icon-local-parking { @include icon-override("local_parking"); }
 .ui-icon-local-pharmacy { @include icon-override("local_pharmacy"); }
 .ui-icon-local-phone { @include icon-override("local_phone"); }
-.ui-icon-localzza { @include icon-override("local_pizza"); }
+.ui-icon-local-pizza { @include icon-override("local_pizza"); }
 .ui-icon-local-play { @include icon-override("local_play"); }
 .ui-icon-local-post-office { @include icon-override("local_post_office"); }
 .ui-icon-local-printshop { @include icon-override("local_printshop"); }
@@ -655,7 +655,7 @@
 .ui-icon-notifications-none { @include icon-override("notifications_none"); }
 .ui-icon-notifications-off { @include icon-override("notifications_off"); }
 .ui-icon-notifications-paused { @include icon-override("notifications_paused"); }
-.ui-icon-offlinen { @include icon-override("offline_pin"); }
+.ui-icon-offline-pin { @include icon-override("offline_pin"); }
 .ui-icon-ondemand-video { @include icon-override("ondemand_video"); }
 .ui-icon-opacity { @include icon-override("opacity"); }
 .ui-icon-open-in-browser { @include icon-override("open_in_browser"); }
@@ -688,8 +688,8 @@
 .ui-icon-person { @include icon-override("person"); }
 .ui-icon-person-add { @include icon-override("person_add"); }
 .ui-icon-person-outline { @include icon-override("person_outline"); }
-.ui-icon-personn { @include icon-override("person_pin"); }
-.ui-icon-personn-circle { @include icon-override("person_pin_circle"); }
+.ui-icon-person-pin { @include icon-override("person_pin"); }
+.ui-icon-person-pin-circle { @include icon-override("person_pin_circle"); }
 .ui-icon-personal-video { @include icon-override("personal_video"); }
 .ui-icon-pets { @include icon-override("pets"); }
 .ui-icon-phone { @include icon-override("phone"); }
@@ -715,12 +715,12 @@
 .ui-icon-photo-size-select-actual { @include icon-override("photo_size_select_actual"); }
 .ui-icon-photo-size-select-large { @include icon-override("photo_size_select_large"); }
 .ui-icon-photo-size-select-small { @include icon-override("photo_size_select_small"); }
-.ui-iconcture-as-pdf { @include icon-override("picture_as_pdf"); }
-.ui-iconcture-incture { @include icon-override("picture_in_picture"); }
-.ui-iconcture-incture-alt { @include icon-override("picture_in_picture_alt"); }
-.ui-icone-chart { @include icon-override("pie_chart"); }
-.ui-icone-chart-outlined { @include icon-override("pie_chart_outlined"); }
-.ui-iconn-drop { @include icon-override("pin_drop"); }
+.ui-icon-picture-as-pdf { @include icon-override("picture_as_pdf"); }
+.ui-icon-picture-in-picture { @include icon-override("picture_in_picture"); }
+.ui-icon-picture-in-picture-alt { @include icon-override("picture_in_picture_alt"); }
+.ui-icon-pie-chart { @include icon-override("pie_chart"); }
+.ui-icon-pie-chart-outlined { @include icon-override("pie_chart_outlined"); }
+.ui-icon-pin-drop { @include icon-override("pin_drop"); }
 .ui-icon-place { @include icon-override("place"); }
 .ui-icon-play-arrow { @include icon-override("play_arrow"); }
 .ui-icon-play-circle-filled { @include icon-override("play_circle_filled"); }
