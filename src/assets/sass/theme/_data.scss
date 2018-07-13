@@ -243,6 +243,22 @@ body {
                 }
             }
         }
+
+        .ui-dropdown {
+            background-image: linear-gradient(to bottom, #3F51B5, #3F51B5), linear-gradient(to bottom, #ffffff, #ffffff);
+
+            .ui-dropdown-trigger {
+                .pi{
+                    color: #ffffff;
+                }
+            }
+
+            .ui-dropdown-label {
+                background: none;
+                padding-right: 1.5em;
+
+            }
+        }
     }
 
     .ui-datagrid {
