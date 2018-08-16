@@ -50,7 +50,6 @@ body {
         }
     }
 
-
     .md-inputfield {
         display: block;
         position:relative;
@@ -148,7 +147,6 @@ body {
             }
         }
     }
-
 
     .ui-material-message {
         &.ui-message {
@@ -466,7 +464,6 @@ body {
             @include no-shadow();
         }
     }
-
 
     .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
         color: $textColor;
@@ -854,7 +851,7 @@ body {
             }
         }
 
-        &.ui-state-focus {
+        &:not(.ui-state-disabled).ui-state-focus {
             border-width: 0;
             background-size: 100% 2px, 100% 1px;
             padding-bottom: 2px;
@@ -880,13 +877,13 @@ body {
             @include transition(background-color .3s);
             @include border-radius(0);
 
-            &:hover {
-                @include hover-element();
-            }
-
             &.ui-state-highlight {
                 background-color: $accentColor;
                 color: $accentTextColor;
+            }
+
+            &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+                @include hover-element();
             }
         }
 
@@ -1039,7 +1036,7 @@ body {
             color: $textColor;
             @include border-radius(0);
 
-            &:not(.ui-state-highlight):hover {
+            &:not(.ui-state-highlight):not(.ui-state-disabled):hover {
                 @include hover-element();
             }
 
@@ -1241,6 +1238,31 @@ body {
             @include overlay-input-shadow();
         }
 
+        &:not(.ui-state-disabled) {
+            .ui-datepicker-header {
+                .ui-datepicker-prev,
+                .ui-datepicker-next {
+                    &:hover {
+                        background-color: $primaryLightColor;
+                    }
+                }
+            }
+
+            table {
+                td {
+                    a:not(.ui-state-active):not(.ui-state-highlight):hover {
+                        @include hover-element();
+                    }
+                }
+            }
+
+            .ui-monthpicker {
+                a.ui-monthpicker-month:not(.ui-state-active):hover {
+                    @include hover-element();
+                }
+            }
+        }
+
         .ui-datepicker-header {
             padding: $inputHeaderPadding;
             font-size: $inputHeaderFontSize;
@@ -1261,10 +1283,6 @@ body {
                 .pi {
                     display: none;
                 }
-
-                &:hover {
-                    background-color: $primaryLightColor;
-                }
             }
 
             .ui-datepicker-next {
@@ -1278,10 +1296,6 @@ body {
 
                 .pi {
                     display: none;
-                }
-
-                &:hover {
-                    background-color: $primaryLightColor;
                 }
             }
 
@@ -1338,10 +1352,6 @@ body {
                         color: #ffffff;
                         background-color: $accentColor;
                         color: $accentTextColor;
-                    }
-
-                    &:not(.ui-state-active):not(.ui-state-highlight):hover {
-                        @include hover-element();
                     }
 
                     span {
