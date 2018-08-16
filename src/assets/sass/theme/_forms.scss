@@ -1228,6 +1228,9 @@ body {
     }
 
     .ui-calendar {
+        .ui-datepicker {
+            min-width: auto;
+        }
         .ui-datepicker-trigger {
             bottom: 2px;
             right: 0;
@@ -1258,7 +1261,7 @@ body {
 
     .ui-datepicker {
         padding: 0;
-        width: 17.5em;
+        width: 20em;
 
         &.ui-shadow {
             @include overlay-input-shadow();
@@ -1356,7 +1359,6 @@ body {
                         background: lighten($primaryColor,20%);
 
                         &.ui-state-active {
-                            color: #ffffff;
                             background-color: $accentColor;
                             color: $accentTextColor;
                         }
@@ -1375,7 +1377,6 @@ body {
                     line-height: 1.8em;
 
                     &.ui-state-active {
-                        color: #ffffff;
                         background-color: $accentColor;
                         color: $accentTextColor;
                     }
@@ -1412,6 +1413,42 @@ body {
                             @include material-icon("keyboard_arrow_down");
                         }
                     }
+                }
+            }
+        }
+
+        .ui-monthpicker {
+            .ui-monthpicker-month {
+                color: $textColor;
+
+                &.ui-state-active {
+                    color: #ffffff;
+                    background-color: $accentColor;
+                }
+            }
+        }
+
+        &.ui-datepicker-multiple-month {
+            width: auto;
+            .ui-datepicker-group {
+                border-right: 1px solid $dividerColor;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                .ui-datepicker-calendar-container {
+                    tbody {
+                        padding-right: .25em;
+                        padding-left: .25em;
+                    }
+                }
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                    border-right: 0 none;
                 }
             }
         }
