@@ -939,7 +939,7 @@ body {
             }
         }
 
-        &.ui-state-focus {
+        &:not(.ui-state-disabled).ui-state-focus {
             border-bottom: 2px solid $primaryColor;
         }
     }
