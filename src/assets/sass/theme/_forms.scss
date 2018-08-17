@@ -239,7 +239,7 @@ body {
         @include transition(background-color .3s);
         vertical-align: middle;
 
-        &:enabled:not(:focus):not(.ui-dataview-header .ui-state-active):hover {
+        &:enabled:not(:focus):hover {
             background-color: $primaryDarkColor;
         }
 
