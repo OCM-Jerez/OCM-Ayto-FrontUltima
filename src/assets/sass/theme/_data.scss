@@ -317,6 +317,18 @@ body {
 
         .ui-table-scrollable-header {
             border: none;
+
+            .ui-sortable-column {
+                .ui-sortable-column-icon {
+                    color: $textColor;
+                }
+
+                &.ui-state-highlight {
+                    .ui-sortable-column-icon {
+                        color: $accentTextColor;
+                    }
+                }
+            }
         }
 
         .ui-table-loading-content {
