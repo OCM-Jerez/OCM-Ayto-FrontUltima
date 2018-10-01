@@ -773,7 +773,7 @@ body {
             }
 
             &.ui-treenode-selectable {
-                .ui-treenode-label:not(.ui-state-highlight):hover {
+                &:not(.ui-state-highlight):hover {
                     @include hover-element();
                 }
             }
@@ -788,7 +788,7 @@ body {
                 border: 1px solid $dividerColor;
 
                 .ui-tree-toggler {
-                    vertical-align: top;
+                    vertical-align: bottom;
                 }
 
                 .ui-treenode-icon  {
@@ -796,8 +796,10 @@ body {
                     margin-right: .25em;
                 }
 
-                &.ui-treenode-selectable:hover {
-                    @include hover-element();
+                &.ui-treenode-selectable {
+                    &:not(.ui-state-highlight):hover {
+                        @include hover-element();
+                    }
                 }
 
                 &.ui-state-highlight {
