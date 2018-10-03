@@ -183,7 +183,7 @@ body {
 
         > a {
             box-sizing: border-box;
-            color: #ffffff;
+            color: $paginatorIconColor;
 
             .pi {
                 display: none;
@@ -226,7 +226,7 @@ body {
 
             a {
                 padding: 0;
-                color: #ffffff;
+                color: $paginatorIconColor;
                 min-width: 1.5em;
                 min-height: 1.5em;
                 line-height: 1.5em;
@@ -245,11 +245,11 @@ body {
         }
 
         .ui-dropdown {
-            background-image: linear-gradient(to bottom, #3F51B5, #3F51B5), linear-gradient(to bottom, #ffffff, #ffffff);
+            background-image: linear-gradient(to bottom, $headerBgColor, $headerBgColor), linear-gradient(to bottom, $headerTextColor, $headerTextColor);
 
             .ui-dropdown-trigger {
                 .pi{
-                    color: #ffffff;
+                    color: $headerTextColor;
                 }
             }
 
@@ -268,8 +268,8 @@ body {
 
         .ui-panel {
             .ui-panel-titlebar {
-                background-color: #ffffff;
-                color: $textColor;
+                background-color: $tableHeaderCellBgColor;
+                color: $tableHeaderCellTextColor;
                 border-color: $dividerColor;
             }
         }
@@ -306,8 +306,8 @@ body {
         .ui-table-thead > tr > th,
         .ui-table-tfoot > tr > td {
             font-weight: 400;
-            color: $textColor;
-            background-color: #ffffff;
+            color: $tableHeaderCellTextColor;
+            background-color: $tableHeaderCellBgColor;
             border: 1px solid $dividerLightColor;
         }
 
@@ -335,12 +335,12 @@ body {
             .pi-spin {
                 -webkit-animation: 2s linear infinite fa-spin;
                 animation: 2s linear infinite fa-spin;
-                color: #ffffff;
+                color: $tableContentLoadIconColor;
             }
         }
 
         .ui-sortable-column {
-            color: $textColor;
+            color: $tableHeaderCellTextColor;
 
             a, a:hover {
                 color: $textSecondaryColor;
@@ -371,7 +371,7 @@ body {
 
         .ui-table-tbody {
             > tr {
-                background: #ffffff;
+                background: $tableBodyRowBgColor;
 
                 > td {
                   background: inherit;
@@ -390,7 +390,7 @@ body {
             }
 
             > tr:nth-child(odd) {
-                background-color: $datatableEvenRowBgColor;
+                background-color: $tableOddRowBgColor;
 
                 &.ui-state-highlight {
                   background-color: $accentColor;
@@ -441,10 +441,10 @@ body {
             padding: $headerPadding;
 
             .ui-inputtext {
-                color: #ffffff;
+                color: $datatableHeaderCellBgColor;
 
                 &:focus {
-                    border-color: #ffffff;
+                    border-color: $datatableHeaderCellBgColor;
                 }
             }
         }
@@ -459,7 +459,7 @@ body {
 
                  th {
                     padding: .625em .875em;
-                    background-color: #ffffff;
+                    background-color: $datatableHeaderCellBgColor;
 
                     &.ui-sortable-column:not(.ui-state-active):hover {
                         @include hover-element();
@@ -505,8 +505,8 @@ body {
         tfoot {
             th {
                 padding: .625em .875em;
-                border: 1px solid #bdbdbd;
-                background-color: #ffffff;
+                border: 1px solid $dividerColor;
+                background-color: $datatableHeaderCellBgColor;
             }
         }
 
@@ -532,19 +532,19 @@ body {
 
                     &.ui-state-highlight {
                         .ui-inputtext {
-                            color: #ffffff;
-                            border-color: #ffffff;
+                            color: $datatableHighlightTextColor;
+                            border-color: $datatableHighlightTextColor;
 
                             &:focus {
-                                border-color: #ffffff;
+                                border-color: $datatableHighlightTextColor;
                             }
                         }
                     }
 
                     &.ui-state-error {
-                        background-color: #e62a10;
-                        border-color: #e62a10;
-                        color: #ffffff;
+                        background-color: $errorMessageBgColor;
+                        border-color: $errorMessageBorderColor;
+                        color: $errorMessageTextColor;
                     }
 
                     input.ui-cell-editor {
@@ -573,29 +573,29 @@ body {
             }
 
             tr.ui-state-error {
-                background-color: #e62a10;
-                border-color: #e62a10;
-                color: #ffffff;
+                background-color: $errorMessageBgColor;
+                border-color: $errorMessageBorderColor;
+                color: $errorMessageTextColor;
 
                 .ui-inputtext,
                 .ui-inputtext.ui-state-error {
-                    border-color: #ffffff;
+                    border-color: $errorMessageTextColor;
                 }
             }
 
             tr.ui-state-highlight {
                 td.ui-selection-column {
                     .ui-radiobutton-box {
-                        border-color: #ffffff;
+                        border-color: $datatableHighlightTextColor;
 
                         .ui-radiobutton-icon {
-                            background-color: #ffffff;
+                            background-color: $datatableHighlightTextColor;
                         }
                     }
 
                     .ui-chkbox-box {
-                        border-color: #ffffff;
-                        background-color: #ffffff;
+                        border-color: $datatableHighlightTextColor;
+                        background-color: $datatableHighlightTextColor;
 
                         .ui-chkbox-icon {
                             color: $textSecondaryColor;
@@ -604,11 +604,11 @@ body {
                 }
 
                 .ui-inputtext {
-                    color: #ffffff;
-                    border-color: #ffffff;
+                    color: $datatableHighlightTextColor;
+                    border-color: $datatableHighlightTextColor;
 
                     &:focus {
-                        border-color: #ffffff;
+                        border-color: $datatableHighlightTextColor;
                     }
                 }
             }
@@ -679,7 +679,7 @@ body {
 
     .ui-dataview {
         .ui-dataview-header {
-            background-color: #ffffff;
+            background-color: $dataviewHeaderBgColor;
             color: $textColor;
             padding: $headerPadding;
             border: 1px solid $dividerLightColor;
@@ -696,13 +696,13 @@ body {
         }
 
         .ui-dataview-content {
-            background-color: #ffffff;
+            background-color: $contentBgColor;
             color: $textColor;
             border: 1px solid $dividerLightColor;
         }
 
         .ui-dataview-footer {
-            background-color: #ffffff;
+            background-color: $dataviewHeaderBgColor;
             color: $textColor;
             padding: $headerPadding;
             border: 1px solid $dividerLightColor;
@@ -723,7 +723,7 @@ body {
             }
 
             .pi {
-                color: #ffffff;
+                color: $panelHeaderIconColor;
             }
 
             .ui-carousel-button {
@@ -749,7 +749,7 @@ body {
                 margin-right: .5em;
 
                 .pi {
-                    color: #757575;
+                    color: $contentIconColor;
                 }
             }
 
@@ -784,7 +784,7 @@ body {
             padding-right: 0;
 
             .ui-treenode-content {
-                background-color: #ffffff;
+                background-color: $contentBgColor;
                 border: 1px solid $dividerColor;
 
                 .ui-tree-toggler {
@@ -833,7 +833,7 @@ body {
 
         .fc-event {
             background-color: $primaryLightColor;
-            color: #ffffff;
+            color: $scheduleEventTextColor;
         }
 
         table {
@@ -866,8 +866,8 @@ body {
         .ui-treetable-thead > tr > th,
         .ui-treetable-tfoot > tr > td {
             font-weight: 400;
-            color: $textColor;
-            background-color: #ffffff;
+            color: $tableHeaderCellTextColor;
+            background-color: $tableHeaderCellBgColor;
             border: 1px solid $dividerLightColor;
         }
 
@@ -883,12 +883,12 @@ body {
             .pi-spin {
                 -webkit-animation: 2s linear infinite fa-spin;
                 animation: 2s linear infinite fa-spin;
-                color: #ffffff;
+                color: $tableContentLoadIconColor;
             }
         }
 
         .ui-sortable-column {
-            color: $textColor;
+            color: $tableHeaderCellTextColor;
 
             a, a:hover {
                 color: $textSecondaryColor;
@@ -919,7 +919,7 @@ body {
 
         .ui-treetable-tbody {
             > tr {
-                background: #ffffff;
+                background: $tableBodyRowBgColor;
 
                 > td {
                     background: inherit;

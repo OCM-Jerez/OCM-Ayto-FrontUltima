@@ -1,6 +1,6 @@
 body {
     .ui-inputtext {
-        background: transparent no-repeat;
+        background: $inputBgColor no-repeat;
         background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, $inputBorderColor, $inputBorderColor);
         background-size: 0 2px, 100% 1px;
         background-position: 50% 100%, 50% 100%;
@@ -24,7 +24,7 @@ body {
 
         &.ui-widget-content {
             border-width: 1px;
-            background: transparent;
+            background: $inputBgColor;
             background-image: none;
         }
 
@@ -35,7 +35,7 @@ body {
     }
 
     .ui-inputtext:-webkit-autofill {
-        border-color: #bdbdbd;
+        border-color: $inputAutoFillBorderColor;
         border-style: solid;
         border-width: 0px 0px 1px 0px;
 
@@ -46,7 +46,7 @@ body {
 
     .ui-widget-header:not(.ui-dataview-header) {
         .ui-inputtext {
-            background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
+            background-image: linear-gradient(to bottom, $headerTextColor, $headerTextColor), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
         }
     }
 
@@ -55,7 +55,7 @@ body {
         position:relative;
 
         > label {
-          color:#999;
+          color:$inputFieldLabelTextColor;
           font-weight:normal;
           position:absolute;
           pointer-events:none;
@@ -82,14 +82,14 @@ body {
         }
 
         input.ng-dirty.ng-invalid ~ label {
-            color: $invalidInputLabelColor;
+            color: $inputErrorTextColor;
         }
 
         .ui-message {
             position: absolute;
 
             &.ui-messages-error {
-                background-color: transparent;
+                background-color: $inputBgColor;
                 border: 0 none;
                 margin: 0px;
                 color: $inputErrorTextColor;
@@ -99,7 +99,7 @@ body {
 
         &.md-inputfield-fill {
             input {
-              background-color: $textboxBgColor;
+              background-color: $inputFieldFillBgColor;
               padding-left: 4px;
               padding-right: 4px;
               padding-top: 4px;
@@ -119,13 +119,13 @@ body {
         }
 
         &.md-inputfield-box {
-            background-color: #f7f7f7;
+            background-color: $inputFieldBoxBgColor;
             height: 44px;
 
             >*:not(label) {
                 bottom: 0px;
                 position: absolute;
-                background-color: $textboxBgColor;
+                background-color: $inputFieldBoxBgColor;
                 padding-left: 4px;
                 padding-right: 4px;
                 padding-top: 24px;
@@ -151,10 +151,10 @@ body {
     .ui-material-message {
         &.ui-message {
             &.ui-messages-error {
-                background-color: transparent;
+                background-color: $inputBgColor;
+                color: $inputErrorTextColor;
                 border: 0 none;
                 margin: 0px;
-                color: #e62a10;
                 font-size: .75em;
 
                 label {
@@ -166,7 +166,7 @@ body {
 
     .ui-listbox {
         min-width: 12.5em;
-        background-color: #ffffff;
+        background-color: $inputListItemBgColor;
         @include border-radius($borderRadius);
 
         &.ui-inputtext {
@@ -207,7 +207,7 @@ body {
 
             .ui-chkbox {
                 .ui-chkbox-box {
-                    border-color: #ffffff;
+                    border-color: $inputListItemCheckboxBorderColor;
                 }
             }
 
@@ -215,6 +215,7 @@ body {
                 .ui-inputtext {
                     padding: 2px;
                     padding-left: 1.5em;
+                    color: $inputListItemFilterTextColor;
                 }
 
                 .pi {
@@ -228,7 +229,7 @@ body {
     .ui-button, .ui-datepicker-buttonpane > button {
         overflow: hidden;
         background-color: $primaryColor;
-        color: #ffffff;
+        color: $buttonTextColor;
         font-size: $buttonFontSize;
         height: 2.25em;
         padding: 0 1em;
@@ -254,7 +255,7 @@ body {
         }
 
         .pi {
-            color: #ffffff;
+            color: $buttonTextColor;
         }
 
         &.ui-button-icon-only {
@@ -290,173 +291,172 @@ body {
         }
 
         &.blue-grey-btn {
-            background-color: #607D8B;
+            background-color: $blueGrey;
 
            &:enabled:not(:focus):hover {
-                background-color: #37474F;
+                background-color: $blueGreyHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#607D8B,10%);
+                background-color: lighten($blueGrey,10%);
             }
         }
 
         &.cyan-btn {
-            background-color: #00BCD4;
+            background-color: $cyan;
 
             &:enabled:not(:focus):hover {
-                background-color: #00838F;
+                background-color: $cyanHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#00BCD4,4%);
+                background-color: lighten($cyan,4%);
             }
         }
 
         &.teal-btn {
-            background-color: #009688;
+            background-color: $teal;
 
             &:enabled:not(:focus):hover {
-                background-color: #00695C;
+                background-color: $tealHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#009688,10%);
+                background-color: lighten($teal,10%);
             }
         }
 
         &.red-btn, &.ui-danger-button {
-            background-color: #F44336;
+            background-color: $red;
 
             &:enabled:not(:focus):hover {
-                background-color: #C62828;
+                background-color: $redHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#F44336,10%);
+                background-color: lighten($red,10%);
             }
         }
 
         &.green-btn, &.ui-success-button {
-            background-color: #4CAF50;
+            background-color: $green;
 
            &:enabled:not(:focus):hover {
-                background-color: #2E7D32;
+                background-color: $greenHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#4CAF50,10%);
+                background-color: lighten($green,10%);
             }
         }
 
         &.deep-orange-btn {
-            background-color: #FF5722;
+            background-color: $deepOrange;
 
             &:enabled:not(:focus):hover {
-                background-color: #D84315;
+                background-color: $deepOrangeHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#FF5722,10%);
+                background-color: lighten($deepOrange,10%);
             }
         }
 
         &.purple-btn {
-            background-color: #673AB7;
+            background-color: $purple;
 
             &:enabled:not(:focus):hover {
-                background-color: #4527A0;
+                background-color: $purpleHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#673AB7,10%);
+                background-color: lighten($purple,10%);
             }
         }
 
         &.pink-btn {
-            background-color: #E91E63;
+            background-color: $pink;
 
             &:enabled:not(:focus):hover {
-                background-color: #AD1457;
+                background-color: $pinkHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#E91E63,10%);
+                background-color: lighten($pink,10%);
             }
         }
 
         &.amber-btn, &.ui-warning-button {
-            background-color: #FFC107;
-            color: #212121;
+            background-color: $amber;
+            color: $textColor;
 
             &:enabled:not(:focus):hover {
-                background-color: #FF8F00;
+                background-color: $amberHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#FFC107,10%);
+                background-color: lighten($amber,10%);
             }
         }
 
         &.orange-btn {
-            background-color: #FF9800;
+            background-color: $orange;
 
             &:enabled:not(:focus):hover {
-                background-color: #EF6C00;
+                background-color: $orangeHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#FF9800,10%);
+                background-color: lighten($orange,10%);
             }
         }
 
         &.brown-btn {
-            background-color: #795548;
+            background-color: $brown;
 
             &:enabled:not(:focus):hover {
-                background-color: #4E342E;
+                background-color: $brownHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#795548,10%);
+                background-color: lighten($brown,10%);
             }
         }
 
         &.indigo-btn {
-            background-color: #3F51B5;
+            background-color: $indigo;
 
             &:enabled:not(:focus):hover {
-                background-color: #283593;
+                background-color: $indigoHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#3F51B5,10%);
+                background-color: lighten($indigo,10%);
             }
         }
 
         &.blue-btn, &.ui-info-button {
-            background-color: #03A9F4;
-            color: #ffffff;
+            background-color: $blue;
 
             &:enabled:not(:focus):hover {
-                background-color: #0277BD;
+                background-color: $blueHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#03A9F4,10%);
+                background-color: lighten($blue,10%);
             }
         }
 
@@ -467,7 +467,7 @@ body {
 
     .ui-button.ui-state-default.ui-button-secondary, .ui-buttonset.ui-button-secondary > .ui-button.ui-state-default  {
         color: $textColor;
-        background-color: #ffffff;
+        background-color: $secondary;
 
         .ui-button-icon-left {
             color: $textSecondaryColor;
@@ -482,63 +482,60 @@ body {
         }
 
         &:enabled:focus {
-            background-color: darken(#ffffff, 10%);
+            background-color: darken($secondary, 10%);
         }
     }
 
     .ui-button.ui-state-default.ui-button-info, .ui-buttonset.ui-button-info > .ui-button.ui-state-default  {
-        color: #ffffff;
-        background-color: #03A9F4;
+        background-color: $blue;
 
         &:enabled:hover {
-            background-color: #0277BD;
+            background-color: $blueHover;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten(#03A9F4,10%);
+            background-color: lighten($blue,10%);
         }
     }
 
     .ui-button.ui-state-default.ui-button-success, .ui-buttonset.ui-button-success > .ui-button.ui-state-default  {
-        color: #ffffff;
-        background-color: #4CAF50;
+        background-color: $green;
 
         &:enabled:hover {
-            background-color: #2E7D32;
+            background-color: $greenHover;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten(#4CAF50,10%);
+            background-color: lighten($green,10%);
         }
     }
 
     .ui-button.ui-state-default.ui-button-warning, .ui-buttonset.ui-button-warning > .ui-button.ui-state-default  {
-        color: #212121;
-        background-color: #FFC107;
+        color: $textColor;
+        background-color: $amber;
 
         &:enabled:hover {
-            background-color: #FF8F00;
+            background-color: $amberHover;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten(#FFC107,10%);
+            background-color: lighten($amber,10%);
         }
     }
 
     .ui-button.ui-state-default.ui-button-danger, .ui-buttonset.ui-button-danger > .ui-button.ui-state-default  {
-        color: #ffffff;
-        background-color: #F44336;
+        background-color: $red;
 
         &:enabled:hover {
-            background-color: #C62828;
+            background-color: $redHover;
         }
 
         &:enabled:focus {
             outline: 0 none;
-            background-color: lighten(#F44336,10%);
+            background-color: lighten($red,10%);
         }
     }
 
@@ -557,12 +554,12 @@ body {
 
         &.ui-button-danger {
             &:enabled:not(:focus):hover {
-                background-color: #C62828;
+                background-color: $redHover;
             }
 
             &:focus {
                 outline: 0 none;
-                background-color: lighten(#F44336,10%);
+                background-color: lighten($red,10%);
             }
         }
     }
@@ -621,7 +618,7 @@ body {
         cursor: default;
 
         .ui-chkbox-box {
-            border: 2px solid #757575;
+            border: 2px solid $checkboxBorderColor;
             width: 1.25em;
             height: 1.25em;
             overflow: hidden;
@@ -656,7 +653,7 @@ body {
         vertical-align: middle;
 
         .ui-radiobutton-box {
-            border: 2px solid #757575;
+            border: 2px solid $radioButtonBorderColor;
             width: 1.25em;
             height: 1.25em;
             @include transition(box-shadow .3s);
@@ -898,17 +895,17 @@ body {
             padding: $inputHeaderPadding;
 
             input {
-                color: #ffffff;
+                color: $inputListItemFilterTextColor;
 
                 &:focus {
-                    border-bottom-color: #ffffff;
+                    border-bottom-color: $inputListItemFilterTextColor;
                 }
             }
 
             .pi {
                 top: .325em;
                 right: .75em;
-                color: #ffffff;
+                color: $inputListItemFilterTextColor;
             }
         }
     }
@@ -961,15 +958,15 @@ body {
                 position: static;
 
                 .ui-chkbox-box {
-                    border-color: #ffffff;
+                    border-color: $inputListItemCheckboxBorderColor;
 
                     .ui-chkbox-icon {
-                        border-color: #ffffff;
+                        border-color: $inputListItemFilterTextColor;
                     }
 
                     &.ui-state-active {
                         .ui-chkbox-icon {
-                            border-color: #ffffff;
+                            border-color: $inputListItemFilterTextColor;
                         }
                     }
 
@@ -997,9 +994,10 @@ body {
                     padding-left: 1.5em;
                     width: 100%;
                     box-sizing: border-box;
+                    color: $inputListItemFilterTextColor;
 
                     &:focus {
-                        border-bottom-color: #ffffff;
+                        border-bottom-color: $inputListItemFilterTextColor;
                     }
                 }
             }
@@ -1019,7 +1017,7 @@ body {
                     height: 1em;
                     margin-top: -.5em;
                     margin-left: -.5em;
-                    color: #ffffff;
+                    color: $inputListItemFilterTextColor;
                 }
 
                 &:hover {
@@ -1117,7 +1115,7 @@ body {
             @include transition(background-color .3s);
 
             &:before {
-                background-color: #ffffff;
+                background-color: $inputSwitchOffHandleBgColor;
                 height: 1.429em;
                 width: 1.429em;
                 left: 0;
@@ -1307,7 +1305,7 @@ body {
                 @include border-radius(50%);
                 @include material-icon("keyboard_arrow_left");
                 @include transition(background-color .3s);
-                color: #ffffff;
+                color: $calendarNavIconColor;
 
                 .pi {
                     display: none;
@@ -1321,7 +1319,7 @@ body {
                 @include material-icon("keyboard_arrow_right");
                 @include border-radius(50%);
                 @include transition(background-color .3s);
-                color: #ffffff;
+                color: $calendarNavIconColor;
 
                 .pi {
                     display: none;
@@ -1343,7 +1341,7 @@ body {
 
         thead {
             tr {
-                color: #ffffff;
+                color: $calendarCellTextColor;
                 background: $primaryColor;
             }
         }
@@ -1355,7 +1353,7 @@ body {
 
                 &.ui-datepicker-today {
                     a {
-                        color: #ffffff;
+                        color: $calendarCellTextColor;
                         background: lighten($primaryColor,20%);
 
                         &.ui-state-active {
@@ -1422,7 +1420,7 @@ body {
                 color: $textColor;
 
                 &.ui-state-active {
-                    color: #ffffff;
+                    color: $accentTextColor;
                     background-color: $accentColor;
                 }
             }
@@ -1542,7 +1540,7 @@ body {
         .ui-fileupload-content {
             .ui-messages-error {
                 .pi {
-                    color: #ffffff;
+                    color: $errorMessageTextColor;
                 }
             }
         }
@@ -1563,13 +1561,7 @@ body {
 
     .ui-editor-container {
         .ui-editor-toolbar {
-            background-color: #e8e8e8;
-        }
-
-        .ql-picker.ql-expanded {
-            .ql-picker-label {
-                color: #444444;
-            }
+            background-color: $editorHeaderBgColor;
         }
     }
 
@@ -1577,7 +1569,7 @@ body {
     .ui-inputgroup {
         .ui-inputgroup-addon {
             &.ui-inputgroup-addon-fill {
-                background-color: $textboxBgColor;
+                background-color: $inputFieldFillBgColor;
             }
             border-width: 0 0 1px 0;
             border-color: $inputBorderColor;
@@ -1664,7 +1656,7 @@ body {
     p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
     p-selectbutton.ng-dirty.ng-invalid .ui-button,
     p-togglebutton.ng-dirty.ng-invalid .ui-button {
-        background-image: linear-gradient(to bottom, $invalidInputBorderColor, $invalidInputBorderColor), linear-gradient(to bottom, $invalidInputBorderColor, $invalidInputBorderColor);
+        background-image: linear-gradient(to bottom, $inputBorderErrorColor, $inputBorderErrorColor), linear-gradient(to bottom, $inputBorderErrorColor, $inputBorderErrorColor);
     }
 }
 
