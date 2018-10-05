@@ -1,6 +1,6 @@
 {
     "name": "ultima",
-    "version": "6.1.1-SNAPSHOT",
+    "version": "6.1.1",
     "license": "COMMERCIAL",
     "angular-cli": {},
     "scripts": {
@@ -27,7 +27,6 @@
         "fullcalendar": "4.0.0-alpha",
         "intl": "1.2.5",
         "moment": "2.18.1",
-        "primeicons": "1.0.0-beta.9",
         "primeng": "6.1.2",
         "quill": "1.1.8",
         "rxjs": "6.2.2",
