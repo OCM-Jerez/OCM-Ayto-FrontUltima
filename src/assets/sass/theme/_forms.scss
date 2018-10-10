@@ -609,6 +609,16 @@ body {
         }
     }
 
+    p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box {
+        &.ui-state-active {
+            border-color: $inputBorderErrorColor;
+            background-color: $inputBgColor;
+            .ui-chkbox-icon {
+                color: $inputBorderErrorColor;
+            }
+        }
+    }
+
     .ui-chkbox {
         display: inline-block;
         vertical-align: middle;
@@ -645,6 +655,16 @@ body {
 
     .ui-chkbox-label {
         margin-left: $inlineSpacing;
+    }
+
+    p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box {
+        &.ui-state-active {
+            border-color: $inputBorderErrorColor;
+            background-color: $inputBgColor;
+            .pi-circle-on {
+                background-color: $inputBorderErrorColor;
+            }
+        }
     }
 
     .ui-radiobutton {
@@ -911,10 +931,15 @@ body {
     }
 
     .ui-multiselect {
-        border-bottom: 1px solid $inputBorderColor;
+        border-width: 0;
+        background: transparent no-repeat;
+        background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, $inputBorderColor, $inputBorderColor);
+        background-size: 0 2px, 100% 1px;
+        background-position: 50% 100%, 50% 100%;
+        transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        padding-bottom: 2px;
         box-sizing: border-box;
         @include border-radius(0);
-        @include transition(border-color .3s);
 
         .ui-multiselect-label-container {
             padding-right: 1.5em;
@@ -937,7 +962,9 @@ body {
         }
 
         &:not(.ui-state-disabled).ui-state-focus {
-            border-bottom: 2px solid $primaryColor;
+            border-width: 0;
+            background-size: 100% 2px, 100% 1px;
+            padding-bottom: 2px;
         }
     }
 
@@ -1648,8 +1675,6 @@ body {
     p-calendar.ng-dirty.ng-invalid > .ui-calendar > .ui-inputtext,
     p-chips.ng-dirty.ng-invalid > .ui-inputtext,
     p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
-    p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
-    p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
     p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
     p-listbox.ng-dirty.ng-invalid .ui-inputtext,
     p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
