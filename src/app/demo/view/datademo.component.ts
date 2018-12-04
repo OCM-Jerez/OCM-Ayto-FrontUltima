@@ -132,7 +132,7 @@ export class DataDemoComponent implements OnInit {
 
     selectedNodes: TreeNode[];
 
-    scheduleHeader: any;
+    scheduleOptions: any;
 
     sortOptions: SelectItem[];
 
@@ -187,8 +187,14 @@ export class DataDemoComponent implements OnInit {
             {vin: '45665e5', year: 2011, brand: 'Mercedes', color: 'Brown'},
             {vin: 'he6sb5v', year: 2015, brand: 'Ford', color: 'Black'}
         ];
-
-        this.scheduleHeader = { left: 'prev,next today', center: 'title', right: 'month,agendaWeek,agendaDay'};
+        this.scheduleOptions = {
+            defaultDate: '2016-01-12',
+            header: {
+                left: 'prev,next, today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            }
+        };
 
         this.data = [{
             label: 'F.C Barcelona',

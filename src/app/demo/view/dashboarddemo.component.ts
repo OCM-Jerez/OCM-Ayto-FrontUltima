@@ -24,6 +24,8 @@ export class DashboardDemoComponent implements OnInit {
 
     selectedCar: Car;
 
+    scheduleOptions: any;
+
     constructor(private carService: CarService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
       this.breadcrumbService.setItems([
         {label: ''},
@@ -65,6 +67,10 @@ export class DashboardDemoComponent implements OnInit {
                     borderColor: '#03A9F4'
                 }
             ]
+        };
+
+        this.scheduleOptions = {
+            defaultDate: '2016-01-12',
         };
     }
 }
