@@ -82,6 +82,23 @@ import {BreadcrumbService} from '../../breadcrumb.service';
             .car-item {
                 text-align: center;
             }
+            .index-col {
+                display: none;
+            }
+            .image-col {
+                display: none;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                background-color: rgba(165, 165, 165, 0.1)
+            }
+            50% {
+                background-color: rgba(165, 165, 165, 0.3)
+            }
+            100% {
+                background-color: rgba(165, 165, 165, 0.1)
+            }
         }
     `],
     encapsulation: ViewEncapsulation.None
@@ -150,7 +167,7 @@ export class DataDemoComponent implements OnInit {
             { label: 'Components' },
             { label: 'Data Components', routerLink: ['/data'] }
         ]);
-     }
+    }
 
     ngOnInit() {
         this.carService.getCarsMedium().then(cars => this.cars1 = cars);

@@ -339,6 +339,10 @@ body {
             }
         }
 
+        p-sortIcon {
+            display: inline-block;
+        }
+
         .ui-sortable-column {
             color: $tableHeaderCellTextColor;
 
