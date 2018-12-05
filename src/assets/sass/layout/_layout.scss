@@ -1,6 +1,7 @@
 @import './_variables';
+@import '../overrides/layout_variables';
 @import '../_mixins';
-@import '../layout_styles';
+@import '../overrides/layout_styles';
 @import '../_fonts';
 @import './_utils.scss';
 @import './_splash.scss';
