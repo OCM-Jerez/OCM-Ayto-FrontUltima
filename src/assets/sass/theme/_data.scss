@@ -776,8 +776,8 @@ body {
                 vertical-align: middle;
             }
 
-            &.ui-treenode-selectable {
-                &:not(.ui-state-highlight):hover {
+            &.ui-treenode-selectable:not(.ui-state-highlight) {
+                .ui-treenode-label:not(.ui-state-highlight):hover {
                     @include hover-element();
                 }
             }
@@ -796,12 +796,11 @@ body {
                 }
 
                 .ui-treenode-icon  {
-                    vertical-align: top;
                     margin-right: .25em;
                 }
 
-                &.ui-treenode-selectable {
-                    &:not(.ui-state-highlight):hover {
+                &.ui-treenode-selectable:not(.ui-state-highlight) {
+                    .ui-treenode-label:not(.ui-state-highlight):hover {
                         @include hover-element();
                     }
                 }
@@ -809,6 +808,10 @@ body {
                 &.ui-state-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
+
+                    .ui-treenode-icon  {
+                        color: $accentTextColor;
+                    }
                 }
             }
         }
