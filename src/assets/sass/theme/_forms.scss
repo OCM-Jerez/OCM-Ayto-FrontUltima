@@ -291,7 +291,7 @@ body {
             background-color: $primaryDarkColor;
         }
 
-        &:focus {
+        &:focus, &.ui-state-focus {
             outline: 0 none;
             background-color: lighten($primaryColor,10%);
         }
@@ -509,6 +509,18 @@ body {
 
         &.flat {
             @include no-shadow();
+        }
+    }
+
+    .ui-buttonset {
+        .ui-button {
+            &:first-child {
+                @include border-radius-left($borderRadius);
+            }
+
+            &:last-child {
+                @include border-radius-right($borderRadius);
+            }
         }
     }
 
