@@ -1,5 +1,5 @@
 import {Component, ViewChild, AfterViewInit} from '@angular/core';
-import {AppComponent} from './app.component';
+import {AppMainComponent} from './app.main.component';
 import {ScrollPanel} from 'primeng/primeng';
 
 @Component({
@@ -64,7 +64,7 @@ export class AppRightpanelComponent implements AfterViewInit {
 
     @ViewChild('scrollRightPanel') rightPanelMenuScrollerViewChild: ScrollPanel;
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppMainComponent) {}
 
     ngAfterViewInit() {
       setTimeout(() => {this.rightPanelMenuScrollerViewChild.moveBar(); }, 100);

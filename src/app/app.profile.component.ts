@@ -1,4 +1,4 @@
-import {AppComponent} from './app.component';
+import {AppMainComponent} from './app.main.component';
 import {Component} from '@angular/core';
 import {trigger, state, transition, style, animate} from '@angular/animations';
 
@@ -57,7 +57,7 @@ export class AppInlineProfileComponent {
 
     active: boolean;
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppMainComponent) {}
 
     onClick(event) {
         this.active = !this.active;

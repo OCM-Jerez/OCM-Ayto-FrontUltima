@@ -3,6 +3,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { AppMainComponent } from './app.main.component';
 import { AppTopbarComponent } from './app.topbar.component';
 import { AppRightpanelComponent} from './app.rightpanel.component';
 import { AppInlineProfileComponent } from './app.profile.component';
@@ -17,6 +18,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
         imports: [ RouterTestingModule, ScrollPanelModule ],
         declarations: [ AppComponent,
+            AppMainComponent,
                 AppTopbarComponent,
                 AppMenuComponent,
                 AppSubMenuComponent,
