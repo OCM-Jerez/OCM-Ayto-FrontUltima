@@ -359,7 +359,6 @@ body {
 
             .ui-column-resizer {
                 @include material-icon("\e86f");
-               // font-size: $fontSize + 2;
                 color: $textSecondaryColor;
             }
 
@@ -532,7 +531,6 @@ body {
         .ui-carousel-footer {
             margin: 0;
             padding: $headerPadding - 2px;
-            //font-size: $fontSize - 2px;
         }
     }
 
@@ -775,7 +773,6 @@ body {
 
             .ui-column-resizer {
                 @include material-icon("\e86f");
-                //font-size: $fontSize + 2;
                 color: $textSecondaryColor;
             }
 
