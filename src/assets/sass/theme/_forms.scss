@@ -246,13 +246,6 @@ body {
             height: 2.143em;
         }
 
-        &.ui-button-text-icon-left,
-        &.ui-button-text-icon-right {
-            .pi {
-                margin-top: -1 * 1.5em / 2;
-            }
-        }
-
         &.ui-button-text-icon-left {
             padding-left: 2.571em;
         }
@@ -1284,6 +1277,9 @@ body {
 
             .pi {
                 color: $textSecondaryColor;
+            }
+            &:enabled:focus {
+                background-color: transparent;
             }
 
             &:enabled:hover {
