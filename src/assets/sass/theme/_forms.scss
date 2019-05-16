@@ -512,6 +512,14 @@ body {
 
     .ui-buttonset {
         .ui-button {
+            &:first-child {
+                @include border-radius-left($borderRadius);
+            }
+
+            &:last-child {
+                @include border-radius-right($borderRadius);
+            }
+
             &:not(.ui-state-disabled):not(.ui-state-active):hover {
                 background-color: $primaryDarkColor;
             }
@@ -650,8 +658,8 @@ body {
 
         .ui-radiobutton-box {
             border: 2px solid $radioButtonBorderColor;
-            width: 1.429em;
-            height: 1.429em;
+            width: 1.5em;
+            height: 1.5em;
             @include transition(box-shadow .3s);
             @include border-radius(50%);
 
@@ -1711,10 +1719,12 @@ body {
                 @include border-radius(0);
 
                 &:first-child {
+                    @include border-radius(0);
                     @include border-radius-top($borderRadius);
                 }
 
                 &:last-child {
+                    @include border-radius(0);
                     @include border-radius-bottom($borderRadius);
                 }
             }
