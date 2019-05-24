@@ -221,7 +221,7 @@ export class AppSubMenuComponent {
         }
 
         // activate current item and deactivate active sibling if any
-        this.activeIndex = (this.activeIndex === index) ? null : index;
+        this.activeIndex = (this.activeIndex === index && this.root) ? null : index;
 
         // execute command
         if (item.command) {
