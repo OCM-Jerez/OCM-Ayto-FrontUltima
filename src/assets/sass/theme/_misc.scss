@@ -58,4 +58,10 @@ body {
             }
         }
     }
+
+    .ui-terminal {
+        .ui-terminal-input {
+            font: normal 1em $fontFamily;
+        }
+    }
 }

@@ -503,7 +503,7 @@ body {
         }
     }
 
-    .ui-buttonset {
+    .ui-buttonset:not(.ui-dataview-layout-options) {
         .ui-button {
             &:first-child {
                 @include border-radius-left($borderRadius);
@@ -512,7 +512,10 @@ body {
             &:last-child {
                 @include border-radius-right($borderRadius);
             }
-
+        }
+    }
+    .ui-buttonset {
+        .ui-button {
             &:not(.ui-state-disabled):not(.ui-state-active):hover {
                 background-color: $primaryDarkColor;
             }
@@ -1278,6 +1281,7 @@ body {
             .pi {
                 color: $textSecondaryColor;
             }
+
             &:enabled:focus {
                 background-color: transparent;
             }
