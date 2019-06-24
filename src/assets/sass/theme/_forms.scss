@@ -59,35 +59,6 @@ body {
             -webkit-transition: $transitionDuration ease all;
         }
 
-        input:focus ~ label,
-        input.ui-state-filled ~ label,
-        .ui-inputwrapper-focus ~ label,
-        .ui-inputwrapper-filled ~ label {
-            top:-20px;
-            font-size:12px;
-            color:$primaryColor;
-        }
-
-        .input:-webkit-autofill ~ label {
-            top:-20px;
-            font-size:12px;
-            color:$primaryColor;
-        }
-
-        input.ng-dirty.ng-invalid ~ label {
-            color: $inputErrorTextColor;
-        }
-
-        .ui-message {
-            &.ui-messages-error {
-                background-color: transparent;
-                border: 0 none;
-                margin: 0px;
-                color: $inputErrorTextColor;
-                font-size: $errorMessageFontSize;
-            }
-        }
-
         &.md-inputfield-fill {
             input {
                 background-color: $textboxBgColor;
@@ -122,6 +93,35 @@ body {
 
             .input:-webkit-autofill ~ label {
                 top:1px;
+            }
+        }
+
+        input:focus ~ label,
+        input.ui-state-filled ~ label,
+        .ui-inputwrapper-focus ~ label,
+        .ui-inputwrapper-filled ~ label {
+            top:-20px;
+            font-size:12px;
+            color:$primaryColor;
+        }
+
+        .input:-webkit-autofill ~ label {
+            top:-20px;
+            font-size:12px;
+            color:$primaryColor;
+        }
+
+        input.ng-dirty.ng-invalid ~ label {
+            color: $inputErrorTextColor;
+        }
+
+        .ui-message {
+            &.ui-messages-error {
+                background-color: transparent;
+                border: 0 none;
+                margin: 0px;
+                color: $inputErrorTextColor;
+                font-size: $errorMessageFontSize;
             }
         }
     }
