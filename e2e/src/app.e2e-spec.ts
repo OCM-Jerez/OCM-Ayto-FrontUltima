@@ -1,6 +1,6 @@
 import {UltimaPage} from './app.po';
 
-describe('ultima App', function () {
+describe('ultima App', () => {
     let page: UltimaPage;
 
     beforeEach(() => {

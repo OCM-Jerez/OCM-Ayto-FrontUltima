@@ -75,7 +75,8 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
     }
 
     rippleMouseDown(e) {
-        for (let target = e.target; target && target !== this; target = target['parentNode']) {
+        const parentNode = 'parentNode';
+        for (let target = e.target; target && target !== this; target = target[parentNode]) {
             if (!this.isVisible(target)) {
                 continue;
             }
@@ -90,8 +91,12 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
     }
 
     selectorMatches(el, selector) {
+        const matches = 'matches';
+        const webkitMatchesSelector = 'webkitMatchesSelector';
+        const mozMatchesSelector = 'mozMatchesSelector';
+        const msMatchesSelector = 'msMatchesSelector';
         const p = Element.prototype;
-        const f = p['matches'] || p['webkitMatchesSelector'] || p['mozMatchesSelector'] || p['msMatchesSelector'] || function (s) {
+        const f = p[matches] || p[webkitMatchesSelector] || p[mozMatchesSelector] || p[msMatchesSelector] || function(s) {
             return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
         };
         return f.call(el, selector);
@@ -173,7 +178,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
     }
 
     ngAfterViewInit() {
-        this.layoutContainer = <HTMLDivElement> this.layourContainerViewChild.nativeElement;
+        this.layoutContainer = this.layourContainerViewChild.nativeElement as HTMLDivElement ;
         setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
