@@ -1053,6 +1053,7 @@ body {
         .ui-multiselect-item {
             padding: 0.571em 1em;
             margin: 0;
+            color: $textColor;
             @include border-radius(0);
             @include rippleitem();
 
