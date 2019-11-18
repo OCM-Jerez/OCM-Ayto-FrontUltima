@@ -79,6 +79,9 @@ import { AppNotfoundComponent } from './pages/app.notfound.component';
 import { AppErrorComponent } from './pages/app.error.component';
 import { AppAccessdeniedComponent } from './pages/app.accessdenied.component';
 import { AppLoginComponent } from './pages/app.login.component';
+import { AppHelpComponent } from './pages/app.help.component';
+import { AppInvoiceComponent } from './pages/app.invoice.component';
+import { AppWizardComponent } from './pages/app.wizard.component';
 import { AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
 import { AppTopbarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
@@ -206,7 +209,10 @@ import { BreadcrumbService } from './breadcrumb.service';
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
-        AppLoginComponent
+        AppLoginComponent,
+        AppHelpComponent,
+        AppInvoiceComponent,
+        AppWizardComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
