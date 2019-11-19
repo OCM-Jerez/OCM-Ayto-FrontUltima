@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
 })
 export class AppInvoiceComponent {
 
+    print() {
+        window.print();
+    }
 }
