@@ -132,7 +132,7 @@
                 border-bottom: 3px solid transparent;
                 cursor: pointer;
 
-                &:hover {
+                &:not(.ui-state-active):not(.ui-state-disabled):hover {
                     border-color: lighten($color: $primaryColor, $amount: 25);
                     background-color: lighten($color: $primaryColor, $amount: 45);
                     @include transition(background-color $transitionDuration);
