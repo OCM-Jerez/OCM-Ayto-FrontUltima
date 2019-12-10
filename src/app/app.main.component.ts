@@ -50,6 +50,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     menuHoverActive: boolean;
 
+    configActive: boolean;
+
+    configClick: boolean;
+
     @ViewChild('layoutContainer', {static: false}) layourContainerViewChild: ElementRef;
 
     @ViewChild('scrollPanel', {static: false}) layoutMenuScrollerViewChild: ScrollPanel;
@@ -204,6 +208,11 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
             this.rightPanelActive = false;
         }
 
+        if (this.configActive && !this.configClick) {
+            this.configActive = false;
+        }
+
+        this.configClick = false;
         this.topbarItemClick = false;
         this.menuClick = false;
         this.rightPanelClick = false;
@@ -263,6 +272,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
         this.rightPanelClick = true;
     }
 
+    onConfigClick(event) {
+        this.configClick = true;
+    }
+
     hideOverlayMenu() {
         this.rotateMenuButton = false;
         this.overlayMenuActive = false;
@@ -284,6 +297,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     isOverlay() {
         return this.layoutMode === MenuOrientation.OVERLAY;
+    }
+
+    isStatic() {
+        return this.layoutMode === MenuOrientation.STATIC;
     }
 
     isHorizontal() {
