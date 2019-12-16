@@ -19,28 +19,28 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToStaticMenu()">
                                     <img src="assets/layout/images/configurator/menu/ultima-static.png" alt="ultima"/>
-                                    <i class="ui-icon-check" *ngIf="app.isStatic()"></i>
+                                    <i class="material-icons" *ngIf="app.isStatic()">check</i>
                                 </a>
                                 <span>Static</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToOverlayMenu()">
                                     <img src="assets/layout/images/configurator/menu/ultima-overlay.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.isOverlay()"></i>
+                                    <i class="material-icons" *ngIf="app.isOverlay()">check</i>
                                 </a>
                                 <span>Overlay</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToHorizontalMenu()">
                                     <img src="assets/layout/images/configurator/menu/ultima-horizontal.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.isHorizontal()"></i>
+                                    <i class="material-icons" *ngIf="app.isHorizontal()">check</i>
                                 </a>
                                 <span>Horizontal</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.changeToSlimMenu()">
                                     <img src="assets/layout/images/configurator/menu/ultima-slim.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.isSlim()"></i>
+                                    <i class="material-icons" *ngIf="app.isSlim()">check</i>
                                 </a>
                                 <span>Slim</span>
                             </div>
@@ -50,14 +50,14 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.darkMenu = true">
                                     <img src="assets/layout/images/configurator/menu/ultima-dark.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="this.app.darkMenu"></i>
+                                    <i class="material-icons" *ngIf="this.app.darkMenu">check</i>
                                 </a>
                                 <span>Dark</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="this.app.darkMenu = false">
                                     <img src="assets/layout/images/configurator/menu/ultima-static.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="!app.darkMenu"></i>
+                                    <i class="material-icons" *ngIf="!app.darkMenu">check</i>
                                 </a>
                                 <span>Light</span>
                             </div>
@@ -66,16 +66,16 @@ import { AppMainComponent } from './app.main.component';
                     <p-tabPanel header="User Profile">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="this.app.profileMode = 'inline'">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onClickUserMode('inline')">
                                     <img src="assets/layout/images/configurator/menu/ultima-inline.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'inline'"></i>
+                                    <i class="material-icons" *ngIf="app.profileMode === 'inline' && !app.isHorizontal()">check</i>
                                 </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" (click)="this.app.profileMode = 'top'">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onClickUserMode('top')">
                                     <img src="assets/layout/images/configurator/menu/ultima-popup.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.profileMode === 'top'"></i>
+                                    <i class="material-icons" *ngIf="app.profileMode === 'top' || app.isHorizontal()">check</i>
                                 </a>
                                 <span>Overlay</span>
                             </div>
@@ -86,14 +86,14 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.layoutCompact = true">
                                     <img src="assets/layout/images/configurator/menu/ultima-compact.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="app.layoutCompact"></i>
+                                    <i class="material-icons" *ngIf="app.layoutCompact">check</i>
                                 </a>
                                 <span>Compact Size</span>
                             </div>
                             <div class="panel-item">
                                 <a style="cursor: pointer" (click)="app.layoutCompact = false">
                                     <img src="assets/layout/images/configurator/menu/ultima-material.png" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="!app.layoutCompact"></i>
+                                    <i class="material-icons" *ngIf="!app.layoutCompact">check</i>
                                 </a>
                                 <span>Material Size</span>
                             </div>
@@ -104,7 +104,7 @@ import { AppMainComponent } from './app.main.component';
                             <div class="panel-item" *ngFor="let theme of themes">
                                 <a style="cursor: pointer" class="layout-config-option" (click)="changeTheme(theme.label)">
                                     <img src="assets/layout/images/configurator/theme/{{theme.image}}.svg" alt="ultima"/>
-                                    <i class="pi pi-check" *ngIf="themeColor === theme.label"></i>
+                                    <i class="material-icons" *ngIf="themeColor === theme.label">check</i>
                                 </a>
                             </div>
                         </div>
@@ -146,6 +146,14 @@ export class AppConfigComponent implements OnInit {
         this.themeColor = theme;
         themeLink.href = 'assets/theme/theme-' + theme + '.css';
         layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
+    }
+
+    onClickUserMode(mode: string) {
+        if (this.app.isHorizontal()) {
+            return;
+        }
+
+        this.app.profileMode = mode;
     }
 
     onConfigButtonClick(event) {
