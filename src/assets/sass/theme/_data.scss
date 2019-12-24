@@ -24,6 +24,12 @@ body {
             }
         }
 
+        .ui-picklist-filter-container {
+            .ui-picklist-filter-icon {
+                left: .3em;
+            }
+        }
+
         .ui-picklist-buttons {
             width: 3.429em;
 
@@ -94,6 +100,12 @@ body {
                     background-color: $accentColor;
                     color: $accentTextColor;
                 }
+            }
+        }
+
+        .ui-orderlist-filter-container {
+            .ui-orderlist-filter-icon {
+                left: .3em;
             }
         }
 
