@@ -41,8 +41,8 @@
     &.pi-sort-down {@include icon-override("keyboard_arrow_down");}
     &.pi-spinner {@include icon-override("autorenew");}
     &.pi-spin {
-        -webkit-animation: 2s linear infinite fa-spin;
-        animation: 2s linear infinite fa-spin;
+        -webkit-animation: 2s linear infinite spin;
+        animation: 2s linear infinite spin;
     }
 }
 
