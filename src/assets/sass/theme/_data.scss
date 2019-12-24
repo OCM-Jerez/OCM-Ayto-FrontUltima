@@ -452,22 +452,26 @@ body {
                     background: inherit;
                     padding: $dataTableCellPadding;
                     border: 0 none;
+
+                    &.ui-editing-cell {
+                        padding: $dataTableCellPadding;
+                    }
                 }
 
                 &.ui-state-highlight {
                     background-color: $accentColor;
                     color: $accentTextColor;
+
+                    .ui-editing-cell {
+                        input {
+                            color: $accentTextColor;
+                        }
+                    }
                 }
 
                 &.ui-contextmenu-selected {
                     background-color: $accentColor;
                     color: $accentTextColor;
-                }
-
-                .ui-editing-cell {
-                    input {
-                        color: $accentTextColor;
-                    }
                 }
             }
 
