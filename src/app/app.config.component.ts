@@ -140,12 +140,34 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeTheme(theme) {
-        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement ;
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement ;
-
         this.themeColor = theme;
-        themeLink.href = 'assets/theme/theme-' + theme + '.css';
-        layoutLink.href = 'assets/layout/css/layout-' + theme + '.css';
+        this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
+        this.changeStyleSheetsColor('layout-css', 'layout-' + theme + '.css');
+    }
+
+    changeStyleSheetsColor(id, value) {
+        const element = document.getElementById(id);
+        const urlTokens = element.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = value;
+
+        const newURL = urlTokens.join('/');
+
+        this.replaceLink(element, newURL);
+    }
+
+    replaceLink(linkElement, href) {
+        const id = linkElement.getAttribute('id');
+        const cloneLinkElement = linkElement.cloneNode(true);
+
+        cloneLinkElement.setAttribute('href', href);
+        cloneLinkElement.setAttribute('id', id + '-clone');
+
+        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+
+        cloneLinkElement.addEventListener('load', () => {
+            linkElement.remove();
+            cloneLinkElement.setAttribute('id', id);
+        });
     }
 
     onClickUserMode(mode: string) {
