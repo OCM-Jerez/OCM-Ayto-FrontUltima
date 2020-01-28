@@ -51,7 +51,7 @@ Run 'ng help' for more options.
 &lt;div class="layout-wrapper" [ngClass]="&#123;'layout-compact':layoutCompact&#125;" (click)="onLayoutClick()"&gt;
 
     &lt;div #layoutContainer class="layout-container"
-            [ngClass]="&#123;'menu-layout-static': !isOverlay(),
+         [ngClass]="&#123;'menu-layout-static': !isOverlay(),
             'menu-layout-overlay': isOverlay(),
             'layout-menu-overlay-active': overlayMenuActive,
             'menu-layout-horizontal': isHorizontal(),
@@ -63,7 +63,7 @@ Run 'ng help' for more options.
 
         &lt;div class="layout-menu" [ngClass]="&#123;'layout-menu-dark':darkMenu&#125;" (click)="onMenuClick($event)"&gt;
             &lt;p-scrollPanel #scrollPanel [style]="&#123;height: '100%'&#125;"&gt;
-                &lt;app-inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"&gt;&lt;/app-inline-profile&gt;
+                &lt;app-inline-profile *ngIf="profileMode=='inline'&amp;&amp;!isHorizontal()"&gt;&lt;/app-inline-profile&gt;
                 &lt;app-menu [reset]="resetMenu"&gt;&lt;/app-menu&gt;
             &lt;/p-scrollPanel&gt;
         &lt;/div&gt;
@@ -79,6 +79,7 @@ Run 'ng help' for more options.
         &lt;/div&gt;
 
         &lt;app-rightpanel&gt;&lt;/app-rightpanel&gt;
+        &lt;app-config&gt;&lt;/app-config&gt;
 
         &lt;div class="layout-mask"&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -133,6 +134,9 @@ export class AppMenuComponent implements OnInit &#123;
                 label: 'Template Pages', icon: 'get_app',
                 items: [
                     &#123;label: 'Empty Page', icon: 'hourglass_empty', routerLink: ['/empty']&#125;,
+                    &#123;label: 'Invoice', icon: 'content_paste', routerLink: ['/invoice']&#125;,
+                    &#123;label: 'Wizard', icon: 'star', routerLink: ['/wizard']&#125;,
+                    &#123;label: 'Help', icon: 'help', routerLink: ['/help']&#125;,
                     &#123;label: 'Landing Page', icon: 'flight_land', url: 'landing.html'&#125;,
                     &#123;label: 'Login Page', icon: 'verified_user', url: 'login.html'&#125;,
                     &#123;label: 'Error Page', icon: 'error', url: 'error.html'&#125;,
@@ -556,7 +560,7 @@ export class ControlPanelComponent &#123;
             <h1>Customizing Styles</h1>
             <p>It is suggested to add your customizations in the following sass files under the override folder instead of adding them to the
                 scss files under sass folder to avoid maintenance issues after an update.</p>
-            
+
             <ul>
                 <li><b>_layout_variables</b>: Variables of the layout.</li>
                 <li><b>_layout_styles</b>: Styles for the layout.</li>
@@ -565,6 +569,12 @@ export class ControlPanelComponent &#123;
             </ul>
 
             <h1>Migration Guide</h1>
+            <h4>8.0.0 to 8.0.1</h4>
+            <ul>
+                <li>Update layout css files.</li>
+                <li>Update theme css files.</li>
+            </ul>
+
             <h4>7.1.1 to 8.0.0</h4>
             <ul>
                 <li>Update your project to Angular 8 with ng update. View the official update guide -<a href="https://update.angular.io/">https://update.angular.io/</a>- for more information.</li>
