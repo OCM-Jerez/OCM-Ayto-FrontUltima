@@ -200,7 +200,7 @@ import { BreadcrumbService } from './breadcrumb.service';
         FormsDemoComponent,
         DataDemoComponent,
         PanelsDemoComponent,
-        OverlaysDemoComponent, 
+        OverlaysDemoComponent,
         MenusDemoComponent,
         MessagesDemoComponent,
         MiscDemoComponent,

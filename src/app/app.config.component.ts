@@ -66,14 +66,16 @@ import { AppMainComponent } from './app.main.component';
                     <p-tabPanel header="User Profile">
                         <div class="panel-items">
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onClickUserMode('inline')">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
+                                   (click)="onClickUserMode('inline')">
                                     <img src="assets/layout/images/configurator/menu/ultima-inline.png" alt="ultima"/>
                                     <i class="material-icons" *ngIf="app.profileMode === 'inline' && !app.isHorizontal()">check</i>
                                 </a>
                                 <span>Inline</span>
                             </div>
                             <div class="panel-item">
-                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''" (click)="onClickUserMode('top')">
+                                <a style="cursor: pointer" [class]="app.isHorizontal() ? 'ui-state-disabled':''"
+                                   (click)="onClickUserMode('top')">
                                     <img src="assets/layout/images/configurator/menu/ultima-popup.png" alt="ultima"/>
                                     <i class="material-icons" *ngIf="app.profileMode === 'top' || app.isHorizontal()">check</i>
                                 </a>
