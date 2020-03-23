@@ -54,9 +54,9 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     configClick: boolean;
 
-    @ViewChild('layoutContainer', {static: false}) layourContainerViewChild: ElementRef;
+    @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
 
-    @ViewChild('scrollPanel', {static: false}) layoutMenuScrollerViewChild: ScrollPanel;
+    @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
 
     rippleInitListener: any;
 
