@@ -39,7 +39,7 @@ export class UtilsDemoComponent {
 
     constructor(private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Utilities' }
+            { label: 'Utilities', routerLink: ['/utils']}
         ]);
     }
 

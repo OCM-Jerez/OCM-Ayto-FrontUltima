@@ -105,6 +105,7 @@ import {MiscDemoComponent} from './demo/view/miscdemo.component';
 import {EmptyDemoComponent} from './demo/view/emptydemo.component';
 import {ChartsDemoComponent} from './demo/view/chartsdemo.component';
 import {FileDemoComponent} from './demo/view/filedemo.component';
+import {UtilsDemoComponent} from './demo/view/utilsdemo.component';
 import {DocumentationComponent} from './demo/view/documentation.component';
 
 // Demo services
@@ -221,6 +222,7 @@ import {MenuService} from './app.menu.service';
         ChartsDemoComponent,
         EmptyDemoComponent,
         FileDemoComponent,
+        UtilsDemoComponent,
         DocumentationComponent
     ],
     providers: [

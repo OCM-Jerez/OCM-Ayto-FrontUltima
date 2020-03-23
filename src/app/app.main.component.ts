@@ -1,5 +1,6 @@
 import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
 import { ScrollPanel} from 'primeng/primeng';
+import { MenuService } from './app.menu.service';
 
 enum MenuOrientation {
     STATIC,
@@ -46,8 +47,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     activeTopbarItem: any;
 
-    resetMenu: boolean;
-
     menuHoverActive: boolean;
 
     configActive: boolean;
@@ -62,7 +61,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     rippleMouseDownListener: any;
 
-    constructor(public renderer2: Renderer2, public zone: NgZone) {}
+    constructor(public renderer2: Renderer2, public zone: NgZone, private menuService: MenuService) {}
 
     ngOnInit() {
         this.zone.runOutsideAngular(() => {this.bindRipple(); });
@@ -194,7 +193,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
         if (!this.menuClick) {
             if (this.isHorizontal() || this.isSlim()) {
-                this.resetMenu = true;
+                this.menuService.reset();
             }
 
             if (this.overlayMenuActive || this.staticMenuMobileActive) {
@@ -236,7 +235,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     onMenuClick($event) {
         this.menuClick = true;
-        this.resetMenu = false;
     }
 
     onTopbarMenuButtonClick(event) {

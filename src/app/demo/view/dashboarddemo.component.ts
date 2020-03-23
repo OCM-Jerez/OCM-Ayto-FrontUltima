@@ -31,7 +31,8 @@ export class DashboardDemoComponent implements OnInit {
 
     constructor(private carService: CarService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
       this.breadcrumbService.setItems([
-        {label: ''},
+          {label: 'Dashboard'},
+          {label: 'Control Center', routerLink: ['/']}
       ]); }
 
     ngOnInit() {

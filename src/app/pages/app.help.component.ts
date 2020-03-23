@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BreadcrumbService} from '../breadcrumb.service';
 
 @Component({
     selector: 'app-help',
@@ -8,6 +9,13 @@ export class AppHelpComponent {
     text: any;
 
     filteredText: any[];
+
+    constructor(private breadcrumbService: BreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Pages' },
+            { label: 'Help', routerLink: ['/pages/help'] }
+        ]);
+    }
 
     filterText(event) {
         const query = event.query;
