@@ -10,7 +10,7 @@ import {AppRightpanelComponent} from './app.rightpanel.component';
 import {AppInlineProfileComponent} from './app.profile.component';
 import {AppFooterComponent} from './app.footer.component';
 import {AppBreadcrumbComponent} from './app.breadcrumb.component';
-import {AppMenuComponent, AppSubMenuComponent} from './app.menu.component';
+import {AppMenuComponent} from './app.menu.component';
 import {BreadcrumbService} from './breadcrumb.service';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {TabViewModule} from 'primeng/tabview';
@@ -24,7 +24,6 @@ describe('AppComponent', () => {
                 AppConfigComponent,
                 AppTopbarComponent,
                 AppMenuComponent,
-                AppSubMenuComponent,
                 AppFooterComponent,
                 AppBreadcrumbComponent,
                 AppInlineProfileComponent,

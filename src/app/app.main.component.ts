@@ -1,5 +1,4 @@
 import {Component, AfterViewInit, ElementRef, Renderer2, ViewChild, OnDestroy, OnInit, NgZone} from '@angular/core';
-import { ScrollPanel} from 'primeng/primeng';
 import { MenuService } from './app.menu.service';
 
 enum MenuOrientation {
@@ -39,8 +38,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     layoutContainer: HTMLDivElement;
 
-    layoutMenuScroller: HTMLDivElement;
-
     menuClick: boolean;
 
     topbarItemClick: boolean;
@@ -54,8 +51,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
     configClick: boolean;
 
     @ViewChild('layoutContainer') layourContainerViewChild: ElementRef;
-
-    @ViewChild('scrollPanel') layoutMenuScrollerViewChild: ScrollPanel;
 
     rippleInitListener: any;
 
@@ -182,7 +177,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy, OnInit {
 
     ngAfterViewInit() {
         this.layoutContainer = this.layourContainerViewChild.nativeElement as HTMLDivElement ;
-        setTimeout(() => {this.layoutMenuScrollerViewChild.moveBar(); }, 100);
     }
 
     onLayoutClick() {

@@ -61,9 +61,6 @@ export class AppInlineProfileComponent {
 
     onClick(event) {
         this.active = !this.active;
-        setTimeout(() => {
-          this.app.layoutMenuScrollerViewChild.moveBar();
-        }, 450);
         event.preventDefault();
     }
 }
