@@ -8,7 +8,7 @@ import {BreadcrumbService} from '../../breadcrumb.service';
             margin-top: 30px;
         }
 
-        .docs pre {
+        .docs pre.doc-command {
             font-family: monospace;
             background-color: #0C2238;
             color: #dddddd;
@@ -18,27 +18,23 @@ import {BreadcrumbService} from '../../breadcrumb.service';
             overflow: auto;
         }
 
+		.docs i {
+			background: #f1daad;
+			font-family: monaco,Consolas,Lucida Console,monospace;
+			font-weight: 700;
+			padding: 2px 4px;
+			letter-spacing: .5px;
+			font-style: normal;
+			color: #424242;
+			border-radius: 4px;
+		}
+
         .inline-code {
             background-color: #0C2238;
             color: #dddddd;
             font-style: normal;
             font-size: 13px;
             padding: 0 .5em;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }`
     ]
 })

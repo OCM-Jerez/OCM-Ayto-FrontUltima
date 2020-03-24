@@ -5,7 +5,7 @@ import {AppMainComponent} from './app.main.component';
     selector: 'app-topbar',
     template: `
         <div class="topbar clearfix">
-            <div class="topbar-left">
+            <div class="topbar-left" routerLink="/">
                 <div class="logo"></div>
             </div>
 

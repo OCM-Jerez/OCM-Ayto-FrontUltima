@@ -12,74 +12,124 @@ import {BreadcrumbService} from '../../breadcrumb.service';
 @Component({
     templateUrl: './datademo.component.html',
     styles: [`
-        .ui-dataview-layout-options .ui-button {
-            margin-left: .5em;
-        }
-        .ui-dataview .filter-container {
-            text-align: center;
-        }
+		/* Table */
+		.ui-table.ui-table-cars .ui-table-caption.ui-widget-header {
+			border: 0 none;
+			padding: 12px;
+			text-align: left;
+			font-weight: normal;
+		}
 
-        @media (max-width: 40em) {
-            .ui-dataview .car-details, .ui-dataview .search-icon{
-                text-align: center;
-                margin-top: 0;
-            }
+		.ui-table .ui-table-globalfilter-container {
+			position: relative;
+			top: -4px;
+		}
 
-            .ui-dataview .filter-container {
-                text-align: left;
-            }
-            .ui-dataview-layout-options.ui-buttonset > .ui-button {
-                margin-left: 0;
-                display: inline-block;
-            }
-            .ui-dataview-layout-options.ui-buttonset > .ui-button:first-child {
-                border-radius: 50%;
-            }
-            .ui-dataview-layout-options.ui-buttonset > .ui-button:last-child {
-                border-radius: 50%;
-            }
-        }
-        .car-item {
-            padding-top: 5px;
-        }
+		.ui-column-filter {
+			margin-top: 1em;
+		}
 
-        .car-item .ui-md-3 {
-            text-align: center;
-        }
+		.ui-column-filter .ui-multiselect-label {
+			font-weight: 500;
+		}
 
-        .car-item .ui-g-10 {
-            font-weight: bold;
-        }
+		.ui-table.ui-table-cars .ui-table-thead > tr > th {
+			text-align: left;
+		}
 
-        .empty-car-item-index {
-            background-color: #f1f1f1;
-            width: 60px;
-            height: 60px;
-            margin: 36px auto 0 auto;
-            animation: pulse 1s infinite ease-in-out;
-        }
+		.ui-table-globalfilter-container {
+			float: right;
+			display: inline;
+		}
 
-        .empty-car-item-image {
-            background-color: #f1f1f1;
-            width: 120px;
-            height: 120px;
-            animation: pulse 1s infinite ease-in-out;
-        }
+		.ui-table.ui-table-cars .ui-table-tbody .ui-column-title {
+			font-size: 16px;
+		}
 
-        .empty-car-item-text {
-            background-color: #f1f1f1;
-            height: 18px;
-            animation: pulse 1s infinite ease-in-out;
-        }
+		/* DataView */
+		.filter-container {
+			text-align: center;
+		}
 
-        .title-container {
-            padding: 1em;
-            text-align: right;
-        }
+		.car-details-list {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 2em;
+			border-bottom: 1px solid #d9dad9;
+		}
 
-        .sort-container {
-            text-align: left;
-        }
+		.car-details-list > div {
+			display: flex;
+			align-items: center;
+		}
+
+		.car-details-list > div img {
+			margin-right: 14px;
+		}
+
+		.car-detail {
+			padding: 0 1em 1em 1em;
+			border-bottom: 1px solid #d9dad9;
+			margin: 1em;
+		}
+
+		.ui-panel-content {
+			padding: 1em;
+		}
+
+		@media (max-width: 1024px) {
+			.car-details-list img {
+				width: 75px;
+			}
+
+			.filter-container {
+				text-align: left;
+			}
+		}
+
+		/* Carousel */
+		.car-item {
+			padding-top: 5px;
+		}
+
+		.car-item .ui-md-3 {
+			text-align: center;
+		}
+
+		.car-item .ui-g-10 {
+			font-weight: bold;
+		}
+
+		.empty-car-item-index {
+			background-color: #f1f1f1;
+			width: 60px;
+			height: 60px;
+			margin: 36px auto 0 auto;
+			animation: pulse 1s infinite ease-in-out;
+		}
+
+		.empty-car-item-image {
+			background-color: #f1f1f1;
+			width: 120px;
+			height: 120px;
+			animation: pulse 1s infinite ease-in-out;
+		}
+
+		.empty-car-item-text {
+			background-color: #f1f1f1;
+			height: 18px;
+			animation: pulse 1s infinite ease-in-out;
+		}
+
+		.title-container {
+			padding: 1em;
+			text-align: right;
+		}
+
+		.sort-container {
+			text-align: left;
+		}
 
 		.ui-carousel .ui-carousel-content .ui-carousel-item .car-details > .p-grid {
 			border: 1px solid #b3c2ca;
@@ -111,28 +161,28 @@ import {BreadcrumbService} from '../../breadcrumb.service';
 			margin-left: 0.6em;
 		}
 
-        @media (max-width: 40em) {
-            .car-item {
-                text-align: center;
-            }
-            .index-col {
-                display: none;
-            }
-            .image-col {
-                display: none;
-            }
-        }
-        @keyframes pulse {
-            0% {
-                background-color: rgba(165, 165, 165, 0.1)
-            }
-            50% {
-                background-color: rgba(165, 165, 165, 0.3)
-            }
-            100% {
-                background-color: rgba(165, 165, 165, 0.1)
-            }
-        }
+		@media (max-width: 40em) {
+			.car-item {
+				text-align: center;
+			}
+			.index-col {
+				display: none;
+			}
+			.image-col {
+				display: none;
+			}
+		}
+		@keyframes pulse {
+			0% {
+				background-color: rgba(165, 165, 165, 0.1)
+			}
+			50% {
+				background-color: rgba(165, 165, 165, 0.3)
+			}
+			100% {
+				background-color: rgba(165, 165, 165, 0.1)
+			}
+		}
     `],
     encapsulation: ViewEncapsulation.None
 })
@@ -184,7 +234,7 @@ export class DataDemoComponent implements OnInit {
 
     selectedNodes: TreeNode[];
 
-    scheduleOptions: any;
+    fullcalendarOptions: any;
 
     sortOptions: SelectItem[];
 
@@ -196,11 +246,15 @@ export class DataDemoComponent implements OnInit {
 
     timeout: any;
 
+    brands: SelectItem[];
+
+    colors: SelectItem[];
+
     constructor(private carService: CarService, private eventService: EventService, private nodeService: NodeService,
                 private breadcrumbService: BreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Components' },
-            { label: 'Data', routerLink: ['/components/data'] }
+            {label: 'Components'},
+            {label: 'Data', routerLink: ['/components/data']}
         ]);
     }
 
@@ -227,6 +281,30 @@ export class DataDemoComponent implements OnInit {
         this.nodeService.getFiles().then(files => this.files3 = files);
         this.nodeService.getFilesystem().then(files => this.files4 = files);
         this.eventService.getEvents().then(events => {this.events = events; });
+
+        this.brands = [
+            { label: 'Audi', value: 'Audi' },
+            { label: 'BMW', value: 'BMW' },
+            { label: 'Fiat', value: 'Fiat' },
+            { label: 'Honda', value: 'Honda' },
+            { label: 'Jaguar', value: 'Jaguar' },
+            { label: 'Mercedes', value: 'Mercedes' },
+            { label: 'Renault', value: 'Renault' },
+            { label: 'VW', value: 'VW' },
+            { label: 'Volvo', value: 'Volvo' }
+        ];
+
+        this.colors = [
+            { label: 'White', value: 'White' },
+            { label: 'Green', value: 'Green' },
+            { label: 'Silver', value: 'Silver' },
+            { label: 'Black', value: 'Black' },
+            { label: 'Red', value: 'Red' },
+            { label: 'Maroon', value: 'Maroon' },
+            { label: 'Brown', value: 'Brown' },
+            { label: 'Orange', value: 'Orange' },
+            { label: 'Blue', value: 'Blue' }
+        ];
 
         this.carouselCars = [
             {vin: 'r3278r2', year: 2010, brand: 'Audi', color: 'Black'},
@@ -258,7 +336,7 @@ export class DataDemoComponent implements OnInit {
             }
         ];
 
-        this.scheduleOptions = {
+        this.fullcalendarOptions = {
             plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
             defaultDate: '2016-01-12',
             header: {
@@ -305,6 +383,7 @@ export class DataDemoComponent implements OnInit {
             { label: 'Brand', value: 'brand' }
         ];
     }
+
     loadCarsLazy(event: LazyLoadEvent) {
         if (this.timeout) {
             clearTimeout(this.timeout);

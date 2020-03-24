@@ -239,7 +239,7 @@ body {
                 color: $headerTextColor;
                 min-width: 1.714em;
                 min-height: 1.714em;
-                line-height: 1.714em;
+                line-height: 1.74em;
                 @include border-radius(50%);
                 @include transition(background-color $transitionDuration);
 
@@ -411,6 +411,28 @@ body {
 
         .ui-table-loading-icon {
             color: #ffffff;
+        }
+
+        .ui-table-globalfilter-container {
+            .ui-inputtext {
+                background-color: transparent;
+                background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, $inputBorderColor, $inputBorderColor);
+                border-width: 0;
+                padding: 2px;
+                color: #ffffff;
+
+                ::-webkit-input-placeholder { /* Edge */
+                    color: #ffffff;
+                }
+
+                :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                    color: #ffffff;
+                }
+
+                ::placeholder {
+                    color: #ffffff;
+                }
+            }
         }
 
         .ui-sortable-column {
@@ -705,13 +727,13 @@ body {
         .fc-head {
             th {
                 border-color: $primaryColor;
+                padding: $headerPadding;
             }
 
             .fc-row {
                 background-color: $primaryColor;
                 color: $headerTextColor;
                 border: 1px solid $primaryColor;
-                padding: $headerPadding;
                 font-weight: $headerFontWeight;
             }
         }
