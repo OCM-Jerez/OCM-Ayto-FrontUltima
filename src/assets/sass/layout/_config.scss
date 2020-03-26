@@ -205,6 +205,10 @@
                     font-size: 32px;
                     color: $primaryColor;
                     position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -20px;
+                    margin-left: -20px;
                     @include border-radius(50%);
                     background-color: #ffffff;
                     width: 40px;
