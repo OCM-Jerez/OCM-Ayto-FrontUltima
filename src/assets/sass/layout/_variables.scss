@@ -1,4 +1,47 @@
-@import "../variables";
+/* Common */
+$textColor:rgba(0,0,0.87);
+$textSecondaryColor:rgba(0,0,0,.60);
+$fontSize:14px;
+$fontFamily:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+$lineHeight:1.5em;
+$transitionDuration:.2s;
+$borderRadius:4px;
+$inputOptionPadding:.625em .875em;
+$hoverBgColor:#e8e8e8;
+$hoverTextColor:#000000;
+$activeMenuItemBadgeColor:#ffffff;
+$activeMenuItemBadgeTextColor:#212121;
+$dividerColor:#bdbdbd;
+$letterSpacing:.25px;
+
+$blueGrey:#607D8B;
+$blueGreyHover:#37474F;
+$cyan:#00BCD4;
+$cyanHover:#00838F;
+$teal:#009688;
+$tealHover:#00695C;
+$red:#F44336;
+$redHover:#C62828;
+$green:#4CAF50;
+$greenHover:#2E7D32;
+$deepOrange:#FF5722;
+$deepOrangeHover:#D84315;
+$purple:#673AB7;
+$purpleHover:#4527A0;
+$pink:#E91E63;
+$pinkHover:#AD1457;
+$amber:#FFC107;
+$amberHover:#FF8F00;
+$orange:#FF9800;
+$orangeHover:#EF6C00;
+$brown:#795548;
+$brownHover:#4E342E;
+$indigo:#3F51B5;
+$indigoHover:#283593;
+$blue:#03A9F4;
+$blueHover:#0277BD;
+$secondary:#ffffff;
+$grayBgColor:#757575;
 
 /* Layout */
 $bodyBgColor:#f7f7f7;

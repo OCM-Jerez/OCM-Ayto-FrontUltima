@@ -1,5 +1,6 @@
 html {
     height: 100%;
+    font-size: $fontSize;
 }
 
 body {
@@ -70,6 +71,7 @@ body {
                 display: inline-block;
                 vertical-align: middle;
                 height: 36px;
+                width: 36px;
                 margin-right: 10px;
                 position: relative;
                 left: -16px;
@@ -85,9 +87,9 @@ body {
                 }
 
                 i {
-                    @include material-icon("chevron_left");
                     @include transition(all $transitionDuration);
-                    font-size: 36px;
+                    font-size: 30px;
+                    margin-top: 3px;
                 }
             }
 
@@ -96,14 +98,16 @@ body {
                 color: $topbarButtonColor;
                 vertical-align: middle;
                 height: 36px;
-                margin-top: 4px;
+                width: 36px;
+                line-height: 36px;
+                margin-top: 7px;
                 float: right;
-
                 @include transition(all $transitionDuration);
 
                 i {
                     @include transition(color $transitionDuration);
-                    font-size: 36px;
+                    font-size: 24px;
+                    vertical-align: text-bottom;
                 }
             }
 
@@ -117,33 +121,15 @@ body {
 
             .topbar-items {
                 .search-item {
+                    margin-top: 0;
+
                     input {
-                        position: relative;
-                        top: -10px;
-                        font-size: $fontSize;
-                        background-color: transparent;
-                        background-image: linear-gradient(to bottom, #ffffff, #ffffff), linear-gradient(to bottom, lighten($primaryColor,25%),  lighten($primaryColor,25%));
-                        border-width: 0;
-                        padding: 2px;
-                        color: $topbarSearchColor;
-
-                        &:focus {
-                            outline: 0 none;
-                        }
+                        padding: .5rem 1rem .5rem 3rem;
                     }
 
-                    input:focus ~ label {
-                        top:-5px;
-                        font-size:12px;
-                    }
-
-                    input.ui-state-filled ~ label {
-                        display: none;
-                    }
-
-                    label {
-                        color: $topbarSearchColor;
-                        top: 8px;
+                    i {
+                        color: $textColor;
+                        font-size: 1em;
                     }
                 }
             }
@@ -281,19 +267,17 @@ body {
 
         .menuitem-badge {
             position: absolute;
-            right: 3.5em;
-            top: .75em;
+            right: 2.5em;
             display: inline-block;
-            width: 1em;
-            height: 1em;
-            margin-right: .5em;
+            width: 18px;
+            height: 18px;
             text-align: center;
-            background-color: $accentColor;
-            color: $accentTextColor;
-            font-size: $fontSize - 2;
+            background-color: #E91E63;
+            color: #ffffff;
+            font-size: 14px;
             font-weight: 700;
-            line-height: 1em;
-            @include border-radius(50%);
+            line-height: 18px;
+            border-radius: 50%;
         }
 
         .layout-menu-tooltip {
@@ -379,11 +363,16 @@ body {
 
     .layout-main {
         padding: 75px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        @include transition(margin-left $transitionDuration);
 
         .layout-content {
-            padding: 16px;
+            padding: 23px;
+            flex: 1 1 0;
         }
-        @include transition(margin-left $transitionDuration);
     }
 
     .layout-mask {
@@ -397,7 +386,7 @@ body {
         @include clearfix();
 
         ul {
-            margin: 8px 0 0 0;
+            margin: 10px 0 0 0;
             padding: 0 0 0 20px;
             list-style: none;
             color: $textSecondaryColor;
@@ -408,16 +397,17 @@ body {
                 vertical-align: top;
                 color: $textSecondaryColor;
 
-                &:nth-child(even) {
-                    font-size: 20px;
-                }
-
                 &:first-child(even) {
                     color: $primaryColor;
                 }
 
                 a {
                     color: $textSecondaryColor;
+                    font-size: 1em;
+
+                    i {
+                        font-size: 1.25em;
+                    }
                 }
             }
         }
@@ -441,6 +431,7 @@ body {
                 }
 
                 i {
+                    font-size: 1.25em;
                     line-height: inherit;
                 }
             }
@@ -451,7 +442,6 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
-        width: 268px;
 
         &.ultima-main-menu {
           margin-top: 16px;
@@ -462,12 +452,14 @@ body {
             a {
                 font-size: 1em;
                 display: block;
-                padding: .5em 2.5em .5em 1em;
+                padding: .5em 1em;
                 color: $textColor;
                 width: 100%;
                 box-sizing: border-box;
                 @include transition(background-color $transitionDuration);
                 overflow: hidden;
+                cursor: pointer;
+                user-select: none;
 
                 i {
                     color: $layoutMenuItemIconColor;
@@ -477,7 +469,14 @@ body {
                     display: inline-block;
                     vertical-align: middle;
                     margin-right: .5em;
-                    font-size: 1.5em;
+                    font-size: 1.25em;
+                }
+
+                i.submenu-icon {
+                    float: right;
+                    font-size: $fontSize + 4;
+                    margin-right: -.15em;
+                    transition: transform $transitionDuration;
                 }
 
                 i:last-child {
@@ -523,8 +522,8 @@ body {
                         color: $primaryColor;
                     }
 
-                    i:last-child {
-                        @include rotate(-180deg);
+                    i.submenu-icon {
+                        transform: rotate(-180deg);
                     }
                 }
             }
@@ -544,10 +543,7 @@ body {
                         }
 
                         i:first-child {
-                            display: inline-block;
-                            vertical-align: middle;
-                            margin-right: .6em;
-                            font-size: 1.250em;
+                            font-size: 1em;
                         }
                     }
 
@@ -615,7 +611,9 @@ body {
     }
 
     .footer {
-        padding: .5em;
+        .card {
+            margin-bottom: 0;
+        }
 
         .footer-text-left {
             float: left;
@@ -658,11 +656,6 @@ body {
     }
 }
 
-.ajax-loader {
-    font-size: 2em;
-    color: $accentColor;
-}
-
 @media (min-width: 1025px) {
 
     .layout-container {
@@ -676,7 +669,8 @@ body {
             > li {
                 float: right;
                 position: relative;
-                margin-left: 8px;
+                margin-left: 1em;
+                margin-top: 4px;
 
                 > a {
                     position: relative;
@@ -692,7 +686,7 @@ body {
                         top: -5px;
                         background-color: $accentColor;
                         color: $accentTextColor;
-                        @include border-radius(50%);
+                        border-radius: 50%;
                         padding: 2px 4px;
                         display: block;
                         font-size: 12px;
@@ -701,9 +695,9 @@ body {
                 }
 
                 .topbar-icon {
-                    font-size: 36px;
+                    font-size: 24px;
                     color: $topbarIconColor;
-                    @include transition(color $transitionDuration);
+                    transition: color $transitionDuration;
 
                     &:hover {
                         color: $topbarIconHoverColor;
@@ -711,6 +705,7 @@ body {
                 }
 
                 &.profile-item {
+                    margin-top: 0;
                     .profile-image {
                         width: 36px;
                         height: 36px;
@@ -719,14 +714,12 @@ body {
 
                 > ul {
                     position: absolute;
-                    top: 55px;
+                    top: 46px;
                     right: 5px;
                     display: none;
                     width: 250px;
                     background-color: $topbarSubmenuBgColor;
-                    @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
-                    -webkit-animation-duration: $transitionDuration;
-                    -moz-animation-duration: $transitionDuration;
+                    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
                     animation-duration: $transitionDuration;
                 }
 
@@ -760,6 +753,7 @@ body {
                     .topbar-right {
                         #menu-button {
                             i {
+                                margin-left: 3px;
                                 @include rotate(180deg);
                             }
                         }
@@ -984,8 +978,8 @@ body {
                 }
 
                 .menuitem-badge {
-                    left: 32px;
-                    top: 7px;
+                    left: 1.75em;
+                    top: .15em;
                 }
 
                 .active-menuitem {
@@ -1062,7 +1056,7 @@ body {
                             padding-bottom: .5em;
 
                             i:first-child {
-                                font-size: 1.75em;
+                                font-size: 1.5em;
                                 margin-right: 0;
                             }
 
@@ -1081,7 +1075,7 @@ body {
                             top: 0;
                             left: 75px;
                             min-width: 200px;
-                            @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
+                            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
 
                             li {
                                 a {
@@ -1301,12 +1295,6 @@ body {
                         }
 
                         &.search-item {
-                            input {
-                                background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, desaturate(lighten($primaryColor,25%), 25%), desaturate(lighten($primaryColor,25%), 25%));
-                            }
-                        }
-
-                        &.search-item {
                             text-align: center;
                             width: 100%;
                             display: block;
@@ -1314,36 +1302,6 @@ body {
                             font-size: 16px;
                             padding: 16px 16px;
                             position: relative;
-
-                            input {
-                                top: 0;
-                                width: 100%;
-                                box-sizing: border-box;
-                                padding-right:16px;
-                                border-color: $dividerColor;
-                                color: $textColor;
-
-                                &:focus {
-                                    border-color: $dividerColor;
-                                }
-                            }
-
-                            input:focus ~ label,
-                            input.ui-state-filled ~ label  {
-                                top: -20px;
-                                color: $primaryColor;
-                            }
-
-                            label {
-                                top: 1px;
-                                color: $textColor;
-                            }
-
-                            i {
-                                position: absolute;;
-                                right: 5px;
-                                top: -2px;
-                            }
                         }
 
                         &.profile-item {
@@ -1378,29 +1336,17 @@ body {
         .topbar {
             .topbar-right {
                 #topbar-menu-button {
+                    right: 10px;
+                    margin-right: 25px;
                     position: absolute;
-                    height: 1.5em;
-                    right: 24px;
-                    top: 1.375em;
-
-                    i {
-                        font-size: 1.5em;
-                    }
+                    top: 15px;
                 }
 
                 #rightpanel-menu-button {
                     position: absolute;
-                    height: 1.5em;
-                    right: 8px;
-                    top: 1.375em;
-
-                    i {
-                        font-size: 1.5em;
-                    }
-                }
-
-                #menu-button {
-                    margin-right: 0;
+                    right: 5px;
+                    top: 15px;
+                    margin-left: 35px;
                 }
             }
         }

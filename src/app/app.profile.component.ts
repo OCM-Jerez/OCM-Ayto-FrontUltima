@@ -9,32 +9,32 @@ import {trigger, state, transition, style, animate} from '@angular/animations';
             <a href="#" (click)="onClick($event)">
                 <img class="profile-image" src="assets/layout/images/avatar.png" />
                 <span class="profile-name">Jane Williams</span>
-                <i class="material-icons">keyboard_arrow_down</i>
+                <i class="pi pi-angle-down"></i>
             </a>
         </div>
 
         <ul class="ultima-menu profile-menu" [@menu]="active ? 'visible' : 'hidden'">
             <li role="menuitem">
                 <a href="#" class="ripplelink" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="material-icons">person</i>
+                    <i class="pi pi-user"></i>
                     <span>Profile</span>
                 </a>
             </li>
             <li role="menuitem">
                 <a href="#" class="ripplelink" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="material-icons">security</i>
+                    <i class="pi pi-lock"></i>
                     <span>Privacy</span>
                 </a>
             </li>
             <li role="menuitem">
                 <a href="#" class="ripplelink" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="material-icons">settings_application</i>
+                    <i class="pi pi-cog"></i>
                     <span>Settings</span>
                 </a>
             </li>
             <li role="menuitem">
                 <a href="#" class="ripplelink" [attr.tabindex]="!active ? '-1' : null">
-                    <i class="material-icons">power_settings_new</i>
+                    <i class="pi pi-power-off"></i>
                     <span>Logout</span>
                 </a>
             </li>

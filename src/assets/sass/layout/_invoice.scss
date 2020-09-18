@@ -3,7 +3,6 @@
         margin-bottom: 30px ;
 
         .title{
-            margin-top: 40px;
             font-size: 28px;
             font-weight: 900;
             color:$textColor;
@@ -77,6 +76,10 @@
 
     .table-g-6{
         padding: 0;
+    }
+
+    .p-nogutter > .p-col, .p-nogutter > [class*=p-col-] {
+        padding: .5em;
     }
 }
 

@@ -13,20 +13,20 @@ import { AppMainComponent } from './app.main.component';
     template: `
 		<ng-container>
 			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items"
-               (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" class="ripplelink"
+               (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" pRipple
 			   [attr.target]="item.target" [attr.tabindex]="0">
-				<i *ngIf="item.icon" class="material-icons">{{item.icon}}</i>
+				<i *ngIf="item.icon" [ngClass]="item.icon"></i>
 				<span>{{item.label}}</span>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-				<i class="material-icons submenu-icon" *ngIf="item.items">keyboard_arrow_down</i>
+				<i class="pi pi-fw pi-angle-down submenu-icon" *ngIf="item.items"></i>
 			</a>
 			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
-			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" class="ripplelink"
+			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" pRipple
 			   [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
-				<i *ngIf="item.icon" class="material-icons">{{item.icon}}</i>
+				<i *ngIf="item.icon" [ngClass]="item.icon"></i>
 				<span>{{item.label}}</span>
 				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-				<i class="material-icons submenu-icon" *ngIf="item.items">keyboard_arrow_down</i>
+				<i class="pi pi-fw pi-angle-down submenu-icon" *ngIf="item.items"></i>
 			</a>
 			<div class="layout-menu-tooltip">
 				<div class="layout-menu-tooltip-arrow"></div>

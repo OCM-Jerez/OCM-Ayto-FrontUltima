@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {BreadcrumbService} from '../breadcrumb.service';
+import {AppBreadcrumbService} from '../app.breadcrumb.service';
 
 @Component({
     selector: 'app-invoice',
@@ -7,7 +7,7 @@ import {BreadcrumbService} from '../breadcrumb.service';
 })
 export class AppInvoiceComponent {
 
-    constructor(private breadcrumbService: BreadcrumbService) {
+    constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'Pages' },
             { label: 'Invoice', routerLink: ['/pages/invoice'] }

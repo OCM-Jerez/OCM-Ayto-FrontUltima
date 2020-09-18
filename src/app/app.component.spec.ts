@@ -11,7 +11,7 @@ import {AppInlineProfileComponent} from './app.profile.component';
 import {AppFooterComponent} from './app.footer.component';
 import {AppBreadcrumbComponent} from './app.breadcrumb.component';
 import {AppMenuComponent} from './app.menu.component';
-import {BreadcrumbService} from './breadcrumb.service';
+import {AppBreadcrumbService} from './app.breadcrumb.service';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
 import {TabViewModule} from 'primeng/tabview';
 
@@ -29,7 +29,7 @@ describe('AppComponent', () => {
                 AppInlineProfileComponent,
                 AppRightpanelComponent
             ],
-            providers: [BreadcrumbService]
+            providers: [AppBreadcrumbService]
         });
         TestBed.compileComponents();
     });

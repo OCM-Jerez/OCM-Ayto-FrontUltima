@@ -1,7 +1,8 @@
 @import './_variables';
-@import '../overrides/layout_variables';
-@import '../_mixins';
-@import '../_fonts';
+@import '../overrides/_layout_variables';
+@import './_mixins';
+@import './_fonts';
+@import './_typography';
 @import './_utils.scss';
 @import './_splash.scss';
 @import './_dashboard.scss';
@@ -12,6 +13,6 @@
 @import './_invoice.scss';
 @import './_wizard.scss';
 @import './_main.scss';
-@import './config.scss';
-@import './_compact.scss';
-@import '../overrides/layout_styles';
+@import './_config.scss';
+@import './_widgets.scss';
+@import '../overrides/_layout_styles';

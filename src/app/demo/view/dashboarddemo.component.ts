@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {CarService} from '../service/carservice';
 import {EventService} from '../service/eventservice';
-import {Car} from '../domain/car';
-import {SelectItem} from 'primeng/primeng';
-import {BreadcrumbService} from '../../breadcrumb.service';
+import {SelectItem} from 'primeng/api';
+import {Product} from '../domain/product';
+import {ProductService} from '../service/productservice';
+import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -15,9 +15,7 @@ export class DashboardDemoComponent implements OnInit {
 
     cities: SelectItem[];
 
-    cars: Car[];
-
-    cols: any[];
+    products: Product[];
 
     chartData: any;
 
@@ -25,25 +23,16 @@ export class DashboardDemoComponent implements OnInit {
 
     selectedCity: any;
 
-    selectedCar: Car;
-
     scheduleOptions: any;
 
-    constructor(private carService: CarService, private eventService: EventService, private breadcrumbService: BreadcrumbService) {
+    constructor(private productService: ProductService, private eventService: EventService,
+                private breadcrumbService: AppBreadcrumbService) {
       this.breadcrumbService.setItems([
-          {label: 'Dashboard'},
-          {label: 'Control Center', routerLink: ['/']}
+          {label: 'Dashboard', routerLink: ['/']}
       ]); }
 
     ngOnInit() {
-        this.carService.getCarsSmall().then(cars => this.cars = cars);
-
-        this.cols = [
-            { field: 'vin', header: 'Vin' },
-            { field: 'year', header: 'Year' },
-            { field: 'brand', header: 'Brand' },
-            { field: 'color', header: 'Color' }
-        ];
+        this.productService.getProducts().then(data => this.products = data);
 
         this.eventService.getEvents().then(events => {this.events = events; });
 
@@ -75,9 +64,9 @@ export class DashboardDemoComponent implements OnInit {
 
         this.scheduleOptions = {
             plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
-            defaultDate: '2016-01-12',
+            defaultDate: '2017-02-12',
             header: {
-                left: 'prev,next, today',
+                left: 'prev,next',
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }

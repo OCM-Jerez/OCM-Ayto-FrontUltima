@@ -552,19 +552,19 @@ label: 'Components', icon: 'list', badge: '2', badgeStyleClass: 'red-badge'
 
             <h1>Breadcrumb</h1>
             <p>Ultima has an optional built-in breadcrumb section right below the topbar. The items are dynamically generated using a
-                BreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
+                AppBreadcrumbService where each main page that goes into the router-outlet should provide a collection of MenuItem instances.
                 Here is an example component that updates the breadcrumb.</p>
 <pre>
 <code class="language-javascript" pCode>
 import &#123;Component&#125; from '@angular/core';
-import &#123;BreadcrumbService&#125; from '../../breadcrumb.service';
+import &#123;AppBreadcrumbService&#125; from '../../breadcrumb.service';
 
 @Component(&#123;
     templateUrl: './emptydemo.component.html'
 &#125;)
 export class ControlPanelComponent &#123;
 
-    constructor(private breadcrumbService: BreadcrumbService) &#123;
+    constructor(private breadcrumbService: AppBreadcrumbService) &#123;
         this.breadcrumbService.setItems([
             &#123;label: 'Admin'&#125;,
             &#123;label: 'Control Panel', routerLink: ['/controlpanel']&#125;
@@ -661,7 +661,7 @@ export class ControlPanelComponent &#123;
                 <li>Update app.topbar.component.ts.</li>
                 <li>Update app.profile.component.ts.</li>
                 <li>Update app.menu.component.ts.</li>
-                <li>Update app.breadcrumb.component.ts and breadcrumb.service.ts.</li>
+                <li>Update app.breadcrumb.component.ts and app.breadcrumb.service.ts.</li>
                 <li>Update layout css files.</li>
                 <li>Update theme css files.</li>
             </ul>

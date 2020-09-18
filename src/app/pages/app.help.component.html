@@ -1,26 +1,24 @@
 <div class="help-wrapper">
-    <div class="ui-g">
-        <div class="ui-g-12">
+    <div class="p-grid">
+        <div class="p-col-12">
             <div class="card help-wrapper-card">
                 <div class="help-header">
                     <img src="assets/layout/images/extensions/help-header@2x.jpg" alt="ultima-layout" style="width: 100%" />
                     <h1>Frequently Asked Questions</h1>
                     <div class="search">
-                        <i class="material-icons">
-                            search
-                        </i>
+                        <i class="pi pi-search"></i>
                         <p-autoComplete id="acSimple" [(ngModel)]="text" [suggestions]="filteredText" (completeMethod)="filterText($event)"
                                         placeholder="Search for anwers"></p-autoComplete>
                     </div>
                 </div>
                 <div class="help-content">
                     <div class="card">
-                        <p-accordion styleClass="main-accordion">
-                            <p-accordionTab [selected]="true">
+                        <p-accordion styleClass="main-accordion" [activeIndex]="0">
+                            <p-accordionTab>
                                 <p-header>
-                                    <i class="material-icons">book</i>
+                                    <i class="pi pi-bookmark"></i>
                                     <div class="accordion-title">
-                                        <h1>The Basics</h1>
+                                        <h4>The Basics</h4>
                                         <p>4 articles in this collection</p>
                                     </div>
                                 </p-header>
@@ -48,9 +46,9 @@
                         <p-accordion styleClass="main-accordion">
                             <p-accordionTab>
                                 <p-header>
-                                    <i class="material-icons">book</i>
+                                    <i class="pi pi-bookmark"></i>
                                     <div class="accordion-title">
-                                        <h1>Questions About Licenses</h1>
+                                        <h4>Questions About Licenses</h4>
                                         <p>3 articles in this collection</p>
                                     </div>
                                 </p-header>
@@ -75,9 +73,9 @@
                         <p-accordion styleClass="main-accordion">
                             <p-accordionTab>
                                 <p-header>
-                                    <i class="material-icons">book</i>
+                                    <i class="pi pi-bookmark"></i>
                                     <div class="accordion-title">
-                                        <h1>Questions About Frameworks</h1>
+                                        <h4>Questions About Frameworks</h4>
                                         <p>6 articles in this collection</p>
                                     </div>
                                 </p-header>
