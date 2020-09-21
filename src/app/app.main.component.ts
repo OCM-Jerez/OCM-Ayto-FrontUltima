@@ -44,6 +44,8 @@ export class AppMainComponent implements OnInit {
 
     ripple = true;
 
+    compactMode = true;
+
     constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
 
     ngOnInit() {

@@ -65,6 +65,16 @@ import {AppMainComponent} from './app.main.component';
                     <label for="profileMode2">Overlay</label>
                 </div>
 
+                <h5>Menu Colors</h5>
+                <div class="p-field-radiobutton">
+                    <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="changeThemeStyle($event, true)"></p-radioButton>
+                    <label for="compactMode1">Compact</label>
+                </div>
+                <div class="p-field-radiobutton">
+                    <p-radioButton name="compactMode" [value]="false" [(ngModel)]="app.compactMode" inputId="compactMode2" (onClick)="changeThemeStyle($event, false)"></p-radioButton>
+                    <label for="compactMode2">Standart</label>
+                </div>
+
                 <h5>Themes</h5>
                 <div class="layout-themes">
                     <div *ngFor="let theme of themes">
@@ -106,7 +116,11 @@ export class AppConfigComponent implements OnInit {
 
     changeTheme(theme) {
         this.themeColor = theme;
-        this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
+        if (this.app.compactMode) {
+            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '-compact.css');
+        } else {
+            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
+        }
         this.changeStyleSheetsColor('layout-css', 'layout-' + theme + '.css');
     }
 
@@ -143,12 +157,13 @@ export class AppConfigComponent implements OnInit {
         }
     }
 
-    onClickUserMode(mode: string) {
-        if (this.app.isHorizontal()) {
-            return;
+    changeThemeStyle(event, compactMode) {
+        if (compactMode) {
+            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '-compact.css');
         }
-
-        this.app.profileMode = mode;
+        else {
+            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
+        }
     }
 
     onConfigButtonClick(event) {
