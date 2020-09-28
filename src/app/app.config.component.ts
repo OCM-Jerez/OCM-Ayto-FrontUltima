@@ -65,7 +65,7 @@ import {AppMainComponent} from './app.main.component';
                     <label for="profileMode2">Overlay</label>
                 </div>
 
-                <h5>Menu Colors</h5>
+                <h5>Theme Modes</h5>
                 <div class="p-field-radiobutton">
                     <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="changeThemeStyle($event, true)"></p-radioButton>
                     <label for="compactMode1">Compact</label>
