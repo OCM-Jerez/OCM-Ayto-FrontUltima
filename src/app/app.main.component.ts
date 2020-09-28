@@ -8,7 +8,7 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppMainComponent implements OnInit {
 
-    layoutMode = 'static';
+    layoutMode = 'slim';
 
     darkMenu = false;
 
@@ -44,7 +44,7 @@ export class AppMainComponent implements OnInit {
 
     ripple = true;
 
-    compactMode = true;
+    compactMode = false;
 
     constructor(private menuService: MenuService, private primengConfig: PrimeNGConfig) {}
 
