@@ -93,8 +93,11 @@ export class AppMainComponent implements OnInit {
             this.overlayMenuActive = !this.overlayMenuActive;
         } else {
             if (this.isDesktop()) {
-                this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive; } else {
-                this.staticMenuMobileActive = !this.staticMenuMobileActive; }
+                this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
+            }
+            else {
+                this.staticMenuMobileActive = !this.staticMenuMobileActive;
+            }
         }
 
         event.preventDefault();
@@ -178,21 +181,5 @@ export class AppMainComponent implements OnInit {
 
     isSlim() {
         return this.layoutMode === 'slim';
-    }
-
-    changeToStaticMenu() {
-        this.layoutMode = 'static';
-    }
-
-    changeToOverlayMenu() {
-        this.layoutMode = 'overlay';
-    }
-
-    changeToHorizontalMenu() {
-        this.layoutMode = 'horizontal';
-    }
-
-    changeToSlimMenu() {
-        this.layoutMode = 'slim';
     }
 }

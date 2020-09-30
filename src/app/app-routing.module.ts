@@ -35,6 +35,7 @@ import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
 import {AppWizardComponent} from './pages/app.wizard.component';
+import {MediaDemoComponent} from './demo/view/mediademo.component';
 
 @NgModule({
     imports: [
@@ -51,6 +52,7 @@ import {AppWizardComponent} from './pages/app.wizard.component';
                     {path: 'uikit/tree', component: TreeDemoComponent},
                     {path: 'uikit/panel', component: PanelsDemoComponent},
                     {path: 'uikit/overlay', component: OverlaysDemoComponent},
+                    {path: 'uikit/media', component: MediaDemoComponent},
                     {path: 'uikit/menu', component: MenusDemoComponent},
                     {path: 'uikit/message', component: MessagesDemoComponent},
                     {path: 'uikit/misc', component: MiscDemoComponent},
