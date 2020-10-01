@@ -394,7 +394,7 @@ body {
 
             li {
                 display: inline-block;
-                vertical-align: top;
+                vertical-align: middle;
                 color: $textSecondaryColor;
 
                 &:first-child(even) {
@@ -846,7 +846,7 @@ body {
 
                         > ul {
                             position: absolute;
-                            top: 41px;
+                            top: 32px;
                             left: 0px;
                             width: 250px;
                             background-color: $horizontalLayoutMenuSubMenuBgColor;
