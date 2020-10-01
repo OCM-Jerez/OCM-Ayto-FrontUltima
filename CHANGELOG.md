@@ -4,8 +4,8 @@
 
 **Implemented New Features and Enhancements:**
 
-- Migrate to PrimeOne Design Architecture [\#3](https://github.com/primefaces/ultima-ng/issues/3)
-- Upgrade to Angular and PrimeNG 10 [\#2](https://github.com/primefaces/ultima-ng/issues/2)
+- Migrate to PrimeOne Design Architecture
+- Upgrade to Angular and PrimeNG 10
 
 #### Migration Guide
 
