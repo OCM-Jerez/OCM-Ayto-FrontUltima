@@ -1,188 +1,323 @@
 <div class="p-grid dashboard">
-    <div class="p-col-12 p-md-4">
-        <div class="card overview">
-            <div class="overview-content clearfix">
-                <span class="overview-title">Sales</span>
-                <span class="overview-badge">+%90</span>
-                <span class="overview-detail">$22,650 / week</span>
-            </div>
-            <div class="overview-footer">
-                <img src="assets/layout/images/dashboard/sales.svg" style="width: 100%" />
-            </div>
-        </div>
-    </div>
-    <div class="p-col-12 p-md-4">
-        <div class="card overview">
-            <div class="overview-content clearfix">
-                <span class="overview-title">Views</span>
-                <span class="overview-badge">+%60</span>
-                <span class="overview-detail">6,520 / day</span>
-            </div>
-            <div class="overview-footer">
-                <img src="assets/layout/images/dashboard/views.svg" style="width: 100%" />
-            </div>
-        </div>
-    </div>
-    <div class="p-col-12 p-md-4">
-        <div class="card overview">
-            <div class="overview-content clearfix">
-                <span class="overview-title">Users</span>
-                <span class="overview-badge">+%45</span>
-                <span class="overview-detail">5,200 / day</span>
-            </div>
-            <div class="overview-footer">
-                <img src="assets/layout/images/dashboard/progress.svg" style="width: 100%" />
-            </div>
-        </div>
-    </div>
-
     <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="p-grid card colorbox colorbox-1">
-            <div class="p-col-4">
-                <i class="pi pi-check-circle"></i>
-            </div>
-            <div class="p-col-8">
-                <span class="colorbox-name">Tasks</span>
-                <span class="colorbox-count">50</span>
-            </div>
-        </div>
-    </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="p-grid card colorbox colorbox-2">
-            <div class="p-col-4">
+        <div class="card overview-box p-d-flex p-flex-column"> 
+            <div class="p-d-flex p-ai-center">
                 <i class="pi pi-shopping-cart"></i>
+                <h6 class="p-m-0 p-pl-2">Orders</h6>
+                <span class="overview-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="p-col-8">
-                <span class="colorbox-name">Purchases</span>
-                <span class="colorbox-count">1200</span>
-            </div>
-        </div>
-    </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="p-grid card colorbox colorbox-3">
-            <div class="p-col-4">
-                <i class="pi pi-exclamation-circle"></i>
-            </div>
-            <div class="p-col-8">
-                <span class="colorbox-name">Issues</span>
-                <span class="colorbox-count">22</span>
-            </div>
-        </div>
-    </div>
-    <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="p-grid card colorbox colorbox-4">
-            <div class="p-col-4">
-                <i class="pi pi-envelope"></i>
-            </div>
-            <div class="p-col-8">
-                <span class="colorbox-name">Messages</span>
-                <span class="colorbox-count">10</span>
+            <div class="p-d-flex p-jc-between p-mt-auto">
+                <div class="p-d-flex p-flex-column">
+                    <span class="overview-amount p-mb-1">640</span>
+                    <span class="overview-status">1420 Completed</span>
+                </div>
+                <div class="p-d-flex p-ai-end">
+                    <img src="/assets/layout/images/dashboard/graph-1.svg">
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="p-col-12 p-md-6 p-lg-4 task-list">
-        <p-panel header="Tasks">
-            <ul>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Sales Reports</span>
-                    <i class="pi pi-briefcase"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Pay Invoices</span>
-                    <i class="pi pi-file"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Dinner with Tony</span>
-                    <i class="pi pi-comments"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Client Meeting</span>
-                    <i class="pi pi-users"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">New Theme</span>
-                    <i class="pi pi-palette"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Flight Ticket</span>
-                    <i class="pi pi-ticket"></i>
-                </li>
-                <li>
-                    <p-checkbox binary="true"></p-checkbox>
-                    <span class="task-name">Generate Charts</span>
-                    <i class="pi pi-chart-bar"></i>
-                </li>
-            </ul>
-        </p-panel>
-    </div>
-    <div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
-        <p-panel header="Contact Us">
-            <div class="p-grid">
-                <div class="p-col-12">
-                    <p-dropdown [options]="cities" [(ngModel)]="selectedCity"></p-dropdown>
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="card overview-box p-d-flex p-flex-column"> 
+            <div class="p-d-flex p-ai-center">
+                <i class="pi pi-dollar"></i>
+                <h6 class="p-m-0 p-pl-2">Revenue</h6>
+                <span class="overview-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+            </div>
+            <div class="p-d-flex p-jc-between p-mt-auto">
+                <div class="p-d-flex p-flex-column">
+                    <span class="overview-amount p-mb-1">$57K</span>
+                    <span class="overview-status">$9,640 Income</span>
                 </div>
-                <div class="p-col-12">
-                    <span class="p-float-label">
-                        <input id="name" type="text" pInputText />
-                        <label for="name">Name</label>
-                    </span>
-                </div>
-                <div class="p-col-12">
-                    <span class="p-float-label">
-                        <input id="age" type="text" pInputText />
-                        <label for="age">Age</label>
-                    </span>
-                </div>
-                <div class="p-col-12">
-                    <span class="p-float-label">
-                        <input id="message" type="text" pInputText />
-                        <label for="message">Message</label>
-                    </span>
+                <div class="p-d-flex p-ai-end">
+                    <img src="/assets/layout/images/dashboard/graph-1.svg">
                 </div>
             </div>
-            <button type="button" label="Send" pRipple icon="pi pi-check" pButton></button>
-        </p-panel>
+        </div>
     </div>
-    <div class="p-col-12 p-lg-4 contacts">
-        <p-panel header="Contacts">
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="assets/layout/images/avatar1.png" width="45">
-                        <span class="name">Joshua Williams</span>
-                        <span class="email">joshua@pf-ultima.com</span>
-                    </a>
+
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="card overview-box p-d-flex p-flex-column"> 
+            <div class="p-d-flex p-ai-center">
+                <i class="pi pi-users"></i>
+                <h6 class="p-m-0 p-pl-2">Customers</h6>
+                <span class="overview-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+            </div>
+            <div class="p-d-flex p-jc-between p-mt-auto">
+                <div class="p-d-flex p-flex-column">
+                    <span class="overview-amount p-mb-1">8572</span>
+                    <span class="overview-status">25402 Registered</span>
+                </div>
+                <div class="p-d-flex p-ai-end">
+                    <img src="/assets/layout/images/dashboard/graph-1.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-md-6 p-lg-3">
+        <div class="card overview-box p-d-flex p-flex-column"> 
+            <div class="p-d-flex p-ai-center">
+                <i class="pi pi-comments"></i>
+                <h6 class="p-m-0 p-pl-2">Comments</h6>
+                <span class="overview-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+            </div>
+            <div class="p-d-flex p-jc-between p-mt-auto">
+                <div class="p-d-flex p-flex-column">
+                    <span class="overview-amount p-mb-1">805</span>
+                    <span class="overview-status">85 Responded</span>
+                </div>
+                <div class="p-d-flex p-ai-end">
+                    <img src="/assets/layout/images/dashboard/graph-1.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Contact</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+
+            <ul class="widget-contacts-list">
+                <li class="p-d-flex p-ai-center p-jc-between">
+                    <div class="person-item p-d-flex p-ai-center">
+                        <img src="/assets/layout/images/avatar.png">
+                        <div class="person-info p-ml-2">
+                            <div>Amy Elsner</div>
+                            <div class="person-subtext">elsner@ultima.org</div>
+                        </div>
+                    </div>
+                    <div class="person-badges p-d-flex p-ai-center">
+                        <span class="badge accounting">Accounting</span>
+                        <span class="badge sales p-ml-2">Sales</span>
+                    </div>
                 </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/layout/images/avatar2.png" width="45">
-                        <span class="name">Emily Clark</span>
-                        <span class="email">emily@pf-ultima.com</span>
-                    </a>
+
+                <li class="p-d-flex p-ai-center p-jc-between">
+                    <div class="person-item p-d-flex p-ai-center">
+                        <img src="/assets/layout/images/avatar1.png">
+                        <div class="person-info p-ml-2">
+                            <div>Bernardo Dominic</div>
+                            <div class="person-subtext">dominic@ultima.org</div>
+                        </div>
+                    </div>
+                    <div class="person-badges">
+                        <span class="badge finance">Finance</span>
+                        <span class="badge sales p-ml-2">Sales</span>
+                    </div>
                 </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/layout/images/avatar3.png" width="45">
-                        <span class="name">Susan Johnson</span>
-                        <span class="email">susan@pf-ultima.com</span>
-                    </a>
+
+                <li class="p-d-flex p-ai-center p-jc-between">
+                    <div class="person-item p-d-flex p-ai-center">
+                        <img src="/assets/layout/images/avatar2.png">
+                        <div class="person-info p-ml-2">
+                            <div>Anna Fali</div>
+                            <div class="person-subtext">fali@ultima.org</div>
+                        </div>
+                    </div>
+                    <div class="person-badges">
+                        <span class="badge management">Management</span>
+                    </div>
                 </li>
-                <li>
-                    <a href="#">
-                        <img src="assets/layout/images/avatar4.png" width="45">
-                        <span class="name">Kelly Stark</span>
-                        <span class="email">kelly@pf-ultima.com</span>
-                    </a>
+
+                <li class="p-d-flex p-ai-center p-jc-between">
+                    <div class="person-item p-d-flex p-ai-center">
+                        <img src="/assets/layout/images/avatar3.png">
+                        <div class="person-info p-ml-2">
+                            <div>Amelie Stone</div>
+                            <div class="person-subtext">stone@ultima.org</div>
+                        </div>
+                    </div>
+                    <div class="person-badges">
+                        <span class="badge management">Management</span>
+                        <span class="badge finance p-ml-2">Finance</span>
+                    </div>
                 </li>
             </ul>
-        </p-panel>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Order Graph</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Chat</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            <div class="widget-chat">
+                <ul>
+                    <li class="from p-d-flex p-ai-start p-mb-3">
+                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <div class="messages p-d-flex p-flex-column p-ai-start">
+                            <span class="message p-mb-1">Hey M. hope you are well.</span>
+                            <span class="message">Our idea is accepted by the board. Now it’s time to execute it.</span>
+                        </div>
+                    </li>
+                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
+                        <div class="messages p-d-flex p-flex-column p-ai-end">
+                            <div class="message">We did it! 🤠</div>
+                        </div>
+                    </li>
+                    <li class="from p-d-flex p-ai-start p-mb-3">
+                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <div class="messages p-d-flex p-flex-column p-ai-start">
+                            <span class="message">That's really good!</span>
+                        </div>
+                    </li>
+                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
+                        <div class="messages p-d-flex p-flex-column p-ai-end">
+                            <div class="message">But it’s important to ship MVP ASAP</div>
+                        </div>
+                    </li>
+                    <li class="from p-d-flex p-ai-start p-mb-3">
+                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <div class="messages p-d-flex p-flex-column p-ai-start">
+                            <span class="message">I’ll be looking at the process then, just to be sure 🤓 </span>
+                        </div>
+                    </li>
+                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
+                        <div class="messages p-d-flex p-flex-column p-ai-end">
+                            <div class="message">That’s awesome. Thanks!</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="p-inputgroup write-message">
+                    <span class="p-inputgroup-addon"><i class="pi pi-plus-circle" style="line-height: 1.25;"></i></span>  
+                    <input type="text" pInputText placeholder="Write your message"> 
+                    <span class="p-inputgroup-addon"><i class="pi pi-video" style="line-height: 1.25;"></i></span>  
+                    <span class="p-inputgroup-addon"><i class="pi pi-clock" style="line-height: 1.25;"></i></span>      
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-3">
+        <div class="card">
+            <div class="card-header">
+                <h5>Activity</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+
+            <ul class="widget-activity">
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Income</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="50" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Tax</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="15" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Invoices</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="78" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Expanses</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="66" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Bonus</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="85" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+                <li>
+                    <div class="activity-item p-d-flex p-flex-column">
+                        <div class="activity-title p-mb-1">Revenue</div>
+                        <div class="activity-subtext p-mb-2">30 November, 16.20</div>
+                        <p-progressBar [value]="54" [showValue]=false></p-progressBar>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-3">
+        <div class="card">
+            <div class="card-header">
+                <h5>Best Sellers</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            <ul class="widget-bestsellers">
+                <li>
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/blue-band.jpg" alt="">
+                        <span>Blue Band</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/bracelet.jpg" alt="">
+                        <span>Bracelet</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/black-watch.jpg" alt="">
+                        <span>Black Watch</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/bamboo-watch.jpg" alt="">
+                        <span>Bamboo Watch</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/blue-t-shirt.jpg" alt="">
+                        <span>Blue T-Shirt</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/game-controller.jpg" alt="">
+                        <span>Game Controller</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/gold-phone-case.jpg" alt="">
+                        <span>Phone Case</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+
+                    <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
+                        <img class="p-mr-3" src="/assets/demo/images/product/purple-t-shirt.jpg" alt="">
+                        <span>Purple T-Shirt</span>
+                        <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div class="p-col-12 p-md-4">
@@ -297,70 +432,5 @@
                 <p-chart type="line" [data]="chartData" responsive="true"></p-chart>
             </p-panel>
         </div>
-    </div>
-
-    <div class="p-col-12 p-md-8">
-        <p-panel header="Calendar" [style]="{'height':'100%'}">
-            <p-fullCalendar [events]="events"  [options]="scheduleOptions"></p-fullCalendar>
-        </p-panel>
-    </div>
-    <div class="p-col-12 p-md-4">
-        <p-panel header="Activity" [style]="{'height':'100%'}">
-            <div class="activity-header">
-                <div class="p-grid">
-                    <div class="p-col-6">
-                        <span style="font-weight:bold">Last Activity</span>
-                        <p>Updated 1 minute ago</p>
-                    </div>
-                    <div class="p-col-6" style="text-align:right">
-                        <button pRipple type="button" label="Update" icon="pi pi-refresh" pButton></button>
-                    </div>
-                </div>
-            </div>
-            <ul class="activity-list">
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Income</h5>
-                        <div class="count">$900</div>
-                    </div>
-                    <p-progressBar value="95" [showValue]="false"></p-progressBar>
-                </li>
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Tax</h5>
-                        <div class="count" style="background-color:#f9c851">$250</div>
-                    </div>
-                    <p-progressBar value="24" [showValue]="false"></p-progressBar>
-                </li>
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Invoices</h5>
-                        <div class="count" style="background-color:#20d077">$125</div>
-                    </div>
-                    <p-progressBar value="55" [showValue]="false"></p-progressBar>
-                </li>
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Expenses</h5>
-                        <div class="count" style="background-color:#f9c851">$250</div>
-                    </div>
-                    <p-progressBar value="15" [showValue]="false"></p-progressBar>
-                </li>
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Bonus</h5>
-                        <div class="count" style="background-color:#007be5">$350</div>
-                    </div>
-                    <p-progressBar value="5" [showValue]="false"></p-progressBar>
-                </li>
-                <li>
-                    <div class="p-d-flex p-jc-between p-ai-center p-mb-3">
-                        <h5 class="activity p-m-0">Revenue</h5>
-                        <div class="count" style="background-color:#ef6262">$500</div>
-                    </div>
-                    <p-progressBar value="25" [showValue]="false"></p-progressBar>
-                </li>
-            </ul>
-        </p-panel>
     </div>
 </div>

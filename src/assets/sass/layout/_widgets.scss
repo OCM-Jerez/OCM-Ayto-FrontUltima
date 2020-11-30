@@ -1,3 +1,193 @@
+.overview-box {
+    height: 120px;
+    overflow: hidden;
+    margin: 0 !important;
+
+    h6 {
+        color: #616161; //todo: move this to variables
+    }
+
+    .overview-icon {
+        margin-left: auto;
+    }
+
+    .overview-amount {
+        font-size: 1.75rem;
+    }
+
+    .overview-status {
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background-color: #43A047;
+        padding: 0.25rem;
+        border-radius: 2px;
+    }
+}
+
+.widget-contacts-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    >li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #E4E4E4;
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+
+        .person-item {
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .person-subtext {
+                font-size: .85rem;
+                font-weight: 500;
+                color: #616161;
+            }
+        }
+
+        .person-badges {
+            .badge {
+                padding: .25rem;
+                border-radius: 2px;
+        
+                &.accounting {
+                    background-color: #BBDEFB;
+                    color: #0D47A1;
+                }
+        
+                &.sales {
+                    background-color: #FFECB3;
+                    color: #BF6B00;
+                }
+
+                &.finance {
+                    background-color: #B2DFDB;
+                    color: #004D40;
+                }
+
+                &.management {
+                    background-color: #FCE4EC;
+                    color: #880E4F;
+                }
+            }
+        }
+    }
+}
+
+.widget-activity {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    >li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #E4E4E4;
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+
+        &:nth-child(1) {
+            .p-progressbar-value {
+                background: #FFC107;
+            }
+        }
+
+        &:nth-child(2) {
+            .p-progressbar-value {
+                background: #E91E63;
+            }
+        }
+
+        &:nth-child(3) {
+            .p-progressbar-value {
+                background: #4CAF50;
+            }
+        }
+
+        &:nth-child(4) {
+            .p-progressbar-value {
+                background: #4CAF50;
+            }
+        }
+
+        &:nth-child(5) {
+            .p-progressbar-value {
+                background: #4CAF50;
+            }
+        }
+
+        &:nth-child(6) {
+            .p-progressbar-value {
+                background: #E91E63;
+            }
+        }
+
+        .activity-item {
+            .activity-title {
+                font-weight: 500;
+            }
+    
+            .activity-subtext {
+                font-size: .85rem;
+                color: #616161;
+            }
+            .p-progressbar {
+                height: 6px;
+                border-radius: 10px;
+                background: #ECEFF1;
+            }
+        }
+    }
+}
+
+.widget-bestsellers {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    >li {
+        padding: 1rem 0;
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+
+        .bestseller-item {
+            background-color: #ECEFF1;
+            border-radius: 4px;
+            height: 3.5rem;
+            transition: box-shadow .2s;
+
+            img {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+            }
+
+            a {
+                color: #212121;
+            }
+
+            .item-button {
+                margin-left: auto;
+            }
+
+            &:hover {
+                background-color: white;
+                box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
+
 .widget-overview {
     padding: 0 !important;
     min-height: 140px;
@@ -309,94 +499,50 @@
 }
 
 .widget-chat {
-    .p-panel-content {
-        padding: 0 !important;
-    }
+    background-image: url("../../layout/images/dashboard/chat-bg.svg");
+    background-size: cover;
     ul {
-        padding: 12px;
+        padding: 1rem;
         margin: 0;
         list-style-type: none;
 
         li {
-            padding: 6px 0;
             img {
-                width: 36px;
-                float: left;
+                width: 32px;
             }
-
-            span {
-                padding: 6px 12px;
-                float: left;
-                display: inline-block;
-                margin: 4px 0;
-                @include border-radius(10px);
-            }
-
-            &.message-from {
-                img, span {
-                    float: left;
-                }
-
-                img {
-                    margin-right: 8px;
-                }
-
-                span {
-                    background-color: #BBDEFB;
-                    color: #000000;
+    
+            &.from {
+                .message{
+                    padding: 1rem;
+                    background-color: #00ACC1;
+                    color: white;
+                    border-radius: 30px;
                 }
             }
-
-            &.message-own {
-                img, span {
-                    float: right;
-                }
-
-                img {
-                    margin-left: 8px;
-                }
-
-                span {
-                    background: #FFECB3;
-                    color: #000000;
+    
+            &.own {
+                text-align: right;
+                .message{
+                    padding: 1rem;
+                    background-color: #D81B60;
+                    color: white;
+                    border-radius: 30px;
                 }
             }
         }
     }
 
-    .new-message {
-        height: 40px;
-        border-top: 1px solid #dce2e7;
-        color: #afafc0;
+    .write-message {
+        border-radius: 30px;
 
-        .message-attachment {
-            display: inline-block;
-            border-right: 1px solid #dce2e7;
-            width: 40px;
-            line-height: 40px;
-            height: 100%;
-            text-align: center;
-
-            i {
-                line-height: inherit;
-                font-size: 24px;
-            }
+        .p-inputgroup-addon:first-child {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
         }
 
-        .message-input {
-            position: relative;
-            top: -4px;
-            width: calc(100% - 100px);
-            display: inline-block;
-
-            input {
-                border: 0 none;
-                font-size: 14px;
-                width: 100%;
-                background-color: transparent;
-                outline: 0 none;
-                color: $textSecondaryColor;
-            }
+        .p-inputgroup-addon:last-child {
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
     }
 }
