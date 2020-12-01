@@ -1,23 +1,27 @@
-<div class="topbar p-p-3 p-d-flex p-jc-between p-flex-row p-ai-center">
-    <div class="topbar-left p-ml-3 p-d-flex" routerLink="/">
-        <div class="logo">
-            <img src="../../assets/layout/images/logo2x.png" alt=""/>
+<div class="exception-page p-d-flex p-flex-column">
+    <div class="topbar p-p-3 p-d-flex p-jc-between p-flex-row p-ai-center">
+        <div class="topbar-left p-ml-3 p-d-flex" routerLink="/">
+            <div class="logo">
+                <img src="../../assets/layout/images/logo2x.png" alt=""/>
+            </div>
+        </div>
+        <div class="topbar-right p-mr-3 p-d-flex" routerLink="/">
+            <h6>DASHBOARD</h6>
         </div>
     </div>
-    <div class="topbar-right p-mr-3 p-d-flex" routerLink="/">
-        <h6>DASHBOARD</h6>
+
+    <div class="exception-body notfound-page p-as-center p-mt-auto p-mb-auto">
+        <div class="exception-panel card p-d-flex p-flex-column">
+            <div class="exception-header p-px-3 p-py-1">
+                <h2>NOT FOUND</h2>
+            </div>
+            <div class="card p-mt-3 p-px-6">
+                <img src="../../assets/layout/images/404.png" alt=""/>
+            </div>
+            <div class="exception-detail p-pb-6">Requested resource is not available.</div>
+            <button pButton pRipple type="button" label="GO BACK TO DASHBOARD" class="p-button-text"></button>
+        </div>
     </div>
 </div>
 
-<div class="exception-body notfound-page p-d-flex p-jc-center p-ai-center">
-    <div class="exception-panel card p-d-flex p-flex-column">
-        <div class="exception-header p-px-3 p-py-1">
-            <h2>NOT FOUND</h2>
-        </div>
-        <div class="card p-mt-3 p-px-3">
-            <img src="../../assets/layout/images/404.png" alt=""/>
-        </div>
-        <div class="exception-detail p-pb-6">Requested resource is not available.</div>
-        <button pButton pRipple type="button" label="GO BACK TO DASHBOARD" class="p-button-text"></button>
-    </div>
-</div>
+
