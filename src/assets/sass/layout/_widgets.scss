@@ -8,6 +8,10 @@
     }
 
     .overview-icon {
+        a {
+            color: #616161;
+        }
+
         margin-left: auto;
     }
 
@@ -22,6 +26,92 @@
         background-color: #43A047;
         padding: 0.25rem;
         border-radius: 2px;
+    }
+
+    .badge-pink {
+        background-color: #E91E63; 
+    }
+}
+
+.overview-box-filled {
+    background-color: #0097A7;
+    color: white;
+
+    h6 {
+        color: #E0F7FA;
+    }
+
+    .overview-icon {
+        a {
+            color: #E0F7FA;;
+        }
+    }
+
+    .overview-amount {
+        font-size: 1.75rem;
+    }
+
+    .overview-status {
+        color: #006064;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background-color: white;
+        padding: 0.25rem;
+        border-radius: 2px;
+    }
+}
+
+.overview-box-filled-yellow {
+    background-color: #FB8C00;
+
+    h6 {
+        color: #FFF3E0;
+    }
+
+    .overview-icon {
+        a {
+            color: #FFF3E0;
+        }
+    }
+
+    .overview-status {
+        color: #E65100;
+    }
+}
+
+.overview-box-filled-pink {
+    background-color: #E91E63;
+
+    h6 {
+        color: #FCE4EC;
+    }
+
+    .overview-icon {
+        a {
+            color: #FCE4EC;
+        }
+    }
+
+    .overview-status {
+        color: #880E4F;
+    }
+}
+
+.overview-box-filled-purple {
+    background-color: #673AB7;
+
+    h6 {
+        color: #EDE7F6;
+    }
+
+    .overview-icon {
+        a {
+            color: #EDE7F6;
+        }
+    }
+
+    .overview-status {
+        color: #311B92;
     }
 }
 
