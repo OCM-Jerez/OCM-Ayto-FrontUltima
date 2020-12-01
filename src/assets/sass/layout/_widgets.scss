@@ -356,6 +356,7 @@
             }
 
             &:hover {
+                cursor: pointer;
                 background-color: white;
                 box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
             }
@@ -458,6 +459,23 @@
 
         div:first-child {
             background-color: #00695C;
+        }
+    }
+}
+
+.widget-map {
+    .map-container {
+        background-image: url("../../layout/images/dashboard/map.jpg");
+        width: 100%;
+        min-height: 20rem;
+        background-size: cover;
+    }
+    
+    .footer {
+        i {
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+            color: #616161;
         }
     }
 }

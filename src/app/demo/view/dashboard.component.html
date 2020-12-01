@@ -147,7 +147,23 @@
                 <h5>Order Graph</h5>
                 <a href="#"><i class="pi pi-ellipsis-h"></i></a>
             </div>
-            
+
+            <p-timeline [value]="timelineEvents" align="left" styleClass="customized-timeline">
+                <ng-template pTemplate="marker" let-event>
+                    <span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color">
+                        <i [ngClass]="event.icon"></i>
+                    </span>
+                </ng-template>
+                <ng-template pTemplate="content" let-event>
+                    <p-card [header]="event.status" [subheader]="event.date">
+                        <img *ngIf="event.image" [src]="'assets/showcase/images/demo/product/' + event.image" [alt]="event.name" width="200" class="p-shadow-2" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
+                            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+                        <button pButton label="Read more" class="p-button-text"></button>
+                    </p-card>
+                </ng-template>
+            </p-timeline>
+
         </div>
     </div>
 
@@ -527,6 +543,40 @@
             <div class="card-header">
                 <h5>Alternative Graph</h5>
             </div>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-4">
+        <div class="card widget-map">
+            <div class="map-container">
+                <div class="p-inputgroup p-p-3">
+                    <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                    <input type="text" pInputText placeholder="Search for delivery">         
+                </div>
+            </div>
+            <div class="footer p-mt-3 p-d-flex p-jc-between p-ai-center">
+                <div class="actions">
+                    <i class="pi pi-share-alt"></i>
+                    <i class="pi pi-compass"></i>
+                    <i class="pi pi-heart"></i>
+                </div>
+                <div class="link">
+                    <button pButton pRipple type="button" label="View on Google Maps" class="p-button-text p-button-plain"></button>            
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="p-col-12 p-lg-4">
+        <div class="card">
+            2nci kart
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-4">
+        <div class="card">
+            3uncu kart
         </div>
     </div>
 

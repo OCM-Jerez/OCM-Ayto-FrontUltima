@@ -73,6 +73,7 @@ import {TooltipModule} from 'primeng/tooltip';
 import {TreeModule} from 'primeng/tree';
 import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
+import {TimelineModule} from 'primeng/timeline';
 
 // Application Components
 import {AppCodeModule} from './app.code.component';
@@ -212,7 +213,8 @@ import {MenuService} from './app.menu.service';
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
-        AppCodeModule
+        AppCodeModule,
+        TimelineModule
     ],
     declarations: [
         AppComponent,
