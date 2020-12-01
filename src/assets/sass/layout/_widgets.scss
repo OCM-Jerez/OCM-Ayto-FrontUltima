@@ -141,6 +141,66 @@
     }
 }
 
+.widget-documents {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    >li {
+        padding: 1rem 0;
+        border-bottom: 1px solid #E4E4E4;
+
+        .icon-container {
+            width: 36px;
+            height: 36px;
+            background-color: #BBDEFB;
+            padding: 1rem;
+            color: #1565C0;
+            border-radius: 4px;
+            
+            i {
+                font-size: 1.5rem;
+            }
+
+            &.type-yellow {
+                background-color: #FFECB3;
+                color: #BF6B00;
+            }
+
+            &.type-green {
+                background-color: #B2DFDB;
+                color: #00838F;
+            }
+
+            &.type-gray {
+                background-color: #CFD8DC;
+                color: #455A64;
+            }
+        }
+    
+        .item-subtext {
+            color: #616161;
+        }
+
+        .item-actions {
+            i {
+                padding: .5rem;
+                border: 1px solid #ECEFF1;
+                border-radius: 4px;
+                color: #424242;
+                font-size: 1.25rem;
+            }
+            
+        }
+    }
+
+    .footer {
+        span {
+            color: #616161;
+        }
+    }
+}
+
 .widget-contacts-list {
     margin: 0;
     padding: 0;
