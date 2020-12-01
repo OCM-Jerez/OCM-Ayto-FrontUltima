@@ -115,6 +115,32 @@
     }
 }
 
+.widget-feature-box {
+    .image-container {
+        width: 100%;
+        background-color: #ECEFF1;
+        padding: 1rem;
+        border-radius: 4px;
+    }
+
+    .text-container {
+        p {
+            color: #616161;
+            text-align: center;
+        }
+
+        h5 {
+            margin-bottom: .5rem;
+        }
+    }
+
+    .footer {
+        .info-left {
+            color: #616161;
+        }
+    }
+}
+
 .widget-contacts-list {
     margin: 0;
     padding: 0;
