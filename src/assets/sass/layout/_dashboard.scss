@@ -275,74 +275,58 @@
 }
 
 .layout-rightpanel {
-    .layout-rightpanel-header {
-        background: url("../images/dashboard/sidebar-image.jpg") no-repeat;
-        background-size: cover;
-        height: 118px;
-        padding: 20px 14px;
-        @include box-sizing(border-box);
+    hr {
+        border-color: #E4E4E4;
+    }
 
-        .weather-day, .weather-date {
-            color: #ffffff;
-            left: 14px;
-            font-size: 18px;
-            font-weight: 700;
-            padding-bottom: 4px;
+    .layout-rightpanel-online-members {
+        h6 {
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
         }
     }
 
-    .layout-rightpanel-content {
-        padding: 14px;
-
-        h1 {
-            font-size: 18px;
-            margin: 0 0 4px 0;
-        }
-
-        h2 {
-            font-size: 16px;
+    .layout-rightpanel-latest-activity {
+        h6 {
+            font-weight: 500;
+            font-size: 14px;
             margin: 0;
-            color: $textSecondaryColor;
-            font-weight: normal;
         }
 
-        .weather-today {
-            text-align: center;
-            margin-top: 28px;
-
-            .weather-today-value {
-                font-size: 36px;
-                vertical-align: middle;
-                margin-right: 14px;
+        .activity-col {
+            .pi {
+                font-size: 1rem;
+                padding: 0.5rem;
+                color: #757575;
+                background: #ECEFF1;
+                background-size: contain;
+                border-radius: 50%;
             }
 
-            img {
-                vertical-align: middle;
+            h6 {
+                font-weight: normal;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            p {
+                font-size: 12px;
+                margin: 0;
+                color: #616161;
+            }
+
+            .activity-user {
+                color: #9E9E9E;
             }
         }
+    }
 
-        .weekly-weather {
-            list-style-type: none;
-            margin: 28px 0 0 0;
-            padding: 0;
-
-            li {
-                padding: 8px 14px;
-                border-bottom: 1px solid #d8dae2;
-                position: relative;
-
-                .weekly-weather-value {
-                    position: absolute;
-                    right: 40px;
-                }
-
-                img {
-                    width: 24px;
-                    position: absolute;
-                    right: 0px;
-                    top: 4px;
-                }
-            }
+    .layout-rightpanel-next-events {
+        h6 {
+            font-weight: 500;
+            font-size: 14px;
+            margin: 0;
         }
     }
 }
