@@ -1,4 +1,4 @@
-.exception-body {
+.pages-body {
     height: 100vh;
     min-width: 400px;
 
@@ -25,7 +25,7 @@
         }
     }
 
-    .exception-panel {
+    .pages-panel {
         text-align: center;
         z-index: 200;
 
@@ -40,7 +40,7 @@
             box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
         }
 
-        .exception-header {
+        .pages-header {
             margin-top: -3rem;
             color: $primaryTextColor;
             border: 1.5px solid #FFFFFF;
@@ -53,8 +53,31 @@
             }
         }
 
-        .exception-detail {
+        .pages-detail {
             color: $textSecondaryColor;
+        }
+    }
+
+    &.login-page {
+        background: url("../images/login-bg.png");
+        background-size: cover;
+
+        .pages-panel {
+            .pages-header {
+                background: #0097A7;
+            }
+
+            .input-panel {
+                width: 100%;
+
+                .p-inputtext {
+                    width: 100%
+                }
+            }
+
+            .login-button > * {
+                width: 100%;
+            }
         }
     }
 
@@ -62,8 +85,8 @@
         background: url("../images/error-bg.png");
         background-size: cover;
 
-        .exception-panel {
-            .exception-header {
+        .pages-panel {
+            .pages-header {
                 background: #D81B60;
             }
         }
@@ -73,8 +96,8 @@
         background: url("../images/404-bg.png");
         background-size: cover;
 
-        .exception-panel {
-            .exception-header {
+        .pages-panel {
+            .pages-header {
                 background: #455A64;
             }
         }
@@ -84,8 +107,8 @@
         background: url("../images/accessDenied-bg.png");
         background-size: cover;
 
-        .exception-panel {
-            .exception-header {
+        .pages-panel {
+            .pages-header {
                 background: #FB8C00;
             }
         }
