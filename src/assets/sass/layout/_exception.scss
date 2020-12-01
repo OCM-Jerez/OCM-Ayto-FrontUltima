@@ -1,10 +1,9 @@
-.exception-page {
-    background: url("../images/exception-bg.jpg");
-    background-size: cover;
+.exception-body {
     height: 100vh;
+    min-width: 400px;
 
     .topbar {
-        @include shadow(0 2px 5px 0 rgba(0,0,0,0.26));
+        @include shadow(0 2px 5px 0 rgba(0, 0, 0, 0.26));
         background-color: $primaryColor;
         z-index: 100;
 
@@ -26,96 +25,69 @@
         }
     }
 
-    .exception-body {
-        .exception-panel {
-            text-align: center;
-            z-index: 200;
+    .exception-panel {
+        text-align: center;
+        z-index: 200;
 
-            &.card {
-                img {
-                    width: 100%;
-                }
-                background: rgba(255, 255, 255, 0.9);
-                border: 1.5px solid #FFFFFF;
-                border-radius: 6px;
-                box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+        &.card {
+            img {
+                width: 100%;
             }
 
+            background: rgba(255, 255, 255, 0.9);
+            border: 1.5px solid #FFFFFF;
+            border-radius: 6px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .exception-header {
+            margin-top: -3rem;
+            color: $primaryTextColor;
+            border: 1.5px solid #FFFFFF;
+            border-radius: 4px;
+            margin-left: auto;
+            margin-right: auto;
+
+            h2 {
+                margin: 0;
+            }
+        }
+
+        .exception-detail {
+            color: $textSecondaryColor;
+        }
+    }
+
+    &.error-page {
+        background: url("../images/error-bg.png");
+        background-size: cover;
+
+        .exception-panel {
             .exception-header {
-                margin-top: -3rem;
-                color: $primaryTextColor;
-                border: 1.5px solid #FFFFFF;
-                border-radius: 4px;
-                margin-left: auto;
-                margin-right: auto;
-
-                h2 {
-                    margin: 0;
-                }
-            }
-
-            .exception-detail {
-                color: $textSecondaryColor;
-            }
-        }
-
-        &.error-page {
-            .exception-type {
-                background-color: #e62a10;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .exception-panel {
-                i {
-                    color: #f79a84;
-                }
-            }
-        }
-
-        &.notfound-page {
-            .exception-panel {
-                .exception-header {
-                    background: #455A64;
-                }
-            }
-        }
-
-        &.accessdenied-page {
-            .exception-type {
-                background-color: #e91e63;
-
-                img {
-                    width: 50%;
-                }
-            }
-
-            .exception-panel {
-                i {
-                    color: #f48fb1;
-                }
+                background: #D81B60;
             }
         }
     }
-}
 
+    &.notfound-page {
+        background: url("../images/404-bg.png");
+        background-size: cover;
 
-
-@media (max-width: 1024px) {
-    .exception-body {
         .exception-panel {
-            margin-top: -50px;
+            .exception-header {
+                background: #455A64;
+            }
         }
     }
-}
 
-@media (max-width: 640px) {
-    .exception-body {
+    &.accessdenied-page {
+        background: url("../images/accessDenied-bg.png");
+        background-size: cover;
+
         .exception-panel {
-            width: 250px;
-            margin-top: -15px;
+            .exception-header {
+                background: #FB8C00;
+            }
         }
     }
 }
