@@ -59,7 +59,7 @@
     }
 
     &.login-page {
-        background: url("../images/login-bg.png");
+        background: url("../images/pages/login-bg.png");
         background-size: cover;
 
         .pages-panel {
@@ -81,8 +81,63 @@
         }
     }
 
+    &.contact-page {
+
+        .pages-panel {
+            text-align: left;
+
+            .card {
+
+                h4 {
+                    margin: 0;
+                }
+
+                h6 {
+                    margin: 0;
+                }
+
+                .contact-input {
+                    width: 100%;
+
+                    &.contact-message {
+                        height: 10rem;
+                    }
+                }
+
+                .left-panel {
+                    width: 30rem;
+
+                    .contact-button > * {
+                        width: 100%;
+                    }
+                }
+
+                .right-panel {
+                    width: 30rem;
+
+                    .pi {
+                        font-size: 2rem;
+                        padding: 0.5rem;
+
+                        &.pi-home {
+                            color: #1565C0;
+                            background: #BBDEFB;
+                            background-size: auto;
+                        }
+
+                        &.pi-briefcase {
+                            color: #00838f;
+                            background: #B2DFDB;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &.error-page {
-        background: url("../images/error-bg.png");
+        background: url("../images/pages/error-bg.png");
         background-size: cover;
 
         .pages-panel {
@@ -93,7 +148,7 @@
     }
 
     &.notfound-page {
-        background: url("../images/404-bg.png");
+        background: url("../images/pages/404-bg.png");
         background-size: cover;
 
         .pages-panel {
@@ -104,7 +159,7 @@
     }
 
     &.accessdenied-page {
-        background: url("../images/accessDenied-bg.png");
+        background: url("../images/pages/accessDenied-bg.png");
         background-size: cover;
 
         .pages-panel {

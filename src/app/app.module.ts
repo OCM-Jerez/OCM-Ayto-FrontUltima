@@ -118,6 +118,7 @@ import {TextComponent} from './utilities/text.component';
 
 import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
+import {AppContactusComponent} from './pages/app.contactus.component';
 import {AppNotfoundComponent} from './pages/app.notfound.component';
 import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
@@ -226,6 +227,7 @@ import {MenuService} from './app.menu.service';
         AppBreadcrumbComponent,
         AppCrudComponent,
         AppCalendarComponent,
+        AppContactusComponent,
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,

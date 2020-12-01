@@ -36,6 +36,7 @@ import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
 import {AppWizardComponent} from './pages/app.wizard.component';
 import {MediaDemoComponent} from './demo/view/mediademo.component';
+import {AppContactusComponent} from './pages/app.contactus.component';
 
 @NgModule({
     imports: [
@@ -79,6 +80,7 @@ import {MediaDemoComponent} from './demo/view/mediademo.component';
             {path: 'access', component: AppAccessdeniedComponent},
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
+            {path: 'contactus', component: AppContactusComponent},
             {path: 'wizard', component: AppWizardComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
