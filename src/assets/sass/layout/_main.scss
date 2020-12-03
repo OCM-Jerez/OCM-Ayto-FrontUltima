@@ -101,6 +101,7 @@ body {
                 width: 36px;
                 line-height: 36px;
                 margin-top: 7px;
+                margin-left: 1em;
                 float: right;
                 @include transition(all $transitionDuration);
 
@@ -667,6 +668,10 @@ body {
                 margin-left: 1em;
                 margin-top: 4px;
 
+                hr {
+                    border-color: #E4E4E4;
+                }
+
                 > a {
                     position: relative;
                     display: block;
@@ -712,10 +717,54 @@ body {
                     top: 46px;
                     right: 5px;
                     display: none;
-                    width: 250px;
+                    width: 30rem;
                     background-color: $topbarSubmenuBgColor;
                     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
                     animation-duration: $transitionDuration;
+
+                    > li > ul {
+
+                        > li {
+                            width: 10rem;
+
+                            .pi {
+                                color: #FFFFFF;
+                                border-radius: 50%;
+                                background-size: auto;
+                                font-size: 2em;
+                                padding: 1rem;
+
+                                &.pi-image {
+                                    background: #3F51B5;
+                                }
+
+                                &.pi-file-pdf {
+                                    background: #FF8F00;
+                                }
+
+                                &.pi-dollar {
+                                    background: #388E3C;
+                                }
+
+                                &.pi-cog {
+                                    background: #37474F;
+                                }
+
+                                &.pi-key {
+                                    background: #C2185B;
+                                }
+
+                                &.pi-sitemap {
+                                    background: #0097A7;
+                                }
+                            }
+
+                            h6 {
+                                margin-bottom: 0;
+                                margin-top: 0.5em;
+                            }
+                        }
+                    }
                 }
 
                 &.active-top-menu {
@@ -724,11 +773,15 @@ body {
                     }
                 }
 
+                .topbar-notification {
+                    color: #616161;
+                }
+
                 .topbar-message {
-                    img {
-                        display: inline-block;
-                        vertical-align: middle;
-                        margin-right: 12px;
+                    width: 100%;
+
+                    span {
+                        color: #616161;
                     }
                 }
             }
@@ -1210,8 +1263,8 @@ body {
                 .topbar-items {
                     position: absolute;
                     top: 75px;
-                    right: 15px;
-                    width: 275px;
+                    right: 0;
+                    width: 100vw;
                     display: none;
                     background-color: $topbarMenuBgColor;
                     @include multi-shadow(0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2));
@@ -1262,15 +1315,6 @@ body {
 
                         > ul {
                             display: none;
-
-                            li {
-                                a {
-                                    span, img, i {
-                                        display: inline-block;
-                                        vertical-align: middle;
-                                    }
-                                }
-                            }
                         }
 
                         &.active-top-menu {
@@ -1280,12 +1324,6 @@ body {
 
                             > ul {
                                 display: block;
-
-                                li {
-                                    a {
-                                        padding-left: 32px;
-                                    }
-                                }
                             }
                         }
 
