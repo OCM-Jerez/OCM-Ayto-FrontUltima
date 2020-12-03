@@ -478,7 +478,7 @@
             &:hover {
                 cursor: pointer;
                 background-color: white;
-                box-shadow: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
             }
         }
     }
@@ -589,14 +589,6 @@
         width: 100%;
         min-height: 20rem;
         background-size: cover;
-    }
-    
-    .footer {
-        i {
-            margin-right: 1.5rem;
-            font-size: 1.5rem;
-            color: #616161;
-        }
     }
 }
 
