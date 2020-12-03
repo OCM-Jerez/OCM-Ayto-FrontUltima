@@ -159,7 +159,7 @@
 
         >li {
             border-bottom: 1px solid #E4E4E4;
-            
+
             .value {
                 color: #616161;
             }
@@ -753,6 +753,38 @@
             padding: .25em .5em;
             display: inline-block;
             border-radius: $borderRadius;
+        }
+    }
+}
+
+.widget-profile {
+    img {
+        width: 8rem;
+        height: 8rem;;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .location{
+        i {
+            color: #616161;
+        }
+        span {
+            color: #616161;
+        }
+    }
+
+    .stats {
+        width: 100%;
+        .stat {
+            .stat-value {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: #1565C0;
+            }
         }
     }
 }
