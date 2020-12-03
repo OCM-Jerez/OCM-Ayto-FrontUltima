@@ -177,6 +177,36 @@
     }
 }
 
+.widget-sales {
+
+    .sales-info {
+        border-bottom: 1px solid #E4E4E4;
+        border-right: 1px solid #E4E4E4;
+
+        .title {
+            color: #616161;
+        }
+
+        .value {
+            font-size: 2rem;
+        }
+
+        .difference {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #0097A7;
+        }
+    }
+
+    .sales-graph {
+        border-right: 1px solid #E4E4E4;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
 .widget-social {
 
     i {
