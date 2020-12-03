@@ -50,16 +50,16 @@ export class DashboardDemoComponent implements OnInit {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
-                    label: 'First Dataset',
+                    label: 'Completed',
                     data: [65, 59, 80, 81, 56, 55, 40],
                     fill: false,
-                    borderColor: '#FFC107'
+                    borderColor: '#4DD0E1'
                 },
                 {
-                    label: 'Second Dataset',
+                    label: 'Cancelled',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
-                    borderColor: '#03A9F4'
+                    borderColor: '#3F51B5'
                 }
             ]
         };
