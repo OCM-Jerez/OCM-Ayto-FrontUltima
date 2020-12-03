@@ -177,6 +177,67 @@
     }
 }
 
+.widget-social {
+
+    i {
+        color: #1DA1F2;
+        font-size: 3rem;
+
+        &.pi-facebook {
+            color: #4267B2;
+        }
+
+        &.pi-github {
+            color: #333333;
+        }
+    }
+
+    .info {
+        text-align: right;
+        
+        .value {
+            font-size: 2rem;
+        }
+
+        .subtext {
+            color: #616161;
+        }
+    }
+
+    .left, .right {
+        width: 50%;
+        text-align: center;
+        padding: 1rem;
+
+        .title {
+            font-weight: 500;
+        }
+
+        .value {
+            color: #616161;
+        }
+    }
+
+    .left {
+        border-right: 1px solid #e4e4e4;
+    }
+
+    .p-progressbar {
+        height: 6px;
+        border-radius: 10px;
+        background: #ECEFF1;
+    }
+
+    .p-progressbar-value {
+        background: #FFB300;
+    }
+
+    .stats {
+        border-top: 1px solid #e4e4e4;
+    }
+
+}
+
 .widget-weeklyoverview {
     .card-subheader {
         font-size: .9rem;
