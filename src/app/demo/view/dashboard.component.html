@@ -150,12 +150,12 @@
 
             <p-timeline [value]="timelineEvents" align="left" styleClass="customized-timeline">
                 <ng-template pTemplate="marker" let-event>
-                    <span class="custom-marker p-shadow-2" [style.backgroundColor]="event.color">
-                        <i [ngClass]="event.icon"></i>
+                    <span class="custom-marker p-shadow-2 p-p-2" [style.backgroundColor]="event.color">
+                        <i class="marker-icon" [ngClass]="event.icon"></i>
                     </span>
                 </ng-template>
                 <ng-template pTemplate="content" let-event>
-                    <p-card [header]="event.status" [subheader]="event.date">
+                    <p-card styleClass="p-mb-3" [header]="event.status" [subheader]="event.date">
                         <img *ngIf="event.image" [src]="'assets/showcase/images/demo/product/' + event.image" [alt]="event.name" width="200" class="p-shadow-2" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
                             quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
@@ -652,7 +652,11 @@
     </div>
 
     <div class="p-col-12 p-md-6">
-        <div class="card">Card</div>
+        <div class="card widget-daily-users p-mt-5">
+            <div class="graph-container">
+                <p-chart type="line" [data]="chartData" responsive="true"></p-chart>
+            </div>
+        </div>
     </div>
 
     <div class="p-col-12 p-md-6">

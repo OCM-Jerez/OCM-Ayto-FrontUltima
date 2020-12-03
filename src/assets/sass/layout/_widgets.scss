@@ -177,6 +177,32 @@
     }
 }
 
+.widget-daily-users {
+    position: relative;
+
+    .graph-container {
+        position: relative;
+        height: 20rem;
+        top:-3rem;
+        background-color: white;
+    }
+}
+
+.p-timeline.p-timeline-vertical .p-timeline-event-opposite {
+    flex: 0;
+    padding: 0;
+}
+
+.p-timeline-event-separator {
+    .marker-icon {
+        color: white;
+    }
+
+    .custom-marker {
+        border-radius: 4px;
+    }
+}
+
 .widget-documents {
     margin: 0;
     padding: 0;
