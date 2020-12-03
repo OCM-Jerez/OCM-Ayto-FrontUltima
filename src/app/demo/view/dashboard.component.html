@@ -142,9 +142,9 @@
     </div>
 
     <div class="p-col-12 p-lg-6">
-        <div class="card">
+        <div class="card widget-timeline">
             <div class="card-header">
-                <h5>Order Graph</h5>
+                <h5>Timeline</h5>
                 <a href="#"><i class="pi pi-ellipsis-h"></i></a>
             </div>
 
@@ -163,7 +163,6 @@
                     </p-card>
                 </ng-template>
             </p-timeline>
-
         </div>
     </div>
 
@@ -569,8 +568,58 @@
     </div>
     
     <div class="p-col-12 p-lg-4">
-        <div class="card">
-            2nci kart
+        <div class="card widget-weeklyoverview">
+            <div class=card-header>
+                <h5>Overview</h5>
+            </div>
+            <div class="card-subheader p-mb-2 p-pb-3">
+                Last 7 Months
+            </div>
+
+            <ul>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W1</span>
+                        <span class="value">41/100</span>
+                    </div>
+                    <p-progressBar [value]="41" [showValue]=false></p-progressBar>
+                </li>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W2</span>
+                        <span class="value">23/100</span>
+                    </div>
+                    <p-progressBar [value]="23" [showValue]=false></p-progressBar>
+                </li>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W3</span>
+                        <span class="value">81/100</span>
+                    </div>
+                    <p-progressBar [value]="81" [showValue]=false></p-progressBar>
+                </li>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W4</span>
+                        <span class="value">33/100</span>
+                    </div>
+                    <p-progressBar [value]="33" [showValue]=false></p-progressBar>
+                </li>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W5</span>
+                        <span class="value">37/100</span>
+                    </div>
+                    <p-progressBar [value]="37" [showValue]=false></p-progressBar>
+                </li>
+                <li class="p-mb-3">
+                    <div class="p-d-flex p-jc-between p-mb-1">
+                        <span>W6</span>
+                        <span class="value">12/100</span>
+                    </div>
+                    <p-progressBar [value]="12" [showValue]=false></p-progressBar>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -581,73 +630,7 @@
     </div>
 
     <div class="p-col-12 p-md-4">
-        <div class="card timeline p-fluid">
-            <div class="p-grid">
-                <div class="p-col-3">
-                    <span class="event-time">just now</span>
-                    <i class="pi pi-map-marker" style="color:#009688"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner" style="color:#009688">Katherine May</span>
-                    <span class="event-text">Lorem ipsun dolor amet</span>
-                    <div class="event-content">
-                        <img src="assets/layout/images/dashboard/md.png">
-                    </div>
-                </div>
-
-                <div class="p-col-3">
-                    <span class="event-time">12h ago</span>
-                    <i class="pi pi-star-o" style="color:#E91E63"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner" style="color:#E91E63">Brandon Santos</span>
-                    <span class="event-text">Ab nobis, magnam sunt eum. Laudantium, repudiandae, similique!.</span>
-                </div>
-
-                <div class="p-col-3">
-                    <span class="event-time">15h ago</span>
-                    <i class="pi pi-comment" style="color:#9c27b0"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner" style="color:#9c27b0">Stephan Ward</span>
-                    <span class="event-text">Omnis veniam quibusdam ratione est repellat qui nam quisquam ab mollitia dolores ullam voluptates, similique, dignissimos.</span>
-                </div>
-
-                <div class="p-col-3">
-                    <span class="event-time">2d ago</span>
-                    <i class="pi pi-globe" style="color:#ff9800"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner" style="color:#ff9800">Jason Smith</span>
-                    <span class="event-text">Laudantium, repudiandae, similique!</span>
-                    <div class="event-content">
-                        <img src="assets/layout/images/dashboard/map.png">
-                    </div>
-                </div>
-
-                <div class="p-col-3">
-                    <span class="event-time">1w ago</span>
-                    <i class="pi pi-heart" style="color:#607d8b"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner">Kevin Cox</span>
-                    <span class="event-text">Quibusdam ratione est repellat qui nam quisquam veniam quibusdam ratione.</span>
-                </div>
-
-                <div class="p-col-3">
-                    <span class="event-time">2w ago</span>
-                    <i class="pi pi-compass" style="color:#FFC107"></i>
-                </div>
-                <div class="p-col-9">
-                    <span class="event-owner" style="color:#FFC107">Walter White</span>
-                    <span class="event-text">I am the one who knocks!</span>
-                </div>
-
-                <div class="p-col-12">
-                    <button pRipple type="button" label="Refresh" icon="pi pi-refresh" pButton></button>
-                </div>
-            </div>
-        </div>
+        <div class="card">Card</div>
     </div>
 
     <div class="p-col-12 p-md-8">
