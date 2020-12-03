@@ -686,6 +686,48 @@
             </div>
         </div>
     </div>
+
+    <div class="p-col-12 p-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>Monthly Comparison</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            
+            <p-chart type="bar" [data]="chartData2" responsive="true"></p-chart>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-md-4">
+        <div class="card widget-insights">
+            <div class=card-header>
+                <h5>Insights</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            <div class="card-subheader p-mb-2 p-pb-3">
+                November 22 - November 29
+            </div>
+            <div class="p-d-flex p-flex-column p-ai-center insight-container">
+                <img class="p-mt-3" src="/assets/layout/images/dashboard/graph-weekly.svg" alt="">
+                <div class="insight-item p-d-flex p-flex-row p-mt-4 p-px-3">
+                    <i class="pi pi-thumbs-up"></i>
+                    <div class="p-d-flex p-flex-column p-ml-3">
+                        <span class="title">Best Day of the Week</span>
+                        <span class="day">Monday</span>
+                    </div>
+                    <span class="value">660</span>
+                </div>
+                <div class="insight-item p-d-flex p-flex-row p-my-4 p-px-3">
+                    <i class="pi pi-thumbs-down type2"></i>
+                    <div class="p-d-flex p-flex-column p-ml-3">
+                        <span class="title">Worst Day of the Week</span>
+                        <span class="day">Wednesday</span>
+                    </div>
+                    <span class="value">34</span>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="p-col-12 p-md-6">
         <div class="card">

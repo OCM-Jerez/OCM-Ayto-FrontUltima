@@ -141,6 +141,42 @@
     }
 }
 
+.widget-insights {
+    .card-subheader {
+        font-size: .9rem;
+        color: #616161;
+        border-bottom: 1px solid #E4E4E4;
+    }
+
+    .insight-container {
+        i {
+            background-color: #0097A7;
+            padding: .5rem;
+            font-size: 1.5rem;
+            color: white;
+            border-radius: 50%;
+
+            &.type2 {
+                background-color: #455A64;
+            }
+        }
+
+        .insight-item {
+            width: 100%;
+
+            .value {
+                margin-left: auto;
+                color: #0097A7;
+                font-weight: 500;
+            }
+
+            .day {
+                color: #616161;
+            }
+        }
+    }
+}
+
 .widget-weeklyoverview {
     .card-subheader {
         font-size: .9rem;
