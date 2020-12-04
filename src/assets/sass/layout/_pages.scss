@@ -23,6 +23,14 @@
                 font-weight: 500;
             }
         }
+
+        .topbar-button {
+            color: white;
+
+            &.p-button.p-button-text.p-button-plain:enabled:hover{
+                color: white;
+            }
+        }
     }
 
     .pages-panel {
@@ -59,7 +67,7 @@
     }
 
     &.login-page {
-        background: url("../images/pages/login-bg.png");
+        background: url("../images/pages/login-bg.jpg");
         background-size: cover;
 
         .pages-panel {
@@ -137,7 +145,7 @@
     }
 
     &.error-page {
-        background: url("../images/pages/error-bg.png");
+        background: url("../images/pages/error-bg.jpg");
         background-size: cover;
 
         .pages-panel {
@@ -148,7 +156,7 @@
     }
 
     &.notfound-page {
-        background: url("../images/pages/404-bg.png");
+        background: url("../images/pages/404-bg.jpg");
         background-size: cover;
 
         .pages-panel {
@@ -159,7 +167,7 @@
     }
 
     &.accessdenied-page {
-        background: url("../images/pages/accessDenied-bg.png");
+        background: url("../images/pages/accessDenied-bg.jpg");
         background-size: cover;
 
         .pages-panel {
