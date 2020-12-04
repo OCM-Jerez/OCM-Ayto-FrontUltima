@@ -16,7 +16,6 @@
         }
 
         .topbar-right {
-
             h6 {
                 margin: 0;
                 color: $primaryTextColor;
@@ -91,18 +90,14 @@
 
     &.contact-page {
 
+        .map {
+            top: 65px;
+        }
+
         .pages-panel {
             text-align: left;
 
             .card {
-
-                h4 {
-                    margin: 0;
-                }
-
-                h6 {
-                    margin: 0;
-                }
 
                 .contact-input {
                     width: 100%;
@@ -123,9 +118,15 @@
                 .right-panel {
                     width: 30rem;
 
-                    .pi {
+                    .title {
+                        font-weight: 500;
+                        margin-bottom: 0;
+                    }
+
+                    i {
                         font-size: 2rem;
                         padding: 0.5rem;
+                        border-radius: 4px;
 
                         &.pi-home {
                             color: #1565C0;
@@ -136,7 +137,7 @@
                         &.pi-briefcase {
                             color: #00838f;
                             background: #B2DFDB;
-                            background-size: contain;
+                            background-size: auto;
                         }
                     }
                 }
