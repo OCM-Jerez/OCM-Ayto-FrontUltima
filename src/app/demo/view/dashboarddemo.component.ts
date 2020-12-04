@@ -143,7 +143,7 @@ export class DashboardDemoComponent implements OnInit {
         };
 
         this.pieData = {
-            labels: ['A','B','C'],
+            labels: ['O','D','R'],
             datasets: [
                 {
                     data: [300, 50, 100],
@@ -153,7 +153,7 @@ export class DashboardDemoComponent implements OnInit {
                         "#455A64"
                     ],
                     hoverBackgroundColor: [
-                        "#FF6384",
+                        "#00818E",
                         "#C55900",
                         "#354851"
                     ]

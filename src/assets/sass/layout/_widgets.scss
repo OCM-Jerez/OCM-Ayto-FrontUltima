@@ -173,7 +173,6 @@
 
 .widget-traffic {
     .left {
-        width: 50%;
         padding: 1rem;
 
         .total {
@@ -216,10 +215,6 @@
             
         }
     }
-
-    .right {
-        width: 50%;
-    }
 }
 
 .widget-insights {
@@ -259,11 +254,7 @@
 }
 
 .widget-sales {
-
     .sales-info {
-        border-bottom: 1px solid #E4E4E4;
-        border-right: 1px solid #E4E4E4;
-
         .title {
             color: #616161;
         }
@@ -280,8 +271,6 @@
     }
 
     .sales-graph {
-        border-right: 1px solid #E4E4E4;
-
         img {
             width: 100%;
         }
