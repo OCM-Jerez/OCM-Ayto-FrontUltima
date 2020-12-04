@@ -338,6 +338,38 @@
     }
 }
 
+.widget-topsearchs {
+    .item {
+        padding: 1rem;
+        border-bottom: 1px solid #E4E4E4;
+
+        .value {
+            font-weight: 500;
+
+            &.type-green {
+                color: #0097A7;
+            }
+
+            &.type-yellow {
+                color: #EF6C00;
+            }
+
+            &.type-pink {
+                color: #E91E63;
+            }
+        }
+
+        &.even {
+            background-color: #FAFAFA;
+        }
+
+        &:last-child {
+            border-bottom: 0 none;
+        }
+
+    }
+}
+
 .widget-blog {
     position: relative;
 
