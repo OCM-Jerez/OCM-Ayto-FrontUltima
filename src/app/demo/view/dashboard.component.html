@@ -947,7 +947,7 @@
             <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-cloud type p-mb-2"></i>
-                    <span class="value p-mb-2">$30.247</span>
+                    <span class="value p-mb-1">$30.247</span>
                     <span class="subtext">Cloud Infrastructure</span>
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
@@ -955,7 +955,7 @@
             <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-tag type p-mb-2"></i>
-                    <span class="value p-mb-2">$29.550</span>
+                    <span class="value p-mb-1">$29.550</span>
                     <span class="subtext">General Goods</span>
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
@@ -963,7 +963,7 @@
             <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-desktop type p-mb-2"></i>
-                    <span class="value p-mb-2">$16.660</span>
+                    <span class="value p-mb-1">$16.660</span>
                     <span class="subtext">Consumer Electronics</span>
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
@@ -971,7 +971,7 @@
             <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-compass type p-mb-2"></i>
-                    <span class="value p-mb-2">$5.801</span>
+                    <span class="value p-mb-1">$5.801</span>
                     <span class="subtext">Incalculables</span>
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
@@ -980,8 +980,49 @@
     </div>
 
     <div class="p-col-12 p-md-8">
-        <div class="card">
-            8
+        <div class="card widget-traffic">
+            <div class=card-header>
+                <h5>All Traffic Channels</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            <div class="p-d-flex">
+                <div class="left p-d-flex p-flex-column p-jc-around">
+                    <div class="total p-d-flex p-flex-column">
+                        <span class="title p-mb-2">Total</span>
+                        <span class="value p-mb-5">66.761</span>
+                    </div>
+
+                    <div class="info p-d-flex p-jc-between">
+                        <div class="organic p-d-flex p-flex-column">
+                            <span class="title p-mb-1">Organic</span>
+                            <span class="value">51.596</span>
+                            <span class="percent p-d-flex p-ai-center">
+                                <i class="pi pi-circle-on type-green p-mr-2"></i>
+                                35%
+                            </span>
+                        </div>
+                        <div class="direct p-d-flex p-flex-column">
+                            <span class="title p-mb-1">Direct</span>
+                            <span class="value">11.421</span>
+                            <span class="percent p-d-flex p-ai-center">
+                                <i class="pi pi-circle-on type-orange p-mr-2"></i>
+                                7%
+                            </span>
+                        </div>
+                        <div class="referral p-d-flex p-flex-column">
+                            <span class="title p-mb-1">Referral</span>
+                            <span class="value">3.862</span>
+                            <span class="percent p-d-flex p-ai-center">
+                                <i class="pi pi-circle-on type-gray p-mr-2"></i>
+                                32%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right p-d-flex p-jc-center">
+                    <p-chart type="pie" [data]="pieData" height="250"></p-chart>
+                </div>
+            </div>
         </div>
     </div>
 </div>

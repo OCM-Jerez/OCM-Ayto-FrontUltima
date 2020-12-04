@@ -23,6 +23,8 @@ export class DashboardDemoComponent implements OnInit {
 
     radarChartData: any;
 
+    pieData: any;
+
     events: any[];
 
     selectedCity: any;
@@ -120,6 +122,24 @@ export class DashboardDemoComponent implements OnInit {
                     data: [28, 48, 40, 19, 96]
                 }
             ]
+        };
+
+        this.pieData = {
+            labels: ['A','B','C'],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#0097A7",
+                        "#EF6C00",
+                        "#455A64"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#C55900",
+                        "#354851"
+                    ]
+                }]
         };
 
         this.timelineEvents = [

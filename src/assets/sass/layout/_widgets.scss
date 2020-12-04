@@ -171,6 +171,57 @@
     }
 }
 
+.widget-traffic {
+    .left {
+        width: 50%;
+        padding: 1rem;
+
+        .total {
+            .title {
+                color: #616161;
+            }
+
+            .value {
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+
+        .info {
+            .title {
+                color: #616161;
+            }
+
+            .value {
+                font-weight: 500;
+            }
+
+            .percent {
+                font-size: .9rem;
+                font-weight: 500;
+                line-height: 1.5;
+
+                i {
+                    &.type-green {
+                        color: #0097A7;
+                    }
+                    &.type-orange {
+                        color: #EF6C00;
+                    }
+                    &.type-gray {
+                        color: #455A64;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .right {
+        width: 50%;
+    }
+}
+
 .widget-insights {
     .card-subheader {
         font-size: .9rem;
