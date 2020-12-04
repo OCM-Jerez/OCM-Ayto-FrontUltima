@@ -141,6 +141,36 @@
     }
 }
 
+.widget-expenses {
+    .card-subheader {
+        font-size: .9rem;
+        color: #616161;
+        border-bottom: 1px solid #E4E4E4;
+    }
+
+    .item {
+        padding: .5rem;
+        border-bottom: 1px solid #E4E4E4;
+
+        &:last-child {
+            border: 0 none;
+        }
+
+        .type {
+            color: #0097A7;
+            font-size: 1.5rem;
+        }
+    
+        .value {
+            font-weight: 500;
+        }
+    
+        .subtext {
+            color: #616161;
+        }
+    }
+}
+
 .widget-insights {
     .card-subheader {
         font-size: .9rem;
