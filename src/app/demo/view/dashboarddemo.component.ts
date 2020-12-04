@@ -19,6 +19,8 @@ export class DashboardDemoComponent implements OnInit {
 
     chartData: any;
 
+    chartMonthlyData: any;
+
     events: any[];
 
     selectedCity: any;
@@ -60,6 +62,24 @@ export class DashboardDemoComponent implements OnInit {
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
                     borderColor: '#3F51B5'
+                }
+            ]
+        };
+
+        this.chartMonthlyData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: '#80DEEA',
+                    borderColor: 'white',
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: '#0097A7',
+                    borderColor: 'white',
+                    data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
         };
