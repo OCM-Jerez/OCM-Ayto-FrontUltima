@@ -359,7 +359,7 @@
             }
         }
 
-        &.even {
+        &:nth-child(even) {
             background-color: #FAFAFA;
         }
 
