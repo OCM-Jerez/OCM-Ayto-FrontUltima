@@ -21,6 +21,8 @@ export class DashboardDemoComponent implements OnInit {
 
     chartMonthlyData: any;
 
+    radarChartData: any;
+
     events: any[];
 
     selectedCity: any;
@@ -61,7 +63,7 @@ export class DashboardDemoComponent implements OnInit {
                     label: 'Cancelled',
                     data: [28, 48, 40, 19, 86, 27, 90],
                     fill: false,
-                    borderColor: '#3F51B5'
+                    borderColor: '#212121'
                 }
             ]
         };
@@ -92,6 +94,32 @@ export class DashboardDemoComponent implements OnInit {
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             }
+        };
+
+        this.radarChartData = {
+            labels: ['Ordered', 'Processed', 'Shipped', 'Delivered', 'Refunded'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: 'rgba(179,181,198,0.2)',
+                    borderColor: 'rgba(179,181,198,1)',
+                    pointBackgroundColor: 'rgba(179,181,198,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(179,181,198,1)',
+                    data: [65, 59, 90, 81, 56]
+                },
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: 'rgba(255,99,132,0.2)',
+                    borderColor: 'rgba(255,99,132,1)',
+                    pointBackgroundColor: 'rgba(255,99,132,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(255,99,132,1)',
+                    data: [28, 48, 40, 19, 96]
+                }
+            ]
         };
 
         this.timelineEvents = [
