@@ -25,6 +25,8 @@ export class DashboardDemoComponent implements OnInit {
 
     pieData: any;
 
+    mainData: any;
+
     events: any[];
 
     selectedCity: any;
@@ -52,6 +54,22 @@ export class DashboardDemoComponent implements OnInit {
         this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
         this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
 
+        this.mainData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'New',
+                data: [2, 7, 20, 9, 16, 9, 5],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.5)',
+                ],
+                borderColor: [
+                    '#45B2C0',
+                ],
+                borderWidth: 3,
+                fill: true
+            }]
+        };
+        
         this.chartData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [

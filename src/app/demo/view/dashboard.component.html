@@ -142,6 +142,16 @@
     </div>
 
     <div class="p-col-12 p-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5>Order Graph</h5>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+            </div>
+            <p-chart type="line" [data]="mainData" (onDataSelect)="selectData($event)"></p-chart>
+        </div>
+    </div>
+
+    <div class="p-col-12 p-lg-6">
         <div class="card widget-timeline">
             <div class="card-header">
                 <h5>Timeline</h5>
@@ -156,15 +166,54 @@
                 </ng-template>
                 <ng-template pTemplate="content" let-event>
                     <p-card styleClass="p-mb-3" [header]="event.status" [subheader]="event.date">
-                        <!--<img *ngIf="event.image" [src]="'assets/showcase/images/demo/product/' + event.image" [alt]="event.name" width="200" class="p-shadow-2" />
+                        <img *ngIf="event.image" [src]="'assets/showcase/images/demo/product/' + event.image" [alt]="event.name" width="200" class="p-shadow-2" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-                            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
-                        <button pButton label="Read more" class="p-button-text"></button>-->
+                            quisquam!</p>
                     </p-card>
                 </ng-template>
             </p-timeline>
         </div>
     </div>
+
+    <div class="p-col-12 p-md-6">
+        <div class="card">
+            <p-table [value]="products" [paginator]="true" [rows]="8">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="logo">Logo
+                            <p-sortIcon field="logo"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="name">Name
+                            <p-sortIcon field="name"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="category">Category
+                            <p-sortIcon field="category"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="price">Price
+                            <p-sortIcon field="price"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="view">View
+                            <p-sortIcon field="view"></p-sortIcon>
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>
+                            <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="50px" />
+                        </td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.price | currency:'USD'}}</td>
+                        <td>
+                            <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mr-2 p-mb-1"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
 
     <div class="p-col-12 p-lg-6">
         <div class="card">
@@ -897,7 +946,7 @@
     
     <div class="p-col-12 p-md-6">
         <div class="card">
-            <p-table [value]="products" [paginator]="true" [rows]="5">
+            <p-table [value]="products" [paginator]="true" [rows]="3">
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="logo">Logo
