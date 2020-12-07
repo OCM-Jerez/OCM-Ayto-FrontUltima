@@ -727,41 +727,75 @@ body {
                         > li {
                             width: 10rem;
 
-                            .pi {
-                                color: #FFFFFF;
-                                border-radius: 50%;
-                                background-size: auto;
-                                font-size: 2em;
-                                padding: 1rem;
-
-                                &.pi-image {
-                                    background: #3F51B5;
+                            a {
+                                i:first-child {
+                                    margin-right: 0;
                                 }
 
-                                &.pi-file-pdf {
-                                    background: #FF8F00;
+                                .pi {
+                                    color: #FFFFFF;
+                                    border-radius: 50%;
+                                    background-size: auto;
+                                    font-size: 2em;
+                                    padding: 1rem;
+
+                                    &.pi-image {
+                                        background: #3F51B5;
+                                    }
+
+                                    &.pi-file-pdf {
+                                        background: #FF8F00;
+                                    }
+
+                                    &.pi-dollar {
+                                        background: #388E3C;
+                                    }
+
+                                    &.pi-cog {
+                                        background: #37474F;
+                                    }
+
+                                    &.pi-key {
+                                        background: #C2185B;
+                                    }
+
+                                    &.pi-sitemap {
+                                        background: #0097A7;
+                                    }
                                 }
 
-                                &.pi-dollar {
-                                    background: #388E3C;
+                                h6 {
+                                    color: #212121;
+                                    margin: 0;
                                 }
 
-                                &.pi-cog {
-                                    background: #37474F;
-                                }
+                                &:hover {
+                                    .pi {
+                                        &.pi-image {
+                                            background: #5C6BC0;
+                                        }
 
-                                &.pi-key {
-                                    background: #C2185B;
-                                }
+                                        &.pi-file-pdf {
+                                            background: #FFA000;
+                                        }
 
-                                &.pi-sitemap {
-                                    background: #0097A7;
-                                }
-                            }
+                                        &.pi-dollar {
+                                            background: #43A047;
+                                        }
 
-                            h6 {
-                                margin-bottom: 0;
-                                margin-top: 0.5em;
+                                        &.pi-cog {
+                                            background: #43A047;
+                                        }
+
+                                        &.pi-key {
+                                            background: #D81B60;
+                                        }
+
+                                        &.pi-sitemap {
+                                            background: #00ACC1;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

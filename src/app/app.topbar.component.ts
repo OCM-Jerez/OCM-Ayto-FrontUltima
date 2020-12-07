@@ -67,44 +67,44 @@ import {AppMainComponent} from './app.main.component';
                             <li>
                                 <ul class="p-d-flex">
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-image p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarItemClick($event,notifications)">
+                                            <i class="pi pi-image p-my-3"></i>
                                             <h6>Products</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-file-pdf p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarSubItemClick($event)">
+                                            <i class="pi pi-file-pdf p-my-3"></i>
                                             <h6>Reports</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-dollar p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarSubItemClick($event)">
+                                            <i class="pi pi-dollar p-my-3"></i>
                                             <h6>Balance</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
                                 <ul class="p-d-flex">
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-cog p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarSubItemClick($event)">
+                                            <i class="pi pi-cog p-my-3"></i>
                                             <h6>Settings</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-key p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarSubItemClick($event)">
+                                            <i class="pi pi-key p-my-3"></i>
                                             <h6>Credentials</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                     <li role="menuitem">
-                                        <div class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3">
-                                            <i class="pi pi-sitemap p-mt-3"></i>
+                                        <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#" (click)="app.onTopbarSubItemClick($event)">
+                                            <i class="pi pi-sitemap p-my-3"></i>
                                             <h6>Sitemap</h6>
-                                        </div>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
