@@ -89,7 +89,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     constructor(public app: AppMainComponent, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
-            // deactivate current active menu
+            // deactivate current active sidebar
             if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
                 this.active = false;
             }
@@ -152,7 +152,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // activate item
             this.active = true;
 
-            // reset horizontal menu
+            // reset horizontal sidebar
             if (this.app.isHorizontal() || this.app.isSlim()) {
                 this.menuService.reset();
             }

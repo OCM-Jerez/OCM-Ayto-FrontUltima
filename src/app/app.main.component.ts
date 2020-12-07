@@ -14,6 +14,10 @@ export class AppMainComponent {
 
     profileMode = 'inline';
 
+    menuTheme = 'indigo';
+
+    topbarTheme = 'indigo';
+
     rotateMenuButton: boolean;
 
     topbarMenuActive: boolean;

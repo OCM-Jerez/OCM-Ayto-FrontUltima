@@ -28,7 +28,7 @@ export class MenusDemoComponent implements OnInit {
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'UI Kit' },
-            { label: 'Menu', routerLink: ['/uikit/menu'] }
+            { label: 'Menu', routerLink: ['/uikit/sidebar'] }
         ]);
     }
 
