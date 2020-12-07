@@ -1,6 +1,5 @@
 .pages-body {
     height: 100vh;
-    min-width: 400px;
 
     .topbar {
         @include shadow(0 2px 5px 0 rgba(0, 0, 0, 0.26));
@@ -91,37 +90,37 @@
     &.contact-page {
 
         .map {
-            top: 65px;
+            iframe {
+                position: absolute;
+                float: left;
+                clear: both;
+                width: 100%;
+                height: 45vh;
+                z-index: 0;
+            }
         }
 
         .pages-panel {
             text-align: left;
+            width: 75%;
+            max-width: 1050px;
+            margin: auto;
+            position: absolute;
+            top: 33%;
+            left: 0; right: 0;
+
+            .title {
+                font-weight: 500;
+                margin-bottom: 0;
+            }
 
             .card {
 
                 .contact-input {
                     width: 100%;
-
-                    &.contact-message {
-                        height: 10rem;
-                    }
-                }
-
-                .left-panel {
-                    width: 30rem;
-
-                    .contact-button > * {
-                        width: 100%;
-                    }
                 }
 
                 .right-panel {
-                    width: 30rem;
-
-                    .title {
-                        font-weight: 500;
-                        margin-bottom: 0;
-                    }
 
                     i {
                         font-size: 2rem;
@@ -174,6 +173,22 @@
         .pages-panel {
             .pages-header {
                 background: #FB8C00;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .pages-body {
+        &.contact-page {
+            .pages-panel {
+                padding-bottom: 10em;
+
+                .card {
+                    .right-panel {
+                        text-align: center;
+                    }
+                }
             }
         }
     }
