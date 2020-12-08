@@ -47,8 +47,12 @@
 
                         &.active-menuitem {
                             > a {
-                                background-color: $submenuItemHoverBgColor;
+                                background-color: $activeRootMenuItemBgColor;
                                 color: $activeSubmenuItemTextColor;
+
+                                > i {
+                                    color: $activeRootMenuItemIconColor;
+                                }
                             }
                         }
                     }

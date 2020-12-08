@@ -6,8 +6,9 @@
 
     $rootMenuItemTextColor:#515C66;
     $rootMenuItemHoverBgColor:#e5e9f0;
-    $activeRootMenuItemTextColor:#282E33;
-    $activeRootMenuItemBgColor: red;
+    $activeRootMenuItemTextColor:$primaryColor;
+    $activeRootMenuItemIconColor: #ffffff;
+    $activeRootMenuItemBgColor: #E8EAF6;
     $menuItemIconColor:#515C66;
 
     $submenuItemTextColor:#515C66;
