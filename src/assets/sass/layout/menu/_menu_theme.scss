@@ -26,7 +26,7 @@
 
                 &.active-menuitem {
                     > a {
-                        background-color: $activeRootMenuItemBgColor;
+                        background-color: $activeRootMenuItemBgColor; /* #merve deleting this doesn't matter */
                         color: $activeRootMenuItemTextColor;
                     }
                 }
