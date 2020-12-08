@@ -1,0 +1,22 @@
+.layout-menu-green {
+    $menuBgColor:#2E7D32;
+    $menuShadow:  0 2px 12px 0 rgba(0, 0, 0, 0.06);
+
+    $rootMenuTextColor:#ffffff;
+
+    $rootMenuItemTextColor:rgba(255,255,255,.6);
+    $rootMenuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeRootMenuItemTextColor:#ffffff;
+    $activeRootMenuItemIconColor: #ffffff;
+    $activeRootMenuItemBgColor: rgba(255,255,255,.24);
+    $menuItemIconColor:rgba(255,255,255,.6);
+
+    $submenuItemTextColor:rgba(255,255,255,.6);
+    $submenuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeSubmenuItemTextColor:#ffffff;
+
+    $externalSubmenuBgColor:#FDFEFF;
+
+    @import '../_menu_theme';
+}
+

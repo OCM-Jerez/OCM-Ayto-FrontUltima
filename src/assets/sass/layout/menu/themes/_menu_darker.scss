@@ -1,0 +1,22 @@
+.layout-menu-darker {
+    $menuBgColor:#212121;
+    $menuShadow:  0 2px 12px 0 rgba(0, 0, 0, 0.06);
+
+    $rootMenuTextColor:#ffffff;
+
+    $rootMenuItemTextColor:rgba(255,255,255,.6);
+    $rootMenuItemHoverBgColor:rgba(255,255,255,.06);;
+    $activeRootMenuItemTextColor:#ffffff;
+    $activeRootMenuItemIconColor: $primaryLightColor;
+    $activeRootMenuItemBgColor: rgba(255,255,255,.12);
+    $menuItemIconColor:rgba(255,255,255,.6);
+
+    $submenuItemTextColor:rgba(255,255,255,.6);
+    $submenuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeSubmenuItemTextColor:$primaryLightColor;
+
+    $externalSubmenuBgColor:#FDFEFF;
+
+    @import '../_menu_theme';
+}
+
