@@ -20,7 +20,7 @@
 
             li {
                 padding: 0px;
-                @include border-radius-left(10px);
+                @include border-radius(4px);
                 &.active-menuitem {
                     > a {
                         i.layout-submenu-toggler {
@@ -52,19 +52,19 @@
 
                 > a {
                     margin: 0px;
-                    padding: 7px 20px 6px 8px;
+                    padding: .5rem 0 .5rem .5rem;
                     @include flex();
                     @include flex-align-center();
                     @include transition(all $transitionDuration);
-                    font-size: 13px;
+                    font-size: 1rem;
                     font-weight: 500;
                     border-radius: 0;
                     cursor: pointer;
                     user-select: none;
-                    @include border-radius-left(10px);
+                    @include border-radius(4px);
 
                     .layout-menuitem-text {
-                        margin: 0 11px;
+                        margin: 0 1rem;
                     }
 
                     &.rotated-icon {
@@ -87,7 +87,8 @@
                     list-style-type: none;
                     padding: 0;
                     margin: 0;
-                    padding-left: 19px;
+                    padding-left: .5rem;
+                    padding-right: .5rem;
 
                     li {
                         ul {
@@ -117,7 +118,7 @@
                                     border-bottom-left-radius: 0;
 
                                     &.active-menuitem-routerlink {
-                                        border-bottom-left-radius: 10px;
+                                        border-radius: 4px;
                                     }
                                 }
                             }
