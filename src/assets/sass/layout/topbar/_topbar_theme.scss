@@ -7,10 +7,10 @@
     .layout-topbar-wrapper {
         .layout-topbar-right {
             .menu-button {
-                color: $topbarItemTextColor;
-                background-color: $topbarItemBgColor;
+                color: $topbarMenuButtonTextColor;
+                background-color: $topbarMenuButtonBgColor;
                 &:hover{
-                    background-color: $topbarItemTextHoverBgColor;
+                    background-color: rgba($topbarMenuButtonBgColor,.7);
                     @include transition(background-color $transitionDuration);
                 }
             }
@@ -30,7 +30,7 @@
                     &.search-item {
                         .search-input-wrapper {
                             input {
-                                background-color: $topbarItemBgColor;
+                                background-color: $topbarBgColor; /* #merve input is going to be an icon only */
 
                                 &::placeholder {
                                     color: rgba($topbarItemTextColor, 0.7);
@@ -133,7 +133,6 @@
 
             .layout-rightpanel-button {
                 color: $topbarItemTextColor;
-                background-color: $topbarItemBgColor;
                 &:hover{
                     background-color: $topbarItemTextHoverBgColor;
                     @include transition(background-color $transitionDuration);
@@ -148,7 +147,7 @@
         box-shadow: none;
         .layout-topbar-wrapper {
             .layout-topbar-left {
-                border-bottom: 1px solid $topbarBorderColor;
+                background-color: $topbarLogoBgColor;
             }
             .layout-topbar-right {
                 border-bottom: 1px solid $topbarBorderColor;

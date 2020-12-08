@@ -17,7 +17,7 @@ import {AppMainComponent} from './app.main.component';
 
                 <div class="layout-topbar-right">
                     <a class="menu-button" href="#" (click)="appMain.onMenuButtonClick($event)">
-                        <i class="pi pi-bars"></i>
+                        <i class="pi pi-chevron-right"></i>
                     </a>
 
                     <ul class="layout-topbar-actions">
@@ -27,13 +27,6 @@ import {AppMainComponent} from './app.main.component';
                                     <i class="pi pi-search"></i>
                                 </span>
                             </a>
-
-                            <div class="search-input-wrapper">
-                                <span class="p-input-icon-left">
-                                    <i class="pi pi-search"></i>
-                                    <input type="text" pInputText placeholder="Search..."/>
-                                </span>
-                            </div>
 
                             <ul class="fadeInDown">
                                 <div class="search-input-wrapper p-fluid">

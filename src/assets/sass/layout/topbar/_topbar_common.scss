@@ -17,10 +17,11 @@
             padding: 11px 14px 13px;
             @include flex();
             @include flex-align-center();
+            background-color: $topbarLogoBgColor;
 
             .layout-topbar-logo {
                 > img {
-                    height: 32px;
+                    height: 24px;
                 }
             }
         }
@@ -42,6 +43,7 @@
                 z-index: 999;
                 width: 36px;
                 height: 36px;
+                margin-left: -30px;
 
                 > i {
                     font-size: 18px;
@@ -66,7 +68,7 @@
                     > a {
                         padding: 10px 10px 7px;
                         margin: 0 6px;
-                        @include border-radius(10px);
+                        @include border-radius(4px);
 
                         > .topbar-icon {
                             i {

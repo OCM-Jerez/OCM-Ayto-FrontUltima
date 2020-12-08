@@ -1,12 +1,14 @@
-.layout-topbar-bluedark {
-    $topbarBgColor: #232946;
+.layout-topbar-lightblue {
+    $topbarBgColor: #0288D1;
+    $topbarLogoBgColor: #0277BD;
     $topbarBorderColor:#E8F1F8;
 
-    $topbarItemTextColor: #515C66;
+    $topbarItemTextColor: #ffffff;
     $topbarItemSecondaryTextColor: rgba($topbarItemTextColor,.7);
-    $topbarItemTextHoverBgColor: rgba(#E8F1F8,.7);
-    $topbarItemBgColor: #E8F1F8;
-    $topbarMenuButtonBgColor:#E8F1F8;
+    $topbarItemTextHoverBgColor: rgba(255,255,255,.12);
+    $topbarItemBgColor: #0288D1; /* #merve this is not used */
+    $topbarMenuButtonBgColor:#FDD835;
+    $topbarMenuButtonTextColor:#212121;
 
     $topbarItemSubmenuItemHoverBgColor: #FDFEFF;
     $topbarSubmenuHeaderBgColor:#FDFEFF;
