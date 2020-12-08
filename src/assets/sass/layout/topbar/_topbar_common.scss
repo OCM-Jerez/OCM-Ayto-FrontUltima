@@ -101,7 +101,7 @@
                         margin: 0;
                         padding: 0;
                         z-index: 1000;
-                        min-width: 260px;
+                        min-width: 370px;
                         animation-duration: $transitionDuration;
 
                         .layout-submenu-header {
@@ -290,39 +290,99 @@
                         }
                     }
 
-                    &.notifications, &.settings {
+                    &.notifications {
                         > ul {
+                            p {
+                                color: #616161;
+                            }
+
+                            hr {
+                                border-color: #E4E4E4;
+                            }
+
                             > li {
-                                &:nth-child(2){
-                                    > a{
-                                        > i {
-                                            background-color: rgba(#2f8ee5,0.2) ;
-                                            color: #2f8ee5;
-                                        }
+                                div {
+                                    width: 100%;
+
+                                    h6 {
+                                        color: #212121;
+                                    }
+
+                                    span {
+                                        color: #616161;
                                     }
                                 }
-                                &:nth-child(3){
-                                    > a{
-                                        > i {
-                                            background-color: rgba(#02acac,0.2) ;
-                                            color: #02acac;
-                                        }
-                                    }
+                            }
+                        }
+                    }
+
+                    .apps {
+                        a {
+                            i:first-child {
+                                margin-right: 0;
+                            }
+
+                            .pi {
+                                color: #FFFFFF;
+                                border-radius: 50%;
+                                background-size: auto;
+                                font-size: 2em;
+                                padding: 1rem;
+
+                                &.pi-image {
+                                    background: #3F51B5;
                                 }
-                                &:nth-child(4){
-                                    > a{
-                                        > i {
-                                            background-color: rgba(#f16383,0.2) ;
-                                            color: #f16383;
-                                        }
-                                    }
+
+                                &.pi-file-pdf {
+                                    background: #FF8F00;
                                 }
-                                &:nth-child(5){
-                                    > a{
-                                        > i {
-                                            background-color: rgba(#2f8ee5,0.2) ;
-                                            color: #2f8ee5;
-                                        }
+
+                                &.pi-dollar {
+                                    background: #388E3C;
+                                }
+
+                                &.pi-cog {
+                                    background: #37474F;
+                                }
+
+                                &.pi-key {
+                                    background: #C2185B;
+                                }
+
+                                &.pi-sitemap {
+                                    background: #0097A7;
+                                }
+                            }
+
+                            h6 {
+                                color: #212121;
+                                margin: 0;
+                            }
+
+                            &:hover {
+                                .pi {
+                                    &.pi-image {
+                                        background: #5C6BC0;
+                                    }
+
+                                    &.pi-file-pdf {
+                                        background: #FFA000;
+                                    }
+
+                                    &.pi-dollar {
+                                        background: #43A047;
+                                    }
+
+                                    &.pi-cog {
+                                        background: #43A047;
+                                    }
+
+                                    &.pi-key {
+                                        background: #D81B60;
+                                    }
+
+                                    &.pi-sitemap {
+                                        background: #00ACC1;
                                     }
                                 }
                             }
