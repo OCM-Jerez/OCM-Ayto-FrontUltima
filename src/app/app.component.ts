@@ -10,7 +10,7 @@ export class AppComponent implements OnInit{
 
     topbarTheme = 'blue';
 
-    menuTheme = 'dim';
+    menuTheme = 'indigo';
 
     layoutMode = 'light';
 

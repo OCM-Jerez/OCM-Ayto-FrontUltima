@@ -1,19 +1,19 @@
 .layout-menu-indigo {
-    $menuBgColor:#2199B5;
+    $menuBgColor:#1A237E;
     $menuShadow:  0 2px 12px 0 rgba(0, 0, 0, 0.06);
 
-    $rootMenuTextColor:#657380;
+    $rootMenuTextColor:#ffffff;
 
-    $rootMenuItemTextColor:#515C66;
-    $rootMenuItemHoverBgColor:#e5e9f0;
-    $activeRootMenuItemTextColor:#282E33;
+    $rootMenuItemTextColor:rgba(255,255,255,.6);
+    $rootMenuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeRootMenuItemTextColor:#ffffff;
     $activeRootMenuItemIconColor: #ffffff;
-    $activeRootMenuItemBgColor: red;
-    $menuItemIconColor:#515C66;
+    $activeRootMenuItemBgColor: rgba(255,255,255,.24);
+    $menuItemIconColor:rgba(255,255,255,.6);
 
-    $submenuItemTextColor:#515C66;
-    $submenuItemHoverBgColor:rgba(#5a657c, .2);
-    $activeSubmenuItemTextColor:#2e3440;
+    $submenuItemTextColor:rgba(255,255,255,.6);
+    $submenuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeSubmenuItemTextColor:#ffffff;
 
     $externalSubmenuBgColor:#FDFEFF;
 
