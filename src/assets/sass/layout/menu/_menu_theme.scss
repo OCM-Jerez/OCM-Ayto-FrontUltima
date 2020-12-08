@@ -26,6 +26,7 @@
 
                 &.active-menuitem {
                     > a {
+                        background-color: $activeRootMenuItemBgColor;
                         color: $activeRootMenuItemTextColor;
                     }
                 }
@@ -80,6 +81,7 @@
             &.active-menuitem {
                 background-color: $externalSubmenuBgColor;
                 > a {
+                    background-color: $activeRootMenuItemBgColor;
                     color: $activeRootMenuItemTextColor;
                 }
             }

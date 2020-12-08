@@ -1,16 +1,17 @@
 .layout-menu-dark {
-    $menuBgColor:#434B54;
-    $menuShadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    $menuBgColor:#424242;
+    $menuShadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.2);
 
-    $rootMenuTextColor:#CDD2DB;
+    $rootMenuTextColor:#ffffff;
 
-    $rootMenuItemTextColor:#E5E8EC;
-    $rootMenuItemHoverBgColor:#4E565F;
+    $rootMenuItemTextColor:#bdbdbd;
+    $rootMenuItemHoverBgColor:#363636;
     $activeRootMenuItemTextColor:#ffffff;
-    $menuItemIconColor:#E5E8EC;
+    $activeRootMenuItemBgColor: #212121;
+    $menuItemIconColor:#bdbdbd;
 
-    $submenuItemTextColor:#E5E8EC;
-    $submenuItemHoverBgColor:#676E77;
+    $submenuItemTextColor:#bdbdbd;
+    $submenuItemHoverBgColor:#363636;
     $activeSubmenuItemTextColor:#ffffff;
 
     $externalSubmenuBgColor:#434B54;
