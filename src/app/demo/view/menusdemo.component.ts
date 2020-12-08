@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MegaMenuItem, MenuItem} from 'primeng/api';
 import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 
 @Component({
-    templateUrl: './menusdemo.component.html'
+    templateUrl: './menusdemo.component.html',
+    encapsulation: ViewEncapsulation.None
 })
 export class MenusDemoComponent implements OnInit {
 
@@ -27,8 +28,8 @@ export class MenusDemoComponent implements OnInit {
 
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
-            { label: 'Menu', routerLink: ['/uikit/sidebar'] }
+            { label: 'Ui Kit' },
+            { label: 'Menu', routerLink: ['/uikit/menu'] }
         ]);
     }
 

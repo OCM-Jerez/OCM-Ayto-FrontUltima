@@ -10,24 +10,13 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 
         .docs pre.doc-command {
             font-family: monospace;
-            background-color: #0C2238;
+            background-color: #2d353c;
             color: #dddddd;
             padding: 1em;
             font-size: 14px;
             border-radius: 3px;
             overflow: auto;
         }
-
-		.docs i {
-			background: #f1daad;
-			font-family: monaco,Consolas,Lucida Console,monospace;
-			font-weight: 700;
-			padding: 2px 4px;
-			letter-spacing: .5px;
-			font-style: normal;
-			color: #424242;
-			border-radius: 4px;
-		}
 
         .inline-code {
             background-color: #0C2238;
@@ -42,8 +31,8 @@ export class DocumentationComponent {
 
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
+            { label: 'Start' },
             { label: 'Documentation', routerLink: ['/documentation'] }
         ]);
     }
-
 }

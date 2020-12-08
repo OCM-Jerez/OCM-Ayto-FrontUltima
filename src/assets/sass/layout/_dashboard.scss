@@ -114,7 +114,7 @@
             padding: 0;
 
             li {
-                padding: $inputOptionPadding;
+                padding: 1rem;
                 border-bottom: 1px solid #dbdbdb;
             }
 
@@ -269,7 +269,7 @@
 
     > div {
         > .p-panel {
-            @include content-shadow();
+            /*@include content-shadow();*/
         }
     }
 }

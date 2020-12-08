@@ -25,7 +25,7 @@ export class TreeDemoComponent implements OnInit {
 
     constructor(private nodeService: NodeService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
+            { label: 'Ui Kit' },
             { label: 'Tree', routerLink: ['/uikit/tree'] }
         ]);
     }

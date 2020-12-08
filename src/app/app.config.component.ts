@@ -1,87 +1,121 @@
 import {Component, OnInit} from '@angular/core';
-import {AppMainComponent} from './app.main.component';
+import { AppComponent } from './app.component';
+import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-config',
     template: `
-        <div class="layout-config" [ngClass]="{'layout-config-active': app.configActive}" (click)="app.onConfigClick($event)">
+        <div id="layout-config" class="layout-config" [ngClass]="{'layout-config-active': appMain.configActive}" (click)="appMain.onConfigClick($event)">
             <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
                 <i class="pi pi-cog"></i>
             </a>
-            <a style="cursor: pointer" class="layout-config-close" (click)="onConfigCloseClick($event)">
-                <i class="pi pi-times"></i>
-            </a>
             <div class="layout-config-content">
-                <h5 style="margin-top: 0">Input Style</h5>
-                <div class="p-formgroup-inline">
-                    <div class="p-field-radiobutton">
-                        <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
-                        <label for="inputStyle1">Outlined</label>
+                <div class="layout-config-form" id="config-form">
+                    <div class="layout-config-header">
+                        <h5>Theme Customization</h5>
+                        <span>Ultima offers different themes for layout, topbar, menu etc.</span>
                     </div>
-                    <div class="p-field-radiobutton">
-                        <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
-                        <label for="inputStyle2">Filled</label>
+
+                    <div id="lightdark-panel" class="layout-config-section options">
+                        <h6>Layout Mode</h6>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event)"></p-radioButton>
+                                <label for="layoutMode1" class="p-ml-2">Light</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event)"></p-radioButton>
+                                <label for="layoutMode2" class="p-ml-2">Dark</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="layoutMode" value="dim" [(ngModel)]="app.layoutMode" inputId="layoutMode3" (onClick)="onLayoutModeChange($event)"></p-radioButton>
+                                <label for="layoutMode3" class="p-ml-2">Dim</label>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <h5>Ripple Effect</h5>
-                <p-inputSwitch [ngModel]="app.ripple" (onChange)="app.onRippleChange($event)"></p-inputSwitch>
+                    <div id="menumodes-panel" class="layout-config-section options">
+                        <h6 class="p-mt-2">Menu Mode</h6>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
+                                <label for="menuMode1" class="p-ml-2">Static</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
+                                <label for="menuMode2" class="p-ml-2">Overlay</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
+                                <label for="menuMode3" class="p-ml-2">Horizontal</label>
+                            </div>
+                        </div>
+                    </div>
 
-                <h5>Menu Type</h5>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="menuMode" value="static" [(ngModel)]="app.layoutMode" inputId="mode1"></p-radioButton>
-                    <label for="mode1">Static</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.layoutMode" inputId="mode2"></p-radioButton>
-                    <label for="mode2">Overlay</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.layoutMode" inputId="mode3" (onClick)="app.profileMode = 'top'"></p-radioButton>
-                    <label for="mode3">Horizontal</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="menuMode" value="slim" [(ngModel)]="app.layoutMode" inputId="mode4"></p-radioButton>
-                    <label for="mode4">Slim</label>
-                </div>
+                    <div id="outlined-panel" class="layout-config-section options">
+                        <h6 class="p-mt-2">Input Background</h6>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
+                                <label for="inputStyle1" class="p-ml-2">Outlined</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
+                                <label for="inputStyle2" class="p-ml-2">Filled</label>
+                            </div>
+                        </div>
+                    </div>
 
-                <h5>Menu Colors</h5>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="darkMenu" [value]="true" [(ngModel)]="app.darkMenu" inputId="darkMenu1"></p-radioButton>
-                    <label for="darkMenu1">Dark</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="darkMenu" [value]="false" [(ngModel)]="app.darkMenu" inputId="darkMenu2"></p-radioButton>
-                    <label for="darkMenu2">Light</label>
-                </div>
+                    <div id="ripple-panel" class="layout-config-section ripple">
+                        <h6 class="p-mt-2">Ripple Effect</h6>
+                        <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
+                    </div>
 
-                <h5>User Profile</h5>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="profileMode" value="inline" [(ngModel)]="app.profileMode" inputId="profileMode1" [disabled]="app.isHorizontal()"></p-radioButton>
-                    <label for="profileMode1">Inline</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="profileMode" value="top" [(ngModel)]="app.profileMode" inputId="profileMode2" [disabled]="app.isHorizontal()"></p-radioButton>
-                    <label for="profileMode2">Overlay</label>
-                </div>
+                    <div id="orientation-panel" class="layout-config-section dark">
+                        <h6 class="p-mt-2">RTL</h6>
+                        <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)"></p-inputSwitch>
+                    </div>
 
-                <h5>Theme Modes</h5>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="compactMode" [value]="true" [(ngModel)]="app.compactMode" inputId="compactMode1" (onClick)="changeThemeStyle($event, true)"></p-radioButton>
-                    <label for="compactMode1">Compact</label>
-                </div>
-                <div class="p-field-radiobutton">
-                    <p-radioButton name="compactMode" [value]="false" [(ngModel)]="app.compactMode" inputId="compactMode2" (onClick)="changeThemeStyle($event, false)"></p-radioButton>
-                    <label for="compactMode2">Standart</label>
-                </div>
+                    <div id="menuthemes-panel" class="layout-config-section colors">
+                        <h6 class="p-mt-2">Menu Themes</h6>
+                        <div class="p-grid layout-config-colors">
+                            <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
+                                <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-option">
+                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
+                                    <span class="layout-config-option-check-mask" *ngIf="app.menuTheme === t.name">
+                                        <i class="pi pi-check"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                <h5>Themes</h5>
-                <div class="layout-themes">
-                    <div *ngFor="let theme of themes">
-                        <a style="cursor: pointer" (click)="changeTheme(theme.label)">
-                            <img src="assets/layout/images/configurator/theme/{{theme.image}}.svg" alt="ultima"/>
-                            <i class="pi pi-check" *ngIf="themeColor === theme.label"></i>
-                        </a>
+                    <div id="componentthemes-panel" class="layout-config-section colors">
+                        <h6 class="p-mt-2">Topbar Themes</h6>
+                        <div class="p-grid layout-config-colors">
+                            <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
+                                <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-option">
+                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
+                                    <span class="layout-config-option-check-mask" *ngIf="app.topbarTheme === t.name">
+                                        <i class="pi pi-check"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="componentthemes-panel" class="layout-config-section colors">
+                        <h6 class="p-mt-2">Component Themes</h6>
+                        <div class="p-grid layout-config-colors">
+                            <div *ngFor="let t of themes" class="p-col p-col-fixed">
+                                <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-option">
+                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
+                                    <span class="layout-config-option-check-mask" *ngIf="theme === t.name">
+                                        <i class="pi pi-check"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,55 +126,82 @@ export class AppConfigComponent implements OnInit {
 
     themes: any[];
 
-    themeColor = 'indigo';
+    menuThemes: any[];
 
-    constructor(public app: AppMainComponent) {
-    }
+    topbarThemes: any[];
+
+    theme = 'deeppurple';
+
+    constructor(public appMain: AppMainComponent, public app: AppComponent) {}
 
     ngOnInit() {
         this.themes = [
-            {image: 'indigo-pink', label: 'indigo'},
-            {image: 'brown-green', label: 'brown'},
-            {image: 'blue-amber', label: 'blue'},
-            {image: 'bluegrey-green', label: 'blue-grey'},
-            {image: 'dark-blue', label: 'dark-blue'},
-            {image: 'dark-green', label: 'dark-green'},
-            {image: 'green-yellow', label: 'green'},
-            {image: 'purple-cyan', label: 'purple-cyan'},
-            {image: 'purple-amber', label: 'purple-amber'},
-            {image: 'teal-lime', label: 'teal'},
-            {image: 'cyan-amber', label: 'cyan'},
-            {image: 'grey-deeporange', label: 'grey'}
+            {name: 'indigo', color: '#2f8ee5'},
+            {name: 'deeppurple', color: '#30A059'},
+            {name: 'red', color: 'red'}
+        ];
+
+        this.menuThemes = [
+            {name: 'blue', color: '#2E88FF'},
+            {name: 'bluedark', color: '#232946'},
+            {name: 'cyan', color: '#2199B5'},
+            {name: 'dark', color: '#434B54'},
+            {name: 'dim', color: '#3C4962'},
+            {name: 'light', color: '#FDFEFF'}
+        ];
+
+        this.topbarThemes = [
+            {name: 'blue', color: '#2E88FF'},
+            {name: 'bluedark', color: '#232946'},
+            {name: 'cyan', color: '#2199B5'},
+            {name: 'dark', color: '#434B54'},
+            {name: 'dim', color: '#3C4962'},
+            {name: 'light', color: '#FDFEFF'}
         ];
     }
 
-    changeTheme(theme) {
-        this.themeColor = theme;
-        if (this.app.compactMode) {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '-compact.css');
-        } else {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + theme + '.css');
-        }
-        this.changeStyleSheetsColor('layout-css', 'layout-' + theme + '.css');
-    }
+    onLayoutModeChange(event) {
+        //this.app.menuTheme = this.app.layoutMode;
+        //this.app.topbarTheme = this.app.layoutMode;
 
-    changeStyleSheetsColor(id, value) {
-        const element = document.getElementById(id);
-        const urlTokens = element.getAttribute('href').split('/');
-        urlTokens[urlTokens.length - 1] = value;
+        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
+        const layoutHref = 'assets/layout/css/layout-' + this.app.layoutMode + '.css';
+        this.replaceLink(layoutLink, layoutHref);
 
+        const themeLink = document.getElementById('theme-css');
+        const urlTokens = themeLink.getAttribute('href').split('/');
+        urlTokens[urlTokens.length - 1] = 'theme-' + this.app.layoutMode + '.css';
         const newURL = urlTokens.join('/');
 
-        this.replaceLink(element, newURL);
+        this.replaceLink(themeLink, newURL, this.appMain['refreshTrafficChart']);
+    }
+
+    changeTheme(theme) {
+        this.theme = theme;
+
+        const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
+        const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutMode + '.css';
+        this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
+    }
+
+    changeMenuTheme(theme) {
+        this.app.menuTheme = theme;
+    }
+
+    changeTopbarTheme(theme) {
+        this.app.topbarTheme = theme;
     }
 
     isIE() {
         return /(MSIE|Trident\/|Edge\/)/i.test(window.navigator.userAgent);
     }
 
-    replaceLink(linkElement, href) {
+    replaceLink(linkElement, href, callback?) {
         if (this.isIE()) {
             linkElement.setAttribute('href', href);
+            if (callback) {
+                callback();
+            }
         } else {
             const id = linkElement.getAttribute('id');
             const cloneLinkElement = linkElement.cloneNode(true);
@@ -153,26 +214,17 @@ export class AppConfigComponent implements OnInit {
             cloneLinkElement.addEventListener('load', () => {
                 linkElement.remove();
                 cloneLinkElement.setAttribute('id', id);
+
+                if (callback) {
+                    callback();
+                }
             });
         }
     }
 
-    changeThemeStyle(event, compactMode) {
-        if (compactMode) {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '-compact.css');
-        }
-        else {
-            this.changeStyleSheetsColor('theme-css', 'theme-' + this.themeColor + '.css');
-        }
-    }
-
     onConfigButtonClick(event) {
-        this.app.configActive = !this.app.configActive;
-        event.preventDefault();
-    }
-
-    onConfigCloseClick(event) {
-        this.app.configActive = false;
+        this.appMain.configActive = !this.appMain.configActive;
+        this.appMain.configClick = true;
         event.preventDefault();
     }
 }

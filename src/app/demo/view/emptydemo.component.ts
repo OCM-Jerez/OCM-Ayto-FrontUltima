@@ -9,8 +9,7 @@ export class EmptyDemoComponent {
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'Pages' },
-            { label: 'Empty', routerLink: ['/pages/empty'] }
+            { label: 'Empty Page', routerLink: ['/pages/empty'] }
         ]);
     }
-
 }

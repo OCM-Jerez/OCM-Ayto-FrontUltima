@@ -1,3 +1,18 @@
-@import '_common';
+$bodyBgColor:#f7f7f7 !default;
+$textColor:#515C66 !default;
+$textSecondaryColor:#657380 !default;
 
-$bodyBg: #f8f9fa !default;
+$contentBgColor:#FDFEFF !default;
+$contentAltBgColor:#E8F1F8 !default;
+$dividerColor: #E8F1F8 !default;
+
+$menuTooltipBgColor:#1c202c !default;
+$menuTooltipTextColor:#ffffff !default;
+
+:root{
+    --content-alt-bg-color:#{$contentAltBgColor};
+}
+
+@import './_layout_common';
+
+

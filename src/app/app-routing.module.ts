@@ -1,9 +1,12 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
+import {DashboardDemoComponent2} from './demo/view/dashboarddemo.component-2';
+import {DashboardDemoComponent3} from './demo/view/dashboarddemo.component-3';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
+import {MediaDemoComponent} from './demo/view/mediademo.component';
 import {MenusDemoComponent} from './demo/view/menusdemo.component';
 import {MessagesDemoComponent} from './demo/view/messagesdemo.component';
 import {MiscDemoComponent} from './demo/view/miscdemo.component';
@@ -17,6 +20,7 @@ import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {InputDemoComponent} from './demo/view/inputdemo.component';
+import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
 import {ButtonDemoComponent} from './demo/view/buttondemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
 import {ListDemoComponent} from './demo/view/listdemo.component';
@@ -34,9 +38,6 @@ import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
-import {AppWizardComponent} from './pages/app.wizard.component';
-import {MediaDemoComponent} from './demo/view/mediademo.component';
-import {AppContactusComponent} from './pages/app.contactus.component';
 
 @NgModule({
     imports: [
@@ -45,7 +46,10 @@ import {AppContactusComponent} from './pages/app.contactus.component';
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: DashboardDemoComponent},
+                    {path: 'favorites/dashboard2', component: DashboardDemoComponent2},
+                    {path: 'favorites/dashboard3', component: DashboardDemoComponent3},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
+                    {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/input', component: InputDemoComponent},
                     {path: 'uikit/button', component: ButtonDemoComponent},
                     {path: 'uikit/table', component: TableDemoComponent},
@@ -53,8 +57,8 @@ import {AppContactusComponent} from './pages/app.contactus.component';
                     {path: 'uikit/tree', component: TreeDemoComponent},
                     {path: 'uikit/panel', component: PanelsDemoComponent},
                     {path: 'uikit/overlay', component: OverlaysDemoComponent},
+                    {path: 'uikit/menu', component: MenusDemoComponent},
                     {path: 'uikit/media', component: MediaDemoComponent},
-                    {path: 'uikit/sidebar', component: MenusDemoComponent},
                     {path: 'uikit/message', component: MessagesDemoComponent},
                     {path: 'uikit/misc', component: MiscDemoComponent},
                     {path: 'uikit/charts', component: ChartsDemoComponent},
@@ -80,8 +84,6 @@ import {AppContactusComponent} from './pages/app.contactus.component';
             {path: 'access', component: AppAccessdeniedComponent},
             {path: 'notfound', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
-            {path: 'contactus', component: AppContactusComponent},
-            {path: 'wizard', component: AppWizardComponent},
             {path: '**', redirectTo: '/notfound'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

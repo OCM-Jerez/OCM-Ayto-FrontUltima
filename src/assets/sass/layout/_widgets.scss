@@ -29,7 +29,7 @@
     }
 
     .badge-pink {
-        background-color: #E91E63; 
+        background-color: #E91E63;
     }
 }
 
@@ -160,11 +160,11 @@
             color: #0097A7;
             font-size: 1.5rem;
         }
-    
+
         .value {
             font-weight: 500;
         }
-    
+
         .subtext {
             color: #616161;
         }
@@ -212,7 +212,7 @@
                     }
                 }
             }
-            
+
         }
     }
 }
@@ -294,7 +294,7 @@
 
     .info {
         text-align: right;
-        
+
         .value {
             font-size: 2rem;
         }
@@ -385,7 +385,7 @@
         border-radius: 4px;
         box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
     }
-    
+
     .info {
         .value {
             font-size: 3rem;
@@ -505,7 +505,7 @@
             padding: 1rem;
             color: #1565C0;
             border-radius: 4px;
-            
+
             i {
                 font-size: 1.5rem;
             }
@@ -525,7 +525,7 @@
                 color: #455A64;
             }
         }
-    
+
         .item-subtext {
             color: #616161;
         }
@@ -538,7 +538,7 @@
                 color: #424242;
                 font-size: 1.25rem;
             }
-            
+
         }
     }
 
@@ -579,12 +579,12 @@
             .badge {
                 padding: .25rem;
                 border-radius: 2px;
-        
+
                 &.accounting {
                     background-color: #BBDEFB;
                     color: #0D47A1;
                 }
-        
+
                 &.sales {
                     background-color: #FFECB3;
                     color: #BF6B00;
@@ -657,7 +657,7 @@
             .activity-title {
                 font-weight: 500;
             }
-    
+
             .activity-subtext {
                 font-size: .85rem;
                 color: #616161;
@@ -1003,7 +1003,7 @@
             img {
                 width: 32px;
             }
-    
+
             &.from {
                 .message{
                     padding: 1rem;
@@ -1012,7 +1012,7 @@
                     border-radius: 30px;
                 }
             }
-    
+
             &.own {
                 text-align: right;
                 .message{
@@ -1066,7 +1066,7 @@
         width: 8rem;
         height: 8rem;;
     }
-    
+
     .name {
         font-size: 1.5rem;
         font-weight: 500;

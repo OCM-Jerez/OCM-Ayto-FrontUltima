@@ -8,6 +8,13 @@ export class FormLayoutDemoComponent {
 
     selectedState: any = null;
 
+    constructor(private breadcrumbService: AppBreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Ui Kit' },
+            { label: 'Form Layout', routerLink: ['/uikit/formlayout'] }
+        ]);
+    }
+
     states: any[] = [
         {name: 'Arizona', code: 'Arizona'},
         {name: 'California', value: 'California'},
@@ -15,19 +22,4 @@ export class FormLayoutDemoComponent {
         {name: 'Ohio', code: 'Ohio'},
         {name: 'Washington', code: 'Washington'}
     ];
-
-    cities1: any[] = [];
-
-    cities2: any[] = [];
-
-    city1: any = null;
-
-    city2: any = null;
-
-    constructor(private breadcrumbService: AppBreadcrumbService) {
-        this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
-            { label: 'Form Layout', routerLink: ['/uikit/formlayout'] }
-        ]);
-    }
 }

@@ -1,66 +1,67 @@
-import { Component, Input, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { MenuService } from './app.menu.service';
-import { AppMainComponent } from './app.main.component';
+import {ChangeDetectorRef, Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {NavigationEnd, Router} from '@angular/router';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Subscription} from 'rxjs';
+import {filter} from 'rxjs/operators';
+import {MenuService} from './app.menu.service';
+import {AppMainComponent} from './app.main.component';
 
 @Component({
     /* tslint:disable:component-selector */
     selector: '[app-menuitem]',
     /* tslint:enable:component-selector */
     template: `
-		<ng-container>
-			<a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items"
-               (mouseenter)="onMouseEnter()" (keydown.enter)="itemClick($event)" pRipple
-			   [attr.target]="item.target" [attr.tabindex]="0">
-				<i *ngIf="item.icon" [ngClass]="item.icon"></i>
-				<span>{{item.label}}</span>
-				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-				<i class="pi pi-fw pi-angle-down submenu-icon" *ngIf="item.items"></i>
-			</a>
-			<a (click)="itemClick($event)" (mouseenter)="onMouseEnter()" *ngIf="item.routerLink && !item.items"
-			   [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" pRipple
-			   [routerLinkActiveOptions]="{exact: true}" [attr.target]="item.target" [attr.tabindex]="0">
-				<i *ngIf="item.icon" [ngClass]="item.icon"></i>
-				<span>{{item.label}}</span>
-				<span class="menuitem-badge" *ngIf="item.badge">{{item.badge}}</span>
-				<i class="pi pi-fw pi-angle-down submenu-icon" *ngIf="item.items"></i>
-			</a>
-			<div class="layout-menu-tooltip">
-				<div class="layout-menu-tooltip-arrow"></div>
-				<div class="layout-menu-tooltip-text">{{item.label}}</div>
-			</div>
-			<ul *ngIf="item.items && active" [@children]="((app.isSlim()||app.isHorizontal()) && root) ? (active ? 'visible' : 'hidden') :
-			(active ? 'visibleAnimated' : 'hiddenAnimated')">
-				<ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
-					<li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
-				</ng-template>
-			</ul>
-		</ng-container>
+        <ng-container>
+            <div *ngIf="root">
+                <span class="layout-menuitem-text">{{item.label}}</span>
+            </div>
+            <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (keydown.enter)="itemClick($event)"
+               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple>
+                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+                <span class="layout-menuitem-text">{{item.label}}</span>
+                <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
+            </a>
+            <a (click)="itemClick($event)" *ngIf="item.routerLink && !item.items"
+               [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}"
+               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple>
+                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
+                <span class="layout-menuitem-text">{{item.label}}</span>
+                <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
+            </a>
+            <div class="layout-menu-tooltip">
+                <div class="layout-menu-tooltip-arrow"></div>
+                <div class="layout-menu-tooltip-text">{{item.label}}</div>
+            </div>
+            <ul *ngIf="(item.items && root) || (item.items && active)" [@children]="root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">
+                <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
+                    <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
+                </ng-template>
+            </ul>
+        </ng-container>
     `,
     host: {
-        '[class.active-menuitem]': 'active'
+        '[class.layout-root-menuitem]': 'root || active',
+        '[class.active-menuitem]': '(active)'
     },
     animations: [
         trigger('children', [
             state('void', style({
-                height: '0px'
+                height: '0px',
+                padding: '0px'
             })),
             state('hiddenAnimated', style({
-                height: '0px'
+                height: '0px',
+                padding: '0px'
             })),
             state('visibleAnimated', style({
                 height: '*'
             })),
             state('visible', style({
-                height: '*',
-                'z-index': 100
+                height: '*'
             })),
             state('hidden', style({
                 height: '0px',
-                'z-index': '*'
+                padding: '0px'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
             transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
@@ -89,7 +90,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
     constructor(public app: AppMainComponent, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
-            // deactivate current active sidebar
+            // deactivate current active menu
             if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
                 this.active = false;
             }
@@ -101,7 +102,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         this.router.events.pipe(filter(event => event instanceof NavigationEnd))
             .subscribe(params => {
-                if (this.app.isHorizontal() || this.app.isSlim()) {
+                if (this.app.isHorizontal()) {
                     this.active = false;
                 } else {
                     if (this.item.routerLink) {
@@ -114,7 +115,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        if ((!this.app.isHorizontal() || !this.app.isSlim()) && this.item.routerLink) {
+        if (!this.app.isHorizontal() && this.item.routerLink) {
             this.updateActiveStateFromRoute();
         }
 
@@ -152,27 +153,28 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // activate item
             this.active = true;
 
-            // reset horizontal sidebar
-            if (this.app.isHorizontal() || this.app.isSlim()) {
+            // reset horizontal menu
+            if (this.app.isHorizontal()) {
                 this.menuService.reset();
+                this.app.menuHoverActive = false;
             }
 
-            // hide overlay menus
             this.app.overlayMenuActive = false;
             this.app.staticMenuMobileActive = false;
-            this.app.menuHoverActive = !this.app.menuHoverActive;
         }
     }
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root && this.app.menuHoverActive &&  (this.app.isHorizontal() || this.app.isSlim()) && this.app.isDesktop()) {
-            this.menuService.onMenuStateChange(this.key);
-            this.active = true;
+        if (this.root  && this.app.isHorizontal() && this.app.isDesktop()) {
+            if (this.app.menuHoverActive) {
+                this.menuService.onMenuStateChange(this.key);
+                this.active = true;
+            }
         }
     }
 
-    ngOnDestroy() {
+    ngOnDestroy() {
         if (this.menuSourceSubscription) {
             this.menuSourceSubscription.unsubscribe();
         }

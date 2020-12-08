@@ -1,36 +1,35 @@
-<div class="layout-wrapper" (click)="onLayoutClick()">
+<div class="layout-wrapper" [ngClass]="{'p-input-filled': app.inputStyle === 'filled', 'p-ripple-disabled': !app.ripple,
+        'layout-static': isStatic(),
+        'layout-overlay': isOverlay(),
+        'layout-overlay-active': overlayMenuActive && isOverlay(),
+        'layout-horizontal': isHorizontal(),
+        'layout-static-active': !staticMenuDesktopInactive && isStatic(),
+        'layout-mobile-active': staticMenuMobileActive,
+        'layout-rtl': app.isRTL,
+        'layout-rightpanel-active': rightPanelActive}" [class]="'layout-menu-'+ app.menuTheme+ ' layout-topbar-'+ app.topbarTheme">
 
-    <div class="layout-container"
-         [ngClass]="{'menu-layout-static': !isOverlay(),
-            'menu-layout-overlay': isOverlay(),
-            'layout-menu-overlay-active': overlayMenuActive,
-            'menu-layout-horizontal': isHorizontal(),
-            'menu-layout-slim': isSlim(),
-            'layout-menu-static-inactive': staticMenuDesktopInactive,
-            'layout-menu-static-active': staticMenuMobileActive,
-            'p-ripple-disabled': !ripple, 'p-input-filled': inputStyle === 'filled'}"  [class]="'layout-sidebar-'+ menuTheme+ ' layout-topbar-'+ topbarTheme">
+    <app-topbar></app-topbar>
 
-        <app-topbar></app-topbar>
+    <app-rightpanel></app-rightpanel>
 
-        <div class="layout-menu" [ngClass]="{'layout-menu-dark':darkMenu}" (click)="onMenuClick($event)">
-            <app-inline-profile *ngIf="profileMode=='inline'&&!isHorizontal()"></app-inline-profile>
+    <div class="menu-wrapper" (click)="onMenuClick($event)">
+        <div class="layout-menu-container">
             <app-menu></app-menu>
         </div>
+    </div>
 
-        <div class="layout-main">
-            <app-breadcrumb></app-breadcrumb>
+    <div class="layout-main">
+        <app-breadcrumb></app-breadcrumb>
 
-            <div class="layout-content">
-                <router-outlet></router-outlet>
-            </div>
-
-            <app-footer></app-footer>
+        <div class="layout-content">
+            <router-outlet></router-outlet>
         </div>
 
-        <app-rightpanel></app-rightpanel>
-        <app-config></app-config>
-
-        <div class="layout-mask"></div>
+        <app-footer></app-footer>
     </div>
+
+    <app-config></app-config>
+
+    <div *ngIf="staticMenuMobileActive" class="layout-mask modal-in"></div>
 
 </div>

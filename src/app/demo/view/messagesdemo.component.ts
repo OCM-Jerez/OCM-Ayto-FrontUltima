@@ -9,9 +9,9 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
             min-width: 8em;
         }
 
-        :host ::ng-deep .p-message {
-            margin-left: .25em;
-        }
+		:host ::ng-deep .p-message {
+			margin-left: .25em;
+		}
     `],
     providers: [MessageService]
 })
@@ -21,7 +21,7 @@ export class MessagesDemoComponent {
 
     constructor(private service: MessageService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
+            { label: 'Ui Kit' },
             { label: 'Message', routerLink: ['/uikit/message'] }
         ]);
     }

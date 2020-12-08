@@ -32,7 +32,7 @@ export class OverlaysDemoComponent implements OnInit {
     constructor(private productService: ProductService, private confirmationService: ConfirmationService,
                 private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
+            { label: 'Ui Kit' },
             { label: 'Overlay', routerLink: ['/uikit/overlay'] }
         ]);
     }

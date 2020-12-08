@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { MessageService } from 'primeng/api';
-import { AppBreadcrumbService } from '../../app.breadcrumb.service';
+import {Component} from '@angular/core';
+import {MessageService} from 'primeng/api';
+import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 
 @Component({
     templateUrl: './filedemo.component.html',
@@ -10,9 +10,9 @@ export class FileDemoComponent {
 
     uploadedFiles: any[] = [];
 
-    constructor(private breadcrumbService: AppBreadcrumbService, private messageService: MessageService) {
+    constructor(private messageService: MessageService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'UI Kit' },
+            { label: 'Ui Kit' },
             { label: 'File', routerLink: ['/uikit/file'] }
         ]);
     }
