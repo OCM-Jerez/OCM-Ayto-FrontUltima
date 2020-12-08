@@ -178,7 +178,24 @@ export class AppConfigComponent implements OnInit {
         ];
 
         this.topbarThemes = [
-            {name: 'blue', color: '#2E88FF'}
+            {name: 'lightblue', color: '#2E88FF'},
+            {name: 'white', color: '#FDFEFF'},
+            {name: 'blue', color: '#1565C0'},
+            {name: 'deeppurple', color: '#4527A0'},
+            {name: 'purple', color: '#6A1B9A'},
+            {name: 'pink', color: '#AD1457'},
+            {name: 'cyan', color: '#0097A7'},
+            {name: 'teal', color: '#00796B'},
+            {name: 'green', color: '#43A047'},
+            {name: 'lightgreen', color: '#689F38'},
+            {name: 'lime', color: '#AFB42B'},
+            {name: 'yellow', color: '#FBC02D'},
+            {name: 'amber', color: '#FFA000'},
+            {name: 'orange', color: '#FB8C00'},
+            {name: 'deeporange', color: '#D84315'},
+            {name: 'brown', color: '#5D4037'},
+            {name: 'grey', color: '#616161'},
+            {name: 'bluegrey', color: '#546E7A'}
         ];
     }
 

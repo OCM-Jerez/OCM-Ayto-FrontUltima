@@ -1,0 +1,22 @@
+.layout-topbar-pink {
+    $topbarBgColor: #AD1457;
+    $topbarLogoBgColor: #880E4F;
+    $topbarBorderColor:#E8F1F8;
+
+    $topbarItemTextColor: #ffffff;
+    $topbarItemSecondaryTextColor: rgba($topbarItemTextColor,.7);
+    $topbarItemTextHoverBgColor: rgba(255,255,255,.12);
+    $topbarItemBgColor: #0288D1; /* #merve this is not used */
+    $topbarMenuButtonBgColor:#F9A825;
+    $topbarMenuButtonTextColor:#212121;
+
+    $topbarItemSubmenuItemHoverBgColor: #FDFEFF;
+    $topbarSubmenuHeaderBgColor:#FDFEFF;
+
+    $topbarItemSubmenuBgColor: #FDFEFF;
+    $topbarItemSubmenuTextColor:#515C66;
+    $topbarItemSubmenuSecondaryTextColor: rgba($topbarItemSubmenuTextColor, .6);
+
+    $topbarItemSubmenuBoxShadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
+    @import '../_topbar_theme';
+}
