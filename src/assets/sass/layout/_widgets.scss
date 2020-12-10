@@ -336,7 +336,7 @@
     .p-progressbar {
         height: 6px;
         border-radius: 10px;
-        background: #ECEFF1;
+        background: $contentAltBgColor;
     }
 
     .p-progressbar-value {
@@ -428,7 +428,7 @@
             font-weight: 500;
 
             &.type-green {
-                color: #0097A7;
+                color: $cyan;
             }
 
             &.type-yellow {
@@ -436,7 +436,7 @@
             }
 
             &.type-pink {
-                color: #E91E63;
+                color: $pink;
             }
         }
 
@@ -624,37 +624,37 @@
 
         &:nth-child(1) {
             .p-progressbar-value {
-                background: #FFC107;
+                background: $yellow;
             }
         }
 
         &:nth-child(2) {
             .p-progressbar-value {
-                background: #E91E63;
+                background: $pink;
             }
         }
 
         &:nth-child(3) {
             .p-progressbar-value {
-                background: #4CAF50;
+                background: $cyan;
             }
         }
 
         &:nth-child(4) {
             .p-progressbar-value {
-                background: #4CAF50;
+                background: $cyan;
             }
         }
 
         &:nth-child(5) {
             .p-progressbar-value {
-                background: #4CAF50;
+                background: $cyan;
             }
         }
 
         &:nth-child(6) {
             .p-progressbar-value {
-                background: #E91E63;
+                background: $pink;
             }
         }
 
@@ -1012,8 +1012,8 @@
             &.from {
                 .message{
                     padding: 1rem;
-                    background-color: #00ACC1;
-                    color: white;
+                    background-color: $cyan;
+                    color: $bodyBgColor;
                     border-radius: 30px;
                 }
             }
@@ -1022,8 +1022,8 @@
                 text-align: right;
                 .message{
                     padding: 1rem;
-                    background-color: #D81B60;
-                    color: white;
+                    background-color: $pink;
+                    color: $bodyBgColor;
                     border-radius: 30px;
                 }
             }
