@@ -1,11 +1,21 @@
+.card {
+    background-color: $contentBgColor;
+
+    .card-header {
+        h5 {
+            color: $textColor;
+        }
+    }
+}
+
 .overview-box {
-    background-color: $cardBgColor;
+    background-color: $contentBgColor;
     height: 120px;
     overflow: hidden;
     margin: 0 !important;
 
     h6 {
-        color: #616161; //todo: move this to variables
+        color: $textSecondaryColor;
     }
 
     .overview-icon {
@@ -119,14 +129,14 @@
 .widget-feature-box {
     .image-container {
         width: 100%;
-        background-color: #ECEFF1;
+        background-color: $contentAltBgColor;
         padding: 1rem;
         border-radius: 4px;
     }
 
     .text-container {
         p {
-            color: #616161;
+            color: $textSecondaryColor;
             text-align: center;
         }
 
@@ -137,7 +147,7 @@
 
     .footer {
         .info-left {
-            color: #616161;
+            color: $textSecondaryColor;
         }
     }
 }
@@ -145,13 +155,13 @@
 .widget-expenses {
     .card-subheader {
         font-size: .9rem;
-        color: #616161;
-        border-bottom: 1px solid #E4E4E4;
+        color: $textSecondaryColor;
+        border-bottom: 1px solid $dividerColor;
     }
 
     .item {
         padding: .5rem;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
 
         &:last-child {
             border: 0 none;
@@ -167,7 +177,7 @@
         }
 
         .subtext {
-            color: #616161;
+            color: $textSecondaryColor;
         }
     }
 }
@@ -221,8 +231,8 @@
 .widget-insights {
     .card-subheader {
         font-size: .9rem;
-        color: #616161;
-        border-bottom: 1px solid #E4E4E4;
+        color: $textSecondaryColor;
+        border-bottom: 1px solid $dividerColor;
     }
 
     .insight-container {
@@ -248,7 +258,7 @@
             }
 
             .day {
-                color: #616161;
+                color: $textSecondaryColor;
             }
         }
     }
@@ -257,7 +267,7 @@
 .widget-sales {
     .sales-info {
         .title {
-            color: #616161;
+            color: $textSecondaryColor;
         }
 
         .value {
@@ -301,7 +311,7 @@
         }
 
         .subtext {
-            color: #616161;
+            color: $textSecondaryColor;
         }
     }
 
@@ -315,12 +325,12 @@
         }
 
         .value {
-            color: #616161;
+            color: $textSecondaryColor;
         }
     }
 
     .left {
-        border-right: 1px solid #e4e4e4;
+        border-right: 1px solid $dividerColor;
     }
 
     .p-progressbar {
@@ -334,7 +344,7 @@
     }
 
     .stats {
-        border-top: 1px solid #e4e4e4;
+        border-top: 1px solid $dividerColor;
     }
 
 }
@@ -342,8 +352,8 @@
 .widget-weeklyoverview {
     .card-subheader {
         font-size: .9rem;
-        color: #616161;
-        border-bottom: 1px solid #E4E4E4;
+        color: $textSecondaryColor;
+        border-bottom: 1px solid $dividerColor;
     }
 
     h5 {
@@ -356,16 +366,16 @@
         list-style-type: none;
 
         >li {
-            border-bottom: 1px solid #E4E4E4;
+            border-bottom: 1px solid $dividerColor;
 
             .value {
-                color: #616161;
+                color: $textSecondaryColor;
             }
 
             .p-progressbar {
                 height: 6px;
                 border-radius: 10px;
-                background: #ECEFF1;
+                background: $contentAltBgColor;
             }
 
             .p-progressbar-value {
@@ -395,7 +405,7 @@
         }
 
         .subtext {
-            color: #616161;
+            color: $textSecondaryColor;
         }
 
         i {
@@ -412,7 +422,7 @@
 .widget-topsearchs {
     .item {
         padding: 1rem;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
 
         .value {
             font-weight: 500;
@@ -431,7 +441,7 @@
         }
 
         &:nth-child(even) {
-            background-color: #FAFAFA;
+            background-color: $contentAltBgColor;
         }
 
         &:last-child {
@@ -497,7 +507,7 @@
 
     >li {
         padding: 1rem 0;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
 
         .icon-container {
             width: 36px;
@@ -528,7 +538,7 @@
         }
 
         .item-subtext {
-            color: #616161;
+            color: $textSecondaryColor;
         }
 
         .item-actions {
@@ -542,12 +552,6 @@
 
         }
     }
-
-    .footer {
-        span {
-            color: #616161;
-        }
-    }
 }
 
 .widget-contacts-list {
@@ -557,7 +561,7 @@
 
     >li {
         padding: 1rem 0;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
 
         &:last-child {
             border-bottom: 0 none;
@@ -572,7 +576,7 @@
             .person-subtext {
                 font-size: .85rem;
                 font-weight: 500;
-                color: #616161;
+                color: $textSecondaryColor;
             }
         }
 
@@ -612,7 +616,7 @@
 
     >li {
         padding: 1rem 0;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
 
         &:last-child {
             border-bottom: 0 none;
@@ -661,12 +665,12 @@
 
             .activity-subtext {
                 font-size: .85rem;
-                color: #616161;
+                color: $textSecondaryColor;
             }
             .p-progressbar {
                 height: 6px;
                 border-radius: 10px;
-                background: #ECEFF1;
+                background: $contentAltBgColor;
             }
         }
     }
@@ -685,7 +689,7 @@
         }
 
         .bestseller-item {
-            background-color: #ECEFF1;
+            background-color: $contentAltBgColor;
             border-radius: 4px;
             height: 3.5rem;
             transition: box-shadow .2s;
@@ -697,7 +701,7 @@
             }
 
             a {
-                color: #212121;
+                color: $textSecondaryColor;
             }
 
             .item-button {
@@ -706,7 +710,7 @@
 
             &:hover {
                 cursor: pointer;
-                background-color: white;
+                background-color: rgba($contentAltBgColor, .5);
                 box-shadow: 0 2px 1px -1px rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 1px 3px 0 rgba(0,0,0,.12);
             }
         }
@@ -1075,10 +1079,10 @@
 
     .location{
         i {
-            color: #616161;
+            color: $textSecondaryColor;
         }
         span {
-            color: #616161;
+            color: $textSecondaryColor;
         }
     }
 

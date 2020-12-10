@@ -1,16 +1,13 @@
 $bodyBgColor:#212121 !default;
-$textColor:#E5E8EC !default;
-$textSecondaryColor:#CDD2DB !default;
+$textColor:#ffffff !default;
+$textSecondaryColor:#BDBDBD !default;
 
-$contentBgColor:#434B54 !default;
-$contentAltBgColor:#4E565F !default;
-$dividerColor:#4E565F !default;
+$contentBgColor:#424242 !default;
+$contentAltBgColor:#212121 !default;
+$dividerColor:#616161 !default;
 
 $menuTooltipBgColor:#1c202c !default;
 $menuTooltipTextColor:#ffffff !default;
-
-$cardBgColor: #212121;
-
 
 :root{
     --content-alt-bg-color:#{$contentAltBgColor};
