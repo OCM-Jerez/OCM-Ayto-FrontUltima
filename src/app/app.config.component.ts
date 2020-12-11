@@ -142,7 +142,7 @@ export class AppConfigComponent implements OnInit {
 
     topbarThemes: any[];
 
-    theme = 'deeppurple';
+    theme = 'blue';
 
     layoutTheme = 'blue';
 
