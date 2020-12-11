@@ -307,34 +307,34 @@
                     .apps {
                         a {
                             .pi {
-                                color: $appsIconTextColor;
+                                color: $contentBgColor;
                                 border-radius: 50%;
                                 background-size: auto;
                                 font-size: 2em;
                                 padding: 1rem;
 
                                 &.pi-image {
-                                    background: $appsImageIconBgColor;
+                                    background: $indigo;
                                 }
 
                                 &.pi-file-pdf {
-                                    background: $appsFileIconBgColor;
+                                    background: $orange;
                                 }
 
                                 &.pi-dollar {
-                                    background: $appsDollarIconBgColor;
+                                    background: $teal;
                                 }
 
                                 &.pi-cog {
-                                    background: $appsCogIconBgColor;
+                                    background: $bluegrey;
                                 }
 
                                 &.pi-key {
-                                    background: $appsKeyIconBgColor;
+                                    background: $pink;
                                 }
 
                                 &.pi-sitemap {
-                                    background: $appsSitemapIconBgColor;
+                                    background: $cyan;
                                 }
                             }
 
@@ -345,27 +345,27 @@
                             &:hover {
                                 .pi {
                                     &.pi-image {
-                                        background: rgba($appsImageIconBgColor, .92);
+                                        background: rgba($indigo, .92);
                                     }
 
                                     &.pi-file-pdf {
-                                        background: rgba($appsFileIconBgColor, .92);
+                                        background: rgba($orange, .92);
                                     }
 
                                     &.pi-dollar {
-                                        background: rgba($appsDollarIconBgColor, .92);
+                                        background: rgba($teal, .92);
                                     }
 
                                     &.pi-cog {
-                                        background: rgba($appsCogIconBgColor, .92);
+                                        background: rgba($bluegrey, .92);
                                     }
 
                                     &.pi-key {
-                                        background: rgba($appsKeyIconBgColor, .92);
+                                        background: rgba($pink, .92);
                                     }
 
                                     &.pi-sitemap {
-                                        background: rgba($appsSitemapIconBgColor, .92);
+                                        background: rgba($cyan, .92);
                                     }
                                 }
                             }
