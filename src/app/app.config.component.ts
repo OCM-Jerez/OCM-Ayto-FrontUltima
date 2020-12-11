@@ -226,8 +226,8 @@ export class AppConfigComponent implements OnInit {
     }
 
     onLayoutModeChange(event, mode) {
-        // this.app.menuTheme = this.app.layoutMode;
-        // this.app.topbarTheme = this.app.layoutMode;
+        //this.app.menuTheme = this.app.layoutMode;
+        //this.app.topbarTheme = this.app.layoutMode;
 
         this.app.layoutMode = mode;
 
@@ -245,7 +245,7 @@ export class AppConfigComponent implements OnInit {
         urlTokens[urlTokens.length - 1] = 'theme-' + this.app.layoutMode + '.css';
         const newURL = urlTokens.join('/');
 
-        this.replaceLink(themeLink, newURL, this.appMain.refreshTrafficChart);
+        this.replaceLink(themeLink, newURL, this.appMain['refreshTrafficChart']);
     }
 
     changeTheme(theme) {
@@ -253,7 +253,7 @@ export class AppConfigComponent implements OnInit {
 
         const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutMode + '.css';
-        this.replaceLink(themeLink, themeHref, this.appMain.refreshTrafficChart);
+        this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
     }
 
     changeLayoutTheme(theme) {
@@ -261,7 +261,7 @@ export class AppConfigComponent implements OnInit {
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + this.layoutTheme + '-' + this.app.layoutMode + '.css';
-        this.replaceLink(layoutLink, layoutHref, this.appMain.refreshTrafficChart);
+        this.replaceLink(layoutLink, layoutHref, this.appMain['refreshTrafficChart']);
     }
 
     changeMenuTheme(theme) {
