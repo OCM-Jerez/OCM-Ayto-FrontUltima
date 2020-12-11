@@ -39,8 +39,8 @@
                 .pi {
                     font-size: 1rem;
                     padding: 0.5rem;
-                    color: $activityUserIconColor;
-                    background: $activityUserIconBgColor;
+                    color: $textColor;
+                    background: $dividerColor;
                     background-size: contain;
                     border-radius: 50%;
                 }
@@ -58,7 +58,7 @@
                 }
 
                 .activity-user {
-                    color: $activityUserTextColor;
+                    color: $textSecondaryColor;
                 }
             }
         }
