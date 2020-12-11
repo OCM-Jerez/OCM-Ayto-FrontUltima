@@ -6,6 +6,12 @@
             color: $textColor;
         }
     }
+
+    .card-icon {
+        a {
+            color: $textSecondaryColor;
+        }
+    }
 }
 
 .overview-box {
@@ -19,10 +25,6 @@
     }
 
     .overview-icon {
-        a {
-            color: #616161;
-        }
-
         margin-left: auto;
     }
 
@@ -179,6 +181,12 @@
         .subtext {
             color: $textSecondaryColor;
         }
+
+        .item-button {
+            a {
+                color: $textSecondaryColor;
+            }
+        }
     }
 }
 
@@ -188,7 +196,7 @@
 
         .total {
             .title {
-                color: #616161;
+                color: $textSecondaryColor
             }
 
             .value {
@@ -199,7 +207,7 @@
 
         .info {
             .title {
-                color: #616161;
+                color: $textSecondaryColor;
             }
 
             .value {
