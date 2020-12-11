@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
         <div class="layout-footer">
             <a id="footerlogolink">
                 <img id="footer-logo"
-                     [src]="'assets/layout/images/logo-' + (app.layoutMode === 'light' ? 'poseidon' : 'poseidon-dark') + '.png'" alt="posedion-layout">
+                     [src]="'assets/layout/images/footer-' + (app.layoutMode === 'light' ? 'ultima' : 'ultima-dark') + '.svg'" alt="ultima-footer-logo">
             </a>
             <div class="social-icons">
                 <a><i class="pi pi-github"></i></a>
