@@ -293,24 +293,12 @@
                     &.notifications {
                         > ul {
                             p {
-                                color: #616161;
-                            }
-
-                            hr {
-                                border-color: #E4E4E4;
+                                color: $textSecondaryColor;
                             }
 
                             > li {
                                 div {
                                     width: 100%;
-
-                                    h6 {
-                                        color: #212121;
-                                    }
-
-                                    span {
-                                        color: #616161;
-                                    }
                                 }
                             }
                         }
@@ -318,71 +306,66 @@
 
                     .apps {
                         a {
-                            i:first-child {
-                                margin-right: 0;
-                            }
-
                             .pi {
-                                color: #FFFFFF;
+                                color: $appsIconTextColor;
                                 border-radius: 50%;
                                 background-size: auto;
                                 font-size: 2em;
                                 padding: 1rem;
 
                                 &.pi-image {
-                                    background: #3F51B5;
+                                    background: $appsImageIconBgColor;
                                 }
 
                                 &.pi-file-pdf {
-                                    background: #FF8F00;
+                                    background: $appsFileIconBgColor;
                                 }
 
                                 &.pi-dollar {
-                                    background: #388E3C;
+                                    background: $appsDollarIconBgColor;
                                 }
 
                                 &.pi-cog {
-                                    background: #37474F;
+                                    background: $appsCogIconBgColor;
                                 }
 
                                 &.pi-key {
-                                    background: #C2185B;
+                                    background: $appsKeyIconBgColor;
                                 }
 
                                 &.pi-sitemap {
-                                    background: #0097A7;
+                                    background: $appsSitemapIconBgColor;
                                 }
                             }
 
                             h6 {
-                                color: #212121;
                                 margin: 0;
                             }
 
                             &:hover {
                                 .pi {
                                     &.pi-image {
-                                        background: #5C6BC0;
+                                        background: rgba($appsImageIconBgColor, .92);
                                     }
 
                                     &.pi-file-pdf {
-                                        background: #FFA000;
+                                        background: rgba($appsFileIconBgColor, .92);
                                     }
 
                                     &.pi-dollar {
-                                        background: #43A047;
+                                        background: rgba($appsDollarIconBgColor, .92);
                                     }
 
                                     &.pi-cog {
-                                        background: #43A047;
+                                        background: rgba($appsCogIconBgColor, .92);
                                     }
 
                                     &.pi-key {
-                                        background: #D81B60;
+                                        background: rgba($appsKeyIconBgColor, .92);
                                     }
 
                                     &.pi-sitemap {
-                                        background: #00ACC1;
+                                        background: rgba($appsSitemapIconBgColor, .92);
                                     }
                                 }
                             }

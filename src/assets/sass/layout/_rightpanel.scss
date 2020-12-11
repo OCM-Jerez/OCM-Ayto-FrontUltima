@@ -20,10 +20,6 @@
         padding: 12px 10px;
         padding-right: 0;
 
-        hr {
-            border-color: #E4E4E4;
-        }
-
         .layout-rightpanel-online-members {
             h6 {
                 font-weight: 500;
@@ -43,8 +39,8 @@
                 .pi {
                     font-size: 1rem;
                     padding: 0.5rem;
-                    color: #757575;
-                    background: #ECEFF1;
+                    color: $activityUserIconColor;
+                    background: $activityUserIconBgColor;
                     background-size: contain;
                     border-radius: 50%;
                 }
@@ -58,11 +54,11 @@
                 p {
                     font-size: 12px;
                     margin: 0;
-                    color: #616161;
+                    color: $textSecondaryColor;
                 }
 
                 .activity-user {
-                    color: #9E9E9E;
+                    color: $activityUserTextColor;
                 }
             }
         }
