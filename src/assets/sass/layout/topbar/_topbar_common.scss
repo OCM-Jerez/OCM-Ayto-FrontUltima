@@ -290,8 +290,10 @@
                         }
                     }
 
-                    &.notifications {
+                    &.notifications {                        
                         > ul {
+                            background-color: $contentBgColor;
+                            
                             p {
                                 color: $textSecondaryColor;
                             }
