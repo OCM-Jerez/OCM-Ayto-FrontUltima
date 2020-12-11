@@ -20,7 +20,6 @@ import { AppMainComponent } from './app.main.component';
                         <h6>Layout Mode</h6>
                         <div class="p-d-flex p-jc-between">
                             <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event)"></p-radioButton>
                                 <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event, 'light')"></p-radioButton>
                                 <label for="layoutMode1" class="p-ml-2">Light</label>
                             </div>
