@@ -21,10 +21,11 @@ import { AppMainComponent } from './app.main.component';
                         <div class="p-d-flex p-jc-between">
                             <div class="p-d-flex p-ai-center">
                                 <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event)"></p-radioButton>
+                                <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event, 'light')"></p-radioButton>
                                 <label for="layoutMode1" class="p-ml-2">Light</label>
                             </div>
                             <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event)"></p-radioButton>
+                                <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event, 'dark')"></p-radioButton>
                                 <label for="layoutMode2" class="p-ml-2">Dark</label>
                             </div>
                         </div>
@@ -225,9 +226,16 @@ export class AppConfigComponent implements OnInit {
         ];
     }
 
-    onLayoutModeChange(event) {
-        //this.app.menuTheme = this.app.layoutMode;
-        //this.app.topbarTheme = this.app.layoutMode;
+    onLayoutModeChange(event, mode) {
+        // this.app.menuTheme = this.app.layoutMode;
+        // this.app.topbarTheme = this.app.layoutMode;
+
+        this.app.layoutMode = mode;
+
+        if (mode === 'dark') {
+            this.app.menuTheme = 'dark';
+            this.app.topbarTheme = 'bluegrey';
+        }
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + this.layoutTheme + '-' + this.app.layoutMode + '.css';
@@ -238,7 +246,7 @@ export class AppConfigComponent implements OnInit {
         urlTokens[urlTokens.length - 1] = 'theme-' + this.app.layoutMode + '.css';
         const newURL = urlTokens.join('/');
 
-        this.replaceLink(themeLink, newURL, this.appMain['refreshTrafficChart']);
+        this.replaceLink(themeLink, newURL, this.appMain.refreshTrafficChart);
     }
 
     changeTheme(theme) {
@@ -246,7 +254,7 @@ export class AppConfigComponent implements OnInit {
 
         const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutMode + '.css';
-        this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
+        this.replaceLink(themeLink, themeHref, this.appMain.refreshTrafficChart);
     }
 
     changeLayoutTheme(theme) {
@@ -254,7 +262,7 @@ export class AppConfigComponent implements OnInit {
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + this.layoutTheme + '-' + this.app.layoutMode + '.css';
-        this.replaceLink(layoutLink, layoutHref, this.appMain['refreshTrafficChart']);
+        this.replaceLink(layoutLink, layoutHref, this.appMain.refreshTrafficChart);
     }
 
     changeMenuTheme(theme) {

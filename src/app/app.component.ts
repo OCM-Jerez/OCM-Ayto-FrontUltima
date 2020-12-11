@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
 
     menuTheme = 'light';
 
-    layoutMode = 'dark';
+    layoutMode = 'light';
 
     menuMode = 'static';
 
