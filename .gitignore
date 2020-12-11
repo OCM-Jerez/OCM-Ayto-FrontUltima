@@ -7,7 +7,7 @@ node_modules
 .idea
 sassdoc
 
-src/assets/theme/theme-*.css
+src/assets/theme/*/theme-*.css
 src/assets/layout/css/*.css
 src/assets/sass/theme/designer
 =======
