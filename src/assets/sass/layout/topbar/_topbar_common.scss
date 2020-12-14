@@ -343,34 +343,6 @@
                             h6 {
                                 margin: 0;
                             }
-
-                            &:hover {
-                                .pi {
-                                    &.pi-image {
-                                        background: rgba($indigo, .92);
-                                    }
-
-                                    &.pi-file-pdf {
-                                        background: rgba($orange, .92);
-                                    }
-
-                                    &.pi-dollar {
-                                        background: rgba($teal, .92);
-                                    }
-
-                                    &.pi-cog {
-                                        background: rgba($bluegrey, .92);
-                                    }
-
-                                    &.pi-key {
-                                        background: rgba($pink, .92);
-                                    }
-
-                                    &.pi-sitemap {
-                                        background: rgba($cyan, .92);
-                                    }
-                                }
-                            }
                         }
                     }
                 }
