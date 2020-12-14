@@ -35,6 +35,91 @@
             @include flex-justify-between();
             border-right: solid 1px transparent;
 
+            .layout-megamenu-button {
+                padding: 8px;
+                @include border-radius(4px);
+                font-size: 13px;
+                border: none;
+                cursor: pointer;
+                height: 35px;
+                color: #FFFFFF;
+
+                @include transition(background-color $transitionDuration);
+
+                i {
+                    font-size: 1em;
+                    vertical-align: middle;
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: $primaryColor;
+                    color: #ffffff;
+                }
+            }
+
+            .layout-megamenu {
+                position: absolute;
+                background-color: $contentBgColor;
+                top: 46px;
+                display: none;
+                @include flex-direction-row();
+                @include flex-justify-between();
+                list-style-type: none;
+                @include shadow(0 3px 5px 0 rgba(33, 35, 39, 0.15));
+                z-index: 1000;
+
+                > li {
+                    min-width: 200px;
+
+                    > a {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: $textColor;
+                        display: block;
+                        cursor: default;
+
+                        i {
+                            display: none;
+                        }
+                    }
+
+                    > ul {
+                        padding: 0;
+
+                        > li {
+                            @include flex();
+                            @include flex-justify-start();
+                            @include flex-align-center();
+                            cursor: pointer;
+
+                            i {
+                                padding-right: 1rem;
+                                color: $textColor;
+                            }
+
+                            p {
+                                color: $textSecondaryColor;
+                                font-size: 14px;
+                            }
+
+                            &:hover {
+                                p {
+                                    color: $primaryColor;
+                                    @include transition(color $transitionDuration);
+                                }
+
+                                background-color: $contentAltBgColor;
+                            }
+                        }
+                    }
+                }
+
+                &.layout-megamenu-active {
+                    @include flex();
+                }
+            }
+
             .menu-button {
                 @include flex();
                 @include flex-align-center();
@@ -278,7 +363,7 @@
                                     color: $textSecondaryColor;
                                 }
 
-                                h6 { 
+                                h6 {
                                     color: $textColor;
                                 }
                             }
@@ -291,7 +376,7 @@
                         }
                     }
 
-                    &.notifications {                        
+                    &.notifications {
                         > ul {
                             background-color: $contentBgColor;
 

@@ -21,6 +21,16 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     menuClick: boolean;
 
+    menuMobileActive: boolean;
+
+    megaMenuClick: boolean;
+
+    megaMenuActive: boolean;
+
+    megaMenuMobileClick: boolean;
+
+    megaMenuMobileActive: boolean;
+
     topbarItemClick: boolean;
 
     activeTopbarItem: any;
@@ -113,6 +123,24 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     onMenuClick($event) {
         this.menuClick = true;
+    }
+
+    onMegaMenuButtonClick(event) {
+        this.megaMenuClick = true;
+        this.megaMenuActive = !this.megaMenuActive;
+        event.preventDefault();
+    }
+
+    onMegaMenuClick(event) {
+        this.megaMenuClick = true;
+        event.preventDefault();
+    }
+
+    onMegaMenuMobileButtonClick(event) {
+        this.megaMenuMobileClick = true;
+        this.megaMenuMobileActive = !this.megaMenuMobileActive;
+
+        event.preventDefault();
     }
 
     onTopbarItemClick(event, item) {

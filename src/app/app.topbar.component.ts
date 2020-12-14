@@ -11,4 +11,10 @@ export class AppTopBarComponent {
     constructor(public appMain: AppMainComponent, public app: AppComponent) {
     }
 
+    activeItem: number;
+
+    mobileMegaMenuItemClick(index) {
+        this.appMain.megaMenuMobileClick = true;
+        this.activeItem = this.activeItem === index ? null : index;
+    }
 }
