@@ -9,8 +9,13 @@
     @include transition(transform $transitionDuration);
 
     .layout-menu-container {
-        overflow: auto;
         height: 100%;
+        flex-direction: column;
+        display: flex;
+
+        app-menu {
+            overflow-y: auto;
+        }
 
         .layout-menu {
             list-style-type: none;
