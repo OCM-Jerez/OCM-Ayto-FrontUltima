@@ -71,6 +71,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Error', icon: 'pi pi-fw pi-times-circle', routerLink: ['/error']},
                     {label: 'Not Found', icon: 'pi pi-fw pi-exclamation-circle', routerLink: ['/notfound']},
                     {label: 'Access Denied', icon: 'pi pi-fw pi-lock', routerLink: ['/access']},
+                    {label: 'Contact Us', icon: 'pi pi-fw pi-pencil', routerLink: ['/contactus']},
                     {label: 'Empty', icon: 'pi pi-fw pi-circle-off', routerLink: ['/pages/empty']}
                 ]
             },

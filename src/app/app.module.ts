@@ -132,6 +132,7 @@ import {ProductService} from './demo/service/productservice';
 
 import {MenuService} from './app.menu.service';
 import {AppBreadcrumbService} from './app.breadcrumb.service';
+import {AppContactusComponent} from './pages/app.contactus.component';
 
 @NgModule({
     imports: [
@@ -257,6 +258,7 @@ import {AppBreadcrumbService} from './app.breadcrumb.service';
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
+        AppContactusComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
