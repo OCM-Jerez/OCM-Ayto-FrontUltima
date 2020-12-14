@@ -104,19 +104,6 @@
                         min-width: 370px;
                         animation-duration: $transitionDuration;
 
-                        .layout-submenu-header {
-                            padding: 12px;
-                            @include flex();
-                            @include flex-align-center();
-                            @include flex-justify-between();
-
-                            h6 {
-                                font-weight: 600;
-                                margin: 0;
-                                margin-left: 4px;
-                            }
-                        }
-
                         .angle-icon {
                             @include flex();
                             @include flex-justify-end();
@@ -129,6 +116,11 @@
                             @include flex();
                             @include flex-align-center();
                             cursor: pointer;
+
+                            &:hover {
+                                background-color: $contentAltBgColor;
+                            }
+
 
                             > a {
                                 @include flex();
@@ -240,6 +232,8 @@
                         }
 
                         > ul {
+                            background-color: $contentBgColor;
+
                             > hr {
                                 margin: 2px 8px;
                             }
@@ -280,6 +274,13 @@
                                     }
                                 }
 
+                                i {
+                                    color: $textSecondaryColor;
+                                }
+
+                                h6 { 
+                                    color: $textColor;
+                                }
                             }
                         }
                     }
@@ -293,23 +294,45 @@
                     &.notifications {                        
                         > ul {
                             background-color: $contentBgColor;
-                            
+
                             p {
                                 color: $textSecondaryColor;
+                            }
+
+                            h6 {
+                                color: $textColor;
                             }
 
                             > li {
                                 div {
                                     width: 100%;
                                 }
+
+                                img {
+                                    width: 42px;
+                                    height: 42px;
+                                }
+
+                                &:hover {
+                                    background-color: $contentAltBgColor;
+                                }
                             }
                         }
                     }
 
                     .apps {
+
+                        background-color: $contentBgColor;
+
+                        >div {
+                            &:hover {
+                                background-color: $contentAltBgColor;
+                            }
+                        }
+
                         a {
                             .pi {
-                                color: $contentBgColor;
+                                color: $bodyBgColor;
                                 border-radius: 50%;
                                 background-size: auto;
                                 font-size: 2em;
@@ -341,6 +364,7 @@
                             }
 
                             h6 {
+                                color: $textColor;
                                 margin: 0;
                             }
                         }

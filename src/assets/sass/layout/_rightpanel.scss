@@ -26,6 +26,12 @@
                 font-size: 14px;
                 margin: 0;
             }
+            
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
 
         .layout-rightpanel-latest-activity {

@@ -76,13 +76,6 @@
                                     color: var(--primary-color-text,#ffffff);
                                 }
                             }
-                            > li {
-                                a {
-                                    i {
-                                        color: $topbarItemSubmenuTextColor;
-                                    }
-                                }
-                            }
                         }
                     }
 
@@ -122,12 +115,6 @@
                                     color: $topbarItemSubmenuSecondaryTextColor;
                                 }
                             }
-
-                            &:hover{
-                                background-color: $topbarItemTextHoverBgColor;
-                                @include transition(background-color $transitionDuration);
-                            }
-
                         }
                     }
                 }
