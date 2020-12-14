@@ -141,6 +141,12 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         }
     }
 
+    onSearchKeydown(event) {
+        if (event.keyCode == 27) {
+            this.search = false;
+        }
+    }
+
     onMegaMenuButtonClick(event) {
         this.megaMenuClick = true;
         this.megaMenuActive = !this.megaMenuActive;

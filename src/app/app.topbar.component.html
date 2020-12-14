@@ -143,14 +143,11 @@
                         </span>
                     </a>
 
-                    <ul class="fadeInDown">
-                        <div class="search-input-wrapper p-fluid">
-                            <span class="p-input-icon-left">
-                                <i class="pi pi-search"></i>
-                                <input type="text" pInputText placeholder="Search..." (click)="appMain.searchClick = true;"/>
-                            </span>
-                        </div>
-                    </ul>
+                    <div class="search-panel fadeInDown p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                        <input type="text" pInputText placeholder="Username" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
+                        <span class="p-inputgroup-addon"><i class="pi pi-times" (click)="appMain.searchClick = false;"></i></span>
+                    </div>
                 </li>
                 <li #notifications class="topbar-item notifications"
                     [ngClass]="{'active-topmenuitem':appMain.activeTopbarItem === notifications}">

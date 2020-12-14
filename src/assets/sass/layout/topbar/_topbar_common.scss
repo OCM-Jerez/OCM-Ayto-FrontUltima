@@ -292,36 +292,50 @@
                     }
 
                     &.search-item {
-                        margin: 0 12px;
+                        position: static;
 
-                        > a {
+                        .search-panel {
+                            height: 56px;
+                            width: 100%;
                             display: none;
-                        }
-
-                        > .search-input-wrapper {
-                            position: relative;
+                            position: absolute;
+                            top: 0;
+                            left: 0px;
+                            z-index: 1000;
+                            animation-duration: 0.2s;
 
                             input {
-                                @include border-radius(18px);
-                                border: none;
-                                width: 200px;
-                                padding: 8px 8px 8px 30px;
+                                @include border-radius(0);
+                                border: 0 none;
+                            }
+
+                            i {
+                                font-weight: bold;
+                            }
+
+                            .p-inputgroup-addon {
+                                border: 0 none;
+                            }
+
+                            .p-inputgroup-addon:first-child,
+                            .p-inputgroup button:first-child,
+                            .p-inputgroup input:first-child {
+                                border-top-left-radius: 0;
+                                border-bottom-left-radius: 0;
+                            }
+
+                            .p-inputgroup-addon:last-child,
+                            .p-inputgroup button:last-child,
+                            .p-inputgroup input:last-child {
+                                border-top-right-radius: 0;
+                                border-bottom-right-radius: 0;
                             }
                         }
 
-                        ul {
-                            > .search-input-wrapper {
-                                input {
-                                    @include border-radius(0);
-                                    width: 100%;
-                                    border: 0 none;
-                                }
-
-                                i {
-                                    font-weight: bold;
-                                }
+                        &.active-topmenuitem {
+                            .search-panel {
+                                display: flex;
                             }
-
                         }
                     }
 
