@@ -1,19 +1,14 @@
 <div class="layout-profile" [ngClass]="{'layout-profile-active':appMain.inlineMenuActive}">
+    <hr>
     <a href="#" (click)="onClick($event)" class="layout-profile-button">
-        <img src="assets/layout/images/avatar.png" alt="babylon-layout"/>
+        <img src="assets/layout/images/avatar-profile.png" alt="demo"/>
         <div class="layout-profile-userinfo">
-            <span class="layout-profile-name">Arlene Welch</span>
-            <span class="layout-profile-role">Design Ops</span>
+            <span class="layout-profile-name">Peter Taylor</span>
+            <span class="layout-profile-role">Webmaster</span>
         </div>
         <i class="layout-profile-icon pi pi-angle-down"></i>
     </a>
     <ul class="layout-profile-menu" [@menu]="appMain.inlineMenuActive ? 'visibleAnimated':'hiddenAnimated'" >
-        <li role="menuitem">
-            <a href="#" [attr.tabindex]="!appMain.inlineMenuActive  ? '-1' : null">
-                <i class="pi pi-user"></i>
-                <span>Profile</span>
-            </a>
-        </li>
         <li role="menuitem">
             <a href="#" [attr.tabindex]="!appMain.inlineMenuActive  ? '-1' : null">
                 <i class="pi pi-cog"></i>
@@ -22,14 +17,20 @@
         </li>
         <li role="menuitem">
             <a href="#" [attr.tabindex]="!appMain.inlineMenuActive  ? '-1' : null">
-                <i class="pi pi-envelope"></i>
-                <span>Messages</span>
+                <i class="pi pi-file-o"></i>
+                <span>Terms Of Usage</span>
             </a>
         </li>
         <li role="menuitem">
             <a href="#" [attr.tabindex]="!appMain.inlineMenuActive  ? '-1' : null">
-                <i class="pi pi-bell"></i>
-                <span>Notifications</span>
+                <i class="pi pi-compass"></i>
+                <span>Support</span>
+            </a>
+        </li>
+        <li role="menuitem">
+            <a href="#" [attr.tabindex]="!appMain.inlineMenuActive  ? '-1' : null">
+                <i class="pi pi-power-off"></i>
+                <span>Logout</span>
             </a>
         </li>
     </ul>

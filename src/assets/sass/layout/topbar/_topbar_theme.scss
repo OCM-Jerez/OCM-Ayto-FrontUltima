@@ -76,8 +76,9 @@
                                 color: $topbarItemTextColor;
                             }
 
-                            &:hover{
-                                background-color: $topbarSubmenuHeaderBgColor;
+                            &:hover {
+                                background-color: transparent;
+                                cursor: default;
                             }
                         }
 
