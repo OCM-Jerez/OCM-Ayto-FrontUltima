@@ -49,19 +49,6 @@
                             hr {
                                 border-color: $topbarBorderColor;
                             }
-                            .layout-submenu-header {
-                                background-image: linear-gradient(180deg,#2873D3 10%,#2c84d8 100%);
-                                background-image: linear-gradient(180deg,var(--primary-dark-color,#2873D3) 10%,var(--primary-color,#2c84d8) 100%);
-
-                                h6 {
-                                    color: #ffffff;
-                                    color: var(--primary-color-text,#ffffff);
-                                }
-                                span {
-                                    color: #ffffff;
-                                    color: var(--primary-color-text,#ffffff);
-                                }
-                            }
                         }
                     }
 

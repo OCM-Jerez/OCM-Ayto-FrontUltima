@@ -233,15 +233,14 @@
 
                         > li {
                             padding: 7px 12px;
-                            margin-bottom: 6px;
                             @include flex();
                             @include flex-align-center();
                             cursor: pointer;
+                            border-bottom: 1px solid $dividerColor;
 
                             &:hover {
                                 background-color: $contentAltBgColor;
                             }
-
 
                             > a {
                                 @include flex();
@@ -268,8 +267,8 @@
                                 }
 
                                 > img {
-                                    width: 28px;
-                                    height: 28px;
+                                    width: 32px;
+                                    height: 32px;
                                     margin-right: 6px;
                                 }
 
@@ -282,10 +281,6 @@
                                     @include flex-align-center();
                                     @include flex-justify-center();
                                     font-size: 16px;
-                                }
-
-                                > .p-inputswitch {
-                                    margin-right: 6px;
                                 }
                             }
                         }
@@ -368,17 +363,7 @@
 
                         > ul {
                             background-color: $contentBgColor;
-
-                            >.layout-submenu-header {
-                                padding: 12px 16px;
-                                @include flex();
-                                @include flex-align-center();
-                                @include flex-justify-start();
-                            }
-
                             > li {
-                                border-bottom: 1px solid $dividerColor;
-
                                 > a {
                                     > i {
                                         font-size: 16px;
