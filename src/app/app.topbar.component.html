@@ -245,7 +245,7 @@
                         </div>
                     </ul>
                 </li>
-                <li #profile class="topbar-item user-profile"
+                <li #profile class="topbar-item user-profile" *ngIf="app.profileMode==='popup'||appMain.isHorizontal()"
                     [ngClass]="{'active-topmenuitem':appMain.activeTopbarItem === profile}">
                     <a href="#" (click)="appMain.onTopbarItemClick($event,profile)">
                         <img class="profile-image" src="assets/layout/images/avatar-profile.png" alt="demo">

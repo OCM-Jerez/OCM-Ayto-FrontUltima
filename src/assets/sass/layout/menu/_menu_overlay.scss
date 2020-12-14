@@ -134,6 +134,78 @@
                 }
             }
         }
+
+        .layout-profile {
+            &.layout-profile-active {
+                .layout-profile-icon {
+                    @include rotate(-180deg);
+                }
+            }
+
+            .layout-profile-button {
+                padding: 20px 12px;
+                display: block;
+                position: relative;
+                @include transition(background-color $transitionDuration);
+
+                img {
+                    width: 36px;
+                    display: inline-block;
+                }
+
+                .layout-profile-userinfo {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-left: 8px;
+
+                    .layout-profile-name {
+                        display: inline-block;
+                        font-weight: 700;
+                    }
+
+                    .layout-profile-role {
+                        display: block;
+                    }
+                }
+
+                .layout-profile-icon {
+                    position: absolute;
+                    right: 16px;
+                    top: 50%;
+                    margin-top: -8px;
+                    font-size: 16px;
+                    @include transition(transform $transitionDuration);
+                }
+            }
+
+            .layout-profile-menu {
+                list-style: none;
+                padding: 0 12px 14px 12px;
+                margin: 0;
+                overflow: hidden;
+
+                li {
+                    a {
+                        display: block;
+                        padding: 8px 4px;
+                        text-align: left;
+                        @include border-radius($borderRadius);
+                        @include transition(background-color $transitionDuration);
+
+                        i {
+                            margin-right: 8px;
+                            vertical-align: middle;
+                        }
+
+                        span {
+                            font-weight: 700;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

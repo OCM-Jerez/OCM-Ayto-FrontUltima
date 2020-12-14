@@ -51,6 +51,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     search = false;
 
+    inlineMenuActive: boolean;
+
+    inlineMenuClick: boolean;
+
     constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig,
                 public app: AppComponent) { }
 
@@ -90,6 +94,11 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
                 this.search = false;
             }
 
+            if (this.inlineMenuActive && !this.inlineMenuClick) {
+                this.inlineMenuActive = false;
+            }
+
+            this.inlineMenuClick = false;
             this.searchClick = false;
             this.configClick = false;
             this.topbarItemClick = false;
@@ -123,6 +132,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     onMenuClick($event) {
         this.menuClick = true;
+
+        if (this.inlineMenuActive && !this.inlineMenuClick) {
+            this.inlineMenuActive = false;
+        }
     }
 
     onMegaMenuButtonClick(event) {
@@ -141,6 +154,11 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         this.megaMenuMobileActive = !this.megaMenuMobileActive;
 
         event.preventDefault();
+    }
+
+    onInlineMenuClick(event) {
+        this.inlineMenuActive = !this.inlineMenuActive;
+        this.inlineMenuClick = true;
     }
 
     onTopbarItemClick(event, item) {

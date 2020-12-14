@@ -80,6 +80,7 @@ import {AppMainComponent} from './app.main.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppMenuComponent} from './app.menu.component';
 import {AppMenuitemComponent} from './app.menuitem.component';
+import {AppProfileComponent} from './app.profile.component';
 import {AppRightPanelComponent} from './app.rightpanel.component';
 import {AppBreadcrumbComponent} from './app.breadcrumb.component';
 import {AppTopBarComponent} from './app.topbar.component';
@@ -216,6 +217,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppConfigComponent,
         AppMenuComponent,
         AppMenuitemComponent,
+        AppProfileComponent,
         AppRightPanelComponent,
         AppBreadcrumbComponent,
         AppTopBarComponent,

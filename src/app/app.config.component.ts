@@ -48,6 +48,20 @@ import { AppMainComponent } from './app.main.component';
                         </div>
                     </div>
 
+                    <div id="user-profile-panel" class="layout-config-section options">
+                        <h6 class="p-mt-2">User Profile</h6>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="profileMode" value="inline" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode1"></p-radioButton>
+                                <label for="profileMode1">Inline</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="profileMode" value="popup" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode2"></p-radioButton>
+                                <label for="profileMode2">Popup</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div id="outlined-panel" class="layout-config-section options">
                         <h6 class="p-mt-2">Input Background</h6>
                         <div class="p-d-flex p-jc-between">

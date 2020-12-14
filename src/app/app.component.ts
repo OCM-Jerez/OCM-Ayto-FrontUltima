@@ -22,6 +22,8 @@ export class AppComponent implements OnInit{
 
     ripple: boolean;
 
+    profileMode = 'popup';
+
     constructor(private primengConfig: PrimeNGConfig) {}
 
     ngOnInit() {
