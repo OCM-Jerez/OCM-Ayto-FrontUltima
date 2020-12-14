@@ -205,6 +205,7 @@ export class AppConfigComponent implements OnInit {
 
         this.topbarThemes = [
             {name: 'lightblue', color: '#2E88FF'},
+            {name: 'dark', color: '#363636'},
             {name: 'white', color: '#FDFEFF'},
             {name: 'blue', color: '#1565C0'},
             {name: 'deeppurple', color: '#4527A0'},
@@ -233,7 +234,7 @@ export class AppConfigComponent implements OnInit {
 
         if (mode === 'dark') {
             this.app.menuTheme = 'dark';
-            this.app.topbarTheme = 'bluegrey';
+            this.app.topbarTheme = 'dark';
         }
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
