@@ -76,14 +76,12 @@ export class DashboardDemoComponent2 implements OnInit {
                 {
                     label: 'Completed',
                     data: [65, 59, 80, 81, 56, 55, 40],
-                    fill: false,
                     borderColor: '#4DD0E1'
                 },
                 {
                     label: 'Cancelled',
                     data: [28, 48, 40, 19, 86, 27, 90],
-                    fill: false,
-                    borderColor: '#212121'
+                    borderColor: '#FF9800'
                 }
             ]
         };
