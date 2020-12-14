@@ -19,84 +19,116 @@
                     <i class="pi pi-chevron-down"></i>
                 </a>
 
-                <ul class="layout-megamenu" [ngClass]="{'layout-megamenu-active fadeInDown': appMain.megaMenuActive}"
+                <ul class="layout-megamenu p-reset p-px-2" [ngClass]="{'layout-megamenu-active fadeInDown': appMain.megaMenuActive}"
                     (click)="appMain.onMegaMenuClick($event)">
                     <li [ngClass]="{'active-topmenuitem': activeItem === 1}" (click)="mobileMegaMenuItemClick(1)">
-                        <a href="#" class="p-my-3">UI KIT</a>
+                        <a href="#" class="p-my-2">UI KIT</a>
                         <ul class="p-mb-3">
                             <li class="p-p-1">
-                                <i class="pi pi-id-card"></i>
-                                <p>Form Layout</p>
+                                <a routerLink="/uikit/formlayout" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-id-card"></i>
+                                    <p>Form Layout</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-check-square"></i>
-                                <p>Input</p>
+                                <a routerLink="/uikit/input" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-check-square"></i>
+                                    <p>Input</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-mobile"></i>
-                                <p>Button</p>
+                                <a routerLink="/uikit/button" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-mobile"></i>
+                                    <p>Button</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-table"></i>
-                                <p>Table</p>
+                                <a routerLink="/uikit/table" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-table"></i>
+                                    <p>Table</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-list"></i>
-                                <p>List</p>
+                                <a routerLink="/uikit/list" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-list"></i>
+                                    <p>List</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-share-alt"></i>
-                                <p>Tree</p>
+                                <a routerLink="/uikit/tree" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-share-alt"></i>
+                                    <p>Tree</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-tablet"></i>
-                                <p>Panel</p>
+                                <a routerLink="/uikit/panel" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-tablet"></i>
+                                    <p>Panel</p>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li [ngClass]="{'active-topmenuitem': activeItem === 2}" (click)="mobileMegaMenuItemClick(2)">
-                        <a href="#" class="p-my-3">UI KIT 2</a>
+                        <a href="#" class="p-my-2">UI KIT 2</a>
                         <ul class="p-mb-3">
                             <li class="p-p-1">
-                                <i class="pi pi-clone"></i>
-                                <p>Overlay</p>
+                                <a routerLink="/uikit/overlay" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-clone"></i>
+                                    <p>Overlay</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-image"></i>
-                                <p>Media</p>
+                                <a routerLink="/uikit/media" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-image"></i>
+                                    <p>Media</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-bars"></i>
-                                <p>Menu</p>
+                                <a routerLink="/uikit/menu" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-bars"></i>
+                                    <p>Menu</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-comment"></i>
-                                <p>Message</p>
+                                <a routerLink="/uikit/message" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-comment"></i>
+                                    <p>Message</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-file"></i>
-                                <p>File</p>
+                                <a routerLink="/uikit/file" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-file"></i>
+                                    <p>File</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-chart-bar"></i>
-                                <p>Chart</p>
+                                <a routerLink="/uikit/charts" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-chart-bar"></i>
+                                    <p>Chart</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-circle-off"></i>
-                                <p>Misc</p>
+                                <a routerLink="/uikit/misc" routerLinkActive="active-menuitem">
+                                    <i class="pi pi-circle-off"></i>
+                                    <p>Misc</p>
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li [ngClass]="{'active-topmenuitem': activeItem === 3}" (click)="mobileMegaMenuItemClick(3)">
-                        <a href="#" class="p-my-3">HIERARCHY</a>
+                        <a href="#" class="p-my-2">HIERARCHY</a>
                         <ul class="p-mb-3">
                             <li class="p-p-1">
-                                <i class="pi pi-align-left"></i>
-                                <p>Submenu 1</p>
+                                <a>
+                                    <i class="pi pi-align-left"></i>
+                                    <p>Submenu 1</p>
+                                </a>
                             </li>
                             <li class="p-p-1">
-                                <i class="pi pi-align-left"></i>
-                                <p>Submenu 2</p>
+                                <a>
+                                    <i class="pi pi-align-left"></i>
+                                    <p>Submenu 2</p>
+                                </a>
                             </li>
                         </ul>
                     </li>

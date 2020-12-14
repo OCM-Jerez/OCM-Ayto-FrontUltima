@@ -61,23 +61,25 @@
             .layout-megamenu {
                 position: absolute;
                 background-color: $contentBgColor;
-                top: 46px;
+                top: 56px;
                 display: none;
                 @include flex-direction-row();
                 @include flex-justify-between();
                 list-style-type: none;
-                @include shadow(0 3px 5px 0 rgba(33, 35, 39, 0.15));
                 z-index: 1000;
+                box-shadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
 
                 > li {
                     min-width: 200px;
 
                     > a {
                         font-size: 12px;
-                        font-weight: 500;
+                        font-weight: 600;
                         color: $textColor;
                         display: block;
                         cursor: default;
+                        margin: 0;
+                        padding: .5rem 0 .5rem .5rem;
 
                         i {
                             display: none;
@@ -85,31 +87,65 @@
                     }
 
                     > ul {
+                        list-style-type: none;
                         padding: 0;
 
                         > li {
-                            @include flex();
-                            @include flex-justify-start();
-                            @include flex-align-center();
-                            cursor: pointer;
 
-                            i {
-                                padding-right: 1rem;
-                                color: $textColor;
-                            }
+                            a {
+                                margin: 0;
+                                padding: .5rem 0 .5rem .5rem;
+                                @include flex();
+                                @include flex-align-center();
+                                @include transition(all $transitionDuration);
+                                font-size: 1rem;
+                                font-weight: 500;
+                                border-radius: 0;
+                                cursor: pointer;
+                                user-select: none;
+                                @include border-radius(4px);
 
-                            p {
-                                color: $textSecondaryColor;
-                                font-size: 14px;
-                            }
+                                &.rotated-icon {
+                                    .layout-menuitem-icon {
+                                        transform: rotate(90deg);
+                                    }
+                                }
 
-                            &:hover {
                                 p {
+                                    color: $textSecondaryColor;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    margin: 0 1rem;
+                                }
+
+                                i {
+                                    font-size: 14px;
+                                    color: $textColor;
+
+                                    &.layout-submenu-toggler {
+                                        @include transition(all $transitionDuration);
+                                        margin-left: auto;
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                &:hover {
+                                    background-color: $contentAltBgColor;
+
+                                    p, i {
+                                        color: $primaryColor;
+                                        @include transition(color $transitionDuration);
+                                    }
+                                }
+                            }
+
+                            .active-menuitem {
+                                background-color: $contentAltBgColor;
+
+                                p, i {
                                     color: $primaryColor;
                                     @include transition(color $transitionDuration);
                                 }
-
-                                background-color: $contentAltBgColor;
                             }
                         }
                     }
@@ -181,7 +217,7 @@
                         display: none;
                         position: absolute;
                         top: 46px;
-                        right: 0px;
+                        right: 0;
                         list-style-type: none;
                         margin: 0;
                         padding: 0;
@@ -409,7 +445,7 @@
 
                         background-color: $contentBgColor;
 
-                        >div {
+                        > div {
                             &:hover {
                                 background-color: $contentAltBgColor;
                             }

@@ -21,8 +21,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     menuClick: boolean;
 
-    menuMobileActive: boolean;
-
     megaMenuClick: boolean;
 
     megaMenuActive: boolean;
@@ -66,6 +64,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
                 this.topbarMenuActive = false;
             }
 
+            if (!this.megaMenuClick) {
+                this.megaMenuActive = false;
+            }
+
             if (!this.menuClick && this.isHorizontal()) {
                 this.menuService.reset();
             }
@@ -104,6 +106,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             this.topbarItemClick = false;
             this.menuClick = false;
             this.rightPanelClick = false;
+            this.megaMenuClick = false;
         });
     }
 
