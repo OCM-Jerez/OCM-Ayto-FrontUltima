@@ -54,7 +54,7 @@
             }
 
             .total{
-                color: $primaryColor;
+                color: var(--primary-color);
             }
 
             &.billto-table{

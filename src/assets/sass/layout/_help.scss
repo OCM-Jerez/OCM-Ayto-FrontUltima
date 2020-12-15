@@ -70,7 +70,7 @@
                             }
 
                             i{
-                                color:  $primaryColor;
+                                color:  var(--primary-color);
                                 position:absolute;
                                 bottom: 28px;
                                 left: 15px;
@@ -112,8 +112,8 @@
                                         }
 
                                         &:hover{
-                                            background-color: $primaryColor;
-                                            border-color: $primaryColor;
+                                            background-color: var(--primary-color);
+                                            border-color: var(--primary-color);
                                         }
                                     }
                                     .p-accordion-content{
