@@ -256,11 +256,26 @@
             .layout-main {
                 margin-left: 240px;
             }
+
+            .layout-topbar {
+                .layout-topbar-wrapper {
+                    .layout-topbar-right {
+                        .menu-button>i {
+                            @include rotate(180deg);
+                            @include transition(transform $transitionDuration);
+                        }
+                    }
+                }
+            }
         }
         .layout-topbar {
             .layout-topbar-wrapper {
                 .layout-topbar-right {
                     .menu-button {
+                        > i {
+                            @include rotate(0deg);
+                            @include transition(transform $transitionDuration);
+                        }
                         @include flex();
                     }
                 }
