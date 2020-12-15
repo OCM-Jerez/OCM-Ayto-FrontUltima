@@ -7,13 +7,13 @@
     $rootMenuItemTextColor:#bdbdbd;
     $rootMenuItemHoverBgColor:#363636;
     $activeRootMenuItemTextColor:#ffffff;
-    $activeRootMenuItemIconColor: $primaryLightColor;
+    $activeRootMenuItemIconColor: var(--primary-color);
     $activeRootMenuItemBgColor: #212121;
     $menuItemIconColor:#bdbdbd;
 
     $submenuItemTextColor:#bdbdbd;
     $submenuItemHoverBgColor:#363636;
-    $activeSubmenuItemTextColor:$primaryLightColor;
+    $activeSubmenuItemTextColor: var(--primary-color);
 
     $externalSubmenuBgColor:#434B54;
 

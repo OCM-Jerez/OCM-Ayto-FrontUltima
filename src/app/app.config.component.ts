@@ -86,20 +86,6 @@ import { AppMainComponent } from './app.main.component';
                         <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)"></p-inputSwitch>
                     </div>
 
-                    <div id="componentthemes-panel" class="layout-config-section colors">
-                        <h6 class="p-mt-2">Layout Themes</h6>
-                        <div class="p-grid layout-config-colors">
-                            <div *ngFor="let l of layoutThemes" class="p-col p-col-fixed">
-                                <a style="cursor: pointer" (click)="changeLayoutTheme(l.name)" class="layout-config-option">
-                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': l.color}"></span>
-                                    <span class="layout-config-option-check-mask" *ngIf="layoutTheme === l.name">
-                                        <i class="pi pi-check"></i>
-                                    </span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                     <div id="menuthemes-panel" class="layout-config-section colors">
                         <h6 class="p-mt-2">Menu Themes</h6>
                         <div class="p-grid layout-config-colors">
@@ -150,15 +136,15 @@ export class AppConfigComponent implements OnInit {
 
     themes: any[];
 
-    layoutThemes: any[];
-
     menuThemes: any[];
+
+    menuTheme = 'light';
 
     topbarThemes: any[];
 
-    theme = 'blue';
+    topbarTheme = 'blue';
 
-    layoutTheme = 'blue';
+    theme = 'blue';
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) {}
 
@@ -179,24 +165,6 @@ export class AppConfigComponent implements OnInit {
             {name: 'amber', color: '#FFC107'},
             {name: 'orange', color: '#FF9800'},
             {name: 'deeporange', color: '#FF5722'},
-            {name: 'brown', color: '#795548'},
-            {name: 'bluegrey', color: '#607D8B'}
-        ];
-
-        this.layoutThemes = [
-            {name: 'blue', color: '#2c84d8'},
-            {name: 'pink', color: '#E91E63'},
-            {name: 'purple', color: '#9C27B0'},
-            {name: 'deeppurple', color: '#673AB7'},
-            {name: 'indigo', color: '#3F51B5'},
-            {name: 'lightblue', color: '#03A9F4'},
-            {name: 'cyan', color: '#00BCD4'},
-            {name: 'teal', color: '#009688'},
-            {name: 'green', color: '#4CAF50'},
-            {name: 'lightgreen', color: '#8BC34A'},
-            {name: 'lime', color: '#CDDC39'},
-            {name: 'orange', color: '#FB8C00'},
-            {name: 'deeporange', color: '#F4511E'},
             {name: 'brown', color: '#795548'},
             {name: 'bluegrey', color: '#607D8B'}
         ];
@@ -241,18 +209,19 @@ export class AppConfigComponent implements OnInit {
     }
 
     onLayoutModeChange(event, mode) {
-        //this.app.menuTheme = this.app.layoutMode;
-        //this.app.topbarTheme = this.app.layoutMode;
-
         this.app.layoutMode = mode;
 
         if (mode === 'dark') {
             this.app.menuTheme = 'dark';
             this.app.topbarTheme = 'dark';
         }
+        else {
+            this.app.menuTheme = 'light';
+            this.app.topbarTheme = 'blue';
+        }
 
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
-        const layoutHref = 'assets/layout/css/layout-' + this.layoutTheme + '-' + this.app.layoutMode + '.css';
+        const layoutHref = 'assets/layout/css/layout-' + this.app.layoutMode + '.css';
         this.replaceLink(layoutLink, layoutHref);
 
         const themeLink = document.getElementById('theme-css');
@@ -269,14 +238,6 @@ export class AppConfigComponent implements OnInit {
         const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutMode + '.css';
         this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
-    }
-
-    changeLayoutTheme(theme) {
-        this.layoutTheme = theme;
-
-        const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
-        const layoutHref = 'assets/layout/css/layout-' + this.layoutTheme + '-' + this.app.layoutMode + '.css';
-        this.replaceLink(layoutLink, layoutHref, this.appMain['refreshTrafficChart']);
     }
 
     changeMenuTheme(theme) {

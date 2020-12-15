@@ -25,10 +25,10 @@
                 font-size: 22px;
                 @include transition(color $transitionDuration);
             }
-            
+
             &:hover {
                 i {
-                    color: $primaryColor;
+                    color: var(--primary-color);
                 }
             }
         }

@@ -15,12 +15,7 @@ body {
     min-height: 100%;
 
     a {
-        color: $primaryColor;
         text-decoration: none;
-
-        &:hover {
-            color: lighten($primaryColor, 5%);
-        }
     }
 }
 

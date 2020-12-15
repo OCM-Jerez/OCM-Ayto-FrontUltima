@@ -3,11 +3,11 @@
 
     .topbar {
         @include shadow(0 2px 5px 0 rgba(0, 0, 0, 0.26));
-        background-color: $primaryColor;
+        background-color: var(--primary-color);
         z-index: 100;
 
         .topbar-left {
-            background-color: $primaryColor;
+            background-color: var(--primary-color);
 
             img {
                 height: 2rem;
@@ -17,7 +17,7 @@
         .topbar-right {
             h6 {
                 margin: 0;
-                color: $primaryTextColor;
+                color: var(--primary-color-text);
                 font-weight: 500;
             }
         }
@@ -50,7 +50,7 @@
 
         .pages-header {
             margin-top: -3rem;
-            color: $primaryTextColor;
+            color: var(--primary-color-text);
             border: 1.5px solid #FFFFFF;
             border-radius: 4px;
             margin-left: auto;
