@@ -42,6 +42,10 @@
 
             border: 1.5px solid #FFFFFF;
             border-radius: 6px;
+
+            >.card {
+                background-color: $contentAltBgColor;
+            }
         }
 
         .pages-header {
