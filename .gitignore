@@ -1,20 +1,8 @@
-<<<<<<< HEAD
-theme.css
-build
-dist
-node_modules
-.DS_Store
-.idea
-sassdoc
-
-src/assets/theme/*/theme-*.css
-src/assets/layout/css/*.css
-src/assets/sass/theme/designer
-=======
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
 /dist
+/build
 /tmp
 /out-tsc
 
@@ -43,6 +31,7 @@ speed-measure-plugin.json
 
 # misc
 /.sass-cache
+sassdoc
 /connect.lock
 /coverage
 /libpeerconnection.log
@@ -54,4 +43,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
->>>>>>> ebf7b042b82e8ae8b00af9d125b5bbd6829f52bf
+
+theme.css
+src/assets/theme/*/theme-*.css
+src/assets/layout/css/*.css
+src/assets/sass/theme/designer
