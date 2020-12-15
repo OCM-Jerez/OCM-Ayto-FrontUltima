@@ -3,27 +3,27 @@
 
 <head>
     <script>document.write('<base href="' + document.location + '" />');</script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="icon" type="image/x-icon" href="../layout/images/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="icon" type="image/x-icon" href="../layout/images/favicon.png">
     <title>PrimeNG - ULTIMA</title>
 
-    <link rel="stylesheet" type="text/css" href="../theme/theme-indigo.css">
-    <link rel="stylesheet" type="text/css" href="../layout/css/layout-indigo.css">
+    <link rel="stylesheet" type="text/css" href="../theme/indigo/theme-light.css">
+    <link rel="stylesheet" type="text/css" href="../layout/css/layout-indigo-light.css">
     <link rel="stylesheet" type="text/css" href="primeng.min.css">
     <link rel="stylesheet" type="text/css" href="primeflex.css">
     <link rel="stylesheet" type="text/css" href="primeicons.css">
 
 
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var menuButton = document.getElementById('menu-button');
 
-            var addClass = function(element, classNames) {
+            var addClass = function (element, classNames) {
                     var classNamesArr = classNames.split(' ');
-                    for(var i = 0; i < classNamesArr.length; i++) {
+                    for (var i = 0; i < classNamesArr.length; i++) {
                         var className = classNamesArr[i];
                         if (element.classList)
                             element.classList.add(className);
@@ -31,9 +31,9 @@
                             element.className += ' ' + className;
                     }
                 },
-                removeClass = function(element, classNames) {
+                removeClass = function (element, classNames) {
                     var classNamesArr = classNames.split(' ');
-                    for(var i = 0; i < classNamesArr.length; i++) {
+                    for (var i = 0; i < classNamesArr.length; i++) {
                         var className = classNamesArr[i];
                         if (element.classList)
                             element.classList.remove(className);
@@ -41,25 +41,24 @@
                             element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
                     }
                 },
-                hasClass = function(element, className) {
+                hasClass = function (element, className) {
                     if (element.classList)
                         return element.classList.contains(className);
                     else
                         return new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
                 };
 
-            if(menuButton) {
-                menuButton.addEventListener('click', function(e) {
+            if (menuButton) {
+                menuButton.addEventListener('click', function (e) {
                     var menu = document.getElementById('menu');
 
-                    if(hasClass(menu, 'lmenu-active')) {
+                    if (hasClass(menu, 'lmenu-active')) {
                         addClass(menu, 'fadeOutUp');
 
-                        setTimeout(function() {
+                        setTimeout(function () {
                             removeClass(menu, 'fadeOutUp fadeInDown lmenu-active');
-                        },500);
-                    }
-                    else {
+                        }, 500);
+                    } else {
                         addClass(menu, 'lmenu-active fadeInDown');
                     }
                     e.preventDefault();
@@ -98,7 +97,9 @@
 
     <div id="features">
         <h2>The Ultimate Material Application Template for PrimeNG</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus sit velit, aspernatur voluptates molestiae, enim recusandae. Odit dicta, maiores quas ad nesciunt, illum expedita veritatis illo quam odio id!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse delectus sit velit, aspernatur voluptates
+            molestiae, enim recusandae. Odit dicta, maiores quas ad nesciunt, illum expedita veritatis illo quam odio
+            id!</p>
 
         <div class="p-grid">
             <div class="p-col-12 p-md-4">
@@ -158,17 +159,21 @@
             <div class="p-col-12 p-lg-4">
                 <div class="card">
                     <h3>Just</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab perferendis nesciunt ad reiciendis explicabo consequatur sapiente odit ipsa harum illum, necessitatibus quaerat voluptates aspernatur iure, aperiam possimus sint sit mollitia!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab perferendis nesciunt ad reiciendis
+                        explicabo consequatur sapiente odit ipsa harum illum, necessitatibus quaerat voluptates
+                        aspernatur iure, aperiam possimus sint sit mollitia!</p>
                 </div>
 
                 <div class="card">
                     <h3>Like</h3>
-                    <p>Ab perferendis nesciunt ad reiciendis explicabo consequatur sapiente odit ipsa harum illum. Necessitatibus quaerat voluptates aspernatur iure, aperiam possimus sint sit mollitia!</p>
+                    <p>Ab perferendis nesciunt ad reiciendis explicabo consequatur sapiente odit ipsa harum illum.
+                        Necessitatibus quaerat voluptates aspernatur iure, aperiam possimus sint sit mollitia!</p>
                 </div>
 
                 <div class="card">
                     <h3>That</h3>
-                    <p>Necessitatibus quaerat voluptates aspernatur iure, aperiam possimus sint sit mollitia! Ab perferendis nesciunt ad reiciendis explicabo consequatur sapiente odit ipsa harum illum.</p>
+                    <p>Necessitatibus quaerat voluptates aspernatur iure, aperiam possimus sint sit mollitia! Ab
+                        perferendis nesciunt ad reiciendis explicabo consequatur sapiente odit ipsa harum illum.</p>
                 </div>
             </div>
         </div>
@@ -176,7 +181,8 @@
 
     <div id="pricing">
         <h2>Pricing</h2>
-        <p>Esse delectus sit velit, aspernatur voluptates molestiae, enim recusandae. Odit dicta, maiores quas ad nesciunt, illum expedita veritatis illo quam odio id!</p>
+        <p>Esse delectus sit velit, aspernatur voluptates molestiae, enim recusandae. Odit dicta, maiores quas ad
+            nesciunt, illum expedita veritatis illo quam odio id!</p>
 
         <div class="p-grid">
             <div class="p-col-12 p-md-4 pricing-box pricing-basic">
@@ -239,7 +245,8 @@
             <h2>Video</h2>
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/B_lYGUtCd0g" frameborder="0" width="560" height="330"></iframe>
+                <iframe src="https://www.youtube.com/embed/B_lYGUtCd0g" frameborder="0" width="560"
+                        height="330"></iframe>
             </div>
         </div>
     </div>
