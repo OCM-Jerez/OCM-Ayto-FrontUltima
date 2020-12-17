@@ -27,9 +27,9 @@
                         <i class="pi pi-search fs-large"></i>
                     </a>
 
-                    <div class="layout-search-panel p-inputgroup p-shadow-2">
+                    <div class="layout-search-panel p-inputgroup p-shadow-2" (animationend)="searchAnimationEnd()">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
-                        <input type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
+                        <input #searchInput type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
                         <span class="p-inputgroup-addon"><i class="pi pi-times" (click)="appMain.searchClick = false;"></i></span>
                     </div>
                 </li>

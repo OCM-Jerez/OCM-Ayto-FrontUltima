@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
 
@@ -13,8 +13,14 @@ export class AppTopBarComponent {
 
     activeItem: number;
 
+    @ViewChild('searchInput') searchInputViewChild: ElementRef;
+
     mobileMegaMenuItemClick(index) {
         this.appMain.megaMenuMobileClick = true;
         this.activeItem = this.activeItem === index ? null : index;
+    }
+
+    searchAnimationEnd() {
+        this.searchInputViewChild.nativeElement.focus();
     }
 }
