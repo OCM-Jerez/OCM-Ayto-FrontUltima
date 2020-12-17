@@ -251,9 +251,6 @@
 
             .p-col-9 {
                 padding-left: 1.5em;
-                .event-owner {
-
-                }
 
                 .event-text {
                     color: $textSecondaryColor;
@@ -268,12 +265,6 @@
                     }
                 }
             }
-        }
-    }
-
-    > div {
-        > .p-panel {
-            /*@include content-shadow();*/
         }
     }
 }

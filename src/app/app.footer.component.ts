@@ -4,22 +4,14 @@ import {AppComponent} from './app.component';
 @Component({
     selector: 'app-footer',
     template: `
-        <div class="layout-footer">
-            <a id="footerlogolink">
-                <img id="footer-logo"
-                     [src]="'assets/layout/images/footer-' + (app.layoutMode === 'light' ? 'ultima' : 'ultima-dark') + '.svg'" alt="ultima-footer-logo">
-            </a>
-            <div class="social-icons">
-                <a><i class="pi pi-github"></i></a>
-                <a><i class="pi pi-facebook"></i></a>
-                <a><i class="pi pi-twitter"></i></a>
-            </div>
+        <div class="layout-footer p-d-flex p-ai-center p-p-4 p-shadow-2">
+            <img id="footer-logo" [src]="'assets/layout/images/footer-' + (app.layoutMode === 'light' ? 'ultima' : 'ultima-dark') + '.svg'" alt="ultima-footer-logo">
+            <button pButton pRipple type="button" icon="pi pi-github fs-large" class="p-button-rounded p-button-text p-button-plain p-ml-auto p-mr-2"></button>
+            <button pButton pRipple type="button" icon="pi pi-facebook fs-large" class="p-button-rounded p-button-text p-button-plain p-mr-2"></button>
+            <button pButton pRipple type="button" icon="pi pi-twitter fs-large" class="p-button-rounded p-button-text p-button-plain p-mr-2"></button>
         </div>
     `
 })
 export class AppFooterComponent {
-
     constructor(public app: AppComponent) {}
-
-
 }
