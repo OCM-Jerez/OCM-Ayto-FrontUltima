@@ -5,145 +5,125 @@ import { AppMainComponent } from './app.main.component';
 @Component({
     selector: 'app-config',
     template: `
-        <div id="layout-config" class="layout-config" [ngClass]="{'layout-config-active': appMain.configActive}" (click)="appMain.onConfigClick($event)">
-            <a style="cursor: pointer" id="layout-config-button" class="layout-config-button" (click)="onConfigButtonClick($event)">
-                <i class="pi pi-cog"></i>
-            </a>
-            <div class="layout-config-content">
-                <div class="layout-config-form" id="config-form">
-                    <div class="layout-config-header">
-                        <h5>Theme Customization</h5>
-                        <span>Ultima offers different themes for layout, topbar, menu etc.</span>
-                    </div>
+        <p-sidebar [(visible)]="display" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
+            <div class="layout-config-panel p-d-flex p-flex-column">
+                <div class="p-px-3 p-pt-3">
+                    <h5>Theme Customization</h5>
+                    <span>Ultima offers different themes for layout, topbar, menu etc.</span>
+                    <hr class="p-mb-0" />
+                </div>
 
-                    <div id="lightdark-panel" class="layout-config-section options">
-                        <h6>Layout Mode</h6>
-                        <div class="p-d-flex p-jc-between">
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event, 'light')"></p-radioButton>
-                                <label for="layoutMode1" class="p-ml-2">Light</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event, 'dark')"></p-radioButton>
-                                <label for="layoutMode2" class="p-ml-2">Dark</label>
-                            </div>
+                <div class="layout-config-options p-p-3">
+                    <h6>Layout Mode</h6>
+                    <div class="p-d-flex">
+                        <div class="p-d-flex p-ai-center">
+                            <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event, 'light')"></p-radioButton>
+                            <label for="layoutMode1" class="p-ml-2">Light</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event, 'dark')"></p-radioButton>
+                            <label for="layoutMode2" class="p-ml-2">Dark</label>
                         </div>
                     </div>
 
-                    <div id="menumodes-panel" class="layout-config-section options">
-                        <h6 class="p-mt-2">Menu Mode</h6>
-                        <div class="p-d-flex p-jc-between">
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
-                                <label for="menuMode1" class="p-ml-2">Static</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
-                                <label for="menuMode2" class="p-ml-2">Overlay</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
-                                <label for="menuMode3" class="p-ml-2">Horizontal</label>
-                            </div>
+                    <h6>Menu Mode</h6>
+                    <div class="p-d-flex">
+                        <div class="p-d-flex p-ai-center">
+                            <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
+                            <label for="menuMode1" class="p-ml-2">Static</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
+                            <label for="menuMode2" class="p-ml-2">Overlay</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
+                            <label for="menuMode3" class="p-ml-2">Horizontal</label>
                         </div>
                     </div>
 
-                    <div id="user-profile-panel" class="layout-config-section options">
-                        <h6 class="p-mt-2">User Profile</h6>
-                        <div class="p-d-flex p-jc-between">
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="profileMode" value="inline" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode1"></p-radioButton>
-                                <label for="profileMode1">Inline</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="profileMode" value="popup" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode2"></p-radioButton>
-                                <label for="profileMode2">Popup</label>
-                            </div>
+                    <h6>User Profile</h6>
+                    <div class="p-d-flex">
+                        <div class="p-d-flex p-ai-center">
+                            <p-radioButton name="profileMode" value="inline" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode1"></p-radioButton>
+                            <label for="profileMode1" class="p-ml-2">Inline</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="profileMode" value="popup" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode2"></p-radioButton>
+                            <label for="profileMode2" class="p-ml-2">Popup</label>
                         </div>
                     </div>
 
-                    <div id="user-profile-position-panel" class="layout-config-section options">
-                        <h6 class="p-mt-2">User Profile Position</h6>
-                        <div class="p-d-flex p-jc-between">
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="profilePosition" value="top" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition1"></p-radioButton>
-                                <label for="profilePosition1">Top</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="profilePosition" value="bottom" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition2"></p-radioButton>
-                                <label for="profilePosition2">Bottom</label>
-                            </div>
+                    <h6>User Profile Position</h6>
+                    <div class="p-d-flex">
+                        <div class="p-d-flex p-ai-center">
+                            <p-radioButton name="profilePosition" value="top" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition1"></p-radioButton>
+                            <label for="profilePosition1" class="p-ml-2">Top</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="profilePosition" value="bottom" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition2"></p-radioButton>
+                            <label for="profilePosition2" class="p-ml-2">Bottom</label>
                         </div>
                     </div>
 
-                    <div id="outlined-panel" class="layout-config-section options">
-                        <h6 class="p-mt-2">Input Background</h6>
-                        <div class="p-d-flex p-jc-between">
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
-                                <label for="inputStyle1" class="p-ml-2">Outlined</label>
-                            </div>
-                            <div class="p-d-flex p-ai-center">
-                                <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
-                                <label for="inputStyle2" class="p-ml-2">Filled</label>
-                            </div>
+                    <h6>Input Background</h6>
+                    <div class="p-d-flex">
+                        <div class="p-d-flex p-ai-center">
+                            <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
+                            <label for="inputStyle1" class="p-ml-2">Outlined</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
+                            <label for="inputStyle2" class="p-ml-2">Filled</label>
                         </div>
                     </div>
 
-                    <div id="ripple-panel" class="layout-config-section ripple">
-                        <h6 class="p-mt-2">Ripple Effect</h6>
-                        <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
-                    </div>
+                    <h6>Ripple Effect</h6>
+                    <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
 
-                    <div id="orientation-panel" class="layout-config-section dark">
-                        <h6 class="p-mt-2">RTL</h6>
-                        <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)"></p-inputSwitch>
-                    </div>
+                    <h6>RTL</h6>
+                    <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)"></p-inputSwitch>
 
-                    <div id="menuthemes-panel" class="layout-config-section colors">
-                        <h6 class="p-mt-2">Menu Themes</h6>
-                        <div class="p-grid layout-config-colors">
-                            <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
-                                <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-option">
-                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
-                                    <span class="layout-config-option-check-mask" *ngIf="app.menuTheme === t.name">
-                                        <i class="pi pi-check"></i>
-                                    </span>
-                                </a>
-                            </div>
+                    <h6>Menu Themes</h6>
+                    <div class="p-grid">
+                        <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
+                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-color-option">
+                                <span class="color" [ngStyle]="{'background-color': t.color}"></span>
+                                <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
+                                    <i class="pi pi-check"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
 
-                    <div id="componentthemes-panel" class="layout-config-section colors">
-                        <h6 class="p-mt-2">Topbar Themes</h6>
-                        <div class="p-grid layout-config-colors">
-                            <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
-                                <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-option">
-                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
-                                    <span class="layout-config-option-check-mask" *ngIf="app.topbarTheme === t.name">
-                                        <i class="pi pi-check"></i>
-                                    </span>
-                                </a>
-                            </div>
+                    <h6>Topbar Themes</h6>
+                    <div class="p-grid">
+                        <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
+                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-color-option">
+                                <span class="color" [ngStyle]="{'background-color': t.color}"></span>
+                                <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
+                                    <i class="pi pi-check"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
 
-                    <div id="componentthemes-panel" class="layout-config-section colors">
-                        <h6 class="p-mt-2">Component Themes</h6>
-                        <div class="p-grid layout-config-colors">
-                            <div *ngFor="let t of themes" class="p-col p-col-fixed">
-                                <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-option">
-                                    <span class="layout-config-option-color" [ngStyle]="{'background-color': t.color}"></span>
-                                    <span class="layout-config-option-check-mask" *ngIf="theme === t.name">
-                                        <i class="pi pi-check"></i>
-                                    </span>
-                                </a>
-                            </div>
+                    <h6>Component Themes</h6>
+                    <div class="p-grid">
+                        <div *ngFor="let t of themes" class="p-col p-col-fixed">
+                            <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-color-option">
+                                <span class="color" [ngStyle]="{'background-color': t.color}"></span>
+                                <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="theme === t.name">
+                                    <i class="pi pi-check"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </p-sidebar>
+
+        <p-button type="button" (click)="display = true" icon="pi pi-cog" *ngIf="!display" styleClass="layout-config-button"></p-button>
     `
 })
 export class AppConfigComponent implements OnInit {
@@ -159,6 +139,8 @@ export class AppConfigComponent implements OnInit {
     topbarTheme = 'blue';
 
     theme = 'blue';
+
+    display = false;
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) {}
 

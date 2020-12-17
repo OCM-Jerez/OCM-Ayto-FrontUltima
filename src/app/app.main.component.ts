@@ -277,5 +277,4 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             this.documentClickListener();
         }
     }
-
 }
