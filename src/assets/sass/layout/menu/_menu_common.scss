@@ -1,0 +1,104 @@
+.menu-wrapper {
+    height: calc(100% - 56px);
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 56px;
+    z-index: 997;
+    transform: none;
+    transition: transform $transitionDuration;
+
+    ul {
+        @include reset-list;
+    }
+
+    .layout-menu-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        app-menu {
+            overflow-y: auto;
+        }
+
+        .layout-menu {
+            padding-bottom: 30px;
+
+            li {
+                border-radius: 4px;
+
+                &.layout-root-menuitem {
+                    > a {
+                        display: none;
+                    }
+
+                    > div {
+                        padding-left: 12px;
+                        margin-bottom: 6px;
+                        margin-top: 24px;
+
+                        > .layout-menuitem-text {
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+
+                .layout-menu-tooltip {
+                    display: none;
+                }
+
+                > a {
+                    display: flex;
+                    align-items: flex-start;
+                    padding: .642rem .5rem;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    user-select: none;
+                    transition: all $transitionDuration;
+
+                    .layout-menuitem-text {
+                        margin: 0 1rem;
+                    }
+
+                    .layout-submenu-toggler {
+                        margin-left: auto;
+                    }
+                }
+
+                &.active-menuitem {
+                    > a {
+                        .layout-submenu-toggler {
+                            transition: all $transitionDuration;
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+
+                > ul {
+                    padding: 0 .5rem;
+
+                    li {
+                        ul {
+                            padding: 0 0 4px;
+                            overflow: hidden;
+                        }
+                    }
+
+                    > li {
+                        margin-top: .2rem;
+
+                        &.layout-root-menuitem {
+                            > a {
+                                display: flex;
+                            }
+                        }
+
+                        @include nested-submenu-indents(.875rem, 2, 10);
+                    }
+                }
+            }
+        }
+    }
+}

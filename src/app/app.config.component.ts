@@ -62,6 +62,20 @@ import { AppMainComponent } from './app.main.component';
                         </div>
                     </div>
 
+                    <div id="user-profile-position-panel" class="layout-config-section options">
+                        <h6 class="p-mt-2">User Profile Position</h6>
+                        <div class="p-d-flex p-jc-between">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="profilePosition" value="top" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition1"></p-radioButton>
+                                <label for="profilePosition1">Top</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="profilePosition" value="bottom" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition2"></p-radioButton>
+                                <label for="profilePosition2">Bottom</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <div id="outlined-panel" class="layout-config-section options">
                         <h6 class="p-mt-2">Input Background</h6>
                         <div class="p-d-flex p-jc-between">

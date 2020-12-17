@@ -1,82 +1,17 @@
 .layout-rightpanel {
     position: fixed;
-    z-index: 1000;
+    top: 56px;
     right: 0;
-    top:56px;
+    z-index: 1000;
     height: calc(100% - 56px);
-    padding: 0;
     width: 294px;
     overflow: auto;
+    padding: .5rem;
     background-color: lighten($contentBgColor, 3%);
     transform: translate3d(294px, 0px, 0px);
-    @include transition(transform $transitionDuration);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
+    transition: transform $transitionDuration;
     backface-visibility: hidden;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
-
-    .rightpanel-wrapper {
-        height: 100%;
-        padding: 12px 10px;
-        padding-right: 0;
-
-        .layout-rightpanel-online-members {
-            h6 {
-                font-weight: 500;
-                font-size: 14px;
-                margin: 0;
-            }
-
-            img {
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-        }
-
-        .layout-rightpanel-latest-activity {
-            h6 {
-                font-weight: 500;
-                font-size: 14px;
-                margin: 0;
-            }
-
-            .activity-col {
-                .pi {
-                    font-size: 1rem;
-                    padding: 0.5rem;
-                    color: $textColor;
-                    background: $dividerColor;
-                    background-size: contain;
-                    border-radius: 50%;
-                }
-
-                h6 {
-                    font-weight: normal;
-                    font-size: 14px;
-                    margin: 0;
-                }
-
-                p {
-                    font-size: 12px;
-                    margin: 0;
-                    color: $textSecondaryColor;
-                }
-
-                .activity-user {
-                    color: $textSecondaryColor;
-                }
-            }
-        }
-
-        .layout-rightpanel-next-events {
-            h6 {
-                font-weight: 500;
-                font-size: 14px;
-                margin: 0;
-            }
-        }
-    }
 }
 
 .layout-wrapper {
@@ -84,40 +19,16 @@
         .layout-rightpanel {
             transform: translate3d(0px, 0px, 0px);
         }
-
-        .layout-topbar {
-            .layout-topbar-wrapper {
-                .layout-topbar-right {
-                    .layout-rightpanel-button {
-                        i {
-                            @include rotate(-180deg);
-                            @include transition(transform $transitionDuration);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .layout-topbar {
-        .layout-topbar-wrapper {
-            .layout-topbar-right {
-                .layout-rightpanel-button {
-                    i {
-                        @include rotate(0deg);
-                        @include transition(transform $transitionDuration);
-                    }
-                }
-            }
-        }
     }
 }
 
-@media(max-width:992px) {
-    .layout-rightpanel {
-        top:104px;
-        width: 254px;
-        transform: translate3d(254px, 0px, 0px);
-        height: calc(100% - 104px);
+@media (max-width: $mobileBreakpoint) {
+    .layout-wrapper {
+        &.layout-topbar-mobile-active {
+            .layout-rightpanel {
+                top: 168px;
+                height: calc(100% - 168px);
+            }
+        }
     }
 }

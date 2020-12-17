@@ -1,9 +1,8 @@
 .menu-wrapper {
     background-color: $menuBgColor;
     box-shadow: $menuShadow;
- 
-    .layout-menu-container {
 
+    .layout-menu-container {
         .layout-menu {
             > li {
                 > div {
@@ -11,82 +10,79 @@
                         color: $rootMenuTextColor;
                     }
                 }
+            }
 
-                 a {
-                    color: $rootMenuItemTextColor;
+            li {
+                a {
+                    color: $menuItemTextColor;
 
                     i {
-                        color: $menuItemIconColor;
+                        color: $menuItemTextColor;
                     }
 
                     &:hover {
-                        background-color: $rootMenuItemHoverBgColor;
+                        background-color: $menuItemHoverBgColor;
                     }
                 }
 
                 &.active-menuitem {
                     > a {
-                        background-color: $activeRootMenuItemBgColor; /* #merve deleting this doesn't matter */
-                        color: $activeRootMenuItemTextColor;
+                        background-color: $activeMenuItemBgColor;
+                        color: $activeMenuItemTextColor;
+
+                        > i {
+                            color: $activeMenuItemTextColor;
+                        }
                     }
                 }
+            }
+        }
 
-                > ul {
-                    li {
-                        a {
-                            color: $submenuItemTextColor;
+        .layout-profile {
+            a {
+                color: $menuItemTextColor;
+            }
 
-                            i {
-                                color: $menuItemIconColor;
-                            }
-        
-                            &:hover {
-                                background-color: $submenuItemHoverBgColor;
-                            }
-                        }
+            .layout-profile-action,
+            .layout-profile-action-panel .layout-profile-action-item {
+                color: $menuItemTextColor;
 
-                        &.active-menuitem {
-                            > a {
-                                background-color: $activeRootMenuItemBgColor;
-                                color: $activeSubmenuItemTextColor;
+                i {
+                    color: $menuItemTextColor;
+                }
 
-                                > i {
-                                    color: $activeRootMenuItemIconColor;
-                                }
-                            }
-                        }
-                    }
-
-                    > li {
-                        &.layout-root-menuitem {
-                            &.active-menuitem {
-                                background-color: $rootMenuItemHoverBgColor;
-                            }
-                        }
-                    }
+                &:hover {
+                    background-color: $menuItemHoverBgColor;
                 }
             }
         }
     }
 }
 
-@media (min-width: 993px) {
-    
+@media (min-width: $mobileBreakpoint + 1) {
+
     @mixin extrenalSubmenuitem {
         li {
             > a {
-                color: $rootMenuItemTextColor;
+                color: $textColor;
+
+                i {
+                    color: $textColor;
+                }
 
                 &:hover {
-                    background-color: $submenuItemHoverBgColor;
+                    background-color: $contentAltBgColor;
                 }
             }
 
             &.active-menuitem {
-                background-color: $externalSubmenuBgColor;
                 > a {
-                    background-color: $activeRootMenuItemBgColor;
-                    color: $activeRootMenuItemTextColor;
+                    background-color: $activeMenuItemBgColor;
+                    color: $activeMenuItemTextColor;
+
+                    > i {
+                        color: $activeMenuItemTextColor;
+                    }
                 }
             }
         }
@@ -98,13 +94,13 @@
                 .layout-menu {
                     > li {
                         > ul {
-                            background-color: $externalSubmenuBgColor;
+                            background-color: $contentBgColor;
                             box-shadow: $menuShadow;
-                            
+
                             @include extrenalSubmenuitem;
                         }
                     }
-                } 
+                }
             }
         }
     }

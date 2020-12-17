@@ -1,298 +1,128 @@
 .layout-topbar {
     position: fixed;
     top: 0;
-    z-index: 999;
+    left: 0;
+    z-index: 998;
     width: 100%;
-    @include transition(width $transitionDuration);
     height: 56px;
+    transition: width $transitionDuration;
+    display: flex;
 
-    .layout-topbar-wrapper {
+    ul {
+        @include reset-list;
+    }
+
+    .layout-topbar-left {
+        display: flex;
+        align-items: center;
         height: 100%;
-        @include flex();
-        @include flex-align-center();
+        position: relative;
 
-        .layout-topbar-left {
-            height: 100%;
+        .layout-topbar-logo {
             width: 240px;
-            padding: 11px 14px 13px;
-            @include flex();
-            @include flex-align-center();
-            background-color: $topbarLogoBgColor;
-
-            .layout-topbar-logo {
-                > img {
-                    height: 24px;
-                }
-            }
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .layout-topbar-right {
+        .layout-menu-button {
+            position: absolute;
+            top: 50%;
+            left: 222px;
+            width: 36px;
+            height: 36px;
+            margin-top: -18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        .layout-topbar-mobile-button {
+            display: none;
+            align-items: center;
+            padding: 0 .857rem;
+            margin: 0 .5rem 0 auto;
+            border-radius: 4px;
+            height: 45px;
+        }
+    }
+
+    .layout-topbar-right {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 32px;
+        height: 100%;
+
+        .layout-topbar-actions-left {
+            display: flex;
+            align-items: center;
             height: 100%;
-            flex-grow: 1;
-            padding: 10px 32px 10px 12px;
-            @include flex();
-            @include flex-align-center();
-            @include flex-justify-between();
-            border-right: solid 1px transparent;
+        }
 
-            .layout-megamenu-button {
-                padding: 8px;
-                @include border-radius(4px);
-                font-size: 13px;
-                border: none;
-                cursor: pointer;
-                height: 35px;
-                color: #FFFFFF;
+        .layout-topbar-actions-right {
+            height: 100%;
 
-                @include transition(background-color $transitionDuration);
-
-                i {
-                    font-size: 1em;
-                    vertical-align: middle;
-                }
-
-                &:hover,
-                &:focus {
-                    color: #ffffff;
-                }
-            }
-
-            .layout-megamenu {
-                position: absolute;
-                background-color: $contentBgColor;
-                top: 56px;
-                display: none;
-                @include flex-direction-row();
-                @include flex-justify-between();
-                list-style-type: none;
-                z-index: 1000;
-                box-shadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
-
-                > li {
-                    min-width: 200px;
-
-                    > a {
-                        font-size: 12px;
-                        font-weight: 600;
-                        color: $textColor;
-                        display: block;
-                        cursor: default;
-                        margin: 0;
-                        padding: .5rem 0 .5rem .5rem;
-
-                        i {
-                            display: none;
-                        }
-                    }
-
-                    > ul {
-                        list-style-type: none;
-                        padding: 0;
-
-                        > li {
-
-                            a {
-                                margin: 0;
-                                padding: .5rem 0 .5rem .5rem;
-                                @include flex();
-                                @include flex-align-center();
-                                @include transition(all $transitionDuration);
-                                font-size: 1rem;
-                                font-weight: 500;
-                                border-radius: 0;
-                                cursor: pointer;
-                                user-select: none;
-                                @include border-radius(4px);
-
-                                &.rotated-icon {
-                                    .layout-menuitem-icon {
-                                        transform: rotate(90deg);
-                                    }
-                                }
-
-                                p {
-                                    color: $textSecondaryColor;
-                                    font-size: 14px;
-                                    font-weight: 500;
-                                    margin: 0 1rem;
-                                }
-
-                                i {
-                                    font-size: 14px;
-                                    color: $textColor;
-
-                                    &.layout-submenu-toggler {
-                                        @include transition(all $transitionDuration);
-                                        margin-left: auto;
-                                        font-size: 14px;
-                                    }
-                                }
-
-                                &:hover {
-                                    background-color: $contentAltBgColor;
-
-                                    p, i {
-                                        @include transition(color $transitionDuration);
-                                    }
-                                }
-                            }
-
-                            .active-menuitem {
-                                background-color: $contentAltBgColor;
-
-                                p, i {
-                                    @include transition(color $transitionDuration);
-                                }
-                            }
-                        }
-                    }
-                }
-
-                &.layout-megamenu-active {
-                    @include flex();
-                }
-            }
-
-            .menu-button {
-                @include flex();
-                @include flex-align-center();
-                @include flex-justify-center();
-                @include border-radius(50%);
-                z-index: 999;
-                width: 36px;
-                height: 36px;
-                margin-left: -30px;
-
-                > i {
-                    font-size: 18px;
-                }
-            }
-
-            .layout-topbar-actions {
-                @include flex();
-                @include flex-align-center();
-                @include flex-justify-end();
-                flex-grow: 1;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
+            .layout-topbar-items {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
                 height: 100%;
 
-                > li {
+                .layout-topbar-item {
+                    display: flex;
+                    align-items: center;
                     position: relative;
-                    @include flex-center();
-                    height: 100%;
 
-                    > a {
-                        padding: 10px 10px 7px;
-                        margin: 0 6px;
-                        @include border-radius(4px);
-
-                        > .topbar-icon {
-                            i {
-                                font-size: 18px;
-                            }
-
-                            .p-badge {
-                                height: 14px;
-                                width: 14px;
-                                min-width: 14px;
-                                font-size: 10px;
-                                line-height: 14px;
-                            }
-
-                        }
+                    .layout-topbar-action {
+                        padding: 0 .857rem;
+                        margin: 0 .5rem;
+                        border-radius: 4px;
+                        height: 45px;
+                        display: flex;
+                        align-items: center;
                     }
 
-                    > ul {
-                        display: none;
+                    .layout-topbar-action-panel {
                         position: absolute;
-                        top: 46px;
+                        top: 56px;
                         right: 0;
-                        list-style-type: none;
-                        margin: 0;
-                        padding: 0;
                         z-index: 1000;
-                        min-width: 370px;
-                        animation-duration: $transitionDuration;
+                        min-width: 350px;
+                        padding: 1rem 0;
+                        display: none;
+                        animation-name: fadeInDown;
+                        animation-duration: 0.2s;
 
-                        .angle-icon {
-                            @include flex();
-                            @include flex-justify-end();
-                            flex-grow: 1;
-                        }
-
-                        > li {
-                            padding: 7px 12px;
-                            @include flex();
-                            @include flex-align-center();
+                        .layout-topbar-action-item {
                             cursor: pointer;
-                            border-bottom: 1px solid $dividerColor;
-
-                            &:hover {
-                                background-color: $contentAltBgColor;
-                            }
-
-                            > a {
-                                @include flex();
-                                @include flex-align-center();
-                                width: 100%;
-
-                                h6 {
-                                    margin: 0;
-
-                                    > span {
-                                        font-size: 14px;
-                                        font-weight: 600;
-                                    }
-                                }
-
-                                > div {
-                                    > span {
-                                        font-size: 12px;
-
-                                        > span {
-                                            font-weight: 600;
-                                        }
-                                    }
-                                }
-
-                                > img {
-                                    width: 32px;
-                                    height: 32px;
-                                    margin-right: 6px;
-                                }
-
-                                > i {
-                                    width: 28px;
-                                    height: 28px;
-                                    margin-right: 6px;
-                                    @include border-radius(50%);
-                                    @include flex();
-                                    @include flex-align-center();
-                                    @include flex-justify-center();
-                                    font-size: 16px;
-                                }
-                            }
+                            padding: .857rem 1rem;
                         }
                     }
 
-                    &.search-item {
-                        position: static;
-
-                        .search-panel {
+                    &.layout-search-item {
+                        .layout-search-panel {
                             height: 56px;
                             width: 100%;
-                            display: none;
-                            position: absolute;
+                            position: fixed;
                             top: 0;
-                            left: 0px;
+                            left: 0;
                             z-index: 1000;
+                            display: none;
+                            animation-name: fadeInDown;
                             animation-duration: 0.2s;
 
                             input {
-                                @include border-radius(0);
+                                border-radius: 0;
                                 border: 0 none;
+
+                                &:focus {
+                                    outline: 0 none;
+                                    box-shadow: none;
+                                }
                             }
 
                             i {
@@ -317,245 +147,19 @@
                                 border-bottom-right-radius: 0;
                             }
                         }
-
-                        &.active-topmenuitem {
-                            .search-panel {
-                                display: flex;
-                            }
-                        }
                     }
 
-                    &.user-profile {
-                        > a {
-                            @include flex();
-                            margin: 0 6px;
-                            padding: 10px;
-
-                            > img {
-                                width: 32px;
-                                height: 32px;
-                            }
-
-                            .profile-info {
-                                margin-left: 7px;
-
-                                h6 {
-                                    font-weight: 600;
-                                    margin: 0;
-                                }
-
-                                span {
-                                    display: block;
-                                    font-size: 12px;
-                                    font-weight: normal;
-                                }
-                            }
-                        }
-
-                        > ul {
-                            background-color: $contentBgColor;
-                            > li {
-                                > a {
-                                    > i {
-                                        font-size: 16px;
-                                        margin-right: 10px;
-                                    }
-                                }
-
-                                i {
-                                    color: $textSecondaryColor;
-                                }
-
-                                h6 {
-                                    color: $textColor;
-                                }
-                            }
-                        }
-                    }
-
-                    &.active-topmenuitem {
-                        > ul {
+                    &.layout-active-topbar-item {
+                        .layout-topbar-action-panel {
                             display: block;
                         }
-                    }
 
-                    &.notifications {
-                        > ul {
-                            background-color: $contentBgColor;
-
-                            p {
-                                color: $textSecondaryColor;
-                            }
-
-                            h6 {
-                                color: $textColor;
-                            }
-
-                            > li {
-                                div {
-                                    width: 100%;
-                                }
-
-                                img {
-                                    width: 42px;
-                                    height: 42px;
-                                }
-                            }
+                        .layout-search-panel {
+                            display: flex;
                         }
                     }
-
-                    .apps {
-
-                        background-color: $contentBgColor;
-
-                        > div {
-                            &:hover {
-                                background-color: $contentAltBgColor;
-                            }
-                        }
-
-                        a {
-                            .pi {
-                                color: $bodyBgColor;
-                                border-radius: 50%;
-                                background-size: auto;
-                                font-size: 2em;
-                                padding: 1rem;
-
-                                &.pi-image {
-                                    background: $indigo;
-                                }
-
-                                &.pi-file-pdf {
-                                    background: $orange;
-                                }
-
-                                &.pi-dollar {
-                                    background: $teal;
-                                }
-
-                                &.pi-cog {
-                                    background: $bluegrey;
-                                }
-
-                                &.pi-key {
-                                    background: $pink;
-                                }
-
-                                &.pi-sitemap {
-                                    background: $cyan;
-                                }
-                            }
-
-                            h6 {
-                                color: $textColor;
-                                margin: 0;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .layout-rightpanel-button {
-                @include flex();
-                @include flex-align-center();
-                @include flex-justify-center();
-                @include border-radius(50%);
-                z-index: 999;
-                width: 36px;
-                height: 36px;
-
-                > i {
-                    font-size: 18px;
                 }
             }
         }
     }
-}
-
-@media (max-width: 992px) {
-    .layout-topbar {
-        height: 104px;
-
-        .layout-topbar-wrapper {
-            @include flex-align-start();
-            flex-direction: column;
-            position: relative;
-
-            .layout-topbar-left {
-                width: 100%;
-                height: 56px;
-                margin-left: 0;
-                @include flex-center();
-            }
-
-            .layout-topbar-right {
-                height: 48px;
-                width: 100%;
-                padding: 0;
-
-                .menu-button {
-                    position: absolute;
-                    top: 10px;
-                    left: 16px;
-                    margin: 0;
-                }
-
-                .layout-topbar-actions {
-                    width: 100%;
-                    @include flex-justify-start();
-                    padding: 0 16px;
-
-                    > .topbar-item {
-                        margin: 0;
-                        width: 100%;
-
-                        &.search-item {
-                            margin: 0;
-
-                            > .search-input-wrapper {
-                                display: none;
-                            }
-
-                            > a {
-                                display: flex;
-                            }
-                        }
-
-                        > a {
-                            margin: 0;
-                        }
-
-                        > ul {
-                            top: 104px;
-                            width: 90%;
-                            left: 5%;
-                            position: fixed;
-                        }
-
-                        &.user-profile {
-                            position: absolute;
-                            top: 1px;
-                            right: 8px;
-                            height: auto;
-                            width: auto;
-
-                            a {
-                                margin: 0;
-
-                                .profile-info {
-                                    display: none;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .layout-rightpanel-button {
-                    margin-right: 16px;
-                }
-            }
-        }
-    }
-
 }

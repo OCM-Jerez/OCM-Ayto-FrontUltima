@@ -1,21 +1,19 @@
 .layout-menu-bluegrey {
     $menuBgColor:#37474F;
-    $menuShadow:  0 2px 12px 0 rgba(0, 0, 0, 0.06);
+    $menuShadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
 
     $rootMenuTextColor:#ffffff;
 
-    $rootMenuItemTextColor:rgba(255,255,255,.6);
-    $rootMenuItemHoverBgColor:rgba(255,255,255,.12);;
-    $activeRootMenuItemTextColor:#ffffff;
-    $activeRootMenuItemIconColor: #ffffff;
-    $activeRootMenuItemBgColor: rgba(255,255,255,.24);
-    $menuItemIconColor:rgba(255,255,255,.6);
+    $menuItemTextColor:rgba(255,255,255,.6);
+    $menuItemHoverBgColor:rgba(255,255,255,.12);;
+    $activeMenuItemTextColor:#ffffff;
+    $activeMenuItemBgColor: rgba(255,255,255,.24);
 
+    $submenuBgColor:#FDFEFF;
     $submenuItemTextColor:rgba(255,255,255,.6);
     $submenuItemHoverBgColor:rgba(255,255,255,.12);;
     $activeSubmenuItemTextColor:#ffffff;
-
-    $externalSubmenuBgColor:#FDFEFF;
+    $activeSubmenuItemBgColor: #E8EAF6;
 
     @import '../_menu_theme';
 }

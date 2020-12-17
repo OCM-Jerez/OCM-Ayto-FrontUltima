@@ -1,0 +1,37 @@
+<div class="layout-profile" [ngClass]="{'layout-profile-active':appMain.inlineMenuActive}">
+    <a class="layout-profile-action p-d-flex p-dir-row p-ai-center p-p-3" href="#" (click)="onClick($event)">
+        <img src="assets/layout/images/avatar-profile.png" alt="avatar">
+        <span class="p-d-flex p-flex-column p-ml-2">
+            <span class="fs-small p-text-bold">Peter Taylor</span>
+            <small>Webmaster</small>
+        </span>
+        <i class="layout-profile-icon pi pi-angle-down p-ml-auto"></i>
+    </a>
+
+    <ul class="layout-profile-action-panel" [@menu]="appMain.inlineMenuActive ? 'visibleAnimated':'hiddenAnimated'">
+        <li class="layout-profile-action-item p-p-0">
+            <a href="#" class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
+                <i class="pi pi-cog p-mr-2"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+        <li class="layout-profile-action-item p-p-0">
+            <a href="#" class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
+                <i class="pi pi-file-o p-mr-2"></i>
+                <span>Terms of Usage</span>
+            </a>
+        </li>
+        <li class="layout-profile-action-item p-p-0">
+            <a href="#" class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
+                <i class="pi pi-compass p-mr-2"></i>
+                <span>Support</span>
+            </a>
+        </li>
+        <li class="layout-profile-action-item p-p-0">
+            <a href="#" class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
+                <i class="pi pi-power-off p-mr-2"></i>
+                <span>Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>

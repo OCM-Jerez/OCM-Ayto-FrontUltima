@@ -4,20 +4,16 @@
 
     $rootMenuTextColor:#ffffff;
 
-    $rootMenuItemTextColor:#bdbdbd;
-    $rootMenuItemHoverBgColor:#363636;
-    $activeRootMenuItemTextColor:#ffffff;
-    $activeRootMenuItemIconColor: var(--primary-color);
-    $activeRootMenuItemBgColor: #212121;
-    $menuItemIconColor:#bdbdbd;
+    $menuItemTextColor:#bdbdbd;
+    $menuItemHoverBgColor:#363636;
+    $activeMenuItemTextColor:#ffffff;
+    $activeMenuItemBgColor: #212121;
 
+    $submenuBgColor:#434B54;
     $submenuItemTextColor:#bdbdbd;
     $submenuItemHoverBgColor:#363636;
     $activeSubmenuItemTextColor: var(--primary-color);
-
-    $externalSubmenuBgColor:#434B54;
-
+    $activeSubmenuItemBgColor: #E8EAF6;
 
     @import '../_menu_theme';
 }
-

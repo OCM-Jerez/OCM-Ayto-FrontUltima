@@ -1,320 +1,188 @@
-<div class="layout-topbar">
-    <div class="layout-topbar-wrapper">
-        <div class="layout-topbar-left">
-            <div class="layout-topbar-logo" id="logolink" style="cursor: pointer; outline: none;" routerLink="/">
-                <img id="app-logo"
-                     [src]="'assets/layout/images/logo2x.png'"
-                     alt="ultima-layout">
-            </div>
-        </div>
+<div class="layout-topbar p-shadow-4">
+    <div class="layout-topbar-left">
+        <a class="layout-topbar-logo" routerLink="/">
+            <img src="assets/layout/images/logo2x.png" alt="ultima-layout" style="height: 24px">
+        </a>
 
-        <div class="layout-topbar-right">
-            <a class="menu-button" href="#" (click)="appMain.onMenuButtonClick($event)">
-                <i class="pi pi-chevron-right"></i>
+        <a class="layout-menu-button p-shadow-6" href="#" (click)="appMain.onMenuButtonClick($event)">
+            <i class="pi pi-chevron-right"></i>
+        </a>
+
+        <a class="layout-topbar-mobile-button" href="#" (click)="appMain.onTopbarMobileButtonClick($event)">
+            <i class="pi pi-ellipsis-v fs-large"></i>
+        </a>
+    </div>
+
+    <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}" (click)="appMain.onTopbarRightClick($event)">
+        <div class="layout-topbar-actions-left">
+            <a class="layout-megamenu-button" href="#">
+                MEGA MENU
+                <i class="pi pi-chevron-down"></i>
             </a>
-
-            <div class="layout-megamenu-wrapper">
-                <a class="layout-megamenu-button p-ml-6" href="#" (click)="appMain.onMegaMenuButtonClick($event)">
-                    MEGA MENU
-                    <i class="pi pi-chevron-down"></i>
-                </a>
-
-                <ul class="layout-megamenu p-reset p-px-2" [ngClass]="{'layout-megamenu-active fadeInDown': appMain.megaMenuActive}"
-                    (click)="appMain.onMegaMenuClick($event)">
-                    <li [ngClass]="{'active-topmenuitem': activeItem === 1}" (click)="mobileMegaMenuItemClick(1)">
-                        <a href="#" class="p-my-2">UI KIT</a>
-                        <ul class="p-mb-3">
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/formlayout" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-id-card"></i>
-                                    <p>Form Layout</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/input" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-check-square"></i>
-                                    <p>Input</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/button" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-mobile"></i>
-                                    <p>Button</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/table" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-table"></i>
-                                    <p>Table</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/list" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-list"></i>
-                                    <p>List</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/tree" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-share-alt"></i>
-                                    <p>Tree</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/panel" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-tablet"></i>
-                                    <p>Panel</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li [ngClass]="{'active-topmenuitem': activeItem === 2}" (click)="mobileMegaMenuItemClick(2)">
-                        <a href="#" class="p-my-2">UI KIT 2</a>
-                        <ul class="p-mb-3">
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/overlay" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-clone"></i>
-                                    <p>Overlay</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/media" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-image"></i>
-                                    <p>Media</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/menu" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-bars"></i>
-                                    <p>Menu</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/message" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-comment"></i>
-                                    <p>Message</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/file" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-file"></i>
-                                    <p>File</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/charts" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-chart-bar"></i>
-                                    <p>Chart</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a routerLink="/uikit/misc" routerLinkActive="active-menuitem">
-                                    <i class="pi pi-circle-off"></i>
-                                    <p>Misc</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li [ngClass]="{'active-topmenuitem': activeItem === 3}" (click)="mobileMegaMenuItemClick(3)">
-                        <a href="#" class="p-my-2">HIERARCHY</a>
-                        <ul class="p-mb-3">
-                            <li class="p-p-1">
-                                <a>
-                                    <i class="pi pi-align-left"></i>
-                                    <p>Submenu 1</p>
-                                </a>
-                            </li>
-                            <li class="p-p-1">
-                                <a>
-                                    <i class="pi pi-align-left"></i>
-                                    <p>Submenu 2</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <ul class="layout-topbar-actions">
-                <li #searchItem class="search-item topbar-item" [ngClass]="{'active-topmenuitem': appMain.search}">
-                    <a href="#" (click)="appMain.onTopbarItemClick($event,searchItem)">
-                        <span class="topbar-icon">
-                            <i class="pi pi-search"></i>
-                        </span>
+        </div>
+        <div class="layout-topbar-actions-right">
+            <ul class="layout-topbar-items">
+                <li class="layout-topbar-item layout-search-item" [ngClass]="{'layout-active-topbar-item': appMain.search}">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'search')">
+                        <i class="pi pi-search fs-large"></i>
                     </a>
 
-                    <div class="search-panel fadeInDown p-inputgroup">
+                    <div class="layout-search-panel p-inputgroup p-shadow-2">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
                         <input type="text" pInputText placeholder="Username" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
                         <span class="p-inputgroup-addon"><i class="pi pi-times" (click)="appMain.searchClick = false;"></i></span>
                     </div>
                 </li>
-                <li #notifications class="topbar-item notifications"
-                    [ngClass]="{'active-topmenuitem':appMain.activeTopbarItem === notifications}">
-                    <a href="#" (click)="appMain.onTopbarItemClick($event,notifications)">
-                        <span class="p-overlay-badge topbar-icon">
-                            <i class="pi pi-bell"></i>
+                <li class="layout-topbar-item notifications" [ngClass]="{'layout-active-topbar-item': appMain.activeTopbarItem === 'notifications'}">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'notifications')">
+                        <span class="p-overlay-badge">
+                            <i class="pi pi-bell fs-large"></i>
                             <span class="p-badge">4</span>
                         </span>
                     </a>
-                    <ul class="fadeInDown">
-                        <li class="layout-submenu-header">
-                            <p class="p-mt-3">You have <b>4</b> new notifications</p>
+
+                    <ul class="layout-topbar-action-panel p-shadow-6">
+                        <li class="p-mb-3">
+                            <span class="p-px-3 fs-small">You have <b>4</b> new notifications</span>
                         </li>
-                        <li role="menuitem" class="p-my-0">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <div class="p-d-flex">
-                                    <img class="p-mr-3" src="../assets/demo/images/avatar/avatar-1.png"/>
-                                    <div class="p-d-flex p-flex-column">
-                                        <div class="p-d-flex p-jc-between">
-                                            <h6 class="p-my-0">Jerome Bell</h6>
-                                            <p>42 mins ago</p>
-                                        </div>
-                                        <p>How to write content about your photographs?</p>
+                        <li class="layout-topbar-action-item">
+                            <div class="p-d-flex p-flex-row p-ai-center">
+                                <img src="../assets/demo/images/avatar/avatar-1.png"/>
+                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                    <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
+                                        <span class="fs-small p-text-bold">Jerome Bell</span>
+                                        <small>42 mins ago</small>
                                     </div>
+                                    <span class="fs-small">How to write content about your photographs?</span>
                                 </div>
-                            </a>
+                            </div>
                         </li>
-                        <li role="menuitem" class="p-my-0">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <div class="p-d-flex">
-                                    <img class="p-mr-3" src="../assets/demo/images/avatar/avatar-2.png"/>
-                                    <div class="p-d-flex p-flex-column">
-                                        <div class="p-d-flex p-jc-between">
-                                            <h6 class="p-my-0">Cameron Williamson</h6>
-                                            <p>48 mins ago</p>
-                                        </div>
-                                        <p>Start a blog to reach your creative peak.</p>
+                        <li class="layout-topbar-action-item">
+                            <div class="p-d-flex p-flex-row p-ai-center">
+                                <img src="../assets/demo/images/avatar/avatar-2.png"/>
+                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                    <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
+                                        <span class="fs-small p-text-bold">Cameron Williamson</span>
+                                        <small>48 mins ago</small>
                                     </div>
+                                    <span class="fs-small">Start a blog to reach your creative peak.</span>
                                 </div>
-                            </a>
+                            </div>
                         </li>
-                        <li role="menuitem" class="p-my-0">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <div class="p-d-flex">
-                                    <img class="p-mr-3" src="../assets/demo/images/avatar/avatar-3.png"/>
-                                    <div class="p-d-flex p-flex-column">
-                                        <div class="p-d-flex p-jc-between">
-                                            <h6 class="p-my-0">Anna Miles</h6>
-                                            <p>1 day ago</p>
-                                        </div>
-                                        <p>Caring is the new marketing</p>
+                        <li class="layout-topbar-action-item">
+                            <div class="p-d-flex p-flex-row p-ai-center">
+                                <img src="../assets/demo/images/avatar/avatar-3.png"/>
+                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                    <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
+                                        <span class="fs-small p-text-bold">Anna Miles</span>
+                                        <small>1 day ago</small>
                                     </div>
+                                    <span class="fs-small">Caring is the new marketing</span>
                                 </div>
-                            </a>
+                            </div>
                         </li>
-                        <li role="menuitem" class="p-mb-4">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <div class="p-d-flex">
-                                    <img class="p-mr-3" src="../assets/demo/images/avatar/avatar-4.png"/>
-                                    <div class="p-d-flex p-flex-column">
-                                        <div class="p-d-flex p-jc-between">
-                                            <h6 class="p-my-0">Arlene Mccoy</h6>
-                                            <p>4 day ago</p>
-                                        </div>
-                                        <p>Starting your traveling blog with Vasco.</p>
+                        <li class="layout-topbar-action-item">
+                            <div class="p-d-flex p-flex-row p-ai-center">
+                                <img src="../assets/demo/images/avatar/avatar-4.png"/>
+                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                    <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
+                                        <span class="fs-small p-text-bold">Arlene Mccoy</span>
+                                        <small>4 day ago</small>
                                     </div>
+                                    <span class="fs-small">Starting your traveling blog with Vasco.</span>
                                 </div>
-                            </a>
+                            </div>
                         </li>
                     </ul>
                 </li>
-                <li #apps class="topbar-item"
-                    [ngClass]="{'active-topmenuitem':appMain.activeTopbarItem === apps}">
-                    <a href="#" (click)="appMain.onTopbarItemClick($event,apps)">
-                        <span class="topbar-icon">
-                            <i class="pi pi-table"></i>
+                <li class="layout-topbar-item app" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'apps'}">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'apps')">
+                        <i class="pi pi-table fs-large"></i>
+                    </a>
+
+                    <div class="layout-topbar-action-panel p-shadow-6">
+                        <div class="p-grid p-nogutter">
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                    <i class="pi pi-image action indigo"></i>
+                                    <span>Products</span>
+                                </a>
+                            </div>
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                    <i class="pi pi-file-pdf action orange"></i>
+                                    <span>Reports</span>
+                                </a>
+                            </div>
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                    <i class="pi pi-dollar action teal"></i>
+                                    <span>Balance</span>
+                                </a>
+                            </div>
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                    <i class="pi pi-cog action pink"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </div>
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                    <i class="pi pi-key action bluegrey"></i>
+                                    <span>Credentials</span>
+                                </a>
+                            </div>
+                            <div class="layout-topbar-action-item p-col-4">
+                                <a class="p-d-flex p-ai-center p-jc-center p-flex-column" href="#">
+                                    <i class="pi pi-sitemap action cyan"></i>
+                                    <span>Sitemap</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="layout-topbar-item" *ngIf="app.profileMode==='popup'||appMain.isHorizontal()" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'profile'}">
+                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center" href="#" (click)="appMain.onTopbarItemClick($event, 'profile')">
+                        <img src="assets/layout/images/avatar-profile.png" alt="avatar">
+                        <span class="p-d-flex p-flex-column p-ml-2">
+                            <span class="fs-small p-text-bold">Peter Taylor</span>
+                            <small>Webmaster</small>
                         </span>
                     </a>
-                    <ul class="fadeInDown">
-                        <div class="apps p-grid p-px-3 p-mt-0">
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarItemClick($event,notifications)">
-                                    <i class="pi pi-image p-my-3"></i>
-                                    <h6>Products</h6>
-                                </a>
-                            </div>
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-file-pdf p-my-3"></i>
-                                    <h6>Reports</h6>
-                                </a>
-                            </div>
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-dollar p-my-3"></i>
-                                    <h6>Balance</h6>
-                                </a>
-                            </div>
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-cog p-my-3"></i>
-                                    <h6>Settings</h6>
-                                </a>
-                            </div>
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-key p-my-3"></i>
-                                    <h6>Credentials</h6>
-                                </a>
-                            </div>
-                            <div class="p-col-4">
-                                <a class="p-d-flex p-flex-column p-jc-center p-ai-center p-pb-3" href="#"
-                                   (click)="appMain.onTopbarSubItemClick($event)">
-                                    <i class="pi pi-sitemap p-my-3"></i>
-                                    <h6>Sitemap</h6>
-                                </a>
-                            </div>
-                        </div>
+
+                    <ul class="layout-topbar-action-panel p-shadow-6">
+                        <li class="layout-topbar-action-item">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                                <i class="pi pi-cog p-mr-2"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li class="layout-topbar-action-item">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                                <i class="pi pi-file-o p-mr-2"></i>
+                                <span>Terms of Usage</span>
+                            </a>
+                        </li>
+                        <li class="layout-topbar-action-item">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                                <i class="pi pi-compass p-mr-2"></i>
+                                <span>Support</span>
+                            </a>
+                        </li>
+                        <li class="layout-topbar-action-item">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                                <i class="pi pi-power-off p-mr-2"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li #profile class="topbar-item user-profile" *ngIf="app.profileMode==='popup'||appMain.isHorizontal()"
-                    [ngClass]="{'active-topmenuitem':appMain.activeTopbarItem === profile}">
-                    <a href="#" (click)="appMain.onTopbarItemClick($event,profile)">
-                        <img class="profile-image" src="assets/layout/images/avatar-profile.png" alt="demo">
-                        <div class="profile-info">
-                            <h6>Peter Taylor</h6>
-                            <span>Webmaster</span>
-                        </div>
+                <li class="layout-topbar-item">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onRightPanelButtonClick($event)">
+                        <i class="pi pi-arrow-left fs-large"></i>
                     </a>
-
-                    <ul class="fadeInDown">
-                        <li role="menuitem">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <i class="pi pi-cog"></i>
-                                <h6>Settings</h6>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <i class="pi pi-file-o"></i>
-                                <h6>Terms of Usage</h6>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <i class="pi pi-compass"></i>
-                                <h6>Support</h6>
-                            </a>
-                        </li>
-                        <li role="menuitem">
-                            <a href="#" (click)="appMain.onTopbarSubItemClick($event)">
-                                <i class="pi pi-power-off"></i>
-                                <h6>Logout</h6>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
-
-            <a class="layout-rightpanel-button" href="#" (click)="appMain.onRightPanelButtonClick($event)">
-                <i class="pi pi-arrow-left"></i>
-            </a>
         </div>
     </div>
 </div>

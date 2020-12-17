@@ -1,22 +1,12 @@
 .layout-topbar-green {
     $topbarBgColor: #43A047;
-    $topbarLogoBgColor: #2E7D32;
-    $topbarBorderColor:#E8F1F8;
+    $topbarLeftBgColor: #2E7D32;
 
     $topbarItemTextColor: #ffffff;
-    $topbarItemSecondaryTextColor: rgba($topbarItemTextColor,.7);
     $topbarItemTextHoverBgColor: rgba(255,255,255,.12);
-    $topbarItemBgColor: #0288D1; /* #merve this is not used */
+
     $topbarMenuButtonBgColor:#F4511E;
     $topbarMenuButtonTextColor:#ffffff;
 
-    $topbarItemSubmenuItemHoverBgColor: #FDFEFF;
-    $topbarSubmenuHeaderBgColor:#FDFEFF;
-
-    $topbarItemSubmenuBgColor: #FDFEFF;
-    $topbarItemSubmenuTextColor:#515C66;
-    $topbarItemSubmenuSecondaryTextColor: rgba($topbarItemSubmenuTextColor, .6);
-
-    $topbarItemSubmenuBoxShadow: 0 2px 8px 0 rgba(25, 26, 28, 0.12);
     @import '../_topbar_theme';
 }

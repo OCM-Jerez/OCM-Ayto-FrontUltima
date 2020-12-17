@@ -1,223 +1,7 @@
-.menu-wrapper {
-    height: calc(100% - 56px);
-    width: 240px;
-    position: fixed;
-    left: 0;
-    top: 56px;
-    z-index: 998;
-    transform: none;
-    @include transition(transform $transitionDuration);
 
-    .layout-menu-container {
-        height: 100%;
-        flex-direction: column;
-        display: flex;
-
-        app-menu {
-            overflow-y: auto;
-        }
-
-        .layout-menu {
-            list-style-type: none;
-            margin: 0;
-            padding: 0 ;
-            padding-bottom: 36px;
-
-            li {
-                padding: 0px;
-                @include border-radius(4px);
-                &.active-menuitem {
-                    > a {
-                        i.layout-submenu-toggler {
-                            @include rotate(-180deg);
-                        }
-                    }
-                }
-
-                &.layout-root-menuitem {
-                    > a {
-                        display: none;
-                    }
-                    > div {
-                        padding-left: 12px;
-                        margin-bottom: 6px;
-                        margin-top: 24px;
-
-                        > .layout-menuitem-text {
-                            font-size: 12px;
-                            font-weight: 600;
-                            text-transform: uppercase;
-                        }
-                    }
-                }
-
-                .layout-menu-tooltip {
-                    display: none;
-                }
-
-                > a {
-                    margin: 0px;
-                    padding: .5rem 0 .5rem .5rem;
-                    @include flex();
-                    @include flex-align-center();
-                    @include transition(all $transitionDuration);
-                    font-size: 1rem;
-                    font-weight: 500;
-                    border-radius: 0;
-                    cursor: pointer;
-                    user-select: none;
-                    @include border-radius(4px);
-
-                    .layout-menuitem-text {
-                        margin: 0 1rem;
-                    }
-
-                    &.rotated-icon {
-                        .layout-menuitem-icon {
-                            transform: rotate(90deg);
-                        }
-                    }
-
-                    i {
-                        font-size: 14px;
-                        &.layout-submenu-toggler {
-                            @include transition(all $transitionDuration);
-                            margin-left: auto;
-                            font-size: 14px;
-                        }
-                    }
-                }
-
-                > ul {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 0;
-                    padding-left: .5rem;
-                    padding-right: .5rem;
-
-                    li {
-                        ul {
-                            padding: 0 0 4px;
-                            overflow: hidden;
-
-                            li {
-                                a {
-                                    border-radius: 0;
-                                }
-                            }
-                        }
-                    }
-
-                    > li {
-                        padding: 0;
-                        margin-top: 8px;
-                        &.layout-root-menuitem {
-                            > a {
-                                @include flex();
-                            }
-                        }
-                        &.active-menuitem {
-                            &.layout-root-menuitem {
-                                > a {
-                                    @include flex();
-                                    border-bottom-left-radius: 0;
-
-                                    &.active-menuitem-routerlink {
-                                        border-radius: 4px;
-                                    }
-                                }
-                            }
-                        }
-
-
-                        > div {
-                            display: none;
-                        }
-
-                        @include nested-submenu-indents(10, 2, 10);
-                    }
-                }
-            }
-        }
-
-        .layout-profile {
-            &.layout-profile-active {
-                .layout-profile-icon {
-                    @include rotate(-180deg);
-                }
-            }
-
-            .layout-profile-button {
-                padding: 20px 12px;
-                display: block;
-                position: relative;
-                @include transition(background-color $transitionDuration);
-
-                img {
-                    width: 36px;
-                    display: inline-block;
-                }
-
-                .layout-profile-userinfo {
-                    display: inline-block;
-                    vertical-align: top;
-                    margin-left: 8px;
-
-                    .layout-profile-name {
-                        display: inline-block;
-                        font-weight: 700;
-                    }
-
-                    .layout-profile-role {
-                        display: block;
-                    }
-                }
-
-                .layout-profile-icon {
-                    position: absolute;
-                    right: 16px;
-                    top: 50%;
-                    margin-top: -8px;
-                    font-size: 16px;
-                    @include transition(transform $transitionDuration);
-                }
-            }
-
-            .layout-profile-menu {
-                list-style: none;
-                padding: 0 12px 14px 12px;
-                margin: 0;
-                overflow: hidden;
-
-                li {
-                    a {
-                        display: block;
-                        padding: 8px 4px;
-                        text-align: left;
-                        @include border-radius($borderRadius);
-                        @include transition(background-color $transitionDuration);
-
-                        i {
-                            margin-right: 8px;
-                            vertical-align: middle;
-                        }
-
-                        span {
-                            font-weight: 700;
-                            display: inline-block;
-                            vertical-align: middle;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: $tabletBreakpoint + 1) {
+@media (min-width: $mobileBreakpoint + 1) {
     .layout-overlay {
         .menu-wrapper {
-            -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
             transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
             transform: translate3d(-241px, 0px, 0px);
         }
@@ -232,7 +16,7 @@
             .layout-topbar-wrapper {
                 .layout-topbar-right {
                     .menu-button {
-                        @include flex();
+                        display: flex;
                     }
                 }
             }
@@ -245,7 +29,7 @@
         }
 
         .layout-main {
-            @include transition(margin-left $transitionDuration);
+            transition: margin-left $transitionDuration;
         }
 
         &.layout-static-active {
@@ -257,53 +41,18 @@
                 margin-left: 240px;
             }
 
-            .layout-topbar {
-                .layout-topbar-wrapper {
-                    .layout-topbar-right {
-                        .menu-button>i {
-                            @include rotate(180deg);
-                            @include transition(transform $transitionDuration);
-                        }
-                    }
-                }
+            .layout-topbar .layout-topbar-left .layout-menu-button > i {
+                transform: rotate(180deg);
+                transition: transform $transitionDuration;
             }
         }
-        .layout-topbar {
-            .layout-topbar-wrapper {
-                .layout-topbar-right {
-                    .menu-button {
-                        > i {
-                            @include rotate(0deg);
-                            @include transition(transform $transitionDuration);
-                        }
-                        @include flex();
-                    }
-                }
-            }
-        }
-    }
-}
 
-@media (max-width: $tabletBreakpoint) {
-    .layout-wrapper {
-        .menu-wrapper {
-            top: 104px;
-            height: calc(100% - 104px);
-            -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-            transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
-            transform: translate3d(-260px, 0px, 0px);
-        }
+        .layout-topbar .layout-topbar-left .layout-menu-button {
+            display: flex;
 
-        &.layout-mobile-active {
-            overflow: hidden;
-            height: 100vh;
-
-            .menu-wrapper {
-                transform: translate3d(0px, 0px, 0px);
-            }
-
-            .layout-mask {
-                display: block;
+            > i {
+                transform: rotate(0deg);
+                transition: transform $transitionDuration;
             }
         }
     }

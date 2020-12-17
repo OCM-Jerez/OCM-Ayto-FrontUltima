@@ -1,0 +1,30 @@
+.menu-wrapper {
+    .layout-profile {
+        border-width: 1px 0 1px 0;
+        border-style: solid;
+        border-color: $dividerColor;
+
+        &.layout-profile-active {
+            .layout-profile-icon {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .layout-profile-action-panel {
+            padding: 0 .5rem;
+
+            .layout-profile-action-item {
+                padding: .5rem 0 .5rem .5rem;
+                margin-top: 8px;
+                border-radius: 4px;
+                transition: all $transitionDuration;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}

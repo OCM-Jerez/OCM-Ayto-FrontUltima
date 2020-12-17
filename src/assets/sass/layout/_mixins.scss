@@ -163,7 +163,7 @@
     ul {
         li {
             a {
-                padding-left: $val * $index * 1px;
+                padding-left: $val * $index;
             }
 
             @if $index < $length {
@@ -277,4 +277,13 @@
     &:-moz-placeholder           {color: $color}
     &::-moz-placeholder          {color: $color}
     &:-ms-input-placeholder      {color: $color}
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style-type: none;
 }

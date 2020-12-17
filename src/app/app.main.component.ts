@@ -21,6 +21,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     menuClick: boolean;
 
+    mobileTopbarActive: boolean;
+
+    topbarRightClick: boolean;
+
     megaMenuClick: boolean;
 
     megaMenuActive: boolean;
@@ -31,7 +35,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     topbarItemClick: boolean;
 
-    activeTopbarItem: any;
+    activeTopbarItem: string;
 
     documentClickListener: () => void;
 
@@ -59,6 +63,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
     ngAfterViewInit() {
         // hides the horizontal submenus or top menu if outside is clicked
         this.documentClickListener = this.renderer.listen('body', 'click', (event) => {
+            if (!this.topbarRightClick && !this.staticMenuMobileActive && !this.activeTopbarItem && !this.rightPanelActive) {
+                this.mobileTopbarActive = false;
+            }
+
             if (!this.topbarItemClick) {
                 this.activeTopbarItem = null;
                 this.topbarMenuActive = false;
@@ -104,6 +112,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             this.searchClick = false;
             this.configClick = false;
             this.topbarItemClick = false;
+            this.topbarRightClick = false;
             this.menuClick = false;
             this.rightPanelClick = false;
             this.megaMenuClick = false;
@@ -113,6 +122,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
     onMenuButtonClick(event) {
         this.rotateMenuButton = !this.rotateMenuButton;
         this.topbarMenuActive = false;
+        this.topbarRightClick = true;
         this.menuClick = true;
 
         if (this.app.menuMode === 'overlay' && !this.isMobile()) {
@@ -130,6 +140,16 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             }
         }
 
+        event.preventDefault();
+    }
+
+    onTopbarRightClick(event) {
+        this.topbarRightClick = true;
+    }
+
+    onTopbarMobileButtonClick(event) {
+        this.topbarRightClick = true;
+        this.mobileTopbarActive = !this.mobileTopbarActive;
         event.preventDefault();
     }
 
@@ -175,10 +195,12 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
         if (this.activeTopbarItem === item) {
             this.activeTopbarItem = null;
-        } else {
-            this.activeTopbarItem = item; }
+        }
+        else {
+            this.activeTopbarItem = item;
+        }
 
-        if (item.className === 'search-item topbar-item') {
+        if (item === 'search') {
             this.search = !this.search;
             this.searchClick = !this.searchClick;
         }
@@ -213,17 +235,12 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         this.rightPanelClick = true;
     }
 
-    isTablet() {
-        const width = window.innerWidth;
-        return width <= 1024 && width > 640;
-    }
-
     isDesktop() {
-        return window.innerWidth > 1024;
+        return window.innerWidth > 991;
     }
 
     isMobile() {
-        return window.innerWidth <= 640;
+        return window.innerWidth <= 991;
     }
 
     isOverlay() {

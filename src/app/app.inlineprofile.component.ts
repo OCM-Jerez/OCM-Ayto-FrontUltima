@@ -1,19 +1,21 @@
-import {Component} from '@angular/core';
-import {trigger, state, transition, style, animate} from '@angular/animations';
-import {AppMainComponent} from './app.main.component';
+import { Component } from '@angular/core';
+import { trigger, state, transition, style, animate } from '@angular/animations';
+import { AppMainComponent } from './app.main.component';
 import { AppComponent } from './app.component';
 
 @Component({
     selector: 'app-inline-profile',
-    templateUrl: './app.profile.component.html',
+    templateUrl: './app.inlineprofile.component.html',
     animations: [
         trigger('menu', [
             state('hiddenAnimated', style({
                 height: '0px',
-                paddingBottom: '0px'
+                paddingBottom: '0px',
+                overflow: 'hidden'
             })),
             state('visibleAnimated', style({
-                height: '*'
+                height: '*',
+                overflow: 'visible'
             })),
             state('visible', style({
                 height: '*',
@@ -28,7 +30,7 @@ import { AppComponent } from './app.component';
         ])
     ]
 })
-export class AppProfileComponent {
+export class AppInlineProfileComponent {
 
     active: boolean;
 
@@ -37,5 +39,9 @@ export class AppProfileComponent {
     onClick(event) {
         this.appMain.onInlineMenuClick(event);
         event.preventDefault();
+    }
+
+    get tabIndex() {
+        return !this.appMain.inlineMenuActive  ? '-1' : null;
     }
 }

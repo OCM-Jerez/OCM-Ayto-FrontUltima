@@ -24,6 +24,8 @@ export class AppComponent implements OnInit{
 
     profileMode = 'popup';
 
+    profilePosition = 'bottom';
+
     constructor(private primengConfig: PrimeNGConfig) {}
 
     ngOnInit() {
