@@ -1,24 +1,9 @@
 .layout-rightpanel {
-    position: fixed;
-    top: 56px;
-    right: 0;
-    z-index: 1000;
-    height: calc(100% - 56px);
-    width: 294px;
-    overflow: auto;
-    padding: .5rem;
-    background-color: lighten($contentBgColor, 3%);
-    transform: translate3d(294px, 0px, 0px);
-    transition: transform $transitionDuration;
-    backface-visibility: hidden;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06);
-}
-
-.layout-wrapper {
-    &.layout-rightpanel-active {
-        .layout-rightpanel {
-            transform: translate3d(0px, 0px, 0px);
-        }
+    &.p-sidebar {
+        top: 56px;
+        height: calc(100% - 56px);
+        overflow: auto;
+        transition: transform $transitionDuration;
     }
 }
 

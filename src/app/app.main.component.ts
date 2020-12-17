@@ -45,8 +45,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     rightPanelActive: boolean;
 
-    rightPanelClick: boolean;
-
     menuHoverActive = false;
 
     searchClick = false;
@@ -84,10 +82,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
                 this.configActive = false;
             }
 
-            if (!this.rightPanelClick) {
-                this.rightPanelActive = false;
-            }
-
             if (!this.menuClick) {
                 if (this.overlayMenuActive) {
                     this.overlayMenuActive = false;
@@ -114,7 +108,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             this.topbarItemClick = false;
             this.topbarRightClick = false;
             this.menuClick = false;
-            this.rightPanelClick = false;
             this.megaMenuClick = false;
         });
     }
@@ -151,6 +144,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         this.topbarRightClick = true;
         this.mobileTopbarActive = !this.mobileTopbarActive;
         event.preventDefault();
+    }
+
+    onRightPanelButtonClick() {
+        this.rightPanelActive = !this.rightPanelActive;
     }
 
     onMenuClick($event) {
@@ -223,16 +220,6 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     onConfigClick(event) {
         this.configClick = true;
-    }
-
-    onRightPanelButtonClick(event) {
-        this.rightPanelClick = true;
-        this.rightPanelActive = !this.rightPanelActive;
-        event.preventDefault();
-    }
-
-    onRightPanelClick() {
-        this.rightPanelClick = true;
     }
 
     isDesktop() {

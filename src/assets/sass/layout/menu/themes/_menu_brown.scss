@@ -15,5 +15,6 @@
     $activeSubmenuItemTextColor:#ffffff;
     $activeSubmenuItemBgColor: #E8EAF6;
 
+    @import '../_menu_exports';
     @import '../_menu_theme';
 }

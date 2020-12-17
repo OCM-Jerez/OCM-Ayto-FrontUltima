@@ -1,4 +1,4 @@
-<div class="layout-rightpanel" (click)="app.onRightPanelClick()">
+<p-sidebar [(visible)]="appMain.rightPanelActive" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-rightpanel p-sidebar-sm fs-small p-py-3 p-pl-3 p-pr-0">
     <div class="online-members p-d-flex p-flex-column p-ml-3 p-mt-3">
         <h6 class="header">ONLINE MEMBERS</h6>
         <div class="p-d-flex p-flex-row p-flex-wrap">
@@ -30,7 +30,7 @@
                 <span class="p-mb-2">Richard Jones has purchased a blue t-shirt for $79.</span>
                 <span class="p-d-flex p-ai-center">
                     <img class="p-mr-2" src="../assets/demo/images/avatar/activity-1.png" alt=""/>
-                    <small>Emmy Adams, 21.40</small>
+                    <small class="muted-text">Emmy Adams, 21.40</small>
                 </span>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <span class="p-mb-2">Your request for withdrawal of $2500 has been initiated.</span>
                 <span class="p-d-flex p-ai-center">
                     <img class="p-mr-2" src="../assets/demo/images/avatar/activity-2.png" alt="avatar-2"/>
-                    <small>Emily Walter, 21.40</small>
+                    <small class="muted-text">Emily Walter, 21.40</small>
                 </span>
             </div>
         </div>
@@ -52,7 +52,7 @@
                 <span class="p-mb-2">Jane Davis has posted a new question about your product.</span>
                 <span class="p-d-flex p-ai-center">
                     <img class="p-mr-2" src="../assets/demo/images/avatar/activity-3.png" alt="avatar-3"/>
-                    <small>Jane Davis, 21.45</small>
+                    <small class="muted-text">Jane Davis, 21.45</small>
                 </span>
             </div>
         </div>
@@ -67,4 +67,4 @@
             <li><i class="pi pi-palette p-mr-3"></i>Design Training</li>
         </ul>
     </div>
-</div>
+</p-sidebar>

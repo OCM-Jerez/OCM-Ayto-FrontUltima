@@ -95,7 +95,7 @@
                         padding: 1rem 0;
                         display: none;
                         animation-name: fadeInDown;
-                        animation-duration: 0.2s;
+                        animation-duration: $transitionDuration;
 
                         .layout-topbar-action-item {
                             cursor: pointer;

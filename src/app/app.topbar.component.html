@@ -4,11 +4,11 @@
             <img src="assets/layout/images/logo2x.png" alt="ultima-layout" style="height: 24px">
         </a>
 
-        <a class="layout-menu-button p-shadow-6" href="#" (click)="appMain.onMenuButtonClick($event)">
+        <a class="layout-menu-button p-shadow-6" href="#" (click)="appMain.onMenuButtonClick($event)" pRipple>
             <i class="pi pi-chevron-right"></i>
         </a>
 
-        <a class="layout-topbar-mobile-button" href="#" (click)="appMain.onTopbarMobileButtonClick($event)">
+        <a class="layout-topbar-mobile-button" href="#" (click)="appMain.onTopbarMobileButtonClick($event)" pRipple>
             <i class="pi pi-ellipsis-v fs-large"></i>
         </a>
     </div>
@@ -23,18 +23,18 @@
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
                 <li class="layout-topbar-item layout-search-item" [ngClass]="{'layout-active-topbar-item': appMain.search}">
-                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'search')">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'search')" pRipple>
                         <i class="pi pi-search fs-large"></i>
                     </a>
 
                     <div class="layout-search-panel p-inputgroup p-shadow-2">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
-                        <input type="text" pInputText placeholder="Username" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
+                        <input type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
                         <span class="p-inputgroup-addon"><i class="pi pi-times" (click)="appMain.searchClick = false;"></i></span>
                     </div>
                 </li>
                 <li class="layout-topbar-item notifications" [ngClass]="{'layout-active-topbar-item': appMain.activeTopbarItem === 'notifications'}">
-                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'notifications')">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
                             <span class="p-badge">4</span>
@@ -96,44 +96,44 @@
                     </ul>
                 </li>
                 <li class="layout-topbar-item app" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'apps'}">
-                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'apps')">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onTopbarItemClick($event, 'apps')" pRipple>
                         <i class="pi pi-table fs-large"></i>
                     </a>
 
                     <div class="layout-topbar-action-panel p-shadow-6">
                         <div class="p-grid p-nogutter">
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-image action indigo"></i>
                                     <span>Products</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-file-pdf action orange"></i>
                                     <span>Reports</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-dollar action teal"></i>
                                     <span>Balance</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-cog action pink"></i>
                                     <span>Settings</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-key action bluegrey"></i>
                                     <span>Credentials</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-jc-center p-flex-column" href="#">
+                                <a class="p-d-flex p-ai-center p-jc-center p-flex-column" href="#" pRipple>
                                     <i class="pi pi-sitemap action cyan"></i>
                                     <span>Sitemap</span>
                                 </a>
@@ -142,35 +142,35 @@
                     </div>
                 </li>
                 <li class="layout-topbar-item" *ngIf="app.profileMode==='popup'||appMain.isHorizontal()" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'profile'}">
-                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center" href="#" (click)="appMain.onTopbarItemClick($event, 'profile')">
+                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center" href="#" (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
                         <img src="assets/layout/images/avatar-profile.png" alt="avatar">
                         <span class="p-d-flex p-flex-column p-ml-2">
                             <span class="fs-small p-text-bold">Peter Taylor</span>
-                            <small>Webmaster</small>
+                            <span class="fs-xsmall">Webmaster</span>
                         </span>
                     </a>
 
                     <ul class="layout-topbar-action-panel p-shadow-6">
                         <li class="layout-topbar-action-item">
-                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-cog p-mr-2"></i>
                                 <span>Settings</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
-                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-file-o p-mr-2"></i>
                                 <span>Terms of Usage</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
-                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-compass p-mr-2"></i>
                                 <span>Support</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
-                            <a href="#" class="p-d-flex p-flex-row p-ai-center">
+                            <a href="#" class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-power-off p-mr-2"></i>
                                 <span>Logout</span>
                             </a>
@@ -178,7 +178,7 @@
                     </ul>
                 </li>
                 <li class="layout-topbar-item">
-                    <a class="layout-topbar-action" href="#" (click)="appMain.onRightPanelButtonClick($event)">
+                    <a class="layout-topbar-action" href="#" (click)="appMain.onRightPanelButtonClick()" pRipple>
                         <i class="pi pi-arrow-left fs-large"></i>
                     </a>
                 </li>

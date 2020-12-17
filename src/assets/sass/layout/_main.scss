@@ -19,7 +19,7 @@ body {
     }
 
     .fs-xsmall {
-        font-size: .5rem;
+        font-size: .715rem;
     }
 
     .fs-small {
@@ -36,6 +36,10 @@ body {
 
     .fs-xlarge {
         font-size: 2rem;
+    }
+
+    .muted-text {
+        color: $textSecondaryColor;
     }
 }
 

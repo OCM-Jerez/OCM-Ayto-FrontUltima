@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
 
     inputStyle = 'outlined';
 
-    ripple: boolean;
+    ripple: boolean = true;
 
     profileMode = 'popup';
 

@@ -731,7 +731,7 @@ $galleriaThumbnailNavigatorHeight:2rem;
     --surface-e:#1e1e1e;
     --surface-f:#262626;
     --text-color:#{$textColor};
-    --text-color-secondary:#{textSecondaryColor};
+    --text-color-secondary:#{$textSecondaryColor};
     --primary-color:#{$primaryColor};
     --primary-color-text:#{$primaryTextColor};
     --font-family:#{$fontFamily};

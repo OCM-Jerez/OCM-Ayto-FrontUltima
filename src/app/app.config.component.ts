@@ -5,13 +5,14 @@ import { AppMainComponent } from './app.main.component';
 @Component({
     selector: 'app-config',
     template: `
-        <p-sidebar [(visible)]="display" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
+        <p-sidebar [(visible)]="configActive" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
             <div class="layout-config-panel p-d-flex p-flex-column">
                 <div class="p-px-3 p-pt-3">
                     <h5>Theme Customization</h5>
                     <span>Ultima offers different themes for layout, topbar, menu etc.</span>
-                    <hr class="p-mb-0" />
                 </div>
+
+                <hr class="p-mb-0" />
 
                 <div class="layout-config-options p-p-3">
                     <h6>Layout Mode</h6>
@@ -90,7 +91,7 @@ import { AppMainComponent } from './app.main.component';
                             <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-color-option">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
-                                    <i class="pi pi-check"></i>
+                                    <i class="pi pi-check" style="color: var(--menu-text-color)"></i>
                                 </span>
                             </a>
                         </div>
@@ -102,7 +103,7 @@ import { AppMainComponent } from './app.main.component';
                             <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-color-option">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
-                                    <i class="pi pi-check"></i>
+                                    <i class="pi pi-check" style="color: var(--topbar-text-color)"></i>
                                 </span>
                             </a>
                         </div>
@@ -114,7 +115,7 @@ import { AppMainComponent } from './app.main.component';
                             <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-color-option">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="theme === t.name">
-                                    <i class="pi pi-check"></i>
+                                    <i class="pi pi-check" style="color: var(--primary-color-text)"></i>
                                 </span>
                             </a>
                         </div>
@@ -123,7 +124,7 @@ import { AppMainComponent } from './app.main.component';
             </div>
         </p-sidebar>
 
-        <p-button type="button" (click)="display = true" icon="pi pi-cog" *ngIf="!display" styleClass="layout-config-button"></p-button>
+        <p-button type="button" (click)="configActive = true" icon="pi pi-cog" *ngIf="!configActive" styleClass="layout-config-button"></p-button>
     `
 })
 export class AppConfigComponent implements OnInit {
@@ -140,7 +141,7 @@ export class AppConfigComponent implements OnInit {
 
     theme = 'blue';
 
-    display = false;
+    configActive = false;
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) {}
 
@@ -272,11 +273,5 @@ export class AppConfigComponent implements OnInit {
                 }
             });
         }
-    }
-
-    onConfigButtonClick(event) {
-        this.appMain.configActive = !this.appMain.configActive;
-        this.appMain.configClick = true;
-        event.preventDefault();
     }
 }

@@ -6,6 +6,6 @@ import {AppMainComponent} from './app.main.component';
     templateUrl: './app.rightpanel.component.html'
 })
 export class AppRightPanelComponent {
-    constructor(public app: AppMainComponent) {
+    constructor(public appMain: AppMainComponent) {
     }
 }
