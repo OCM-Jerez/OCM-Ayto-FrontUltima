@@ -15,12 +15,8 @@
 
     <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}" (click)="appMain.onTopbarRightClick($event)">
         <div class="layout-topbar-actions-left">
-            <a class="layout-megamenu-button" href="#">
-                MEGA MENU
-                <i class="pi pi-chevron-down"></i>
-            </a>
             <app-megaMenu [model]="model"></app-megaMenu>
-
+            <app-megaMenu [model]="model"></app-megaMenu>
         </div>
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">

@@ -8,13 +8,7 @@
     $menuItemHoverBgColor:rgba(255,255,255,.12);;
     $activeMenuItemTextColor:#ffffff;
     $activeMenuItemBgColor: rgba(255,255,255,.24);
-
-    $submenuBgColor:#FDFEFF;
-    $submenuItemTextColor:rgba(255,255,255,.6);
-    $submenuItemHoverBgColor:rgba(255,255,255,.12);;
-    $activeSubmenuItemTextColor:#ffffff;
-    $activeSubmenuItemBgColor: #E8EAF6;
-
+    
     @import '../_menu_exports';
     @import '../_menu_theme';
 }

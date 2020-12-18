@@ -10,6 +10,10 @@
                         color: $rootMenuTextColor;
                     }
                 }
+                
+                > ul {
+                    background-color: $menuBgColor;
+                }
             }
 
             li {
@@ -60,44 +64,13 @@
 }
 
 @media (min-width: $mobileBreakpoint + 1) {
-
-    @mixin extrenalSubmenuitem {
-        li {
-            > a {
-                color: $textColor;
-
-                i {
-                    color: $textColor;
-                }
-
-                &:hover {
-                    background-color: $contentAltBgColor;
-                }
-            }
-
-            &.active-menuitem {
-                > a {
-                    background-color: $activeMenuItemBgColor;
-                    color: $activeMenuItemTextColor;
-
-                    > i {
-                        color: $activeMenuItemTextColor;
-                    }
-                }
-            }
-        }
-    }
-
     &.layout-horizontal {
         .menu-wrapper {
             .layout-menu-container {
                 .layout-menu {
                     > li {
                         > ul {
-                            background-color: $contentBgColor;
                             box-shadow: $menuShadow;
-
-                            @include extrenalSubmenuitem;
                         }
                     }
                 }

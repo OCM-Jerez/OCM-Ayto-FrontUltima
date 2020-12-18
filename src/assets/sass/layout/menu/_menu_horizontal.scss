@@ -2,7 +2,7 @@
     .layout-horizontal {
         .menu-wrapper {
             width: 100%;
-            height: 35px;
+            height: 3rem;
 
             .layout-menu-container {
                 app-menu {
@@ -19,7 +19,7 @@
                     padding-bottom: 0px;
 
                     > li {
-                        padding: 0;
+                        padding: .5rem 0;
                         position: relative;
 
                         .layout-menu-tooltip {
@@ -43,10 +43,10 @@
                         > ul {
                             display: none;
                             position: absolute;
-                            top: 33px;
+                            top: 3rem;
                             left: 0px;
                             z-index: 100;
-                            padding: .5rem 0;
+                            padding: .5rem;
                             overflow: auto;
                             max-height: 450px;
                             min-width: 230px;
@@ -60,6 +60,11 @@
                         }
                     }
                 }
+            }
+        }
+        &.layout-wrapper {
+            .layout-main {
+                padding-top: calc(56px + 3rem);
             }
         }
     }

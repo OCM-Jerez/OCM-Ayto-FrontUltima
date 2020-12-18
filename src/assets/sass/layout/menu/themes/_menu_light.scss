@@ -6,14 +6,8 @@
 
     $menuItemTextColor:#515C66;
     $menuItemHoverBgColor:rgba(#5a657c, .2);
-    $activeMenuItemTextColor: var(--primary-color);
-    $activeMenuItemBgColor: #E8EAF6;
-
-    $submenuBgColor:#FDFEFF;
-    $submenuItemTextColor:#515C66;
-    $submenuItemHoverBgColor:rgba(#5a657c, .2);
-    $activeSubmenuItemTextColor: var(--primary-color);
-    $activeSubmenuItemBgColor: #E8EAF6;
+    $activeMenuItemTextColor: var(--primary-menu-text-color);
+    $activeMenuItemBgColor: var(--primary-lightest-color);
 
     @import '../_menu_exports';
     @import '../_menu_theme';

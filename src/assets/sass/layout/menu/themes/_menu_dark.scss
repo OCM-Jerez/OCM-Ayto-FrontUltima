@@ -9,12 +9,6 @@
     $activeMenuItemTextColor:#ffffff;
     $activeMenuItemBgColor: #212121;
 
-    $submenuBgColor:#434B54;
-    $submenuItemTextColor:#bdbdbd;
-    $submenuItemHoverBgColor:#363636;
-    $activeSubmenuItemTextColor: var(--primary-color);
-    $activeSubmenuItemBgColor: #E8EAF6;
-
     @import '../_menu_exports';
     @import '../_menu_theme';
 }
