@@ -79,6 +79,7 @@ import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
 import {AppConfigComponent} from './app.config.component';
 import {AppMenuComponent} from './app.menu.component';
+import {AppMegaMenuModule} from './app.megamenu.component';
 import {AppMenuitemComponent} from './app.menuitem.component';
 import {AppInlineProfileComponent} from './app.inlineprofile.component';
 import {AppRightPanelComponent} from './app.rightpanel.component';
@@ -209,6 +210,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
+        AppMegaMenuModule,
         AppCodeModule
     ],
     declarations: [
