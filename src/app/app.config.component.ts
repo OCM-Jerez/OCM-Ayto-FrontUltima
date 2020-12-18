@@ -88,7 +88,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Menu Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-color-option">
+                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name, t.topbarTheme)" class="layout-config-color-option">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--menu-text-color)"></i>
@@ -101,7 +101,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Topbar Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-color-option">
+                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name, t.menuTheme)" class="layout-config-color-option">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--topbar-text-color)"></i>
@@ -240,12 +240,14 @@ export class AppConfigComponent implements OnInit {
         this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
     }
 
-    changeMenuTheme(theme) {
+    changeMenuTheme(theme, topbarTheme) {
         this.app.menuTheme = theme;
+        this.app.topbarTheme = topbarTheme;
     }
 
-    changeTopbarTheme(theme) {
+    changeTopbarTheme(theme, menuTheme) {
         this.app.topbarTheme = theme;
+        this.app.menuTheme = menuTheme;
     }
 
     isIE() {
