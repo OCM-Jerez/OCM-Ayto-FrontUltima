@@ -9,9 +9,9 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
 @Component({
-    templateUrl: './dashboard.component-3.html'
+    templateUrl: './dashboardanalytics.component.html'
 })
-export class DashboardDemoComponent3 implements OnInit {
+export class DashboardAnalyticsComponent implements OnInit {
 
     cities: SelectItem[];
 
@@ -38,7 +38,7 @@ export class DashboardDemoComponent3 implements OnInit {
     constructor(private productService: ProductService, private eventService: EventService,
                 private breadcrumbService: AppBreadcrumbService) {
       this.breadcrumbService.setItems([
-          {label: 'Dashboard3', routerLink: ['/favorites/dashboard3']}
+          {label: 'Dashboard Analytics', routerLink: ['/favorites/dashboardanalytics']}
       ]); }
 
     ngOnInit() {
