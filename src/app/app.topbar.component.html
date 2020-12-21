@@ -16,7 +16,6 @@
     <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}" (click)="appMain.onTopbarRightClick($event)">
         <div class="layout-topbar-actions-left">
             <app-megaMenu [model]="model"></app-megaMenu>
-            <app-megaMenu [model]="model"></app-megaMenu>
         </div>
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
@@ -28,7 +27,9 @@
                     <div class="layout-search-panel p-inputgroup p-shadow-2" (animationend)="searchAnimationEnd()">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
                         <input #searchInput type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
-                        <span class="p-inputgroup-addon"><i class="pi pi-times" (click)="appMain.searchClick = false;"></i></span>
+                        <span class="p-inputgroup-addon">
+                            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-text p-button-plain" (click)="appMain.searchClick = false;"></button>
+                        </span>
                     </div>
                 </li>
                 <li class="layout-topbar-item notifications" [ngClass]="{'layout-active-topbar-item': appMain.activeTopbarItem === 'notifications'}">
@@ -101,38 +102,38 @@
                     <div class="layout-topbar-action-panel p-shadow-6">
                         <div class="p-grid p-nogutter">
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-image action indigo"></i>
+                                <a class="p-d-flex p-ai-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-image action indigo-bgcolor white-color"></i>
                                     <span>Products</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-file-pdf action orange"></i>
+                                <a class="p-d-flex p-ai-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-file-pdf action orange-bgcolor white-color"></i>
                                     <span>Reports</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-dollar action teal"></i>
+                                <a class="p-d-flex p-ai-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-dollar action teal-bgcolor white-color"></i>
                                     <span>Balance</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-cog action pink"></i>
+                                <a class="p-d-flex p-ai-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-cog action pink-bgcolor white-color"></i>
                                     <span>Settings</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-key action bluegrey"></i>
+                                <a class="p-d-flex p-ai-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-key action bluegrey-bgcolor white-color"></i>
                                     <span>Credentials</span>
                                 </a>
                             </div>
                             <div class="layout-topbar-action-item p-col-4">
-                                <a class="p-d-flex p-ai-center p-jc-center p-flex-column" href="#" pRipple>
-                                    <i class="pi pi-sitemap action cyan"></i>
+                                <a class="p-d-flex p-ai-center p-jc-center p-flex-column text-color" href="#" pRipple>
+                                    <i class="pi pi-sitemap action cyan-bgcolor white-color"></i>
                                     <span>Sitemap</span>
                                 </a>
                             </div>

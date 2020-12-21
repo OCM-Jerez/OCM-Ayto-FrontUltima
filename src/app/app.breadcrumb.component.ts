@@ -13,10 +13,14 @@ export class AppBreadcrumbComponent implements OnDestroy {
 
     items: MenuItem[];
 
+    home: MenuItem;
+
     constructor(public breadcrumbService: AppBreadcrumbService) {
         this.subscription = breadcrumbService.itemsHandler.subscribe(response => {
             this.items = response;
         });
+
+        this.home = { icon: 'pi pi-home', routerLink: '/' };
     }
 
     ngOnDestroy() {

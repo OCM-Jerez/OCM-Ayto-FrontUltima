@@ -2,7 +2,6 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
 import {AppComponent} from './app.component';
 import {AppMainComponent} from './app.main.component';
-
 @Component({
     selector: 'app-topbar',
     templateUrl: './app.topbar.component.html'

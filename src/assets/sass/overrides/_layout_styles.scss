@@ -19,40 +19,7 @@
 
     .app {
         .layout-topbar-action-panel {
-            .action {
-                color: #ffffff;
-            }
-
-            .indigo {
-                background-color: $indigo;
-            }
-
-            .orange {
-                background-color: $orange;
-            }
-
-            .teal {
-                background-color: $teal;
-            }
-
-            .cyan {
-                background-color: $cyan;
-            }
-
-            .pink {
-                background-color: $pink;
-            }
-
-            .bluegrey {
-                background-color: $bluegrey;
-            }
-
-            .yellow {
-                background-color: $yellow;
-            }
-
             a {
-                color: $textColor;
                 padding: .5rem 0;
 
                 i {
@@ -74,7 +41,7 @@
     .header {
         padding-bottom: .5rem;
         margin-bottom: .714rem;
-        border-bottom: 1px solid #E4E4E4;
+        border-bottom: 1px solid $dividerColor;
     }
 
     .online-members {
@@ -103,6 +70,22 @@
 
             > li {
                 padding: .875rem .5rem;
+            }
+        }
+    }
+}
+
+.layout-help-page {
+    .questions {
+        &.p-accordion p-accordiontab {
+            .p-accordion-tab {
+                margin-top: 1rem;
+            }
+
+            &:first-child {
+                .p-accordion-tab {
+                    margin-top: 0;
+                }
             }
         }
     }

@@ -41,6 +41,74 @@ body {
     .muted-text {
         color: $textSecondaryColor;
     }
+
+    .text-color {
+        color: $textColor;
+    }
+
+    .white-color {
+        color: #ffffff;
+    }
+
+    .dark-color {
+        color: #212121;
+    }
+
+    .pink-color {
+        color: $pink;
+    }
+
+    .indigo-color {
+        color: $indigo;
+    }
+
+    .yellow-color {
+        color: $yellow;
+    }
+
+    .orange-color {
+        color: $orange;
+    }
+
+    .teal-color {
+        color: $teal;
+    }
+
+    .cyan-color {
+        color: $cyan;
+    }
+
+    .bluegrey-color {
+        background-color: $bluegrey;
+    }
+
+    .pink-bgcolor {
+        background-color: $pink;
+    }
+
+    .indigo-bgcolor {
+        background-color: $indigo;
+    }
+
+    .yellow-bgcolor {
+        background-color: $yellow;
+    }
+
+    .orange-bgcolor {
+        background-color: $orange;
+    }
+
+    .teal-bgcolor {
+        background-color: $teal;
+    }
+
+    .cyan-bgcolor {
+        background-color: $cyan;
+    }
+
+    .bluegrey-bgcolor {
+        background-color: $bluegrey;
+    }
 }
 
 .layout-mask {
