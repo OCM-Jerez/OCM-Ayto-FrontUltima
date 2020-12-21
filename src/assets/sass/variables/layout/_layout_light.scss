@@ -19,6 +19,7 @@ $bluegrey: #546E7A !default;
 
 :root {
     --content-alt-bg-color:#{$contentAltBgColor};
+    --divider-color:#{$dividerColor};
 }
 
 @import './_layout_common';

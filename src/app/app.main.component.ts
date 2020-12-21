@@ -146,8 +146,9 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         event.preventDefault();
     }
 
-    onRightPanelButtonClick() {
+    onRightPanelButtonClick(event) {
         this.rightPanelActive = !this.rightPanelActive;
+        event.preventDefault();
     }
 
     onMenuClick($event) {
