@@ -195,7 +195,7 @@ export class AppConfigComponent implements OnInit {
             {name: 'cyan', color: '#0097A7', menuTheme:'cyan'},
             {name: 'teal', color: '#00796B', menuTheme:'teal'},
             {name: 'green', color: '#43A047', menuTheme:'green'},
-            {name: 'lightgreen', color: '#689F38', menuTheme:''},
+            {name: 'lightgreen', color: '#689F38', menuTheme:'green'},
             {name: 'lime', color: '#AFB42B', menuTheme:'light'},
             {name: 'yellow', color: '#FBC02D', menuTheme:'light'},
             {name: 'amber', color: '#FFA000', menuTheme:'light'},
