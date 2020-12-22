@@ -3,7 +3,6 @@
         .menu-wrapper {
             top: 56px;
             height: calc(100% - 56px);
-            -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
             transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
             transform: translate3d(-260px, 0px, 0px);
         }

@@ -80,3 +80,14 @@
         }
     }
 }
+
+
+@media screen and (max-width: 991px) {
+    .landing-body {
+        #header {
+            #menu {
+                display: none;
+            }
+        }
+    }
+}
