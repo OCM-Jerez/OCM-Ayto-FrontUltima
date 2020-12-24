@@ -1,4 +1,11 @@
 .landing-body {
+    .landing-color-button {
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        z-index: 9999;
+    }
+
     h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
     }
@@ -15,21 +22,22 @@
         width: 100%;
         min-height: 400px;
         background: url("../images/landing/landing-header.png") top left no-repeat #f7f7f7;
-        background-size: 100% auto;
+        background-size: cover;
 
-        a {
-            color: #ffffff;
-        }
+        .header-menu-container {
+            a {
+                color: #ffffff;
+            }
 
-        #menu {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
+            #menu {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+            }
         }
 
         .header-text {
             flex-grow: 1;
-            color: #ffffff;
         }
     }
 
@@ -48,6 +56,10 @@
     #pricing {
         .pricing-content {
             width: 100%;
+
+            .card {
+                height: 100%;
+            }
 
             .options {
                 padding: 2rem 4rem;
@@ -72,7 +84,7 @@
         border-top: 1px solid $dividerColor;
 
         a {
-            color: #212121;
+            color: $textColor;
         }
 
         li {
@@ -81,12 +93,67 @@
     }
 }
 
+@media screen and (min-width: 990px) {
+    .landing-body {
+        #header {
+            .header-menu-container {
+                box-shadow: none;
+
+                #menu {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 991px) {
     .landing-body {
+        .section {
+            padding: 2rem;
+        }
+
         #header {
-            #menu {
-                display: none;
+            .header-menu-container {
+                z-index: 100;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: #212121;
+                padding: 2rem 5rem;
+
+                #menu {
+                    display: none;
+                    z-index: 100;
+                    position: fixed;
+                    top: 6rem;
+                    right: 5rem;
+                    width: 250px;
+                    background-color: $contentBgColor;
+                    color: $textColor;
+                    animation-duration: $transitionDuration;
+
+                    a {
+                        color: $textColor;
+                    }
+
+                    > li {
+                        width: 100%;
+
+                        &:hover {
+                            background-color: $contentAltBgColor;
+                            transition: background-color $transitionDuration;
+                        }
+                    }
+
+                    &.menu-active {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: stretch;
+                    }
+                }
             }
         }
     }

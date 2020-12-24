@@ -19,95 +19,95 @@ body {
     }
 
     .fs-xsmall {
-        font-size: .715rem;
+        font-size: .715rem !important;
     }
 
     .fs-small {
-        font-size: .858rem;
+        font-size: .858rem !important;
     }
 
     .fs-normal {
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 
     .fs-large {
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
     }
 
     .fs-xlarge {
-        font-size: 2rem;
+        font-size: 2rem !important;
     }
 
     .muted-text {
-        color: $textSecondaryColor;
+        color: $textSecondaryColor !important;
     }
 
     .text-color {
-        color: $textColor;
+        color: $textColor !important;
     }
 
     .white-color {
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
     .dark-color {
-        color: #212121;
+        color: #212121 !important;
     }
 
     .pink-color {
-        color: $pink;
+        color: $pink !important;
     }
 
     .indigo-color {
-        color: $indigo;
+        color: $indigo !important;
     }
 
     .yellow-color {
-        color: $yellow;
+        color: $yellow !important;
     }
 
     .orange-color {
-        color: $orange;
+        color: $orange !important;
     }
 
     .teal-color {
-        color: $teal;
+        color: $teal !important;
     }
 
     .cyan-color {
-        color: $cyan;
+        color: $cyan !important;
     }
 
     .bluegrey-color {
-        background-color: $bluegrey;
+        color: $bluegrey !important;
     }
 
     .pink-bgcolor {
-        background-color: $pink;
+        background-color: $pink !important;
     }
 
     .indigo-bgcolor {
-        background-color: $indigo;
+        background-color: $indigo !important;
     }
 
     .yellow-bgcolor {
-        background-color: $yellow;
+        background-color: $yellow !important;
     }
 
     .orange-bgcolor {
-        background-color: $orange;
+        background-color: $orange !important;
     }
 
     .teal-bgcolor {
-        background-color: $teal;
+        background-color: $teal !important;
     }
 
     .cyan-bgcolor {
-        background-color: $cyan;
+        background-color: $cyan !important;
     }
 
     .bluegrey-bgcolor {
-        background-color: $bluegrey;
+        background-color: $bluegrey !important;
     }
 }
 
