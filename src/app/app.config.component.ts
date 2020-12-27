@@ -29,41 +29,41 @@ import { AppMainComponent } from './app.main.component';
 
                     <h6>Menu Mode</h6>
                     <div class="p-d-flex">
-                        <div class="p-d-flex p-ai-center">
-                            <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
-                            <label for="menuMode1" class="p-ml-2">Static</label>
+                        <div class="p-d-flex p-flex-column">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
+                                <label for="menuMode1" class="p-ml-2">Static</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center p-mt-3">
+                                <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
+                                <label for="menuMode2" class="p-ml-2">Horizontal</label>
+                            </div>
                         </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
-                            <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
-                            <label for="menuMode2" class="p-ml-2">Overlay</label>
-                        </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
-                            <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
-                            <label for="menuMode3" class="p-ml-2">Horizontal</label>
-                        </div>
-                    </div>
-
-                    <h6>User Profile</h6>
-                    <div class="p-d-flex">
-                        <div class="p-d-flex p-ai-center">
-                            <p-radioButton name="profileMode" value="inline" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode1"></p-radioButton>
-                            <label for="profileMode1" class="p-ml-2">Inline</label>
-                        </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
-                            <p-radioButton name="profileMode" value="popup" [(ngModel)]="app.profileMode" [disabled]="appMain.isHorizontal()" inputId="profileMode2"></p-radioButton>
-                            <label for="profileMode2" class="p-ml-2">Popup</label>
+                        <div class="p-d-flex p-flex-column p-ml-4">
+                            <div class="p-d-flex p-ai-center">
+                                <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode4"></p-radioButton>
+                                <label for="menuMode4" class="p-ml-2">Overlay</label>
+                            </div>
+                            <div class="p-d-flex p-ai-center p-mt-3">
+                                <p-radioButton name="menuMode" value="slim" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
+                                <label for="menuMode3" class="p-ml-2">Slim</label>
+                            </div>
                         </div>
                     </div>
 
-                    <h6>User Profile Position</h6>
+                    <h6>Inline Menu Position</h6>
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
-                            <p-radioButton name="profilePosition" value="top" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition1"></p-radioButton>
-                            <label for="profilePosition1" class="p-ml-2">Top</label>
+                            <p-radioButton name="inlineMenuPosition" value="top" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition1"></p-radioButton>
+                            <label for="inlineMenuPosition1" class="p-ml-2">Top</label>
                         </div>
                         <div class="p-d-flex p-ai-center p-ml-4">
-                            <p-radioButton name="profilePosition" value="bottom" [(ngModel)]="app.profilePosition" [disabled]="appMain.isHorizontal()" inputId="profilePosition2"></p-radioButton>
-                            <label for="profilePosition2" class="p-ml-2">Bottom</label>
+                            <p-radioButton name="inlineMenuPosition" value="bottom" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition2"></p-radioButton>
+                            <label for="inlineMenuPosition2" class="p-ml-2">Bottom</label>
+                        </div>
+                        <div class="p-d-flex p-ai-center p-ml-4">
+                            <p-radioButton name="inlineMenuPosition" value="both" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition3"></p-radioButton>
+                            <label for="inlineMenuPosition3" class="p-ml-2">Both</label>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Menu Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name, t.topbarTheme)" class="layout-config-color-option">
+                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--menu-text-color)"></i>
@@ -101,7 +101,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Topbar Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name, t.menuTheme)" class="layout-config-color-option">
+                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--topbar-text-color)"></i>
@@ -240,14 +240,12 @@ export class AppConfigComponent implements OnInit {
         this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
     }
 
-    changeMenuTheme(theme, topbarTheme) {
+    changeMenuTheme(theme) {
         this.app.menuTheme = theme;
-        this.app.topbarTheme = topbarTheme;
     }
 
-    changeTopbarTheme(theme, menuTheme) {
+    changeTopbarTheme(theme) {
         this.app.topbarTheme = theme;
-        this.app.menuTheme = menuTheme;
     }
 
     isIE() {

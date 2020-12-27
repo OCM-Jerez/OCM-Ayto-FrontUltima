@@ -54,7 +54,8 @@
 }
 
 @media (min-width: $mobileBreakpoint + 1) {
-    .layout-horizontal {
+    .layout-horizontal,
+    .layout-slim {
         .layout-topbar {
             .layout-topbar-left {
                 .layout-menu-button {

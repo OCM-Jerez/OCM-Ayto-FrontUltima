@@ -145,7 +145,7 @@
                   @include transition(margin-right $transitionDuration);
               }
 
-              &.layout-static-active {
+              &.layout-menu-active {
                   .menu-wrapper {
                       transform: translate3d(0px, 0px, 0px);
                   }
@@ -162,7 +162,7 @@
                   transform: translate3d(241px, 0px, 0px);
               }
 
-              &.layout-overlay-active {
+              &.layout-menu-active {
                   .menu-wrapper {
                       transform: translate3d(0px, 0px, 0px);
                   }
@@ -204,7 +204,7 @@
               transform: translate3d(260px, 0px, 0px);
           }
 
-          &.layout-mobile-active {
+          &.layout-menu-mobile-active {
               .menu-wrapper {
                   transform: translate3d(0px, 0px, 0px);
               }

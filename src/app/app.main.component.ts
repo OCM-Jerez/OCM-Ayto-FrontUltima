@@ -1,4 +1,4 @@
-import {Component, AfterViewInit, Renderer2, OnDestroy, OnInit} from '@angular/core';
+import {Component, AfterViewInit, Renderer2, OnInit, OnDestroy} from '@angular/core';
 import { MenuService } from './app.menu.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { AppComponent } from './app.component';
@@ -7,17 +7,15 @@ import { AppComponent } from './app.component';
     selector: 'app-main',
     templateUrl: './app.main.component.html'
 })
-export class AppMainComponent implements AfterViewInit, OnDestroy {
-
-    rotateMenuButton: boolean;
+export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
 
     topbarMenuActive: boolean;
 
-    overlayMenuActive: boolean;
+    menuActive: boolean;
 
     staticMenuDesktopInactive: boolean;
 
-    staticMenuMobileActive: boolean;
+    mobileMenuActive: boolean;
 
     menuClick: boolean;
 
@@ -51,17 +49,23 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     search = false;
 
-    inlineMenuActive: boolean;
+    currentInlineMenuKey: string;
+
+    inlineMenuActive: any[] = [];
 
     inlineMenuClick: boolean;
 
     constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig,
                 public app: AppComponent) { }
 
+    ngOnInit() {
+        this.menuActive = this.isStatic() && !this.isMobile();
+    }
+
     ngAfterViewInit() {
         // hides the horizontal submenus or top menu if outside is clicked
         this.documentClickListener = this.renderer.listen('body', 'click', (event) => {
-            if (!this.topbarRightClick && !this.staticMenuMobileActive && !this.activeTopbarItem && !this.rightPanelActive) {
+            if (!this.topbarRightClick && !this.mobileMenuActive && !this.activeTopbarItem && !this.rightPanelActive) {
                 this.mobileTopbarActive = false;
             }
 
@@ -74,7 +78,7 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
                 this.megaMenuActive = false;
             }
 
-            if (!this.menuClick && this.isHorizontal()) {
+            if (!this.menuClick && (this.isHorizontal() || this.isSlim())) {
                 this.menuService.reset();
             }
 
@@ -83,11 +87,8 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
             }
 
             if (!this.menuClick) {
-                if (this.overlayMenuActive) {
-                    this.overlayMenuActive = false;
-                }
-                if (this.staticMenuMobileActive) {
-                    this.staticMenuMobileActive = false;
+                if (this.mobileMenuActive) {
+                    this.mobileMenuActive = false;
                 }
 
                 this.menuHoverActive = false;
@@ -98,8 +99,8 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
                 this.search = false;
             }
 
-            if (this.inlineMenuActive && !this.inlineMenuClick) {
-                this.inlineMenuActive = false;
+            if (this.inlineMenuActive[this.currentInlineMenuKey] && !this.inlineMenuClick) {
+                this.inlineMenuActive[this.currentInlineMenuKey] = false;
             }
 
             this.inlineMenuClick = false;
@@ -113,20 +114,16 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
     }
 
     onMenuButtonClick(event) {
-        this.rotateMenuButton = !this.rotateMenuButton;
+        this.menuActive = !this.menuActive;
         this.topbarMenuActive = false;
         this.topbarRightClick = true;
         this.menuClick = true;
 
-        if (this.app.menuMode === 'overlay' && !this.isMobile()) {
-            this.overlayMenuActive = !this.overlayMenuActive;
-        }
-
         if (this.isDesktop()) {
             this.staticMenuDesktopInactive = !this.staticMenuDesktopInactive;
         } else {
-            this.staticMenuMobileActive = !this.staticMenuMobileActive;
-            if (this.staticMenuMobileActive) {
+            this.mobileMenuActive = !this.mobileMenuActive;
+            if (this.mobileMenuActive) {
                 this.blockBodyScroll();
             } else {
                 this.unblockBodyScroll();
@@ -154,8 +151,8 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
     onMenuClick($event) {
         this.menuClick = true;
 
-        if (this.inlineMenuActive && !this.inlineMenuClick) {
-            this.inlineMenuActive = false;
+        if (this.inlineMenuActive[this.currentInlineMenuKey] && !this.inlineMenuClick) {
+            this.inlineMenuActive[this.currentInlineMenuKey] = false;
         }
     }
 
@@ -183,8 +180,13 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
         event.preventDefault();
     }
 
-    onInlineMenuClick(event) {
-        this.inlineMenuActive = !this.inlineMenuActive;
+    onInlineMenuClick(event, key) {
+        if (key !== this.currentInlineMenuKey) {
+            this.inlineMenuActive[this.currentInlineMenuKey] = false;
+        }
+
+        this.inlineMenuActive[key] = !this.inlineMenuActive[key];
+        this.currentInlineMenuKey = key;
         this.inlineMenuClick = true;
     }
 
@@ -241,6 +243,10 @@ export class AppMainComponent implements AfterViewInit, OnDestroy {
 
     isHorizontal() {
         return this.app.menuMode === 'horizontal';
+    }
+
+    isSlim() {
+        return this.app.menuMode === 'slim';
     }
 
     blockBodyScroll(): void {

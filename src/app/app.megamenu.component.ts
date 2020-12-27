@@ -105,7 +105,7 @@ export class AppMegaMenuItem implements OnInit, OnDestroy {
 
         if (this.item.items) {
             this.active = !this.active;
-        } 
+        }
         else {
             this.active = true;
         }
@@ -134,10 +134,10 @@ export class AppMegaMenuItem implements OnInit, OnDestroy {
                                 <a *ngIf="!item.routerLink && !item.items" role="menuitem" [href]="item.url||'#'" class="p-menuitem-link" [attr.target]="item.target" [attr.title]="item.title" [attr.id]="item.id" [attr.tabindex]="item.tabindex ? item.tabindex : '0'"
                                     [ngClass]="{'p-disabled':item.disabled}" (click)="itemClick($event, item)">
                                     <i class="p-menuitem-icon" *ngIf="item.icon" [ngClass]="item.icon"></i>
-                                    <p>{{item.label}}</p>    
+                                    <p>{{item.label}}</p>
                                 </a>
                                 <a *ngIf="item.routerLink && !item.items" role="menuitem" [routerLink]="item.routerLink" [queryParams]="item.queryParams" [routerLinkActive]="'layout-megamenuitem-active'" [attr.tabindex]="item.tabindex ? item.tabindex : '0'"
-                                    [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" class="p-menuitem-link" 
+                                    [routerLinkActiveOptions]="item.routerLinkActiveOptions||{exact:false}" class="p-menuitem-link"
                                         [attr.target]="item.target" [attr.title]="item.title" [attr.id]="item.id"
                                     [ngClass]="{'p-disabled':item.disabled}" (click)="itemClick($event, item)"
                                     [fragment]="item.fragment" [queryParamsHandling]="item.queryParamsHandling" [preserveFragment]="item.preserveFragment" [skipLocationChange]="item.skipLocationChange" [replaceUrl]="item.replaceUrl" [state]="item.state">
@@ -154,6 +154,7 @@ export class AppMegaMenuItem implements OnInit, OnDestroy {
     encapsulation: ViewEncapsulation.None
 })
 export class AppMegaMenuSub {
+
     @Input() model: any[];
 
     @Input() root: boolean = false;
@@ -167,11 +168,11 @@ export class AppMegaMenuSub {
             event.preventDefault();
             return;
         }
-        
+
         if (!item.url) {
             event.preventDefault();
         }
-        
+
         if (item.command) {
             item.command({
                 originalEvent: event,
@@ -190,8 +191,8 @@ export class AppMegaMenuSub {
 @Component({
     selector: 'app-megaMenu',
     template: `
-    <div #wrapper class="layout-megamenu-wrapper">
-        <a class="layout-megamenu-button p-ml-6" style="cursor: pointer" (click)="onMegaMenuButtonClick($event)">
+    <div #wrapper [ngClass]="'layout-megamenu-wrapper'" [ngStyle]="style" [class]="styleClass">
+        <a class="layout-megamenu-button" style="cursor: pointer" (click)="onMegaMenuButtonClick($event)">
             MEGA MENU
             <i class="pi pi-chevron-down"></i>
         </a>
@@ -223,6 +224,10 @@ export class AppMegaMenu implements OnDestroy {
 
     @Input() model: MegaMenuItem[];
 
+    @Input() style: any;
+
+    @Input() styleClass: string;
+
     @ViewChild('wrapper') wrapperViewChild: ElementRef;
 
     visible: boolean;
@@ -232,7 +237,7 @@ export class AppMegaMenu implements OnDestroy {
     constructor(private cd: ChangeDetectorRef, private el: ElementRef, public renderer: Renderer2) { }
 
     onMegaMenuButtonClick(event) {
-        if (!this.visible) 
+        if (!this.visible)
             this.show();
         else
             this.hide();

@@ -16,22 +16,20 @@ import {AppMainComponent} from './app.main.component';
                 <span class="layout-menuitem-text">{{item.label}}</span>
             </div>
             <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (keydown.enter)="itemClick($event)"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple>
+               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple
+               [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span class="layout-menuitem-text">{{item.label}}</span>
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
             <a (click)="itemClick($event)" *ngIf="item.routerLink && !item.items"
                [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple>
+               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple
+               [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span class="layout-menuitem-text">{{item.label}}</span>
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
-            <div class="layout-menu-tooltip">
-                <div class="layout-menu-tooltip-arrow"></div>
-                <div class="layout-menu-tooltip-text">{{item.label}}</div>
-            </div>
             <ul *ngIf="(item.items && root) || (item.items && active)" [@children]="root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">
                 <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
                     <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
@@ -102,7 +100,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
 
         this.router.events.pipe(filter(event => event instanceof NavigationEnd))
             .subscribe(params => {
-                if (this.app.isHorizontal()) {
+                if (this.app.isHorizontal() || this.app.isSlim()) {
                     this.active = false;
                 } else {
                     if (this.item.routerLink) {
@@ -115,7 +113,7 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        if (!this.app.isHorizontal() && this.item.routerLink) {
+        if (!(this.app.isHorizontal() || this.app.isSlim()) && this.item.routerLink) {
             this.updateActiveStateFromRoute();
         }
 
@@ -153,20 +151,23 @@ export class AppMenuitemComponent implements OnInit, OnDestroy {
             // activate item
             this.active = true;
 
-            // reset horizontal menu
-            if (this.app.isHorizontal()) {
+            // reset horizontal and slim menu
+            if (this.app.isHorizontal() || this.app.isSlim()) {
                 this.menuService.reset();
                 this.app.menuHoverActive = false;
             }
 
-            this.app.overlayMenuActive = false;
-            this.app.staticMenuMobileActive = false;
+            if (!this.app.isStatic()) {
+                this.app.menuActive = false;
+            }
+
+            this.app.mobileMenuActive = false;
         }
     }
 
     onMouseEnter() {
         // activate item on hover
-        if (this.root  && this.app.isHorizontal() && this.app.isDesktop()) {
+        if (this.root  && (this.app.isHorizontal() || this.app.isSlim()) && this.app.isDesktop()) {
             if (this.app.menuHoverActive) {
                 this.menuService.onMenuStateChange(this.key);
                 this.active = true;

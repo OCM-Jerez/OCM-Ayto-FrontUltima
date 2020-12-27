@@ -22,9 +22,7 @@ export class AppComponent implements OnInit{
 
     ripple: boolean = true;
 
-    profileMode = 'popup';
-
-    profilePosition = 'bottom';
+    inlineMenuPosition = 'bottom';
 
     constructor(private primengConfig: PrimeNGConfig) {}
 

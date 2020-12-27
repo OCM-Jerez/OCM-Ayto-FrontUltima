@@ -1,13 +1,13 @@
 <div class="layout-wrapper" [ngClass]="{'p-input-filled': app.inputStyle === 'filled', 'p-ripple-disabled': !app.ripple,
         'layout-static': isStatic(),
         'layout-overlay': isOverlay(),
-        'layout-overlay-active': overlayMenuActive && isOverlay(),
         'layout-horizontal': isHorizontal(),
-        'layout-static-active': !staticMenuDesktopInactive && isStatic(),
-        'layout-mobile-active': staticMenuMobileActive,
+        'layout-slim': isSlim(),
+        'layout-menu-active': menuActive,
+        'layout-menu-mobile-active': mobileMenuActive,
         'layout-topbar-mobile-active': mobileTopbarActive,
-        'layout-rtl': app.isRTL,
-        'layout-rightpanel-active': rightPanelActive}" [class]="'layout-menu-'+ app.menuTheme+ ' layout-topbar-'+ app.topbarTheme">
+        'layout-rightpanel-active': rightPanelActive,
+        'layout-rtl': app.isRTL}" [class]="'layout-menu-' + app.menuTheme + ' layout-topbar-' + app.topbarTheme">
 
     <app-topbar></app-topbar>
 
@@ -15,9 +15,9 @@
 
     <div class="menu-wrapper" (click)="onMenuClick($event)">
         <div class="layout-menu-container">
-            <app-inline-profile *ngIf="app.profileMode=='inline'&&!isHorizontal()&&app.profilePosition=='top'"></app-inline-profile>
+            <app-inline-menu *ngIf="app.inlineMenuPosition=='top' || app.inlineMenuPosition=='both'" key="top"></app-inline-menu>
             <app-menu></app-menu>
-            <app-inline-profile *ngIf="app.profileMode=='inline'&&!isHorizontal()&&app.profilePosition=='bottom'"></app-inline-profile>
+            <app-inline-menu *ngIf="app.inlineMenuPosition=='bottom' || app.inlineMenuPosition=='both'" key="bottom"></app-inline-menu>
         </div>
     </div>
 
@@ -33,6 +33,6 @@
 
     <app-config></app-config>
 
-    <div *ngIf="staticMenuMobileActive" class="layout-mask modal-in"></div>
+    <div *ngIf="mobileMenuActive" class="layout-mask modal-in"></div>
 
 </div>

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { AppMainComponent } from './app.main.component';
 import { AppComponent } from './app.component';
 
 @Component({
-    selector: 'app-inline-profile',
-    templateUrl: './app.inlineprofile.component.html',
+    selector: 'app-inline-menu',
+    templateUrl: './app.inlinemenu.component.html',
     animations: [
         trigger('menu', [
             state('hiddenAnimated', style({
@@ -30,15 +30,25 @@ import { AppComponent } from './app.component';
         ])
     ]
 })
-export class AppInlineProfileComponent {
+export class AppInlineMenuComponent {
+
+    @Input() key = "inline-menu";
+
+    @Input() style: any;
+
+    @Input() styleClass: string;
 
     active: boolean;
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) { }
 
     onClick(event) {
-        this.appMain.onInlineMenuClick(event);
+        this.appMain.onInlineMenuClick(event, this.key);
         event.preventDefault();
+    }
+
+    get isTooltipDisabled() {
+        return !(this.appMain.isSlim() && !this.appMain.isMobile());
     }
 
     get tabIndex() {

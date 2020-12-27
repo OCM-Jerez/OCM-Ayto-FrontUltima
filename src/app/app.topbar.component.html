@@ -20,7 +20,7 @@
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
                 <li class="layout-topbar-item layout-search-item" [ngClass]="{'layout-active-topbar-item': appMain.search}">
-                    <a class="layout-topbar-action" (click)="appMain.onTopbarItemClick($event, 'search')" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'search')" pRipple>
                         <i class="pi pi-search fs-large"></i>
                     </a>
 
@@ -33,7 +33,7 @@
                     </div>
                 </li>
                 <li class="layout-topbar-item notifications" [ngClass]="{'layout-active-topbar-item': appMain.activeTopbarItem === 'notifications'}">
-                    <a class="layout-topbar-action" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
                             <span class="p-badge">4</span>
@@ -95,7 +95,7 @@
                     </ul>
                 </li>
                 <li class="layout-topbar-item app" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'apps'}">
-                    <a class="layout-topbar-action" (click)="appMain.onTopbarItemClick($event, 'apps')" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'apps')" pRipple>
                         <i class="pi pi-table fs-large"></i>
                     </a>
 
@@ -140,13 +140,9 @@
                         </div>
                     </div>
                 </li>
-                <li class="layout-topbar-item" *ngIf="app.profileMode==='popup'||appMain.isHorizontal()" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'profile'}">
-                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center" (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
+                <li class="layout-topbar-item" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'profile'}">
+                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center p-px-2 rounded-circle" (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
                         <img src="assets/layout/images/avatar-profile.png" alt="avatar">
-                        <span class="p-d-flex p-flex-column p-ml-2">
-                            <span class="fs-small p-text-bold">Peter Taylor</span>
-                            <span class="fs-xsmall">Webmaster</span>
-                        </span>
                     </a>
 
                     <ul class="layout-topbar-action-panel p-shadow-6">
@@ -177,7 +173,7 @@
                     </ul>
                 </li>
                 <li class="layout-topbar-item">
-                    <a class="layout-topbar-action" (click)="appMain.onRightPanelButtonClick($event)" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onRightPanelButtonClick($event)" pRipple>
                         <i class="pi pi-arrow-left fs-large"></i>
                     </a>
                 </li>

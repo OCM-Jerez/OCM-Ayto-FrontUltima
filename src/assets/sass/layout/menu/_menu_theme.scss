@@ -10,7 +10,7 @@
                         color: $rootMenuTextColor;
                     }
                 }
-                
+
                 > ul {
                     background-color: $menuBgColor;
                 }
@@ -42,13 +42,13 @@
             }
         }
 
-        .layout-profile {
+        .layout-inline-menu {
             a {
                 color: $menuItemTextColor;
             }
 
-            .layout-profile-action,
-            .layout-profile-action-panel .layout-profile-action-item {
+            .layout-inline-menu-action,
+            .layout-inline-menu-action-panel .layout-inline-menu-action-item {
                 color: $menuItemTextColor;
 
                 i {
@@ -64,7 +64,8 @@
 }
 
 @media (min-width: $mobileBreakpoint + 1) {
-    &.layout-horizontal {
+    &.layout-horizontal,
+    &.layout-slim {
         .menu-wrapper {
             .layout-menu-container {
                 .layout-menu {

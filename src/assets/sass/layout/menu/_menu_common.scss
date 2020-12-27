@@ -6,7 +6,6 @@
     top: 56px;
     z-index: 997;
     transform: none;
-    transition: transform $transitionDuration;
 
     ul {
         @include reset-list;
@@ -45,10 +44,6 @@
                     }
                 }
 
-                .layout-menu-tooltip {
-                    display: none;
-                }
-
                 > a {
                     display: flex;
                     align-items: flex-start;
@@ -56,7 +51,7 @@
                     border-radius: 4px;
                     cursor: pointer;
                     user-select: none;
-                    transition: all $transitionDuration;
+                    transition: background-color $transitionDuration, color $transitionDuration;
 
                     .layout-menuitem-text {
                         margin: 0 1rem;

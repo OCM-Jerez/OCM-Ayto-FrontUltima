@@ -3,8 +3,9 @@
         .menu-wrapper {
             top: 56px;
             height: calc(100% - 56px);
-            transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
             transform: translate3d(-260px, 0px, 0px);
+            transition: transform $transitionDuration;
+            transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
         }
 
         &.layout-topbar-mobile-active {
@@ -14,12 +15,16 @@
             }
         }
 
-        &.layout-mobile-active {
+        &.layout-menu-mobile-active {
             overflow: hidden;
             height: 100vh;
 
             .menu-wrapper {
                 transform: translate3d(0px, 0px, 0px);
+            }
+
+            .layout-topbar .layout-topbar-left .layout-menu-button > i {
+                transform: rotate(180deg);
             }
 
             .layout-mask {

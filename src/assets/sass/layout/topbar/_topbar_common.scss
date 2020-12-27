@@ -39,6 +39,10 @@
             justify-content: center;
             cursor: pointer;
             border-radius: 50%;
+
+            i {
+                transition: transform $transitionDuration;
+            }
         }
 
         .layout-topbar-mobile-button {
@@ -46,8 +50,9 @@
             align-items: center;
             padding: 0 .857rem;
             margin: 0 .5rem 0 auto;
-            border-radius: 4px;
+            border-radius: 50%;
             height: 45px;
+            cursor: pointer;
         }
     }
 
