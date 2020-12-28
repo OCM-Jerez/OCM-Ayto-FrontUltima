@@ -5,6 +5,23 @@
         overflow: auto;
         transition: transform $transitionDuration;
     }
+
+    .online-members {
+        img {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .next-events {
+        li {
+            &:hover {
+                background-color: $contentAltBgColor;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 @media (max-width: $mobileBreakpoint) {
