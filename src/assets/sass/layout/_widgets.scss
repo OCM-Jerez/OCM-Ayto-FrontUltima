@@ -2,6 +2,7 @@
     .overview-status {
         font-weight: 500;
         border-radius: 2px;
+        color: $bodyBgColor;
     }
 }
 
@@ -33,6 +34,7 @@
         .widget-list-item-radius,
         .person-tag {
             border-radius: 2px;
+            color: $bodyBgColor;
         }
     }
 }
