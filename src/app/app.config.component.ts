@@ -263,8 +263,6 @@ export class AppConfigComponent implements OnInit {
             this.app.topbarTheme = 'blue';
         }
 
-
-
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + this.app.layoutMode + '.css';
         this.replaceLink(layoutLink, layoutHref);
