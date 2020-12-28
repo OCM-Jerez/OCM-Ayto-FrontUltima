@@ -34,6 +34,16 @@
         .person-tag {
             border-radius: 2px;
         }
+
+        .p-progressbar {
+            height: 6px;
+            border-radius: 10px;
+            background: $contentAltBgColor;
+        }
+
+        .p-progressbar-value {
+            background: $orange;
+        }
     }
 }
 
@@ -238,42 +248,6 @@
         border-top: 1px solid $dividerColor;
     }
 
-}
-
-.widget-weeklyoverview {
-    .card-subheader {
-        font-size: .9rem;
-        color: $textSecondaryColor;
-        border-bottom: 1px solid $dividerColor;
-    }
-
-    h5 {
-        margin-bottom: .5rem;
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-
-        >li {
-            border-bottom: 1px solid $dividerColor;
-
-            .value {
-                color: $textSecondaryColor;
-            }
-
-            .p-progressbar {
-                height: 6px;
-                border-radius: 10px;
-                background: $contentAltBgColor;
-            }
-
-            .p-progressbar-value {
-                background: #FFB300;
-            }
-        }
-    }
 }
 
 .widget-daily-users {
@@ -634,38 +608,6 @@
             padding: .25em .5em;
             display: inline-block;
             border-radius: $borderRadius;
-        }
-    }
-}
-
-.widget-profile {
-    img {
-        width: 8rem;
-        height: 8rem;
-    }
-
-    .name {
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
-
-    .location{
-        i {
-            color: $textSecondaryColor;
-        }
-        span {
-            color: $textSecondaryColor;
-        }
-    }
-
-    .stats {
-        width: 100%;
-        .stat {
-            .stat-value {
-                font-size: 1.5rem;
-                font-weight: 500;
-                color: #1565C0;
-            }
         }
     }
 }

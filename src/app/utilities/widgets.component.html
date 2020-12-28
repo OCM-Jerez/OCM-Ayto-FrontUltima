@@ -206,89 +206,89 @@
                     <button pButton pRipple type="button" icon="pi pi-compass" class="p-button-rounded p-button-text"></button>
                     <button pButton pRipple type="button" icon="pi pi-heart" class="p-button-rounded p-button-text"></button>
                 </div>
-                <button pButton pRipple type="button" label="View on Google Maps" class="p-button-text p-button-plain p-ml-auto"></button>
+                <span class="muted-text p-ml-auto">View on </span>
+                <button pButton pRipple type="button" label="Google Maps" class="p-button-text p-button-plain p-px-1"></button>
             </div>
         </div>
     </div>
 
     <div class="p-col-12 p-lg-4">
-        <div class="card widget-weeklyoverview">
-            <div class=card-header>
-                <h5>Overview</h5>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="p-mb-0">Overview</h5>
             </div>
-            <div class="card-subheader p-mb-2 p-pb-3">
-                Last 7 Months
-            </div>
+            <div class="muted-text fs-small p-my-2">Last 7 Months</div>
+            <hr class="p-mt-0" />
 
-            <ul>
+            <ul class="widget-list">
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W1</span>
-                        <span class="value">41/100</span>
+                        <small class="muted-text">41/100</small>
                     </div>
-                    <p-progressBar [value]="41" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="41" [showValue]="false"></p-progressBar>
                 </li>
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W2</span>
-                        <span class="value">23/100</span>
+                        <small class="muted-text">23/100</small>
                     </div>
-                    <p-progressBar [value]="23" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="23" [showValue]="false"></p-progressBar>
                 </li>
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W3</span>
-                        <span class="value">81/100</span>
+                        <small class="muted-text">81/100</small>
                     </div>
-                    <p-progressBar [value]="81" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="81" [showValue]="false"></p-progressBar>
                 </li>
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W4</span>
-                        <span class="value">33/100</span>
+                        <small class="muted-text">33/100</small>
                     </div>
-                    <p-progressBar [value]="33" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="33" [showValue]="false"></p-progressBar>
                 </li>
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W5</span>
-                        <span class="value">37/100</span>
+                        <small class="muted-text">37/100</small>
                     </div>
-                    <p-progressBar [value]="37" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="37" [showValue]="false"></p-progressBar>
                 </li>
                 <li class="p-mb-3">
-                    <div class="p-d-flex p-jc-between p-mb-1">
+                    <div class="p-d-flex p-jc-between p-mb-2">
                         <span>W6</span>
-                        <span class="value">12/100</span>
+                        <small class="muted-text">12/100</small>
                     </div>
-                    <p-progressBar [value]="12" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="12" [showValue]="false"></p-progressBar>
                 </li>
             </ul>
         </div>
     </div>
 
     <div class="p-col-12 p-lg-4">
-        <div class="card widget-profile p-d-flex p-flex-column p-ai-center">
-            <img class="p-mt-3" src="/assets/layout/images/dashboard/asset-profile.png" alt="">
-            <span class="name p-mt-5">John Doe</span>
+        <div class="card p-d-flex p-flex-column p-ai-center">
+            <img class="p-mt-3" src="/assets/layout/images/dashboard/asset-profile.png" alt="profile">
+            <h5 class="p-mb-1">John Doe</h5>
 
-            <div class="location p-d-flex p-ai-center p-mt-1">
+            <div class="location p-d-flex p-ai-center p-mb-5">
                 <i class="pi pi-map-marker p-mr-1"></i>
                 <span>London UK</span>
             </div>
 
-            <div class="stats p-d-flex p-jc-between p-px-3 p-mt-6 p-mb-3">
-                <div class="stat p-d-flex p-flex-column p-ai-center">
+            <div class="p-d-flex p-jc-between p-as-stretch p-px-3 p-mt-6 p-mb-3">
+                <div class="p-d-flex p-flex-column p-ai-center">
                     <span>FRIENDS</span>
-                    <span class="stat-value p-mt-2">660</span>
+                    <span class="fs-large p-text-bold indigo-color p-mt-2">660</span>
                 </div>
-                <div class="stat p-d-flex p-flex-column p-ai-center">
+                <div class="p-d-flex p-flex-column p-ai-center">
                     <span>COMMENTS</span>
-                    <span class="stat-value p-mt-2">98K</span>
+                    <span class="fs-large p-text-bold indigo-color p-mt-2">98K</span>
                 </div>
-                <div class="stat p-d-flex p-flex-column p-ai-center">
+                <div class="p-d-flex p-flex-column p-ai-center">
                     <span>PROJECTS</span>
-                    <span class="stat-value p-mt-2">51</span>
+                    <span class="fs-large p-text-bold indigo-color p-mt-2">51</span>
                 </div>
             </div>
         </div>
