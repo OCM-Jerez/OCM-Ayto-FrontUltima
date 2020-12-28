@@ -9,24 +9,30 @@
     .image-container {
         width: 100%;
         background-color: $contentAltBgColor;
-        padding: 1rem;
         border-radius: 4px;
     }
+}
 
-    .text-container {
-        p {
-            color: $textSecondaryColor;
-            text-align: center;
+.widget-list {
+    @include reset-list;
+
+    > li {
+        border-bottom: 1px solid $dividerColor;
+
+        &:last-child {
+            border-bottom: 0 none;
         }
 
-        h5 {
-            margin-bottom: .5rem;
+        .person-item {
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
         }
-    }
 
-    .footer {
-        .info-left {
-            color: $textSecondaryColor;
+        .widget-list-item-radius,
+        .person-tag {
+            border-radius: 2px;
         }
     }
 }
@@ -382,83 +388,6 @@
 
     .custom-marker {
         border-radius: 4px;
-    }
-}
-
-.widget-documents {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-    >li {
-        padding: 1rem 0;
-        border-bottom: 1px solid $dividerColor;
-
-        .icon-container {
-            width: 36px;
-            height: 36px;
-            background-color: #BBDEFB;
-            padding: 1rem;
-            color: #1565C0;
-            border-radius: 4px;
-
-            i {
-                font-size: 1.5rem;
-            }
-
-            &.type-yellow {
-                background-color: #FFECB3;
-                color: #BF6B00;
-            }
-
-            &.type-green {
-                background-color: #B2DFDB;
-                color: #00838F;
-            }
-
-            &.type-gray {
-                background-color: #CFD8DC;
-                color: #455A64;
-            }
-        }
-
-        .item-subtext {
-            color: $textSecondaryColor;
-        }
-
-        .item-actions {
-            i {
-                padding: .5rem;
-                border: 1px solid #ECEFF1;
-                border-radius: 4px;
-                color: #424242;
-                font-size: 1.25rem;
-            }
-
-        }
-    }
-}
-
-.widget-contacts-list {
-    @include reset-list;
-
-    > li {
-        border-bottom: 1px solid $dividerColor;
-
-        &:last-child {
-            border-bottom: 0 none;
-        }
-
-        .person-item {
-            img {
-                width: 2.5rem;
-                height: 2.5rem;
-            }
-        }
-
-        .person-tag {
-            border-radius: 2px;
-        }
     }
 }
 
