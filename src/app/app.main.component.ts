@@ -23,14 +23,6 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
 
     topbarRightClick: boolean;
 
-    megaMenuClick: boolean;
-
-    megaMenuActive: boolean;
-
-    megaMenuMobileClick: boolean;
-
-    megaMenuMobileActive: boolean;
-
     topbarItemClick: boolean;
 
     activeTopbarItem: string;
@@ -64,18 +56,10 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
 
     ngAfterViewInit() {
         // hides the horizontal submenus or top menu if outside is clicked
-        this.documentClickListener = this.renderer.listen('body', 'click', (event) => {
-            if (!this.topbarRightClick && !this.mobileMenuActive && !this.activeTopbarItem && !this.rightPanelActive) {
-                this.mobileTopbarActive = false;
-            }
-
+        this.documentClickListener = this.renderer.listen('body', 'click', () => {
             if (!this.topbarItemClick) {
                 this.activeTopbarItem = null;
                 this.topbarMenuActive = false;
-            }
-
-            if (!this.megaMenuClick) {
-                this.megaMenuActive = false;
             }
 
             if (!this.menuClick && (this.isHorizontal() || this.isSlim())) {
@@ -109,7 +93,6 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
             this.topbarItemClick = false;
             this.topbarRightClick = false;
             this.menuClick = false;
-            this.megaMenuClick = false;
         });
     }
 
@@ -133,12 +116,7 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
         event.preventDefault();
     }
 
-    onTopbarRightClick(event) {
-        this.topbarRightClick = true;
-    }
-
     onTopbarMobileButtonClick(event) {
-        this.topbarRightClick = true;
         this.mobileTopbarActive = !this.mobileTopbarActive;
         event.preventDefault();
     }
@@ -160,24 +138,6 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
         if (event.keyCode == 27) {
             this.search = false;
         }
-    }
-
-    onMegaMenuButtonClick(event) {
-        this.megaMenuClick = true;
-        this.megaMenuActive = !this.megaMenuActive;
-        event.preventDefault();
-    }
-
-    onMegaMenuClick(event) {
-        this.megaMenuClick = true;
-        event.preventDefault();
-    }
-
-    onMegaMenuMobileButtonClick(event) {
-        this.megaMenuMobileClick = true;
-        this.megaMenuMobileActive = !this.megaMenuMobileActive;
-
-        event.preventDefault();
     }
 
     onInlineMenuClick(event, key) {

@@ -13,9 +13,9 @@
         </a>
     </div>
 
-    <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}" (click)="appMain.onTopbarRightClick($event)">
+    <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}">
         <div class="layout-topbar-actions-left">
-            <app-megaMenu [model]="model"></app-megaMenu>
+            <p-megaMenu [model]="model" styleClass="layout-megamenu"></p-megaMenu>
         </div>
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
@@ -36,7 +36,7 @@
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
-                            <span class="p-badge">4</span>
+                            <span class="p-badge p-mr-1 p-mt-1">4</span>
                         </span>
                     </a>
 

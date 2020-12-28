@@ -1,7 +1,7 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MegaMenuItem } from 'primeng/api';
-import {AppComponent} from './app.component';
-import {AppMainComponent} from './app.main.component';
+import { AppComponent } from './app.component';
+import { AppMainComponent } from './app.main.component';
 @Component({
     selector: 'app-topbar',
     templateUrl: './app.topbar.component.html'
@@ -18,68 +18,91 @@ export class AppTopBarComponent {
             label: 'UI KIT',
             items: [
                 [
-                    {label: 'Form Layout', routerLink: '/uikit/formlayout', icon:'pi pi-id-card'},
-                    {label: 'Input', routerLink: '/uikit/input', icon:'pi pi-check-square'},
-                    {label: 'Button', routerLink: '/uikit/button', icon:'pi pi-mobile'},
-                    {label: 'Table', routerLink: '/uikit/table', icon:'pi pi-table'},
-                    {label: 'List', routerLink: '/uikit/list', icon:'pi pi-list'},
-                    {label: 'Tree', routerLink: '/uikit/tree', icon:'pi pi-share-alt'},
-                    {label: 'Panel', routerLink: '/uikit/panel', icon:'pi pi-tablet'},
+                    {
+                        label: 'UI KIT 1',
+                        items: [
+                            { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
+                            { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
+                            { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel'] },
+                            { label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'] },
+                            { label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file'] }
+                        ]
+                    }
+                ],
+                [
+                    {
+                        label: 'UI KIT 2',
+                        items: [
+                            { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
+                            { label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list'] },
+                            { label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree'] },
+                            { label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel'] },
+                            { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] }
+                        ]
+                    }
+                ],
+                [
+                    {
+                        label: 'UI KIT 3',
+                        items: [
+                            { label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay'] },
+                            { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media'] },
+                            { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'] },
+                            { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['/uikit/message'] },
+                            { label: 'Misc', icon: 'pi pi-fw pi-circle-off', routerLink: ['/uikit/misc'] }
+                        ]
+                    }
                 ]
-            ],
+            ]
         },
         {
-            label: 'UI KIT 2',
+            label: 'UTILITIES',
             items: [
                 [
-                    {label: 'Overlay', routerLink: '/uikit/overlay', icon:'pi pi-clone'},
-                    {label: 'Media', routerLink: '/uikit/media', icon:'pi pi-image'},
-                    {label: 'Menu', routerLink: '/uikit/menu', icon:'pi pi-bars'},
-                    {label: 'Message', routerLink: '/uikit/message', icon:'pi pi-comment'},
-                    {label: 'File', routerLink: '/uikit/file', icon:'pi pi-file'},
-                    {label: 'Chart', routerLink: '/uikit/charts', icon:'pi pi-chart-bar'},
-                    {label: 'Misc', routerLink: '/uikit/misc', icon:'pi pi-circle-off'},
-                ]
-            ],
-        },
-        {
-            label: 'HIERARCHY',
-            items: [
+                    {
+                        label: 'UTILITIES 1',
+                        items: [
+                            { label: 'Display', icon: 'pi pi-fw pi-desktop', routerLink: ['utilities/display'] },
+                            { label: 'Elevation', icon: 'pi pi-fw pi-external-link', routerLink: ['utilities/elevation'] }
+                        ]
+                    },
+                    {
+                        label: 'UTILITIES 2',
+                        items: [
+                            { label: 'FlexBox', icon: 'pi pi-fw pi-directions', routerLink: ['utilities/flexbox'] }
+                        ]
+                    }
+                ],
                 [
-                    {label: 'Submenu 1', icon:'pi pi-align-left', items: [
-                        {label: 'Submenu 1.1', icon:'pi pi-align-left', items: [
-                            {label: 'Submenu 1.1.2', icon:'pi pi-align-left'},
-                            {label: 'Submenu 1.1.3', icon:'pi pi-align-left'},
-                            {label: 'Submenu 1.1.4', icon:'pi pi-align-left'},
-                        ]},
-                        {label: 'Submenu 1.2', icon:'pi pi-align-left'},
-                        {label: 'Submenu 1.3', icon:'pi pi-align-left'},
-                        {label: 'Submenu 1.4', icon:'pi pi-align-left'},
-
-                    ]},
-                    {label: 'Submenu 2', icon:'pi pi-align-left', items: [
-                        {label: 'Submenu 2.1', icon:'pi pi-align-left', items: [
-                            {label: 'Submenu 2.1.2', icon:'pi pi-align-left'},
-                            {label: 'Submenu 2.1.3', icon:'pi pi-align-left'},
-                            {label: 'Submenu 2.1.4', icon:'pi pi-align-left'},
-                        ]},
-                        {label: 'Submenu 2.2', icon:'pi pi-align-left'},
-                        {label: 'Submenu 2.3', icon:'pi pi-align-left'},
-                        {label: 'Submenu 2.4', icon:'pi pi-align-left'},
-
-                    ]},
-                    {label: 'Submenu 3', icon:'pi pi-align-left'},
-                ]
-            ],
-        },
-    ]
+                    {
+                        label: 'UTILITIES 3',
+                        items: [
+                            { label: 'Icons', icon: 'pi pi-fw pi-search', routerLink: ['utilities/icons'] }
+                        ]
+                    },
+                    {
+                        label: 'UTILITIES 4',
+                        items: [
+                            { label: 'Text', icon: 'pi pi-fw pi-pencil', routerLink: ['utilities/text'] },
+                            { label: 'Widgets', icon: 'pi pi-fw pi-star-o', routerLink: ['utilities/widgets'] }
+                        ]
+                    }
+                ],
+                [
+                    {
+                        label: 'UTILITIES 5',
+                        items: [
+                            { label: 'Grid System', icon: 'pi pi-fw pi-th-large', routerLink: ['utilities/grid'] },
+                            { label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', routerLink: ['utilities/spacing'] },
+                            { label: 'Typography', icon: 'pi pi-fw pi-align-center', routerLink: ['utilities/typography'] }
+                        ]
+                    }
+                ],
+            ]
+        }
+    ];
 
     @ViewChild('searchInput') searchInputViewChild: ElementRef;
-
-    mobileMegaMenuItemClick(index) {
-        this.appMain.megaMenuMobileClick = true;
-        this.activeItem = this.activeItem === index ? null : index;
-    }
 
     searchAnimationEnd() {
         this.searchInputViewChild.nativeElement.focus();

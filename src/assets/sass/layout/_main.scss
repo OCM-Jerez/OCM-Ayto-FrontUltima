@@ -5,7 +5,7 @@ html {
 
 body {
     font-family: Roboto,"Helvetica Neue",sans-serif;
-    font-size: $fontSize;
+    font-size: 1rem;
     color: $textColor;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -137,8 +137,8 @@ body {
         min-height: 100vh;
 
         .layout-content {
-            padding: 32px;
-            padding-top: 12px;
+            padding: 2rem;
+            padding-top: 1rem;
             flex: 1 1 0;
         }
     }

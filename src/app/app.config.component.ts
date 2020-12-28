@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppMainComponent } from './app.main.component';
 
 @Component({
     selector: 'app-config',
     template: `
-        <p-sidebar [(visible)]="configActive" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
+        <p-sidebar #sidebar [(visible)]="configActive" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
             <div class="layout-config-panel p-d-flex p-flex-column">
                 <div class="p-px-3 p-pt-3">
                     <h5>Theme Customization</h5>
@@ -83,12 +83,16 @@ import { AppMainComponent } from './app.main.component';
                     <p-inputSwitch [ngModel]="app.ripple" (onChange)="appMain.onRippleChange($event)"></p-inputSwitch>
 
                     <h6>RTL</h6>
-                    <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)"></p-inputSwitch>
+                    <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)" styleClass="p-d-block"></p-inputSwitch>
 
-                    <h6>Menu Themes</h6>
+                    <h6 class="p-d-inline-block p-mr-3">Menu Themes</h6>
+                    <span *ngIf="app.layoutMode!=='dark'" #menuSwitchContainer style="position: relative">
+                        <p-inputSwitch [appendTo]="menuSwitchContainer" [(ngModel)]="matchingTopbarTheme" (onChange)="onMatchingTopbarThemeChange($event)"
+                            pTooltip="Show matching Topbar colors" tooltipPosition="bottom"></p-inputSwitch>
+                    </span>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeMenuTheme(t.name)" class="layout-config-color-option" [title]="t.name">
+                            <a style="cursor: pointer" (click)="changeMenuTheme(t)" [ngClass]="{'layout-config-color-option': true, 'p-disabled': isDisabled(filteredMenuThemes, t)}" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--menu-text-color)"></i>
@@ -98,10 +102,15 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                     <p *ngIf="app.layoutMode==='dark'">Menu themes are only available in light mode by design as large surfaces can emit too much brightness in dark mode.</p>
 
-                    <h6>Topbar Themes</h6>
+                    <h6 class="p-d-inline-block p-mr-3">Topbar Themes</h6>
+                    <span *ngIf="app.layoutMode!=='dark'" #topbarSwitchContainer style="position: relative">
+                        <p-inputSwitch [appendTo]="topbarSwitchContainer" [(ngModel)]="matchingMenuTheme" (onChange)="onMatchingMenuThemeChange($event)"
+                            pTooltip="Show matching Menu colors" tooltipPosition="bottom"></p-inputSwitch>
+                    </span>
+
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeTopbarTheme(t.name)" class="layout-config-color-option" [title]="t.name">
+                            <a style="cursor: pointer" (click)="changeTopbarTheme(t)" [ngClass]="{'layout-config-color-option': true, 'p-disabled': isDisabled(filteredTopbarThemes, t)}" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--topbar-text-color)"></i>
@@ -143,6 +152,18 @@ export class AppConfigComponent implements OnInit {
 
     theme = 'blue';
 
+    matchingMenuTheme: boolean = false;
+
+    matchingTopbarTheme: boolean = false;
+
+    selectedMenuTheme: any;
+
+    selectedTopbarTheme: any;
+
+    filteredMenuThemes: any[];
+
+    filteredTopbarThemes: any[];
+
     configActive = false;
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) {}
@@ -169,43 +190,65 @@ export class AppConfigComponent implements OnInit {
         ];
 
         this.menuThemes = [
-            {name: 'light', color: '#FDFEFF', topbarTheme: 'white'},
-            {name: 'dark', color: '#434B54', topbarTheme: 'dark'},
-            {name: 'indigo', color: '#1A237E', topbarTheme: 'indigo'},
-            {name: 'bluegrey', color: '#37474F', topbarTheme: 'bluegrey'},
-            {name: 'brown', color: '#4E342E', topbarTheme: 'brown'},
-            {name: 'cyan', color: '#006064', topbarTheme: 'cyan'},
-            {name: 'green', color: '#2E7D32', topbarTheme: 'green'},
-            {name: 'deeppurple', color: '#4527A0', topbarTheme: 'deeppurple'},
-            {name: 'deeporange', color: '#BF360C', topbarTheme: 'deeporange'},
-            {name: 'pink', color: '#880E4F', topbarTheme: 'pink'},
-            {name: 'purple', color: '#6A1B9A', topbarTheme: 'purple'},
-            {name: 'teal', color: '#00695C', topbarTheme: 'teal'},
-            {name: 'darker', color: '#212121', topbarTheme: 'dark'}
+            {name: 'light', color: '#FDFEFF', topbarThemes: ['white']},
+            {name: 'dark', color: '#434B54', topbarThemes: ['dark']},
+            {name: 'indigo', color: '#1A237E', topbarThemes: ['indigo']},
+            {name: 'bluegrey', color: '#37474F', topbarThemes: ['bluegrey']},
+            {name: 'brown', color: '#4E342E', topbarThemes: ['brown']},
+            {name: 'cyan', color: '#006064', topbarThemes: ['cyan']},
+            {name: 'green', color: '#2E7D32', topbarThemes: ['green']},
+            {name: 'deeppurple', color: '#4527A0', topbarThemes: ['deeppurple']},
+            {name: 'deeporange', color: '#BF360C', topbarThemes: ['deeporange']},
+            {name: 'pink', color: '#880E4F', topbarThemes: ['pink']},
+            {name: 'purple', color: '#6A1B9A', topbarThemes: ['purple']},
+            {name: 'teal', color: '#00695C', topbarThemes: ['teal']},
+            {name: 'darker', color: '#212121', topbarThemes: ['dark']}
         ];
 
         this.topbarThemes = [
-            {name: 'lightblue', color: '#2E88FF', menuTheme:'light'},
-            {name: 'dark', color: '#363636', menuTheme:'dark'},
-            {name: 'white', color: '#FDFEFF', menuTheme:'light'},
-            {name: 'blue', color: '#1565C0', menuTheme:'dark'},
-            {name: 'deeppurple', color: '#4527A0', menuTheme:'deeppurple'},
-            {name: 'purple', color: '#6A1B9A', menuTheme:'purple'},
-            {name: 'pink', color: '#AD1457', menuTheme:'pink'},
-            {name: 'cyan', color: '#0097A7', menuTheme:'cyan'},
-            {name: 'teal', color: '#00796B', menuTheme:'teal'},
-            {name: 'green', color: '#43A047', menuTheme:'green'},
-            {name: 'lightgreen', color: '#689F38', menuTheme:'green'},
-            {name: 'lime', color: '#AFB42B', menuTheme:'light'},
-            {name: 'yellow', color: '#FBC02D', menuTheme:'light'},
-            {name: 'amber', color: '#FFA000', menuTheme:'light'},
-            {name: 'orange', color: '#FB8C00', menuTheme:'dark'},
-            {name: 'deeporange', color: '#D84315', menuTheme:'deeporange'},
-            {name: 'brown', color: '#5D4037', menuTheme:'brown'},
-            {name: 'grey', color: '#616161', menuTheme:'light'},
-            {name: 'bluegrey', color: '#546E7A', menuTheme:'bluegrey'},
-            {name: 'indigo', color: '#3F51B5', menuTheme:'indigo'}
+            {name: 'lightblue', color: '#2E88FF', menuThemes: ['light']},
+            {name: 'dark', color: '#363636', menuThemes: ['dark']},
+            {name: 'white', color: '#FDFEFF', menuThemes: ['light']},
+            {name: 'blue', color: '#1565C0', menuThemes: ['dark']},
+            {name: 'deeppurple', color: '#4527A0', menuThemes: ['deeppurple']},
+            {name: 'purple', color: '#6A1B9A', menuThemes: ['purple']},
+            {name: 'pink', color: '#AD1457', menuThemes: ['pink']},
+            {name: 'cyan', color: '#0097A7', menuThemes: ['cyan']},
+            {name: 'teal', color: '#00796B', menuThemes: ['teal']},
+            {name: 'green', color: '#43A047', menuThemes: ['green']},
+            {name: 'lightgreen', color: '#689F38', menuThemes: ['green']},
+            {name: 'lime', color: '#AFB42B', menuThemes: ['light']},
+            {name: 'yellow', color: '#FBC02D', menuThemes: ['light']},
+            {name: 'amber', color: '#FFA000', menuThemes: ['light']},
+            {name: 'orange', color: '#FB8C00', menuThemes: ['dark']},
+            {name: 'deeporange', color: '#D84315', menuThemes: ['deeporange']},
+            {name: 'brown', color: '#5D4037', menuThemes: ['brown']},
+            {name: 'grey', color: '#616161', menuThemes: ['light']},
+            {name: 'bluegrey', color: '#546E7A', menuThemes: ['bluegrey']},
+            {name: 'indigo', color: '#3F51B5', menuThemes: ['indigo']}
         ];
+
+        this.selectedMenuTheme = this.menuThemes.find(theme => theme.name === this.menuTheme);
+        this.selectedTopbarTheme = this.topbarThemes.find(theme => theme.name === this.topbarTheme);
+    }
+
+    findFilteredThemes(themes, selectedTheme, key, isMatching) {
+        if (isMatching)
+            return themes.filter(t => selectedTheme[key].some(st => st === t.name));
+        else
+            return null;
+    }
+
+    onMatchingTopbarThemeChange(event) {
+        this.filteredTopbarThemes = this.findFilteredThemes(this.topbarThemes, this.selectedMenuTheme, 'topbarThemes', event.checked);
+    }
+
+    onMatchingMenuThemeChange(event) {
+        this.filteredMenuThemes = this.findFilteredThemes(this.menuThemes, this.selectedTopbarTheme, 'menuThemes', event.checked);
+    }
+
+    isDisabled(filteredThemes, theme) {
+        return filteredThemes && filteredThemes.filter(fT => fT.name === theme.name).length === 0;
     }
 
     onLayoutModeChange(event, mode) {
@@ -241,11 +284,15 @@ export class AppConfigComponent implements OnInit {
     }
 
     changeMenuTheme(theme) {
-        this.app.menuTheme = theme;
+        this.selectedMenuTheme = theme;
+        this.app.menuTheme = theme.name;
+        this.filteredTopbarThemes = this.findFilteredThemes(this.topbarThemes, theme, 'topbarThemes', this.matchingTopbarTheme);
     }
 
     changeTopbarTheme(theme) {
-        this.app.topbarTheme = theme;
+        this.selectedTopbarTheme = theme;
+        this.app.topbarTheme = theme.name;
+        this.filteredMenuThemes = this.findFilteredThemes(this.menuThemes, theme, 'menuThemes', this.matchingMenuTheme);
     }
 
     isIE() {

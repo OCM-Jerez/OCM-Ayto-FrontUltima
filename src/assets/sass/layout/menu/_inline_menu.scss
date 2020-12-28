@@ -1,8 +1,10 @@
 .menu-wrapper {
     .layout-inline-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         border-width: 1px 0 1px 0;
         border-style: solid;
-        border-color: $dividerColor;
 
         &.layout-inline-menu-active {
             .layout-inline-menu-icon {
@@ -16,19 +18,18 @@
 
         .layout-inline-menu-action-panel {
             padding: 0 .5rem;
-            background-color: var(--menu-bg-color);
 
             .layout-inline-menu-action-item {
                 padding: .5rem 0 .5rem .5rem;
-                margin-top: 8px;
-                border-radius: 4px;
+                margin-top: .2rem;
+                border-radius: $borderRadius;
                 transition: all $transitionDuration;
                 cursor: pointer;
                 user-select: none;
-            }
 
-            &:last-child {
-                padding-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 1.5rem;
+                }
             }
         }
     }

@@ -43,6 +43,8 @@
         }
 
         .layout-inline-menu {
+            border-color: $dividerColor;
+
             a {
                 color: $menuItemTextColor;
             }
@@ -58,6 +60,10 @@
                 &:hover {
                     background-color: $menuItemHoverBgColor;
                 }
+            }
+
+            .layout-inline-menu-action-panel {
+                background-color: $menuBgColor;
             }
         }
     }

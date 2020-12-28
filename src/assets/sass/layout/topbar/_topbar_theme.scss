@@ -26,6 +26,27 @@
     }
 
     .layout-topbar-right {
+        .layout-topbar-actions-left {
+            .layout-megamenu {
+                background: none;
+
+                &.p-megamenu .p-megamenu-root-list > .p-menuitem {
+                    > .p-menuitem-link {
+                        .p-menuitem-text,
+                        .p-menuitem-icon,
+                        .p-submenu-icon {
+                            color: $topbarItemTextColor;
+                        }
+
+                        &:not(.p-disabled):hover {
+                            background: $topbarItemTextHoverBgColor;
+                            transition: background-color $transitionDuration;
+                        }
+                    }
+                }
+            }
+        }
+
         .layout-topbar-actions-right {
             .layout-topbar-items {
                 .layout-topbar-action-panel {

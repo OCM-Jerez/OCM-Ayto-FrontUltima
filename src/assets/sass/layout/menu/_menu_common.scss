@@ -32,12 +32,12 @@
                     }
 
                     > div {
-                        padding-left: 12px;
-                        margin-bottom: 6px;
-                        margin-top: 24px;
+                        padding-left: 1rem;
+                        margin-bottom: .5rem;
+                        margin-top: 1.5rem;
 
                         > .layout-menuitem-text {
-                            font-size: 12px;
+                            font-size: .857rem;
                             font-weight: 600;
                             text-transform: uppercase;
                         }
@@ -47,7 +47,7 @@
                 > a {
                     display: flex;
                     align-items: flex-start;
-                    padding: .642rem .5rem;
+                    padding: .75rem .5rem;
                     border-radius: 4px;
                     cursor: pointer;
                     user-select: none;
