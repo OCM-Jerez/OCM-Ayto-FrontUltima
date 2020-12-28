@@ -263,6 +263,8 @@ export class AppConfigComponent implements OnInit {
             this.app.topbarTheme = 'blue';
         }
 
+
+
         const layoutLink: HTMLLinkElement = document.getElementById('layout-css') as HTMLLinkElement;
         const layoutHref = 'assets/layout/css/layout-' + this.app.layoutMode + '.css';
         this.replaceLink(layoutLink, layoutHref);
@@ -293,6 +295,16 @@ export class AppConfigComponent implements OnInit {
         this.selectedTopbarTheme = theme;
         this.app.topbarTheme = theme.name;
         this.filteredMenuThemes = this.findFilteredThemes(this.menuThemes, theme, 'menuThemes', this.matchingMenuTheme);
+
+        const appLogoLink: HTMLImageElement = document.getElementById('app-logo') as HTMLImageElement;
+
+        if (theme.name == 'white' || theme.name == 'yellow' || theme.name == 'amber'  || theme.name == 'orange' || theme.name == 'lime') {
+            appLogoLink.src = 'assets/layout/images/logo-dark.svg';
+        }
+        else {
+            appLogoLink.src = 'assets/layout/images/logo-light.svg';
+        }
+        
     }
 
     isIE() {
