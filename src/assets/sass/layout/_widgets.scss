@@ -155,6 +155,49 @@
             }
         }
     }
+
+    .insight-graph {
+        .barBg {
+            background-color: #80DEEA;
+            height: 10rem;
+            width: 1rem;
+            border-radius: 20px;
+            margin-bottom: .25rem;
+
+            .fill {
+                background-color: #0097A7;
+                border-radius: 20px;
+
+                &.mon{
+                    height: 8rem;
+                }
+
+                &.tue{
+                    height: 5rem;
+                }
+
+                &.wed{
+                    height: 4rem;
+                }
+
+                &.thu{
+                    height: 5.5rem;
+                }
+
+                &.fri{
+                    height: 3rem;
+                }
+
+                &.sat{
+                    height: 4.5rem;
+                }
+
+                &.sun{
+                    height: 6.5rem;
+                }
+            }
+        }
+    }
 }
 
 .widget-sales {
