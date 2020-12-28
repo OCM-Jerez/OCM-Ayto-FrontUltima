@@ -1,7 +1,8 @@
-.overview-box {
+.overview-box {    
     .overview-status {
         font-weight: 500;
         border-radius: 2px;
+        color: $bodyBgColor;
     }
 }
 
@@ -33,6 +34,8 @@
         .widget-list-item-radius,
         .person-tag {
             border-radius: 2px;
+            color: $bodyBgColor;
+            font-weight: 500;
         }
 
         .p-progressbar {
@@ -160,6 +163,49 @@
 
             .day {
                 color: $textSecondaryColor;
+            }
+        }
+    }
+
+    .insight-graph {
+        .bar {
+            background-color: #80DEEA;
+            height: 10rem;
+            width: 1rem;
+            border-radius: 20px;
+            margin-bottom: .25rem;
+
+            .fill {
+                background-color: #0097A7;
+                border-radius: 20px;
+
+                &.mon{
+                    height: 8rem;
+                }
+
+                &.tue{
+                    height: 5rem;
+                }
+
+                &.wed{
+                    height: 4rem;
+                }
+
+                &.thu{
+                    height: 5.5rem;
+                }
+
+                &.fri{
+                    height: 3rem;
+                }
+
+                &.sat{
+                    height: 4.5rem;
+                }
+
+                &.sun{
+                    height: 6.5rem;
+                }
             }
         }
     }
@@ -558,7 +604,6 @@
             &.from {
                 .message{
                     padding: 1rem;
-                    background-color: $cyan;
                     color: $bodyBgColor;
                     border-radius: 30px;
                 }
@@ -568,7 +613,6 @@
                 text-align: right;
                 .message{
                     padding: 1rem;
-                    background-color: $pink;
                     color: $bodyBgColor;
                     border-radius: 30px;
                 }

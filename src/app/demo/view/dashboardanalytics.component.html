@@ -19,18 +19,37 @@
             <div class="card-subheader p-mb-2 p-pb-3">
                 November 22 - November 29
             </div>
-            <div class="p-grid">
-                <div class="p-col-1 p-offset-3">M</div>
-                <div class="p-col-1">T
+            <div class="p-grid insight-graph">
+                <div class="p-col-1 p-offset-3">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill mon"></div></div>
+                    M
                 </div>
-                <div class="p-col-1">W</div>
-                <div class="p-col-1">T</div>
-                <div class="p-col-1">F</div>
-                <div class="p-col-1">S</div>
-                <div class="p-col-1">S</div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill tue"></div></div>
+                    T
+                </div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill wed"></div></div>
+                    W
+                </div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill thu"></div></div>
+                    T
+                </div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill fri"></div></div>
+                    F
+                </div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill sat"></div></div>
+                    S
+                </div>
+                <div class="p-col-1">
+                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill sun"></div></div>
+                    S
+                </div>
             </div>
             <div class="p-d-flex p-flex-column p-ai-center insight-container">
-                <img class="p-mt-3" src="/assets/layout/images/dashboard/graph-weekly.svg" alt="">
                 <div class="insight-item p-d-flex p-flex-row p-mt-4 p-px-3">
                     <i class="pi pi-thumbs-up"></i>
                     <div class="p-d-flex p-flex-column p-ml-3">
@@ -155,7 +174,7 @@
                     </span>
                 </div>
                 <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-1.svg" alt="">
+                    <img src="/assets/layout/images/dashboard/sales-graph-2.svg" alt="">
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
@@ -167,7 +186,7 @@
                     </span>
                 </div>
                 <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-1.svg" alt="">
+                    <img src="/assets/layout/images/dashboard/sales-graph-3.svg" alt="">
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
@@ -179,7 +198,7 @@
                     </span>
                 </div>
                 <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-1.svg" alt="">
+                    <img src="/assets/layout/images/dashboard/sales-graph-4.svg" alt="">
                 </div>
             </div>
         </div>
@@ -220,7 +239,7 @@
     
     <div class="p-col-12 p-md-6">
         <div class="card">
-            <p-table [value]="products" [paginator]="true" [rows]="3">
+            <p-table [value]="products" [paginator]="true" [rows]="4">
                 <ng-template pTemplate="header">
                     <tr>
                         <th pSortableColumn="logo">Logo
