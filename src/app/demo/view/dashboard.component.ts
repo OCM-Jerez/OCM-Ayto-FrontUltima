@@ -11,7 +11,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 @Component({
     templateUrl: './dashboard.component.html'
 })
-export class DashboardDemoComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
     cities: SelectItem[];
 
@@ -69,7 +69,7 @@ export class DashboardDemoComponent implements OnInit {
                 fill: true
             }]
         };
-        
+
         this.chartData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [

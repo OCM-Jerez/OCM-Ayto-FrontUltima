@@ -88,7 +88,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6 class="p-d-inline-block p-mr-3">Menu Themes</h6>
                     <span *ngIf="app.layoutMode!=='dark'" #menuSwitchContainer style="position: relative">
                         <p-inputSwitch [appendTo]="menuSwitchContainer" [(ngModel)]="matchingTopbarTheme" (onChange)="onMatchingTopbarThemeChange($event)"
-                            pTooltip="Show matching Topbar colors" tooltipPosition="bottom"></p-inputSwitch>
+                            pTooltip="Show matching Topbar Themes" tooltipPosition="bottom"></p-inputSwitch>
                     </span>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
@@ -105,7 +105,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6 class="p-d-inline-block p-mr-3">Topbar Themes</h6>
                     <span *ngIf="app.layoutMode!=='dark'" #topbarSwitchContainer style="position: relative">
                         <p-inputSwitch [appendTo]="topbarSwitchContainer" [(ngModel)]="matchingMenuTheme" (onChange)="onMatchingMenuThemeChange($event)"
-                            pTooltip="Show matching Menu colors" tooltipPosition="bottom"></p-inputSwitch>
+                            pTooltip="Show matching Menu Themes" tooltipPosition="bottom"></p-inputSwitch>
                     </span>
 
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">

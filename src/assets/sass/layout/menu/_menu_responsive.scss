@@ -1,17 +1,17 @@
 @media (max-width: $mobileBreakpoint) {
     .layout-wrapper {
         .menu-wrapper {
-            top: 56px;
-            height: calc(100% - 56px);
-            transform: translate3d(-260px, 0px, 0px);
+            top: 4rem;
+            height: calc(100% - 4rem);
+            transform: translate3d(-17rem, 0px, 0px);
             transition: transform $transitionDuration;
             transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
         }
 
         &.layout-topbar-mobile-active {
             .menu-wrapper {
-                top: 168px;
-                height: calc(100% - 168px);
+                top: 12rem;
+                height: calc(100% - 12rem);
             }
         }
 

@@ -1,7 +1,7 @@
 .layout-rightpanel {
     &.p-sidebar {
-        top: 56px;
-        height: calc(100% - 56px);
+        top: 4rem;
+        height: calc(100% - 4rem);
         overflow: auto;
         transition: transform $transitionDuration;
     }
@@ -11,8 +11,8 @@
     .layout-wrapper {
         &.layout-topbar-mobile-active {
             .layout-rightpanel {
-                top: 168px;
-                height: calc(100% - 168px);
+                top: 12rem;
+                height: calc(100% - 12rem);
             }
         }
     }

@@ -1,9 +1,9 @@
 .menu-wrapper {
-    height: calc(100% - 56px);
-    width: 240px;
+    height: calc(100% - 4rem);
+    width: 17rem;
     position: fixed;
     left: 0;
-    top: 56px;
+    top: 4rem;
     z-index: 997;
     transform: none;
 
@@ -21,7 +21,7 @@
         }
 
         .layout-menu {
-            padding-bottom: 30px;
+            padding-bottom: 2rem;
 
             li {
                 border-radius: 4px;
@@ -76,7 +76,7 @@
 
                     li {
                         ul {
-                            padding: 0 0 4px;
+                            padding: 0 0 .25rem;
                             overflow: hidden;
                         }
                     }

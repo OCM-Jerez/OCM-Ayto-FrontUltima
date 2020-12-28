@@ -1,130 +1,7 @@
-.card {
-    background-color: $contentBgColor;
-
-    .card-header {
-        h5 {
-            color: $textColor;
-        }
-    }
-
-    .card-icon {
-        a {
-            color: $textSecondaryColor;
-        }
-    }
-}
-
 .overview-box {
-    background-color: $contentBgColor;
-    height: 120px;
-    overflow: hidden;
-    margin: 0 !important;
-
-    h6 {
-        color: $textSecondaryColor;
-    }
-
-    .overview-icon {
-        margin-left: auto;
-    }
-
-    .overview-amount {
-        font-size: 1.75rem;
-    }
-
     .overview-status {
-        color: white;
-        font-size: .9rem;
         font-weight: 500;
-        background-color: #43A047;
-        padding: .25rem;
         border-radius: 2px;
-    }
-
-    .badge-pink {
-        background-color: #E91E63;
-    }
-}
-
-.overview-box-filled {
-    background-color: #0097A7;
-    color: white;
-
-    h6 {
-        color: #E0F7FA;
-    }
-
-    .overview-icon {
-        a {
-            color: #E0F7FA;
-        }
-    }
-
-    .overview-amount {
-        font-size: 1.75rem;
-    }
-
-    .overview-status {
-        color: #006064;
-        font-size: 0.9rem;
-        font-weight: 500;
-        background-color: white;
-        padding: 0.25rem;
-        border-radius: 2px;
-    }
-}
-
-.overview-box-filled-yellow {
-    background-color: #FB8C00;
-
-    h6 {
-        color: #FFF3E0;
-    }
-
-    .overview-icon {
-        a {
-            color: #FFF3E0;
-        }
-    }
-
-    .overview-status {
-        color: #E65100;
-    }
-}
-
-.overview-box-filled-pink {
-    background-color: #E91E63;
-
-    h6 {
-        color: #FCE4EC;
-    }
-
-    .overview-icon {
-        a {
-            color: #FCE4EC;
-        }
-    }
-
-    .overview-status {
-        color: #880E4F;
-    }
-}
-
-.overview-box-filled-purple {
-    background-color: #673AB7;
-
-    h6 {
-        color: #EDE7F6;
-    }
-
-    .overview-icon {
-        a {
-            color: #EDE7F6;
-        }
-    }
-
-    .overview-status {
-        color: #311B92;
     }
 }
 
@@ -563,12 +440,9 @@
 }
 
 .widget-contacts-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    @include reset-list;
 
-    >li {
-        padding: 1rem 0;
+    > li {
         border-bottom: 1px solid $dividerColor;
 
         &:last-child {
@@ -580,39 +454,10 @@
                 width: 2.5rem;
                 height: 2.5rem;
             }
-
-            .person-subtext {
-                font-size: .85rem;
-                font-weight: 500;
-                color: $textSecondaryColor;
-            }
         }
 
-        .person-badges {
-            .badge {
-                padding: .25rem;
-                border-radius: 2px;
-
-                &.accounting {
-                    background-color: #BBDEFB;
-                    color: #0D47A1;
-                }
-
-                &.sales {
-                    background-color: #FFECB3;
-                    color: #BF6B00;
-                }
-
-                &.finance {
-                    background-color: #B2DFDB;
-                    color: #004D40;
-                }
-
-                &.management {
-                    background-color: #FCE4EC;
-                    color: #880E4F;
-                }
-            }
+        .person-tag {
+            border-radius: 2px;
         }
     }
 }

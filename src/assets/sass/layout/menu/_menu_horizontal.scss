@@ -17,14 +17,14 @@
                     flex-direction: row;
                     align-items: center;
                     height: 100%;
-                    margin: 0px 16px;
+                    margin: 0px 1rem;
                     padding-bottom: 0px;
 
                     > li {
                         position: relative;
 
                         > a {
-                            margin-right: .875rem;
+                            margin-right: 1rem;
                             display: flex;
                             align-items: center;
                         }
@@ -64,7 +64,7 @@
 
         &.layout-wrapper {
             .layout-main {
-                padding-top: calc(56px + 3rem);
+                padding-top: 7rem;
             }
         }
     }

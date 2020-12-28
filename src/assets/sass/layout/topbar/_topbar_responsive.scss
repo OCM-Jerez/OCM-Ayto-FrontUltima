@@ -5,7 +5,7 @@
         flex-direction: column;
 
         .layout-topbar-left {
-            height: 56px;
+            height: 4rem;
             width: 100%;
             justify-content: flex-start;
 
@@ -26,7 +26,7 @@
             }
 
             .layout-topbar-actions-left {
-                height: 56px;
+                height: 4rem;
                 display: flex;
                 justify-content: space-between;
 
@@ -54,7 +54,7 @@
             }
 
             .layout-topbar-actions-right {
-                height: 56px;
+                height: 4rem;
                 width: 100%;
 
                 .layout-topbar-items {
@@ -64,7 +64,7 @@
                     .layout-topbar-item {
                         .layout-topbar-action-panel {
                             position: fixed;
-                            top: 112px;
+                            top: 8rem;
                             left: 1em;
                             right: 1em;
                         }

@@ -16,6 +16,7 @@ body {
 
     a {
         text-decoration: none;
+        color: $textSecondaryColor;
     }
 
     .fs-xsmall {
@@ -130,10 +131,10 @@ body {
 
 .layout-wrapper {
     .layout-main {
-        padding-top: 56px;
-        @include flex();
-        @include flex-direction-column();
-        @include flex-justify-between();
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         min-height: 100vh;
 
         .layout-content {
@@ -151,4 +152,8 @@ body {
     font-size: 2rem;
     color: $textSecondaryColor;
     z-index: 999;
+}
+
+.card {
+    background-color: $contentBgColor;
 }

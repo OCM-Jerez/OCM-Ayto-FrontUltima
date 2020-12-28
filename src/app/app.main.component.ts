@@ -75,6 +75,10 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
                     this.mobileMenuActive = false;
                 }
 
+                if (this.isOverlay()) {
+                    this.menuActive = false;
+                }
+
                 this.menuHoverActive = false;
                 this.unblockBodyScroll();
             }

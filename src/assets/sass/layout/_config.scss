@@ -11,8 +11,8 @@
         overflow-y: auto;
 
         .layout-config-color-option {
-            width: 25px;
-            height: 25px;
+            width: 1.75rem;
+            height: 1.75rem;
             display: block;
             position: relative;
 
@@ -43,7 +43,7 @@
 
 .layout-config-button.p-button {
     position: fixed;
-    top: 230px;
+    top: 35%;
     right: 0;
     width: auto;
     border-top-right-radius: 0;

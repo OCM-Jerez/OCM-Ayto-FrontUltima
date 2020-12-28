@@ -4,7 +4,7 @@
     left: 0;
     z-index: 998;
     width: 100%;
-    height: 56px;
+    height: 4rem;
     transition: width $transitionDuration;
     display: flex;
 
@@ -19,9 +19,9 @@
         position: relative;
 
         .layout-topbar-logo {
-            width: 240px;
+            width: 17rem;
             height: 100%;
-            padding-right: 18px;
+            padding-right: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,10 +30,10 @@
         .layout-menu-button {
             position: absolute;
             top: 50%;
-            left: 222px;
-            width: 36px;
-            height: 36px;
-            margin-top: -18px;
+            left: 15.75rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-top: -1.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -51,7 +51,7 @@
             padding: 0 .857rem;
             margin: 0 .5rem 0 auto;
             border-radius: 50%;
-            height: 45px;
+            height: 3.5rem;
             cursor: pointer;
         }
     }
@@ -85,10 +85,11 @@
                     position: relative;
 
                     .layout-topbar-action {
-                        padding: 0 .857rem;
-                        margin: 0 .5rem;
+                        padding: 0 .8rem;
+                        margin: 0 .4rem;
                         border-radius: 4px;
-                        height: 45px;
+                        height: 3.2rem;
+                        min-width: 3.2rem;
                         display: flex;
                         align-items: center;
                         cursor: pointer;
@@ -96,10 +97,10 @@
 
                     .layout-topbar-action-panel {
                         position: absolute;
-                        top: 56px;
+                        top: 4rem;
                         right: 0;
                         z-index: 1000;
-                        min-width: 350px;
+                        min-width: 25rem;
                         padding: 1rem 0;
                         display: none;
                         animation-name: fadeInDown;
@@ -107,13 +108,13 @@
 
                         .layout-topbar-action-item {
                             cursor: pointer;
-                            padding: .857rem 1rem;
+                            padding: 1rem;
                         }
                     }
 
                     &.layout-search-item {
                         .layout-search-panel {
-                            height: 56px;
+                            height: 4rem;
                             width: 100%;
                             position: fixed;
                             top: 0;

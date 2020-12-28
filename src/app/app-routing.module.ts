@@ -1,6 +1,6 @@
 import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
-import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
+import {DashboardComponent} from './demo/view/dashboard.component';
 import {DashboardAnalyticsComponent} from './demo/view/dashboardanalytics.component';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
@@ -45,7 +45,7 @@ import {AppHelpComponent} from './pages/app.help.component';
             {
                 path: '', component: AppMainComponent,
                 children: [
-                    {path: '', component: DashboardDemoComponent},
+                    {path: '', component: DashboardComponent},
                     {path: 'favorites/dashboardanalytics', component: DashboardAnalyticsComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},

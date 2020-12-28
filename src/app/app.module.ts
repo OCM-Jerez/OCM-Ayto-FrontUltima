@@ -85,7 +85,7 @@ import {AppRightPanelComponent} from './app.rightpanel.component';
 import {AppBreadcrumbComponent} from './app.breadcrumb.component';
 import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
-import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
+import {DashboardComponent} from './demo/view/dashboard.component';
 import {DashboardAnalyticsComponent} from './demo/view/dashboardanalytics.component';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
@@ -221,7 +221,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppBreadcrumbComponent,
         AppTopBarComponent,
         AppFooterComponent,
-        DashboardDemoComponent,
+        DashboardComponent,
         DashboardAnalyticsComponent,
         FormLayoutDemoComponent,
         FloatLabelDemoComponent,
