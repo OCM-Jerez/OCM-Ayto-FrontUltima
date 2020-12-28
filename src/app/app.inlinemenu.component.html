@@ -9,7 +9,7 @@
         <i class="layout-inline-menu-icon pi pi-angle-down p-ml-auto"></i>
     </a>
 
-    <ul class="layout-inline-menu-action-panel" [@menu]="appMain.inlineMenuActive[key] ? 'visibleAnimated':'hiddenAnimated'">
+    <ul class="layout-inline-menu-action-panel" [@menu]="appMain.inlineMenuActive[key] ? isHorizontalActive() ? 'visible' : 'visibleAnimated' : isHorizontalActive() ? 'hidden' : 'hiddenAnimated'">
         <li class="layout-inline-menu-action-item p-p-1" pTooltip="Settings" [tooltipDisabled]="isTooltipDisabled">
             <a class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
                 <i class="pi pi-cog p-mr-2"></i>

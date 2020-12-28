@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
             })),
             state('hidden', style({
                 height: '0px',
+                overflow: 'hidden',
                 'z-index': '*'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
@@ -53,5 +54,9 @@ export class AppInlineMenuComponent {
 
     get tabIndex() {
         return !this.appMain.inlineMenuActive  ? '-1' : null;
+    }
+
+    isHorizontalActive() {
+       return this.appMain.isHorizontal() && !this.appMain.isMobile();
     }
 }
