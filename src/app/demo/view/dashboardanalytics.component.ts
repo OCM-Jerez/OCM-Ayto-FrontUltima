@@ -264,28 +264,35 @@ export class DashboardAnalyticsComponent implements OnInit {
     getColors() {
         const isLight = this.app.layoutMode === 'light';
         return {
-            blueColor: isLight ? '#2196F3' : '#64B5F6',
-            pinkColor: isLight ? '#E91E63' : '#F06292',
-            indigoColor: isLight ? '#3F51B5' : '#7986CB',
-            orangeColor: isLight ? '#FF9800' : '#FFB74D',
-            purpleColor: isLight ? '#9C27B0' : '#BA68C8',
-            greenColor: isLight ? '#4CAF50' : '#81C784',
-            limeColor: isLight ? '#CDDC39' : '#DCE775',
-            brownColor: isLight ? '#795548' : '#A1887F',
-            cyanColor: isLight ? '#00ACC1' : '#4DD0E1'
+            pinkColor: isLight ? '#EC407A' : '#F48FB1',
+            purpleColor: isLight ? '#AB47BC' : '#CE93D8',
+            deeppurpleColor: isLight ? '#7E57C2' : '#B39DDB',
+            indigoColor: isLight ? '#5C6BC0' : '#9FA8DA',
+            blueColor: isLight ? '#42A5F5' : '#90CAF9',
+            lightblueColor: isLight ? '#29B6F6' : '#81D4FA',
+            cyanColor: isLight ? '#00ACC1' : '#4DD0E1',
+            tealColor: isLight ? '#26A69A' : '#80CBC4',
+            greenColor: isLight ? '#66BB6A' : '#A5D6A7',
+            lightgreenColor: isLight ? '#9CCC65' : '#C5E1A5',
+            limeColor: isLight ? '#D4E157' : '#E6EE9C',
+            yellowColor: isLight ? 'FFEE58' : '#FFF59D',
+            amberColor: isLight ? '#FFCA28' : '#FFE082',
+            orangeColor: isLight ? '#FFA726' : '#FFCC80',
+            deeporangeColor: isLight ? '#FF7043' : '#FFAB91',
+            brownColor: isLight ? '#8D6E63' : '#BCAAA4'
         }
     }
 
     getChartData() {
-        const { blueColor, pinkColor, indigoColor, orangeColor, purpleColor,
-            greenColor, limeColor, brownColor, cyanColor }  = this.getColors();
+        const { limeColor, amberColor, orangeColor, blueColor, lightblueColor,
+            cyanColor, tealColor, greenColor, lightgreenColor }  = this.getColors();
 
         return {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
                     label: '2012',
-                    data: [89,18,95,18,97,61,54],
+                    data: [6,25,97,12,7,70,42],
                     borderColor: blueColor,
                     backgroundColor: blueColor,
                     borderWidth: 2,
@@ -293,47 +300,47 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2013',
-                    data: [18,36,39,58,41,50,72],
-                    borderColor: pinkColor,
-                    backgroundColor: pinkColor,
+                    data: [81,3,5,11,59,47,99],
+                    borderColor: lightblueColor,
+                    backgroundColor: lightblueColor,
                     borderWidth: 2,
                     fill: true
                 },
                 {
                     label: '2014',
-                    data: [31,4,35,74,47,35,46],
-                    borderColor: indigoColor,
-                    backgroundColor: indigoColor,
+                    data: [68,47,46,46,61,70,94],
+                    borderColor: cyanColor,
+                    backgroundColor: cyanColor,
                     borderWidth: 2,
                     fill: true
                 },
                 {
                     label: '2015',
-                    data: [6,25,97,12,7,70,42],
-                    borderColor: orangeColor,
-                    backgroundColor: orangeColor,
+                    data: [31,9,18,76,6,11,79],
+                    borderColor: tealColor,
+                    backgroundColor: tealColor,
                     borderWidth: 2,
                     fill: true
                 },
                 {
                     label: '2016',
-                    data: [81,3,5,11,59,47,99],
-                    borderColor: purpleColor,
-                    backgroundColor: purpleColor,
-                    borderWidth: 2,
-                    fill: true
-                },
-                {
-                    label: '2017',
-                    data: [68,47,46,46,61,70,94],
+                    data: [85,37,47,29,2,10,54],
                     borderColor: greenColor,
                     backgroundColor: greenColor,
                     borderWidth: 2,
                     fill: true
                 },
                 {
+                    label: '2017',
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                    borderColor: lightgreenColor,
+                    backgroundColor: lightgreenColor,
+                    borderWidth: 2,
+                    fill: true
+                },
+                {
                     label: '2018',
-                    data: [31,9,18,76,6,11,79],
+                    data: [89,18,95,18,97,61,54],
                     borderColor: limeColor,
                     backgroundColor: limeColor,
                     borderWidth: 2,
@@ -341,17 +348,17 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2019',
-                    data: [85,37,47,29,2,10,54],
-                    borderColor: brownColor,
-                    backgroundColor: brownColor,
+                    data: [18,36,39,58,41,50,72],
+                    borderColor: amberColor,
+                    backgroundColor: amberColor,
                     borderWidth: 2,
                     fill: true
                 },
                 {
                     label: '2020',
-                    data: [28, 48, 40, 19, 86, 27, 90],
-                    borderColor: cyanColor,
-                    backgroundColor: cyanColor,
+                    data: [31,4,35,74,47,35,46],
+                    borderColor: orangeColor,
+                    backgroundColor: orangeColor,
                     borderWidth: 2,
                     fill: true
                 }
@@ -399,8 +406,8 @@ export class DashboardAnalyticsComponent implements OnInit {
     }
 
     getDoughnutData() {
-        const { blueColor, pinkColor, indigoColor, orangeColor, purpleColor,
-            greenColor, brownColor }  = this.getColors();
+        const { blueColor, lightblueColor, cyanColor, tealColor, greenColor,
+            lightgreenColor, orangeColor }  = this.getColors();
         const borderColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
 
         return {
@@ -408,7 +415,7 @@ export class DashboardAnalyticsComponent implements OnInit {
             datasets: [
                 {
                     data: [11, 29, 71, 33, 28, 95, 6],
-                    backgroundColor: [blueColor, pinkColor, indigoColor, orangeColor, purpleColor, greenColor, brownColor],
+                    backgroundColor: [blueColor, lightblueColor, cyanColor, tealColor, greenColor, lightgreenColor, orangeColor],
                     borderColor
                 }
             ]
