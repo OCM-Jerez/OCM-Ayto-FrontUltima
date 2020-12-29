@@ -76,7 +76,7 @@
     </div>
 
     <div class="p-col-12 p-lg-6">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Contact</h5>
                 <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
@@ -150,12 +150,12 @@
                 <h5>Order Graph</h5>
                 <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <p-chart type="line" [data]="mainData"></p-chart>
+            <p-chart type="line" [data]="ordersChart" [options]="ordersOptions"></p-chart>
         </div>
     </div>
 
     <div class="p-col-12 p-lg-6">
-        <div class="card widget-timeline">
+        <div class="card height-100 widget-timeline">
             <div class="card-header">
                 <h5>Timeline</h5>
                 <a href="#"><i class="pi pi-ellipsis-h"></i></a>
@@ -180,7 +180,7 @@
 
     <div class="p-col-12 p-md-12 p-lg-6">
         <div class="card">
-            <p-table [value]="products" [paginator]="true" [rows]="8">
+            <p-table [value]="products" [paginator]="true" [rows]="10">
                 <ng-template pTemplate="header">
                     <tr>
                         <th></th>
@@ -217,10 +217,10 @@
 
 
     <div class="p-col-12 p-lg-6">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Chat</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
             </div>
             <div class="widget-chat">
                 <ul>
@@ -271,10 +271,10 @@
     </div>
 
     <div class="p-col-12 p-lg-3">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Activity</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
             </div>
 
             <ul class="widget-activity">
@@ -282,54 +282,53 @@
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Income</div>
                         <div class="activity-subtext p-mb-2">30 November, 16.20</div>
-                        <p-progressBar [value]="50" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
                 <li>
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Tax</div>
                         <div class="activity-subtext p-mb-2">1 December, 15.27</div>
-                        <p-progressBar [value]="15" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="15" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
                 <li>
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Invoices</div>
                         <div class="activity-subtext p-mb-2">1 December, 15.28</div>
-                        <p-progressBar [value]="78" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="78" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
                 <li>
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Expanses</div>
                         <div class="activity-subtext p-mb-2">3 December, 09.15</div>
-                        <p-progressBar [value]="66" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="66" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
                 <li>
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Bonus</div>
                         <div class="activity-subtext p-mb-2">1 December, 23.55</div>
-                        <p-progressBar [value]="85" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="85" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
                 <li>
                     <div class="activity-item p-d-flex p-flex-column">
                         <div class="activity-title p-mb-1">Revenue</div>
                         <div class="activity-subtext p-mb-2">30 November, 16.20</div>
-                        <p-progressBar [value]="54" [showValue]=false></p-progressBar>
+                        <p-progressBar [value]="54" [showValue]="false"></p-progressBar>
                     </div>
                 </li>
             </ul>
-
         </div>
     </div>
 
     <div class="p-col-12 p-lg-3">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Best Sellers</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
             </div>
             <ul class="widget-bestsellers">
                 <li>

@@ -19,6 +19,14 @@ body {
         color: $textSecondaryColor;
     }
 
+    .height-100 {
+        height: 100% !important;
+    }
+
+    .width-100 {
+        width: 100% !important;
+    }
+
     .fs-xsmall {
         font-size: .715rem !important;
     }
@@ -39,8 +47,56 @@ body {
         font-size: 2rem !important;
     }
 
+    .fs-xxlarge {
+        font-size: 3rem !important;
+    }
+
+    .fw-400 {
+        font-weight: 400 !important;
+    }
+
+    .fw-500 {
+        font-weight: 500 !important;
+    }
+
+    .fw-700 {
+        font-weight: 700 !important;
+    }
+
+    .rounded-small {
+        border-radius: 2px !important;
+    }
+
+    .rounded-normal {
+        border-radius: 4px !important;
+    }
+
+    .rounded-large {
+        border-radius: 6px !important;
+    }
+
     .rounded-circle {
         border-radius: 50% !important;
+    }
+
+    .rounded-none {
+        border-radius: 0 !important;
+    }
+
+    .divider-top {
+        border-top: 1px solid $dividerColor !important;
+    }
+
+    .divider-bottom {
+        border-bottom: 1px solid $dividerColor !important;
+    }
+
+    .divider-left {
+        border-left: 1px solid $dividerColor !important;
+    }
+
+    .divider-right {
+        border-right: 1px solid $dividerColor !important;
     }
 
     .muted-text {
@@ -121,6 +177,14 @@ body {
 
     .brown-color {
         color: $brown !important;
+    }
+
+    .content-bgcolor {
+        background-color: $contentBgColor !important;
+    }
+
+    .content-alt-bgcolor {
+        background-color: $contentAltBgColor !important;
     }
 
     .pink-bgcolor {

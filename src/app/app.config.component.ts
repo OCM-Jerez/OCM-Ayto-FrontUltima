@@ -272,7 +272,7 @@ export class AppConfigComponent implements OnInit {
         urlTokens[urlTokens.length - 1] = 'theme-' + this.app.layoutMode + '.css';
         const newURL = urlTokens.join('/');
 
-        this.replaceLink(themeLink, newURL, this.appMain['refreshTrafficChart']);
+        this.replaceLink(themeLink, newURL, this.appMain['refreshChart']);
     }
 
     changeTheme(theme) {
@@ -280,7 +280,7 @@ export class AppConfigComponent implements OnInit {
 
         const themeLink: HTMLLinkElement = document.getElementById('theme-css') as HTMLLinkElement;
         const themeHref = 'assets/theme/' + theme + '/theme-' + this.app.layoutMode + '.css';
-        this.replaceLink(themeLink, themeHref, this.appMain['refreshTrafficChart']);
+        this.replaceLink(themeLink, themeHref);
     }
 
     changeMenuTheme(theme) {
@@ -302,7 +302,7 @@ export class AppConfigComponent implements OnInit {
         else {
             appLogoLink.src = 'assets/layout/images/logo-light.svg';
         }
-        
+
     }
 
     isIE() {

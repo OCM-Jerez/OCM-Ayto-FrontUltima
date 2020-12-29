@@ -1,12 +1,12 @@
 <div class="p-grid dashboard">
     <div class="p-col-12 p-md-8">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Monthly Comparison</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <button pRipple pButton type="button" label="Vertical/Stacked Data" class="p-button-text p-ml-auto" (click)="changeMonthlyDataView()"></button>
             </div>
-            
-            <p-chart type="bar" [data]="chartMonthlyData" responsive="true"></p-chart>
+
+            <p-chart #bar type="bar" [data]="chartMonthlyData" [options]="chartMonthlyOptions" responsive="true" height="400px"></p-chart>
         </div>
     </div>
 
@@ -16,55 +16,27 @@
                 <h5>Insights</h5>
                 <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="card-subheader p-mb-2 p-pb-3">
-                November 22 - November 29
+            <div class="card-subheader p-mb-2 p-d-flex p-ai-center">
+                <span>November 22 - November 29</span>
+                <button pRipple pButton type="button" label="Semi/Full Data" class="p-button-text p-ml-auto" (click)="changeDoughnutDataView()"></button>
             </div>
-            <div class="p-grid insight-graph">
-                <div class="p-col-1 p-offset-3">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill mon"></div></div>
-                    M
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill tue"></div></div>
-                    T
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill wed"></div></div>
-                    W
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill thu"></div></div>
-                    T
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill fri"></div></div>
-                    F
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill sat"></div></div>
-                    S
-                </div>
-                <div class="p-col-1">
-                    <div class="bar p-d-flex p-flex-column-reverse"><div class="fill sun"></div></div>
-                    S
-                </div>
-            </div>
-            <div class="p-d-flex p-flex-column p-ai-center insight-container">
-                <div class="insight-item p-d-flex p-flex-row p-mt-4 p-px-3">
-                    <i class="pi pi-thumbs-up"></i>
+            <p-chart #doughnut type="doughnut" [data]="doughnutData" [options]="doughnutOptions" responsive="true"></p-chart>
+            <div class="p-d-flex p-flex-column p-jc-center">
+                <div class="p-d-flex p-flex-row p-ai-center p-mt-4 p-px-3">
+                    <i class="pi pi-thumbs-up p-p-3 rounded-circle green-bgcolor white-color"></i>
                     <div class="p-d-flex p-flex-column p-ml-3">
-                        <span class="title">Best Day of the Week</span>
-                        <span class="day">Monday</span>
+                        <span>Best Day of the Week</span>
+                        <small>Friday</small>
                     </div>
-                    <span class="value">660</span>
+                    <span class="indigo-color p-ml-auto">95</span>
                 </div>
-                <div class="insight-item p-d-flex p-flex-row p-my-4 p-px-3">
-                    <i class="pi pi-thumbs-down type2"></i>
+                <div class="p-d-flex p-flex-row p-ai-center p-my-4 p-px-3">
+                    <i class="pi pi-thumbs-down rounded-circle p-p-3 brown-bgcolor white-color"></i>
                     <div class="p-d-flex p-flex-column p-ml-3">
-                        <span class="title">Worst Day of the Week</span>
-                        <span class="day">Wednesday</span>
+                        <span>Worst Day of the Week</span>
+                        <small>Saturday</small>
                     </div>
-                    <span class="value">34</span>
+                    <span class="indigo-color p-ml-auto">6</span>
                 </div>
             </div>
         </div>
@@ -74,7 +46,7 @@
         <div class="card widget-social">
             <div class="p-d-flex p-jc-between p-ai-center p-p-3">
                 <div class="social-icon">
-                    <i class="pi pi-twitter"></i>
+                    <i class="pi pi-twitter blue-color fs-xxlarge"></i>
                 </div>
                 <div class="info p-d-flex p-flex-column">
                     <span class="value">44.995</span>
@@ -101,7 +73,7 @@
         <div class="card widget-social">
             <div class="p-d-flex p-jc-between p-ai-center p-p-3">
                 <div class="social-icon">
-                    <i class="pi pi-facebook"></i>
+                    <i class="pi pi-facebook indigo-color fs-xxlarge"></i>
                 </div>
                 <div class="info p-d-flex p-flex-column">
                     <span class="value">44.995</span>
@@ -128,7 +100,7 @@
         <div class="card widget-social">
             <div class="p-d-flex p-jc-between p-ai-center p-p-3">
                 <div class="social-icon">
-                    <i class="pi pi-github"></i>
+                    <i class="pi pi-github text-color fs-xxlarge"></i>
                 </div>
                 <div class="info p-d-flex p-flex-column">
                     <span class="value">81.002</span>
@@ -205,7 +177,7 @@
     </div>
 
     <div class="p-col-12 p-md-6">
-        <div class="card widget-topsearchs">
+        <div class="card height-100 widget-topsearchs">
             <div class=card-header>
                 <h5>Top Searchs</h5>
                 <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
@@ -236,7 +208,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="p-col-12 p-md-6">
         <div class="card">
             <p-table [value]="products" [paginator]="true" [rows]="4">
@@ -286,7 +258,7 @@
                 November 22 - November 29
             </div>
 
-            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
+            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-cloud type p-mb-2"></i>
                     <span class="value p-mb-1">$30.247</span>
@@ -294,7 +266,7 @@
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
+            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-tag type p-mb-2"></i>
                     <span class="value p-mb-1">$29.550</span>
@@ -302,7 +274,7 @@
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
+            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-desktop type p-mb-2"></i>
                     <span class="value p-mb-1">$16.660</span>
@@ -310,7 +282,7 @@
                 </div>
                 <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">            
+            <div class="p-d-flex p-jc-between p-ai-center p-my-2 item">
                 <div class="p-d-flex p-flex-column">
                     <i class="pi pi-compass type p-mb-2"></i>
                     <span class="value p-mb-1">$5.801</span>

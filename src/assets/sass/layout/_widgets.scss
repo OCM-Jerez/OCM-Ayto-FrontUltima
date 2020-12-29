@@ -1,16 +1,8 @@
-.overview-box {    
+.overview-box {
     .overview-status {
         font-weight: 500;
         border-radius: 2px;
         color: $bodyBgColor;
-    }
-}
-
-.widget-feature-box {
-    .image-container {
-        width: 100%;
-        background-color: $contentAltBgColor;
-        border-radius: 4px;
     }
 }
 
@@ -138,77 +130,6 @@
         color: $textSecondaryColor;
         border-bottom: 1px solid $dividerColor;
     }
-
-    .insight-container {
-        i {
-            background-color: #0097A7;
-            padding: .5rem;
-            font-size: 1.5rem;
-            color: white;
-            border-radius: 50%;
-
-            &.type2 {
-                background-color: #455A64;
-            }
-        }
-
-        .insight-item {
-            width: 100%;
-
-            .value {
-                margin-left: auto;
-                color: #0097A7;
-                font-weight: 500;
-            }
-
-            .day {
-                color: $textSecondaryColor;
-            }
-        }
-    }
-
-    .insight-graph {
-        .bar {
-            background-color: #80DEEA;
-            height: 10rem;
-            width: 1rem;
-            border-radius: 20px;
-            margin-bottom: .25rem;
-
-            .fill {
-                background-color: #0097A7;
-                border-radius: 20px;
-
-                &.mon{
-                    height: 8rem;
-                }
-
-                &.tue{
-                    height: 5rem;
-                }
-
-                &.wed{
-                    height: 4rem;
-                }
-
-                &.thu{
-                    height: 5.5rem;
-                }
-
-                &.fri{
-                    height: 3rem;
-                }
-
-                &.sat{
-                    height: 4.5rem;
-                }
-
-                &.sun{
-                    height: 6.5rem;
-                }
-            }
-        }
-    }
 }
 
 .widget-sales {
@@ -236,20 +157,6 @@
 }
 
 .widget-social {
-
-    i {
-        color: #1DA1F2;
-        font-size: 3rem;
-
-        &.pi-facebook {
-            color: #4267B2;
-        }
-
-        &.pi-github {
-            color: #333333;
-        }
-    }
-
     .info {
         text-align: right;
 
@@ -296,37 +203,16 @@
 
 }
 
-.widget-daily-users {
+.widget-overlay {
     position: relative;
 
-    .graph-container {
+    .overlay-header {
         position: relative;
         height: 20rem;
         top:-3rem;
         background-color: $contentBgColor;
         border-radius: 4px;
         box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-    }
-
-    .info {
-        .value {
-            font-size: 3rem;
-            font-weight: 500;
-            color: #00838F;
-        }
-
-        .subtext {
-            color: $textSecondaryColor;
-        }
-
-        i {
-            padding: 1rem;
-            border-radius: 50%;
-            background-color: #B2DFDB;
-            color: #00838F;
-            font-size: 3rem;
-        }
-
     }
 }
 
@@ -362,59 +248,25 @@
     }
 }
 
-.widget-blog {
-    position: relative;
-
-    .image-container {
-        position: relative;
-        top: -3rem;
-        height: 20rem;
-        border-radius: 4px;
-        box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-
-        background-image: url("../../layout/images/dashboard/image-blog.jpg");
-        background-size: cover;
+.widget-timeline {
+    .p-timeline.p-timeline-vertical .p-timeline-event-opposite {
+        flex: 0;
+        padding: 0;
     }
 
-    .title {
-        font-size: 1.5rem;
-        font-weight: 500;
-    }
+    .p-timeline-event-separator {
+        .marker-icon {
+            color: white;
+        }
 
-    .category {
-        background-color: #00838F;
-        border-radius: 2px;
-        padding: .25rem .5rem;
-        font-weight: 500;
-        color: white;
-        line-height: 1.5;
-    }
-
-    .content {
-        text-align: center;
-        line-height: 1.5;
-    }
-}
-
-.p-timeline.p-timeline-vertical .p-timeline-event-opposite {
-    flex: 0;
-    padding: 0;
-}
-
-.p-timeline-event-separator {
-    .marker-icon {
-        color: white;
-    }
-
-    .custom-marker {
-        border-radius: 4px;
+        .custom-marker {
+            border-radius: 4px;
+        }
     }
 }
 
 .widget-activity {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    @include reset-list;
 
     >li {
         padding: 1rem 0;
@@ -479,9 +331,7 @@
 }
 
 .widget-bestsellers {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    @include reset-list;
 
     >li {
         padding: 1rem 0;
@@ -519,68 +369,6 @@
     }
 }
 
-.widget-colorbox {
-    padding: 0 !important;
-    text-align: center;
-    overflow: hidden;
-    margin: 0 !important;
-
-    i {
-        font-size: 36px;
-        margin-top: 10px;
-        color: #ffffff;
-    }
-
-    .colorbox-name {
-        font-size: 20px;
-        display: inline-block;
-        width: 100%;
-        margin: 4px 0 10px 0;
-        color: #ffffff;
-    }
-
-    .colorbox-count {
-        color: #ffffff;
-        font-size: 36px;
-    }
-
-    .colorbox-count {
-        font-weight: bold;
-    }
-
-    &.colorbox-1 {
-        background-color: #4CAF50;
-
-        div:first-child {
-            background-color: #2E7D32;
-        }
-    }
-
-    &.colorbox-2 {
-        background-color: #03A9F4;
-
-        div:first-child {
-            background-color: #0277BD;
-        }
-    }
-
-    &.colorbox-3 {
-        background-color: #673AB7;
-
-        div:first-child {
-            background-color: #4527A0;
-        }
-    }
-
-    &.colorbox-4 {
-        background-color: #009688;
-
-        div:first-child {
-            background-color: #00695C;
-        }
-    }
-}
-
 .widget-map {
     .map-container {
         background-image: url("../../layout/images/dashboard/map.jpg");
@@ -592,28 +380,30 @@
 
 .widget-chat {
     ul {
+        @include reset-list;
         padding: 1rem;
-        margin: 0;
-        list-style-type: none;
 
         li {
             img {
                 width: 32px;
             }
 
+            .message {
+                color: $bodyBgColor;
+            }
+
             &.from {
-                .message{
+                .message {
                     padding: 1rem;
-                    color: $bodyBgColor;
                     border-radius: 30px;
                 }
             }
 
             &.own {
                 text-align: right;
-                .message{
+
+                .message {
                     padding: 1rem;
-                    color: $bodyBgColor;
                     border-radius: 30px;
                 }
             }
@@ -631,27 +421,6 @@
         .p-inputgroup-addon:last-child {
             border-top-right-radius: 30px;
             border-bottom-right-radius: 30px;
-        }
-    }
-}
-
-.widget-activity-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-        border-bottom: 1px solid $dividerColor;
-        padding: 16px 8px;
-
-        .count {
-            font-size: 20px;
-            color: #ffffff;
-            background-color: #007be5;
-            font-weight: 700;
-            padding: .25em .5em;
-            display: inline-block;
-            border-radius: $borderRadius;
         }
     }
 }

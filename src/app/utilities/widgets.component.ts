@@ -7,6 +7,8 @@ import {AppBreadcrumbService} from '../app.breadcrumb.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { AppMainComponent } from '../app.main.component';
+import { AppComponent } from '../app.component';
 
 @Component({
     templateUrl: './widgets.component.html'
@@ -18,6 +20,8 @@ export class WidgetsComponent implements OnInit {
     products: Product[];
 
     chartData: any;
+
+    chartOptions: any;
 
     chartMonthlyData: any;
 
@@ -35,7 +39,7 @@ export class WidgetsComponent implements OnInit {
 
     timelineEvents: any[];
 
-    constructor(private productService: ProductService, private eventService: EventService, private breadcrumbService: AppBreadcrumbService) {
+    constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'Utilities' },
             { label: 'Widgets', routerLink: ['/utilities/widgets'] }
@@ -71,20 +75,12 @@ export class WidgetsComponent implements OnInit {
             }]
         };
 
-        this.chartData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [
-                {
-                    label: 'Completed',
-                    data: [65, 59, 80, 81, 56, 55, 40],
-                    borderColor: '#4DD0E1'
-                },
-                {
-                    label: 'Cancelled',
-                    data: [28, 48, 40, 19, 86, 27, 90],
-                    borderColor: '#FF9800'
-                }
-            ]
+        this.chartData = this.getChartData();
+        this.chartOptions = this.getChartOptions();
+
+        this.appMain['refreshChart'] = () => {
+            this.chartData = this.getChartData();
+            this.chartOptions = this.getChartOptions();
         };
 
         this.chartMonthlyData = {
@@ -165,5 +161,71 @@ export class WidgetsComponent implements OnInit {
             {status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7'},
             {status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7'}
         ];
+    }
+
+    getChartData() {
+        const isLight = this.app.layoutMode === 'light';
+        const completedColors = {
+            borderColor: isLight ? '#00ACC1' : '#4DD0E1',
+            backgroundColor: isLight ? 'rgb(0, 172, 193, .3)' : 'rgb(77, 208, 225, .3)'
+        };
+        const canceledColors = {
+            borderColor: isLight ? '#FF9800' : '#FFB74D',
+            backgroundColor: isLight ? 'rgb(255, 152, 0, .3)' : 'rgb(255, 183, 77, .3)'
+        };
+
+        return {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'Completed',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    borderColor: completedColors.borderColor,
+                    backgroundColor: completedColors.backgroundColor,
+                    borderWidth: 2,
+                    fill: true
+                },
+                {
+                    label: 'Cancelled',
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                    borderColor: canceledColors.borderColor,
+                    backgroundColor: canceledColors.backgroundColor,
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        };
+    }
+
+    getChartOptions() {
+        const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
+        const gridLinesColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
+        return {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: textColor
+                }
+            },
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: textColor
+                    },
+                    gridLines: {
+                        color: gridLinesColor
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: textColor
+                    },
+                    gridLines: {
+                        color: gridLinesColor
+                    }
+                }]
+            }
+        }
     }
 }

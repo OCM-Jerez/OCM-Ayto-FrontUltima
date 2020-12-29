@@ -16,6 +16,10 @@
             display: block;
             position: relative;
 
+            &.p-disabled {
+                opacity: .1;
+            }
+
             .color {
                 display: inline-block;
                 width: 100%;

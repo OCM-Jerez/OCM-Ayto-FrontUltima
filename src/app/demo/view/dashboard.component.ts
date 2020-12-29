@@ -7,6 +7,7 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import { AppMainComponent } from 'src/app/app.main.component';
 
 @Component({
     templateUrl: './dashboard.component.html'
@@ -17,7 +18,9 @@ export class DashboardComponent implements OnInit {
 
     products: Product[];
 
-    chartData: any;
+    ordersChart: any;
+
+    ordersOptions: any;
 
     chartMonthlyData: any;
 
@@ -25,7 +28,7 @@ export class DashboardComponent implements OnInit {
 
     pieData: any;
 
-    mainData: any;
+    chartData: any;
 
     events: any[];
 
@@ -35,7 +38,7 @@ export class DashboardComponent implements OnInit {
 
     timelineEvents: any[];
 
-    constructor(private productService: ProductService, private eventService: EventService,
+    constructor(public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
                 private breadcrumbService: AppBreadcrumbService) {
       this.breadcrumbService.setItems([
           {label: 'Dashboard', routerLink: ['/']}
@@ -54,20 +57,37 @@ export class DashboardComponent implements OnInit {
         this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
         this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
 
-        this.mainData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        this.ordersChart = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                label: 'New',
-                data: [2, 7, 20, 9, 16, 9, 5],
-                backgroundColor: [
-                    'rgba(77, 208, 225, 0.5)',
-                ],
+                label: 'New Orders',
+                data: [31, 83, 69, 29, 62, 25, 59, 26, 46],
                 borderColor: [
-                    '#45B2C0',
+                    '#4DD0E1',
                 ],
-                borderWidth: 3,
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
                 fill: true
+            }, {
+                label: 'Completed Orders',
+                data: [67, 98, 27, 88, 38, 3, 22, 60, 56],
+                borderColor: [
+                    '#3F51B5',
+                ],
+                backgroundColor: [
+                    'rgba(63, 81, 181, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true,
             }]
+        };
+
+        this.ordersOptions = this.getOrdersOptions();
+
+        this.appMain['refreshChart'] = () => {
+            this.ordersOptions = this.getOrdersOptions();
         };
 
         this.chartData = {
@@ -166,5 +186,37 @@ export class DashboardComponent implements OnInit {
             {status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7'},
             {status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7'}
         ];
+    }
+
+    getOrdersOptions() {
+        const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
+        const gridLinesColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
+        return {
+            legend: {
+                display: true,
+                labels: {
+                    fontColor: textColor
+                }
+            },
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        fontColor: textColor
+                    },
+                    gridLines: {
+                        color: gridLinesColor
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: textColor
+                    },
+                    gridLines: {
+                        color: gridLinesColor
+                    }
+                }]
+            }
+        }
     }
 }
