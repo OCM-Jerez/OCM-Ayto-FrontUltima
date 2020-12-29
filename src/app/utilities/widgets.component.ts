@@ -27,17 +27,23 @@ export class WidgetsComponent implements OnInit {
 
     radarChartData: any;
 
-    pieData: any;
-
     mainData: any;
 
     events: any[];
 
     selectedCity: any;
 
-    scheduleOptions: any;
-
     timelineEvents: any[];
+
+    overviewChartData1: any;
+
+    overviewChartData2: any;
+
+    overviewChartData3: any;
+
+    overviewChartData4: any;
+
+    overviewChartOptions: any;
 
     constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
@@ -78,9 +84,96 @@ export class WidgetsComponent implements OnInit {
         this.chartData = this.getChartData();
         this.chartOptions = this.getChartOptions();
 
+        this.overviewChartData1 = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [18,11,15,5,25,30,29,22,17],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.overviewChartData2 = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [11,3,5,11,30,16,1,1,30],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.overviewChartData3 = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [3,12,18,8,9,15,24,3,17],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.overviewChartData4 = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [29,29,17,9,30,28,6,23,2],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.overviewChartOptions = {
+            legend: {
+                display: false
+            },
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    display: false
+                }],
+                xAxes: [{
+                    display: false
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            },
+        };
+
+        this.setOverviewColors();
+
         this.appMain['refreshChart'] = () => {
             this.chartData = this.getChartData();
             this.chartOptions = this.getChartOptions();
+
+            this.setOverviewColors();
         };
 
         this.chartMonthlyData = {
@@ -99,16 +192,6 @@ export class WidgetsComponent implements OnInit {
                     data: [28, 48, 40, 19, 86, 27, 90]
                 }
             ]
-        };
-
-        this.scheduleOptions = {
-            plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
-            defaultDate: '2017-02-12',
-            header: {
-                left: 'prev,next',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
-            }
         };
 
         this.radarChartData = {
@@ -137,30 +220,36 @@ export class WidgetsComponent implements OnInit {
             ]
         };
 
-        this.pieData = {
-            labels: ['O','D','R'],
-            datasets: [
-                {
-                    data: [300, 50, 100],
-                    backgroundColor: [
-                        "#0097A7",
-                        "#EF6C00",
-                        "#455A64"
-                    ],
-                    hoverBackgroundColor: [
-                        "#00818E",
-                        "#C55900",
-                        "#354851"
-                    ]
-                }]
-        };
-
         this.timelineEvents = [
             {status: 'Ordered', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63'},
             {status: 'Processing', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00'},
             {status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7'},
             {status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7'}
         ];
+    }
+
+    setOverviewColors() {
+        const { pinkColor, tealColor } = this.getOverviewColors();
+
+        this.overviewChartData1.datasets[0].borderColor[0] = tealColor;
+        this.overviewChartData1.datasets[0].backgroundColor[0] = tealColor;
+
+        this.overviewChartData2.datasets[0].borderColor[0] = tealColor;
+        this.overviewChartData2.datasets[0].backgroundColor[0] = tealColor;
+
+        this.overviewChartData3.datasets[0].borderColor[0] = pinkColor;
+        this.overviewChartData3.datasets[0].backgroundColor[0] = pinkColor;
+
+        this.overviewChartData4.datasets[0].borderColor[0] = tealColor;
+        this.overviewChartData4.datasets[0].backgroundColor[0] = tealColor;
+    }
+
+    getOverviewColors() {
+        const isLight = this.app.layoutMode === 'light';
+        return {
+            pinkColor: isLight ? '#EC407A' : '#F48FB1',
+            tealColor: isLight ? '#26A69A' : '#80CBC4'
+        }
     }
 
     getChartData() {

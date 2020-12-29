@@ -63,6 +63,8 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     pieData: any;
 
+    pieOptions: any;
+
     mainData: any;
 
     events: any[];
@@ -106,11 +108,16 @@ export class DashboardAnalyticsComponent implements OnInit {
         this.doughnutData = this.getDoughnutData();
         this.doughnutOptions = this.getDoughnutOptions();
 
+        this.pieData = this.getPieData();
+        this.pieOptions = this.getPieOptions();
+
         this.appMain['refreshChart'] = () => {
             this.chartMonthlyData = this.getChartData();
             this.chartMonthlyOptions = this.getChartOptions();
             this.doughnutData = this.getDoughnutData();
             this.doughnutOptions = this.getDoughnutOptions();
+            this.pieData = this.getPieData();
+            this.pieOptions = this.getPieOptions();
         };
 
         this.storeAData = {
@@ -235,24 +242,6 @@ export class DashboardAnalyticsComponent implements OnInit {
             this.storeDStatus = storeDStatus;
             this.storeDViewChild.chart.update();
         }, 4000);
-
-        this.pieData = {
-            labels: ['O','D','R'],
-            datasets: [
-                {
-                    data: [300, 50, 100],
-                    backgroundColor: [
-                        "#0097A7",
-                        "#EF6C00",
-                        "#455A64"
-                    ],
-                    hoverBackgroundColor: [
-                        "#00818E",
-                        "#C55900",
-                        "#354851"
-                    ]
-                }]
-        };
     }
 
     ngOnDestroy() {
@@ -281,6 +270,42 @@ export class DashboardAnalyticsComponent implements OnInit {
             deeporangeColor: isLight ? '#FF7043' : '#FFAB91',
             brownColor: isLight ? '#8D6E63' : '#BCAAA4'
         }
+    }
+
+    getPieData() {
+        const { limeColor, blueColor, tealColor }  = this.getColors();
+        const borderColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
+        return {
+            labels: ['O','D','R'],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        blueColor,
+                        tealColor,
+                        limeColor
+                    ],
+                    borderColor
+                }
+            ]
+        }
+    }
+
+    getPieOptions() {
+        const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
+        return {
+            responsive: true,
+            legend: {
+                position: 'top',
+                labels: {
+                    fontColor: textColor
+                }
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            }
+        };
     }
 
     getChartData() {
@@ -432,6 +457,8 @@ export class DashboardAnalyticsComponent implements OnInit {
                     fontColor: textColor
                 }
             },
+            circumference: Math.PI,
+            rotation: -Math.PI,
             animation: {
                 animateScale: true,
                 animateRotate: true

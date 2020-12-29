@@ -306,13 +306,13 @@
     </div>
 
     <div class="p-col-12 p-md-8">
-        <div class="card widget-traffic">
+        <div class="card widget-traffic height-100">
             <div class=card-header>
                 <h5>All Traffic Channels</h5>
                 <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-grid">
-                <div class="p-col-12 p-md-6 left p-d-flex p-flex-column p-jc-around">
+                <div class="p-col-12 p-md-6 left p-d-flex p-flex-column p-jc-evenly">
                     <div class="total p-d-flex p-flex-column">
                         <span class="title p-mb-2">Total</span>
                         <span class="value p-mb-5">66.761</span>
@@ -322,31 +322,19 @@
                         <div class="organic p-d-flex p-flex-column">
                             <span class="title p-mb-1">Organic</span>
                             <span class="value">51.596</span>
-                            <span class="percent p-d-flex p-ai-center">
-                                <i class="pi pi-circle-on type-green p-mr-2"></i>
-                                35%
-                            </span>
                         </div>
                         <div class="direct p-d-flex p-flex-column">
                             <span class="title p-mb-1">Direct</span>
                             <span class="value">11.421</span>
-                            <span class="percent p-d-flex p-ai-center">
-                                <i class="pi pi-circle-on type-orange p-mr-2"></i>
-                                7%
-                            </span>
                         </div>
                         <div class="referral p-d-flex p-flex-column">
                             <span class="title p-mb-1">Referral</span>
                             <span class="value">3.862</span>
-                            <span class="percent p-d-flex p-ai-center">
-                                <i class="pi pi-circle-on type-gray p-mr-2"></i>
-                                32%
-                            </span>
                         </div>
                     </div>
                 </div>
                 <div class="p-col-12 p-md-6 right p-d-flex p-jc-center">
-                    <p-chart type="pie" [data]="pieData" height="250"></p-chart>
+                    <p-chart type="pie" [data]="pieData" [options]="pieOptions" height="350"></p-chart>
                 </div>
             </div>
         </div>

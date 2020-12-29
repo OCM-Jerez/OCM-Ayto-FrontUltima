@@ -6,13 +6,13 @@
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
                 <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4">
+            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">640</span>
                     <span class="overview-status p-p-1 teal-bgcolor fs-small">1420 Completed</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
-                    <img src="/assets/layout/images/dashboard/graph-orders.svg">
+                    <p-chart type="line" [data]="overviewChartData1" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
                 </div>
             </div>
         </div>
@@ -25,13 +25,13 @@
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
                 <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4">
+            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">$57K</span>
                     <span class="overview-status p-p-1 teal-bgcolor fs-small">$9,640 Income</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
-                    <img src="/assets/layout/images/dashboard/graph-revenue.svg">
+                    <p-chart type="line" [data]="overviewChartData2" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
                 </div>
             </div>
         </div>
@@ -44,13 +44,13 @@
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
                 <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4">
+            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">8572</span>
                     <span class="overview-status p-p-1 pink-bgcolor fs-small">25402 Registered</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
-                    <img src="/assets/layout/images/dashboard/graph-customers.svg">
+                    <p-chart type="line" [data]="overviewChartData3" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
                 </div>
             </div>
         </div>
@@ -63,13 +63,13 @@
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
                 <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4">
+            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">805</span>
                     <span class="overview-status p-p-1 teal-bgcolor fs-small">85 Responded</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
-                    <img src="/assets/layout/images/dashboard/graph-comments.svg">
+                    <p-chart type="line" [data]="overviewChartData4" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
                 </div>
             </div>
         </div>
