@@ -3,8 +3,8 @@
         <div class="card overview-box p-d-flex p-flex-column">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-shopping-cart"></i>
-                <h6 class="p-m-0 p-pl-2">Orders</h6>
-                <span class="p-ml-auto"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -22,8 +22,8 @@
         <div class="card overview-box p-d-flex p-flex-column">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-dollar"></i>
-                <h6 class="p-m-0 p-pl-2">Revenue</h6>
-                <span class="p-ml-auto"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -41,8 +41,8 @@
         <div class="card overview-box p-d-flex p-flex-column">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-users"></i>
-                <h6 class="p-m-0 p-pl-2">Customers</h6>
-                <span class="p-ml-auto"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -60,8 +60,8 @@
         <div class="card overview-box p-d-flex p-flex-column">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-comments"></i>
-                <h6 class="p-m-0 p-pl-2">Comments</h6>
-                <span class="p-ml-auto"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -86,59 +86,59 @@
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
                         <img src="/assets/layout/images/avatar.png">
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Amy Elsner</div>
                             <small class="muted-text">elsner@ultima.org</small>
                         </div>
                     </div>
-                    <span class="person-tag indigo-bgcolor p-p-1 p-ml-auto fs-small">Accounting</span>
-                    <span class="person-tag orange-bgcolor p-p-1 p-ml-2 fs-small">Sales</span>
+                    <span class="person-tag indigo-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Accounting</span>
+                    <span class="person-tag orange-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Sales</span>
                 </li>
 
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
                         <img src="/assets/layout/images/avatar1.png">
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Bernardo Dominic</div>
                             <small class="muted-text">dominic@ultima.org</small>
                         </div>
                     </div>
-                    <span class="person-tag teal-bgcolor p-p-1 p-ml-auto fs-small">Finance</span>
-                    <span class="person-tag orange-bgcolor p-p-1 p-ml-2 fs-small">Sales</span>
+                    <span class="person-tag teal-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Finance</span>
+                    <span class="person-tag orange-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Sales</span>
                 </li>
 
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
                         <img src="/assets/layout/images/avatar2.png">
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Anna Fali</div>
                             <small class="muted-text">fali@ultima.org</small>
                         </div>
                     </div>
-                    <span class="person-tag pink-bgcolor p-p-1 p-ml-auto fs-small">Management</span>
+                    <span class="person-tag pink-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Management</span>
                 </li>
 
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
                         <img src="/assets/layout/images/avatar3.png">
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Amelie Stone</div>
                             <small class="muted-text">stone@ultima.org</small>
                         </div>
                     </div>
-                    <span class="person-tag pink-bgcolor p-p-1 p-ml-auto fs-small">Management</span>
-                    <span class="person-tag teal-bgcolor p-p-1 p-ml-2 fs-small">Finance</span>
+                    <span class="person-tag pink-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Management</span>
+                    <span class="person-tag teal-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Finance</span>
                 </li>
 
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
                         <img src="/assets/layout/images/avatar4.png">
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Stephen Shaw</div>
                             <small class="muted-text">shaw@ultima.org</small>
                         </div>
                     </div>
-                    <span class="person-tag teal-bgcolor p-p-1 p-ml-auto fs-small">Finance</span>
+                    <span class="person-tag teal-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Finance</span>
                 </li>
             </ul>
         </div>
@@ -207,7 +207,7 @@
                         <td>{{product.category}}</td>
                         <td>{{product.price | currency:'USD'}}</td>
                         <td>
-                            <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mr-2 p-mb-1"></button>
+                            <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mb-1" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -225,7 +225,7 @@
             <div class="widget-chat">
                 <ul>
                     <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
                         <div class="messages p-d-flex p-flex-column p-ai-start">
                             <span class="message cyan-bgcolor p-mb-1">Hey M. hope you are well.</span>
                             <span class="message cyan-bgcolor">Our idea is accepted by the board. Now it’s time to execute it.</span>
@@ -237,7 +237,7 @@
                         </div>
                     </li>
                     <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
                         <div class="messages p-d-flex p-flex-column p-ai-start">
                             <span class="message cyan-bgcolor">That's really good!</span>
                         </div>
@@ -248,7 +248,7 @@
                         </div>
                     </li>
                     <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img class="p-mr-2" src="/assets/layout/images/avatar.png" alt="">
+                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
                         <div class="messages p-d-flex p-flex-column p-ai-start">
                             <span class="message cyan-bgcolor">I’ll be looking at the process then, just to be sure 🤓 </span>
                         </div>
@@ -333,49 +333,49 @@
             <ul class="widget-bestsellers">
                 <li>
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/blue-band.jpg" alt="">
+                        <img src="/assets/demo/images/product/blue-band.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Blue Band</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/bracelet.jpg" alt="">
+                        <img src="/assets/demo/images/product/bracelet.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Bracelet</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/black-watch.jpg" alt="">
+                        <img src="/assets/demo/images/product/black-watch.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Black Watch</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/bamboo-watch.jpg" alt="">
+                        <img src="/assets/demo/images/product/bamboo-watch.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Bamboo Watch</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/blue-t-shirt.jpg" alt="">
+                        <img src="/assets/demo/images/product/blue-t-shirt.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Blue T-Shirt</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/game-controller.jpg" alt="">
+                        <img src="/assets/demo/images/product/game-controller.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Game Controller</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/gold-phone-case.jpg" alt="">
+                        <img src="/assets/demo/images/product/gold-phone-case.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Phone Case</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>
 
                     <div class="bestseller-item p-d-flex p-ai-center p-p-3 p-mb-2">
-                        <img class="p-mr-3" src="/assets/demo/images/product/purple-t-shirt.jpg" alt="">
+                        <img src="/assets/demo/images/product/purple-t-shirt.jpg" alt="product" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">
                         <span>Purple T-Shirt</span>
                         <span class="item-button"><a href="#"><i class="pi pi-chevron-right"></i></a></span>
                     </div>

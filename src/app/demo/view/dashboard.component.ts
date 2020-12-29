@@ -8,6 +8,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { AppMainComponent } from 'src/app/app.main.component';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
     templateUrl: './dashboard.component.html'
@@ -38,7 +39,7 @@ export class DashboardComponent implements OnInit {
 
     timelineEvents: any[];
 
-    constructor(public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
+    constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
                 private breadcrumbService: AppBreadcrumbService) {
       this.breadcrumbService.setItems([
           {label: 'Dashboard', routerLink: ['/']}

@@ -3,7 +3,7 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Monthly Comparison</h5>
-                <button pRipple pButton type="button" label="Vertical/Stacked Data" class="p-button-text p-ml-auto" (click)="changeMonthlyDataView()"></button>
+                <button pRipple pButton type="button" label="Vertical/Stacked Data" class="p-button-text" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}" (click)="changeMonthlyDataView()"></button>
             </div>
 
             <p-chart #bar type="bar" [data]="chartMonthlyData" [options]="chartMonthlyOptions" responsive="true" height="400px"></p-chart>
@@ -18,25 +18,25 @@
             </div>
             <div class="card-subheader p-mb-2 p-d-flex p-ai-center">
                 <span>November 22 - November 29</span>
-                <button pRipple pButton type="button" label="Semi/Full Data" class="p-button-text p-ml-auto" (click)="changeDoughnutDataView()"></button>
+                <button pRipple pButton type="button" label="Semi/Full Data" class="p-button-text" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}" (click)="changeDoughnutDataView()"></button>
             </div>
             <p-chart #doughnut type="doughnut" [data]="doughnutData" [options]="doughnutOptions" responsive="true"></p-chart>
             <div class="p-d-flex p-flex-column p-jc-center">
                 <div class="p-d-flex p-flex-row p-ai-center p-mt-4 p-px-3">
                     <i class="pi pi-thumbs-up p-p-3 rounded-circle green-bgcolor white-color"></i>
-                    <div class="p-d-flex p-flex-column p-ml-3">
+                    <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}">
                         <span>Best Day of the Week</span>
                         <small>Friday</small>
                     </div>
-                    <span class="indigo-color p-ml-auto">95</span>
+                    <span class="indigo-color" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">95</span>
                 </div>
                 <div class="p-d-flex p-flex-row p-ai-center p-my-4 p-px-3">
                     <i class="pi pi-thumbs-down rounded-circle p-p-3 brown-bgcolor white-color"></i>
-                    <div class="p-d-flex p-flex-column p-ml-3">
+                    <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}">
                         <span>Worst Day of the Week</span>
                         <small>Saturday</small>
                     </div>
-                    <span class="indigo-color p-ml-auto">6</span>
+                    <span class="indigo-color" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">6</span>
                 </div>
             </div>
         </div>
@@ -58,12 +58,12 @@
                 <div class="left p-d-flex p-flex-column ">
                     <span class="title">Target</span>
                     <span class="value p-mb-2">10.000</span>
-                    <p-progressBar [value]="50" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="50" [showValue]="false"></p-progressBar>
                 </div>
                 <div class="right p-d-flex p-flex-column">
                     <span class="title">All Time Record</span>
                     <span class="value p-mb-2">50.702</span>
-                    <p-progressBar [value]="24" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="24" [showValue]="false"></p-progressBar>
                 </div>
             </div>
         </div>
@@ -85,12 +85,12 @@
                 <div class="left p-d-flex p-flex-column ">
                     <span class="title">Target</span>
                     <span class="value p-mb-2">10.000</span>
-                    <p-progressBar [value]="23" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="23" [showValue]="false"></p-progressBar>
                 </div>
                 <div class="right p-d-flex p-flex-column">
                     <span class="title">All Time Record</span>
                     <span class="value p-mb-2">99.028</span>
-                    <p-progressBar [value]="38" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="38" [showValue]="false"></p-progressBar>
                 </div>
             </div>
         </div>
@@ -112,12 +112,12 @@
                 <div class="left p-d-flex p-flex-column ">
                     <span class="title">Target</span>
                     <span class="value p-mb-2">10.000</span>
-                    <p-progressBar [value]="62" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="62" [showValue]="false"></p-progressBar>
                 </div>
                 <div class="right p-d-flex p-flex-column">
                     <span class="title">All Time Record</span>
                     <span class="value p-mb-2">162.550</span>
-                    <p-progressBar [value]="14" [showValue]=false></p-progressBar>
+                    <p-progressBar [value]="14" [showValue]="false"></p-progressBar>
                 </div>
             </div>
         </div>
@@ -129,9 +129,9 @@
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
                     <span class="muted-text">Store A Sales</span>
                     <span class="fs-large p-mt-2">
-                        <i *ngIf="storeADiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeADiff > 0, 'pi-arrow-down pink-color': storeADiff < 0}"></i>
+                        <i *ngIf="storeADiff !== 0" class="fw-700 fs-large pi" [ngClass]="{'p-pr-1': !app.isRTL, 'p-pl-1': app.isRTL, 'pi-arrow-up green-color': storeADiff > 0, 'pi-arrow-down pink-color': storeADiff < 0}"></i>
                         ${{storeATotalValue}}
-                        <span *ngIf="storeADiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeADiff > 0, 'pink-color': storeADiff < 0}">
+                        <span *ngIf="storeADiff !== 0" class="fw-500 fs-normal" [ngClass]="{'p-ml-1': !app.isRTL, 'p-mr-1': app.isRTL, 'green-color': storeADiff > 0, 'pink-color': storeADiff < 0}">
                             {{storeADiff > 0 ? '+' : ''}}{{storeADiff}}
                         </span>
                     </span>
@@ -144,9 +144,9 @@
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
                     <span class="muted-text">Store B Sales</span>
                     <span class="fs-large p-mt-2">
-                        <i *ngIf="storeBDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeBDiff > 0, 'pi-arrow-down pink-color': storeBDiff < 0}"></i>
+                        <i *ngIf="storeBDiff !== 0" class="fw-700 fs-large pi" [ngClass]="{'p-pr-1': !app.isRTL, 'p-pl-1': app.isRTL, 'pi-arrow-up green-color': storeBDiff > 0, 'pi-arrow-down pink-color': storeBDiff < 0}"></i>
                         ${{storeBTotalValue}}
-                        <span *ngIf="storeBDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeBDiff > 0, 'pink-color': storeBDiff < 0}">
+                        <span *ngIf="storeBDiff !== 0" class="fw-500 fs-normal" [ngClass]="{'p-ml-1': !app.isRTL, 'p-mr-1': app.isRTL,'green-color': storeBDiff > 0, 'pink-color': storeBDiff < 0}">
                             {{storeBDiff > 0 ? '+' : ''}}{{storeBDiff}}
                         </span>
                     </span>
@@ -159,9 +159,9 @@
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
                     <span class="muted-text">Store C Sales</span>
                     <span class="fs-large p-mt-2">
-                        <i *ngIf="storeCDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeCDiff > 0, 'pi-arrow-down pink-color': storeCDiff < 0}"></i>
+                        <i *ngIf="storeCDiff !== 0" class="fw-700 fs-large pi" [ngClass]="{'p-pr-1': !app.isRTL, 'p-pl-1': app.isRTL, 'pi-arrow-up green-color': storeCDiff > 0, 'pi-arrow-down pink-color': storeCDiff < 0}"></i>
                         ${{storeCTotalValue}}
-                        <span *ngIf="storeCDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeCDiff > 0, 'pink-color': storeCDiff < 0}">
+                        <span *ngIf="storeCDiff !== 0" class="fw-500 fs-normal" [ngClass]="{'p-ml-1': !app.isRTL, 'p-mr-1': app.isRTL, 'green-color': storeCDiff > 0, 'pink-color': storeCDiff < 0}">
                             {{storeCDiff > 0 ? '+' : ''}}{{storeCDiff}}
                         </span>
                     </span>
@@ -174,9 +174,9 @@
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
                     <span class="muted-text">Store D Sales</span>
                     <span class="fs-large p-mt-2">
-                        <i *ngIf="storeDDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeDDiff > 0, 'pi-arrow-down pink-color': storeDDiff < 0}"></i>
+                        <i *ngIf="storeDDiff !== 0" class="fw-700 fs-large pi" [ngClass]="{'p-pr-1': !app.isRTL, 'p-pl-1': app.isRTL, 'pi-arrow-up green-color': storeDDiff > 0, 'pi-arrow-down pink-color': storeDDiff < 0}"></i>
                         ${{storeDTotalValue}}
-                        <span *ngIf="storeDDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeDDiff > 0, 'pink-color': storeDDiff < 0}">
+                        <span *ngIf="storeDDiff !== 0" class="fw-500 fs-normal" [ngClass]="{'p-ml-1': !app.isRTL, 'p-mr-1': app.isRTL, 'green-color': storeDDiff > 0, 'pink-color': storeDDiff < 0}">
                             {{storeDDiff > 0 ? '+' : ''}}{{storeDDiff}}
                         </span>
                     </span>

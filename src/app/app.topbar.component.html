@@ -36,7 +36,7 @@
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
-                            <span class="p-badge p-mr-1 p-mt-1">4</span>
+                            <span class="p-badge p-mt-1" [ngClass]="{'p-mr-1': !app.isRTL, 'p-ml-1': app.isRTL}">4</span>
                         </span>
                     </a>
 
@@ -47,7 +47,7 @@
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
                                 <img src="../assets/demo/images/avatar/avatar-1.png"/>
-                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Jerome Bell</span>
                                         <small>42 mins ago</small>
@@ -59,7 +59,7 @@
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
                                 <img src="../assets/demo/images/avatar/avatar-2.png"/>
-                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Cameron Williamson</span>
                                         <small>48 mins ago</small>
@@ -71,7 +71,7 @@
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
                                 <img src="../assets/demo/images/avatar/avatar-3.png"/>
-                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Anna Miles</span>
                                         <small>1 day ago</small>
@@ -83,7 +83,7 @@
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
                                 <img src="../assets/demo/images/avatar/avatar-4.png"/>
-                                <div class="p-d-flex p-flex-column p-ml-3" style="flex-grow: 1;">
+                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Arlene Mccoy</span>
                                         <small>4 day ago</small>
@@ -148,25 +148,25 @@
                     <ul class="layout-topbar-action-panel p-shadow-6">
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
-                                <i class="pi pi-cog p-mr-2"></i>
+                                <i class="pi pi-cog" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Settings</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
-                                <i class="pi pi-file-o p-mr-2"></i>
+                                <i class="pi pi-file-o" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Terms of Usage</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
-                                <i class="pi pi-compass p-mr-2"></i>
+                                <i class="pi pi-compass" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Support</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
-                                <i class="pi pi-power-off p-mr-2"></i>
+                                <i class="pi pi-power-off" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Logout</span>
                             </a>
                         </li>
@@ -174,7 +174,7 @@
                 </li>
                 <li class="layout-topbar-item">
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onRightPanelButtonClick($event)" pRipple>
-                        <i class="pi pi-arrow-left fs-large"></i>
+                        <i class="pi fs-large" [ngClass]="{'pi-arrow-left': !app.isRTL, 'pi-arrow-right': app.isRTL}"></i>
                     </a>
                 </li>
             </ul>

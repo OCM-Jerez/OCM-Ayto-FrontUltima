@@ -5,7 +5,7 @@ import { AppMainComponent } from './app.main.component';
 @Component({
     selector: 'app-config',
     template: `
-        <p-sidebar #sidebar [(visible)]="configActive" position="right" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
+        <p-sidebar #sidebar [(visible)]="configActive" [position]="app.isRTL ? 'left' : 'right'" [blockScroll]="true" [showCloseIcon]="false" [baseZIndex]="1000" styleClass="layout-config p-sidebar-sm fs-small p-p-0">
             <div class="layout-config-panel p-d-flex p-flex-column">
                 <div class="p-px-3 p-pt-3">
                     <h5>Theme Customization</h5>
@@ -19,11 +19,11 @@ import { AppMainComponent } from './app.main.component';
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
                             <p-radioButton name="layoutMode" value="light" [(ngModel)]="app.layoutMode" inputId="layoutMode1" (onClick)="onLayoutModeChange($event, 'light')"></p-radioButton>
-                            <label for="layoutMode1" class="p-ml-2">Light</label>
+                            <label for="layoutMode1" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Light</label>
                         </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
+                        <div class="p-d-flex p-ai-center" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
                             <p-radioButton name="layoutMode" value="dark" [(ngModel)]="app.layoutMode" inputId="layoutMode2" (onClick)="onLayoutModeChange($event, 'dark')"></p-radioButton>
-                            <label for="layoutMode2" class="p-ml-2">Dark</label>
+                            <label for="layoutMode2" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Dark</label>
                         </div>
                     </div>
 
@@ -32,21 +32,21 @@ import { AppMainComponent } from './app.main.component';
                         <div class="p-d-flex p-flex-column">
                             <div class="p-d-flex p-ai-center">
                                 <p-radioButton name="menuMode" value="static" [(ngModel)]="app.menuMode" inputId="menuMode1"></p-radioButton>
-                                <label for="menuMode1" class="p-ml-2">Static</label>
+                                <label for="menuMode1" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Static</label>
                             </div>
                             <div class="p-d-flex p-ai-center p-mt-3">
                                 <p-radioButton name="menuMode" value="horizontal" [(ngModel)]="app.menuMode" inputId="menuMode2"></p-radioButton>
-                                <label for="menuMode2" class="p-ml-2">Horizontal</label>
+                                <label for="menuMode2" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Horizontal</label>
                             </div>
                         </div>
-                        <div class="p-d-flex p-flex-column p-ml-4">
+                        <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
                             <div class="p-d-flex p-ai-center">
                                 <p-radioButton name="menuMode" value="overlay" [(ngModel)]="app.menuMode" inputId="menuMode4"></p-radioButton>
-                                <label for="menuMode4" class="p-ml-2">Overlay</label>
+                                <label for="menuMode4" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Overlay</label>
                             </div>
                             <div class="p-d-flex p-ai-center p-mt-3">
                                 <p-radioButton name="menuMode" value="slim" [(ngModel)]="app.menuMode" inputId="menuMode3"></p-radioButton>
-                                <label for="menuMode3" class="p-ml-2">Slim</label>
+                                <label for="menuMode3" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Slim</label>
                             </div>
                         </div>
                     </div>
@@ -55,15 +55,15 @@ import { AppMainComponent } from './app.main.component';
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
                             <p-radioButton name="inlineMenuPosition" value="top" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition1"></p-radioButton>
-                            <label for="inlineMenuPosition1" class="p-ml-2">Top</label>
+                            <label for="inlineMenuPosition1" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Top</label>
                         </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
+                        <div class="p-d-flex p-ai-center" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
                             <p-radioButton name="inlineMenuPosition" value="bottom" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition2"></p-radioButton>
-                            <label for="inlineMenuPosition2" class="p-ml-2">Bottom</label>
+                            <label for="inlineMenuPosition2" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Bottom</label>
                         </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
+                        <div class="p-d-flex p-ai-center" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
                             <p-radioButton name="inlineMenuPosition" value="both" [(ngModel)]="app.inlineMenuPosition" inputId="inlineMenuPosition3"></p-radioButton>
-                            <label for="inlineMenuPosition3" class="p-ml-2">Both</label>
+                            <label for="inlineMenuPosition3" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Both</label>
                         </div>
                     </div>
 
@@ -71,11 +71,11 @@ import { AppMainComponent } from './app.main.component';
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
                             <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
-                            <label for="inputStyle1" class="p-ml-2">Outlined</label>
+                            <label for="inputStyle1" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Outlined</label>
                         </div>
-                        <div class="p-d-flex p-ai-center p-ml-4">
+                        <div class="p-d-flex p-ai-center" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
                             <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
-                            <label for="inputStyle2" class="p-ml-2">Filled</label>
+                            <label for="inputStyle2" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Filled</label>
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>RTL</h6>
                     <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)" styleClass="p-d-block"></p-inputSwitch>
 
-                    <h6 class="p-d-inline-block p-mr-3">Menu Themes</h6>
+                    <h6 class="p-d-inline-block" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">Menu Themes</h6>
                     <span *ngIf="app.layoutMode!=='dark'" #menuSwitchContainer style="position: relative">
                         <p-inputSwitch [appendTo]="menuSwitchContainer" [(ngModel)]="matchingTopbarTheme" (onChange)="onMatchingTopbarThemeChange($event)"
                             pTooltip="Show matching Topbar Themes" tooltipPosition="bottom"></p-inputSwitch>
@@ -102,7 +102,7 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                     <p *ngIf="app.layoutMode==='dark'">Menu themes are only available in light mode by design as large surfaces can emit too much brightness in dark mode.</p>
 
-                    <h6 class="p-d-inline-block p-mr-3">Topbar Themes</h6>
+                    <h6 class="p-d-inline-block" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">Topbar Themes</h6>
                     <span *ngIf="app.layoutMode!=='dark'" #topbarSwitchContainer style="position: relative">
                         <p-inputSwitch [appendTo]="topbarSwitchContainer" [(ngModel)]="matchingMenuTheme" (onChange)="onMatchingMenuThemeChange($event)"
                             pTooltip="Show matching Menu Themes" tooltipPosition="bottom"></p-inputSwitch>

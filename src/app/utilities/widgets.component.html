@@ -3,8 +3,8 @@
         <div class="card overview-box p-d-flex p-flex-column cyan-bgcolor white-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-shopping-cart"></i>
-                <h6 class="p-m-0 p-pl-2">Orders</h6>
-                <span class="p-ml-auto"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -22,8 +22,8 @@
         <div class="card overview-box p-d-flex p-flex-column orange-bgcolor white-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-dollar"></i>
-                <h6 class="p-m-0 p-pl-2">Revenue</h6>
-                <span class="p-ml-auto"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -41,8 +41,8 @@
         <div class="card overview-box p-d-flex p-flex-column pink-bgcolor white-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-users"></i>
-                <h6 class="p-m-0 p-pl-2">Customers</h6>
-                <span class="p-ml-auto"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -60,8 +60,8 @@
         <div class="card overview-box p-d-flex p-flex-column purple-bgcolor white-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-comments"></i>
-                <h6 class="p-m-0 p-pl-2">Comments</h6>
-                <span class="p-ml-auto"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#" class="white-color"><i class="pi pi-ellipsis-h"></i></a></span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4">
                 <div class="p-d-flex p-flex-column">
@@ -133,48 +133,48 @@
                 <li class="p-d-flex p-py-3">
                     <div class="p-d-flex p-ai-center">
                         <i class="pi pi-star p-p-2 lightblue-bgcolor white-color widget-list-item-radius"></i>
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Design Team | Sprint 021</div>
                             <small class="muted-text">21MB</small>
                         </div>
                     </div>
-                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined p-mr-1 p-ml-auto"></button>
+                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined" [ngClass]="{'p-ml-auto p-mr-1': !app.isRTL, 'p-mr-auto p-ml-1': app.isRTL}"></button>
                     <button pButton pRipple type="button" icon="pi pi-arrow-down" class="p-button-outlined"></button>
                 </li>
 
                 <li class="p-d-flex p-py-3">
                     <div class="p-d-flex p-ai-center">
                         <i class="pi pi-file-excel p-p-2 yellow-bgcolor text-color widget-list-item-radius"></i>
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Elite Report 2020-Q4</div>
                             <small class="muted-text">56.00MB</small>
                         </div>
                     </div>
-                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined p-mr-1 p-ml-auto"></button>
+                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined" [ngClass]="{'p-ml-auto p-mr-1': !app.isRTL, 'p-mr-auto p-ml-1': app.isRTL}"></button>
                     <button pButton pRipple type="button" icon="pi pi-arrow-down" class="p-button-outlined"></button>
                 </li>
 
                 <li class="p-d-flex p-py-3">
                     <div class="p-d-flex p-ai-center">
                         <i class="pi pi-image p-p-2 teal-bgcolor white-color widget-list-item-radius"></i>
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Ultima Marketing Assets</div>
                             <small class="muted-text">1.29GB</small>
                         </div>
                     </div>
-                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined p-mr-1 p-ml-auto"></button>
+                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined" [ngClass]="{'p-ml-auto p-mr-1': !app.isRTL, 'p-mr-auto p-ml-1': app.isRTL}"></button>
                     <button pButton pRipple type="button" icon="pi pi-arrow-down" class="p-button-outlined"></button>
                 </li>
 
                 <li class="p-d-flex p-py-3">
                     <div class="p-d-flex p-ai-center">
                         <i class="pi pi-image p-p-2 bluegrey-bgcolor white-color widget-list-item-radius"></i>
-                        <div class="p-ml-2">
+                        <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
                             <div>Ultima Remastered Docs</div>
                             <small class="muted-text">26.54KB</small>
                         </div>
                     </div>
-                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined p-mr-1 p-ml-auto"></button>
+                    <button pButton pRipple type="button" icon="pi pi-copy" class="p-button-outlined" [ngClass]="{'p-ml-auto p-mr-1': !app.isRTL, 'p-mr-auto p-ml-1': app.isRTL}"></button>
                     <button pButton pRipple type="button" icon="pi pi-arrow-down" class="p-button-outlined"></button>
                 </li>
             </ul>
@@ -206,7 +206,7 @@
                     <button pButton pRipple type="button" icon="pi pi-compass" class="p-button-rounded p-button-text"></button>
                     <button pButton pRipple type="button" icon="pi pi-heart" class="p-button-rounded p-button-text"></button>
                 </div>
-                <span class="muted-text p-ml-auto">View on </span>
+                <span class="muted-text" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">View on </span>
                 <button pButton pRipple type="button" label="Google Maps" class="p-button-text p-button-plain p-px-1"></button>
             </div>
         </div>
@@ -273,7 +273,7 @@
             <h5 class="p-mb-1">John Doe</h5>
 
             <div class="location p-d-flex p-ai-center p-mb-5">
-                <i class="pi pi-map-marker p-mr-1"></i>
+                <i class="pi pi-map-marker p-mr-1" [ngClass]="{'p-mr-1': !app.isRTL, 'p-ml-1': app.isRTL}"></i>
                 <span>London UK</span>
             </div>
 
@@ -319,7 +319,7 @@
             </div>
             <div class="p-d-flex p-ai-center p-mt-4">
                 <button pButton pRipple type="button" label="Learn More" icon="pi pi-plus-circle" class="p-button-text p-button-plain"></button>
-                <button pButton pRipple type="button" icon="pi pi-share-alt" class="p-button-rounded p-button-text p-ml-auto"></button>
+                <button pButton pRipple type="button" icon="pi pi-share-alt" class="p-button-rounded p-button-text" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"></button>
                 <button pButton pRipple type="button" icon="pi pi-heart" class="p-button-rounded p-button-text"></button>
             </div>
         </div>
