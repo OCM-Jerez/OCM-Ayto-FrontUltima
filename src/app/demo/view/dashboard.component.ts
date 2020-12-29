@@ -90,7 +90,7 @@ export class DashboardComponent implements OnInit {
         this.overviewChartData1 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [18,11,15,5,25,30,29,22,17],
+                data: [50,64,32,24,18,27,20,36,30],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -105,7 +105,7 @@ export class DashboardComponent implements OnInit {
         this.overviewChartData2 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [11,3,5,11,30,16,1,1,30],
+                data: [11,30,52,35,39,20,14,18,29],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -120,7 +120,7 @@ export class DashboardComponent implements OnInit {
         this.overviewChartData3 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [3,12,18,8,9,15,24,3,17],
+                data: [20,29,39,36,45,24,28,20,15],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -135,7 +135,7 @@ export class DashboardComponent implements OnInit {
         this.overviewChartData4 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [29,29,17,9,30,28,6,23,2],
+                data: [30,39,50,21,33,18,10,24,20],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -240,10 +240,10 @@ export class DashboardComponent implements OnInit {
     getOverviewColors() {
         const isLight = this.app.layoutMode === 'light';
         return {
-            pinkBorderColor: isLight ? '#EC407A' : '#F48FB1',
-            pinkBgColor: isLight ? '#EC407A' : '#F48FB1',
-            tealBorderColor: isLight ? '#26A69A' : '#80CBC4',
-            tealBgColor: isLight ? '#26A69A' : '#80CBC4'
+            pinkBorderColor: isLight ? '#E91E63' : '#EC407A',
+            pinkBgColor: isLight ? '#F48FB1' : '#F8BBD0',
+            tealBorderColor: isLight ? '#009688' : '#26A69A',
+            tealBgColor: isLight ? '#80CBC4' : '#B2DFDB'
         }
     }
 

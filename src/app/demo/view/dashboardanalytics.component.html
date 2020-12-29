@@ -14,7 +14,10 @@
         <div class="card widget-insights">
             <div class=card-header>
                 <h5>Insights</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu11.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu11 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="card-subheader p-mb-2 p-d-flex p-ai-center">
                 <span>November 22 - November 29</span>
@@ -192,7 +195,10 @@
         <div class="card height-100 widget-topsearchs">
             <div class=card-header>
                 <h5>Top Searchs</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu12.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu12 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-jc-between item">
                 <span>Mat Orange Case</span>
@@ -264,7 +270,10 @@
         <div class="card widget-expenses">
             <div class=card-header>
                 <h5>Expenses</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu13.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu13 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="card-subheader p-mb-2 p-pb-3">
                 November 22 - November 29
@@ -309,7 +318,10 @@
         <div class="card widget-traffic height-100">
             <div class=card-header>
                 <h5>All Traffic Channels</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu14.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu14 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-grid">
                 <div class="p-col-12 p-md-6 left p-d-flex p-flex-column p-jc-evenly">
