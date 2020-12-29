@@ -4,7 +4,12 @@
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-shopping-cart"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <a href="#" (click)="menu1.toggle($event)">
+                        <i class="pi pi-ellipsis-h"></i>
+                    </a>
+                    <p-menu #menu1 [popup]="true" [model]="[{label: 'New', icon: 'pi pi-fw pi-plus'},{label: 'Open', icon: 'pi pi-fw pi-download'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
