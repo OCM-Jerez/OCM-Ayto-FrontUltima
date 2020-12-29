@@ -127,50 +127,62 @@
         <div class="card p-grid p-nogutter widget-sales">
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
-                    <span class="title">Store A Sales</span>
-                    <span class="value p-mt-2">
-                        $44.995
-                        <span class="difference p-ml-1">+1.200</span>
+                    <span class="muted-text">Store A Sales</span>
+                    <span class="fs-large p-mt-2">
+                        <i *ngIf="storeADiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeADiff > 0, 'pi-arrow-down pink-color': storeADiff < 0}"></i>
+                        ${{storeATotalValue}}
+                        <span *ngIf="storeADiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeADiff > 0, 'pink-color': storeADiff < 0}">
+                            {{storeADiff > 0 ? '+' : ''}}{{storeADiff}}
+                        </span>
                     </span>
                 </div>
-                <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-1.svg" alt="">
+                <div class="p-px-4">
+                    <p-chart #storeA type="line" [data]="storeAData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
-                    <span class="title">Store B Sales</span>
-                    <span class="value p-mt-2">
-                        $62.024
-                        <span class="difference p-ml-1">+14.207</span>
+                    <span class="muted-text">Store B Sales</span>
+                    <span class="fs-large p-mt-2">
+                        <i *ngIf="storeBDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeBDiff > 0, 'pi-arrow-down pink-color': storeBDiff < 0}"></i>
+                        ${{storeBTotalValue}}
+                        <span *ngIf="storeBDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeBDiff > 0, 'pink-color': storeBDiff < 0}">
+                            {{storeBDiff > 0 ? '+' : ''}}{{storeBDiff}}
+                        </span>
                     </span>
                 </div>
-                <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-2.svg" alt="">
+                <div class="p-px-4">
+                    <p-chart #storeB type="line" [data]="storeBData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
-                    <span class="title">Store C Sales</span>
-                    <span class="value p-mt-2">
-                        $7.801
-                        <span class="difference p-ml-1">+928</span>
+                    <span class="muted-text">Store C Sales</span>
+                    <span class="fs-large p-mt-2">
+                        <i *ngIf="storeCDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeCDiff > 0, 'pi-arrow-down pink-color': storeCDiff < 0}"></i>
+                        ${{storeCTotalValue}}
+                        <span *ngIf="storeCDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeCDiff > 0, 'pink-color': storeCDiff < 0}">
+                            {{storeCDiff > 0 ? '+' : ''}}{{storeCDiff}}
+                        </span>
                     </span>
                 </div>
-                <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-3.svg" alt="">
+                <div class="p-px-4">
+                    <p-chart #storeC type="line" [data]="storeCData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
-                    <span class="title">Store D Sales</span>
-                    <span class="value p-mt-2">
-                        $149
-                        <span class="difference p-ml-1">+19</span>
+                    <span class="muted-text">Store D Sales</span>
+                    <span class="fs-large p-mt-2">
+                        <i *ngIf="storeDDiff !== 0" class="fw-700 fs-large p-pr-1 pi" [ngClass]="{'pi-arrow-up green-color': storeDDiff > 0, 'pi-arrow-down pink-color': storeDDiff < 0}"></i>
+                        ${{storeDTotalValue}}
+                        <span *ngIf="storeDDiff !== 0" class="fw-500 fs-normal p-ml-1" [ngClass]="{'green-color': storeDDiff > 0, 'pink-color': storeDDiff < 0}">
+                            {{storeDDiff > 0 ? '+' : ''}}{{storeDDiff}}
+                        </span>
                     </span>
                 </div>
-                <div class="sales-graph p-p-4">
-                    <img src="/assets/layout/images/dashboard/sales-graph-4.svg" alt="">
+                <div class="p-px-4">
+                    <p-chart #storeD type="line" [data]="storeDData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
                 </div>
             </div>
         </div>

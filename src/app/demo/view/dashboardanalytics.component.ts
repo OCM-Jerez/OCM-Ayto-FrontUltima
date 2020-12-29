@@ -25,6 +25,42 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     doughnutOptions: any;
 
+    storeATotalValue: number = 100;
+
+    storeADiff: number = 0;
+
+    storeAStatus: number = 0;
+
+    storeAData: any;
+
+    storeBTotalValue: number = 120;
+
+    storeBDiff: number = 0;
+
+    storeBStatus: number = 0;
+
+    storeBData: any;
+
+    storeCTotalValue: number = 150;
+
+    storeCDiff: number = 0;
+
+    storeCStatus: number = 0;
+
+    storeCData: any;
+
+    storeDTotalValue: number = 80;
+
+    storeDDiff: number = 0;
+
+    storeDStatus: number = 0;
+
+    storeDData: any;
+
+    storeOptions: any;
+
+    storeInterval: any;
+
     pieData: any;
 
     mainData: any;
@@ -33,13 +69,17 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     selectedCity: any;
 
-    scheduleOptions: any;
-
-    timelineEvents: any[];
-
     @ViewChild('doughnut') doughnutViewChild: UIChart;
 
     @ViewChild('bar') chartViewChild: UIChart;
+
+    @ViewChild('storeA') storeAViewChild: UIChart;
+
+    @ViewChild('storeB') storeBViewChild: UIChart;
+
+    @ViewChild('storeC') storeCViewChild: UIChart;
+
+    @ViewChild('storeD') storeDViewChild: UIChart;
 
     constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
                 private breadcrumbService: AppBreadcrumbService) {
@@ -73,6 +113,129 @@ export class DashboardAnalyticsComponent implements OnInit {
             this.doughnutOptions = this.getDoughnutOptions();
         };
 
+        this.storeAData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [55,3,45,6,44,58,84,68,64],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.storeBData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [81,75,63,100,69,79,38,37,76],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.storeCData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [99,55,22,72,24,79,35,91,48],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.storeDData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            datasets: [{
+                data: [5,51,68,82,28,21,29,45,44],
+                borderColor: [
+                    '#4DD0E1',
+                ],
+                backgroundColor: [
+                    'rgba(77, 208, 225, 0.8)',
+                ],
+                borderWidth: 2,
+                fill: true
+            }
+        ]};
+
+        this.storeOptions = {
+            legend: {
+                display: false
+            },
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    display: false
+                }],
+                xAxes: [{
+                    display: false
+                }]
+            },
+            tooltips: {
+                enabled: false
+            },
+            elements: {
+                point:{
+                    radius: 0
+                }
+            },
+        };
+
+        const calculateStore = (storeData, totalValue) => {
+            let randomNumber = +((Math.random() * 500).toFixed(2));
+            let data = storeData.datasets[0].data;
+            let length = data.length;
+            data.push(randomNumber);
+            data.shift();
+
+            let diff = +((data[length - 1] - data[length - 2]).toFixed(2));
+            let status = diff === 0 ? 0 : (diff > 0 ? 1 : -1);
+            totalValue = +((totalValue + diff).toFixed(2));
+
+            return { diff, totalValue, status };
+        }
+
+        this.storeInterval = setInterval(() => {
+            let { diff: storeADiff, totalValue: storeATotalValue, status:storeAStatus } = calculateStore(this.storeAData, this.storeATotalValue);
+            this.storeADiff = storeADiff;
+            this.storeATotalValue = storeATotalValue;
+            this.storeAStatus = storeAStatus;
+            this.storeAViewChild.chart.update();
+
+            let { diff: storeBDiff, totalValue: storeBTotalValue, status:storeBStatus } = calculateStore(this.storeBData, this.storeBTotalValue);
+            this.storeBDiff = storeBDiff;
+            this.storeBTotalValue = storeBTotalValue;
+            this.storeBStatus = storeBStatus;
+            this.storeBViewChild.chart.update();
+
+            let { diff: storeCDiff, totalValue: storeCTotalValue, status:storeCStatus } = calculateStore(this.storeCData, this.storeCTotalValue);
+            this.storeCDiff = storeCDiff;
+            this.storeCTotalValue = storeCTotalValue;
+            this.storeCStatus = storeCStatus;
+            this.storeCViewChild.chart.update();
+
+            let { diff: storeDDiff, totalValue: storeDTotalValue, status:storeDStatus } = calculateStore(this.storeDData, this.storeDTotalValue);
+            this.storeDDiff = storeDDiff;
+            this.storeDTotalValue = storeDTotalValue;
+            this.storeDStatus = storeDStatus;
+            this.storeDViewChild.chart.update();
+        }, 4000);
+
         this.pieData = {
             labels: ['O','D','R'],
             datasets: [
@@ -90,13 +253,12 @@ export class DashboardAnalyticsComponent implements OnInit {
                     ]
                 }]
         };
+    }
 
-        this.timelineEvents = [
-            {status: 'Ordered', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63'},
-            {status: 'Processing', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00'},
-            {status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7'},
-            {status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7'}
-        ];
+    ngOnDestroy() {
+        if (this.storeInterval) {
+            clearInterval(this.storeInterval);
+        }
     }
 
     getColors() {
