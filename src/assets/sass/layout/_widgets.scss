@@ -400,3 +400,28 @@
         }
     }
 }
+
+.widget-pricing {
+    width: 100%;
+
+    .card {
+        height: 100%;
+    }
+
+    .options {
+        padding: 2rem 4rem;
+
+        li {
+            display: flex;
+            align-items: center;
+        }
+
+        i, span {
+            padding: 1rem;
+        }
+
+        span {
+            font-size: 1.2rem;
+        }
+    }
+}
