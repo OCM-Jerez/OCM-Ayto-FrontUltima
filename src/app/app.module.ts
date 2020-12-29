@@ -121,6 +121,7 @@ import {AppNotfoundComponent} from './pages/app.notfound.component';
 import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
+import {AppLandingComponent} from './pages/app.landing.component';
 
 import {CountryService} from './demo/service/countryservice';
 import {CustomerService} from './demo/service/customerservice';
@@ -253,6 +254,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppCrudComponent,
         AppCalendarComponent,
         AppLoginComponent,
+        AppLandingComponent,
         AppInvoiceComponent,
         AppHelpComponent,
         AppNotfoundComponent,
