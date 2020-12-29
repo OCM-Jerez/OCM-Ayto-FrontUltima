@@ -222,26 +222,28 @@ export class DashboardComponent implements OnInit {
     }
 
     setOverviewColors() {
-        const { pinkColor, tealColor } = this.getOverviewColors();
+        const { pinkBorderColor, pinkBgColor, tealBorderColor,  tealBgColor} = this.getOverviewColors();
 
-        this.overviewChartData1.datasets[0].borderColor[0] = tealColor;
-        this.overviewChartData1.datasets[0].backgroundColor[0] = tealColor;
+        this.overviewChartData1.datasets[0].borderColor[0] = tealBorderColor;
+        this.overviewChartData1.datasets[0].backgroundColor[0] = tealBgColor;
 
-        this.overviewChartData2.datasets[0].borderColor[0] = tealColor;
-        this.overviewChartData2.datasets[0].backgroundColor[0] = tealColor;
+        this.overviewChartData2.datasets[0].borderColor[0] = tealBorderColor;
+        this.overviewChartData2.datasets[0].backgroundColor[0] = tealBgColor;
 
-        this.overviewChartData3.datasets[0].borderColor[0] = pinkColor;
-        this.overviewChartData3.datasets[0].backgroundColor[0] = pinkColor;
+        this.overviewChartData3.datasets[0].borderColor[0] = pinkBorderColor;
+        this.overviewChartData3.datasets[0].backgroundColor[0] = pinkBgColor;
 
-        this.overviewChartData4.datasets[0].borderColor[0] = tealColor;
-        this.overviewChartData4.datasets[0].backgroundColor[0] = tealColor;
+        this.overviewChartData4.datasets[0].borderColor[0] = tealBorderColor;
+        this.overviewChartData4.datasets[0].backgroundColor[0] = tealBgColor;
     }
 
     getOverviewColors() {
         const isLight = this.app.layoutMode === 'light';
         return {
-            pinkColor: isLight ? '#EC407A' : '#F48FB1',
-            tealColor: isLight ? '#26A69A' : '#80CBC4'
+            pinkBorderColor: isLight ? '#EC407A' : '#F48FB1',
+            pinkBgColor: isLight ? '#EC407A' : '#F48FB1',
+            tealBorderColor: isLight ? '#26A69A' : '#80CBC4',
+            tealBgColor: isLight ? '#26A69A' : '#80CBC4'
         }
     }
 
