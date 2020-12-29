@@ -5,10 +5,10 @@
                 <i class="pi pi-shopping-cart"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
                 <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
-                    <a href="#" (click)="menu1.toggle($event)">
+                    <a (click)="menu1.toggle($event)" style="cursor: pointer;">
                         <i class="pi pi-ellipsis-h"></i>
                     </a>
-                    <p-menu #menu1 [popup]="true" [model]="[{label: 'New', icon: 'pi pi-fw pi-plus'},{label: 'Open', icon: 'pi pi-fw pi-download'}]"></p-menu>
+                    <p-menu #menu1 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
                 </span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
@@ -28,7 +28,10 @@
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-dollar"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <a (click)="menu2.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu2 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
@@ -47,7 +50,10 @@
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-users"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <a (click)="menu3.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu3 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
@@ -66,7 +72,10 @@
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-comments"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <a (click)="menu4.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu4 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
@@ -84,7 +93,10 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Contact</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu5.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu5 [popup]="true" [model]="[{label: 'New', icon: 'pi pi-fw pi-plus'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'},{label: 'Delete', icon: 'pi pi-fw pi-trash'}]"></p-menu>
+                </span>
             </div>
 
             <ul class="widget-list">
@@ -153,7 +165,10 @@
         <div class="card">
             <div class="card-header">
                 <h5>Order Graph</h5>
-                <span class="card-icon"><a href="#"><i class="pi pi-ellipsis-h"></i></a></span>
+                <span class="card-icon">
+                    <a (click)="menu6.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu6 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <p-chart type="line" [data]="ordersChart" [options]="ordersOptions"></p-chart>
         </div>
@@ -163,7 +178,10 @@
         <div class="card height-100 widget-timeline">
             <div class="card-header">
                 <h5>Timeline</h5>
-                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+                <span class="card-icon">
+                    <a (click)="menu7.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu7 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
 
             <p-timeline [value]="timelineEvents" align="left" styleClass="customized-timeline">
@@ -224,7 +242,10 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Chat</h5>
-                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+                <span class="card-icon">
+                    <a (click)="menu8.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu8 [popup]="true" [model]="[{label: 'View Media', icon: 'pi pi-fw pi-images'},{label: 'Starred Messages', icon: 'pi pi-fw pi-star-o'},{label: 'Search', icon: 'pi pi-fw pi-search'}]"></p-menu>
+                </span>
             </div>
             <div class="widget-chat">
                 <ul>
@@ -278,7 +299,10 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Activity</h5>
-                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+                <span class="card-icon">
+                    <a (click)="menu9.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu9 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
 
             <ul class="widget-activity">
@@ -332,7 +356,10 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Best Sellers</h5>
-                <a href="#"><i class="pi pi-ellipsis-h"></i></a>
+                <span class="card-icon">
+                    <a (click)="menu10.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
+                    <p-menu #menu10 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
+                </span>
             </div>
             <ul class="widget-bestsellers">
                 <li>
