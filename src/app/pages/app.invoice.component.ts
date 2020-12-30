@@ -26,7 +26,7 @@ export class AppInvoiceComponent implements OnInit {
         this.billData = [
             {
                 'billTo': 'TOYOKSU SYSCOM CORPORATION 11-27, MEIEKI 4-CHROME NAKAMURA-KU, NAGOYA 450-0002 JAPAN',
-                'date': '30/08/2019',
+                'date': '30/08/2021',
                 'no': 'A/3100',
                 'notes': 'N/A'
             }
