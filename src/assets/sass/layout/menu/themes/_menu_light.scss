@@ -8,6 +8,8 @@
     $activeMenuItemTextColor: var(--primary-menu-text-color);
     $activeMenuItemBgColor: var(--primary-lightest-color);
 
+    $inlineMenuBorderColor: #e4e4e4;
+
     @import '../_menu_exports';
     @import '../_menu_theme';
 }

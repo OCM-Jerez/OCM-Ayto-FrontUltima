@@ -395,6 +395,13 @@
     .write-message {
         border-radius: 30px;
 
+        .p-inputgroup-addon {
+            &:hover {
+                background-color: $contentAltBgColor;
+                cursor: pointer;
+            }
+        }
+
         .p-inputgroup-addon:first-child {
             border-top-left-radius: 30px;
             border-bottom-left-radius: 30px;
