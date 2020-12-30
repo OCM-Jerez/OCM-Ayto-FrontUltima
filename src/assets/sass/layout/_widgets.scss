@@ -361,7 +361,9 @@
 .widget-chat {
     ul {
         @include reset-list;
-        padding: 1rem;
+        padding: 1rem 1rem 0;
+        height: 420px;
+        overflow-y: auto;
 
         li {
             img {
@@ -407,7 +409,7 @@
 
 .widget-pricing {
     width: 100%;
-    
+
     .card {
         height: 100%;
     }

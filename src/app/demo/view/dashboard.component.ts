@@ -1,12 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {EventService} from '../service/eventservice';
-import {SelectItem} from 'primeng/api';
-import {Product} from '../domain/product';
-import {ProductService} from '../service/productservice';
-import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { EventService } from '../service/eventservice';
+import { SelectItem } from 'primeng/api';
+import { Product } from '../domain/product';
+import { ProductService } from '../service/productservice';
+import { AppBreadcrumbService } from '../../app.breadcrumb.service';
 import { AppMainComponent } from 'src/app/app.main.component';
 import { AppComponent } from 'src/app/app.component';
 
@@ -41,22 +38,36 @@ export class DashboardComponent implements OnInit {
 
     overviewChartOptions: any;
 
+    chatMessages: any[];
+
+    @ViewChild('chatcontainer') chatContainerViewChild: ElementRef;
+
     constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
-                private breadcrumbService: AppBreadcrumbService) {
-      this.breadcrumbService.setItems([
-          {label: 'Dashboard', routerLink: ['/']}
-      ]); }
+        private breadcrumbService: AppBreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Dashboard', routerLink: ['/'] }
+        ]);
+    }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
         this.cities = [];
-        this.cities.push({label: 'Select City', value: null});
-        this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
-        this.cities.push({label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}});
-        this.cities.push({label: 'London', value: {id: 3, name: 'London', code: 'LDN'}});
-        this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
-        this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
+        this.cities.push({ label: 'Select City', value: null });
+        this.cities.push({ label: 'New York', value: { id: 1, name: 'New York', code: 'NY' } });
+        this.cities.push({ label: 'Rome', value: { id: 2, name: 'Rome', code: 'RM' } });
+        this.cities.push({ label: 'London', value: { id: 3, name: 'London', code: 'LDN' } });
+        this.cities.push({ label: 'Istanbul', value: { id: 4, name: 'Istanbul', code: 'IST' } });
+        this.cities.push({ label: 'Paris', value: { id: 5, name: 'Paris', code: 'PRS' } });
+
+        this.chatMessages = [
+            { from: 'Anna Fali', url: '/assets/layout/images/avatar.png', messages: ['Hey M. hope you are well.', 'Our idea is accepted by the board. Now it’s time to execute it'] },
+            { messages: ['We did it! 🤠'] },
+            { from: 'Anna Fali', url: '/assets/layout/images/avatar.png', messages: ['That\'s really good!'] },
+            { messages: ['But it’s important to ship MVP ASAP'] },
+            { from: 'Anna Fali', url: '/assets/layout/images/avatar.png', messages: ['I’ll be looking at the process then, just to be sure 🤓'] },
+            { messages: ['That’s awesome. Thanks!'] }
+        ];
 
         this.ordersChart = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -89,63 +100,71 @@ export class DashboardComponent implements OnInit {
 
         this.overviewChartData1 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
-            datasets: [{
-                data: [50,64,32,24,18,27,20,36,30],
-                borderColor: [
-                    '#4DD0E1',
-                ],
-                backgroundColor: [
-                    'rgba(77, 208, 225, 0.8)',
-                ],
-                borderWidth: 2,
-                fill: true
-            }
-        ]};
+            datasets: [
+                {
+                    data: [50, 64, 32, 24, 18, 27, 20, 36, 30],
+                    borderColor: [
+                        '#4DD0E1',
+                    ],
+                    backgroundColor: [
+                        'rgba(77, 208, 225, 0.8)',
+                    ],
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        };
 
         this.overviewChartData2 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
-            datasets: [{
-                data: [11,30,52,35,39,20,14,18,29],
-                borderColor: [
-                    '#4DD0E1',
-                ],
-                backgroundColor: [
-                    'rgba(77, 208, 225, 0.8)',
-                ],
-                borderWidth: 2,
-                fill: true
-            }
-        ]};
+            datasets: [
+                {
+                    data: [11, 30, 52, 35, 39, 20, 14, 18, 29],
+                    borderColor: [
+                        '#4DD0E1',
+                    ],
+                    backgroundColor: [
+                        'rgba(77, 208, 225, 0.8)',
+                    ],
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        };
 
         this.overviewChartData3 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
-            datasets: [{
-                data: [20,29,39,36,45,24,28,20,15],
-                borderColor: [
-                    '#4DD0E1',
-                ],
-                backgroundColor: [
-                    'rgba(77, 208, 225, 0.8)',
-                ],
-                borderWidth: 2,
-                fill: true
-            }
-        ]};
+            datasets: [
+                {
+                    data: [20, 29, 39, 36, 45, 24, 28, 20, 15],
+                    borderColor: [
+                        '#4DD0E1',
+                    ],
+                    backgroundColor: [
+                        'rgba(77, 208, 225, 0.8)',
+                    ],
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        };
 
         this.overviewChartData4 = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
-            datasets: [{
-                data: [30,39,50,21,33,18,10,24,20],
-                borderColor: [
-                    '#4DD0E1',
-                ],
-                backgroundColor: [
-                    'rgba(77, 208, 225, 0.8)',
-                ],
-                borderWidth: 2,
-                fill: true
-            }
-        ]};
+            datasets: [
+                {
+                    data: [30, 39, 50, 21, 33, 18, 10, 24, 20],
+                    borderColor: [
+                        '#4DD0E1',
+                    ],
+                    backgroundColor: [
+                        'rgba(77, 208, 225, 0.8)',
+                    ],
+                    borderWidth: 2,
+                    fill: true
+                }
+            ]
+        };
 
         this.overviewChartOptions = {
             legend: {
@@ -164,7 +183,7 @@ export class DashboardComponent implements OnInit {
                 enabled: false
             },
             elements: {
-                point:{
+                point: {
                     radius: 0
                 }
             },
@@ -214,15 +233,43 @@ export class DashboardComponent implements OnInit {
         };
 
         this.timelineEvents = [
-            {status: 'Ordered', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63', description: "Richard Jones (C8012) has ordered a blue t-shirt for $79."},
-            {status: 'Processing', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00' , description: "Order #99207 has processed succesfully."},
-            {status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7' , description: "Order #99207 has shipped with shipping code 2222302090."},
-            {status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7' , description: "Richard Jones (C8012) has recieved his blue t-shirt."}
+            { status: 'Ordered', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63', description: "Richard Jones (C8012) has ordered a blue t-shirt for $79." },
+            { status: 'Processing', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00', description: "Order #99207 has processed succesfully." },
+            { status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7', description: "Order #99207 has shipped with shipping code 2222302090." },
+            { status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7', description: "Richard Jones (C8012) has recieved his blue t-shirt." }
         ];
     }
 
+    onChatKeydown(event) {
+        if (event.key === 'Enter') {
+            let message = event.currentTarget.value;
+            let lastMessage = this.chatMessages[this.chatMessages.length - 1];
+
+            if (lastMessage.from) {
+                this.chatMessages.push({ messages: [message] });
+            }
+            else {
+                lastMessage.messages.push(message);
+            }
+
+            if (message.match(/primeng|primereact|primefaces|primevue/i)) {
+                this.chatMessages.push({ from: 'Anna Fali', url: '/assets/layout/images/avatar.png', messages: ['Always bet on Prime!'] });
+            }
+
+            event.currentTarget.value = '';
+
+            const el = this.chatContainerViewChild.nativeElement;
+            setTimeout(() => {
+                el.scroll({
+                    top: el.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }, 1);
+        }
+    }
+
     setOverviewColors() {
-        const { pinkBorderColor, pinkBgColor, tealBorderColor,  tealBgColor} = this.getOverviewColors();
+        const { pinkBorderColor, pinkBgColor, tealBorderColor, tealBgColor } = this.getOverviewColors();
 
         this.overviewChartData1.datasets[0].borderColor[0] = tealBorderColor;
         this.overviewChartData1.datasets[0].backgroundColor[0] = tealBgColor;

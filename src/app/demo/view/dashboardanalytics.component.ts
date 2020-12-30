@@ -1,10 +1,10 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {EventService} from '../service/eventservice';
-import {SelectItem} from 'primeng/api';
-import {Product} from '../domain/product';
-import {ProductService} from '../service/productservice';
-import {AppBreadcrumbService} from '../../app.breadcrumb.service';
-import {UIChart} from 'primeng/chart';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { EventService } from '../service/eventservice';
+import { SelectItem } from 'primeng/api';
+import { Product } from '../domain/product';
+import { ProductService } from '../service/productservice';
+import { AppBreadcrumbService } from '../../app.breadcrumb.service';
+import { UIChart } from 'primeng/chart';
 import { AppComponent } from 'src/app/app.component';
 import { AppMainComponent } from 'src/app/app.main.component';
 
@@ -83,24 +83,27 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     @ViewChild('storeD') storeDViewChild: UIChart;
 
+    @ViewChild('pie') pieViewChild: UIChart;
+
     constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
-                private breadcrumbService: AppBreadcrumbService) {
-      this.breadcrumbService.setItems([
-          {label: 'Dashboard Analytics', routerLink: ['/favorites/dashboardanalytics']}
-      ]); }
+        private breadcrumbService: AppBreadcrumbService) {
+        this.breadcrumbService.setItems([
+            { label: 'Dashboard Analytics', routerLink: ['/favorites/dashboardanalytics'] }
+        ]);
+    }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
-        this.eventService.getEvents().then(events => {this.events = events; });
+        this.eventService.getEvents().then(events => { this.events = events; });
 
         this.cities = [];
-        this.cities.push({label: 'Select City', value: null});
-        this.cities.push({label: 'New York', value: {id: 1, name: 'New York', code: 'NY'}});
-        this.cities.push({label: 'Rome', value: {id: 2, name: 'Rome', code: 'RM'}});
-        this.cities.push({label: 'London', value: {id: 3, name: 'London', code: 'LDN'}});
-        this.cities.push({label: 'Istanbul', value: {id: 4, name: 'Istanbul', code: 'IST'}});
-        this.cities.push({label: 'Paris', value: {id: 5, name: 'Paris', code: 'PRS'}});
+        this.cities.push({ label: 'Select City', value: null });
+        this.cities.push({ label: 'New York', value: { id: 1, name: 'New York', code: 'NY' } });
+        this.cities.push({ label: 'Rome', value: { id: 2, name: 'Rome', code: 'RM' } });
+        this.cities.push({ label: 'London', value: { id: 3, name: 'London', code: 'LDN' } });
+        this.cities.push({ label: 'Istanbul', value: { id: 4, name: 'Istanbul', code: 'IST' } });
+        this.cities.push({ label: 'Paris', value: { id: 5, name: 'Paris', code: 'PRS' } });
 
         this.chartMonthlyData = this.getChartData();
         this.chartMonthlyOptions = this.getChartOptions();
@@ -123,7 +126,7 @@ export class DashboardAnalyticsComponent implements OnInit {
         this.storeAData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [55,3,45,6,44,58,84,68,64],
+                data: [55, 3, 45, 6, 44, 58, 84, 68, 64],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -133,12 +136,13 @@ export class DashboardAnalyticsComponent implements OnInit {
                 borderWidth: 2,
                 fill: true
             }
-        ]};
+            ]
+        };
 
         this.storeBData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [81,75,63,100,69,79,38,37,76],
+                data: [81, 75, 63, 100, 69, 79, 38, 37, 76],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -148,12 +152,13 @@ export class DashboardAnalyticsComponent implements OnInit {
                 borderWidth: 2,
                 fill: true
             }
-        ]};
+            ]
+        };
 
         this.storeCData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [99,55,22,72,24,79,35,91,48],
+                data: [99, 55, 22, 72, 24, 79, 35, 91, 48],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -163,12 +168,13 @@ export class DashboardAnalyticsComponent implements OnInit {
                 borderWidth: 2,
                 fill: true
             }
-        ]};
+            ]
+        };
 
         this.storeDData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
             datasets: [{
-                data: [5,51,68,82,28,21,29,45,44],
+                data: [5, 51, 68, 82, 28, 21, 29, 45, 44],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -178,7 +184,8 @@ export class DashboardAnalyticsComponent implements OnInit {
                 borderWidth: 2,
                 fill: true
             }
-        ]};
+            ]
+        };
 
         this.storeOptions = {
             legend: {
@@ -197,7 +204,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 enabled: false
             },
             elements: {
-                point:{
+                point: {
                     radius: 0
                 }
             },
@@ -218,30 +225,32 @@ export class DashboardAnalyticsComponent implements OnInit {
         }
 
         this.storeInterval = setInterval(() => {
-            let { diff: storeADiff, totalValue: storeATotalValue, status:storeAStatus } = calculateStore(this.storeAData, this.storeATotalValue);
-            this.storeADiff = storeADiff;
-            this.storeATotalValue = storeATotalValue;
-            this.storeAStatus = storeAStatus;
-            this.storeAViewChild.chart.update();
+            requestAnimationFrame(() => {
+                let { diff: storeADiff, totalValue: storeATotalValue, status: storeAStatus } = calculateStore(this.storeAData, this.storeATotalValue);
+                this.storeADiff = storeADiff;
+                this.storeATotalValue = storeATotalValue;
+                this.storeAStatus = storeAStatus;
+                this.storeAViewChild.chart.update();
 
-            let { diff: storeBDiff, totalValue: storeBTotalValue, status:storeBStatus } = calculateStore(this.storeBData, this.storeBTotalValue);
-            this.storeBDiff = storeBDiff;
-            this.storeBTotalValue = storeBTotalValue;
-            this.storeBStatus = storeBStatus;
-            this.storeBViewChild.chart.update();
+                let { diff: storeBDiff, totalValue: storeBTotalValue, status: storeBStatus } = calculateStore(this.storeBData, this.storeBTotalValue);
+                this.storeBDiff = storeBDiff;
+                this.storeBTotalValue = storeBTotalValue;
+                this.storeBStatus = storeBStatus;
+                this.storeBViewChild.chart.update();
 
-            let { diff: storeCDiff, totalValue: storeCTotalValue, status:storeCStatus } = calculateStore(this.storeCData, this.storeCTotalValue);
-            this.storeCDiff = storeCDiff;
-            this.storeCTotalValue = storeCTotalValue;
-            this.storeCStatus = storeCStatus;
-            this.storeCViewChild.chart.update();
+                let { diff: storeCDiff, totalValue: storeCTotalValue, status: storeCStatus } = calculateStore(this.storeCData, this.storeCTotalValue);
+                this.storeCDiff = storeCDiff;
+                this.storeCTotalValue = storeCTotalValue;
+                this.storeCStatus = storeCStatus;
+                this.storeCViewChild.chart.update();
 
-            let { diff: storeDDiff, totalValue: storeDTotalValue, status:storeDStatus } = calculateStore(this.storeDData, this.storeDTotalValue);
-            this.storeDDiff = storeDDiff;
-            this.storeDTotalValue = storeDTotalValue;
-            this.storeDStatus = storeDStatus;
-            this.storeDViewChild.chart.update();
-        }, 4000);
+                let { diff: storeDDiff, totalValue: storeDTotalValue, status: storeDStatus } = calculateStore(this.storeDData, this.storeDTotalValue);
+                this.storeDDiff = storeDDiff;
+                this.storeDTotalValue = storeDTotalValue;
+                this.storeDStatus = storeDStatus;
+                this.storeDViewChild.chart.update();
+            })
+        }, 3000);
     }
 
     ngOnDestroy() {
@@ -273,10 +282,10 @@ export class DashboardAnalyticsComponent implements OnInit {
     }
 
     getPieData() {
-        const { limeColor, blueColor, tealColor }  = this.getColors();
+        const { limeColor, blueColor, tealColor } = this.getColors();
         const borderColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
         return {
-            labels: ['O','D','R'],
+            labels: ['O', 'D', 'R'],
             datasets: [
                 {
                     data: [300, 50, 100],
@@ -310,14 +319,14 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     getChartData() {
         const { limeColor, amberColor, orangeColor, blueColor, lightblueColor,
-            cyanColor, tealColor, greenColor, lightgreenColor }  = this.getColors();
+            cyanColor, tealColor, greenColor, lightgreenColor } = this.getColors();
 
         return {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
                     label: '2012',
-                    data: [6,25,97,12,7,70,42],
+                    data: [6, 25, 97, 12, 7, 70, 42],
                     borderColor: blueColor,
                     backgroundColor: blueColor,
                     borderWidth: 2,
@@ -325,7 +334,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2013',
-                    data: [81,3,5,11,59,47,99],
+                    data: [81, 3, 5, 11, 59, 47, 99],
                     borderColor: lightblueColor,
                     backgroundColor: lightblueColor,
                     borderWidth: 2,
@@ -333,7 +342,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2014',
-                    data: [68,47,46,46,61,70,94],
+                    data: [68, 47, 46, 46, 61, 70, 94],
                     borderColor: cyanColor,
                     backgroundColor: cyanColor,
                     borderWidth: 2,
@@ -341,7 +350,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2015',
-                    data: [31,9,18,76,6,11,79],
+                    data: [31, 9, 18, 76, 6, 11, 79],
                     borderColor: tealColor,
                     backgroundColor: tealColor,
                     borderWidth: 2,
@@ -349,7 +358,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2016',
-                    data: [85,37,47,29,2,10,54],
+                    data: [85, 37, 47, 29, 2, 10, 54],
                     borderColor: greenColor,
                     backgroundColor: greenColor,
                     borderWidth: 2,
@@ -365,7 +374,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2018',
-                    data: [89,18,95,18,97,61,54],
+                    data: [89, 18, 95, 18, 97, 61, 54],
                     borderColor: limeColor,
                     backgroundColor: limeColor,
                     borderWidth: 2,
@@ -373,7 +382,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2019',
-                    data: [18,36,39,58,41,50,72],
+                    data: [18, 36, 39, 58, 41, 50, 72],
                     borderColor: amberColor,
                     backgroundColor: amberColor,
                     borderWidth: 2,
@@ -381,7 +390,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 },
                 {
                     label: '2020',
-                    data: [31,4,35,74,47,35,46],
+                    data: [31, 4, 35, 74, 47, 35, 46],
                     borderColor: orangeColor,
                     backgroundColor: orangeColor,
                     borderWidth: 2,
@@ -432,11 +441,11 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     getDoughnutData() {
         const { blueColor, lightblueColor, cyanColor, tealColor, greenColor,
-            lightgreenColor, orangeColor }  = this.getColors();
+            lightgreenColor, orangeColor } = this.getColors();
         const borderColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
 
         return {
-            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' , 'Saturday'],
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
             datasets: [
                 {
                     data: [11, 29, 71, 33, 28, 95, 6],
@@ -489,5 +498,22 @@ export class DashboardAnalyticsComponent implements OnInit {
         }
 
         this.doughnutViewChild.chart.update();
+    }
+
+    togglePieDoughnut() {
+        this.pieViewChild.chart.options.cutoutPercentage = this.pieViewChild.chart.options.cutoutPercentage ? 0 : 50;
+        this.pieViewChild.chart.update();
+    }
+
+    changePieDoughnutDataView() {
+        if (this.pieViewChild.chart.options.circumference === Math.PI) {
+            this.pieViewChild.chart.options.circumference = 2 * Math.PI;
+            this.pieViewChild.chart.options.rotation = -Math.PI / 2;
+        } else {
+            this.pieViewChild.chart.options.circumference = Math.PI;
+            this.pieViewChild.chart.options.rotation = -Math.PI;
+        }
+
+        this.pieViewChild.chart.update();
     }
 }

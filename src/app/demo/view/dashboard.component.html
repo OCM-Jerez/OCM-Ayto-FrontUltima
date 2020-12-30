@@ -102,10 +102,10 @@
             <ul class="widget-list">
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
-                        <img src="/assets/layout/images/avatar.png">
+                        <img src="/assets/demo/images/avatar/xuxuefeng.png">
                         <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
-                            <div>Amy Elsner</div>
-                            <small class="muted-text">elsner@ultima.org</small>
+                            <div>Xuxue Feng</div>
+                            <small class="muted-text">feng@ultima.org</small>
                         </div>
                     </div>
                     <span class="person-tag indigo-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Accounting</span>
@@ -114,10 +114,10 @@
 
                 <li class="p-d-flex p-ai-center p-py-3">
                     <div class="person-item p-d-flex p-ai-center">
-                        <img src="/assets/layout/images/avatar1.png">
+                        <img src="/assets/demo/images/avatar/elwinsharvill.png">
                         <div [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">
-                            <div>Bernardo Dominic</div>
-                            <small class="muted-text">dominic@ultima.org</small>
+                            <div>Elwin Sharvill</div>
+                            <small class="muted-text">sharvill@ultima.org</small>
                         </div>
                     </div>
                     <span class="person-tag teal-bgcolor p-p-1 fs-small" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">Finance</span>
@@ -201,7 +201,7 @@
     </div>
 
     <div class="p-col-12 p-md-12 p-lg-6">
-        <div class="card">
+        <div class="card height-100">
             <p-table [value]="products" [paginator]="true" [rows]="8">
                 <ng-template pTemplate="header">
                     <tr>
@@ -237,7 +237,6 @@
         </div>
     </div>
 
-
     <div class="p-col-12 p-lg-6">
         <div class="card height-100">
             <div class="card-header">
@@ -248,50 +247,23 @@
                 </span>
             </div>
             <div class="widget-chat">
-                <ul>
-                    <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
-                        <div class="messages p-d-flex p-flex-column p-ai-start">
-                            <span class="message cyan-bgcolor p-mb-1">Hey M. hope you are well.</span>
-                            <span class="message cyan-bgcolor">Our idea is accepted by the board. Now it’s time to execute it.</span>
-                        </div>
-                    </li>
-                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
-                        <div class="messages p-d-flex p-flex-column p-ai-end">
-                            <div class="message pink-bgcolor">We did it! 🤠</div>
-                        </div>
-                    </li>
-                    <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
-                        <div class="messages p-d-flex p-flex-column p-ai-start">
-                            <span class="message cyan-bgcolor">That's really good!</span>
-                        </div>
-                    </li>
-                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
-                        <div class="messages p-d-flex p-flex-column p-ai-end">
-                            <div class="message pink-bgcolor">But it’s important to ship MVP ASAP</div>
-                        </div>
-                    </li>
-                    <li class="from p-d-flex p-ai-start p-mb-3">
-                        <img src="/assets/layout/images/avatar.png" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
-                        <div class="messages p-d-flex p-flex-column p-ai-start">
-                            <span class="message cyan-bgcolor">I’ll be looking at the process then, just to be sure 🤓 </span>
-                        </div>
-                    </li>
-                    <li class="own p-d-flex p-ai-start p-jc-end p-mb-3">
-                        <div class="messages p-d-flex p-flex-column p-ai-end">
-                            <div class="message pink-bgcolor">That’s awesome. Thanks!</div>
+                <ul #chatcontainer>
+                    <li *ngFor="let chartMessage of chatMessages; let last = last;" class="p-d-flex p-ai-start" [ngClass]="{'from': !!chartMessage.from, 'own p-jc-end': !chartMessage.from, 'p-mb-3': !last, 'p-mb-1': last}">
+                        <img *ngIf="!!chartMessage.url" [src]="chartMessage.url" alt="avatar" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}">
+                        <div class="messages p-d-flex p-flex-column" [ngClass]="{'p-ai-start': !!chartMessage.from, 'p-ai-end': !chartMessage.from}">
+                            <span *ngFor="let message of chartMessage.messages; let first = first" class="message" [ngClass]="{'cyan-bgcolor': !!chartMessage.from, 'pink-bgcolor': !chartMessage.from, 'p-mt-1': !first}">
+                                {{message}}
+                            </span>
                         </div>
                     </li>
                 </ul>
-                <div class="p-inputgroup write-message">
+                <div class="p-inputgroup write-message p-mt-3">
                     <span class="p-inputgroup-addon"><i class="pi pi-plus-circle" style="line-height: 1.25;"></i></span>
-                    <input type="text" pInputText placeholder="Write your message">
+                    <input type="text" pInputText placeholder="Write your message" (keydown)="onChatKeydown($event)">
                     <span class="p-inputgroup-addon"><i class="pi pi-video" style="line-height: 1.25;"></i></span>
                     <span class="p-inputgroup-addon"><i class="pi pi-clock" style="line-height: 1.25;"></i></span>
                 </div>
             </div>
-
         </div>
     </div>
 

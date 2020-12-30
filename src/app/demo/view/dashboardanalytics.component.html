@@ -316,12 +316,10 @@
 
     <div class="p-col-12 p-md-8">
         <div class="card widget-traffic height-100">
-            <div class=card-header>
+            <div class="card-header">
                 <h5>All Traffic Channels</h5>
-                <span class="card-icon">
-                    <a (click)="menu14.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
-                    <p-menu #menu14 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </span>
+                <button pRipple pButton type="button" label="Pie/Doughnut Data" class="p-button-text" [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}" (click)="togglePieDoughnut()"></button>
+                <button pRipple pButton type="button" label="Semi/Full Data" class="p-button-text" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}" (click)="changePieDoughnutDataView()"></button>
             </div>
             <div class="p-d-flex p-grid">
                 <div class="p-col-12 p-md-6 left p-d-flex p-flex-column p-jc-evenly">
@@ -346,7 +344,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-md-6 right p-d-flex p-jc-center">
-                    <p-chart type="pie" [data]="pieData" [options]="pieOptions" height="350"></p-chart>
+                    <p-chart #pie type="pie" [data]="pieData" [options]="pieOptions" height="350"></p-chart>
                 </div>
             </div>
         </div>
