@@ -85,14 +85,10 @@ import { AppMainComponent } from './app.main.component';
                     <h6>RTL</h6>
                     <p-inputSwitch [ngModel]="app.isRTL" (onChange)="appMain.onRTLChange($event)" styleClass="p-d-block"></p-inputSwitch>
 
-                    <h6 class="p-d-inline-block" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">Menu Themes</h6>
-                    <span *ngIf="app.layoutMode!=='dark'" #menuSwitchContainer style="position: relative">
-                        <p-inputSwitch [appendTo]="menuSwitchContainer" [(ngModel)]="matchingTopbarTheme" (onChange)="onMatchingTopbarThemeChange($event)"
-                            pTooltip="Show matching Topbar Themes" tooltipPosition="bottom"></p-inputSwitch>
-                    </span>
+                    <h6>Menu Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of menuThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeMenuTheme(t)" [ngClass]="{'layout-config-color-option': true, 'p-disabled': isDisabled(filteredMenuThemes, t)}" [title]="t.name">
+                            <a style="cursor: pointer" (click)="changeMenuTheme(t)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.menuTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--menu-text-color)"></i>
@@ -102,15 +98,10 @@ import { AppMainComponent } from './app.main.component';
                     </div>
                     <p *ngIf="app.layoutMode==='dark'">Menu themes are only available in light mode by design as large surfaces can emit too much brightness in dark mode.</p>
 
-                    <h6 class="p-d-inline-block" [ngClass]="{'p-mr-3': !app.isRTL, 'p-ml-3': app.isRTL}">Topbar Themes</h6>
-                    <span *ngIf="app.layoutMode!=='dark'" #topbarSwitchContainer style="position: relative">
-                        <p-inputSwitch [appendTo]="topbarSwitchContainer" [(ngModel)]="matchingMenuTheme" (onChange)="onMatchingMenuThemeChange($event)"
-                            pTooltip="Show matching Menu Themes" tooltipPosition="bottom"></p-inputSwitch>
-                    </span>
-
+                    <h6>Topbar Themes</h6>
                     <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
                         <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeTopbarTheme(t)" [ngClass]="{'layout-config-color-option': true, 'p-disabled': isDisabled(filteredTopbarThemes, t)}" [title]="t.name">
+                            <a style="cursor: pointer" (click)="changeTopbarTheme(t)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="app.topbarTheme === t.name">
                                     <i class="pi pi-check" style="color: var(--topbar-text-color)"></i>
@@ -159,10 +150,6 @@ export class AppConfigComponent implements OnInit {
     selectedMenuTheme: any;
 
     selectedTopbarTheme: any;
-
-    filteredMenuThemes: any[];
-
-    filteredTopbarThemes: any[];
 
     configActive = false;
 
@@ -232,25 +219,6 @@ export class AppConfigComponent implements OnInit {
         this.selectedTopbarTheme = this.topbarThemes.find(theme => theme.name === this.topbarTheme);
     }
 
-    findFilteredThemes(themes, selectedTheme, key, isMatching) {
-        if (isMatching)
-            return themes.filter(t => selectedTheme[key].some(st => st === t.name));
-        else
-            return null;
-    }
-
-    onMatchingTopbarThemeChange(event) {
-        this.filteredTopbarThemes = this.findFilteredThemes(this.topbarThemes, this.selectedMenuTheme, 'topbarThemes', event.checked);
-    }
-
-    onMatchingMenuThemeChange(event) {
-        this.filteredMenuThemes = this.findFilteredThemes(this.menuThemes, this.selectedTopbarTheme, 'menuThemes', event.checked);
-    }
-
-    isDisabled(filteredThemes, theme) {
-        return filteredThemes && filteredThemes.filter(fT => fT.name === theme.name).length === 0;
-    }
-
     onLayoutModeChange(event, mode) {
         this.app.layoutMode = mode;
 
@@ -286,13 +254,11 @@ export class AppConfigComponent implements OnInit {
     changeMenuTheme(theme) {
         this.selectedMenuTheme = theme;
         this.app.menuTheme = theme.name;
-        this.filteredTopbarThemes = this.findFilteredThemes(this.topbarThemes, theme, 'topbarThemes', this.matchingTopbarTheme);
     }
 
     changeTopbarTheme(theme) {
         this.selectedTopbarTheme = theme;
         this.app.topbarTheme = theme.name;
-        this.filteredMenuThemes = this.findFilteredThemes(this.menuThemes, theme, 'menuThemes', this.matchingMenuTheme);
 
         const appLogoLink: HTMLImageElement = document.getElementById('app-logo') as HTMLImageElement;
 
@@ -302,7 +268,6 @@ export class AppConfigComponent implements OnInit {
         else {
             appLogoLink.src = 'assets/layout/images/logo-light.svg';
         }
-
     }
 
     isIE() {
