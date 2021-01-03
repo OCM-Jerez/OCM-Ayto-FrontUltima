@@ -15,6 +15,13 @@ import { AppMainComponent } from './app.main.component';
                 <hr class="p-mb-0" />
 
                 <div class="layout-config-options p-p-3">
+                    <h6>Layout/Theme Scale</h6>
+                    <div class="p-d-flex p-ai-center">
+                        <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[0]"></button>
+                        <i class="pi pi-circle-on p-m-1 scale-icon" *ngFor="let s of scales" [ngClass]="{'scale-active': s === scale}"></i>
+                        <button icon="pi pi-plus"  type="button" pButton (click)="incrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[scales.length - 1]"></button>
+                    </div>
+
                     <h6>Layout Mode</h6>
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
@@ -114,7 +121,7 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Component Themes</h6>
                     <div class="p-grid">
                         <div *ngFor="let t of themes" class="p-col p-col-fixed">
-                            <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-color-option">
+                            <a style="cursor: pointer" (click)="changeTheme(t.name)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
                                 <span class="check p-d-flex p-ai-center p-jc-center" *ngIf="theme === t.name">
                                     <i class="pi pi-check" style="color: var(--primary-color-text)"></i>
@@ -130,6 +137,10 @@ import { AppMainComponent } from './app.main.component';
     `
 })
 export class AppConfigComponent implements OnInit {
+
+    scale: number = 14;
+
+    scales: number[] = [12,13,14,15,16];
 
     themes: any[];
 
@@ -177,46 +188,60 @@ export class AppConfigComponent implements OnInit {
         ];
 
         this.menuThemes = [
-            {name: 'light', color: '#FDFEFF', topbarThemes: ['white', 'lightblue', 'dark', 'blue', 'deeppurple', 'purple', 'pink', 'cyan', 'teal', 'green', 'lightgreen', 'lime', 'yellow', 'amber', 'orange', 'deeporange', 'brown', 'light', 'bluegrey', 'indigo', 'grey']},
-            {name: 'dark', color: '#434B54', topbarThemes: ['white', 'lightblue', 'dark', 'blue', 'deeppurple', 'purple', 'pink', 'cyan', 'teal', 'green', 'lightgreen', 'lime', 'yellow', 'amber', 'orange', 'deeporange', 'brown', 'light', 'bluegrey', 'indigo', 'grey']},
-            {name: 'indigo', color: '#1A237E', topbarThemes: ['indigo', 'lightblue', 'blue', 'dark', 'white']},
-            {name: 'bluegrey', color: '#37474F', topbarThemes: ['white', 'lightblue', 'dark', 'blue', 'deeppurple', 'purple', 'pink', 'cyan', 'teal', 'green', 'lightgreen', 'lime', 'yellow', 'amber', 'orange', 'deeporange', 'light', 'bluegrey', 'indigo', 'grey']},
-            {name: 'brown', color: '#4E342E', topbarThemes: ['brown', 'dark', 'white', 'pink', 'green', 'lightgreen', 'lime', 'yellow', 'orange', 'deeporange', 'grey']},
-            {name: 'cyan', color: '#006064', topbarThemes: ['cyan', 'dark', 'white', 'teal', 'bluegrey']},
-            {name: 'green', color: '#2E7D32', topbarThemes: ['green', 'dark', 'white', 'brown', 'lightgreen', 'grey', 'bluegrey']},
-            {name: 'deeppurple', color: '#4527A0', topbarThemes: ['deeppurple', 'dark', 'white', 'purple', 'pink', 'orange']},
-            {name: 'deeporange', color: '#BF360C', topbarThemes: ['deeporange', 'dark', 'white', 'yellow', 'amber', 'orange', 'brown', 'grey']},
-            {name: 'pink', color: '#880E4F', topbarThemes: ['pink', 'dark', 'white', 'purple', 'deeppurple', 'yellow', 'amber', 'orange', 'bluegrey']},
-            {name: 'purple', color: '#6A1B9A', topbarThemes: ['purple', 'dark', 'white', 'deeppurple', 'pink', 'orange']},
-            {name: 'teal', color: '#00695C', topbarThemes: ['teal', 'dark', 'white', 'cyan', 'green', 'lightgreen', 'orange', 'deeporange', 'grey', 'bluegrey']},
-            {name: 'darker', color: '#212121', topbarThemes: ['white', 'lightblue', 'dark', 'blue', 'deeppurple', 'purple', 'pink', 'cyan', 'teal', 'green', 'lightgreen', 'lime', 'yellow', 'amber', 'orange', 'deeporange', 'brown', 'light', 'bluegrey', 'indigo', 'grey']}
+            {name: 'light', color: '#FDFEFF'},
+            {name: 'dark', color: '#434B54'},
+            {name: 'indigo', color: '#1A237E'},
+            {name: 'bluegrey', color: '#37474F'},
+            {name: 'brown', color: '#4E342E'},
+            {name: 'cyan', color: '#006064'},
+            {name: 'green', color: '#2E7D32'},
+            {name: 'deeppurple', color: '#4527A0'},
+            {name: 'deeporange', color: '#BF360C'},
+            {name: 'pink', color: '#880E4F'},
+            {name: 'purple', color: '#6A1B9A'},
+            {name: 'teal', color: '#00695C'},
+            {name: 'darker', color: '#212121'}
         ];
 
         this.topbarThemes = [
-            {name: 'lightblue', color: '#2E88FF', menuThemes: ['light', 'dark', 'darker', 'indigo', 'bluegrey']},
-            {name: 'dark', color: '#363636', menuThemes: ['dark', 'light', 'indigo', 'bluegrey', 'brown', 'cyan', 'green', 'deeppurple', 'deeporange', 'pink', 'purple', 'teal', 'darker']},
-            {name: 'white', color: '#FDFEFF', menuThemes: ['dark', 'light', 'indigo', 'bluegrey', 'brown', 'cyan', 'green', 'deeppurple', 'deeporange', 'pink', 'purple', 'teal', 'darker']},
-            {name: 'blue', color: '#1565C0', menuThemes: ['dark', 'light', 'indigo', 'bluegrey', 'darker']},
-            {name: 'deeppurple', color: '#4527A0', menuThemes: ['deeppurple', 'light', 'dark', 'darker', 'indigo', 'bluegrey', 'purple']},
-            {name: 'purple', color: '#6A1B9A', menuThemes: ['purple', 'dark', 'light', 'darker', 'deeppurple', 'bluegrey', 'brown', 'pink']},
-            {name: 'pink', color: '#AD1457', menuThemes: ['pink', 'dark', 'light', 'darker', 'bluegrey', 'brown']},
-            {name: 'cyan', color: '#0097A7', menuThemes: ['cyan', 'dark', 'light', 'darker', 'bluegrey', 'brown', 'teal']},
-            {name: 'teal', color: '#00796B', menuThemes: ['teal', 'dark', 'light', 'darker', 'bluegrey', 'cyan']},
-            {name: 'green', color: '#43A047', menuThemes: ['green', 'dark', 'light', 'darker', 'bluegrey', 'brown', 'teal']},
-            {name: 'lightgreen', color: '#689F38', menuThemes: ['green', 'dark', 'light', 'darker', 'bluegrey', 'brown']},
-            {name: 'lime', color: '#AFB42B', menuThemes: ['light', 'dark', 'bluegrey', 'darker', 'brown']},
-            {name: 'yellow', color: '#FBC02D', menuThemes: ['light', 'dark', 'darker', 'bluegrey', 'brown', 'deeporange']},
-            {name: 'amber', color: '#FFA000', menuThemes: ['light', 'dark', 'darker', 'bluegrey', 'brown', 'deeporange']},
-            {name: 'orange', color: '#FB8C00', menuThemes: ['dark', 'light', 'darker', 'bluegrey', 'brown', 'deeporange']},
-            {name: 'deeporange', color: '#D84315', menuThemes: ['deeporange', 'dark', 'light', 'darker', 'bluegrey', 'brown']},
-            {name: 'brown', color: '#5D4037', menuThemes: ['brown', 'dark', 'light', 'darker', 'bluegrey', 'deeporange', 'teal', 'cyan']},
-            {name: 'grey', color: '#616161', menuThemes: ['dark', 'light', 'indigo', 'bluegrey', 'brown', 'cyan', 'green', 'deeppurple', 'deeporange', 'pink', 'purple', 'teal', 'darker']},
-            {name: 'bluegrey', color: '#546E7A', menuThemes: ['dark', 'light', 'indigo', 'bluegrey', 'brown', 'cyan', 'green', 'deeppurple', 'deeporange', 'pink', 'purple', 'teal', 'darker']},
-            {name: 'indigo', color: '#3F51B5', menuThemes: ['indigo', 'dark', 'light', 'darker', 'bluegrey']}
+            {name: 'lightblue', color: '#2E88FF'},
+            {name: 'dark', color: '#363636'},
+            {name: 'white', color: '#FDFEFF'},
+            {name: 'blue', color: '#1565C0'},
+            {name: 'deeppurple', color: '#4527A0'},
+            {name: 'purple', color: '#6A1B9A'},
+            {name: 'pink', color: '#AD1457'},
+            {name: 'cyan', color: '#0097A7'},
+            {name: 'teal', color: '#00796B'},
+            {name: 'green', color: '#43A047'},
+            {name: 'lightgreen', color: '#689F38'},
+            {name: 'lime', color: '#AFB42B'},
+            {name: 'yellow', color: '#FBC02D'},
+            {name: 'amber', color: '#FFA000'},
+            {name: 'orange', color: '#FB8C00'},
+            {name: 'deeporange', color: '#D84315'},
+            {name: 'brown', color: '#5D4037'},
+            {name: 'grey', color: '#616161'},
+            {name: 'bluegrey', color: '#546E7A'},
+            {name: 'indigo', color: '#3F51B5'}
         ];
 
         this.selectedMenuTheme = this.menuThemes.find(theme => theme.name === this.menuTheme);
         this.selectedTopbarTheme = this.topbarThemes.find(theme => theme.name === this.topbarTheme);
+    }
+
+    decrementScale() {
+        this.scale--;
+        this.applyScale();
+    }
+
+    incrementScale() {
+        this.scale++;
+        this.applyScale();
+    }
+
+    applyScale() {
+        document.documentElement.style.fontSize = this.scale + 'px';
     }
 
     onLayoutModeChange(event, mode) {
