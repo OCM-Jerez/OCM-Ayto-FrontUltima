@@ -3,7 +3,6 @@
 ## 10.0.2
 
 **Migration Guide**
-- Update all files in your project
 - Update theme files and layout files.
 - Update app.* components
 - Use app.inlinemenu.component instead of app.profile.component
