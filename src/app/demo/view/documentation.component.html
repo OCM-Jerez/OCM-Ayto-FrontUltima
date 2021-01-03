@@ -51,10 +51,10 @@ Run 'ng help' for more options.
             </p>
 <app-code ngPreserveWhitespaces ngNonBindable>
 &lt;div class=&quot;layout-wrapper&quot; [ngClass]=&quot;&#123;'p-input-filled': app.inputStyle === 'filled', 'p-ripple-disabled': !app.ripple,
-    'layout-static': isStatic(),
-    'layout-overlay': isOverlay(),
-    'layout-horizontal': isHorizontal(),
-    'layout-slim': isSlim(),
+    'layout-menu-static': isStatic(),
+    'layout-menu-overlay': isOverlay(),
+    'layout-menu-horizontal': isHorizontal(),
+    'layout-menu-slim': isSlim(),
     'layout-menu-active': menuActive,
     'layout-menu-mobile-active': mobileMenuActive,
     'layout-topbar-mobile-active': mobileTopbarActive,
@@ -1231,15 +1231,15 @@ $galleriaThumbnailNavigatorHeight:2rem;
             <p>Menu has 4 modes, static, overlay, horizontal and slim. Layout container element in application.html is used to define which mode to use by adding specific classes. List
             below indicates the style classes for each mode. In addition menu</p>
             <ul>
-                <li>Static: "layout-static"</li>
-                <li>Overlay: "layout-overlay"</li>
-                <li>Horizontal: "layout-horizontal"</li>
-                <li>Slim: "layout-slim"</li>
+                <li>Static: "layout-menu-static"</li>
+                <li>Overlay: "layout-menu-overlay"</li>
+                <li>Horizontal: "layout-menu-horizontal"</li>
+                <li>Slim: "layout-menu-slim"</li>
             </ul>
 
             <p>For example to create a horizontal menu, the div element should be in following form;</p>
 <app-code ngPreserveWhitespaces ngNonBindable lang="javascript">
-&lt;div class="layout-wrapper layout-horizonal"&gt;
+&lt;div class="layout-wrapper layout-menu-horizontal"&gt;
 </app-code>
 
             <p>It is also possible to leave the choice to the user by keeping the preference at a component and usign an expression to bind it so that user can switch between modes. Sample

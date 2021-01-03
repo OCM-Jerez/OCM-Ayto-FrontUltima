@@ -4,9 +4,6 @@ import {SelectItem} from 'primeng/api';
 import {Product} from '../demo/domain/product';
 import {ProductService} from '../demo/service/productservice';
 import {AppBreadcrumbService} from '../app.breadcrumb.service';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
 import { AppMainComponent } from '../app.main.component';
 import { AppComponent } from '../app.component';
 

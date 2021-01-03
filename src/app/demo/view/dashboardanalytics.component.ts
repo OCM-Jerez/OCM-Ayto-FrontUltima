@@ -302,11 +302,13 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     getPieOptions() {
         const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
+        const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family');
         return {
             responsive: true,
             legend: {
                 position: 'top',
                 labels: {
+                    fontFamily,
                     fontColor: textColor
                 }
             },
@@ -403,10 +405,12 @@ export class DashboardAnalyticsComponent implements OnInit {
     getChartOptions() {
         const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
         const gridLinesColor = getComputedStyle(document.body).getPropertyValue('--divider-color') || 'rgba(160, 167, 181, .3)';
+        const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family');
         return {
             legend: {
                 display: true,
                 labels: {
+                    fontFamily,
                     fontColor: textColor
                 }
             },
@@ -415,6 +419,7 @@ export class DashboardAnalyticsComponent implements OnInit {
             scales: {
                 yAxes: [{
                     ticks: {
+                        fontFamily,
                         fontColor: textColor
                     },
                     gridLines: {
@@ -425,6 +430,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                     categoryPercentage: .9,
                     barPercentage: .8,
                     ticks: {
+                        fontFamily,
                         fontColor: textColor
                     },
                     gridLines: {
@@ -458,11 +464,13 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     getDoughnutOptions() {
         const textColor = getComputedStyle(document.body).getPropertyValue('--text-color') || 'rgba(0, 0, 0, 0.87)';
+        const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family');
         return {
             responsive: true,
             legend: {
                 position: 'top',
                 labels: {
+                    fontFamily,
                     fontColor: textColor
                 }
             },

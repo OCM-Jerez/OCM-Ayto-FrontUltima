@@ -1,5 +1,5 @@
 @media (min-width: $mobileBreakpoint + 1) {
-    .layout-overlay {
+    .layout-menu-overlay {
         .menu-wrapper {
             transform: translate3d(-17rem, 0px, 0px);
             transition: transform $transitionDuration;

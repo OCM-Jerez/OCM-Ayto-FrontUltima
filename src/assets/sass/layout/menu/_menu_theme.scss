@@ -70,8 +70,8 @@
 }
 
 @media (min-width: $mobileBreakpoint + 1) {
-    &.layout-horizontal,
-    &.layout-slim {
+    &.layout-menu-horizontal,
+    &.layout-menu-slim {
         .menu-wrapper {
             .layout-menu-container {
                 .layout-menu {
