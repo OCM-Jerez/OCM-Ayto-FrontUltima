@@ -250,7 +250,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 this.storeDStatus = storeDStatus;
                 this.storeDViewChild.chart.update();
             })
-        }, 3000);
+        }, 2000);
     }
 
     ngOnDestroy() {

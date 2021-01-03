@@ -10,28 +10,28 @@
     </a>
 
     <ul class="layout-inline-menu-action-panel" [@menu]="appMain.inlineMenuActive[key] ? isHorizontalActive() ? 'visible' : 'visibleAnimated' : isHorizontalActive() ? 'hidden' : 'hiddenAnimated'">
-        <li class="layout-inline-menu-action-item p-p-1" pTooltip="Settings" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
-                <i class="pi pi-cog" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                <span>Settings</span>
+        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Settings" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+                <i class="pi pi-cog pi-fw"></i>
+                <span class="p-mx-3">Settings</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-1" pTooltip="Terms of Usage" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
-                <i class="pi pi-file-o" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                <span>Terms of Usage</span>
+        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Terms of Usage" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+                <i class="pi pi-file-o pi-fw"></i>
+                <span class="p-mx-3">Terms of Usage</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-1" pTooltip="Support" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
-                <i class="pi pi-compass" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                <span>Support</span>
+        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Support" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+                <i class="pi pi-compass pi-fw"></i>
+                <span class="p-mx-3">Support</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-1" pTooltip="Logout" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-p-2" [attr.tabindex]="tabIndex">
-                <i class="pi pi-power-off" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                <span>Logout</span>
+        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Logout" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+                <i class="pi pi-power-off pi-fw"></i>
+                <span class="p-mx-3">Logout</span>
             </a>
         </li>
     </ul>
