@@ -192,6 +192,7 @@ export class DashboardAnalyticsComponent implements OnInit {
                 display: false
             },
             responsive: true,
+            aspectRatio: 4,
             scales: {
                 yAxes: [{
                     display: false
@@ -305,6 +306,7 @@ export class DashboardAnalyticsComponent implements OnInit {
         const fontFamily = getComputedStyle(document.body).getPropertyValue('--font-family');
         return {
             responsive: true,
+            aspectRatio: 1,
             legend: {
                 position: 'top',
                 labels: {

@@ -11,8 +11,8 @@
     </div>
 
     <div class="p-col-12 p-md-4">
-        <div class="card widget-insights">
-            <div class=card-header>
+        <div class="card widget-insights height-100">
+            <div class="card-header">
                 <h5>Insights</h5>
                 <span class="card-icon">
                     <a (click)="menu11.toggle($event)" style="cursor: pointer;"><i class="pi pi-ellipsis-h"></i></a>
@@ -127,7 +127,7 @@
     </div>
 
     <div class="p-col-12 p-md-12">
-        <div class="card p-grid p-nogutter widget-sales">
+        <div class="card p-grid p-nogutter widget-sales p-d-block p-d-sm-flex">
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
                 <div class="sales-info p-d-flex p-flex-column p-p-4">
                     <span class="muted-text">Store A Sales</span>
@@ -140,7 +140,7 @@
                     </span>
                 </div>
                 <div class="p-px-4">
-                    <p-chart #storeA type="line" [data]="storeAData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
+                    <p-chart #storeA type="line" [data]="storeAData" [options]="storeOptions" responsive="true"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
@@ -155,7 +155,7 @@
                     </span>
                 </div>
                 <div class="p-px-4">
-                    <p-chart #storeB type="line" [data]="storeBData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
+                    <p-chart #storeB type="line" [data]="storeBData" [options]="storeOptions" responsive="true"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
@@ -170,7 +170,7 @@
                     </span>
                 </div>
                 <div class="p-px-4">
-                    <p-chart #storeC type="line" [data]="storeCData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
+                    <p-chart #storeC type="line" [data]="storeCData" [options]="storeOptions" responsive="true"></p-chart>
                 </div>
             </div>
             <div class="p-lg-3 p-md-6 p-sm-12 p-p-0">
@@ -185,7 +185,7 @@
                     </span>
                 </div>
                 <div class="p-px-4">
-                    <p-chart #storeD type="line" [data]="storeDData" [options]="storeOptions" responsive="true" height="100px"></p-chart>
+                    <p-chart #storeD type="line" [data]="storeDData" [options]="storeOptions" responsive="true"></p-chart>
                 </div>
             </div>
         </div>
@@ -229,12 +229,10 @@
 
     <div class="p-col-12 p-md-6">
         <div class="card">
-            <p-table [value]="products" [paginator]="true" [rows]="4">
+            <p-table [value]="products" [paginator]="true" [rows]="8" styleClass="p-datatable-products">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th pSortableColumn="logo">Logo
-                            <p-sortIcon field="logo"></p-sortIcon>
-                        </th>
+                        <th></th>
                         <th pSortableColumn="name">Name
                             <p-sortIcon field="name"></p-sortIcon>
                         </th>
@@ -254,11 +252,21 @@
                         <td>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="50px" />
                         </td>
-                        <td>{{product.name}}</td>
-                        <td>{{product.category}}</td>
-                        <td>{{product.price | currency:'USD'}}</td>
                         <td>
-                            <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mr-2 p-mb-1"></button>
+                            <span class="p-column-title">Name</span>
+                            {{product.name}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Category</span>
+                            {{product.category}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Price</span>
+                            {{product.price | currency:'USD'}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">View</span>
+                            <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mb-1" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -344,7 +352,7 @@
                     </div>
                 </div>
                 <div class="p-col-12 p-md-6 right p-d-flex p-jc-center">
-                    <p-chart #pie type="pie" [data]="pieData" [options]="pieOptions" height="350"></p-chart>
+                    <p-chart #pie type="pie" [data]="pieData" [options]="pieOptions"></p-chart>
                 </div>
             </div>
         </div>
