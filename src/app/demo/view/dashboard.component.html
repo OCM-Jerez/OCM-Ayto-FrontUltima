@@ -162,7 +162,7 @@
     </div>
 
     <div class="p-col-12 p-lg-6">
-        <div class="card">
+        <div class="card height-100">
             <div class="card-header">
                 <h5>Order Graph</h5>
                 <span class="card-icon">
@@ -202,7 +202,7 @@
 
     <div class="p-col-12 p-md-12 p-lg-6">
         <div class="card height-100">
-            <p-table [value]="products" [paginator]="true" [rows]="8">
+            <p-table [value]="products" [paginator]="true" [rows]="8" styleClass="p-datatable-products">
                 <ng-template pTemplate="header">
                     <tr>
                         <th></th>
@@ -225,10 +225,20 @@
                         <td>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.image" width="50px" />
                         </td>
-                        <td>{{product.name}}</td>
-                        <td>{{product.category}}</td>
-                        <td>{{product.price | currency:'USD'}}</td>
                         <td>
+                            <span class="p-column-title">Name</span>
+                            {{product.name}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Category</span>
+                            {{product.category}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Price</span>
+                            {{product.price | currency:'USD'}}
+                        </td>
+                        <td>
+                            <span class="p-column-title">View</span>
                             <button pRipple pButton type="button" icon="pi pi-search" class="p-button-rounded p-button-text p-mb-1" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></button>
                         </td>
                     </tr>
