@@ -18,8 +18,7 @@
             display: none;
             flex-direction: column-reverse;
             padding: 0;
-            animation-name: fadeInDown;
-            animation-duration: 0.2s;
+            @include material-overlay-animation;
 
             &.layout-topbar-mobile-active {
                 display: flex;

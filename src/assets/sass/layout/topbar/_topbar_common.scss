@@ -103,8 +103,7 @@
                         min-width: 25rem;
                         padding: 1rem 0;
                         display: none;
-                        animation-name: fadeInDown;
-                        animation-duration: $transitionDuration;
+                        @include material-overlay-animation;
 
                         .layout-topbar-action-item {
                             cursor: pointer;
