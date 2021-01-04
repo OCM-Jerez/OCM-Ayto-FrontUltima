@@ -106,7 +106,7 @@ import { AppMainComponent } from './app.main.component';
                     <p *ngIf="app.layoutMode==='dark'">Menu themes are only available in light mode by design as large surfaces can emit too much brightness in dark mode.</p>
 
                     <h6>Topbar Themes</h6>
-                    <div *ngIf="app.layoutMode!=='dark'" class="p-grid">
+                    <div class="p-grid">
                         <div *ngFor="let t of topbarThemes" class="p-col p-col-fixed">
                             <a style="cursor: pointer" (click)="changeTopbarTheme(t)" class="layout-config-color-option" [title]="t.name">
                                 <span class="color" [ngStyle]="{'background-color': t.color}"></span>
@@ -116,8 +116,7 @@ import { AppMainComponent } from './app.main.component';
                             </a>
                         </div>
                     </div>
-                    <p *ngIf="app.layoutMode==='dark'">Topbar themes are only available in light mode by design as large surfaces can emit too much brightness in dark mode.</p>
-
+                    
                     <h6>Component Themes</h6>
                     <div class="p-grid">
                         <div *ngFor="let t of themes" class="p-col p-col-fixed">
