@@ -116,7 +116,7 @@ import { AppMainComponent } from './app.main.component';
                             </a>
                         </div>
                     </div>
-                    
+
                     <h6>Component Themes</h6>
                     <div class="p-grid">
                         <div *ngFor="let t of themes" class="p-col p-col-fixed">
@@ -198,8 +198,7 @@ export class AppConfigComponent implements OnInit {
             {name: 'deeporange', color: '#BF360C'},
             {name: 'pink', color: '#880E4F'},
             {name: 'purple', color: '#6A1B9A'},
-            {name: 'teal', color: '#00695C'},
-            {name: 'darker', color: '#212121'}
+            {name: 'teal', color: '#00695C'}
         ];
 
         this.topbarThemes = [
@@ -249,6 +248,7 @@ export class AppConfigComponent implements OnInit {
         if (mode === 'dark') {
             this.app.menuTheme = 'dark';
             this.app.topbarTheme = 'dark';
+            this.app.inputStyle = 'filled';
         }
         else {
             this.app.menuTheme = 'light';

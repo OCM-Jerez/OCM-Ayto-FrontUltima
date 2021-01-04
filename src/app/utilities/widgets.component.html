@@ -1,15 +1,15 @@
 <div class="p-grid dashboard">
     <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="card overview-box p-d-flex p-flex-column cyan-bgcolor solid-surface-text-color">
+        <div class="card overview-box p-d-flex p-flex-column p-pt-2 cyan-bgcolor solid-surface-text-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-shopping-cart"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
-                    <a (click)="menu15.toggle($event)" style="cursor: pointer;" class="solid-surface-text-color"><i class="pi pi-ellipsis-h"></i></a>
+                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text solid-surface-text-color" (click)="menu15.toggle($event)"></button>
                     <p-menu #menu15 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </span>
+                </div>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
+            <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">640</span>
                     <span class="overview-status p-p-1 fs-small">1420 Completed</span>
@@ -22,16 +22,16 @@
     </div>
 
     <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="card overview-box p-d-flex p-flex-column orange-bgcolor solid-surface-text-color">
+        <div class="card overview-box p-d-flex p-flex-column p-pt-2 orange-bgcolor solid-surface-text-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-dollar"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
-                    <a (click)="menu16.toggle($event)" style="cursor: pointer;" class="solid-surface-text-color"><i class="pi pi-ellipsis-h"></i></a>
+                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text solid-surface-text-color" (click)="menu16.toggle($event)"></button>
                     <p-menu #menu16 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </span>
+                </div>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
+            <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">$57K</span>
                     <span class="overview-status p-p-1 fs-small">$9,640 Income</span>
@@ -44,16 +44,16 @@
     </div>
 
     <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="card overview-box p-d-flex p-flex-column pink-bgcolor solid-surface-text-color">
+        <div class="card overview-box p-d-flex p-flex-column p-pt-2 pink-bgcolor solid-surface-text-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-users"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
-                    <a (click)="menu17.toggle($event)" style="cursor: pointer;" class="solid-surface-text-color"><i class="pi pi-ellipsis-h"></i></a>
+                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text solid-surface-text-color" (click)="menu17.toggle($event)"></button>
                     <p-menu #menu17 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </span>
+                </div>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
+            <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">8572</span>
                     <span class="overview-status p-p-1 fs-small">25402 Registered</span>
@@ -66,16 +66,16 @@
     </div>
 
     <div class="p-col-12 p-md-6 p-lg-3">
-        <div class="card overview-box p-d-flex p-flex-column purple-bgcolor solid-surface-text-color">
+        <div class="card overview-box p-d-flex p-flex-column p-pt-2 purple-bgcolor solid-surface-text-color">
             <div class="p-d-flex p-ai-center">
                 <i class="pi pi-comments"></i>
                 <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
-                <span [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
-                    <a (click)="menu18.toggle($event)" style="cursor: pointer;" class="solid-surface-text-color"><i class="pi pi-ellipsis-h"></i></a>
+                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text solid-surface-text-color" (click)="menu18.toggle($event)"></button>
                     <p-menu #menu18 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </span>
+                </div>
             </div>
-            <div class="p-d-flex p-jc-between p-mt-4 p-flex-wrap">
+            <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
                     <span class="p-mb-1 fs-xlarge">805</span>
                     <span class="overview-status p-p-1 fs-small">85 Responded</span>
