@@ -33,7 +33,7 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
 
     configClick: boolean;
 
-    rightPanelActive: boolean;
+    rightMenuActive: boolean;
 
     menuHoverActive = false;
 
@@ -125,8 +125,8 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
         event.preventDefault();
     }
 
-    onRightPanelButtonClick(event) {
-        this.rightPanelActive = !this.rightPanelActive;
+    onRightMenuButtonClick(event) {
+        this.rightMenuActive = !this.rightMenuActive;
         event.preventDefault();
     }
 

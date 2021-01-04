@@ -3,31 +3,17 @@
 
     .topbar {
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-        background-color: var(--primary-color);
+        background-color: #1565C0;
         z-index: 100;
 
         .topbar-left {
-            background-color: var(--primary-color);
-
             img {
                 height: 2rem;
             }
         }
 
-        .topbar-right {
-            h6 {
-                margin: 0;
-                color: var(--primary-color-text);
-                font-weight: 500;
-            }
-        }
-
-        .topbar-button {
-            color: white;
-
-            &.p-button.p-button-text.p-button-plain:enabled:hover{
-                color: white;
-            }
+        .p-button.p-button-text.p-button-plain {
+            color: #ffffff;
         }
     }
 

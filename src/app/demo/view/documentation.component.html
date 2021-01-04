@@ -58,12 +58,12 @@ Run 'ng help' for more options.
     'layout-menu-active': menuActive,
     'layout-menu-mobile-active': mobileMenuActive,
     'layout-topbar-mobile-active': mobileTopbarActive,
-    'layout-rightpanel-active': rightPanelActive,
+    'layout-rightmenu-active': rightMenuActive,
     'layout-rtl': app.isRTL&#125;&quot; [class]=&quot;'layout-menu-' + app.menuTheme + ' layout-topbar-' + app.topbarTheme&quot;&gt;
 
     &lt;app-topbar&gt;&lt;/app-topbar&gt;
 
-    &lt;app-rightpanel&gt;&lt;/app-rightpanel&gt;
+    &lt;app-rightmenu&gt;&lt;/app-rightmenu&gt;
 
     &lt;div class=&quot;menu-wrapper&quot; (click)=&quot;onMenuClick($event)&quot;&gt;
         &lt;div class=&quot;layout-menu-container&quot;&gt;
@@ -154,17 +154,17 @@ Run 'ng help' for more options.
 
             <h5>Right Menu</h5>
             <img src="assets/demo/images/doc/rightmenu-doc.png" alt="rightmenu" class="p-mb-3" style="max-width: 60%; height: 300px;"/>
-            <p>It is a separate component defined in app.rightpanel.component.ts file based on PrimeNG <a href="https://primefaces.org/primeng/showcase/#/sidebar">Sidebar</a> component.
+            <p>It is a separate component defined in app.rightmenu.component.ts file based on PrimeNG <a href="https://primefaces.org/primeng/showcase/#/sidebar">Sidebar</a> component.
                 All properties of the sidebar component are available. The menu can be fully customized according to the application's needs.
                 There are special methods and classes in the right menu to provide some interactions. The pseudo code is as follows.</p>
 <app-code ngPreserveWhitespaces ngNonBindable>
 // in app.topbar.component.html or elsewhere
-&lt;elementTag (click)=&quot;appMain.onRightPanelButtonClick($event)&quot; pRipple&gt;
+&lt;elementTag (click)=&quot;appMain.onRightMenuButtonClick($event)&quot; pRipple&gt;
     // custom implementation
 &lt;/elementTag&gt;
 
-// in app.rightpanel.component.html
-&lt;p-sidebar [(visible)]=&quot;appMain.rightPanelActive&quot; [baseZIndex]=&quot;1000&quot; [styleClass]=&quot;'layout-rightpanel p-sidebar-sm'&quot;&gt;
+// in app.rightmenu.component.html
+&lt;p-sidebar [(visible)]=&quot;appMain.rightMenuActive&quot; [baseZIndex]=&quot;1000&quot; [styleClass]=&quot;'layout-rightmenu p-sidebar-sm'&quot;&gt;
     // custom implementation
 &lt;/p-sidebar&gt;
 </app-code>

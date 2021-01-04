@@ -81,7 +81,7 @@ import {AppConfigComponent} from './app.config.component';
 import {AppMenuComponent} from './app.menu.component';
 import {AppMenuitemComponent} from './app.menuitem.component';
 import {AppInlineMenuComponent} from './app.inlinemenu.component';
-import {AppRightPanelComponent} from './app.rightpanel.component';
+import {AppRightMenuComponent} from './app.rightmenu.component';
 import {AppBreadcrumbComponent} from './app.breadcrumb.component';
 import {AppTopBarComponent} from './app.topbar.component';
 import {AppFooterComponent} from './app.footer.component';
@@ -218,7 +218,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppMenuComponent,
         AppMenuitemComponent,
         AppInlineMenuComponent,
-        AppRightPanelComponent,
+        AppRightMenuComponent,
         AppBreadcrumbComponent,
         AppTopBarComponent,
         AppFooterComponent,

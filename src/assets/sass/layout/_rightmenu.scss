@@ -1,4 +1,4 @@
-.layout-rightpanel {
+.layout-rightmenu {
     &.p-sidebar {
         top: 4rem;
         height: calc(100% - 4rem);
@@ -27,7 +27,7 @@
 @media (max-width: $mobileBreakpoint) {
     .layout-wrapper {
         &.layout-topbar-mobile-active {
-            .layout-rightpanel {
+            .layout-rightmenu {
                 top: 12rem;
                 height: calc(100% - 12rem);
             }
