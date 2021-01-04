@@ -17,9 +17,9 @@ import { AppMainComponent } from './app.main.component';
                 <div class="layout-config-options p-p-3">
                     <h6>Layout/Theme Scale</h6>
                     <div class="p-d-flex p-ai-center">
-                        <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[0]"></button>
+                        <button pButton pRipple type="button" icon="pi pi-minus" (click)="decrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[0]"></button>
                         <i class="pi pi-circle-on p-m-1 scale-icon" *ngFor="let s of scales" [ngClass]="{'scale-active': s === scale}"></i>
-                        <button icon="pi pi-plus"  type="button" pButton (click)="incrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[scales.length - 1]"></button>
+                        <button pButton pRipple type="button" icon="pi pi-plus" (click)="incrementScale()" class="p-button-rounded p-button-text" [disabled]="scale === scales[scales.length - 1]"></button>
                     </div>
 
                     <h6>Layout Mode</h6>
