@@ -1,6 +1,6 @@
 # Changelog
 
-## 10.0.2
+## 10.1.0
 
 **Migration Guide**
 - Update theme files and layout files.
