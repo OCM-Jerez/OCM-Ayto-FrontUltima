@@ -77,11 +77,11 @@ import { AppMainComponent } from './app.main.component';
                     <h6>Input Background</h6>
                     <div class="p-d-flex">
                         <div class="p-d-flex p-ai-center">
-                            <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1"></p-radioButton>
+                            <p-radioButton name="inputStyle" value="outlined" [(ngModel)]="app.inputStyle" inputId="inputStyle1" (onClick)="onInputStyleClick()"></p-radioButton>
                             <label for="inputStyle1" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Outlined</label>
                         </div>
                         <div class="p-d-flex p-ai-center" [ngClass]="{'p-ml-4': !app.isRTL, 'p-mr-4': app.isRTL}">
-                            <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2"></p-radioButton>
+                            <p-radioButton name="inputStyle" value="filled" [(ngModel)]="app.inputStyle" inputId="inputStyle2" (onClick)="onInputStyleClick()"></p-radioButton>
                             <label for="inputStyle2" [ngClass]="{'p-ml-2': !app.isRTL, 'p-mr-2': app.isRTL}">Filled</label>
                         </div>
                     </div>
@@ -149,9 +149,9 @@ export class AppConfigComponent implements OnInit {
 
     topbarThemes: any[];
 
-    topbarTheme = 'blue';
+    topbarTheme: string = 'blue';
 
-    theme = 'blue';
+    theme: string = 'blue';
 
     matchingMenuTheme: boolean = false;
 
@@ -161,7 +161,9 @@ export class AppConfigComponent implements OnInit {
 
     selectedTopbarTheme: any;
 
-    configActive = false;
+    configActive: boolean = false;
+
+    isInputBackgroundChanged: boolean = false;
 
     constructor(public appMain: AppMainComponent, public app: AppComponent) {}
 
@@ -242,13 +244,20 @@ export class AppConfigComponent implements OnInit {
         document.documentElement.style.fontSize = this.scale + 'px';
     }
 
+    onInputStyleClick() {
+        this.isInputBackgroundChanged = true;
+    }
+
     onLayoutModeChange(event, mode) {
         this.app.layoutMode = mode;
+
+        if (!this.isInputBackgroundChanged) {
+            this.app.inputStyle = mode === 'dark' ? 'filled' : 'outlined';
+        }
 
         if (mode === 'dark') {
             this.app.menuTheme = 'dark';
             this.app.topbarTheme = 'dark';
-            this.app.inputStyle = 'filled';
         }
         else {
             this.app.menuTheme = 'light';
