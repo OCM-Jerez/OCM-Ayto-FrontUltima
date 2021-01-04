@@ -16,8 +16,10 @@
 
     .next-events {
         li {
+            border-radius: $borderRadius;
+            
             &:hover {
-                background-color: $contentAltBgColor;
+                background-color: $hoverBgColor;
                 cursor: pointer;
             }
         }

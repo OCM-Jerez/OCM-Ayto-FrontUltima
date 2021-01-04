@@ -1,14 +1,14 @@
 .layout-menu-dark {
-    $menuBgColor:#424242;
+    $menuBgColor:#1e1e1e;
     
-    $rootMenuTextColor:#ffffff;
+    $rootMenuTextColor:rgba(255,255,255,.60);
 
-    $menuItemTextColor:#bdbdbd;
-    $menuItemHoverBgColor:#363636;
-    $activeMenuItemTextColor:#ffffff;
-    $activeMenuItemBgColor: #212121;
+    $menuItemTextColor:rgba(255,255,255,.87);
+    $menuItemHoverBgColor:hsla(0,0%,100%,.04);
+    $activeMenuItemTextColor:rgba(255,255,255,.87);
+    $activeMenuItemBgColor: hsla(0,0%,100%,.04);
 
-    $inlineMenuBorderColor: rgba(255,255,255,.24);
+    $inlineMenuBorderColor: hsla(0,0%,100%,.12);
 
     @import '../_menu_exports';
     @import '../_menu_theme';

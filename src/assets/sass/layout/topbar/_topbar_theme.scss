@@ -50,7 +50,7 @@
         .layout-topbar-actions-right {
             .layout-topbar-items {
                 .layout-topbar-action-panel {
-                    background-color: $contentBgColor;
+                    background-color: $overlayContentBgColor;
                     color: $textColor;
 
                     a {
@@ -64,7 +64,7 @@
 
                     .layout-topbar-action-item {
                         &:hover {
-                            background-color: $contentAltBgColor;
+                            background-color: $hoverBgColor;
                             transition: background-color $transitionDuration;
                         }
                     }
