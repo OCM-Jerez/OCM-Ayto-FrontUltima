@@ -18,16 +18,17 @@ import { AppComponent } from './app.component';
                 overflow: 'visible'
             })),
             state('visible', style({
-                height: '*',
+                opacity: 1,
                 'z-index': 100
             })),
             state('hidden', style({
-                height: '0px',
-                overflow: 'hidden',
+                opacity: 0,
                 'z-index': '*'
             })),
             transition('visibleAnimated => hiddenAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
-            transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)'))
+            transition('hiddenAnimated => visibleAnimated', animate('400ms cubic-bezier(0.86, 0, 0.07, 1)')),
+            transition('visible => hidden', animate('.1s linear')),
+            transition('hidden => visible', [style({transform: 'scaleY(0.8)'}), animate('.12s cubic-bezier(0, 0, 0.2, 1)')])
         ])
     ]
 })
