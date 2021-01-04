@@ -20,6 +20,7 @@ import {AppMainComponent} from './app.main.component';
                [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span class="layout-menuitem-text">{{item.label}}</span>
+                <span class="p-badge p-component p-badge-no-gutter" [ngClass]="item.badgeClass" *ngIf="item.badge && !root">{{item.badge}}</span>
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
             <a (click)="itemClick($event)" *ngIf="item.routerLink && !item.items"
@@ -28,6 +29,7 @@ import {AppMainComponent} from './app.main.component';
                [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
                 <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
                 <span class="layout-menuitem-text">{{item.label}}</span>
+                <span class="p-badge p-component p-badge-no-gutter" [ngClass]="item.badgeClass" *ngIf="item.badge && !root">{{item.badge}}</span>
                 <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
             </a>
             <ul *ngIf="(item.items && root) || (item.items && active)" [@children]="root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">

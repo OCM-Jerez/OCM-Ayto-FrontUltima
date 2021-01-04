@@ -46,7 +46,7 @@
 
                 > a {
                     display: flex;
-                    align-items: flex-start;
+                    align-items: center;
                     padding: .75rem .5rem;
                     border-radius: 4px;
                     cursor: pointer;
@@ -55,6 +55,10 @@
 
                     .layout-menuitem-text {
                         margin: 0 1rem;
+                    }
+
+                    .p-badge {
+                        margin-left: auto;
                     }
 
                     .layout-submenu-toggler {
