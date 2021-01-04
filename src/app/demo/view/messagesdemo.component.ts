@@ -21,7 +21,7 @@ export class MessagesDemoComponent {
 
     constructor(private service: MessageService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Message', routerLink: ['/uikit/message'] }
         ]);
     }

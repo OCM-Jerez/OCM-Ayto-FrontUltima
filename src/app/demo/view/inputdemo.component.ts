@@ -87,7 +87,7 @@ export class InputDemoComponent implements OnInit {
 
     constructor(private countryService: CountryService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            {label: 'Ui Kit'},
+            {label: 'UI Kit'},
             {label: 'Input', routerLink: ['/uikit/input']}
         ]);
     }

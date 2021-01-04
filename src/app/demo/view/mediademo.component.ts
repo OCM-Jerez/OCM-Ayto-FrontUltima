@@ -54,7 +54,7 @@ export class MediaDemoComponent implements OnInit {
     constructor(private productService: ProductService, private photoService: PhotoService,
                 private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Media', routerLink: ['/uikit/media'] }
         ]);
     }

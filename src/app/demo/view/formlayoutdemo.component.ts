@@ -10,7 +10,7 @@ export class FormLayoutDemoComponent {
 
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Form Layout', routerLink: ['/uikit/formlayout'] }
         ]);
     }

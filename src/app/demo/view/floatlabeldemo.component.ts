@@ -36,7 +36,7 @@ export class FloatLabelDemoComponent implements OnInit{
 
     constructor(private countryService: CountryService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Float Label', routerLink: ['/uikit/floatlabel'] }
         ]);
 

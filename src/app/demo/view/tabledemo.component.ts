@@ -43,7 +43,7 @@ export class TableDemoComponent implements OnInit {
     constructor(private customerService: CustomerService, private productService: ProductService,
                 private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Table', routerLink: ['/uikit/table'] }
         ]);
     }

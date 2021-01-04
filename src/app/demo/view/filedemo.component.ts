@@ -12,7 +12,7 @@ export class FileDemoComponent {
 
     constructor(private messageService: MessageService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'File', routerLink: ['/uikit/file'] }
         ]);
     }

@@ -23,7 +23,7 @@ export class MiscDemoComponent implements OnInit {
 
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Misc', routerLink: ['/uikit/misc'] }
         ]);
     }

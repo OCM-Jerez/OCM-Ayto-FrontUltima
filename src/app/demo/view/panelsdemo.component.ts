@@ -30,7 +30,7 @@ export class PanelsDemoComponent implements OnInit {
 
     constructor(private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Ui Kit' },
+            { label: 'UI Kit' },
             { label: 'Panel', routerLink: ['/uikit/panel'] }
         ]);
     }
