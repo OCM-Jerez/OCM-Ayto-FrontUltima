@@ -84,4 +84,12 @@
             }
         }
     }
+
+    &.layout-menu-horizontal {
+        .layout-inline-menu {
+            .layout-inline-menu-action-panel {
+                box-shadow: $submenuShadow;
+            }
+        }
+    }
 }

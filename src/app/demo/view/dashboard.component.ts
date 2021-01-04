@@ -61,11 +61,11 @@ export class DashboardComponent implements OnInit {
         this.cities.push({ label: 'Paris', value: { id: 5, name: 'Paris', code: 'PRS' } });
 
         this.chatMessages = [
-            { from: 'Anna Fali', url: 'assets/layout/images/avatar.png', messages: ['Hey M. hope you are well.', 'Our idea is accepted by the board. Now it’s time to execute it'] },
+            { from: 'Ioni Bowcher', url: 'assets/demo/images/avatar/ionibowcher.png', messages: ['Hey M. hope you are well.', 'Our idea is accepted by the board. Now it’s time to execute it'] },
             { messages: ['We did it! 🤠'] },
-            { from: 'Anna Fali', url: 'assets/layout/images/avatar.png', messages: ['That\'s really good!'] },
+            { from: 'Ioni Bowcher', url: 'assets/demo/images/avatar/ionibowcher.png', messages: ['That\'s really good!'] },
             { messages: ['But it’s important to ship MVP ASAP'] },
-            { from: 'Anna Fali', url: 'assets/layout/images/avatar.png', messages: ['I’ll be looking at the process then, just to be sure 🤓'] },
+            { from: 'Ioni Bowcher', url: 'assets/demo/images/avatar/ionibowcher.png', messages: ['I’ll be looking at the process then, just to be sure 🤓'] },
             { messages: ['That’s awesome. Thanks!'] }
         ];
 
@@ -253,7 +253,7 @@ export class DashboardComponent implements OnInit {
             }
 
             if (message.match(/primeng|primereact|primefaces|primevue/i)) {
-                this.chatMessages.push({ from: 'Anna Fali', url: 'assets/layout/images/avatar.png', messages: ['Always bet on Prime!'] });
+                this.chatMessages.push({ from: 'Ioni Bowcher', url: 'assets/demo/images/avatar/ionibowcher.png', messages: ['Always bet on Prime!'] });
             }
 
             event.currentTarget.value = '';

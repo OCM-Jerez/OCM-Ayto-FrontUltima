@@ -58,6 +58,10 @@
 
                 .layout-inline-menu {
                     border: 0 none;
+
+                    > .layout-inline-menu-action {
+                        height: 3rem;
+                    }
                 }
             }
         }
