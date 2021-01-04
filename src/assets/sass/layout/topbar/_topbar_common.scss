@@ -102,8 +102,7 @@
                         z-index: 1000;
                         min-width: 25rem;
                         padding: 1rem 0;
-                        display: none;
-                        @include material-overlay-animation;
+                        @include material-overlay-transform;
 
                         .layout-topbar-action-item {
                             cursor: pointer;
@@ -119,9 +118,7 @@
                             top: 0;
                             left: 0;
                             z-index: 1000;
-                            display: none;
-                            animation-name: fadeInDown;
-                            animation-duration: 0.2s;
+                            @include material-overlay-transform;
 
                             input {
                                 border-radius: 0;
@@ -154,16 +151,6 @@
                                 border-top-right-radius: 0;
                                 border-bottom-right-radius: 0;
                             }
-                        }
-                    }
-
-                    &.layout-active-topbar-item {
-                        .layout-topbar-action-panel {
-                            display: block;
-                        }
-
-                        .layout-search-panel {
-                            display: flex;
                         }
                     }
                 }

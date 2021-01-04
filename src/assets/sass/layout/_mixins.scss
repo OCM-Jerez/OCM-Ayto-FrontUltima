@@ -43,8 +43,12 @@
     list-style-type: none;
 }
 
-@mixin material-overlay-animation {
+@mixin material-overlay-transform {
     transform-origin: top;
+}
+
+@mixin material-overlay-animation {
+    @include material-overlay-transform;
     animation-name: overlayEnter;
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     animation-duration: .12s;

@@ -19,12 +19,12 @@
         </div>
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
-                <li class="layout-topbar-item layout-search-item" [ngClass]="{'layout-active-topbar-item': appMain.search}">
+                <li class="layout-topbar-item layout-search-item">
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'search')" pRipple>
                         <i class="pi pi-search fs-large"></i>
                     </a>
 
-                    <div class="layout-search-panel p-inputgroup" (animationend)="searchAnimationEnd()">
+                    <div class="layout-search-panel p-inputgroup" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.search" (@topbarActionPanelAnimation.done)="onSearchAnimationEnd($event)">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
                         <input #searchInput type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
                         <span class="p-inputgroup-addon">
@@ -32,7 +32,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="layout-topbar-item notifications" [ngClass]="{'layout-active-topbar-item': appMain.activeTopbarItem === 'notifications'}">
+                <li class="layout-topbar-item notifications">
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
@@ -40,7 +40,7 @@
                         </span>
                     </a>
 
-                    <ul class="layout-topbar-action-panel p-shadow-6">
+                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'notifications'">
                         <li class="p-mb-3">
                             <span class="p-px-3 fs-small">You have <b>4</b> new notifications</span>
                         </li>
@@ -94,12 +94,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="layout-topbar-item app" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'apps'}">
+                <li class="layout-topbar-item app">
                     <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'apps')" pRipple>
                         <i class="pi pi-table fs-large"></i>
                     </a>
 
-                    <div class="layout-topbar-action-panel p-shadow-6">
+                    <div class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'apps'">
                         <div class="p-grid p-nogutter">
                             <div class="layout-topbar-action-item p-col-4">
                                 <a class="p-d-flex p-ai-center p-flex-column text-color" pRipple>
@@ -140,12 +140,12 @@
                         </div>
                     </div>
                 </li>
-                <li class="layout-topbar-item" [ngClass]="{'layout-active-topbar-item':appMain.activeTopbarItem === 'profile'}">
+                <li class="layout-topbar-item">
                     <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center p-px-2 rounded-circle" (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
                         <img src="assets/demo/images/avatar/amyelsner.png" alt="avatar" style="width: 32px; height: 32px;">
                     </a>
 
-                    <ul class="layout-topbar-action-panel p-shadow-6">
+                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'profile'">
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-cog" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>

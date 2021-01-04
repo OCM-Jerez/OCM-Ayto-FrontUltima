@@ -117,23 +117,23 @@ Run 'ng help' for more options.
         &lt;/elementTag&gt;
         &lt;elementTag class=&quot;layout-topbar-actions-right&quot;&gt;
             &lt;elementTag class=&quot;layout-topbar-items&quot;&gt;
-                &lt;elementTag class=&quot;layout-topbar-item layout-search-item&quot; [ngClass]=&quot;&#123;'layout-active-topbar-item': appMain.search&#125;&quot;&gt;
+                &lt;elementTag class=&quot;layout-topbar-item layout-search-item&quot;&gt;
                     &lt;elementTag class=&quot;layout-topbar-action&quot; (click)=&quot;appMain.onTopbarItemClick($event, 'search')&quot; pRipple&gt;
                         // custom implementation
                     &lt;/elementTag&gt;
 
-                    &lt;elementTag class=&quot;layout-search-panel&quot; (animationend)=&quot;searchAnimationEnd()&quot;&gt;
+                    &lt;elementTag class=&quot;layout-search-panel&quot; [@topbarActionPanelAnimation]=&quot;'visible'&quot; *ngIf=&quot;appMain.search&quot; (@topbarActionPanelAnimation.done)=&quot;onSearchAnimationEnd($event)&quot;&gt;
                         // custom implementation
                         &lt;input #searchInput type=&quot;text&quot; pInputText placeholder=&quot;Search&quot; (click)=&quot;appMain.searchClick = true;&quot; (keydown)=&quot;appMain.onSearchKeydown($event)&quot;&gt;
                     &lt;/elementTag&gt;
                 &lt;/elementTag&gt;
                 // A unique class can be defined to keep track of the expanded/collapsed states of each item. For example, The 'custom-class' is defined for this item.
-                &lt;elementTag class=&quot;layout-topbar-item custom-class&quot; [ngClass]=&quot;&#123;'layout-active-topbar-item': appMain.activeTopbarItem === 'custom-class'&#125;&quot;&gt;
+                &lt;elementTag class=&quot;layout-topbar-item custom-class&quot;&gt;
                     &lt;elementTag class=&quot;layout-topbar-action&quot; (click)=&quot;appMain.onTopbarItemClick($event, 'custom-class')&quot; pRipple&gt;
                         // custom implementation. Used to open this action panel.
                     &lt;/elementTag&gt;
 
-                    &lt;elementTag class=&quot;layout-topbar-action-panel&quot;&gt;
+                    &lt;elementTag class=&quot;layout-topbar-action-panel&quot; [@topbarActionPanelAnimation]=&quot;'visible'&quot; *ngIf=&quot;appMain.activeTopbarItem === 'custom-class'&quot;&gt;
                         &lt;elementTag&gt;
                             // custom implementation
                         &lt;/elementTag&gt;
