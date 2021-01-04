@@ -235,7 +235,7 @@ $toggleButtonIconActiveColor:$textSecondaryColor;
 $toggleButtonActiveHoverBg:#d9d8d9;
 $toggleButtonActiveHoverBorderColor:#d9d8d9;
 $toggleButtonTextActiveHoverColor:$textColor;
-$toggleButtonIconActiveHoverColor:$textSecondaryColor;
+$toggleButtonIconActiveHoverColor:$textSecondaryColor;;
 
 //inplace
 $inplacePadding:$inputPadding;
@@ -722,6 +722,40 @@ $galleriaThumbnailNavigatorHoverColor:rgba(255,255,255,.87);
 $galleriaThumbnailNavigatorBorderRadius:50%;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1.25rem 0;
+$dividerHorizontalPadding:0 1.25rem;
+$dividerVerticalMargin:0 1.25rem;
+$dividerVerticalPadding:1.25rem 0;
+$dividerSize:1px;
+$dividerColor:rgba(0,0,0,.12);
+
+//avatar
+$avatarBg:rgba(0,0,0,.12);
+$avatarTextColor:$textColor;
+
+//chip
+$chipBg:rgba(0,0,0,.12);
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
+//scrollTop
+$scrollTopBg:$accentColor;
+$scrollTopHoverBg:rgba($accentColor, .92);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:50%;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$accentTextColor;
+
+//skeleton
+$skeletonBg:rgba(0,0,0,.08);
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:rgba(0,0,0,.04);
+$splitterGutterHandleBg:rgba(0,0,0,.12);
 
 :root {
     --surface-a:#ffffff;
