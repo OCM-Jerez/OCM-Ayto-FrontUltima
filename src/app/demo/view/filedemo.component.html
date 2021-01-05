@@ -1,7 +1,7 @@
 <div class="p-grid">
     <div class="p-col-12">
         <div class="card">
-            <h5>Advanced</h5>
+            <h5>File Upload</h5>
             <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
                           multiple="multiple" accept="image/*" maxFileSize="1000000">
                 <ng-template pTemplate="content">
@@ -10,10 +10,6 @@
                     </ul>
                 </ng-template>
             </p-fileUpload>
-
-            <h5>Basic</h5>
-            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)"></p-fileUpload>
-
         </div>
     </div>
 </div>
