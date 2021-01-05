@@ -71,7 +71,7 @@ $inputGroupAddOnMinWidth:2.357rem;
 //input lists (e.g. dropdown, autocomplete, multiselect, orderlist)
 $inputListBg:#ffffff;
 $inputListTextColor:$textColor;
-$inputListBorder:1px solid #e5e5e5;
+$inputListBorder:$inputBorder;
 $inputListPadding:0;
 $inputListItemPadding:1rem 1rem;
 $inputListItemBg:transparent;
