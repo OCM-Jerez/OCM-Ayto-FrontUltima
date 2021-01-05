@@ -85,6 +85,7 @@
                     position: relative;
 
                     .layout-topbar-action {
+                        user-select: none;
                         padding: 0 .8rem;
                         margin: 0 .4rem;
                         border-radius: 4px;
