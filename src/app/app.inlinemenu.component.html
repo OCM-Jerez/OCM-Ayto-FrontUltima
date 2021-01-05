@@ -10,28 +10,28 @@
     </a>
 
     <ul class="layout-inline-menu-action-panel" [@menu]="appMain.inlineMenuActive[key] ? isHorizontalActive() ? 'visible' : 'visibleAnimated' : isHorizontalActive() ? 'hidden' : 'hiddenAnimated'">
-        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Settings" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+        <li class="layout-inline-menu-action-item" pTooltip="Settings" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center" [attr.tabindex]="tabIndex">
                 <i class="pi pi-cog pi-fw"></i>
-                <span class="p-mx-3">Settings</span>
+                <span>Settings</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Terms of Usage" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+        <li class="layout-inline-menu-action-item" pTooltip="Terms of Usage" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center" [attr.tabindex]="tabIndex">
                 <i class="pi pi-file-o pi-fw"></i>
-                <span class="p-mx-3">Terms of Usage</span>
+                <span>Terms of Usage</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Support" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+        <li class="layout-inline-menu-action-item" pTooltip="Support" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center" [attr.tabindex]="tabIndex">
                 <i class="pi pi-compass pi-fw"></i>
-                <span class="p-mx-3">Support</span>
+                <span>Support</span>
             </a>
         </li>
-        <li class="layout-inline-menu-action-item p-p-2" pTooltip="Logout" [tooltipDisabled]="isTooltipDisabled">
-            <a class="p-d-flex p-flex-row p-ai-center p-py-1" [attr.tabindex]="tabIndex">
+        <li class="layout-inline-menu-action-item" pTooltip="Logout" [tooltipDisabled]="isTooltipDisabled">
+            <a class="p-d-flex p-flex-row p-ai-center" [attr.tabindex]="tabIndex">
                 <i class="pi pi-power-off pi-fw"></i>
-                <span class="p-mx-3">Logout</span>
+                <span>Logout</span>
             </a>
         </li>
     </ul>

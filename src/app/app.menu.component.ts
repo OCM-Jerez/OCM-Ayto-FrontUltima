@@ -20,18 +20,18 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Favorites', icon: 'pi pi-fw pi-home',
                 items: [
-                    {label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/']},
-                    {label: 'Dashboard Analytics', icon: 'pi pi-fw pi-home', routerLink: ['/favorites/dashboardanalytics']}
+                    {label: 'Dashboard Sales', icon: 'pi pi-fw pi-home', routerLink: ['/'], badge: '4', badgeClass: 'p-badge-info'},
+                    {label: 'Dashboard Analytics', icon: 'pi pi-fw pi-home', routerLink: ['/favorites/dashboardanalytics'], badge: '2', badgeClass: 'p-badge-success'}
                 ]
             },
             {
                 label: 'UI Kit', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                 items: [
-                    {label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'], badge: '2', badgeClass: 'p-badge-info'},
-                    {label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'], badge: '2', badgeClass: 'p-badge-success'},
+                    {label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'], badge: '6', badgeClass: 'p-badge-warning'},
+                    {label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']},
                     {label: 'Float Label', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel']},
                     {label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'},
-                    {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']},
+                    {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'], badge: '6', badgeClass: 'p-badge-danger'},
                     {label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']},
                     {label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree']},
                     {label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel']},
@@ -64,7 +64,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']},
                     {label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']},
                     {
-                        label: 'Landing', icon: 'pi pi-fw pi-globe',
+                        label: 'Landing', icon: 'pi pi-fw pi-globe', badge: '2', badgeClass: 'p-badge-warning',
                         items: [
                             {label: 'Static', icon: 'pi pi-fw pi-globe', url: 'assets/pages/landing.html', target: '_blank'},
                             {label: 'Component', icon: 'pi pi-fw pi-globe', routerLink: ['/landing']}

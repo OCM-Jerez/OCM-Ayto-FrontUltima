@@ -47,14 +47,14 @@
                 > a {
                     display: flex;
                     align-items: center;
-                    padding: .75rem .5rem;
+                    padding: .75rem;
                     border-radius: 4px;
                     cursor: pointer;
                     user-select: none;
                     transition: background-color $transitionDuration, color $transitionDuration;
 
                     .layout-menuitem-text {
-                        margin: 0 1rem;
+                        margin-left: .75rem;
                     }
 
                     .p-badge {
@@ -63,6 +63,10 @@
 
                     .layout-submenu-toggler {
                         margin-left: auto;
+                    }
+
+                    .p-badge + .layout-submenu-toggler {
+                        margin-left: .5rem;
                     }
                 }
 
