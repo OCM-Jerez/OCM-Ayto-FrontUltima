@@ -72,7 +72,7 @@
 			<p-rating></p-rating>
 
 			<h5>ColorPicker</h5>
-			<p-colorPicker [(ngModel)]="valColor"></p-colorPicker>
+			<p-colorPicker [(ngModel)]="valColor" [style]="{width: '2rem'}"></p-colorPicker>
 		</div>
 	</div>
 
@@ -134,26 +134,8 @@
 			<h5>Dropdown</h5>
 			<p-dropdown [options]="cities" [(ngModel)]="selectedDrop" placeholder="Select a City" [showClear]="true"></p-dropdown>
 
-
 			<h5>Multiselect</h5>
-			<p-multiSelect [options]="countries" [(ngModel)]="selectedMulti" defaultLabel="Select a Country" optionLabel="name" class="multiselect-custom">
-				<ng-template let-value pTemplate="selectedItems">
-					<div class="country-item country-item-value" *ngFor="let option of selectedMulti">
-						<img src="assets/demo/flags/flag_placeholder.png" [class]="'flag flag-' + option.code.toLowerCase()" />
-						<div>{{option.name}}</div>
-					</div>
-					<div *ngIf="!selectedMulti || selectedMulti.length === 0" class="country-placeholder">
-						Select Countries
-					</div>
-				</ng-template>
-				<ng-template let-country pTemplate="item">
-					<div class="country-item">
-						<img src="assets/demo/flags/flag_placeholder.png" [class]="'flag flag-' + country.value.code.toLowerCase()" />
-						<div>{{country.value.name}}</div>
-					</div>
-				</ng-template>
-			</p-multiSelect>
-
+			<p-multiSelect [options]="countries" [(ngModel)]="selectedMulti" placeholder="Select a Country" optionLabel="name"></p-multiSelect>	
 		</div>
 
 		<div class="card">
