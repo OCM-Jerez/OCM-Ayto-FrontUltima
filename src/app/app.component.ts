@@ -18,7 +18,7 @@ export class AppComponent implements OnInit{
 
     inlineMenuPosition: string = 'bottom';
 
-    inputStyle: string = 'outlined';
+    inputStyle: string = 'filled';
 
     ripple: boolean = true;
 
