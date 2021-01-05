@@ -4,6 +4,7 @@ import {AppBreadcrumbService} from '../../app.breadcrumb.service';
 
 @Component({
     templateUrl: './menusdemo.component.html',
+    styleUrls: ['./menusdemo.scss'],
     encapsulation: ViewEncapsulation.None
 })
 export class MenusDemoComponent implements OnInit {
