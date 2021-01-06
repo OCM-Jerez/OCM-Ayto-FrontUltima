@@ -264,10 +264,21 @@
                     </li>
                 </ul>
                 <div class="p-inputgroup write-message p-mt-3">
-                    <span class="p-inputgroup-addon"><i class="pi pi-plus-circle" style="line-height: 1.25;"></i></span>
-                    <input type="text" pInputText placeholder="Write your message (Hint: 'PrimeNG')" (keydown)="onChatKeydown($event)">
-                    <span class="p-inputgroup-addon"><i class="pi pi-video" style="line-height: 1.25;"></i></span>
-                    <span class="p-inputgroup-addon"><i class="pi pi-clock" style="line-height: 1.25;"></i></span>
+                    <span class="p-inputgroup-addon">
+                        <button pButton pRipple type="button" icon="pi pi-plus-circle" class="p-button-text p-button-plain"></button>
+                    </span>
+                    <input #chatInput type="text" pInputText placeholder="Write your message (Hint: 'PrimeNG')" (keydown)="onChatKeydown($event)">
+                    <span class="p-inputgroup-addon">
+                        <button pButton pRipple type="button" icon="pi pi-video" class="p-button-text p-button-plain"></button>
+                    </span>
+                    <span class="p-inputgroup-addon">
+                        <button pButton pRipple type="button" icon="pi pi-clock" (click)="op.toggle($event)" class="p-button-text p-button-plain"></button>
+                        <p-overlayPanel #op styleClass="emoji">
+                            <ng-template pTemplate>
+                                <button *ngFor="let emoji of chatEmojis;" pButton pRipple (click)="op.hide(); onEmojiClick(chatInput, emoji)" type="button" [label]="emoji" class="emoji-button p-p-2 p-button-text p-button-plain"></button>
+                            </ng-template>
+                        </p-overlayPanel>
+                    </span>
                 </div>
             </div>
         </div>

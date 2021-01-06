@@ -396,20 +396,45 @@
         border-radius: 30px;
 
         .p-inputgroup-addon {
-            &:hover {
-                background-color: $hoverBgColor;
-                cursor: pointer;
+            padding: 0;
+            overflow: hidden;
+
+            &:first-child {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+            }
+
+            > .p-button {
+                height: calc(2.5rem + 2px);
+                border-radius: 0;
             }
         }
 
-        .p-inputgroup-addon:first-child {
-            border-top-left-radius: 30px;
-            border-bottom-left-radius: 30px;
+        .emoji {
+            width: 90%;
+
+            .emoji-button {
+                border-radius: 50%;
+                width: 2rem;
+                height: 2rem;
+                min-width: 0;
+
+                .p-button-label {
+                    color: yellow !important;
+                }
+            }
         }
 
-        .p-inputgroup-addon:last-child {
-            border-top-right-radius: 30px;
-            border-bottom-right-radius: 30px;
+        @media (min-width: $mobileBreakpoint - 1) {
+            .emoji {
+                width: 40%;
+                margin-left: -38%;
+            }
         }
     }
 }

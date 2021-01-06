@@ -40,6 +40,8 @@ export class DashboardComponent implements OnInit {
 
     chatMessages: any[];
 
+    chatEmojis: any[];
+
     @ViewChild('chatcontainer') chatContainerViewChild: ElementRef;
 
     constructor(public app: AppComponent, public appMain: AppMainComponent, private productService: ProductService, private eventService: EventService,
@@ -68,6 +70,12 @@ export class DashboardComponent implements OnInit {
             { from: 'Ioni Bowcher', url: 'assets/demo/images/avatar/ionibowcher.png', messages: ['I’ll be looking at the process then, just to be sure 🤓'] },
             { messages: ['That’s awesome. Thanks!'] }
         ];
+
+        this.chatEmojis = [
+            '😀','😃','😄','😁','😆','😅','😂','🤣','😇','😉','😊','🙂','🙃','😋','😌','😍','🥰','😘','😗','😙','😚','🤪','😜','😝','😛',
+            '🤑','😎','🤓','🧐','🤠','🥳','🤗','🤡','😏','😶','😐','😑','😒','🙄','🤨','🤔','🤫','🤭','🤥','😳','😞','😟','😠','😡','🤬','😔',
+            '😟','😠','😡','🤬','😔','😕','🙁','😬','🥺','😣','😖','😫','😩','🥱','😤','😮','😱','😨','😰','😯','😦','😧','😢','😥','😪','🤤'
+        ]
 
         this.ordersChart = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
@@ -238,6 +246,13 @@ export class DashboardComponent implements OnInit {
             { status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7', description: "Order #99207 has shipped with shipping code 2222302090." },
             { status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7', description: "Richard Jones (C8012) has recieved his blue t-shirt." }
         ];
+    }
+
+    onEmojiClick(chatInput, emoji) {
+        if (chatInput) {
+            chatInput.value += emoji;
+            chatInput.focus();
+        }
     }
 
     onChatKeydown(event) {
