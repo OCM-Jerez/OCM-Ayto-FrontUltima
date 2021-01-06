@@ -9,11 +9,11 @@
 				<ng-template pTemplate="caption">
 					<div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
 						Customers
-						<span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
-						   placeholder="Global Search"/>
-                </span>
+						<span class="p-input-icon-left p-float-label">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" />
+                            <label class="global-filter-label">Global Search</label>
+                        </span>
 					</div>
 				</ng-template>
 				<ng-template pTemplate="header">
@@ -101,11 +101,11 @@
 				<ng-template pTemplate="caption">
 					<div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
 						Customers
-						<span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dtc.filterGlobal($event.target.value, 'contains')"
-						   placeholder="Global Search"/>
-                </span>
+						<span class="p-input-icon-left p-float-label">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dtc.filterGlobal($event.target.value, 'contains')" />
+                            <label class="global-filter-label">Global Search</label>
+                        </span>
 					</div>
 				</ng-template>
 				<ng-template pTemplate="header">

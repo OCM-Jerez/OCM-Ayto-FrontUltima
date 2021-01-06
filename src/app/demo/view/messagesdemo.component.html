@@ -27,12 +27,18 @@
         <div class="card">
             <h5>Inline Message</h5>
             <div class="p-mt-4">
-                <input type="text" pInputText placeholder="Username" class="ng-dirty ng-invalid p-invalid p-mr-2">
+                <span class="p-float-label p-d-inline-block">
+                    <input type="text" pInputText class="ng-dirty ng-invalid p-invalid p-mr-2">
+                    <label>Username*</label>
+                </span>
                 <p-message severity="error" text="Field is required"></p-message>
             </div>
 
             <div class="p-mt-4">
-                <input type="text" pInputText placeholder="Email" class="ng-dirty ng-invalid p-invalid p-mr-2">
+                <span class="p-float-label p-d-inline-block">
+                    <input type="text" pInputText class="ng-dirty ng-invalid p-invalid p-mr-2">
+                    <label>Email*</label>
+                </span>
                 <p-message severity="error"></p-message>
             </div>
         </div>
@@ -42,8 +48,10 @@
         <div class="card">
             <h5>Help Text</h5>
             <div class="p-field p-fluid">
-                <label for="username">Username</label>
-                <input id="username" type="username" aria-describedby="username-help" class="p-invalid" pInputText />
+                <span class="p-float-label">
+                    <input id="username" type="username" aria-describedby="username-help" class="ng-invalid ng-dirty" pInputText />
+                    <label for="username">Username*</label>
+                </span>
                 <small id="username-help" class="p-invalid">Username is not available.</small>
             </div>
         </div>

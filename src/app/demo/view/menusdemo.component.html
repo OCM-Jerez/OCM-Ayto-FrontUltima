@@ -4,8 +4,9 @@
             <h5>MenuBar</h5>
             <p-menubar [model]="tieredItems">
                 <ng-template pTemplate="end">
-                    <span class="p-input-icon-right">
-                        <input type="text" pInputText placeholder="Search">
+                    <span class="p-input-icon-right p-float-label">
+                        <input type="text" pInputText>
+                        <label>Search</label>
                         <i class="pi pi-search"></i>
                     </span>
                 </ng-template>
