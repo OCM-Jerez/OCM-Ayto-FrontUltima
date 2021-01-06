@@ -30,6 +30,10 @@
             }
         }
     }
+
+    p-multiselect.ng-dirty.ng-invalid > .p-multiselect {
+        @include invalid-filled-input-wrapper();
+    }
 }
 
 .p-float-label {

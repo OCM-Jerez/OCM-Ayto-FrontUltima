@@ -27,4 +27,8 @@
             border: 0 none;
         }
     }
+
+    p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
+        @include invalid-filled-input-wrapper();
+    }
 }

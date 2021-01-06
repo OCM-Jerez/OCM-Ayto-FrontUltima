@@ -17,8 +17,15 @@
     background-size: 0 2px, 100% 1px;
     background-position: 50% 100%, 50% 100%;
     background-origin: border-box;
+
+    &.p-error,
+    &.p-invalid,
+    &.ng-dirty.ng-invalid {
+        border-color: transparent;
+        background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
+    }
 }
-    
+
 @mixin filled-input-interaction() {
     &:enabled:hover {
         background-color: $inputFilledHoverBg;
@@ -31,6 +38,16 @@
         background-color: $inputFilledFocusBg;
         border-color: transparent;
         background-size: 100% 2px, 100% 1px;
+    }
+
+    &.p-error,
+    &.p-invalid,
+    &.ng-dirty.ng-invalid {
+        &:enabled:hover,
+        &:enabled:focus {
+            border-color: transparent;
+            background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
+        }
     }
 }
 
@@ -64,7 +81,23 @@
             background-image: none;
             background: transparent;
         }
-    } 
+    }
+}
+
+@mixin invalid-filled-input-wrapper() {
+    border-color: transparent;
+    background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
+
+    &:not(.p-disabled):hover,
+    &:not(.p-disabled).p-focus,
+    &:not(.p-disabled).p-inputwrapper-focus {
+        border-color: transparent;
+        background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
+    }
+
+    .p-inputtext {
+        border-color: transparent;
+    }
 }
 
 @mixin filled-input-float-label() {

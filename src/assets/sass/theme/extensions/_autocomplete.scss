@@ -16,6 +16,14 @@
             }
         }
     }
+
+    p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete {
+        &.p-autocomplete-multiple {
+            .p-autocomplete-multiple-container {
+                @include invalid-filled-input-wrapper();
+            }
+        }
+    }
 }
 
 .p-float-label {

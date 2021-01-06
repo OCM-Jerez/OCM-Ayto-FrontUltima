@@ -10,6 +10,12 @@
     .p-chips-multiple-container {
         @include filled-input-wrapper();
     }
+
+    p-chips.ng-dirty.ng-invalid > .p-chips {
+        .p-chips-multiple-container {
+            @include invalid-filled-input-wrapper();
+        }
+    }
 }
 
 .p-float-label {
