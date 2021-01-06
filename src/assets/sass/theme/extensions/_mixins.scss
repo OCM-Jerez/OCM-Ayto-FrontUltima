@@ -40,11 +40,14 @@
         background-size: 100% 2px, 100% 1px;
     }
 
-    &.p-error,
-    &.p-invalid,
     &.ng-dirty.ng-invalid {
-        &:enabled:hover,
         &:enabled:focus {
+            border-color: transparent;
+            box-shadow: none;
+            background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
+        }
+
+        &:enabled:hover {
             border-color: transparent;
             background-image: linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor), linear-gradient(to bottom, $inputErrorBorderColor, $inputErrorBorderColor);
         }
