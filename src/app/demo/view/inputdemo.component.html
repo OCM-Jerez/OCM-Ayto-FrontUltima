@@ -19,7 +19,7 @@
 				<div class="p-col-12 p-mb-2 p-lg-4 p-mb-lg-0">
                     <span class="p-float-label">
                         <input type="text" pInputText class="ng-invalid ng-dirty"/>
-                        <label>Invalid</label>
+                        <label>Invalid*</label>
                     </span>
 				</div>
 			</div>
@@ -159,7 +159,7 @@
 
             <h5>Dropdown</h5>
             <span class="p-float-label">
-                <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" [showClear]="true"></p-dropdown>
+                <p-dropdown [options]="cities" [(ngModel)]="selectedDrop" [showClear]="true" [autoDisplayFirst]="false"></p-dropdown>
                 <label>Select a city</label>
             </span>
 
