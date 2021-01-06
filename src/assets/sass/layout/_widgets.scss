@@ -420,12 +420,13 @@
 
             .emoji-button {
                 border-radius: 50%;
-                width: 2rem;
-                height: 2rem;
+                width: 2.5rem;
+                height: 2.5rem;
                 min-width: 0;
 
                 .p-button-label {
                     color: yellow !important;
+                    font-size: 1.5rem;
                 }
             }
         }
