@@ -40,6 +40,8 @@ export class TableDemoComponent implements OnInit {
 
     @ViewChild('dt') table: Table;
 
+    activityValues: number[] = [0, 100];
+
     constructor(private customerService: CustomerService, private productService: ProductService,
                 private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
@@ -49,7 +51,7 @@ export class TableDemoComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.customerService.getCustomersMedium().then(customers => this.customers1 = customers);
+        this.customerService.getCustomersLarge().then(customers => this.customers1 = customers);
         this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
         this.customerService.getCustomersMedium().then(customers => this.customers3 = customers);
         this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
