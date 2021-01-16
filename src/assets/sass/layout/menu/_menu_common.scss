@@ -68,6 +68,12 @@
                         margin-left: auto;
                     }
 
+                    &.rotated-icon {
+                        .layout-menuitem-icon {
+                            transform: rotate(90deg);
+                        }
+                    }
+
                     .p-badge + .layout-submenu-toggler {
                         margin-left: .5rem;
                     }

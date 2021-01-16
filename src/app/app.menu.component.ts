@@ -21,7 +21,8 @@ export class AppMenuComponent implements OnInit {
                 label: 'Favorites', icon: 'pi pi-fw pi-home',
                 items: [
                     {label: 'Dashboard Sales', icon: 'pi pi-fw pi-home', routerLink: ['/'], badge: '4', badgeClass: 'p-badge-info'},
-                    {label: 'Dashboard Analytics', icon: 'pi pi-fw pi-home', routerLink: ['/favorites/dashboardanalytics'], badge: '2', badgeClass: 'p-badge-success'}
+                    {label: 'Dashboard Analytics', icon: 'pi pi-fw pi-home',
+                        routerLink: ['/favorites/dashboardanalytics'], badge: '2', badgeClass: 'p-badge-success'}
                 ]
             },
             {
@@ -32,6 +33,7 @@ export class AppMenuComponent implements OnInit {
                     {label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'},
                     {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'], badge: '6', badgeClass: 'p-badge-help'},
                     {label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']},
+                    {label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/uikit/timeline']},
                     {label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree']},
                     {label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel']},
                     {label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay']},
