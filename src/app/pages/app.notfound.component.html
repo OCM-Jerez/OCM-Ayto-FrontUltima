@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="topbar-right p-mr-3 p-d-flex">
-            <button pButton pRipple type="button" label="DASHBOARD"
+            <button pButton pRipple type="button" label="DASHBOARD" [routerLink]="['/']"
                     class="p-button-text p-button-plain topbar-button"></button>
         </div>
     </div>
@@ -20,7 +20,7 @@
                 <img src="assets/layout/images/pages/404.png" alt=""/>
             </div>
             <div class="pages-detail p-pb-6">Requested resource is not available.</div>
-            <button pButton pRipple type="button" label="GO BACK TO DASHBOARD" class="p-button-text"></button>
+            <button pButton pRipple type="button" label="GO BACK TO DASHBOARD" [routerLink]="['/']" class="p-button-text"></button>
         </div>
     </div>
 </div>

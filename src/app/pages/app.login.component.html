@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="topbar-right p-mr-3 p-d-flex">
-            <button pButton pRipple type="button" label="DASHBOARD"
+            <button pButton pRipple type="button" label="DASHBOARD" [routerLink]="['/']"
                     class="p-button-text p-button-plain topbar-button"></button>
         </div>
     </div>
@@ -27,8 +27,8 @@
                         <i class="pi pi-envelope"></i>
                     </span>
                     <span class="p-float-label">
-                        <input type="text" id="inputgroup" pInputText>
-                        <label for="inputgroup">Email</label>
+                        <input type="text" id="email" pInputText>
+                        <label for="email">Email</label>
                     </span>
                 </div>
 
@@ -37,8 +37,8 @@
                         <i class="pi pi-lock"></i>
                     </span>
                     <span class="p-float-label">
-                        <input type="password" id="inputgroup" pInputText>
-                        <label for="inputgroup">Password</label>
+                        <input type="password" id="password" pInputText>
+                        <label for="password">Password</label>
                     </span>
                 </div>
 
