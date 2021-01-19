@@ -105,7 +105,7 @@ import {InputDemoComponent} from './demo/view/inputdemo.component';
 import {ButtonDemoComponent} from './demo/view/buttondemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
 import {ListDemoComponent} from './demo/view/listdemo.component';
-import {TimelineDemoComponent} from './demo/view/timelinedemo.component';
+import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 import {TreeDemoComponent} from './demo/view/treedemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
@@ -255,7 +255,6 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         ButtonDemoComponent,
         TableDemoComponent,
         ListDemoComponent,
-        TimelineDemoComponent,
         TreeDemoComponent,
         PanelsDemoComponent,
         OverlaysDemoComponent,
@@ -286,6 +285,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppNotfoundComponent,
         AppErrorComponent,
         AppAccessdeniedComponent,
+        AppTimelineDemoComponent,
         AppContactusComponent
     ],
     providers: [

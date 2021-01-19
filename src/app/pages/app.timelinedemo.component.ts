@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {PrimeIcons} from 'primeng/api';
-import {AppBreadcrumbService} from '../../app.breadcrumb.service';
+import {AppBreadcrumbService} from '../app.breadcrumb.service';
 
 @Component({
-    templateUrl: './timelinedemo.component.html',
-    styleUrls: ['./timelinedemo.scss']
+    templateUrl: './app.timelinedemo.component.html',
+    styleUrls: ['./app.timelinedemo.scss']
 })
-export class TimelineDemoComponent implements OnInit{
+export class AppTimelineDemoComponent implements OnInit{
 
     customEvents: any[];
 
