@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {DashboardComponent} from './demo/view/dashboard.component';
 import {DashboardAnalyticsComponent} from './demo/view/dashboardanalytics.component';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
+import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
 import {PanelsDemoComponent} from './demo/view/panelsdemo.component';
 import {OverlaysDemoComponent} from './demo/view/overlaysdemo.component';
 import {MediaDemoComponent} from './demo/view/mediademo.component';
@@ -51,6 +52,7 @@ import {AppHelpComponent} from './pages/app.help.component';
                     {path: 'favorites/dashboardanalytics', component: DashboardAnalyticsComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
+                    {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
                     {path: 'uikit/input', component: InputDemoComponent},
                     {path: 'uikit/button', component: ButtonDemoComponent},
                     {path: 'uikit/table', component: TableDemoComponent},

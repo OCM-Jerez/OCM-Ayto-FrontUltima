@@ -3,9 +3,10 @@
     background: $inputBg;
     border-radius: $borderRadius;
     transition: $formElementTransition;
+
     .p-inputtext {
         background-image: none;
-        background: transparent;
+        background-color: transparent;
         border: 0 none;
 
         &:enabled:focus {
@@ -34,34 +35,10 @@
     &:not(.p-disabled):hover {
         border-color: $inputHoverBorderColor;
     }
-}
 
-p-calendar.p-inputwrapper-focus {
-    .p-calendar-w-btn {
+    &:not(.p-disabled).p-focus {
         border-color: $inputFocusBorderColor;
         box-shadow: inset 0 0 0 1px $inputFocusBorderColor,inset 0 0 0 1px $inputFocusBorderColor,inset 0 0 0 1px $inputFocusBorderColor,inset 0 0 0 1px $inputFocusBorderColor;
-    }
-}
-
-.p-input-filled {
-    .p-calendar-w-btn {
-        @include filled-input-wrapper();
-    }
-
-    p-calendar {
-        &:not(.p-disabled).p-inputwrapper-focus {
-            .p-calendar-w-btn {
-                box-shadow: none;
-                background-color: $inputFilledFocusBg;
-                border-color: transparent;
-                background-size: 100% 2px, 100% 1px;
-            }
-
-        }
-    }
-    
-    p-calendar.ng-dirty.ng-invalid > .p-calendar-w-btn {
-        @include invalid-filled-input-wrapper();
     }
 }
 
@@ -104,6 +81,51 @@ p-calendar.p-inputwrapper-focus {
             }
         }
     }
+}
 
+p-calendar.ng-dirty.ng-invalid {
+    .p-inputtext {
+        &:enabled:focus {
+            box-shadow: inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor;
+        }
+    }
 
+    .p-calendar-w-btn {
+        border-color: $inputErrorBorderColor;
+
+        .p-inputtext {
+            &:enabled:focus {
+                box-shadow: none;
+            }
+        }
+
+        &:not(.p-disabled).p-focus {
+            box-shadow: inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor,inset 0 0 0 1px $inputErrorBorderColor;
+        }
+    }
+}
+
+.p-input-filled {
+    .p-calendar-w-btn {
+        @include filled-input-wrapper();
+
+        .p-inputtext {
+            border: 0 none;
+        }
+    }
+
+    p-calendar.ng-dirty.ng-invalid {
+        .p-inputtext {
+            @include invalid-filled-input();
+        }
+
+        .p-calendar-w-btn {
+            @include invalid-filled-input-wrapper();
+
+            .p-inputtext {
+                border: 0 none;
+                background-image: none;
+            }
+        }
+    }
 }
