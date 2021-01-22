@@ -179,24 +179,6 @@
                                [filter]="false"></p-multiSelect>
                 <label>Select a country</label>
             </span>
-
-            <h5>CascadeSelect</h5>
-            <span class="p-float-label">
-                <p-cascadeSelect [(ngModel)]="selectedCascade" [options]="countriesCascade" optionLabel="cname"
-                                 optionGroupLabel="name"
-                                 [optionGroupChildren]="['states', 'cities']">
-                    <ng-template pTemplate="option" let-option>
-                        <div class="country-item">
-                            <img *ngIf="option.states" src="assets/demo/flags/flag_placeholder.png"
-                                 [class]="'flag flag-' + option.code.toLowerCase()"/>
-                            <i class="pi pi-compass p-mr-2" *ngIf="option.cities"></i>
-                            <i class="pi pi-map-marker p-mr-2" *ngIf="option.cname"></i>
-                            <span>{{option.cname || option.name}}</span>
-                        </div>
-                    </ng-template>
-                </p-cascadeSelect>
-                <label>Select a City</label>
-            </span>
         </div>
 
         <div class="card">

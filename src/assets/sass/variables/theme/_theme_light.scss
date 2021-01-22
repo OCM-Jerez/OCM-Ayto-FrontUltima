@@ -183,8 +183,8 @@ $dangerButtonTextActiveColor:#ffffff;
 $dangerButtonActiveBorderColor:transparent;
 $dangerButtonFocusShadow:none;
 
-$linkButtonColor:transparent;
-$linkButtonHoverColor:transparent;
+$linkButtonColor:$primaryColor;
+$linkButtonHoverColor:$primaryColor;
 $linkButtonTextHoverDecoration:underline;
 $linkButtonFocusShadow:none;
 
