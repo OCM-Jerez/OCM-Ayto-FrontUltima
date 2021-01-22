@@ -3,7 +3,7 @@
         <div class="card docs">
 
             <h5>Current Version</h5>
-            <p>Angular 10 and PrimeNG 11</p>
+            <p>Angular 11 and PrimeNG 11</p>
 
             <h5>Dependencies</h5>
             <p>Ultima has no direct dependency. More information about dependencies is available at <a href="https://www.primefaces.org/why-primeng-templates/">Why PrimeNG Templates</a> article.</p>
@@ -236,7 +236,8 @@ export class AppMenuComponent implements OnInit &#123;
                 items: [
                     &#123;label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']&#125;,
                     &#123;label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']&#125;,
-                    &#123;label: 'Float Label', icon: 'pi pi-fw pi-bookmark', routerLink: ['/uikit/floatlabel']&#125;,
+                    &#123;label: 'Float Label', icon: 'pi pi-bookmark', routerLink: ['/uikit/floatlabel']&#125;,
+                    &#123;label: 'Invalid State', icon: 'pi pi-exclamation-circle', routerLink: ['/uikit/invalidstate']&#125;,
                     &#123;label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'&#125;,
                     &#123;label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']&#125;,
                     &#123;label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']&#125;,
@@ -270,6 +271,7 @@ export class AppMenuComponent implements OnInit &#123;
                 items: [
                     &#123;label: 'Crud', icon: 'pi pi-fw pi-pencil', routerLink: ['/pages/crud']&#125;,
                     &#123;label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', routerLink: ['/pages/calendar']&#125;,
+                    &#123;label: 'Timeline', icon: 'pi pi-fw pi-calendar', routerLink: ['/pages/timeline']&#125;,
                     &#123;
                         label: 'Landing', icon: 'pi pi-fw pi-globe',
                         items: [
@@ -669,8 +671,8 @@ $dangerButtonTextActiveColor:#ffffff;
 $dangerButtonActiveBorderColor:transparent;
 $dangerButtonFocusShadow:none;
 
-$linkButtonColor:transparent;
-$linkButtonHoverColor:transparent;
+$linkButtonColor:$primaryColor;
+$linkButtonHoverColor:$primaryColor;
 $linkButtonTextHoverDecoration:underline;
 $linkButtonFocusShadow:none;
 
@@ -1208,6 +1210,40 @@ $galleriaThumbnailNavigatorHoverColor:rgba(255,255,255,.87);
 $galleriaThumbnailNavigatorBorderRadius:50%;
 $galleriaThumbnailNavigatorWidth:2rem;
 $galleriaThumbnailNavigatorHeight:2rem;
+
+//divider
+$dividerHorizontalMargin:1.25rem 0;
+$dividerHorizontalPadding:0 1.25rem;
+$dividerVerticalMargin:0 1.25rem;
+$dividerVerticalPadding:1.25rem 0;
+$dividerSize:1px;
+$dividerColor:rgba(0,0,0,.12);
+
+//avatar
+$avatarBg:rgba(0,0,0,.12);
+$avatarTextColor:$textColor;
+
+//chip
+$chipBg:rgba(0,0,0,.12);
+$chipTextColor:$textColor;
+$chipBorderRadius: 16px;
+
+//scrollTop
+$scrollTopBg:$accentColor;
+$scrollTopHoverBg:rgba($accentColor, .92);
+$scrollTopWidth:3rem;
+$scrollTopHeight:3rem;
+$scrollTopBorderRadius:50%;
+$scrollTopFontSize:1.5rem;
+$scrollTopTextColor:$accentTextColor;
+
+//skeleton
+$skeletonBg:rgba(0,0,0,.08);
+$skeletonAnimationBg:rgba(255,255,255,0.4);
+
+//splitter
+$splitterGutterBg:rgba(0,0,0,.04);
+$splitterGutterHandleBg:rgba(0,0,0,.12);
 
 :root &#123;
     --surface-a:#ffffff;
