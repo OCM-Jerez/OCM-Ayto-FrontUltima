@@ -78,10 +78,10 @@ export class DashboardComponent implements OnInit {
         ]
 
         this.ordersChart = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre','Octubre','Noviembre','Diciembre'],
             datasets: [{
-                label: 'New Orders',
-                data: [31, 83, 69, 29, 62, 25, 59, 26, 46],
+                label: '2020',
+                data: [31, 83, 69, 29, 62, 25, 59, 26, 46,34,21,54],
                 borderColor: [
                     '#4DD0E1',
                 ],
@@ -91,8 +91,8 @@ export class DashboardComponent implements OnInit {
                 borderWidth: 2,
                 fill: true
             }, {
-                label: 'Completed Orders',
-                data: [67, 98, 27, 88, 38, 3, 22, 60, 56],
+                label: '2021',
+                data: [67, 98, 27, 88, 38, 3, 22, 60, 56,34,45,56],
                 borderColor: [
                     '#3F51B5',
                 ],
@@ -107,7 +107,7 @@ export class DashboardComponent implements OnInit {
         this.ordersOptions = this.getOrdersOptions();
 
         this.overviewChartData1 = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
+            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre'],
             datasets: [
                 {
                     data: [50, 64, 32, 24, 18, 27, 20, 36, 30],
@@ -241,10 +241,10 @@ export class DashboardComponent implements OnInit {
         };
 
         this.timelineEvents = [
-            { status: 'Ordered', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63', description: "Richard Jones (C8012) has ordered a blue t-shirt for $79." },
-            { status: 'Processing', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00', description: "Order #99207 has processed succesfully." },
-            { status: 'Shipped', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7', description: "Order #99207 has shipped with shipping code 2222302090." },
-            { status: 'Delivered', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7', description: "Richard Jones (C8012) has recieved his blue t-shirt." }
+            { status: 'Preparación', date: '15/10/2020 10:30', icon: "pi pi-shopping-cart", color: '#E91E63', description: "" },
+            { status: 'Acuerdo', date: '15/10/2020 14:00', icon: "pi pi-cog", color: '#FB8C00', description: "" },
+            { status: 'Aprobación', date: '15/10/2020 16:15', icon: "pi pi-compass", color: '#673AB7', description: "" },
+            { status: 'Ejecucuión', date: '16/10/2020 10:00', icon: "pi pi-check-square", color: '#0097A7', description: "" }
         ];
     }
 

@@ -3,7 +3,7 @@
         <div class="card overview-box p-d-flex p-flex-column p-pt-2">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-shopping-cart"></i>
-                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Orders</h6>
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">PMP</h6>
                 <!-- <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu1.toggle($event)"></button>
                     <p-menu #menu1 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
@@ -11,8 +11,8 @@
             </div>
             <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
-                    <span class="p-mb-1 fs-xlarge">640</span>
-                    <span class="overview-status p-p-1 teal-bgcolor fs-small">1420 Completed</span>
+                    <span class="p-mb-1 fs-xlarge">356 días</span>
+                    <span class="overview-status p-p-1 teal-bgcolor fs-small">+5 días</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
                     <p-chart type="line" [data]="overviewChartData1" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
@@ -25,16 +25,16 @@
         <div class="card overview-box p-d-flex p-flex-column p-pt-2">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-dollar"></i>
-                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Revenue</h6>
-                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Deuda viva</h6>
+                <!-- <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu2.toggle($event)"></button>
                     <p-menu #menu2 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </div>
+                </div> -->
             </div>
             <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
-                    <span class="p-mb-1 fs-xlarge">$57K</span>
-                    <span class="overview-status p-p-1 teal-bgcolor fs-small">$9,640 Income</span>
+                    <span class="p-mb-1 fs-xlarge">820M</span>
+                    <span class="overview-status p-p-1 teal-bgcolor fs-small">+45</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
                     <p-chart type="line" [data]="overviewChartData2" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
@@ -47,16 +47,16 @@
         <div class="card overview-box p-d-flex p-flex-column p-pt-2">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-users"></i>
-                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Customers</h6>
-                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Deuda comercial</h6>
+                <!-- <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu3.toggle($event)"></button>
                     <p-menu #menu3 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </div>
+                </div> -->
             </div>
             <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
-                    <span class="p-mb-1 fs-xlarge">8572</span>
-                    <span class="overview-status p-p-1 pink-bgcolor fs-small">25402 Registered</span>
+                    <span class="p-mb-1 fs-xlarge">160M</span>
+                    <span class="overview-status p-p-1 pink-bgcolor fs-small">+42M</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
                     <p-chart type="line" [data]="overviewChartData3" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
@@ -69,16 +69,16 @@
         <div class="card overview-box p-d-flex p-flex-column p-pt-2">
             <div class="p-d-flex p-ai-center muted-text">
                 <i class="pi pi-comments"></i>
-                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Comments</h6>
-                <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
+                <h6 class="p-m-0" [ngClass]="{'p-pl-2': !app.isRTL, 'p-pr-2': app.isRTL}">Tesoreria</h6>
+                <!-- <div [ngClass]="{'p-ml-auto': !app.isRTL, 'p-mr-auto': app.isRTL}">
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu4.toggle($event)"></button>
                     <p-menu #menu4 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </div>
+                </div> -->
             </div>
             <div class="p-d-flex p-jc-between p-mt-3 p-flex-wrap">
                 <div class="p-d-flex p-flex-column">
-                    <span class="p-mb-1 fs-xlarge">805</span>
-                    <span class="overview-status p-p-1 teal-bgcolor fs-small">85 Responded</span>
+                    <span class="p-mb-1 fs-xlarge">0</span>
+                    <span class="overview-status p-p-1 teal-bgcolor fs-small">+10</span>
                 </div>
                 <div class="p-d-flex p-ai-end">
                     <p-chart type="line" [data]="overviewChartData4" [options]="overviewChartOptions" responsive="true" height="60px" width="160px"></p-chart>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-lg-6">
+    <!-- <div class="p-col-12 p-lg-6">
         <div class="card height-100">
             <div class="card-header">
                 <h5>Contact</h5>
@@ -157,16 +157,16 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <div class="p-col-12 p-lg-6">
         <div class="card height-100">
             <div class="card-header">
-                <h5>Order Graph</h5>
-                <div>
+                <h5>Periodo Medio de Pago a proveedores (PMP)</h5>
+                <!-- <div>
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu6.toggle($event)"></button>
                     <p-menu #menu6 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </div>
+                </div> -->
             </div>
             <p-chart type="line" [data]="ordersChart" [options]="ordersOptions"></p-chart>
         </div>
@@ -175,11 +175,11 @@
     <div class="p-col-12 p-lg-6">
         <div class="card height-100 widget-timeline">
             <div class="card-header">
-                <h5>Timeline</h5>
-                <div>
+                <h5>Linea tiempo</h5>
+                <!-- <div>
                     <button pButton pRipple type="button" icon="pi pi-ellipsis-h" class="p-button-rounded p-button-text p-button-plain" (click)="menu7.toggle($event)"></button>
                     <p-menu #menu7 [popup]="true" [model]="[{label: 'Update', icon: 'pi pi-fw pi-refresh'},{label: 'Edit', icon: 'pi pi-fw pi-pencil'}]"></p-menu>
-                </div>
+                </div> -->
             </div>
 
             <p-timeline [value]="timelineEvents" align="left" styleClass="customized-timeline">
@@ -198,7 +198,7 @@
         </div>
     </div>
 
-    <div class="p-col-12 p-md-12 p-lg-6">
+    <!-- <div class="p-col-12 p-md-12 p-lg-6">
         <div class="card height-100">
             <p-table [value]="products" [paginator]="true" [rows]="8" styleClass="p-datatable-products">
                 <ng-template pTemplate="header">
@@ -241,9 +241,9 @@
                 </ng-template>
             </p-table>
         </div>
-    </div>
+    </div> -->
 
-    <div class="p-col-12 p-lg-6">
+    <!-- <div class="p-col-12 p-lg-6">
         <div class="card height-100">
             <div class="card-header">
                 <h5>Chat</h5>
@@ -282,9 +282,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="p-col-12 p-lg-3">
+    <!-- <div class="p-col-12 p-lg-3">
         <div class="card height-100">
             <div class="card-header">
                 <h5>Activity</h5>
@@ -339,9 +339,9 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
-    <div class="p-col-12 p-lg-3">
+    <!-- <div class="p-col-12 p-lg-3">
         <div class="card height-100">
             <div class="card-header">
                 <h5>Best Sellers</h5>
@@ -402,5 +402,5 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>
