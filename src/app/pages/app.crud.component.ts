@@ -31,35 +31,31 @@ import {AppBreadcrumbService} from '../app.breadcrumb.service';
 export class AppCrudComponent implements OnInit {
 
     productDialog: boolean;
-
     products: Product[];
-
     product: Product;
-
     selectedProducts: Product[];
-
     submitted: boolean;
-
     cols: any[];
 
     constructor(private productService: ProductService, private messageService: MessageService,
                 private confirmationService: ConfirmationService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
-            { label: 'Pages' },
-            { label: 'Crud', routerLink: ['/pages/crud'] }
+            { label: 'Paginas' },
+            { label: 'Programas', routerLink: ['/pages/crud'] }
         ]);
     }
 
     ngOnInit() {
         this.productService.getProducts().then(data => this.products = data);
 
-        this.cols = [
-            { field: 'name', header: 'Name' },
-            { field: 'price', header: 'Price' },
-            { field: 'category', header: 'Category' },
-            { field: 'rating', header: 'Reviews' },
-            { field: 'inventoryStatus', header: 'Status' }
-        ];
+        // Parece que no tiene utilidad, nada cambia al comentarlo.
+        // this.cols = [
+        //     { field: 'name', header: 'Name' },
+        //     { field: 'price', header: 'Price' },
+        //     { field: 'category', header: 'Category' },
+        //     { field: 'rating', header: 'Reviews' },
+        //     { field: 'inventoryStatus', header: 'Status' }
+        // ];
     }
 
     openNew() {

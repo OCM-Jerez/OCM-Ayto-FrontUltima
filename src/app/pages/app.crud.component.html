@@ -6,12 +6,12 @@
         <div class="card">
             <p-toolbar styleClass="p-mb-4">
                 <ng-template pTemplate="left">
-                    <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openNew()"></button>
-                    <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+                    <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2" (click)="openNew()"></button>
+                    <!-- <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button> -->
                 </ng-template>
 
                 <ng-template pTemplate="right">
-                    <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block"></p-fileUpload>
+                    <!-- <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block"></p-fileUpload> -->
                     <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help p-mb-2" (click)="dt.exportCSV()"></button>
                 </ng-template>
             </p-toolbar>
@@ -19,13 +19,13 @@
             <p-table #dt [value]="products" [columns]="cols" [rows]="10" [paginator]="true" [globalFilterFields]="['name','country.name','representative.name','status']"
                      [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
                      styleClass="p-datatable-customers"
-                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+                     currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} programas" [showCurrentPageReport]="true">
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                        <h5 class="p-m-0">Manage Products</h5>
+                        <h5 class="p-m-0">Programas</h5>
                         <span class="p-input-icon-left">
                         <i class="pi pi-search"></i>
-                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search..." />
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar..." />
                     </span>
                     </div>
                 </ng-template>
@@ -34,12 +34,12 @@
                         <th style="width: 3rem">
                             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                         </th>
-                        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-                        <th>Image</th>
-                        <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-                        <th pSortableColumn="category">Category <p-sortIcon field="category"></p-sortIcon></th>
-                        <th pSortableColumn="rating">Reviews <p-sortIcon field="rating"></p-sortIcon></th>
-                        <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th>
+                        <th pSortableColumn="name">Código <p-sortIcon field="name"></p-sortIcon></th>
+                        <!-- <th>Image</th> -->
+                        <th pSortableColumn="price">Descripción <p-sortIcon field="price"></p-sortIcon></th>
+                        <th pSortableColumn="category">Observaciones <p-sortIcon field="category"></p-sortIcon></th>
+                        <th pSortableColumn="rating">WEB OCM <p-sortIcon field="rating"></p-sortIcon></th>
+                        <!-- <th pSortableColumn="inventoryStatus">Status <p-sortIcon field="inventoryStatus"></p-sortIcon></th> -->
                         <th></th>
                     </tr>
                 </ng-template>
@@ -51,9 +51,9 @@
                         <td><span class="p-column-title">Name</span>
                             {{product.name}}
                         </td>
-                        <td><span class="p-column-title">Image</span>
+                        <!-- <td><span class="p-column-title">Image</span>
                             <img [src]="'assets/demo/images/product/' + product.image" [alt]="product.name" width="100" class="p-shadow-4" />
-                        </td>
+                        </td> -->
                         <td><span class="p-column-title">Price</span>
                             {{product.price | currency:'USD'}}
                         </td>
@@ -63,20 +63,20 @@
                         <td><span class="p-column-title">Reviews</span>
                             <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                         </td>
-                        <td><span class="p-column-title">Status</span>
+                        <!-- <td><span class="p-column-title">Status</span>
                             <span [class]="'product-badge status-' + (product.inventoryStatus ? product.inventoryStatus.toLowerCase() : '')">{{product.inventoryStatus}}</span>
-                        </td>
+                        </td> -->
                         <td>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
-                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                            <!-- <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button> -->
                         </td>
                     </tr>
                 </ng-template>
-                <ng-template pTemplate="summary">
+                <!-- <ng-template pTemplate="summary">
                     <div class="p-d-flex p-ai-center p-jc-between">
-                        In total there are {{products ? products.length : 0 }} products.
+                        En total existen {{products ? products.length : 0 }} programas.
                     </div>
-                </ng-template>
+                </ng-template> -->
             </p-table>
         </div>
 
