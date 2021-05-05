@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../demo/domain/product';
-import { ProductService } from '../demo/service/productservice';
+import { Programa } from '../demo/domain/programa';
+import { ProgramaService } from '../demo/service/programaservice';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
 import { AppBreadcrumbService } from '../app.breadcrumb.service';
 
 @Component({
-    templateUrl: './app.crud.component.html',
+    templateUrl: './app.programas.component.html',
     styleUrls: ['../demo/view/tabledemo.scss'],
     styles: [`
         :host ::ng-deep .p-dialog .product-image {
@@ -28,26 +28,26 @@ import { AppBreadcrumbService } from '../app.breadcrumb.service';
     `],
     providers: [MessageService, ConfirmationService]
 })
-export class AppCrudComponent implements OnInit {
+export class AppProgramasComponent implements OnInit {
 
-    productDialog: boolean;
-    products: Product[];
-    product: Product;
-    selectedProducts: Product[];
+    programaDialog: boolean;
+    programas: Programa[];
+    programa: Programa;
+    selectedProgramas: Programa[];
     submitted: boolean;
     cols: any[];
 
-    constructor(private productService: ProductService, private messageService: MessageService,
+    constructor(private programaService: ProgramaService, private messageService: MessageService,
                 private confirmationService: ConfirmationService, private breadcrumbService: AppBreadcrumbService) {
         this.breadcrumbService.setItems([
             { label: 'Paginas' },
-            { label: 'Programas', routerLink: ['/pages/crud'] }
+            { label: 'Programas', routerLink: ['/pages/programas'] }
         ]);
     }
 
     ngOnInit() {
             // this.productService.getProducts().then(data => this.products = data);
-        this.productService.getProgramas().then(data => this.products = data);
+        this.programaService.getProgramas().then(data => this.programas = data);
 
         // Nombres columnas al exportar a .CSV.
         this.cols = [
@@ -60,72 +60,72 @@ export class AppCrudComponent implements OnInit {
     }
 
     openNew() {
-        this.product = {};
+        this.programa = {};
         this.submitted = false;
-        this.productDialog = true;
+        this.programaDialog = true;
     }
 
-    deleteSelectedProducts() {
+    deleteSelectedProgramas() {
         this.confirmationService.confirm({
-            message: 'Are you sure you want to delete the selected products?',
+            message: 'Are you sure you want to delete the selected programas?',
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter(val => !this.selectedProducts.includes(val));
-                this.selectedProducts = null;
-                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000});
+                this.programas = this.programas.filter(val => !this.selectedProgramas.includes(val));
+                this.selectedProgramas = null;
+                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Programas Deleted', life: 3000});
             }
         });
     }
 
-    editProduct(product: Product) {
-        this.product = {...product};
-        this.productDialog = true;
+    editPrograma(programa: Programa) {
+        this.programa = {...programa};
+        this.programaDialog = true;
     }
 
-    deleteProduct(product: Product) {
+    deletePrograma(programa: Programa) {
         this.confirmationService.confirm({
-            message: 'Are you sure you want to delete ' + product.name + '?',
+            message: 'Are you sure you want to delete ' + programa.name + '?',
             header: 'Confirm',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                this.products = this.products.filter(val => val.id !== product.id);
-                this.product = {};
-                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000});
+                this.programas = this.programas.filter(val => val.id !== programa.id);
+                this.programa = {};
+                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Deleted', life: 3000});
             }
         });
     }
 
     hideDialog() {
-        this.productDialog = false;
+        this.programaDialog = false;
         this.submitted = false;
     }
 
-    saveProduct() {
+    savePrograma() {
         this.submitted = true;
 
-        if (this.product.name.trim()) {
-            if (this.product.id) {
-                this.products[this.findIndexById(this.product.id)] = this.product;
-                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000});
+        if (this.programa.name.trim()) {
+            if (this.programa.id) {
+                this.programas[this.findIndexById(this.programa.id)] = this.programa;
+                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 3000});
             }
             else {
-                this.product.id = this.createId();
-                this.product.image = 'product-placeholder.svg';
-                this.products.push(this.product);
-                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000});
+                this.programa.id = this.createId();
+                this.programa.image = 'product-placeholder.svg';
+                this.programas.push(this.programa);
+                this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Created', life: 3000});
             }
 
-            this.products = [...this.products];
-            this.productDialog = false;
-            this.product = {};
+            this.programas = [...this.programas];
+            this.programaDialog = false;
+            this.programa = {};
         }
     }
 
     findIndexById(id: string): number {
         let index = -1;
-        for (let i = 0; i < this.products.length; i++) {
-            if (this.products[i].id === id) {
+        for (let i = 0; i < this.programas.length; i++) {
+            if (this.programas[i].id === id) {
                 index = i;
                 break;
             }

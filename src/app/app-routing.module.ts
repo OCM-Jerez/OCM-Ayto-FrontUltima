@@ -37,7 +37,7 @@ import {WidgetsComponent} from './utilities/widgets.component';
 import {SpacingComponent} from './utilities/spacing.component';
 import {TypographyComponent} from './utilities/typography.component';
 import {TextComponent} from './utilities/text.component';
-import {AppCrudComponent} from './pages/app.crud.component';
+import {AppProgramasComponent} from './pages/app.programas.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
@@ -75,7 +75,7 @@ import {AppHelpComponent} from './pages/app.help.component';
                     {path: 'utilities/spacing', component: SpacingComponent},
                     {path: 'utilities/typography', component: TypographyComponent},
                     {path: 'utilities/text', component: TextComponent},
-                    {path: 'pages/crud', component: AppCrudComponent},
+                    {path: 'pages/programas', component: AppProgramasComponent},
                     {path: 'pages/calendar', component: AppCalendarComponent},
                     {path: 'pages/timeline', component: AppTimelineDemoComponent},
                     {path: 'pages/invoice', component: AppInvoiceComponent},

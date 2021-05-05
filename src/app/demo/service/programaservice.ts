@@ -1,38 +1,46 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Product } from '../domain/product';
+import { Programa } from '../domain/programa';
 
 @Injectable()
-export class ProductService {
+export class ProgramaService {
 
     constructor(private http: HttpClient) { }
 
     getProductsSmall() {
         return this.http.get<any>('assets/demo/data/products-small.json')
         .toPromise()
-        .then(res => res.data as Product[])
+        .then(res => res.data as Programa[])
         .then(data => data);
     }
 
     getProducts() {
         return this.http.get<any>('assets/demo/data/products.json')
         .toPromise()
-        .then(res => res.data as Product[])
+        .then(res => res.data as Programa[])
         .then(data => data);
     }
+
+    async getProgramas() {
+        return await this.http.get<any>('http://localhost:3000/programas')
+        .toPromise()
+        .then(res => res.data as Programa[])
+        .then(data => data);
+    }
+
 
     getProductsMixed() {
         return this.http.get<any>('assets/demo/data/products-mixed.json')
         .toPromise()
-        .then(res => res.data as Product[])
+        .then(res => res.data as Programa[])
         .then(data => data);
     }
 
     getProductsWithOrdersSmall() {
         return this.http.get<any>('assets/demo/data/products-orders-small.json')
         .toPromise()
-        .then(res => res.data as Product[])
+        .then(res => res.data as Programa[])
         .then(data => data);
     }
 }

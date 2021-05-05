@@ -126,7 +126,7 @@ import {WidgetsComponent} from './utilities/widgets.component';
 import {SpacingComponent} from './utilities/spacing.component';
 import {TypographyComponent} from './utilities/typography.component';
 import {TextComponent} from './utilities/text.component';
-import {AppCrudComponent} from './pages/app.crud.component';
+import {AppProgramasComponent} from './pages/app.programas.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
@@ -143,7 +143,9 @@ import {EventService} from './demo/service/eventservice';
 import {IconService} from './demo/service/iconservice';
 import {NodeService} from './demo/service/nodeservice';
 import {PhotoService} from './demo/service/photoservice';
+import {ProgramaService} from './demo/service/programaservice';
 import {ProductService} from './demo/service/productservice';
+
 
 import {MenuService} from './app.menu.service';
 import {AppBreadcrumbService} from './app.breadcrumb.service';
@@ -278,7 +280,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         SpacingComponent,
         TypographyComponent,
         TextComponent,
-        AppCrudComponent,
+        AppProgramasComponent,
         AppCalendarComponent,
         AppLoginComponent,
         AppLandingComponent,
@@ -293,7 +295,7 @@ import {AppContactusComponent} from './pages/app.contactus.component';
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        PhotoService, ProductService, MenuService, AppBreadcrumbService
+        PhotoService, ProgramaService, ProductService, MenuService, AppBreadcrumbService
     ],
     bootstrap: [AppComponent]
 })
