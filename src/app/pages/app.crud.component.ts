@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../demo/domain/product';
 import { ProductService } from '../demo/service/productservice';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
-import {AppBreadcrumbService} from '../app.breadcrumb.service';
+import { AppBreadcrumbService } from '../app.breadcrumb.service';
 
 @Component({
     templateUrl: './app.crud.component.html',
@@ -46,16 +46,17 @@ export class AppCrudComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.productService.getProducts().then(data => this.products = data);
+            // this.productService.getProducts().then(data => this.products = data);
+        this.productService.getProgramas().then(data => this.products = data);
 
-        // Parece que no tiene utilidad, nada cambia al comentarlo.
-        // this.cols = [
-        //     { field: 'name', header: 'Name' },
-        //     { field: 'price', header: 'Price' },
-        //     { field: 'category', header: 'Category' },
-        //     { field: 'rating', header: 'Reviews' },
-        //     { field: 'inventoryStatus', header: 'Status' }
-        // ];
+        // Nombres columnas al exportar a .CSV.
+        this.cols = [
+            { field: 'Codigo', header: 'Codigo' },
+            { field: 'Descripcion', header: 'Descripcion' },
+            { field: 'Observaciones', header: 'Observaciones' },
+            { field: 'WEBOCM', header: 'WEBOCM' },
+            // { field: 'inventoryStatus', header: 'Status' }
+        ];
     }
 
     openNew() {

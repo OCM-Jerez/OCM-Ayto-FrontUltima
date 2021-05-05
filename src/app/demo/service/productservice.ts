@@ -22,6 +22,14 @@ export class ProductService {
         .then(data => data);
     }
 
+    async getProgramas() {
+        return await this.http.get<any>('http://localhost:3000/programas')
+        .toPromise()
+        .then(res => res.data as Product[])
+        .then(data => data);
+    }
+
+
     getProductsMixed() {
         return this.http.get<any>('assets/demo/data/products-mixed.json')
         .toPromise()
