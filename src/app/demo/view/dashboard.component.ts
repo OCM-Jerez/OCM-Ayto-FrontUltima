@@ -11,35 +11,20 @@ import { AppComponent } from 'src/app/app.component';
     templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
-
     cities: SelectItem[];
-
     products: Product[];
-
     ordersChart: any;
-
     ordersOptions: any;
-
     chartMonthlyData: any;
-
     chartData: any;
-
     selectedCity: any;
-
     timelineEvents: any[];
-
     overviewChartData1: any;
-
     overviewChartData2: any;
-
     overviewChartData3: any;
-
-    overviewChartData4: any;
-
+   overviewChartData4: any;
     overviewChartOptions: any;
-
     chatMessages: any[];
-
     chatEmojis: any[];
 
     @ViewChild('chatcontainer') chatContainerViewChild: ElementRef;
@@ -89,7 +74,7 @@ export class DashboardComponent implements OnInit {
                     'rgba(77, 208, 225, 0.8)',
                 ],
                 borderWidth: 2,
-                fill: true
+                fill: false
             }, {
                 label: '2021',
                 data: [67, 98, 27, 88, 38, 3, 22, 60, 56,34,45,56],
@@ -100,7 +85,7 @@ export class DashboardComponent implements OnInit {
                     'rgba(63, 81, 181, 0.8)',
                 ],
                 borderWidth: 2,
-                fill: true,
+                fill: false,
             }]
         };
 

@@ -41,6 +41,7 @@ import {AppProgramasComponent} from './pages/app.programas.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppInvoiceComponent} from './pages/app.invoice.component';
 import {AppHelpComponent} from './pages/app.help.component';
+import { ProgramaDetailComponent } from './pages/programa-detail/programa-detail.component';
 
 @NgModule({
     imports: [
@@ -51,6 +52,9 @@ import {AppHelpComponent} from './pages/app.help.component';
                     {path: '', component: DashboardComponent},
                     {path: 'favorites/dashboardanalytics', component: DashboardAnalyticsComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
+                    {path: 'pages/programas', component: AppProgramasComponent},
+                    {path: 'pages/programaDetail', component: ProgramaDetailComponent},
+
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
                     {path: 'uikit/input', component: InputDemoComponent},
@@ -75,7 +79,6 @@ import {AppHelpComponent} from './pages/app.help.component';
                     {path: 'utilities/spacing', component: SpacingComponent},
                     {path: 'utilities/typography', component: TypographyComponent},
                     {path: 'utilities/text', component: TextComponent},
-                    {path: 'pages/programas', component: AppProgramasComponent},
                     {path: 'pages/calendar', component: AppCalendarComponent},
                     {path: 'pages/timeline', component: AppTimelineDemoComponent},
                     {path: 'pages/invoice', component: AppInvoiceComponent},

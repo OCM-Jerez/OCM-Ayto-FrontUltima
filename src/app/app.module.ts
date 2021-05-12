@@ -150,6 +150,7 @@ import {ProductService} from './demo/service/productservice';
 import {MenuService} from './app.menu.service';
 import {AppBreadcrumbService} from './app.breadcrumb.service';
 import {AppContactusComponent} from './pages/app.contactus.component';
+import { ProgramaDetailComponent } from './pages/programa-detail/programa-detail.component';
 
 @NgModule({
     imports: [
@@ -290,7 +291,8 @@ import {AppContactusComponent} from './pages/app.contactus.component';
         AppErrorComponent,
         AppAccessdeniedComponent,
         AppTimelineDemoComponent,
-        AppContactusComponent
+        AppContactusComponent,
+        ProgramaDetailComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
