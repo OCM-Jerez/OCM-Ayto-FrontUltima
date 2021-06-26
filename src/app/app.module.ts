@@ -99,24 +99,24 @@ import { AppTopBarComponent } from "./app.topbar.component";
 import { AppFooterComponent } from "./app.footer.component";
 import { DashboardComponent } from "./demo/view/dashboard.component";
 import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
-import { FormLayoutDemoComponent } from "./demo/view/formlayoutdemo.component";
-import { FloatLabelDemoComponent } from "./demo/view/floatlabeldemo.component";
-import { InvalidStateDemoComponent } from "./demo/view/invalidstatedemo.component";
-import { InputDemoComponent } from "./demo/view/inputdemo.component";
-import { ButtonDemoComponent } from "./demo/view/buttondemo.component";
-import { TableDemoComponent } from "./demo/view/tabledemo.component";
-import { ListDemoComponent } from "./demo/view/listdemo.component";
-import { TreeDemoComponent } from "./demo/view/treedemo.component";
-import { PanelsDemoComponent } from "./demo/view/panelsdemo.component";
-import { OverlaysDemoComponent } from "./demo/view/overlaysdemo.component";
-import { MediaDemoComponent } from "./demo/view/mediademo.component";
-import { MenusDemoComponent } from "./demo/view/menusdemo.component";
-import { MessagesDemoComponent } from "./demo/view/messagesdemo.component";
-import { MiscDemoComponent } from "./demo/view/miscdemo.component";
-import { EmptyDemoComponent } from "./demo/view/emptydemo.component";
-import { ChartsDemoComponent } from "./demo/view/chartsdemo.component";
-import { FileDemoComponent } from "./demo/view/filedemo.component";
-import { DocumentationComponent } from "./demo/view/documentation.component";
+// import { FormLayoutDemoComponent } from "./demo/view/formlayoutdemo.component";
+// import { FloatLabelDemoComponent } from "./demo/view/floatlabeldemo.component";
+// import { InvalidStateDemoComponent } from "./demo/view/invalidstatedemo.component";
+// import { InputDemoComponent } from "./demo/view/inputdemo.component";
+// import { ButtonDemoComponent } from "./demo/view/buttondemo.component";
+// import { TableDemoComponent } from "./demo/view/tabledemo.component";
+// import { ListDemoComponent } from "./demo/view/listdemo.component";
+// import { TreeDemoComponent } from "./demo/view/treedemo.component";
+// import { PanelsDemoComponent } from "./demo/view/panelsdemo.component";
+// import { OverlaysDemoComponent } from "./demo/view/overlaysdemo.component";
+// import { MediaDemoComponent } from "./demo/view/mediademo.component";
+// import { MenusDemoComponent } from "./demo/view/menusdemo.component";
+// import { MessagesDemoComponent } from "./demo/view/messagesdemo.component";
+// import { MiscDemoComponent } from "./demo/view/miscdemo.component";
+// import { EmptyDemoComponent } from "./demo/view/emptydemo.component";
+// import { ChartsDemoComponent } from "./demo/view/chartsdemo.component";
+// import { FileDemoComponent } from "./demo/view/filedemo.component";
+// import { DocumentationComponent } from "./demo/view/documentation.component";
 import { DisplayComponent } from "./utilities/display.component";
 import { ElevationComponent } from "./utilities/elevation.component";
 import { FlexboxComponent } from "./utilities/flexbox.component";
@@ -241,59 +241,59 @@ import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtie
         AppCodeModule,
     ],
     declarations: [
+        // ButtonDemoComponent,
+        // ChartsDemoComponent,
+        AppAccessdeniedComponent,
+        AppBreadcrumbComponent,
+        AppCalendarComponent,
         AppComponent,
-        AppMainComponent,
         AppConfigComponent,
+        AppContactusComponent,
+        AppErrorComponent,
+        AppFooterComponent,
+        AppHelpComponent,
+        AppInlineMenuComponent,
+        AppInvoiceComponent,
+        AppLandingComponent,
+        AppLoginComponent,
+        AppMainComponent,
         AppMenuComponent,
         AppMenuitemComponent,
-        AppInlineMenuComponent,
+        AppNotfoundComponent,
+        AppProgramasComponent,
         AppRightMenuComponent,
-        AppBreadcrumbComponent,
+        AppTimelineDemoComponent,
         AppTopBarComponent,
-        AppFooterComponent,
-        DashboardComponent,
         DashboardAnalyticsComponent,
-        FormLayoutDemoComponent,
-        FloatLabelDemoComponent,
-        InvalidStateDemoComponent,
-        InputDemoComponent,
-        ButtonDemoComponent,
-        TableDemoComponent,
-        ListDemoComponent,
-        TreeDemoComponent,
-        PanelsDemoComponent,
-        OverlaysDemoComponent,
-        MediaDemoComponent,
-        MenusDemoComponent,
-        MessagesDemoComponent,
-        MessagesDemoComponent,
-        MiscDemoComponent,
-        ChartsDemoComponent,
-        EmptyDemoComponent,
-        FileDemoComponent,
-        DocumentationComponent,
+        DashboardComponent,
+        DashboardtiemposComponent,
         DisplayComponent,
+        // DocumentationComponent,
         ElevationComponent,
+        // EmptyDemoComponent,
+        // FileDemoComponent,
         FlexboxComponent,
+        // FloatLabelDemoComponent,
+        // FormLayoutDemoComponent,
         GridComponent,
         IconsComponent,
-        WidgetsComponent,
-        SpacingComponent,
-        TypographyComponent,
-        TextComponent,
-        AppProgramasComponent,
-        AppCalendarComponent,
-        AppLoginComponent,
-        AppLandingComponent,
-        AppInvoiceComponent,
-        AppHelpComponent,
-        AppNotfoundComponent,
-        AppErrorComponent,
-        AppAccessdeniedComponent,
-        AppTimelineDemoComponent,
-        AppContactusComponent,
+        // InputDemoComponent,
+        // InvalidStateDemoComponent,
+        // ListDemoComponent,
+        // MediaDemoComponent,
+        // MenusDemoComponent,
+        // MessagesDemoComponent,
+        // MessagesDemoComponent,
+        // MiscDemoComponent,
+        // OverlaysDemoComponent,
+        // PanelsDemoComponent,
         ProgramaDetailComponent,
-        DashboardtiemposComponent,
+        SpacingComponent,
+        // TableDemoComponent,
+        TextComponent,
+        // TreeDemoComponent,
+        TypographyComponent,
+        WidgetsComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

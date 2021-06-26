@@ -1,35 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { Programa } from '../demo/domain/programa';
-import { ProgramaService } from '../demo/service/programaservice';
-import { ConfirmationService } from 'primeng/api';
-import { MessageService } from 'primeng/api';
-import { AppBreadcrumbService } from '../app.breadcrumb.service';
-import { Observable } from 'rxjs';
+import { Programa } from "../demo/domain/programa";
+import { ProgramaService } from "../demo/service/programaservice";
+import { ConfirmationService } from "primeng/api";
+import { MessageService } from "primeng/api";
+import { AppBreadcrumbService } from "../app.breadcrumb.service";
+import { Observable } from "rxjs";
 
 @Component({
-    templateUrl: './app.programas.component.html',
-    styleUrls: ['../demo/view/tabledemo.scss'],
-    styles: [`
-        :host ::ng-deep .p-dialog .product-image {
-            width: 150px;
-            margin: 0 auto 2rem auto;
-            display: block;
-        }
-
-        @media screen and (max-width: 960px) {
-            :host ::ng-deep .p-datatable.p-datatable-customers .p-datatable-tbody > tr > td:last-child {
-                text-align: center;
+    templateUrl: "./app.programas.component.html",
+    // styleUrls: ['../demo/view/tabledemo.scss'],
+    styleUrls: ["./app.programas.scss"],
+    styles: [
+        `
+            :host ::ng-deep .p-dialog .product-image {
+                width: 150px;
+                margin: 0 auto 2rem auto;
+                display: block;
             }
 
-            :host ::ng-deep .p-datatable.p-datatable-customers .p-datatable-tbody > tr > td:nth-child(6) {
-                display: flex;
-            }
-        }
+            @media screen and (max-width: 960px) {
+                :host
+                    ::ng-deep
+                    .p-datatable.p-datatable-customers
+                    .p-datatable-tbody
+                    > tr
+                    > td:last-child {
+                    text-align: center;
+                }
 
-    `],
-    providers: [MessageService, ConfirmationService]
+                :host
+                    ::ng-deep
+                    .p-datatable.p-datatable-customers
+                    .p-datatable-tbody
+                    > tr
+                    > td:nth-child(6) {
+                    display: flex;
+                }
+            }
+        `,
+    ],
+    providers: [MessageService, ConfirmationService],
 })
 export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
@@ -42,16 +54,15 @@ export class AppProgramasComponent implements OnInit {
     cols: any[];
 
     constructor(
-                private programaService: ProgramaService,
-                private messageService: MessageService,
-                private confirmationService: ConfirmationService,
-                private breadcrumbService: AppBreadcrumbService,
-                private router: Router
-                )
-                {
+        private programaService: ProgramaService,
+        private messageService: MessageService,
+        private confirmationService: ConfirmationService,
+        private breadcrumbService: AppBreadcrumbService,
+        private router: Router
+    ) {
         this.breadcrumbService.setItems([
-            { label: 'Paginas' },
-            { label: 'Programas', routerLink: ['/pages/programas'] }
+            { label: "Paginas" },
+            { label: "Programas", routerLink: ["/pages/programas"] },
         ]);
     }
 
@@ -63,14 +74,14 @@ export class AppProgramasComponent implements OnInit {
         // https://platzi.com/clases/1731-angular-profesional/23605-evitando-doble-subscribe/
         // No hace falta subscribe pero hay que añadir async en el html
         // <p-table #dt [value]="programas$ | async" ..................
-        this.programas$ = this.programaService.getProgramas()
+        this.programas$ = this.programaService.getProgramas();
 
         // Nombres columnas al exportar a .CSV.
         this.cols = [
-            { field: 'Codigo', header: 'Codigo' },
-            { field: 'Descripcion', header: 'Descripcion' },
-            { field: 'Observaciones', header: 'Observaciones' },
-            { field: 'WEBOCM', header: 'WEBOCM' },
+            { field: "Codigo", header: "Codigo" },
+            { field: "Descripcion", header: "Descripcion" },
+            { field: "Observaciones", header: "Observaciones" },
+            { field: "WEBOCM", header: "WEBOCM" },
             // { field: 'inventoryStatus', header: 'Status' }
         ];
     }
@@ -96,7 +107,7 @@ export class AppProgramasComponent implements OnInit {
     // }
 
     editPrograma(programa: Programa) {
-        this.programa = {...programa};
+        this.programa = { ...programa };
         this.programaDialog = true;
     }
 
@@ -105,7 +116,7 @@ export class AppProgramasComponent implements OnInit {
         // https://youtu.be/df0eH9mM9nU?t=1262
         this.programaService.codPro = codPro;
         this.programaService.desPro = desPro;
-        this.router.navigate(['/pages/programaDetail']);
+        this.router.navigate(["/pages/programaDetail"]);
     }
 
     // deletePrograma(programa: Programa) {
@@ -160,9 +171,10 @@ export class AppProgramasComponent implements OnInit {
     // }
 
     createId(): string {
-        let id = '';
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        for ( let i = 0; i < 5; i++ ) {
+        let id = "";
+        const chars =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (let i = 0; i < 5; i++) {
             id += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return id;
