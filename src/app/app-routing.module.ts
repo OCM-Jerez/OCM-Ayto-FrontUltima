@@ -1,18 +1,21 @@
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
-import { DashboardComponent } from "./demo/view/dashboard.component";
-import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
-import { AppMainComponent } from "./app.main.component";
-import { AppNotfoundComponent } from "./pages/app.notfound.component";
+
+// import { DashboardComponent } from "./demo/view/dashboard.component";
+// import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
+import { AppAccessdeniedComponent } from "./pages/app.accessdenied.component";
 import { AppContactusComponent } from "./pages/app.contactus.component";
 import { AppErrorComponent } from "./pages/app.error.component";
-import { AppAccessdeniedComponent } from "./pages/app.accessdenied.component";
-import { AppLoginComponent } from "./pages/app.login.component";
 import { AppLandingComponent } from "./pages/app.landing.component";
+import { AppLoginComponent } from "./pages/app.login.component";
+import { AppMainComponent } from "./app.main.component";
+import { AppNotfoundComponent } from "./pages/app.notfound.component";
 import { AppProgramasComponent } from "./pages/app.programas.component";
-import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
+import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
+import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { PresupuestosComponent } from "./pages/presupuestos/presupuestos.component";
+import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 
 @NgModule({
     imports: [

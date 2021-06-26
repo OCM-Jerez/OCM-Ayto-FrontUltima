@@ -97,8 +97,8 @@ import { AppRightMenuComponent } from "./app.rightmenu.component";
 import { AppBreadcrumbComponent } from "./app.breadcrumb.component";
 import { AppTopBarComponent } from "./app.topbar.component";
 import { AppFooterComponent } from "./app.footer.component";
-import { DashboardComponent } from "./demo/view/dashboard.component";
-import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
+// import { DashboardComponent } from "./demo/view/dashboard.component";
+// import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
 // import { FormLayoutDemoComponent } from "./demo/view/formlayoutdemo.component";
 // import { FloatLabelDemoComponent } from "./demo/view/floatlabeldemo.component";
 // import { InvalidStateDemoComponent } from "./demo/view/invalidstatedemo.component";
@@ -137,20 +137,22 @@ import { AppLoginComponent } from "./pages/app.login.component";
 import { AppTimelineDemoComponent } from "./pages/app.timelinedemo.component";
 import { AppLandingComponent } from "./pages/app.landing.component";
 
-import { CountryService } from "./demo/service/countryservice";
-import { CustomerService } from "./demo/service/customerservice";
-import { EventService } from "./demo/service/eventservice";
-import { IconService } from "./demo/service/iconservice";
-import { NodeService } from "./demo/service/nodeservice";
-import { PhotoService } from "./demo/service/photoservice";
-import { ProgramaService } from "./demo/service/programaservice";
-import { ProductService } from "./demo/service/productservice";
+import { CountryService } from "./service/countryservice";
+import { CustomerService } from "./service/customerservice";
+import { EventService } from "./service/eventservice";
+import { IconService } from "./service/iconservice";
+import { NodeService } from "./service/nodeservice";
+import { PhotoService } from "./service/photoservice";
+import { ProgramaService } from "./service/programaservice";
+import { ProductService } from "./service/productservice";
 
 import { MenuService } from "./app.menu.service";
 import { AppBreadcrumbService } from "./app.breadcrumb.service";
 import { AppContactusComponent } from "./pages/app.contactus.component";
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
+import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
+import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 
 @NgModule({
     imports: [

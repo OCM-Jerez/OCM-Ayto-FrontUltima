@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
-import { EventService } from "../service/eventservice";
+// import { EventService } from "../service/eventservice";
+import { EventService } from "../../service/eventservice";
 import { SelectItem } from "primeng/api";
-import { Product } from "../domain/product";
-import { ProductService } from "../service/productservice";
+// import { Product } from "../domain/product";
+import { Product } from "../../domain/product";
+// import { ProductService } from "../service/productservice";
+import { ProductService } from "../../service/productservice";
+
 import { AppBreadcrumbService } from "../../app.breadcrumb.service";
 import { UIChart } from "primeng/chart";
 import { AppComponent } from "src/app/app.component";

@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Programa } from "../demo/domain/programa";
-import { ProgramaService } from "../demo/service/programaservice";
+import { Programa } from "../domain/programa";
+import { ProgramaService } from "../service/programaservice";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 import { AppBreadcrumbService } from "../app.breadcrumb.service";

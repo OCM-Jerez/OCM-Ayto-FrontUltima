@@ -1,23 +1,24 @@
-import {Component, OnInit} from '@angular/core';
-import {EventService} from '../demo/service/eventservice';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import {AppBreadcrumbService} from '../app.breadcrumb.service';
+import { Component, OnInit } from "@angular/core";
+import { EventService } from "../service/eventservice";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import { AppBreadcrumbService } from "../app.breadcrumb.service";
 
 @Component({
-    templateUrl: './app.calendar.component.html',
-    styles: [`
-        @media screen and (max-width: 960px) {
-            :host ::ng-deep .fc-header-toolbar {
-                display: flex;
-                flex-wrap: wrap;
+    templateUrl: "./app.calendar.component.html",
+    styles: [
+        `
+            @media screen and (max-width: 960px) {
+                :host ::ng-deep .fc-header-toolbar {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
             }
-        }
-    `]
+        `,
+    ],
 })
-export class AppCalendarComponent implements OnInit{
-
+export class AppCalendarComponent implements OnInit {
     events: any[];
 
     options: any;
@@ -30,24 +31,29 @@ export class AppCalendarComponent implements OnInit{
 
     clickedEvent = null;
 
-    constructor(private eventService: EventService, private breadcrumbService: AppBreadcrumbService) {
+    constructor(
+        private eventService: EventService,
+        private breadcrumbService: AppBreadcrumbService
+    ) {
         this.breadcrumbService.setItems([
-            { label: 'Pages' },
-            { label: 'Calendar', routerLink: ['/pages/calendar'] }
+            { label: "Pages" },
+            { label: "Calendar", routerLink: ["/pages/calendar"] },
         ]);
     }
 
     ngOnInit() {
-        this.eventService.getEvents().then(events => {this.events = events; });
-        this.changedEvent = {title: '', start: null, end: '', allDay: null};
+        this.eventService.getEvents().then((events) => {
+            this.events = events;
+        });
+        this.changedEvent = { title: "", start: null, end: "", allDay: null };
 
         this.options = {
-            plugins: [ dayGridPlugin, timeGridPlugin, interactionPlugin ],
-            defaultDate: '2017-02-01',
+            plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+            defaultDate: "2017-02-01",
             header: {
-                left: 'prev,next',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                left: "prev,next",
+                center: "title",
+                right: "dayGridMonth,timeGridWeek,timeGridDay",
             },
             editable: true,
             eventClick: (e) => {
@@ -58,19 +64,19 @@ export class AppCalendarComponent implements OnInit{
                 this.changedEvent.title = this.clickedEvent.title;
                 this.changedEvent.start = this.clickedEvent.start;
                 this.changedEvent.end = this.clickedEvent.end;
-            }
+            },
         };
     }
 
     save() {
         this.eventDialog = false;
 
-        this.clickedEvent.setProp('title', this.changedEvent.title);
+        this.clickedEvent.setProp("title", this.changedEvent.title);
         this.clickedEvent.setStart(this.changedEvent.start);
         this.clickedEvent.setEnd(this.changedEvent.end);
         this.clickedEvent.setAllDay(this.changedEvent.allDay);
 
-        this.changedEvent = {title: '', start: null, end: '', allDay: null};
+        this.changedEvent = { title: "", start: null, end: "", allDay: null };
     }
 
     reset() {
