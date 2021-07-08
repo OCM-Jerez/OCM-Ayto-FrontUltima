@@ -18,6 +18,7 @@ import { PresupuestosComponent } from "./pages/presupuestos/presupuestos.compone
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { EcoGastosComponent } from "./pages/eco-gastos/eco-gastos.component";
 import { OrganicosComponent } from "./pages/organicos/organicos.component";
+import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.component";
 
 @NgModule({
     imports: [
@@ -36,6 +37,13 @@ import { OrganicosComponent } from "./pages/organicos/organicos.component";
                             path: "dashboardtiempos",
                             component: DashboardtiemposComponent,
                         },
+                        // **************** ingresos **********************
+                        {
+                            path: "pages/ecoIngresos",
+                            component: EcoIngresosComponent,
+                        },
+
+                        // **************** gastos ************************
                         {
                             path: "pages/organicos",
                             component: OrganicosComponent,

@@ -158,6 +158,8 @@ import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
 import { EcoGastoService } from "./service/ecogastoservice";
 import { OrganicosComponent } from './pages/organicos/organicos.component';
 import { OrganicoService } from "./service/organicoservice";
+import { EcoIngresosComponent } from './pages/eco-ingresos/eco-ingresos.component';
+import { EcoIngresoService } from "./service/ecoingresoservice";
 
 @NgModule({
     imports: [
@@ -305,6 +307,7 @@ import { OrganicoService } from "./service/organicoservice";
         WidgetsComponent,
         EcoGastosComponent,
         OrganicosComponent,
+        EcoIngresosComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -318,6 +321,7 @@ import { OrganicoService } from "./service/organicoservice";
         ProductService,
         EcoGastoService,
         OrganicoService,
+        EcoIngresoService,
         MenuService,
         AppBreadcrumbService,
     ],
