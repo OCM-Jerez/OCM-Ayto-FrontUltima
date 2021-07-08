@@ -61,7 +61,7 @@ export class AppProgramasComponent implements OnInit {
         private router: Router
     ) {
         this.breadcrumbService.setItems([
-            { label: "Paginas" },
+            { label: "Gastos" },
             { label: "Programas", routerLink: ["/pages/programas"] },
         ]);
     }

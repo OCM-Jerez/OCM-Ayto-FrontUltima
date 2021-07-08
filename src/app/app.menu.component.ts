@@ -18,30 +18,30 @@ import { AppComponent } from "./app.component";
 export class AppMenuComponent implements OnInit {
     model: any[];
 
-    constructor(public app: AppComponent) {}
+    constructor(public app: AppComponent) { }
 
     ngOnInit() {
         this.model = [
             {
-                label: "",
+                label: "Dashboard",
                 icon: "pi pi-fw pi-home",
                 items: [
                     {
-                        label: "Dashboard ingresos",
+                        label: "Ingresos",
                         icon: "pi pi-fw pi-euro",
                         routerLink: ["/"],
                         badge: "4",
                         badgeClass: "p-badge-info",
                     },
                     {
-                        label: "Dashboard gastos",
+                        label: "Gastos",
                         icon: "pi pi-fw pi-shopping-cart",
                         routerLink: ["/favorites/dashboardanalytics"],
                         badge: "2",
                         badgeClass: "p-badge-success",
                     },
                     {
-                        label: "Dashboard tiempos",
+                        label: "Retrasos",
                         icon: "pi pi-fw pi-calendar-plus",
                         routerLink: ["/dashboardtiempos"],
                         badge: "5",
@@ -50,15 +50,44 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
-                label: "Paginas",
+                label: "Ingresos",
                 icon: "pi pi-fw pi-briefcase",
                 routerLink: ["/pages"],
                 items: [
+                    {
+                        label: "Económicos",
+                        icon: "pi pi-fw pi-folder-open",
+                        routerLink: ["/pages/programas"],
+                    },
+                ],
+            },
+            {
+                label: "Gastos",
+                icon: "pi pi-fw pi-briefcase",
+                routerLink: ["/pages"],
+                items: [
+                    {
+                        label: "Organicos",
+                        icon: "pi pi-fw pi-folder-open",
+                        routerLink: ["/pages/organicos"],
+                    },
                     {
                         label: "Programas",
                         icon: "pi pi-fw pi-folder-open",
                         routerLink: ["/pages/programas"],
                     },
+                    {
+                        label: "Económicos",
+                        icon: "pi pi-fw pi-folder-open",
+                        routerLink: ["pages/ecoGastos"],
+                    },
+                ],
+            },
+            {
+                label: "Presupuestos",
+                icon: "pi pi-fw pi-briefcase",
+                routerLink: ["/pages"],
+                items: [
                     {
                         label: "Presupuestos",
                         icon: "pi pi-fw pi-book",

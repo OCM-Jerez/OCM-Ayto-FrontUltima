@@ -153,6 +153,11 @@ import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
+import { HighchartsChartModule } from "highcharts-angular";
+import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
+import { EcoGastoService } from "./service/ecogastoservice";
+import { OrganicosComponent } from './pages/organicos/organicos.component';
+import { OrganicoService } from "./service/organicoservice";
 
 @NgModule({
     imports: [
@@ -241,6 +246,8 @@ import { DashboardComponent } from "./pages/dashboardingresos/dashboard.componen
         TreeTableModule,
         VirtualScrollerModule,
         AppCodeModule,
+        HighchartsChartModule
+
     ],
     declarations: [
         // ButtonDemoComponent,
@@ -296,6 +303,8 @@ import { DashboardComponent } from "./pages/dashboardingresos/dashboard.componen
         // TreeDemoComponent,
         TypographyComponent,
         WidgetsComponent,
+        EcoGastosComponent,
+        OrganicosComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -307,9 +316,11 @@ import { DashboardComponent } from "./pages/dashboardingresos/dashboard.componen
         PhotoService,
         ProgramaService,
         ProductService,
+        EcoGastoService,
+        OrganicoService,
         MenuService,
         AppBreadcrumbService,
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

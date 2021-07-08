@@ -1,112 +1,139 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-
-import { UIChart } from "primeng/chart";
-import { AppComponent } from "src/app/app.component";
+import { Component } from '@angular/core';
+import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/highcharts-more';
+HC_exporting(Highcharts);
+import * as moment from 'moment'
 
 @Component({
     selector: "app-dashboardtiempos",
     templateUrl: "./dashboardtiempos.component.html",
     styleUrls: ["./dashboardtiempos.component.scss"],
 })
-export class DashboardtiemposComponent implements OnInit {
-    doughnutData: any;
-    doughnutOptions: any;
-    @ViewChild("doughnut") doughnutViewChild: UIChart;
 
-    constructor(public app: AppComponent) {}
+export class DashboardtiemposComponent {
+    Highcharts: typeof Highcharts = Highcharts; // required
+    chartConstructor = 'chart'; // optional string, defaults to 'chart'
+    updateFlag = false; // optional boolean
+    oneToOneFlag = true; // optional boolean, defaults to false
+    runOutsideAngular = false; // optional boolean, defaults to false
+    fechaNormativa = moment("2020-10-15");
+    now = moment();
+    diasRetraso = this.now.diff(this.fechaNormativa, 'days');
 
-    ngOnInit() {
-        this.doughnutData = this.getDoughnutData();
-        this.doughnutOptions = this.getDoughnutOptions();
-    }
 
-    getDoughnutData() {
-        const {
-            blueColor,
-            lightblueColor,
-            cyanColor,
-            tealColor,
-            greenColor,
-            lightgreenColor,
-            orangeColor,
-        } = this.getColors();
-        const borderColor =
-            getComputedStyle(document.body).getPropertyValue(
-                "--divider-color"
-            ) || "rgba(160, 167, 181, .3)";
+    chartOptions: Highcharts.Options = {
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: undefined,
+            plotBackgroundImage: undefined,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
 
-        return {
-            labels: [
-                "Domingo",
-                "Lunes",
-                "Martes",
-                "Miercoles",
-                "Jueves",
-                "Viernes",
-                "Sabado",
-            ],
-            datasets: [
+        title: {
+            text: ''
+        },
+
+        pane: {
+            startAngle: -150,
+            endAngle: 150,
+            background: [
                 {
-                    data: [11, 29, 71, 33, 28, 95, 6],
-                    backgroundColor: [
-                        blueColor,
-                        lightblueColor,
-                        cyanColor,
-                        tealColor,
-                        greenColor,
-                        lightgreenColor,
-                        orangeColor,
-                    ],
-                    borderColor,
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            // [0, '#32CD32'],
+                            // [1, '#32CD32']
+                            [0, '#FFF'],
+                            [1, '#333']
+                        ]
+                    },
+                    borderWidth: 0,
+                    outerRadius: '109%'
                 },
-            ],
-        };
-    }
-
-    getDoughnutOptions() {
-        const textColor =
-            getComputedStyle(document.body).getPropertyValue("--text-color") ||
-            "rgba(0, 0, 0, 0.87)";
-        const fontFamily = getComputedStyle(document.body).getPropertyValue(
-            "--font-family"
-        );
-        return {
-            responsive: true,
-            legend: {
-                position: "null",
-                labels: {
-                    fontFamily,
-                    fontColor: textColor,
+                {
+                    backgroundColor: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                        stops: [
+                            // [0, '#32CD32'],
+                            // [1, '#32CD32']
+                            [0, '#333'],
+                            [1, '#FFF']
+                        ]
+                    },
+                    borderWidth: 1,
+                    outerRadius: '107%'
                 },
+                {
+                    // default background
+                },
+                {
+                    // backgroundColor: '#32CD32',
+                    backgroundColor: '#DDD',
+                    borderWidth: 0,
+                    outerRadius: '105%',
+                    innerRadius: '103%'
+                }
+            ]
+        },
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 450,
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2
+                // rotation: 'auto'
             },
-            circumference: Math.PI,
-            rotation: -Math.PI,
-            animation: {
-                animateScale: true,
-                animateRotate: true,
+            title: {
+                text: 'días'
             },
-        };
-    }
+            plotBands: [
+                {
+                    from: 0,
+                    to: 30,
+                    color: '#55BF3B' // green
+                },
+                {
+                    from: 30,
+                    to: 60,
+                    color: '#DDDF0D' // yellow
+                },
+                {
+                    from: 60,
+                    to: 200,
+                    color: '#D0782A' // red
+                },
+                {
+                    from: 200,
+                    to: 450,
+                    color: '#DF5353' // red
+                }
+            ]
+        },
 
-    getColors() {
-        const isLight = this.app.layoutMode === "light";
-        return {
-            pinkColor: isLight ? "#EC407A" : "#F48FB1",
-            purpleColor: isLight ? "#AB47BC" : "#CE93D8",
-            deeppurpleColor: isLight ? "#7E57C2" : "#B39DDB",
-            indigoColor: isLight ? "#5C6BC0" : "#9FA8DA",
-            blueColor: isLight ? "#42A5F5" : "#90CAF9",
-            lightblueColor: isLight ? "#29B6F6" : "#81D4FA",
-            cyanColor: isLight ? "#00ACC1" : "#4DD0E1",
-            tealColor: isLight ? "#26A69A" : "#80CBC4",
-            greenColor: isLight ? "#66BB6A" : "#A5D6A7",
-            lightgreenColor: isLight ? "#9CCC65" : "#C5E1A5",
-            limeColor: isLight ? "#D4E157" : "#E6EE9C",
-            yellowColor: isLight ? "FFEE58" : "#FFF59D",
-            amberColor: isLight ? "#FFCA28" : "#FFE082",
-            orangeColor: isLight ? "#FFA726" : "#FFCC80",
-            deeporangeColor: isLight ? "#FF7043" : "#FFAB91",
-            brownColor: isLight ? "#8D6E63" : "#BCAAA4",
-        };
-    }
+        series: [
+            {
+                type: 'gauge',
+                name: 'Speed',
+                data: [this.diasRetraso],
+                tooltip: {
+                    valueSuffix: ' días'
+                }
+            }
+        ]
+
+    }; // required
+    chartCallback: Highcharts.ChartCallbackFunction = function (chart) {
+    }; // optional function, defaults to
+
 }

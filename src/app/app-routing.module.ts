@@ -16,6 +16,8 @@ import { DashboardComponent } from "./pages/dashboardingresos/dashboard.componen
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { PresupuestosComponent } from "./pages/presupuestos/presupuestos.component";
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
+import { EcoGastosComponent } from "./pages/eco-gastos/eco-gastos.component";
+import { OrganicosComponent } from "./pages/organicos/organicos.component";
 
 @NgModule({
     imports: [
@@ -35,12 +37,20 @@ import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail
                             component: DashboardtiemposComponent,
                         },
                         {
+                            path: "pages/organicos",
+                            component: OrganicosComponent,
+                        },
+                        {
                             path: "pages/programas",
                             component: AppProgramasComponent,
                         },
                         {
                             path: "pages/programaDetail",
                             component: ProgramaDetailComponent,
+                        },
+                        {
+                            path: "pages/ecoGastos",
+                            component: EcoGastosComponent,
                         },
                         {
                             path: "pages/presupuestos",
@@ -61,4 +71,4 @@ import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail
     ],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
