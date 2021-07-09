@@ -18,13 +18,19 @@ En app.module.ts    providers: [
 En .html
     Linea 26 cambiar titulo.com
 
+En .ts
+    Copiar todo del modelo debajo codigo actual..
+    Cambiar 
+      @Component({
+         selector: 'app-barrio',
+         templateUrl: './barrio.component.html',
+         styleUrls: ['./barrio.component.scss'],
+    cambian nombre component.
 
-en -----component.ts añadir linea providers
+En service.    
+    Sustituir todo.
+    Cambiar nombre component.
+    Cambiar ruta API
 
-@Component({
-  selector: 'app-eco-gastos',
-  templateUrl: './eco-gastos.component.html',
-  styleUrls: ['./eco-gastos.component.scss'],
- 
-  providers: [MessageService, ConfirmationService],
-})
+
+Se pueden gerar datos con DSchema para probar.

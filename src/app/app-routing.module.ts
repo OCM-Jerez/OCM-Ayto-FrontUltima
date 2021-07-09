@@ -21,6 +21,7 @@ import { OrganicosComponent } from "./pages/organicos/organicos.component";
 import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.component";
 import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
 import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
+import { BarrioComponent } from "./pages/barrio/barrio.component";
 
 @NgModule({
     imports: [
@@ -73,6 +74,11 @@ import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.co
                         {
                             path: "pages/presupuestos",
                             component: PresupuestosComponent,
+                        },
+                        // **************** temas ************************
+                        {
+                            path: "pages/barrio",
+                            component: BarrioComponent,
                         },
                     ],
                 },
