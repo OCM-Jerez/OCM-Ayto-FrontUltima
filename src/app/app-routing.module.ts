@@ -20,6 +20,7 @@ import { EcoGastosComponent } from "./pages/eco-gastos/eco-gastos.component";
 import { OrganicosComponent } from "./pages/organicos/organicos.component";
 import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.component";
 import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
+import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
 
 @NgModule({
     imports: [
@@ -49,6 +50,10 @@ import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-in
                         },
 
                         // **************** gastos ************************
+                        {
+                            path: "pages/capituloGasto",
+                            component: CapituloGastoComponent,
+                        },
                         {
                             path: "pages/organicos",
                             component: OrganicosComponent,

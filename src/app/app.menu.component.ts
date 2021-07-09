@@ -72,7 +72,12 @@ export class AppMenuComponent implements OnInit {
                 routerLink: ["/pages"],
                 items: [
                     {
-                        label: "Organicos",
+                        label: "Cápitulos",
+                        icon: "pi pi-fw pi-folder-open",
+                        routerLink: ["/pages/capituloGasto"],
+                    },
+                    {
+                        label: "Orgánicos",
                         icon: "pi pi-fw pi-folder-open",
                         routerLink: ["/pages/organicos"],
                     },
