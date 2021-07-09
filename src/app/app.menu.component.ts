@@ -57,7 +57,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: "Cápitulos",
                         icon: "pi pi-fw pi-folder-open",
-                        routerLink: ["/pages/programas"],
+                        routerLink: ["/pages/capituloIngresos"],
                     },
                     {
                         label: "Económicos",
