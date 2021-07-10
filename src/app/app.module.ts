@@ -166,6 +166,8 @@ import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.co
 import { CapituloGastoService } from "./service/capitulo-gasto.service";
 import { BarrioComponent } from './pages/barrio/barrio.component';
 import { BarrioService } from "./service/barrio.service";
+import { DelegacionComponent } from './pages/delegacion/delegacion.component';
+import { DelegacionService } from "./service/delegacion.service";
 
 @NgModule({
     imports: [
@@ -317,6 +319,7 @@ import { BarrioService } from "./service/barrio.service";
         CapituloIngresosComponent,
         CapituloGastoComponent,
         BarrioComponent,
+        DelegacionComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -334,6 +337,7 @@ import { BarrioService } from "./service/barrio.service";
         CapituloIngresoService,
         CapituloGastoService,
         BarrioService,
+        DelegacionService,
         MenuService,
         AppBreadcrumbService,
     ],

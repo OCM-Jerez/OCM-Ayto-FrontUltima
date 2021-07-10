@@ -22,6 +22,7 @@ import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.componen
 import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
 import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
 import { BarrioComponent } from "./pages/barrio/barrio.component";
+import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
 
 @NgModule({
     imports: [
@@ -74,6 +75,11 @@ import { BarrioComponent } from "./pages/barrio/barrio.component";
                         {
                             path: "pages/presupuestos",
                             component: PresupuestosComponent,
+                        },
+                        // **************** organización municipal ************************
+                        {
+                            path: "pages/delegacion",
+                            component: DelegacionComponent,
                         },
                         // **************** temas ************************
                         {

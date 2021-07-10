@@ -1,0 +1,112 @@
+<div class="p-grid">
+    <div class="p-col-12">
+
+        <p-toast></p-toast>
+
+        <div class="card">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2"
+                        (click)="openNew()"></button>
+                </ng-template>
+
+                <ng-template pTemplate="right">
+                    <button pButton pRipple label="Exportar" icon="pi pi-upload" class="p-button-help p-mb-2"
+                        (click)="dt.exportCSV()"></button>
+                </ng-template>
+            </p-toolbar>
+
+            <p-table #dt [value]="_obs$ | async" [columns]="cols" [rows]="10" [paginator]="true"
+                [globalFilterFields]="['codCap','descripcionOCM']" [(selection)]="_selected" [rowHover]="true"
+                dataKey="id" styleClass="p-datatable-customers"
+                currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} cápitulos ingresos"
+                [showCurrentPageReport]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <h5 class="p-m-0">Delegaciones</h5>
+                        <span class="p-input-icon-left">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                placeholder="Buscar..." />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="Codigo" style="padding: 2px;background-color: #515963; width: 7%">Nombre
+                            <p-sortIcon field="Codigo"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="Descripcion" style="padding: 2px;background-color: #515963; width: 24%">
+                            Distrito <p-sortIcon field="Descripcion"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="Observaciones" style="background-color: #515963; width: 30%">Observaciones
+                        </th>
+                        <th pSortableColumn="WEBOCM" style="background-color: #515963; width: 20%">WEB OCM</th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-_obj>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="_obj"></p-tableCheckbox>
+                        </td>
+                        <td><span class="p-column-title">Nombre</span>
+                            {{_obj.nombre}}
+                        </td>
+
+                        <td><span class="p-column-title">Mandato</span>
+                            {{ _obj.mandato }}
+                        </td>
+                        <td><span class="p-column-title">Observaciones</span>
+                            {{_obj.observacion}}
+                        </td>
+
+                        <td>
+                            <a href="{{ _obj.WebOCM }}" target="_blank">{{ _obj.WebOCM }}</a>
+                        </td>
+                        <td>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
+                                (click)="edit(_obj)"></button>
+                            <!-- [routerLink]="['/pages/programaDetail']" -->
+                            <button pButton pRipple icon="pi pi-check" class="p-button-rounded p-button-warning p-mr-2"
+                                (click)="detail(_obj.nombre, _obj.mandato)">
+                            </button>
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </div>
+
+        <p-dialog [(visible)]="_dialog" [style]="{width: '450px'}" header="Detalles cápitulos ingresos" [modal]="true"
+            styleClass="p-fluid">
+            <ng-template pTemplate="content">
+                <div class="p-field">
+                    <label for="name">descripcionOCM</label>
+                    <input type="text" pInputText id="name" [(ngModel)]="_obj.nombre" required autofocus />
+                    <small class="p-invalid" *ngIf="submitted && !_obj.nombre">nombre es
+                        obligatorio.</small>
+                </div>
+                <div class="p-field">
+                    <label for="description">Observaciones</label>
+                    <textarea id="description" pInputTextarea [(ngModel)]="_obj.observacion" required rows="2"
+                        cols="20"></textarea>
+                </div>
+
+
+            </ng-template>
+
+            <ng-template pTemplate="footer">
+                <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
+                    (click)="hideDialog()"></button>
+                <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"
+                    (click)="savePrograma()"></button>
+            </ng-template>
+        </p-dialog>
+
+        <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
+    </div>
+</div>
