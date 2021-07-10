@@ -1,3 +1,5 @@
+
+TODO EN SINGULAR.
 Abrir nueva terminal en /pages
 ng g c new --skip-tests
 en /domain
@@ -28,9 +30,10 @@ En .ts
          templateUrl: './barrio.component.html',
          styleUrls: ['./barrio.component.scss'],
     Cambian nombre component.
+    Buscar y sustituir an miniscula y mayuscula.
 
 En service.    
-    Sustituir todo.
+    Buscar y sustituir an miniscula y mayuscula.
     Cambiar nombre component.
     Cambiar ruta API
 

@@ -1,30 +1,30 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Delegacion } from "../../domain/delegacion";
-import { DelegacionService } from "../../service/delegacion.service";
+import { Distrito } from "../../domain/distrito";
+import { DistritoService } from "../../service/distrito.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 import { AppBreadcrumbService } from "../../app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-delegacion',
-  templateUrl: './delegacion.component.html',
-  styleUrls: ['./delegacion.component.scss'],
+  selector: 'app-distrito',
+  templateUrl: './distrito.component.html',
+  styleUrls: ['./distrito.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class DelegacionComponent implements OnInit {
+export class DistritoComponent implements OnInit {
   _dialog: boolean;
-  _obs$: Observable<Delegacion[]>;
+  _obs$: Observable<Distrito[]>;
 
-  _obj: Delegacion;
-  _selected: Delegacion[];
+  _obj: Distrito;
+  _selected: Distrito[];
   submitted: boolean;
   cols: any[];
 
   constructor(
-    private delegacionService: DelegacionService,
+    private distritoService: DistritoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
@@ -37,7 +37,7 @@ export class DelegacionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._obs$ = this.delegacionService.getDelegacion();
+    this._obs$ = this.distritoService.getDistrito();
     // Nombres columnas al exportar a .CSV.
     this.cols = [
       { field: "Codigo", header: "Codigo" },
@@ -54,14 +54,14 @@ export class DelegacionComponent implements OnInit {
     this._dialog = true;
   }
 
-  edit(_obj: Delegacion) {
+  edit(_obj: Distrito) {
     this._obj = { ..._obj };
     this._dialog = true;
   }
 
   detail(codEco: string, desEco: string) {
-    this.delegacionService.codEco = codEco;
-    this.delegacionService.desEco = desEco;
+    this.distritoService.codEco = codEco;
+    this.distritoService.desEco = desEco;
     this.router.navigate(["/pages/programaDetail"]);
   }
 

@@ -23,7 +23,7 @@
                 [showCurrentPageReport]="true">
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                        <h5 class="p-m-0">Barrios</h5>
+                        <h5 class="p-m-0">Distritos</h5>
                         <span class="p-input-icon-left">
                             <i class="pi pi-search"></i>
                             <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -39,9 +39,9 @@
                         <th pSortableColumn="Codigo" style="padding: 2px;background-color: #515963; width: 7%">Nombre
                             <p-sortIcon field="Codigo"></p-sortIcon>
                         </th>
-                        <th pSortableColumn="Descripcion" style="padding: 2px;background-color: #515963; width: 24%">
-                            Barrio <p-sortIcon field="Descripcion"></p-sortIcon>
-                        </th>
+                        <!-- <th pSortableColumn="Descripcion" style="padding: 2px;background-color: #515963; width: 24%">
+                            Distrito <p-sortIcon field="Descripcion"></p-sortIcon>
+                        </th> -->
                         <th pSortableColumn="Observaciones" style="background-color: #515963; width: 30%">Observaciones
                         </th>
                         <th pSortableColumn="WEBOCM" style="background-color: #515963; width: 20%">WEB OCM</th>
@@ -57,9 +57,9 @@
                             {{_obj.nombre}}
                         </td>
 
-                        <td><span class="p-column-title">Distrito</span>
+                        <!-- <td><span class="p-column-title">Distrito</span>
                             {{ _obj.distrito }}
-                        </td>
+                        </td> -->
                         <td><span class="p-column-title">Observaciones</span>
                             {{_obj.observacion}}
                         </td>

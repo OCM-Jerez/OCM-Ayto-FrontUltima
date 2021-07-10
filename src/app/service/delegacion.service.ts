@@ -13,7 +13,7 @@ export class DelegacionService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getCapituloGasto() {
+  getDelegacion() {
     return this.httpClient.get<Delegacion[]>('http://localhost:3000/api/v1/delegacion')
       .pipe(
         catchError(this.handleError),

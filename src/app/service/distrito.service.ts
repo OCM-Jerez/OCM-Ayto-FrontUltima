@@ -4,17 +4,17 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-import { Barrio } from "../domain/barrio";
+import { Distrito } from "../domain/distrito";
 
 @Injectable()
-export class BarrioService {
+export class DistritoService {
   codEco: string;
   desEco: string
 
   constructor(private httpClient: HttpClient) { }
 
-  getBarrio() {
-    return this.httpClient.get<Barrio[]>('http://localhost:3000/api/v1/barrios')
+  getDistrito() {
+    return this.httpClient.get<Distrito[]>('http://localhost:3000/api/v1/distrito')
       .pipe(
         catchError(this.handleError),
       );

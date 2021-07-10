@@ -23,6 +23,7 @@ import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-in
 import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
 import { BarrioComponent } from "./pages/barrio/barrio.component";
 import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
+import { DistritoComponent } from "./pages/distrito/distrito.component";
 
 @NgModule({
     imports: [
@@ -85,6 +86,11 @@ import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
                         {
                             path: "pages/barrio",
                             component: BarrioComponent,
+                        },
+                        // **************** temas ************************
+                        {
+                            path: "pages/distrito",
+                            component: DistritoComponent,
                         },
                     ],
                 },

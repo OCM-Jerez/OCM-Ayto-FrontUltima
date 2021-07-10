@@ -120,15 +120,28 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
-                label: "Temas",
+                label: "Distribución geografica",
                 icon: "pi pi-fw pi-briefcase",
                 routerLink: ["/pages"],
                 items: [
+                    {
+                        label: "Distritos",
+                        icon: "pi pi-fw pi-book",
+                        routerLink: ["/pages/distrito"],
+                    },
                     {
                         label: "Barrios",
                         icon: "pi pi-fw pi-book",
                         routerLink: ["/pages/barrio"],
                     },
+                ],
+            },
+            {
+                label: "Temas",
+                icon: "pi pi-fw pi-briefcase",
+                routerLink: ["/pages"],
+                items: [
+
 
                 ],
             },

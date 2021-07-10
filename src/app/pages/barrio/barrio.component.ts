@@ -25,7 +25,7 @@ export class BarrioComponent implements OnInit {
   cols: any[];
 
   constructor(
-    private capituloGastoService: BarrioService,
+    private barrioService: BarrioService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
@@ -38,7 +38,7 @@ export class BarrioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._obs$ = this.capituloGastoService.getCapituloGasto();
+    this._obs$ = this.barrioService.getBarrio();
     // Nombres columnas al exportar a .CSV.
     this.cols = [
       { field: "Codigo", header: "Codigo" },
@@ -61,8 +61,8 @@ export class BarrioComponent implements OnInit {
   }
 
   detail(codEco: string, desEco: string) {
-    this.capituloGastoService.codEco = codEco;
-    this.capituloGastoService.desEco = desEco;
+    this.barrioService.codEco = codEco;
+    this.barrioService.desEco = desEco;
     this.router.navigate(["/pages/programaDetail"]);
   }
 
