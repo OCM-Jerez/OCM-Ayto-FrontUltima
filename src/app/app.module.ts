@@ -170,6 +170,8 @@ import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DelegacionService } from "./service/delegacion.service";
 import { DistritoComponent } from './pages/distrito/distrito.component';
 import { DistritoService } from "./service/distrito.service";
+import { EnteComponent } from './pages/ente/ente.component';
+import { EnteService } from "./service/ente.service";
 
 @NgModule({
     imports: [
@@ -323,6 +325,7 @@ import { DistritoService } from "./service/distrito.service";
         BarrioComponent,
         DelegacionComponent,
         DistritoComponent,
+        EnteComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -342,6 +345,7 @@ import { DistritoService } from "./service/distrito.service";
         BarrioService,
         DelegacionService,
         DistritoService,
+        EnteService,
         MenuService,
         AppBreadcrumbService,
     ],

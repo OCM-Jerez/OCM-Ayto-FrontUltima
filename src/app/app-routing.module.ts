@@ -24,6 +24,7 @@ import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.co
 import { BarrioComponent } from "./pages/barrio/barrio.component";
 import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
 import { DistritoComponent } from "./pages/distrito/distrito.component";
+import { EnteComponent } from "./pages/ente/ente.component";
 
 @NgModule({
     imports: [
@@ -81,6 +82,10 @@ import { DistritoComponent } from "./pages/distrito/distrito.component";
                         {
                             path: "pages/delegacion",
                             component: DelegacionComponent,
+                        },
+                        {
+                            path: "pages/ente",
+                            component: EnteComponent,
                         },
                         // **************** temas ************************
                         {

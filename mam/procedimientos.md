@@ -2,40 +2,33 @@
 TODO EN SINGULAR.
 Abrir nueva terminal en /pages
 ng g c new --skip-tests
-en /domain
-copiar y pegar y renombrar con el nombre que estamos añadiendo.
-Cambiar nombre en export
+* En /domain
+    Copiar modelo
+    Renombar fichero copiado.
+    Cambiar nombre en export
 NO TENGO CLARO PARA QUE SIVEN ESTOS FICHEROS.
 Copiar scss.
-Abrir nueva terminal en /services
-ng g s new --skip-tests 
+* Abrir nueva terminal en /services
+    ng g s new --skip-tests 
+    Copiar todo del modelo.
+    Buscar y sustituir an miniscula y MAYUSCULA.
+    Cambiar ruta API
 
-en app-routing.module.ts
-añadir ruta
-en app.menu
-añadir routerLink
-En app.module.ts    providers: [
-    añadir el service nuevo
+* En app-routing.module.ts
+    Añadir ruta
+* En appn app.menu
+    Añadir routerLink
+* En app.module.ts    providers: [
+    Añadir el service nuevo
 
-En .html
+* En .html
     Copiar todo de page anterior
     Linea 26 cambiar titulo.com
     Comprobar nombres de campos BBDD, usando createDTO en el back.
 
-En .ts
-    Copiar todo del modelo debajo codigo actual..
-    Cambiar 
-      @Component({
-         selector: 'app-barrio',
-         templateUrl: './barrio.component.html',
-         styleUrls: ['./barrio.component.scss'],
-    Cambian nombre component.
-    Buscar y sustituir an miniscula y mayuscula.
-
-En service.    
-    Buscar y sustituir an miniscula y mayuscula.
-    Cambiar nombre component.
-    Cambiar ruta API
+* En .ts
+    Copiar todo del modelo.
+    Buscar y sustituir an miniscula y MAYUSCULA.
 
 
-Se pueden gerar datos con DSchema para probar.
+Se pueden gerar datos con DSchema para probar. Cambiar a 6 en lugar de qoo que tiene por defecto.
