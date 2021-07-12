@@ -33,4 +33,6 @@ Copiar scss.
     Copiar todo del modelo.
     Buscar y sustituir an miniscula y MAYUSCULA.
 
+* Hacer commit    
+
 
