@@ -27,6 +27,7 @@ import { DistritoComponent } from "./pages/distrito/distrito.component";
 import { EnteComponent } from "./pages/ente/ente.component";
 import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-contratacion.component";
 import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.component";
+import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
 
 @NgModule({
     imports: [
@@ -92,6 +93,10 @@ import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.co
                         {
                             path: "pages/organoContratacion",
                             component: OrganoContratacionComponent,
+                        },
+                        {
+                            path: "pages/sindicato",
+                            component: SindicatoComponent,
                         },
                         // **************** organización geográfica ************************
                         {

@@ -176,6 +176,8 @@ import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-
 import { OrganoContratacionService } from "./service/organo-contratacion.service";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
 import { SeccionCensalService } from "./service/seccion-censal.service";
+import { SindicatoComponent } from './pages/sindicato/sindicato.component';
+import { SindicatoService } from "./service/sindicato.service";
 
 @NgModule({
     imports: [
@@ -332,6 +334,7 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
         EnteComponent,
         OrganoContratacionComponent,
         SeccionCensalComponent,
+        SindicatoComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
@@ -354,6 +357,7 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
         EnteService,
         OrganoContratacionService,
         SeccionCensalService,
+        SindicatoService,
         MenuService,
         AppBreadcrumbService,
     ],

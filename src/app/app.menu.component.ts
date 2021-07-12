@@ -126,6 +126,11 @@ export class AppMenuComponent implements OnInit {
                         icon: "pi pi-fw pi-book",
                         routerLink: ["/pages/organoContratacion"],
                     },
+                    {
+                        label: "Sindicatos municipales",
+                        icon: "pi pi-fw pi-book",
+                        routerLink: ["/pages/sindicato"],
+                    },
                 ],
             },
             {
