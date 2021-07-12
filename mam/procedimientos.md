@@ -1,7 +1,7 @@
 
 TODO EN SINGULAR.
 Abrir nueva terminal en /pages
-ng g c <new> --skip-tests .Nomnres compuestos organo-contratacion
+ng g c <new> --skip-tests .Nombres compuestos => organo-contratacion
 * En /domain
     Copiar modelo
     Renombar fichero copiado.
@@ -19,13 +19,14 @@ Copiar scss.
 
 * En appn app.menu
     Añadir routerLink
-    
+
 * En app.module.ts    providers: [
     Añadir el service nuevo
 
 * En .html
     Copiar todo de page anterior
-    Linea 26 cambiar titulo.com
+    Linea 22 cambiar texto
+    Linea 26 cambiar titulo.
     Comprobar nombres de campos BBDD, usando createDTO en el back.
 
 * En .ts
@@ -33,4 +34,3 @@ Copiar scss.
     Buscar y sustituir an miniscula y MAYUSCULA.
 
 
-Se pueden gerar datos con DSchema para probar. Cambiar a 6 en lugar de qoo que tiene por defecto.

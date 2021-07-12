@@ -143,6 +143,11 @@ export class AppMenuComponent implements OnInit {
                         icon: "pi pi-fw pi-book",
                         routerLink: ["/pages/barrio"],
                     },
+                    {
+                        label: "Secciones censales",
+                        icon: "pi pi-fw pi-book",
+                        routerLink: ["/pages/seccionCensal"],
+                    },
                 ],
             },
             {

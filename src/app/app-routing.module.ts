@@ -26,6 +26,7 @@ import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
 import { DistritoComponent } from "./pages/distrito/distrito.component";
 import { EnteComponent } from "./pages/ente/ente.component";
 import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-contratacion.component";
+import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.component";
 
 @NgModule({
     imports: [
@@ -100,6 +101,10 @@ import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-
                         {
                             path: "pages/distrito",
                             component: DistritoComponent,
+                        },
+                        {
+                            path: "pages/seccionCensal",
+                            component: SeccionCensalComponent,
                         },
                     ],
                 },
