@@ -121,6 +121,11 @@ export class AppMenuComponent implements OnInit {
                         icon: "pi pi-fw pi-book",
                         routerLink: ["/pages/ente"],
                     },
+                    {
+                        label: "Organos contratación",
+                        icon: "pi pi-fw pi-book",
+                        routerLink: ["/pages/organoContratacion"],
+                    },
                 ],
             },
             {

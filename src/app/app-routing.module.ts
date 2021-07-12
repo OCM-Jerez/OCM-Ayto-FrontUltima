@@ -25,6 +25,7 @@ import { BarrioComponent } from "./pages/barrio/barrio.component";
 import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
 import { DistritoComponent } from "./pages/distrito/distrito.component";
 import { EnteComponent } from "./pages/ente/ente.component";
+import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-contratacion.component";
 
 @NgModule({
     imports: [
@@ -87,12 +88,15 @@ import { EnteComponent } from "./pages/ente/ente.component";
                             path: "pages/ente",
                             component: EnteComponent,
                         },
-                        // **************** temas ************************
+                        {
+                            path: "pages/organoContratacion",
+                            component: OrganoContratacionComponent,
+                        },
+                        // **************** organización geográfica ************************
                         {
                             path: "pages/barrio",
                             component: BarrioComponent,
                         },
-                        // **************** temas ************************
                         {
                             path: "pages/distrito",
                             component: DistritoComponent,
