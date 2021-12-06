@@ -10,7 +10,7 @@ import { AppLandingComponent } from "./pages/app.landing.component";
 import { AppLoginComponent } from "./pages/app.login.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppNotfoundComponent } from "./pages/app.notfound.component";
-import { AppProgramasComponent } from "./pages/app.programas.component";
+import { AppProgramasComponent } from "./pages/programa/app.programas.component";
 import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";

@@ -126,7 +126,7 @@ import { WidgetsComponent } from "./utilities/widgets.component";
 import { SpacingComponent } from "./utilities/spacing.component";
 import { TypographyComponent } from "./utilities/typography.component";
 import { TextComponent } from "./utilities/text.component";
-import { AppProgramasComponent } from "./pages/app.programas.component";
+import { AppProgramasComponent } from "./pages/programa/app.programas.component";
 import { AppCalendarComponent } from "./pages/app.calendar.component";
 import { AppInvoiceComponent } from "./pages/app.invoice.component";
 import { AppHelpComponent } from "./pages/app.help.component";
