@@ -178,6 +178,7 @@ import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.co
 import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoComponent } from './pages/sindicato/sindicato.component';
 import { SindicatoService } from "./service/sindicato.service";
+import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
 
 @NgModule({
     imports: [
@@ -335,6 +336,7 @@ import { SindicatoService } from "./service/sindicato.service";
         OrganoContratacionComponent,
         SeccionCensalComponent,
         SindicatoComponent,
+        CuentaGeneralComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

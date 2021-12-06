@@ -94,7 +94,7 @@ export class AppMenuComponent implements OnInit {
                 ],
             },
             {
-                label: "Presupuestos",
+                label: "Información económica",
                 icon: "pi pi-fw pi-briefcase",
                 routerLink: ["/pages"],
                 items: [
@@ -103,7 +103,11 @@ export class AppMenuComponent implements OnInit {
                         icon: "pi pi-fw pi-book",
                         routerLink: ["/pages/presupuestos"],
                     },
-
+                    {
+                        label: "Cuentas Generales",
+                        icon: "pi pi-fw pi-book",
+                        routerLink: ["/pages/cuentaGeneral"],
+                    },
                 ],
             },
             {

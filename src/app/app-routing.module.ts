@@ -28,6 +28,7 @@ import { EnteComponent } from "./pages/ente/ente.component";
 import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-contratacion.component";
 import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.component";
 import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
+import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
 
 @NgModule({
     imports: [
@@ -77,9 +78,14 @@ import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
                             path: "pages/ecoGastos",
                             component: EcoGastosComponent,
                         },
+                        // **************** información económica ************************
                         {
                             path: "pages/presupuestos",
                             component: PresupuestosComponent,
+                        },
+                        {
+                            path: "pages/cuentaGeneral",
+                            component: CuentaGeneralComponent,
                         },
                         // **************** organización municipal ************************
                         {
