@@ -92,7 +92,7 @@ export class AppProgramasComponent implements OnInit {
         this.programaDialog = true;
     }
 
-    // Al pasar programas a observable tengo que comewntarlo porque this.programas da error.
+    // Al pasar programas a observable tengo que comentarlo porque this.programas da error.
     // deleteSelectedProgramas() {
     //     this.confirmationService.confirm({
     //         message: 'Are you sure you want to delete the selected programas?',

@@ -1,5 +1,5 @@
-import {Component, AfterViewInit, Renderer2, OnInit, OnDestroy} from '@angular/core';
-import { MenuService } from './app.menu.service';
+import { Component, AfterViewInit, Renderer2, OnInit, OnDestroy } from '@angular/core';
+import { MenuService } from './layout/menu/app.menu.service';
 import { PrimeNGConfig } from 'primeng/api';
 import { AppComponent } from './app.component';
 
@@ -48,7 +48,7 @@ export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
     inlineMenuClick: boolean;
 
     constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig,
-                public app: AppComponent) { }
+        public app: AppComponent) { }
 
     ngOnInit() {
         this.menuActive = this.isStatic() && !this.isMobile();
