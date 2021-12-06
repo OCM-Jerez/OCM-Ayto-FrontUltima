@@ -47,7 +47,6 @@ export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
     // programas: Programa[];
     programas$: Observable<Programa[]>;
-
     programa: Programa;
     selectedProgramas: Programa[];
     submitted: boolean;
@@ -75,6 +74,8 @@ export class AppProgramasComponent implements OnInit {
         // No hace falta subscribe pero hay que añadir async en el html
         // <p-table #dt [value]="programas$ | async" ..................
         this.programas$ = this.programaService.getProgramas();
+        console.log(this.programas$);
+        // console.log(JSON.stringify(this.programas$));
 
         // Nombres columnas al exportar a .CSV.
         this.cols = [
