@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Programa } from "../../domain/programa";
+import { IPrograma, ISaveProgram } from "../../domain/programa";
 import { ProgramaService } from "../../service/programaservice";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 import { AppBreadcrumbService } from "../../app.breadcrumb.service";
 import { Observable } from "rxjs";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
     templateUrl: "./app.programas.component.html",
@@ -46,36 +47,38 @@ import { Observable } from "rxjs";
 export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
     // programas: Programa[];
-    programas$: Observable<Programa[]>;
-    programa: Programa;
-    selectedProgramas: Programa[];
+    programas$: Observable<IPrograma[]>;
+    programa: IPrograma;
+    selectedProgramas: IPrograma[];
     submitted: boolean;
     cols: any[];
+    formGroup: FormGroup;
 
     constructor(
         private programaService: ProgramaService,
         private messageService: MessageService,
         private confirmationService: ConfirmationService,
         private breadcrumbService: AppBreadcrumbService,
-        private router: Router
+        private router: Router,
+        private _formBuilder: FormBuilder
     ) {
         this.breadcrumbService.setItems([
             { label: "Gastos" },
             { label: "Programas", routerLink: ["/pages/programas"] },
         ]);
+
+        this._loadForm();
     }
 
     ngOnInit() {
-        // this.programaService.getProgramas().then(data => this.programas = data);
-        // this.programaService.getProgramas().
-        // subscribe(resp => this.programas = resp)
-
         // https://platzi.com/clases/1731-angular-profesional/23605-evitando-doble-subscribe/
         // No hace falta subscribe pero hay que añadir async en el html
-        // <p-table #dt [value]="programas$ | async" ..................
+        // <p-table #dt [value]="programas$ | async" ............
         this.programas$ = this.programaService.getProgramas();
-        console.log(this.programas$);
-        // console.log(JSON.stringify(this.programas$));
+
+        // this.programaService.getProgramas().subscribe(response => {
+        //     console.log(response)
+        //      });
 
         // Nombres columnas al exportar a .CSV.
         this.cols = [
@@ -88,7 +91,7 @@ export class AppProgramasComponent implements OnInit {
     }
 
     openNew() {
-        this.programa = {};
+        this.programa = <IPrograma>{};
         this.submitted = false;
         this.programaDialog = true;
     }
@@ -107,7 +110,7 @@ export class AppProgramasComponent implements OnInit {
     //     });
     // }
 
-    editPrograma(programa: Programa) {
+    editPrograma(programa: IPrograma) {
         this.programa = { ...programa };
         this.programaDialog = true;
     }
@@ -138,26 +141,37 @@ export class AppProgramasComponent implements OnInit {
         this.submitted = false;
     }
 
-    // savePrograma() {
-    //     this.submitted = true;
+    savePrograma() {
+        this.submitted = true;
+        if (this.formGroup.invalid) {
+            return;
+        }
 
-    //     if (this.programa.name.trim()) {
-    //         if (this.programa.id) {
-    //             this.programas[this.findIndexById(this.programa.id)] = this.programa;
-    //             this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 3000});
-    //         }
-    //         else {
-    //             this.programa.id = this.createId();
-    //             this.programa.image = 'product-placeholder.svg';
-    //             this.programas.push(this.programa);
-    //             this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Created', life: 3000});
-    //         }
+        const send = this.formGroup.value as ISaveProgram;
+        this.programaService.updateProgramas(this.programa.id, send).subscribe(response => {
+            // console.log(response);
+            this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 4000 });
+            this.programas$ = this.programaService.getProgramas();
+            this.programaDialog = false;
 
-    //         this.programas = [...this.programas];
-    //         this.programaDialog = false;
-    //         this.programa = {};
-    //     }
-    // }
+        })
+        // if (this.programa.name.trim()) {
+        //     if (this.programa.id) {
+        //         this.programas[this.findIndexById(this.programa.id)] = this.programa;
+        //         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 3000});
+        //     }
+        //     else {
+        //         this.programa.id = this.createId();
+        //         this.programa.image = 'product-placeholder.svg';
+        //         this.programas.push(this.programa);
+        //         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Created', life: 3000});
+        //     }
+
+        //     this.programas = [...this.programas];
+        //     this.programaDialog = false;
+        //     this.programa = {};
+        // }
+    }
 
     // findIndexById(id: string): number {
     //     let index = -1;
@@ -179,5 +193,33 @@ export class AppProgramasComponent implements OnInit {
             id += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return id;
+    }
+
+    private _loadForm(): void {
+        this.formGroup = this._formBuilder.group(
+            {
+                codPro: [null, [Validators.required]],
+                descripcionAyto: [null],
+                descripcionOCM: [null, Validators.required],
+                WebOCM: [null],
+                proCreatedDate: [null],
+                proDeletedDate: [null],
+                uso: [null],
+                codOrg: [null],
+                observaciones: [null],
+            }
+        )
+    }
+
+    get descriptionOCMField() {
+        return this.formGroup.get('descripcionOCM');
+    }
+
+    get codProField() {
+        return this.formGroup.get('codPro');
+    }
+
+    get observacionesField() {
+        return this.formGroup.get('observaciones');
     }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
-import { Programa } from "../../domain/programa";
+import { IPrograma } from "../../domain/programa";
 import { ProgramaService } from "../../service/programaservice";
 
 @Component({
@@ -10,13 +10,13 @@ import { ProgramaService } from "../../service/programaservice";
 })
 export class ProgramaDetailComponent implements OnInit {
     programaDialog: boolean;
-    programas: Programa[];
-    programa: Programa;
-    selectedProgramas: Programa[];
+    programas: IPrograma[];
+    programa: IPrograma;
+    selectedProgramas: IPrograma[];
     submitted: boolean;
     cols: any[];
 
-    constructor(public programaService: ProgramaService) {}
+    constructor(public programaService: ProgramaService) { }
 
     ngOnInit(): void {
         // this.programaService.getProgramas().then(data => this.programas = data);
