@@ -92,7 +92,7 @@ import { AppMainComponent } from "./app.main.component";
 import { AppConfigComponent } from "./app.config.component";
 import { AppMenuComponent } from "./layout/menu/app.menu.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
-import { AppInlineMenuComponent } from "./app.inlinemenu.component";
+// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 import { AppRightMenuComponent } from "./layout/rightmenu/app.rightmenu.component";
 import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
 import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
@@ -253,7 +253,7 @@ import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.co
         AppErrorComponent,
         AppFooterComponent,
         AppHelpComponent,
-        AppInlineMenuComponent,
+        // AppInlineMenuComponent,
         AppInvoiceComponent,
         AppLandingComponent,
         AppLoginComponent,
