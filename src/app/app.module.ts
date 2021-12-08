@@ -94,7 +94,7 @@ import { AppMenuComponent } from "./layout/menu/app.menu.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
 import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 import { AppRightMenuComponent } from "./layout/rightmenu/app.rightmenu.component";
-import { AppBreadcrumbComponent } from "./app.breadcrumb.component";
+import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
 import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
 import { AppFooterComponent } from "./layout/footer/app.footer.component";
 
@@ -119,7 +119,7 @@ import { ProgramaService } from "./service/programaservice";
 import { ProductService } from "./service/productservice";
 
 import { MenuService } from "./layout/menu/app.menu.service";
-import { AppBreadcrumbService } from "./app.breadcrumb.service";
+import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
 import { AppContactusComponent } from "./pages/plantilla/app.contactus.component";
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";

@@ -6,7 +6,7 @@ import { SelectItem } from "primeng/api";
 import { Product } from "../../domain/product";
 // import { ProductService } from '../service/productservice';
 import { ProductService } from "../../service/productservice";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { AppMainComponent } from "src/app/app.main.component";
 import { AppComponent } from "src/app/app.component";
 

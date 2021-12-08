@@ -5,7 +5,7 @@ import { Delegacion } from "../../domain/delegacion";
 import { DelegacionService } from "../../service/delegacion.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({

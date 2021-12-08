@@ -5,9 +5,9 @@ import { IPrograma, ISaveProgram } from "../../domain/programa";
 import { ProgramaService } from "../../service/programaservice";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
 import { Observable } from "rxjs";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 
 @Component({
     templateUrl: "./app.programas.component.html",

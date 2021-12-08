@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Economico } from "../../domain/economico";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 import { EcoGastoService } from "src/app/service/ecogastoservice";
 import { ClassGetter } from "@angular/compiler/src/output/output_ast";

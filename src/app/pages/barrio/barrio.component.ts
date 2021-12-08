@@ -5,7 +5,7 @@ import { Barrio } from "../../domain/barrio";
 import { BarrioService } from "../../service/barrio.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({

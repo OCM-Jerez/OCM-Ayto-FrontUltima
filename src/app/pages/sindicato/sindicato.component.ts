@@ -5,7 +5,7 @@ import { Sindicato } from "../../domain/sindicato";
 import { SindicatoService } from "../../service/sindicato.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({

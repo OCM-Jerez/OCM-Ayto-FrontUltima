@@ -5,7 +5,7 @@ import { CapituloIngreso } from "../../domain/capitulo-ingreso";
 import { CapituloIngresoService } from "../../service/capitulo-ingreso.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({

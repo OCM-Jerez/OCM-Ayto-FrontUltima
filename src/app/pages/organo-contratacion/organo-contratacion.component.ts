@@ -5,7 +5,7 @@ import { OrganoContratacion } from "../../domain/organo-contratacion";
 import { OrganoContratacionService } from "../../service/organo-contratacion.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
