@@ -86,7 +86,7 @@ import { TreeModule } from "primeng/tree";
 import { TreeTableModule } from "primeng/treetable";
 import { VirtualScrollerModule } from "primeng/virtualscroller";
 
-import { AppCodeModule } from "./app.code.component";
+// import { AppCodeModule } from "./app.code.component";
 import { AppComponent } from "./app.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppConfigComponent } from "./app.config.component";
@@ -239,7 +239,7 @@ import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.co
         TreeModule,
         TreeTableModule,
         VirtualScrollerModule,
-        AppCodeModule,
+        // AppCodeModule,
         HighchartsChartModule
 
     ],
