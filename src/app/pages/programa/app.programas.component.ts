@@ -1,17 +1,17 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { IPrograma, ISaveProgram } from "../../domain/programa";
-import { ProgramaService } from "../../service/programaservice";
+import { Observable } from "rxjs";
+
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { Observable } from "rxjs";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { IPrograma, ISaveProgram } from "../../domain/programa";
+import { ProgramaService } from "../../service/programaservice";
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 
 @Component({
     templateUrl: "./app.programas.component.html",
-    // styleUrls: ['../demo/view/tabledemo.scss'],
     styleUrls: ["./app.programas.scss"],
     styles: [
         `
@@ -80,13 +80,18 @@ export class AppProgramasComponent implements OnInit {
         //     console.log(response)
         //      });
 
-        // Nombres columnas al exportar a .CSV.
+        // Nombres columnas al exportar a CSV.
         this.cols = [
-            { field: "Codigo", header: "Codigo" },
-            { field: "Descripcion", header: "Descripcion" },
+            { field: "id", header: "id" },
+            { field: "codPro", header: "Codigo" },
+            { field: "descripcionAyto", header: "descripcionAyto" },
+            { field: "descripcionOCM", header: "descripcionOCM" },
+            { field: "WebOCM", header: "WEBOCM" },
+            { field: "proCreatedDate", header: "proCreatedDate" },
+            { field: "proDeletedDate", header: "proDeletedDate" },
+            { field: "uso", header: "uso" },
+            { field: "codOrg", header: "codOrg" },
             { field: "Observaciones", header: "Observaciones" },
-            { field: "WEBOCM", header: "WEBOCM" },
-            // { field: 'inventoryStatus', header: 'Status' }
         ];
     }
 
