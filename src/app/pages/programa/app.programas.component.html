@@ -78,7 +78,7 @@
                                 (click)="editPrograma(programa)"></button>
                             <!-- [routerLink]="['/pages/programaDetail']" -->
                             <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
-                                (click)="deleteProduct(product)"></button>
+                                (click)="deletePrograma(programa)"></button>
                         </td>
                     </tr>
                 </ng-template>
@@ -93,56 +93,56 @@
 
                     <div class="p-field">
                         <label for="codPro">codPro</label>
-                        <input type="text" id="codPro" pInputTextarea autofocus formControlName="codPro" required
-                            rows="2" cols="20">
-                        <small *ngIf="submitted && codProField.hasError('required')">
+                        <input type="text" id="codPro" pInputTextarea autofocus formControlName="codPro">
+                        <small class="OCM-error" *ngIf="submitted && codProField.hasError('required')">
                             codPro es obligatorio.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="descripcionAyto">descripcionAyto</label>
-                        <input type="text" id="descripcionAyto" pInputTextarea formControlName="descripcionAyto"
-                            cols="20">
+                        <input type="text" id="descripcionAyto" pInputTextarea formControlName="descripcionAyto">
+                        <small class="OCM-error" *ngIf="submitted && descriptionAytoField.hasError('required')">
+                            descripcionAyto es obligatorio.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="name">descripcionOCM</label>
-                        <input type="text" styleClass="p-d-block ui-state-error" pInputText id="descripcionOCM" required
-                            formControlName="descripcionOCM" />
-                        <small class="p-invalid" *ngIf="submitted && descriptionOCMField.hasError('required')">
+                        <input type="text" styleClass="p-d-block ui-state-error" pInputText id="descripcionOCM"
+                            formControlName="descripcionOCM">
+                        <small class="OCM-error" *ngIf="submitted && descriptionOCMField.hasError('required')">
                             descripcionOCM es obligatorio.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="WebOCM">WebOCM</label>
-                        <input type="text" id="WebOCM" pInputTextarea formControlName="WebOCM" cols="20">
+                        <input type="text" id="WebOCM" pInputTextarea formControlName="WebOCM">
                     </div>
 
-                    <div class="p-field">
+                    <!-- <div class="p-field">
                         <label for="proCreatedDate">proCreatedDate</label>
                         <input type="text" id="proCreatedDate" pInputTextarea formControlName="proCreatedDate"
-                            cols="20">
+                            >
                     </div>
 
                     <div class="p-field">
                         <label for="proDeletedDate">proDeletedDate</label>
                         <input type="text" id="proDeletedDate" pInputTextarea formControlName="proDeletedDate"
-                            cols="20">
-                    </div>
+                            >
+                    </div> -->
 
                     <div class="p-field">
                         <label for="uso">uso</label>
-                        <input type="text" id="uso" pInputTextarea formControlName="uso" cols="20">
+                        <input type="text" id="uso" pInputTextarea formControlName="uso">
                     </div>
 
                     <div class="p-field">
                         <label for="codOrg">codOrg</label>
-                        <input type="text" id="codOrg" pInputTextarea formControlName="codOrg" cols="20">
+                        <input type="text" id="codOrg" pInputTextarea formControlName="codOrg">
                     </div>
 
                     <div class="p-field">
                         <label for="Observaciones">Observaciones</label>
-                        <input type="text" id="Observaciones" pInputTextarea formControlName="observaciones" cols="20">
+                        <input type="text" id="Observaciones" pInputTextarea formControlName="observaciones">
                     </div>
 
                 </ng-template>

@@ -1,3 +1,11 @@
+.OCM-error {
+    color: RED;
+}
+
+.input.ng-invalid.ng.touched {
+    border: 1px sloid red;
+}
+
 :host ::ng-deep {
     .p-paginator {
         .p-paginator-current {

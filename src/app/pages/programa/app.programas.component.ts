@@ -118,6 +118,7 @@ export class AppProgramasComponent implements OnInit {
     editPrograma(programa: IPrograma) {
         this.programa = { ...programa };
         this.programaDialog = true;
+        this._loadFormActual()
     }
 
     detailPrograma(codPro: string, desPro: string) {
@@ -128,18 +129,18 @@ export class AppProgramasComponent implements OnInit {
         this.router.navigate(["/pages/programaDetail"]);
     }
 
-    // deletePrograma(programa: Programa) {
-    //     this.confirmationService.confirm({
-    //         message: 'Are you sure you want to delete ' + programa.name + '?',
-    //         header: 'Confirm',
-    //         icon: 'pi pi-exclamation-triangle',
-    //         accept: () => {
-    //             this.programas = this.programas.filter(val => val.id !== programa.id);
-    //             this.programa = {};
-    //             this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Deleted', life: 3000});
-    //         }
-    //     });
-    // }
+    deletePrograma(programa: IPrograma) {
+        this.confirmationService.confirm({
+            message: '¿Estas seguro que quieres borrar el programa: ' + programa.descripcionOCM + '?',
+            header: 'Confirmar',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                // this.programas$ = this.programas$.filter(val => val.id !== programa.id);
+                // this.programa = {};
+                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa Deleted', life: 3000 });
+            }
+        });
+    }
 
     hideDialog() {
         this.programaDialog = false;
@@ -155,7 +156,7 @@ export class AppProgramasComponent implements OnInit {
         const send = this.formGroup.value as ISaveProgram;
         this.programaService.updateProgramas(this.programa.id, send).subscribe(response => {
             // console.log(response);
-            this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 4000 });
+            this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa Updated', life: 4000 });
             this.programas$ = this.programaService.getProgramas();
             this.programaDialog = false;
 
@@ -190,25 +191,25 @@ export class AppProgramasComponent implements OnInit {
     //     return index;
     // }
 
-    createId(): string {
-        let id = "";
-        const chars =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for (let i = 0; i < 5; i++) {
-            id += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return id;
-    }
+    // createId(): string {
+    //     let id = "";
+    //     const chars =
+    //         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    //     for (let i = 0; i < 5; i++) {
+    //         id += chars.charAt(Math.floor(Math.random() * chars.length));
+    //     }
+    //     return id;
+    // }
 
     private _loadForm(): void {
         this.formGroup = this._formBuilder.group(
             {
-                codPro: [null, [Validators.required]],
+                codPro: [null],
                 descripcionAyto: [null],
-                descripcionOCM: [null, Validators.required],
+                descripcionOCM: [null],
                 WebOCM: [null],
-                proCreatedDate: [null],
-                proDeletedDate: [null],
+                // pro
+                // proDeletedDate: [null],
                 uso: [null],
                 codOrg: [null],
                 observaciones: [null],
@@ -216,12 +217,44 @@ export class AppProgramasComponent implements OnInit {
         )
     }
 
-    get descriptionOCMField() {
-        return this.formGroup.get('descripcionOCM');
+    private _loadFormActual(): void {
+        this.formGroup = this._formBuilder.group(
+            {
+                codPro: [this.programa.codPro, [Validators.required]],
+                descripcionAyto: [this.programa.descripcionAyto, [Validators.required]],
+                descripcionOCM: [this.programa.descripcionOCM, [Validators.required]],
+                WebOCM: [this.programa.WebOCM],
+                // proCreatedDate: [null],
+                // proDeletedDate: [null],
+                uso: [this.programa.uso],
+                codOrg: [this.programa.codOrg],
+                observaciones: [this.programa.observaciones],
+            }
+        )
     }
 
     get codProField() {
         return this.formGroup.get('codPro');
+    }
+
+    get descriptionAytoField() {
+        return this.formGroup.get('descripcionAyto');
+    }
+
+    get descriptionOCMField() {
+        return this.formGroup.get('descripcionOCM');
+    }
+
+    get WebOCMOCMField() {
+        return this.formGroup.get('WebOCM');
+    }
+
+    get usoField() {
+        return this.formGroup.get('uso');
+    }
+
+    get codOrgField() {
+        return this.formGroup.get('codOrg');
     }
 
     get observacionesField() {
