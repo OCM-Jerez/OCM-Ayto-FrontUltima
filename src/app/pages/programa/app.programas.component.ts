@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { IPrograma, ISaveProgram } from "../../domain/programa";
+import { IPrograma, ISavePrograma } from "../../domain/programa";
 import { ProgramaService } from "../../service/programaservice";
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 
@@ -46,7 +46,7 @@ import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.ser
 })
 export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
-    // programas: Programa[];
+    programaNew: boolean;
     programas$: Observable<IPrograma[]>;
     programa: IPrograma;
     selectedProgramas: IPrograma[];
@@ -66,7 +66,6 @@ export class AppProgramasComponent implements OnInit {
             { label: "Gastos" },
             { label: "Programas", routerLink: ["/pages/programas"] },
         ]);
-
         this._loadForm();
     }
 
@@ -99,25 +98,14 @@ export class AppProgramasComponent implements OnInit {
         this.programa = <IPrograma>{};
         this.submitted = false;
         this.programaDialog = true;
+        this.programaNew = true;
+        this._loadForm();
     }
-
-    // Al pasar programas a observable tengo que comentarlo porque this.programas da error.
-    // deleteSelectedProgramas() {
-    //     this.confirmationService.confirm({
-    //         message: 'Are you sure you want to delete the selected programas?',
-    //         header: 'Confirm',
-    //         icon: 'pi pi-exclamation-triangle',
-    //         accept: () => {
-    //             this.programas = this.programas.filter(val => !this.selectedProgramas.includes(val));
-    //             this.selectedProgramas = null;
-    //             this.messageService.add({severity: 'success', summary: 'Successful', detail: 'Programas Deleted', life: 3000});
-    //         }
-    //     });
-    // }
 
     editPrograma(programa: IPrograma) {
         this.programa = { ...programa };
         this.programaDialog = true;
+        this.programaNew = false;
         this._loadFormActual()
     }
 
@@ -135,9 +123,10 @@ export class AppProgramasComponent implements OnInit {
             header: 'Confirmar',
             icon: 'pi pi-exclamation-triangle',
             accept: () => {
-                // this.programas$ = this.programas$.filter(val => val.id !== programa.id);
-                // this.programa = {};
-                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa Deleted', life: 3000 });
+                this.programaService.deletePrograma(programa.id).subscribe(response => {
+                    this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa borrado', life: 4000 });
+                    this.programas$ = this.programaService.getProgramas();
+                })
             }
         });
     }
@@ -153,53 +142,24 @@ export class AppProgramasComponent implements OnInit {
             return;
         }
 
-        const send = this.formGroup.value as ISaveProgram;
-        this.programaService.updateProgramas(this.programa.id, send).subscribe(response => {
-            // console.log(response);
-            this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa Updated', life: 4000 });
-            this.programas$ = this.programaService.getProgramas();
-            this.programaDialog = false;
-
-        })
-        // if (this.programa.name.trim()) {
-        //     if (this.programa.id) {
-        //         this.programas[this.findIndexById(this.programa.id)] = this.programa;
-        //         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Updated', life: 3000});
-        //     }
-        //     else {
-        //         this.programa.id = this.createId();
-        //         this.programa.image = 'product-placeholder.svg';
-        //         this.programas.push(this.programa);
-        //         this.messageService.add({severity: 'success', summary: 'Successful', detail: 'programa Created', life: 3000});
-        //     }
-
-        //     this.programas = [...this.programas];
-        //     this.programaDialog = false;
-        //     this.programa = {};
-        // }
+        if (this.programaNew) {
+            const send = this.formGroup.value as IPrograma;
+            this.programaService.postPrograma(send).subscribe(response => {
+                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa creado', life: 4000 });
+                this.programas$ = this.programaService.getProgramas();
+            })
+        }
+        else {
+            const send = this.formGroup.value as IPrograma;
+            console.log("Actialñizar");
+            this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
+                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa actualizado', life: 4000 });
+                this.programas$ = this.programaService.getProgramas();
+            })
+        }
+        this.programaDialog = false;
+        this.programaNew = false;
     }
-
-    // findIndexById(id: string): number {
-    //     let index = -1;
-    //     for (let i = 0; i < this.programas.length; i++) {
-    //         if (this.programas[i].id === id) {
-    //             index = i;
-    //             break;
-    //         }
-    //     }
-
-    //     return index;
-    // }
-
-    // createId(): string {
-    //     let id = "";
-    //     const chars =
-    //         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    //     for (let i = 0; i < 5; i++) {
-    //         id += chars.charAt(Math.floor(Math.random() * chars.length));
-    //     }
-    //     return id;
-    // }
 
     private _loadForm(): void {
         this.formGroup = this._formBuilder.group(

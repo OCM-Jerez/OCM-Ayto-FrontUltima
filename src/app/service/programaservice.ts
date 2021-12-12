@@ -4,7 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { IPrograma, ISaveProgram } from '../domain/programa';
+import { IPrograma, ISavePrograma } from '../domain/programa';
 import { environment } from 'src/environments/environment';
 
 
@@ -20,37 +20,41 @@ export class ProgramaService {
     // https://www.youtube.com/watch?v=J2tN5zG0k18&t=780s
     private URL_API = environment.host + '/programas';
 
+    postPrograma(programa: IPrograma) {
+        const url = this.URL_API + '/'
+        return this.httpClient.post(url, programa).pipe(
+            catchError(this.handleError),
+        )
+    }
+
+
     getProgramas() {
         return this.httpClient.get<IPrograma[]>(this.URL_API)
             .pipe(
                 catchError(this.handleError),
             )
-
     }
 
-    updateProgramas(id: number, programa: ISaveProgram) {
+    updatePrograma(id: number, programa: IPrograma) {
         const url = this.URL_API + '/' + id
-
         return this.httpClient.put(url, programa).pipe(
             catchError(this.handleError),
         )
-
     }
+
+    deletePrograma(id: number) {
+        const url = this.URL_API + '/' + id
+        return this.httpClient.delete(url).pipe(
+            catchError(this.handleError),
+        )
+    }
+
+
     private handleError(error: HttpErrorResponse) {
         console.log(error.message);
         return throwError('ups algo salio mal');
     }
 
-    // async getProgramas() {
-    //     return await this.httpClient.get<Programa[]>('http://localhost:3000/api/v1/programas')
-    // tpPromise esta deprecado.
-    //https://indepth.dev/posts/1287/rxjs-heads-up-topromise-is-being-deprecated
-    //     .toPromise()
-    //     .then(res => res as Programa[])
-    //     // algo ha cambiado, ahora no devuelve nada en res.data
-    //     // .then(res => res.data as Programa[])
-    //     // .then(data => data);
-    // }
 
 
 

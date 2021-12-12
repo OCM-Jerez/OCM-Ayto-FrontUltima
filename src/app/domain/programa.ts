@@ -13,4 +13,4 @@ export interface IPrograma {
     observaciones?: string;
 }
 
-export type ISaveProgram = Omit<IPrograma, 'id'>
+export type ISavePrograma = Omit<IPrograma, 'id'>
