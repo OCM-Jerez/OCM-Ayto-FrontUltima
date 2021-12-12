@@ -151,7 +151,6 @@ export class AppProgramasComponent implements OnInit {
         }
         else {
             const send = this.formGroup.value as IPrograma;
-            console.log("Actialñizar");
             this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
                 this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa actualizado', life: 4000 });
                 this.programas$ = this.programaService.getProgramas();
