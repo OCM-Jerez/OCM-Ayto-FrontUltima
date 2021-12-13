@@ -51,7 +51,7 @@ export class AppProgramasComponent implements OnInit {
     programa: IPrograma;
     selectedProgramas: IPrograma[];
     submitted: boolean;
-    cols: any[];
+    colsCSV: any[];
     formGroup: FormGroup;
 
     constructor(
@@ -80,7 +80,7 @@ export class AppProgramasComponent implements OnInit {
         //      });
 
         // Nombres columnas al exportar a CSV.
-        this.cols = [
+        this.colsCSV = [
             { field: "id", header: "id" },
             { field: "codPro", header: "Codigo" },
             { field: "descripcionAyto", header: "descripcionAyto" },

@@ -18,7 +18,7 @@
                 </ng-template>
             </p-toolbar>
 
-            <p-table #dt [value]="programas$ | async" [columns]="cols" [rows]="10" [paginator]="true"
+            <p-table #dt [value]="programas$ | async" [columns]="colsCSV" [rows]="10" [paginator]="true"
                 [globalFilterFields]="['codPro','descripcionOCM']" [(selection)]="selectedProgramas" [rowHover]="true"
                 dataKey="id" styleClass="p-datatable-customers"
                 currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} programas"
