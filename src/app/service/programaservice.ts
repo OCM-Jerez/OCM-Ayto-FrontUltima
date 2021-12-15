@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { IPrograma, ISavePrograma } from '../domain/programa';
 import { environment } from 'src/environments/environment';
-
+import { IErrorResponse } from '../../common/models/http-api.interface';
 
 @Injectable()
 export class ProgramaService {
@@ -20,42 +20,34 @@ export class ProgramaService {
     // https://www.youtube.com/watch?v=J2tN5zG0k18&t=780s
     private URL_API = environment.host + '/programas';
 
-    postPrograma(programa: IPrograma) {
+    postPrograma(programa: ISavePrograma): Observable<IPrograma[]> {
         const url = this.URL_API + '/'
-        return this.httpClient.post(url, programa).pipe(
-            catchError(this.handleError),
-        )
+        return this.httpClient.post<IPrograma[]>(url, programa)
     }
-
 
     getProgramas() {
         return this.httpClient.get<IPrograma[]>(this.URL_API)
-            .pipe(
-                catchError(this.handleError),
-            )
     }
 
-    updatePrograma(id: number, programa: IPrograma) {
+    updatePrograma(id: number, programa: IPrograma): Observable<IPrograma[] | IErrorResponse> {
         const url = this.URL_API + '/' + id
-        return this.httpClient.put(url, programa).pipe(
-            catchError(this.handleError),
-        )
+        return this.httpClient.put<IPrograma[] | IErrorResponse>(url, programa)
+
     }
 
     deletePrograma(id: number) {
         const url = this.URL_API + '/' + id
-        return this.httpClient.delete(url).pipe(
-            catchError(this.handleError),
-        )
+        return this.httpClient.delete(url)
     }
 
+    // private handleError(error: HttpErrorResponse) {
+    //     const errorController = error.error as IErrorResponse;
+    //     if (errorController) {
+    //         console.log(errorController.errorResponse.message);
 
-    private handleError(error: HttpErrorResponse) {
-        console.log(error.message);
-        return throwError('ups algo salio mal');
-    }
+    //     }
 
-
-
+    //     return throwError('ups algo salio mal');
+    // }
 
 }
