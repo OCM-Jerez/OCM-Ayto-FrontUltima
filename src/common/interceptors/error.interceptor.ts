@@ -8,29 +8,29 @@ import {
 	HttpRequest
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-// import { MessageService } from '../services/message.service';
-// import { PathRest } from './../static/path-rest';
+import { IErrorResponse } from '../models/http-api.interface';
 @Injectable()
 export class AnimeInterceptor implements HttpInterceptor {
-	// constructor(private messageService: MessageService) {}
+	// constructor(private messageService: MessageService) { }
 
 	intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-		const token = localStorage.getItem('acces_token')!;
+		// const token = localStorage.getItem('acces_token')!;
 		let requestClone = req;
 
-		if (!this.isLogin(req.url)) {
-			requestClone = req.clone({
-				headers: req.headers.set('Authorization', `Bearer ${token}`)
-			});
-		}
+		// if (!this.isLogin(req.url)) {
+		// 	requestClone = req.clone({
+		// 		headers: req.headers.set('Authorization', `Bearer ${token}`)
+		// 	});
+		// }
 
 		return next.handle(requestClone).pipe(catchError((error) => this.herrorHandler(error)));
 	}
 
 	private isLogin(url: string): boolean {
-        return true // borrar al descomentar linea inferior.
+		return true // borrar al descomentar linea inferior.
 		// return url.search(PathRest.GET_LOGIN) != -1;
 	}
 
@@ -39,6 +39,25 @@ export class AnimeInterceptor implements HttpInterceptor {
 			if (error.error instanceof ErrorEvent) {
 				// this.messageService.showError('ERROR DE CLIENTE', 'top right');
 			} else {
+				const errorController = error.error as IErrorResponse;
+
+				switch (error.status) {
+					case 400: {
+						if (errorController) {
+							// this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa creado', life: 4000 });
+							console.log(errorController.errorResponse.message);
+						} else {
+							console.log('Ocurrio un error');
+						}
+					}
+						break;
+
+
+					default:
+						break;
+				}
+
+
 				if (error.status === 401) {
 					// this.messageService.showError('Ustede no cuenta con permisos para ingresar', 'top right');
 				} else {
