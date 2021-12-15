@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
@@ -106,7 +106,19 @@ export class AppProgramasComponent implements OnInit {
         this.programa = { ...programa };
         this.programaDialog = true;
         this.programaNew = false;
-        this._loadFormActual()
+        // this._loadFormActual()
+
+        this.formGroup.patchValue(
+            {
+                codPro: programa.codPro,
+                descripcionAyto: programa.descripcionAyto,
+                descripcionOCM: programa.descripcionOCM,
+                WebOCM: programa.WebOCM,
+                uso: programa.uso,
+                codOrg: programa.codOrg,
+                observaciones: programa.observaciones,
+            }
+        )
     }
 
     detailPrograma(codPro: string, desPro: string) {
@@ -143,10 +155,12 @@ export class AppProgramasComponent implements OnInit {
         }
 
         if (this.programaNew) {
-            const send = this.formGroup.value as IPrograma;
+            const send = this.formGroup.value as ISavePrograma;
             this.programaService.postPrograma(send).subscribe(response => {
                 this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa creado', life: 4000 });
-                this.programas$ = this.programaService.getProgramas();
+                this.programas$ = of(response);
+                // this.programas$ = this.programaService.getProgramas();
+                this.formGroup.reset();
             })
         }
         else {
@@ -154,40 +168,42 @@ export class AppProgramasComponent implements OnInit {
             this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
                 this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa actualizado', life: 4000 });
                 this.programas$ = this.programaService.getProgramas();
+                this.formGroup.reset();
+
             })
         }
         this.programaDialog = false;
         this.programaNew = false;
     }
 
+    // private _loadForm(): void {
+    //     this.formGroup = this._formBuilder.group(
+    //         {
+    //             codPro: [null],
+    //             descripcionAyto: [null],
+    //             descripcionOCM: [null],
+    //             WebOCM: [null],
+    //             // pro
+    //             // proDeletedDate: [null],
+    //             uso: [null],
+    //             codOrg: [null],
+    //             observaciones: [null],
+    //         }
+    //     )
+    // }
+
     private _loadForm(): void {
         this.formGroup = this._formBuilder.group(
             {
-                codPro: [null],
-                descripcionAyto: [null],
-                descripcionOCM: [null],
+                codPro: [null, [Validators.required]],
+                descripcionAyto: [null, [Validators.required]],
+                descripcionOCM: [null, [Validators.required]],
                 WebOCM: [null],
-                // pro
+                // proCreatedDate: [null],
                 // proDeletedDate: [null],
                 uso: [null],
                 codOrg: [null],
                 observaciones: [null],
-            }
-        )
-    }
-
-    private _loadFormActual(): void {
-        this.formGroup = this._formBuilder.group(
-            {
-                codPro: [this.programa.codPro, [Validators.required]],
-                descripcionAyto: [this.programa.descripcionAyto, [Validators.required]],
-                descripcionOCM: [this.programa.descripcionOCM, [Validators.required]],
-                WebOCM: [this.programa.WebOCM],
-                // proCreatedDate: [null],
-                // proDeletedDate: [null],
-                uso: [this.programa.uso],
-                codOrg: [this.programa.codOrg],
-                observaciones: [this.programa.observaciones],
             }
         )
     }
