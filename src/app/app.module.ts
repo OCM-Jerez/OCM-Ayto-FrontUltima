@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -151,6 +151,7 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoComponent } from './pages/sindicato/sindicato.component';
 import { SindicatoService } from "./service/sindicato.service";
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
+import { AnimeInterceptor } from '../common/interceptors/error.interceptor';
 
 @NgModule({
     imports: [
@@ -308,6 +309,12 @@ import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.co
         SindicatoService,
         MenuService,
         AppBreadcrumbService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AnimeInterceptor,
+            multi: true
+
+        }
     ],
     bootstrap: [AppComponent],
 })
