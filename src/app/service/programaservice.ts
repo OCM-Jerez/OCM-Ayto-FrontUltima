@@ -13,7 +13,6 @@ export class ProgramaService {
     desPro: string
 
     constructor(private httpClient: HttpClient) { }
-
     // https://platzi.com/clases/1731-angular-profesional/23607-manejo-de-errores/
     // https://www.udemy.com/course/rxjs-de-cero-hasta-los-detalles/learn/lecture/16623364#questions/14456716
     // https://www.youtube.com/watch?v=J2tN5zG0k18&t=780s

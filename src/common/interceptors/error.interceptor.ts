@@ -45,7 +45,7 @@ export class AnimeInterceptor implements HttpInterceptor {
 					case 400: {
 						if (errorController) {
 							// this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa creado', life: 4000 });
-							console.log(errorController.errorResponse.message);
+							console.log(errorController.errorResponse.message[0]);
 						} else {
 							console.log('Ocurrio un error');
 						}

@@ -6,10 +6,11 @@ import { Observable, of } from "rxjs";
 
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { IPrograma, ISavePrograma } from "../../domain/programa";
+
 import { ProgramaService } from "../../service/programaservice";
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 
+import { IPrograma, ISavePrograma } from "../../domain/programa";
 @Component({
     templateUrl: "./app.programas.component.html",
     styleUrls: ["./app.programas.scss"],
@@ -102,6 +103,14 @@ export class AppProgramasComponent implements OnInit {
         this._loadForm();
     }
 
+    detailPrograma(codPro: string, desPro: string) {
+        // Video comunicación entre componentes de Fernando Herrera.
+        // https://youtu.be/df0eH9mM9nU?t=1262
+        this.programaService.codPro = codPro;
+        this.programaService.desPro = desPro;
+        this.router.navigate(["/pages/programaDetail"]);
+    }
+
     editPrograma(programa: IPrograma) {
         this.programa = { ...programa };
         this.programaDialog = true;
@@ -119,12 +128,44 @@ export class AppProgramasComponent implements OnInit {
         )
     }
 
-    detailPrograma(codPro: string, desPro: string) {
-        // Video comunicación entre componentes de Fernando Herrera.
-        // https://youtu.be/df0eH9mM9nU?t=1262
-        this.programaService.codPro = codPro;
-        this.programaService.desPro = desPro;
-        this.router.navigate(["/pages/programaDetail"]);
+    savePrograma() {
+        if (this.programaNew) {
+            const send = this.formGroup.value as ISavePrograma;
+            // this._savePrograma(send, 'postPrograma','creado')
+            this.programaService.postPrograma(send).subscribe(response => {
+                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa creado`, life: 4000 });
+                this.programas$ = of(response);
+                this.formGroup.reset();
+            })
+        }
+        else {
+            const send = this.formGroup.value as IPrograma;
+            // this._savePrograma(send,'updatePrograma', 'actualizado')
+            this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
+                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa editado`, life: 4000 });
+                this.programas$ = of(response);
+                this.formGroup.reset();
+            })
+        }
+        // this.programaDialog = false;
+        this.programaNew = true;
+    }
+
+    private _savePrograma(send: ISavePrograma | IPrograma, verb: string, proceso: string) {
+        // const send = null
+        // if (proceso = 'creado') {
+        //     const send = this.formGroup.value as ISavePrograma;
+        // } else {
+        //     console.log("actualizado");
+        //     const send = this.formGroup.value as IPrograma;
+        // }
+
+
+        // this.programaService.postPrograma(send).subscribe(response => {
+        //     this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${proceso}`, life: 4000 });
+        //     this.programas$ = of(response);
+        //     this.formGroup.reset();
+        // })
     }
 
     deletePrograma(programa: IPrograma) {
@@ -146,97 +187,13 @@ export class AppProgramasComponent implements OnInit {
         this.submitted = false;
     }
 
-    savePrograma() {
-        this.submitted = true;
-        if (this.formGroup.invalid) {
-            return;
-        }
-
-        if (this.programaNew) {
-            const send = this.formGroup.value as ISavePrograma;
-            this._savePrograma(send, 'creado')
-
-            // const send = this.formGroup.value as ISavePrograma;
-            // this.programaService.postPrograma(send).subscribe(response => {
-            //     this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa creado', life: 4000 });
-            //     this.programas$ = of(response);
-            //     this.formGroup.reset();
-            // })
-        }
-        else {
-            const send = this.formGroup.value as IPrograma;
-            this._savePrograma(send, 'actualizado')
-
-            // const send = this.formGroup.value as IPrograma;
-            // this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
-            //     this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa actualizado', life: 4000 });
-            //     this.programas$ = of(response);
-            //     this.formGroup.reset();
-            // })
-
-            // const send = this.formGroup.value as IPrograma;
-            // this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
-            //     console.log(response);
-            //     console.log(typeof response);
-            //     console.log(response.toString);
-            //     this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa actualizado', life: 4000 });
-            //     this.programas$ = this.programaService.getProgramas();
-            //     // if (response instanceof IPrograma) {
-            //     //  if( typeof response is IErrorResponse)
-            //     // if(IPrograma){}
-            //     //    this.programas$ = of(response);
-            //     this.formGroup.reset();
-            // })
-
-
-            // const send = this.formGroup.value as IPrograma;
-            // // https://javascript.plainenglish.io/angular-meets-rxjs-basic-concepts-f178d8fe0e02
-            // this.programaService.updatePrograma(this.programa.id, send).subscribe({
-            //     next: x => this.programas$ = this.programaService.getProgramas(),
-            //     // Para que funcione hay que quitar   provide: HTTP_INTERCEPTORS, en app.module.ts
-            //     error: err => console.log(err),
-            //     complete: () => console.log("El Observable se completa")
-            // })
-
-
-            // observable$.susbcribe({
-            //     next: function(data){},
-            //     error: function(err){},
-            //     complete: function(){}
-            //     })
-
-
-
-        }
-        this.programaDialog = false;
-        this.programaNew = false;
-    }
-
-
-    private _savePrograma(send: any, proceso: string) {
-        // const send = null
-        // if (proceso = 'creado') {
-        //     const send = this.formGroup.value as ISavePrograma;
-        // } else {
-        //     console.log("actualizado");
-        //     const send = this.formGroup.value as IPrograma;
-        // }
-
-        this.programaService.postPrograma(send).subscribe(response => {
-            this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${proceso}`, life: 4000 });
-            this.programas$ = of(response);
-            this.formGroup.reset();
-        })
-    }
-
-
     private _loadForm(): void {
         this.formGroup = this._formBuilder.group(
             {
-                codPro: [null, [Validators.required]],
-                descripcionAyto: [null, [Validators.required]],
-                descripcionOCM: [null, [Validators.required]],
-                WebOCM: [null],
+                codPro: [null, [Validators.required, Validators.minLength(5)]],
+                descripcionAyto: [null, [Validators.required, Validators.minLength(20)]],
+                descripcionOCM: [null, [Validators.required, Validators.minLength(20)]],
+                WebOCM: [null, [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
                 // proCreatedDate: [null],
                 // proDeletedDate: [null],
                 uso: [null],
@@ -273,8 +230,5 @@ export class AppProgramasComponent implements OnInit {
     get observacionesField() {
         return this.formGroup.get('observaciones');
     }
-}
-function send(send: any) {
-    throw new Error("Function not implemented.");
-}
 
+}

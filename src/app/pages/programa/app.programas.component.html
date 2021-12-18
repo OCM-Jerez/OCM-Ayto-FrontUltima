@@ -86,7 +86,7 @@
             </p-table>
         </div>
 
-        <div [formGroup]="formGroup">
+        <div novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()">
             <p-dialog [(visible)]="programaDialog" [style]="{width: '650px'}" header="Detalles programa" [modal]="true"
                 styleClass="p-fluid">
                 <ng-template pTemplate="content">
@@ -94,28 +94,42 @@
                     <div class="p-field">
                         <label for="codPro">codPro</label>
                         <input type="text" id="codPro" pInputTextarea autofocus formControlName="codPro">
-                        <small class="OCM-error" *ngIf="submitted && codProField.hasError('required')">
+
+                        <!-- <input *ngIf="codProField.hasError('required')" style="background-color: red;" type="text"
+                            id="codPro" pInputTextarea autofocus formControlName="codPro"> -->
+                        <!-- <input *ngIf="codProField.hasNoError()" style="background-color: green;" type="text" id="codPro"
+                            pInputTextarea formControlName="codPro"> -->
+
+                        <small class="OCM-error" *ngIf="codProField.hasError('required')">
                             codPro es obligatorio.</small>
+                        <small class="OCM-error" *ngIf="codProField.hasError('minlength')">
+                            codPro debe tener al menos 5 caracteres.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="descripcionAyto">descripcionAyto</label>
                         <input type="text" id="descripcionAyto" pInputTextarea formControlName="descripcionAyto">
-                        <small class="OCM-error" *ngIf="submitted && descriptionAytoField.hasError('required')">
+                        <small class="OCM-error" *ngIf="descriptionAytoField.hasError('required')">
                             descripcionAyto es obligatorio.</small>
+                        <small class="OCM-error" *ngIf="descriptionAytoField.hasError('minlength')">
+                            descripcionAyto debe tener al menos 20 caracteres.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="name">descripcionOCM</label>
                         <input type="text" styleClass="p-d-block ui-state-error" pInputText id="descripcionOCM"
                             formControlName="descripcionOCM">
-                        <small class="OCM-error" *ngIf="submitted && descriptionOCMField.hasError('required')">
+                        <small class="OCM-error" *ngIf="descriptionOCMField.hasError('required')">
                             descripcionOCM es obligatorio.</small>
+                        <small class="OCM-error" *ngIf="descriptionOCMField.hasError('minlength')">
+                            descripcionAyto debe tener al menos 20 caracteres.</small>
                     </div>
 
                     <div class="p-field">
                         <label for="WebOCM">WebOCM</label>
                         <input type="text" id="WebOCM" pInputTextarea formControlName="WebOCM">
+                        <small class="OCM-error" *ngIf="WebOCMOCMField.hasError('pattern')">
+                            La URL no es correcta.</small>
                     </div>
 
                     <!-- <div class="p-field">
@@ -148,10 +162,10 @@
                 </ng-template>
 
                 <ng-template pTemplate="footer">
-                    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text"
+                    <button pButton pRipple type="button" label="Cancel" icon="pi pi-times" class="p-button-text"
                         (click)="hideDialog()"></button>
-                    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text"
-                        (click)="savePrograma()"></button>
+                    <button pButton pRipple type="submit" (click)="savePrograma()" label="Save" icon="pi pi-check"
+                        class="p-button-text" [disabled]="formGroup!.invalid"></button>
                 </ng-template>
 
             </p-dialog>
