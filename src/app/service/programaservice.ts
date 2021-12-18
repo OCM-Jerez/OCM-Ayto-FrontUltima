@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
-import { throwError, Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 import { IPrograma, ISavePrograma } from '../domain/programa';
 import { environment } from 'src/environments/environment';
@@ -29,25 +28,20 @@ export class ProgramaService {
         return this.httpClient.get<IPrograma[]>(this.URL_API)
     }
 
-    updatePrograma(id: number, programa: IPrograma): Observable<IPrograma[] | IErrorResponse> {
-        const url = this.URL_API + '/' + id
-        return this.httpClient.put<IPrograma[] | IErrorResponse>(url, programa)
-
-    }
-
-    deletePrograma(id: number) {
-        const url = this.URL_API + '/' + id
-        return this.httpClient.delete(url)
-    }
-
-    // private handleError(error: HttpErrorResponse) {
-    //     const errorController = error.error as IErrorResponse;
-    //     if (errorController) {
-    //         console.log(errorController.errorResponse.message);
-
-    //     }
-
-    //     return throwError('ups algo salio mal');
+    // updatePrograma(id: number, programa: IPrograma): Observable<IPrograma[] | IErrorResponse> {
+    //     const url = this.URL_API + '/' + id
+    //     return this.httpClient.put<IPrograma[] | IErrorResponse>(url, programa)
     // }
+
+
+    updatePrograma(id: number, programa: IPrograma): Observable<IPrograma[]> {
+        const url = this.URL_API + '/' + id
+        return this.httpClient.put<IPrograma[]>(url, programa)
+    }
+
+    deletePrograma(id: number): Observable<IPrograma[]> {
+        const url = this.URL_API + '/' + id
+        return this.httpClient.delete<IPrograma[]>(url)
+    }
 
 }
