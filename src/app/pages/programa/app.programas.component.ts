@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { Observable, of } from "rxjs";
@@ -203,31 +203,31 @@ export class AppProgramasComponent implements OnInit {
         )
     }
 
-    get codProField() {
+    get codProAbstract(): AbstractControl {
         return this.formGroup.get('codPro');
     }
 
-    get descriptionAytoField() {
+    get descriptionAytoAbstract(): AbstractControl {
         return this.formGroup.get('descripcionAyto');
     }
 
-    get descriptionOCMField() {
+    get descriptionOCMAbstract(): AbstractControl {
         return this.formGroup.get('descripcionOCM');
     }
 
-    get WebOCMOCMField() {
+    get WebOCMAbstract(): AbstractControl {
         return this.formGroup.get('WebOCM');
     }
 
-    get usoField() {
+    get usoAbstract(): AbstractControl {
         return this.formGroup.get('uso');
     }
 
-    get codOrgField() {
+    get codOrgAbstract(): AbstractControl {
         return this.formGroup.get('codOrg');
     }
 
-    get observacionesField() {
+    get observacionesAbstract(): AbstractControl {
         return this.formGroup.get('observaciones');
     }
 
