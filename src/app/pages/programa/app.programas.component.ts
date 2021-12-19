@@ -190,7 +190,7 @@ export class AppProgramasComponent implements OnInit {
     private _loadForm(): void {
         this.formGroup = this._formBuilder.group(
             {
-                codPro: [null, [Validators.required, Validators.minLength(5)]],
+                codPro: [null, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
                 descripcionAyto: [null, [Validators.required, Validators.minLength(20)]],
                 descripcionOCM: [null, [Validators.required, Validators.minLength(20)]],
                 WebOCM: [null, [Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
@@ -203,32 +203,67 @@ export class AppProgramasComponent implements OnInit {
         )
     }
 
-    get codProAbstract(): AbstractControl {
-        return this.formGroup.get('codPro');
+
+    getError(controlName: string): string {
+        const control = this.formGroup.get(controlName)
+        if (control.hasError('required')) {
+            return 'El campo es requerido. Por favor, introduce un valor.';
+        }
+
+        if (control.hasError('pattern')) {
+            switch (controlName) {
+                case 'codPro':
+                    return 'Deber ser numeros';
+                case 'WebOCM':
+                    return 'La URL no es correcta.';
+                default:
+                    break;
+            }
+        }
+
+        if (control.hasError('minlength')) {
+            switch (controlName) {
+                case 'codPro':
+                    return 'Debe tener al menos 5 caracteres.';
+                case 'descripcionAyto':
+                    return 'Debe tener al menos 20 caracteres.';
+                case 'descripcionOCM':
+                    return 'Debe tener al menos 25 caracteres.';
+                default:
+                    break;
+            }
+        }
+
+        return '';
+
     }
 
-    get descriptionAytoAbstract(): AbstractControl {
-        return this.formGroup.get('descripcionAyto');
-    }
+    // get codProAbstract(): AbstractControl {
+    //     return this.formGroup.get('codPro');
+    // }
 
-    get descriptionOCMAbstract(): AbstractControl {
-        return this.formGroup.get('descripcionOCM');
-    }
+    // get descriptionAytoAbstract(): AbstractControl {
+    //     return this.formGroup.get('descripcionAyto');
+    // }
 
-    get WebOCMAbstract(): AbstractControl {
-        return this.formGroup.get('WebOCM');
-    }
+    // get descriptionOCMAbstract(): AbstractControl {
+    //     return this.formGroup.get('descripcionOCM');
+    // }
 
-    get usoAbstract(): AbstractControl {
-        return this.formGroup.get('uso');
-    }
+    // get WebOCMAbstract(): AbstractControl {
+    //     return this.formGroup.get('WebOCM');
+    // }
 
-    get codOrgAbstract(): AbstractControl {
-        return this.formGroup.get('codOrg');
-    }
+    // get usoAbstract(): AbstractControl {
+    //     return this.formGroup.get('uso');
+    // }
 
-    get observacionesAbstract(): AbstractControl {
-        return this.formGroup.get('observaciones');
-    }
+    // get codOrgAbstract(): AbstractControl {
+    //     return this.formGroup.get('codOrg');
+    // }
+
+    // get observacionesAbstract(): AbstractControl {
+    //     return this.formGroup.get('observaciones');
+    // }
 
 }

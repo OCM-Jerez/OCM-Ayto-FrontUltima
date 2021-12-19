@@ -94,36 +94,41 @@
                         <!-- <input *ngIf="codProField.hasNoError()" style="background-color: green;" type="text" id="codPro"
                             pInputTextarea formControlName="codPro"> -->
 
-                        <small class="OCM-error" *ngIf="codProAbstract.hasError('required')">
+
+                        <small class="OCM-error"> {{getError('codPro')}}</small>
+                        <!-- <small class="OCM-error" *ngIf="codProAbstract.hasError('required')">
                             codPro es obligatorio.</small>
                         <small class="OCM-error" *ngIf="codProAbstract.hasError('minlength')">
-                            codPro debe tener al menos 5 caracteres.</small>
+                            codPro debe tener al menos 5 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
                         <label for="descripcionAyto">descripcionAyto</label>
                         <input type="text" id="descripcionAyto" pInputTextarea formControlName="descripcionAyto">
-                        <small class="OCM-error" *ngIf="descriptionAytoAbstract.hasError('required')">
+                        <small class="OCM-error">{{getError('descripcionAyto')}}</small>
+                        <!-- <small class="OCM-error" *ngIf="descriptionAytoAbstract.hasError('required')">
                             descripcionAyto es obligatorio.</small>
                         <small class="OCM-error" *ngIf="descriptionAytoAbstract.hasError('minlength')">
-                            descripcionAyto debe tener al menos 20 caracteres.</small>
+                            descripcionAyto debe tener al menos 20 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
                         <label for="name">descripcionOCM</label>
                         <input type="text" styleClass="p-d-block ui-state-error" pInputText id="descripcionOCM"
                             formControlName="descripcionOCM">
-                        <small class="OCM-error" *ngIf="descriptionOCMAbstract.hasError('required')">
+                        <small class="OCM-error"> {{getError('descripcionOCM')}}</small>
+                        <!-- <small class="OCM-error" *ngIf="descriptionOCMAbstract.hasError('required')">
                             descripcionOCM es obligatorio.</small>
                         <small class="OCM-error" *ngIf="descriptionOCMAbstract.hasError('minlength')">
-                            descripcionAyto debe tener al menos 20 caracteres.</small>
+                            descripcionAyto debe tener al menos 20 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
                         <label for="WebOCM">WebOCM</label>
                         <input type="text" id="WebOCM" pInputTextarea formControlName="WebOCM">
-                        <small class="OCM-error" *ngIf="WebOCMAbstract.hasError('pattern')">
-                            La URL no es correcta.</small>
+                        <small class="OCM-error"> {{getError('WebOCM')}}</small>
+                        <!-- <small class="OCM-error" *ngIf="WebOCMAbstract.hasError('pattern')">
+                            La URL no es correcta.</small> -->
                     </div>
 
                     <!-- <div class="p-field">
