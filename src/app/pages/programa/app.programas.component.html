@@ -80,7 +80,7 @@
             </p-table>
         </div>
 
-        <form novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()">
+        <form novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()" autocomplete="off">
             <p-dialog [(visible)]="programaDialog" [style]="{width: '650px'}" header="Detalles programa" [modal]="true"
                 styleClass="p-fluid">
                 <ng-template pTemplate="content">

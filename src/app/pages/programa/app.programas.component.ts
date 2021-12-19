@@ -43,7 +43,7 @@ import { IPrograma, ISavePrograma } from "../../domain/programa";
             }
         `,
     ],
-    providers: [MessageService, ConfirmationService],
+
 })
 export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
@@ -131,41 +131,25 @@ export class AppProgramasComponent implements OnInit {
     savePrograma() {
         if (this.programaNew) {
             const send = this.formGroup.value as ISavePrograma;
-            // this._savePrograma(send, 'postPrograma','creado')
             this.programaService.postPrograma(send).subscribe(response => {
-                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa creado`, life: 4000 });
-                this.programas$ = of(response);
-                this.formGroup.reset();
-            })
+                this._savePrograma(response, 'creado');
+            });
         }
         else {
             const send = this.formGroup.value as IPrograma;
-            // this._savePrograma(send,'updatePrograma', 'actualizado')
             this.programaService.updatePrograma(this.programa.id, send).subscribe(response => {
-                this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa editado`, life: 4000 });
-                this.programas$ = of(response);
-                this.formGroup.reset();
+                this._savePrograma(response, 'editado');
             })
         }
-        this.programaDialog = false;
-        this.programaNew = true;
+
     }
 
-    private _savePrograma(send: ISavePrograma | IPrograma, verb: string, proceso: string) {
-        // const send = null
-        // if (proceso = 'creado') {
-        //     const send = this.formGroup.value as ISavePrograma;
-        // } else {
-        //     console.log("actualizado");
-        //     const send = this.formGroup.value as IPrograma;
-        // }
-
-
-        // this.programaService.postPrograma(send).subscribe(response => {
-        //     this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${proceso}`, life: 4000 });
-        //     this.programas$ = of(response);
-        //     this.formGroup.reset();
-        // })
+    private _savePrograma(response: IPrograma[], message: string) {
+        this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
+        this.programas$ = of(response);
+        this.formGroup.reset();
+        this.programaDialog = false;
+        this.programaNew = true;
     }
 
     deletePrograma(programa: IPrograma) {
