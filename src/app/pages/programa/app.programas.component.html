@@ -57,15 +57,9 @@
                         <td>
                             <p-tableCheckbox [value]="programa"></p-tableCheckbox>
                         </td>
-                        <td><span class="p-column-title">Codigo</span>
-                            {{programa.codPro}}
-                        </td>
-                        <td><span class="p-column-title">Descripcion</span>
-                            {{ programa.descripcionOCM }}
-                        </td>
-                        <td><span class="p-column-title">Observaciones</span>
-                            {{programa.observaciones}}
-                        </td>
+                        <td> {{programa.codPro}} </td>
+                        <td> {{ programa.descripcionOCM }} </td>
+                        <td> {{programa.observaciones}} </td>
                         <td>
                             <!-- <a href="{{ product.WebOCM }}" target="_blank" *ngIf(product.WebOCM)>Ir a pagina OCM</a> -->
                             <a href="{{ programa.WebOCM }}" target="_blank">{{ programa.WebOCM }}</a>
@@ -86,7 +80,7 @@
             </p-table>
         </div>
 
-        <div novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()">
+        <form novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()">
             <p-dialog [(visible)]="programaDialog" [style]="{width: '650px'}" header="Detalles programa" [modal]="true"
                 styleClass="p-fluid">
                 <ng-template pTemplate="content">
@@ -162,14 +156,12 @@
                 </ng-template>
 
                 <ng-template pTemplate="footer">
-                    <button pButton pRipple type="button" label="Cancel" icon="pi pi-times" class="p-button-text"
-                        (click)="hideDialog()"></button>
-                    <button pButton pRipple type="submit" (click)="savePrograma()" label="Save" icon="pi pi-check"
-                        class="p-button-text" [disabled]="formGroup!.invalid"></button>
+                    <button class="OCM-Button" type="button" (click)="hideDialog()">Cancelar</button>
+                    <button [disabled]="formGroup!.invalid" class="OCM-Button" type="submit">Grabar</button>
                 </ng-template>
 
             </p-dialog>
-        </div>
+        </form>
 
         <p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
     </div>

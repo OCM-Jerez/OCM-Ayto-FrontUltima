@@ -147,7 +147,7 @@ export class AppProgramasComponent implements OnInit {
                 this.formGroup.reset();
             })
         }
-        // this.programaDialog = false;
+        this.programaDialog = false;
         this.programaNew = true;
     }
 
@@ -193,7 +193,7 @@ export class AppProgramasComponent implements OnInit {
                 codPro: [null, [Validators.required, Validators.minLength(5)]],
                 descripcionAyto: [null, [Validators.required, Validators.minLength(20)]],
                 descripcionOCM: [null, [Validators.required, Validators.minLength(20)]],
-                WebOCM: [null, [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
+                WebOCM: [null, [Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
                 // proCreatedDate: [null],
                 // proDeletedDate: [null],
                 uso: [null],
