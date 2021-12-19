@@ -7,6 +7,16 @@
 @import "../node_modules/@fullcalendar/timegrid/main.min.css";
 @import "./appdemo.scss";
 
+:host ::ng-deep .p-message-custom {
+    background-color: #d3201a;
+    border: solid #8a427a;
+    border-width: 0 0 0 6px;
+    color: #2c1e30;
+}
+
+:host ::ng-deep .p-message-close-icon {
+    color: #2c1e30;
+}
 
 // ********************INICIO comun a todas las pages *****************************
 :host ::ng-deep {
