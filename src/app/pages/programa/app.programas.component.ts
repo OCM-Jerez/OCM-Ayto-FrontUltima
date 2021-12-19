@@ -187,7 +187,6 @@ export class AppProgramasComponent implements OnInit {
         )
     }
 
-
     getError(controlName: string): string {
         const control = this.formGroup.get(controlName)
         if (control.hasError('required')) {

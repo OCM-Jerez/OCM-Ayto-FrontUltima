@@ -8,11 +8,9 @@
                 <ng-template pTemplate="left">
                     <button pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-success p-mr-2 p-mb-2"
                         (click)="openNew()"></button>
-                    <!-- <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger p-mb-2" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button> -->
                 </ng-template>
 
                 <ng-template pTemplate="right">
-                    <!-- <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-mb-2 p-d-inline-block"></p-fileUpload> -->
                     <button pButton pRipple label="Exportar" icon="pi pi-upload" class="p-button-help p-mb-2"
                         (click)="dt.exportCSV()"></button>
                 </ng-template>
@@ -61,7 +59,6 @@
                         <td> {{ programa.descripcionOCM }} </td>
                         <td> {{programa.observaciones}} </td>
                         <td>
-                            <!-- <a href="{{ product.WebOCM }}" target="_blank" *ngIf(product.WebOCM)>Ir a pagina OCM</a> -->
                             <a href="{{ programa.WebOCM }}" target="_blank">{{ programa.WebOCM }}</a>
                         </td>
                         <td>
@@ -70,7 +67,6 @@
                             </button>
                             <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2"
                                 (click)="editPrograma(programa)"></button>
-                            <!-- [routerLink]="['/pages/programaDetail']" -->
                             <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger"
                                 (click)="deletePrograma(programa)"></button>
                         </td>
@@ -88,28 +84,13 @@
                     <div class="p-field">
                         <label for="codPro">codPro</label>
                         <input type="text" id="codPro" pInputTextarea autofocus formControlName="codPro">
-
-                        <!-- <input *ngIf="codProField.hasError('required')" style="background-color: red;" type="text"
-                            id="codPro" pInputTextarea autofocus formControlName="codPro"> -->
-                        <!-- <input *ngIf="codProField.hasNoError()" style="background-color: green;" type="text" id="codPro"
-                            pInputTextarea formControlName="codPro"> -->
-
-
                         <small class="OCM-error"> {{getError('codPro')}}</small>
-                        <!-- <small class="OCM-error" *ngIf="codProAbstract.hasError('required')">
-                            codPro es obligatorio.</small>
-                        <small class="OCM-error" *ngIf="codProAbstract.hasError('minlength')">
-                            codPro debe tener al menos 5 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
                         <label for="descripcionAyto">descripcionAyto</label>
                         <input type="text" id="descripcionAyto" pInputTextarea formControlName="descripcionAyto">
                         <small class="OCM-error">{{getError('descripcionAyto')}}</small>
-                        <!-- <small class="OCM-error" *ngIf="descriptionAytoAbstract.hasError('required')">
-                            descripcionAyto es obligatorio.</small>
-                        <small class="OCM-error" *ngIf="descriptionAytoAbstract.hasError('minlength')">
-                            descripcionAyto debe tener al menos 20 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
@@ -117,18 +98,12 @@
                         <input type="text" styleClass="p-d-block ui-state-error" pInputText id="descripcionOCM"
                             formControlName="descripcionOCM">
                         <small class="OCM-error"> {{getError('descripcionOCM')}}</small>
-                        <!-- <small class="OCM-error" *ngIf="descriptionOCMAbstract.hasError('required')">
-                            descripcionOCM es obligatorio.</small>
-                        <small class="OCM-error" *ngIf="descriptionOCMAbstract.hasError('minlength')">
-                            descripcionAyto debe tener al menos 20 caracteres.</small> -->
                     </div>
 
                     <div class="p-field">
                         <label for="WebOCM">WebOCM</label>
                         <input type="text" id="WebOCM" pInputTextarea formControlName="WebOCM">
                         <small class="OCM-error"> {{getError('WebOCM')}}</small>
-                        <!-- <small class="OCM-error" *ngIf="WebOCMAbstract.hasError('pattern')">
-                            La URL no es correcta.</small> -->
                     </div>
 
                     <!-- <div class="p-field">
