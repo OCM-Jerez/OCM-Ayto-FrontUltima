@@ -14,7 +14,7 @@ import { catchError } from 'rxjs/operators';
 import { IErrorResponse } from '../models/http-api.interface';
 
 @Injectable()
-export class AnimeInterceptor implements HttpInterceptor {
+export class ErrorInterceptor implements HttpInterceptor {
 	constructor(private messageService: MessageService) { }
 
 	intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -27,7 +27,7 @@ export class AnimeInterceptor implements HttpInterceptor {
 		// 	});
 		// }
 
-		return next.handle(requestClone).pipe(catchError((error) => this.herrorHandler(error)));
+		return next.handle(requestClone).pipe(catchError((error) => this.errorHandler(error)));
 	}
 
 	private isLogin(url: string): boolean {
@@ -35,7 +35,7 @@ export class AnimeInterceptor implements HttpInterceptor {
 		// return url.search(PathRest.GET_LOGIN) != -1;
 	}
 
-	private herrorHandler(error: HttpErrorResponse): Observable<never> {
+	private errorHandler(error: HttpErrorResponse): Observable<never> {
 
 		if (error instanceof HttpErrorResponse) {
 			if (error.error instanceof ErrorEvent) {

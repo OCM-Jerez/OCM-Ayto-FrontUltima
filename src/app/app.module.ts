@@ -151,7 +151,7 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoComponent } from './pages/sindicato/sindicato.component';
 import { SindicatoService } from "./service/sindicato.service";
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { AnimeInterceptor } from '../common/interceptors/error.interceptor';
+import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
 import { ConfirmationService, MessageService } from "primeng/api";
 
 @NgModule({
@@ -312,7 +312,7 @@ import { ConfirmationService, MessageService } from "primeng/api";
         AppBreadcrumbService,
         {
             provide: HTTP_INTERCEPTORS,
-            useClass: AnimeInterceptor,
+            useClass: ErrorInterceptor,
             multi: true
 
         },
