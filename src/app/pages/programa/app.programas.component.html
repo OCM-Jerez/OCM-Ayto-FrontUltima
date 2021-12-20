@@ -55,9 +55,9 @@
                         <td>
                             <p-tableCheckbox [value]="programa"></p-tableCheckbox>
                         </td>
-                        <td> {{programa.codPro}} </td>
+                        <td> {{ programa.codPro }} </td>
                         <td> {{ programa.descripcionOCM }} </td>
-                        <td> {{programa.observaciones}} </td>
+                        <td> {{ programa.observaciones }} </td>
                         <td>
                             <a href="{{ programa.WebOCM }}" target="_blank">{{ programa.WebOCM }}</a>
                         </td>
@@ -77,8 +77,8 @@
         </div>
 
         <form novalidate [formGroup]="formGroup" (ngSubmit)="savePrograma()" autocomplete="off">
-            <p-dialog [(visible)]="programaDialog" [style]="{width: '650px'}" header="Detalles programa" [modal]="true"
-                styleClass="p-fluid">
+            <p-dialog [(visible)]="programaDialog" [closable]="false" [style]="{width: '650px'}"
+                header="Detalles programa" [modal]="true" styleClass="p-fluid">
                 <ng-template pTemplate="content">
 
                     <div class="p-field">
