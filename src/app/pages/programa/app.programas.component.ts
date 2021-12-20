@@ -11,6 +11,7 @@ import { ProgramaService } from "../../service/programaservice";
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 
 import { IPrograma, ISavePrograma } from "../../domain/programa";
+import { PROGRAMAS_VALIDATORS } from "./programas.validators"
 @Component({
     templateUrl: "./app.programas.component.html",
     styleUrls: ["./app.programas.scss"],
@@ -189,36 +190,14 @@ export class AppProgramasComponent implements OnInit {
 
     getError(controlName: string): string {
         const control = this.formGroup.get(controlName)
-        if (control.hasError('required')) {
-            return 'El campo es requerido. Por favor, introduce un valor.';
+        if (control?.invalid && control?.touched) {
+            const atributeError = PROGRAMAS_VALIDATORS.find((x) => x.formControlName == controlName);
+            const validator = atributeError?.validators.find(
+                (validator) => control.errors![validator.name]
+            );
+            return validator!.message;
         }
-
-        if (control.hasError('pattern')) {
-            switch (controlName) {
-                case 'codPro':
-                    return 'Deber ser numeros';
-                case 'WebOCM':
-                    return 'La URL no es correcta.';
-                default:
-                    break;
-            }
-        }
-
-        if (control.hasError('minlength')) {
-            switch (controlName) {
-                case 'codPro':
-                    return 'Debe tener al menos 5 caracteres.';
-                case 'descripcionAyto':
-                    return 'Debe tener al menos 20 caracteres.';
-                case 'descripcionOCM':
-                    return 'Debe tener al menos 25 caracteres.';
-                default:
-                    break;
-            }
-        }
-
         return '';
-
     }
 
     // get codProAbstract(): AbstractControl {
