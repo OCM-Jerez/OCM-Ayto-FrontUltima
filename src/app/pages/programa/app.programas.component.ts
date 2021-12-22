@@ -12,6 +12,7 @@ import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.ser
 
 import { IPrograma, ISavePrograma } from "../../domain/programa";
 import { PROGRAMAS_VALIDATORS } from "./programas.validators"
+
 @Component({
     templateUrl: "./app.programas.component.html",
     styleUrls: ["./app.programas.scss"],
