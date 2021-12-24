@@ -7,7 +7,6 @@ import { Observable, of } from "rxjs";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
-
 import { REGISTER_VALIDATORS } from "./REGISTER.validators"
 
 @Component({
@@ -59,7 +58,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
 
 
@@ -67,7 +65,11 @@ export class RegisterComponent implements OnInit {
     this.formGroup = this._formBuilder.group(
       {
         user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
+        firstName: [null],
+        lastName: [null],
+        email: [null],
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
+        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6)]],
       }
     )
   }

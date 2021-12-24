@@ -40,18 +40,23 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
                 name: 'minlength',
                 message: 'Debe tener al menos 5 caracteres.'
             },
-            {
-                name: 'custom1',
-                message: 'El texto debe contener un asterisco "*"'
-            },
-            {
-                name: 'custom2',
-                message: 'El texto debe contener un sigo de dolar "$"'
-            }
         ]
     },
     {
         formControlName: 'password',
+        validators: [
+            {
+                name: 'required',
+                message: 'El campo es requerido. Por favor, introduce un valor.'
+            },
+            {
+                name: 'minlength',
+                message: 'Debe tener al menos 6 caracteres.'
+            }
+        ]
+    },
+    {
+        formControlName: 'passwordConfirm',
         validators: [
             {
                 name: 'required',

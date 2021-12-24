@@ -1,17 +1,3 @@
-Tabla User
-    id
-    nombre
-    apellidos
-    email
-    password
-    rol
-    status
-
-
-
-
-
-
 login y registro
 Darse de baja
 Logout
