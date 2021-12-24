@@ -255,7 +255,6 @@ import { RegisterComponent } from './auth/register/register.component';
         DashboardAnalyticsComponent,
         DashboardComponent,
         DashboardtiemposComponent,
-
         ProgramaDetailComponent,
         EcoGastosComponent,
         OrganicosComponent,

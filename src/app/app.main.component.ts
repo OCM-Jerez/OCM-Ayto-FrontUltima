@@ -8,43 +8,24 @@ import { AppComponent } from './app.component';
     templateUrl: './app.main.component.html'
 })
 export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
-
     topbarMenuActive: boolean;
-
     menuActive: boolean;
-
     staticMenuDesktopInactive: boolean;
-
     mobileMenuActive: boolean;
-
     menuClick: boolean;
-
     mobileTopbarActive: boolean;
-
     topbarRightClick: boolean;
-
     topbarItemClick: boolean;
-
     activeTopbarItem: string;
-
     documentClickListener: () => void;
-
     configActive: boolean;
-
     configClick: boolean;
-
     rightMenuActive: boolean;
-
     menuHoverActive = false;
-
     searchClick = false;
-
     search = false;
-
     currentInlineMenuKey: string;
-
     inlineMenuActive: any[] = [];
-
     inlineMenuClick: boolean;
 
     constructor(public renderer: Renderer2, private menuService: MenuService, private primengConfig: PrimeNGConfig,
