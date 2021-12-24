@@ -102,8 +102,8 @@ import { AppProgramasComponent } from "./pages/programa/app.programas.component"
 import { AppCalendarComponent } from "./pages/plantilla/app.calendar.component";
 import { AppInvoiceComponent } from "./pages/plantilla/app.invoice.component";
 import { AppHelpComponent } from "./pages/plantilla/app.help.component";
-import { AppNotfoundComponent } from "./pages/plantilla/app.notfound.component";
-import { AppErrorComponent } from "./pages/plantilla/app.error.component";
+import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
+import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppAccessdeniedComponent } from "./pages/plantilla/app.accessdenied.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppTimelineDemoComponent } from "./pages/plantilla/app.timelinedemo.component";
