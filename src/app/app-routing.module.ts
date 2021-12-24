@@ -7,7 +7,7 @@ import { AppAccessdeniedComponent } from "./pages/plantilla/app.accessdenied.com
 import { AppContactusComponent } from "./pages/plantilla/app.contactus.component";
 import { AppErrorComponent } from "./pages/plantilla/app.error.component";
 import { AppLandingComponent } from "./pages/plantilla/app.landing.component";
-import { AppLoginComponent } from "./pages/plantilla/app.login.component";
+import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppNotfoundComponent } from "./pages/plantilla/app.notfound.component";
 import { AppProgramasComponent } from "./pages/programa/app.programas.component";

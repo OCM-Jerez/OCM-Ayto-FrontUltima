@@ -1,7 +1,8 @@
 <div class="layout-topbar p-shadow-4">
     <div class="layout-topbar-left">
         <a class="layout-topbar-logo" routerLink="/">
-            <img id="app-logo" src="assets/layout/images/IconoOCMblanco.png" alt="ultima-layout" style="height: 2.25rem">
+            <img id="app-logo" src="assets/layout/images/IconoOCMblanco.png" alt="ultima-layout"
+                style="height: 2.25rem">
         </a>
 
         <a class="layout-menu-button p-shadow-6" (click)="appMain.onMenuButtonClick($event)" pRipple>
@@ -20,34 +21,42 @@
         <div class="layout-topbar-actions-right">
             <ul class="layout-topbar-items">
                 <li class="layout-topbar-item layout-search-item">
-                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'search')" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'search')"
+                        pRipple>
                         <i class="pi pi-search fs-large"></i>
                     </a>
 
-                    <div class="layout-search-panel p-inputgroup" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.search" (@topbarActionPanelAnimation.done)="onSearchAnimationEnd($event)">
+                    <div class="layout-search-panel p-inputgroup" [@topbarActionPanelAnimation]="'visible'"
+                        *ngIf="appMain.search" (@topbarActionPanelAnimation.done)="onSearchAnimationEnd($event)">
                         <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
-                        <input #searchInput type="text" pInputText placeholder="Search" (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
+                        <input #searchInput type="text" pInputText placeholder="Search"
+                            (click)="appMain.searchClick = true;" (keydown)="appMain.onSearchKeydown($event)">
                         <span class="p-inputgroup-addon">
-                            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-text p-button-plain" (click)="appMain.searchClick = false;"></button>
+                            <button pButton pRipple type="button" icon="pi pi-times"
+                                class="p-button-rounded p-button-text p-button-plain"
+                                (click)="appMain.searchClick = false;"></button>
                         </span>
                     </div>
                 </li>
                 <li class="layout-topbar-item notifications">
-                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
+                    <a class="layout-topbar-action rounded-circle"
+                        (click)="appMain.onTopbarItemClick($event, 'notifications')" pRipple>
                         <span class="p-overlay-badge">
                             <i class="pi pi-bell fs-large"></i>
                             <span class="p-badge p-badge-warning p-badge-dot"></span>
                         </span>
                     </a>
 
-                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'notifications'">
+                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'"
+                        *ngIf="appMain.activeTopbarItem === 'notifications'">
                         <li class="p-mb-3">
                             <span class="p-px-3 fs-small">You have <b>4</b> new notifications</span>
                         </li>
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
-                                <img src="assets/demo/images/avatar/avatar-1.png"/>
-                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
+                                <img src="assets/demo/images/avatar/avatar-1.png" />
+                                <div class="p-d-flex p-flex-column"
+                                    [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Jerome Bell</span>
                                         <small>42 mins ago</small>
@@ -58,8 +67,9 @@
                         </li>
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
-                                <img src="assets/demo/images/avatar/avatar-2.png"/>
-                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
+                                <img src="assets/demo/images/avatar/avatar-2.png" />
+                                <div class="p-d-flex p-flex-column"
+                                    [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Cameron Williamson</span>
                                         <small>48 mins ago</small>
@@ -70,8 +80,9 @@
                         </li>
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
-                                <img src="assets/demo/images/avatar/avatar-3.png"/>
-                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
+                                <img src="assets/demo/images/avatar/avatar-3.png" />
+                                <div class="p-d-flex p-flex-column"
+                                    [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Anna Miles</span>
                                         <small>1 day ago</small>
@@ -82,8 +93,9 @@
                         </li>
                         <li class="layout-topbar-action-item">
                             <div class="p-d-flex p-flex-row p-ai-center">
-                                <img src="assets/demo/images/avatar/avatar-4.png"/>
-                                <div class="p-d-flex p-flex-column" [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
+                                <img src="assets/demo/images/avatar/avatar-4.png" />
+                                <div class="p-d-flex p-flex-column"
+                                    [ngClass]="{'p-ml-3': !app.isRTL, 'p-mr-3': app.isRTL}" style="flex-grow: 1;">
                                     <div class="p-d-flex p-ai-center p-jc-between p-mb-1">
                                         <span class="fs-small p-text-bold">Arlene Mccoy</span>
                                         <small>4 day ago</small>
@@ -95,11 +107,13 @@
                     </ul>
                 </li>
                 <li class="layout-topbar-item app">
-                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'apps')" pRipple>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onTopbarItemClick($event, 'apps')"
+                        pRipple>
                         <i class="pi pi-table fs-large"></i>
                     </a>
 
-                    <div class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'apps'">
+                    <div class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'"
+                        *ngIf="appMain.activeTopbarItem === 'apps'">
                         <div class="p-grid p-nogutter">
                             <div class="layout-topbar-action-item p-col-4">
                                 <a class="p-d-flex p-ai-center p-flex-column text-color" pRipple>
@@ -141,11 +155,14 @@
                     </div>
                 </li>
                 <li class="layout-topbar-item">
-                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center p-px-2 rounded-circle" (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
-                        <img src="assets/demo/images/avatar/amyelsner.png" alt="avatar" style="width: 32px; height: 32px;">
+                    <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center p-px-2 rounded-circle"
+                        (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
+                        <img src="assets/demo/images/avatar/amyelsner.png" alt="avatar"
+                            style="width: 32px; height: 32px;">
                     </a>
 
-                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'" *ngIf="appMain.activeTopbarItem === 'profile'">
+                    <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'"
+                        *ngIf="appMain.activeTopbarItem === 'profile'">
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-cog" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
@@ -168,13 +185,16 @@
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-power-off" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Logout</span>
+                                <button class="OCM-Button" type="buton" [routerLink]="['/login']">Login</button>
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="layout-topbar-item">
-                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onRightMenuButtonClick($event)" pRipple>
-                        <i class="pi fs-large" [ngClass]="{'pi-arrow-left': !app.isRTL, 'pi-arrow-right': app.isRTL}"></i>
+                    <a class="layout-topbar-action rounded-circle" (click)="appMain.onRightMenuButtonClick($event)"
+                        pRipple>
+                        <i class="pi fs-large"
+                            [ngClass]="{'pi-arrow-left': !app.isRTL, 'pi-arrow-right': app.isRTL}"></i>
                     </a>
                 </li>
             </ul>

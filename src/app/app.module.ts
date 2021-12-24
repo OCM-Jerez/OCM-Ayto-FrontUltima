@@ -105,7 +105,7 @@ import { AppHelpComponent } from "./pages/plantilla/app.help.component";
 import { AppNotfoundComponent } from "./pages/plantilla/app.notfound.component";
 import { AppErrorComponent } from "./pages/plantilla/app.error.component";
 import { AppAccessdeniedComponent } from "./pages/plantilla/app.accessdenied.component";
-import { AppLoginComponent } from "./pages/plantilla/app.login.component";
+import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppTimelineDemoComponent } from "./pages/plantilla/app.timelinedemo.component";
 import { AppLandingComponent } from "./pages/plantilla/app.landing.component";
 

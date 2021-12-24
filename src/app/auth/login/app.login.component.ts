@@ -8,7 +8,7 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 
-import { PROGRAMAS_VALIDATORS } from "../programa/login.validators"
+import { PROGRAMAS_VALIDATORS } from "./login.validators"
 
 @Component({
   selector: 'app-login',
