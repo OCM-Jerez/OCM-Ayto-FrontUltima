@@ -24,7 +24,7 @@ export function customValidator(): ValidatorFn {
     };
 }
 
-export const LOGIN_VALIDATORS: IAtribute[] = [
+export const REGISTER_VALIDATORS: IAtribute[] = [
     {
         formControlName: 'user',
         validators: [

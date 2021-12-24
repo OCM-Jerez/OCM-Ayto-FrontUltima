@@ -8,11 +8,12 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 
-import { LOGIN_VALIDATORS } from "./login.validators"
+import { REGISTER_VALIDATORS } from "./REGISTER.validators"
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './app.login.component.html',
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
   styles: [
     `
             :host ::ng-deep .p-dialog .product-image {
@@ -44,7 +45,7 @@ import { LOGIN_VALIDATORS } from "./login.validators"
   ],
 
 })
-export class AppLoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(
@@ -74,7 +75,7 @@ export class AppLoginComponent implements OnInit {
   getError(controlName: string): string {
     const control = this.formGroup.get(controlName)
     if (control?.invalid && control?.touched) {
-      const atributeError = LOGIN_VALIDATORS.find((x) => x.formControlName == controlName);
+      const atributeError = REGISTER_VALIDATORS.find((x) => x.formControlName == controlName);
       const validator = atributeError?.validators.find(
         (validator) => control.errors![validator.name]
       );

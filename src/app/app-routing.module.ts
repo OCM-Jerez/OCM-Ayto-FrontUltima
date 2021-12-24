@@ -29,6 +29,7 @@ import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-
 import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.component";
 import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
 import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
+import { RegisterComponent } from "./auth/register/register.component";
 
 @NgModule({
     imports: [
@@ -123,7 +124,8 @@ import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.co
                 { path: "access", component: AppAccessdeniedComponent },
                 { path: "notfound", component: AppNotfoundComponent },
                 { path: "contactus", component: AppContactusComponent },
-                { path: "login", component: AppLoginComponent },
+                { path: "auth/login", component: AppLoginComponent },
+                { path: "auth/register", component: RegisterComponent },
                 { path: "landing", component: AppLandingComponent },
                 { path: "**", redirectTo: "/notfound" },
             ],

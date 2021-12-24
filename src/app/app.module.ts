@@ -153,6 +153,7 @@ import { SindicatoService } from "./service/sindicato.service";
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
 import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
 import { ConfirmationService, MessageService } from "primeng/api";
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
     imports: [
@@ -285,6 +286,7 @@ import { ConfirmationService, MessageService } from "primeng/api";
         SeccionCensalComponent,
         SindicatoComponent,
         CuentaGeneralComponent,
+        RegisterComponent,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
