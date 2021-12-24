@@ -3,10 +3,7 @@ import { NgModule } from "@angular/core";
 
 // import { DashboardComponent } from "./demo/view/dashboard.component";
 // import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
-import { AppAccessdeniedComponent } from "./pages/plantilla/app.accessdenied.component";
-import { AppContactusComponent } from "./pages/plantilla/app.contactus.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
-import { AppLandingComponent } from "./pages/plantilla/app.landing.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
@@ -121,12 +118,9 @@ import { RegisterComponent } from "./auth/register/register.component";
                     ],
                 },
                 { path: "error", component: AppErrorComponent },
-                { path: "access", component: AppAccessdeniedComponent },
                 { path: "notfound", component: AppNotfoundComponent },
-                { path: "contactus", component: AppContactusComponent },
                 { path: "auth/login", component: AppLoginComponent },
                 { path: "auth/register", component: RegisterComponent },
-                { path: "landing", component: AppLandingComponent },
                 { path: "**", redirectTo: "/notfound" },
             ],
             { scrollPositionRestoration: "enabled" }

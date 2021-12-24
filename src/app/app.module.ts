@@ -99,16 +99,9 @@ import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
 import { AppFooterComponent } from "./layout/footer/app.footer.component";
 
 import { AppProgramasComponent } from "./pages/programa/app.programas.component";
-import { AppCalendarComponent } from "./pages/plantilla/app.calendar.component";
-import { AppInvoiceComponent } from "./pages/plantilla/app.invoice.component";
-import { AppHelpComponent } from "./pages/plantilla/app.help.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
-import { AppAccessdeniedComponent } from "./pages/plantilla/app.accessdenied.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
-import { AppTimelineDemoComponent } from "./pages/plantilla/app.timelinedemo.component";
-import { AppLandingComponent } from "./pages/plantilla/app.landing.component";
-
 import { CountryService } from "./service/countryservice";
 import { CustomerService } from "./service/customerservice";
 import { EventService } from "./service/eventservice";
@@ -120,7 +113,6 @@ import { ProductService } from "./service/productservice";
 
 import { MenuService } from "./layout/menu/app.menu.service";
 import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
-import { AppContactusComponent } from "./pages/plantilla/app.contactus.component";
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
@@ -247,18 +239,11 @@ import { RegisterComponent } from './auth/register/register.component';
 
     ],
     declarations: [
-        AppAccessdeniedComponent,
         AppBreadcrumbComponent,
-        AppCalendarComponent,
         AppComponent,
         AppConfigComponent,
-        AppContactusComponent,
         AppErrorComponent,
         AppFooterComponent,
-        AppHelpComponent,
-        // AppInlineMenuComponent,
-        AppInvoiceComponent,
-        AppLandingComponent,
         AppLoginComponent,
         AppMainComponent,
         AppMenuComponent,
@@ -266,7 +251,6 @@ import { RegisterComponent } from './auth/register/register.component';
         AppNotfoundComponent,
         AppProgramasComponent,
         AppRightMenuComponent,
-        AppTimelineDemoComponent,
         AppTopBarComponent,
         DashboardAnalyticsComponent,
         DashboardComponent,
