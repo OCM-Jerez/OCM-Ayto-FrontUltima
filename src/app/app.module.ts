@@ -1,16 +1,80 @@
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { BrowserModule } from "@angular/platform-browser";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { NgModule } from "@angular/core";
+
+import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
+
+import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppConfigComponent } from "./app.config.component";
+import { AppMainComponent } from "./app.main.component";
+import { AppMenuitemComponent } from "./app.menuitem.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
+import { AppLoginComponent } from "./auth/login/app.login.component";
+import { RegisterComponent } from './auth/register/register.component';
+
+import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
+import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
+import { AppFooterComponent } from "./layout/footer/app.footer.component";
+import { AppMenuComponent } from "./layout/menu/app.menu.component";
+import { AppRightMenuComponent } from "./layout/rightmenu/app.rightmenu.component";
+import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
+import { MenuService } from "./layout/menu/app.menu.service";
+
+// import { ProgramaService } from "./service/programaservice";
+import { BarrioService } from "./service/barrio.service";
+import { CapituloGastoService } from "./service/capitulo-gasto.service";
+import { CapituloIngresoService } from "./service/capitulo-ingreso.service";
+import { DelegacionService } from "./service/delegacion.service";
+import { DistritoService } from "./service/distrito.service";
+import { EcoGastoService } from "./service/ecogastoservice";
+import { EcoIngresoService } from "./service/ecoingresoservice";
+import { EnteService } from "./service/ente.service";
+import { OrganicoService } from "./service/organicoservice";
+import { OrganoContratacionService } from "./service/organo-contratacion.service";
+import { SeccionCensalService } from "./service/seccion-censal.service";
+import { SindicatoService } from "./service/sindicato.service";
+
+import { CountryService } from "./service/countryservice";
+import { CustomerService } from "./service/customerservice";
+import { EventService } from "./service/eventservice";
+import { IconService } from "./service/iconservice";
+import { NodeService } from "./service/nodeservice";
+import { PhotoService } from "./service/photoservice";
+import { ProductService } from "./service/productservice";
+
+// import { AppCodeModule } from "./app.code.component";
+// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
+import { AppErrorComponent } from "./pages/error/app.error.component";
+import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
+import { AppProgramasComponent } from "./pages/programa/app.programas.component";
+import { BarrioComponent } from './pages/barrio/barrio.component';
+import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
+import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
+import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
+import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
+import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
+import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
+import { DelegacionComponent } from './pages/delegacion/delegacion.component';
+import { DistritoComponent } from './pages/distrito/distrito.component';
+import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
+import { EcoIngresosComponent } from './pages/eco-ingresos/eco-ingresos.component';
+import { EnteComponent } from './pages/ente/ente.component';
+import { OrganicosComponent } from './pages/organicos/organicos.component';
+import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
+import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
+import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
+import { SindicatoComponent } from './pages/sindicato/sindicato.component';
+
 import { AccordionModule } from "primeng/accordion";
 import { AutoCompleteModule } from "primeng/autocomplete";
-import { AvatarModule } from "primeng/avatar";
 import { AvatarGroupModule } from "primeng/avatargroup";
+import { AvatarModule } from "primeng/avatar";
 import { BadgeModule } from "primeng/badge";
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ButtonModule } from "primeng/button";
@@ -23,9 +87,10 @@ import { CheckboxModule } from "primeng/checkbox";
 import { ChipModule } from "primeng/chip";
 import { ChipsModule } from "primeng/chips";
 import { CodeHighlighterModule } from "primeng/codehighlighter";
+import { ColorPickerModule } from "primeng/colorpicker";
+import { ConfirmationService, MessageService } from "primeng/api";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { ConfirmPopupModule } from "primeng/confirmpopup";
-import { ColorPickerModule } from "primeng/colorpicker";
 import { ContextMenuModule } from "primeng/contextmenu";
 import { DataViewModule } from "primeng/dataview";
 import { DialogModule } from "primeng/dialog";
@@ -36,26 +101,26 @@ import { FileUploadModule } from "primeng/fileupload";
 import { FullCalendarModule } from "primeng/fullcalendar";
 import { GalleriaModule } from "primeng/galleria";
 import { InplaceModule } from "primeng/inplace";
-import { InputNumberModule } from "primeng/inputnumber";
 import { InputMaskModule } from "primeng/inputmask";
+import { InputNumberModule } from "primeng/inputnumber";
 import { InputSwitchModule } from "primeng/inputswitch";
-import { InputTextModule } from "primeng/inputtext";
 import { InputTextareaModule } from "primeng/inputtextarea";
+import { InputTextModule } from "primeng/inputtext";
 import { KnobModule } from "primeng/knob";
 import { LightboxModule } from "primeng/lightbox";
 import { ListboxModule } from "primeng/listbox";
 import { MegaMenuModule } from "primeng/megamenu";
-import { MenuModule } from "primeng/menu";
 import { MenubarModule } from "primeng/menubar";
-import { MessagesModule } from "primeng/messages";
+import { MenuModule } from "primeng/menu";
 import { MessageModule } from "primeng/message";
+import { MessagesModule } from "primeng/messages";
 import { MultiSelectModule } from "primeng/multiselect";
 import { OrderListModule } from "primeng/orderlist";
 import { OrganizationChartModule } from "primeng/organizationchart";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { PaginatorModule } from "primeng/paginator";
-import { PanelModule } from "primeng/panel";
 import { PanelMenuModule } from "primeng/panelmenu";
+import { PanelModule } from "primeng/panel";
 import { PasswordModule } from "primeng/password";
 import { PickListModule } from "primeng/picklist";
 import { ProgressBarModule } from "primeng/progressbar";
@@ -72,8 +137,8 @@ import { SliderModule } from "primeng/slider";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { SplitterModule } from "primeng/splitter";
 import { StepsModule } from "primeng/steps";
-import { TabMenuModule } from "primeng/tabmenu";
 import { TableModule } from "primeng/table";
+import { TabMenuModule } from "primeng/tabmenu";
 import { TabViewModule } from "primeng/tabview";
 import { TagModule } from "primeng/tag";
 import { TerminalModule } from "primeng/terminal";
@@ -87,79 +152,22 @@ import { TreeModule } from "primeng/tree";
 import { TreeTableModule } from "primeng/treetable";
 import { VirtualScrollerModule } from "primeng/virtualscroller";
 
-// import { AppCodeModule } from "./app.code.component";
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { AppMainComponent } from "./app.main.component";
-import { AppConfigComponent } from "./app.config.component";
-import { AppMenuComponent } from "./layout/menu/app.menu.component";
-import { AppMenuitemComponent } from "./app.menuitem.component";
-// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
-import { AppRightMenuComponent } from "./layout/rightmenu/app.rightmenu.component";
-import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
-import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
-import { AppFooterComponent } from "./layout/footer/app.footer.component";
-
-import { AppProgramasComponent } from "./pages/programa/app.programas.component";
-import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
-import { AppErrorComponent } from "./pages/error/app.error.component";
-import { AppLoginComponent } from "./auth/login/app.login.component";
-import { CountryService } from "./service/countryservice";
-import { CustomerService } from "./service/customerservice";
-import { EventService } from "./service/eventservice";
-import { IconService } from "./service/iconservice";
-import { NodeService } from "./service/nodeservice";
-import { PhotoService } from "./service/photoservice";
-// import { ProgramaService } from "./service/programaservice";
-import { ProductService } from "./service/productservice";
-
-import { MenuService } from "./layout/menu/app.menu.service";
-import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
-import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
-import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
-import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
-import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
-import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
-import { EcoGastoService } from "./service/ecogastoservice";
-import { OrganicosComponent } from './pages/organicos/organicos.component';
-import { OrganicoService } from "./service/organicoservice";
-import { EcoIngresosComponent } from './pages/eco-ingresos/eco-ingresos.component';
-import { EcoIngresoService } from "./service/ecoingresoservice";
-import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
-import { CapituloIngresoService } from "./service/capitulo-ingreso.service";
-import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
-import { CapituloGastoService } from "./service/capitulo-gasto.service";
-import { BarrioComponent } from './pages/barrio/barrio.component';
-import { BarrioService } from "./service/barrio.service";
-import { DelegacionComponent } from './pages/delegacion/delegacion.component';
-import { DelegacionService } from "./service/delegacion.service";
-import { DistritoComponent } from './pages/distrito/distrito.component';
-import { DistritoService } from "./service/distrito.service";
-import { EnteComponent } from './pages/ente/ente.component';
-import { EnteService } from "./service/ente.service";
-import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
-import { OrganoContratacionService } from "./service/organo-contratacion.service";
-import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
-import { SeccionCensalService } from "./service/seccion-censal.service";
-import { SindicatoComponent } from './pages/sindicato/sindicato.component';
-import { SindicatoService } from "./service/sindicato.service";
-import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
-import { ConfirmationService, MessageService } from "primeng/api";
-import { RegisterComponent } from './auth/register/register.component';
-
 @NgModule({
     imports: [
+        BrowserAnimationsModule,
         BrowserModule,
         FormsModule,
-        ReactiveFormsModule,
-        AppRoutingModule,
         HttpClientModule,
-        BrowserAnimationsModule,
+        ReactiveFormsModule,
+
+        AppRoutingModule,
+
+        HighchartsChartModule,
+
         AccordionModule,
         AutoCompleteModule,
-        AvatarModule,
         AvatarGroupModule,
+        AvatarModule,
         BadgeModule,
         BreadcrumbModule,
         ButtonModule,
@@ -172,9 +180,9 @@ import { RegisterComponent } from './auth/register/register.component';
         ChipModule,
         ChipsModule,
         CodeHighlighterModule,
+        ColorPickerModule,
         ConfirmDialogModule,
         ConfirmPopupModule,
-        ColorPickerModule,
         ContextMenuModule,
         DataViewModule,
         DialogModule,
@@ -185,17 +193,17 @@ import { RegisterComponent } from './auth/register/register.component';
         FullCalendarModule,
         GalleriaModule,
         InplaceModule,
-        InputNumberModule,
         InputMaskModule,
+        InputNumberModule,
         InputSwitchModule,
-        InputTextModule,
         InputTextareaModule,
+        InputTextModule,
         KnobModule,
         LightboxModule,
         ListboxModule,
         MegaMenuModule,
-        MenuModule,
         MenubarModule,
+        MenuModule,
         MessageModule,
         MessagesModule,
         MultiSelectModule,
@@ -203,8 +211,8 @@ import { RegisterComponent } from './auth/register/register.component';
         OrganizationChartModule,
         OverlayPanelModule,
         PaginatorModule,
-        PanelModule,
         PanelMenuModule,
+        PanelModule,
         PasswordModule,
         PickListModule,
         ProgressBarModule,
@@ -226,8 +234,8 @@ import { RegisterComponent } from './auth/register/register.component';
         TabViewModule,
         TagModule,
         TerminalModule,
-        TimelineModule,
         TieredMenuModule,
+        TimelineModule,
         ToastModule,
         ToggleButtonModule,
         ToolbarModule,
@@ -236,10 +244,30 @@ import { RegisterComponent } from './auth/register/register.component';
         TreeTableModule,
         VirtualScrollerModule,
         // AppCodeModule,
-        HighchartsChartModule
-
     ],
     declarations: [
+        AppProgramasComponent,
+        AppRightMenuComponent,
+        AppTopBarComponent,
+        BarrioComponent,
+        CapituloGastoComponent,
+        CapituloIngresosComponent,
+        CuentaGeneralComponent,
+        DashboardAnalyticsComponent,
+        DashboardComponent,
+        DashboardtiemposComponent,
+        DelegacionComponent,
+        DistritoComponent,
+        EcoGastosComponent,
+        EcoIngresosComponent,
+        EnteComponent,
+        OrganicosComponent,
+        OrganoContratacionComponent,
+        ProgramaDetailComponent,
+        RegisterComponent,
+        SeccionCensalComponent,
+        SindicatoComponent,
+
         AppBreadcrumbComponent,
         AppComponent,
         AppConfigComponent,
@@ -250,61 +278,40 @@ import { RegisterComponent } from './auth/register/register.component';
         AppMenuComponent,
         AppMenuitemComponent,
         AppNotfoundComponent,
-
-
-        AppProgramasComponent,
-        AppRightMenuComponent,
-        AppTopBarComponent,
-        DashboardAnalyticsComponent,
-        DashboardComponent,
-        DashboardtiemposComponent,
-        ProgramaDetailComponent,
-        EcoGastosComponent,
-        OrganicosComponent,
-        EcoIngresosComponent,
-        CapituloIngresosComponent,
-        CapituloGastoComponent,
-        BarrioComponent,
-        DelegacionComponent,
-        DistritoComponent,
-        EnteComponent,
-        OrganoContratacionComponent,
-        SeccionCensalComponent,
-        SindicatoComponent,
-        CuentaGeneralComponent,
-        RegisterComponent,
     ],
     providers: [
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
-        CountryService,
-        CustomerService,
-        EventService,
-        IconService,
-        NodeService,
-        PhotoService,
         // ProgramaService,
-        ProductService,
-        EcoGastoService,
-        OrganicoService,
-        EcoIngresoService,
-        CapituloIngresoService,
-        CapituloGastoService,
         BarrioService,
+        CapituloGastoService,
+        CapituloIngresoService,
+        CustomerService,
         DelegacionService,
         DistritoService,
+        EcoGastoService,
+        EcoIngresoService,
         EnteService,
+        OrganicoService,
         OrganoContratacionService,
         SeccionCensalService,
         SindicatoService,
-        MenuService,
+
         AppBreadcrumbService,
+        CountryService,
+        EventService,
+        IconService,
+        MenuService,
+        NodeService,
+        PhotoService,
+        ProductService,
+        MessageService,
+        ConfirmationService,
+
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
         {
             provide: HTTP_INTERCEPTORS,
             useClass: ErrorInterceptor,
             multi: true
         },
-        MessageService,
-        ConfirmationService
     ],
     bootstrap: [AppComponent],
 })
