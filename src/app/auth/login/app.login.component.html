@@ -43,6 +43,9 @@
                 <!-- <button class="OCM-Button" type="button" (click)="hideDialog()">Cancelar</button> -->
                 <button [disabled]="formGroup!.invalid" class="OCM-Button" type="submit"
                     [routerLink]="['/']">Login</button>
+                <button [disabled]="formGroup!.invalid" class="OCM-Button" type="submit"
+                    [routerLink]="['http://localhost:3000/api/v1/login']">Login</button>
+
                 <!-- </ng-template> -->
 
                 <div style="margin-top: 40px;">
