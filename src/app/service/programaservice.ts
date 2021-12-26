@@ -6,7 +6,11 @@ import { Observable } from 'rxjs';
 import { IPrograma, ISavePrograma } from '../domain/programa';
 import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable(
+    {
+        providedIn: 'root',
+    }
+)
 export class ProgramaService {
     codPro: string;
     desPro: string

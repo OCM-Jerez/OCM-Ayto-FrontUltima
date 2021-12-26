@@ -4,7 +4,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserModule } from "@angular/platform-browser";
 import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AppRoutingModule } from "./app-routing.module";
+
+import { HighchartsChartModule } from "highcharts-angular";
 
 import { AccordionModule } from "primeng/accordion";
 import { AutoCompleteModule } from "primeng/autocomplete";
@@ -87,6 +88,7 @@ import { TreeTableModule } from "primeng/treetable";
 import { VirtualScrollerModule } from "primeng/virtualscroller";
 
 // import { AppCodeModule } from "./app.code.component";
+import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppConfigComponent } from "./app.config.component";
@@ -108,7 +110,7 @@ import { EventService } from "./service/eventservice";
 import { IconService } from "./service/iconservice";
 import { NodeService } from "./service/nodeservice";
 import { PhotoService } from "./service/photoservice";
-import { ProgramaService } from "./service/programaservice";
+// import { ProgramaService } from "./service/programaservice";
 import { ProductService } from "./service/productservice";
 
 import { MenuService } from "./layout/menu/app.menu.service";
@@ -117,7 +119,6 @@ import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
-import { HighchartsChartModule } from "highcharts-angular";
 import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
 import { EcoGastoService } from "./service/ecogastoservice";
 import { OrganicosComponent } from './pages/organicos/organicos.component';
@@ -249,6 +250,8 @@ import { RegisterComponent } from './auth/register/register.component';
         AppMenuComponent,
         AppMenuitemComponent,
         AppNotfoundComponent,
+
+
         AppProgramasComponent,
         AppRightMenuComponent,
         AppTopBarComponent,
@@ -279,7 +282,7 @@ import { RegisterComponent } from './auth/register/register.component';
         IconService,
         NodeService,
         PhotoService,
-        ProgramaService,
+        // ProgramaService,
         ProductService,
         EcoGastoService,
         OrganicoService,
@@ -299,7 +302,6 @@ import { RegisterComponent } from './auth/register/register.component';
             provide: HTTP_INTERCEPTORS,
             useClass: ErrorInterceptor,
             multi: true
-
         },
         MessageService,
         ConfirmationService
