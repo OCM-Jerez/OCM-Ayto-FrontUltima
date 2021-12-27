@@ -45,8 +45,8 @@ import { PROGRAMAS_VALIDATORS } from "./programas.validators"
             }
         `,
     ],
-
 })
+
 export class AppProgramasComponent implements OnInit {
     programaDialog: boolean;
     programaNew: boolean;
@@ -143,7 +143,6 @@ export class AppProgramasComponent implements OnInit {
                 this._savePrograma(response, 'editado');
             })
         }
-
     }
 
     private _savePrograma(response: IPrograma[], message: string) {
