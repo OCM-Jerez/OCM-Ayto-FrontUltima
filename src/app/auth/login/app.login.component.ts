@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 import { Observable, of } from "rxjs";
 
@@ -9,6 +10,8 @@ import { MessageService } from "primeng/api";
 
 
 import { LOGIN_VALIDATORS } from "./login.validators"
+import { environment } from 'src/environments/environment';
+import { ILogin } from './login.interface';
 
 @Component({
   selector: 'app-login',
@@ -48,18 +51,16 @@ export class AppLoginComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(
+    private httpClient: HttpClient,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private router: Router,
+    private _router: Router,
     private _formBuilder: FormBuilder
   ) {
     this._loadForm();
   }
 
-  ngOnInit() {
-
-
-  }
+  ngOnInit() { }
 
 
   private _loadForm(): void {
@@ -81,6 +82,13 @@ export class AppLoginComponent implements OnInit {
       return validator!.message;
     }
     return '';
+  }
+
+  login() {
+    const URL_API = environment.host + '/login';
+    this.httpClient.post(URL_API, { username: "maria", password: "guess" }).subscribe((data) => {
+      console.log(data);
+    });
   }
 
 }
