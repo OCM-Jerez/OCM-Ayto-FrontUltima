@@ -22,25 +22,24 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   registro(user: IUser) {
-    // baseUrl se define en environment.ts
-    const url = `${environment.host}register`;
+    const url = `${environment.host}/user/register`;
     const body = {
-      "firstName": user.firstName,
-      "email": user.email,
-      "password": user.password,
-      "login": user.login,
-      "lastName": user.lastName,
-      "activated": user.activated,
-      "langKey": user.langKey
+      // "firstName": user.firstName,
+      // "email": user.email,
+      login: user.login,
+      password: user.password,
+      // "lastName": user.lastName,
+      // "activated": user.activated,
+      // "langKey": user.langKey
     };
-    // console.log(body);
+    console.log(body);
     // Si el nombre existe devuelve true, si no existe lo graba y devuelve false.
     return this.http.post<boolean>(url, body)
   }
 
   // Esta function se repite en auth-jwt.service.ts
   login(username: string, password: string) {
-    const url = `${environment.host}authenticate`;
+    const url = `${environment.host}/authenticate`;
     const body = { username, password };
 
     return this.http.post<AuthResponse>(url, body)
@@ -54,7 +53,7 @@ export class AuthService {
   }
 
   validarToken(): Observable<boolean> {
-    const url = `${environment.host}account`;
+    const url = `${environment.host}/account`;
     // El interceptor añade el headers.
     // const headers = new HttpHeaders()
     //   .set('Authorization', 'Bearer ' + localStorage.getItem('token') || '');
