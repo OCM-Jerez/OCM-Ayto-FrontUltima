@@ -11,7 +11,7 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     // MainComponent,
     AppLoginComponent,
-    RegisterComponent
+    // RegisterComponent
   ],
 
   imports: [
