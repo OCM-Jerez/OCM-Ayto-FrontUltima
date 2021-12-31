@@ -9,7 +9,7 @@ import { Observable, of } from "rxjs";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
-import { REGISTER_VALIDATORS } from "./REGISTER.validators"
+import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
 import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
 import { first, map, tap } from "rxjs/operators";
@@ -67,10 +67,7 @@ export class RegisterComponent implements OnInit {
     this._loadForm();
   }
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit() { }
 
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
@@ -80,7 +77,8 @@ export class RegisterComponent implements OnInit {
         lastName: [null],
         email: [null],
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
-        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6)]],
+        // NO se como pasar el valor del campo password
+        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('password')]],
       }
     )
   }

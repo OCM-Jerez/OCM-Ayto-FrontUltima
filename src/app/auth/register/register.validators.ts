@@ -24,6 +24,27 @@ export function customValidator(): ValidatorFn {
     };
 }
 
+
+export function mustMatch(password: string): ValidatorFn {
+
+
+    return (control: AbstractControl): ValidationErrors | null => {
+        const passwordConfirm = control.value as string;
+        console.log(passwordConfirm);
+        if (password !== passwordConfirm) {
+            console.log('No coinciden');
+            return { mustMatch: true };
+        } else {
+
+            console.log('Si coinciden');
+        }
+        return null;
+    };
+}
+
+
+
+
 export const REGISTER_VALIDATORS: IAtribute[] = [
     {
         formControlName: 'user',
@@ -65,7 +86,11 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
             {
                 name: 'minlength',
                 message: 'Debe tener al menos 6 caracteres.'
-            }
+            },
+            {
+                name: 'mustMatch',
+                message: 'No coincide'
+            },
         ]
     },
 
