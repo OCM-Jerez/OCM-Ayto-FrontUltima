@@ -2,15 +2,18 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
+import Swal from 'sweetalert2';
+
 import { Observable, of } from "rxjs";
 
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 import { REGISTER_VALIDATORS } from "./REGISTER.validators"
-import { IregisterUser } from '../../domain/user';
+import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
 import { first, map, tap } from "rxjs/operators";
+import { AuthService } from "../auth.service";
 
 @Component({
   selector: 'app-register',
@@ -48,6 +51,7 @@ import { first, map, tap } from "rxjs/operators";
 
 })
 export class RegisterComponent implements OnInit {
+  private _miError: string = '';
   formGroup: FormGroup;
   private _user: IregisterUser;
 
@@ -57,7 +61,8 @@ export class RegisterComponent implements OnInit {
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private _router: Router,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private authService: AuthService
   ) {
     this._loadForm();
   }
@@ -94,7 +99,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this._user = {
-      "login": "mamapp8",
+      "login": "mamapp7",
       "password": "mamapp"
     }
 
@@ -129,6 +134,41 @@ export class RegisterComponent implements OnInit {
     // this._userService.postUser(this._user).subscribe(response => {
     //   this._savePrograma('registrado');
     // })
+  }
+
+
+  registro() {
+    // const { login, firstName, lastName, email, password } = this.miFormulario.value;
+    const activated = true;
+    const langKey = 'es'
+    const user: IUser = {
+      firstName: 'firstName',
+      email: 'email',
+      password: 'password',
+      login: 'login',
+      lastName: 'lastName',
+      activated: true,
+      langKey: 'langKey'
+    }
+
+    this.authService.registro(user)
+      .subscribe(ok => {
+        if (ok) {
+          Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
+          this._router.navigateByUrl('/login');
+        } else {
+
+        }
+      }, error => {
+        // TODO Cambiar mensage posibles errores.
+        if (error.error.message = 'Invalid login name or password.') {
+          this._miError = 'Nombre de usuario o password erroneo.';
+        }
+        Swal.fire('Error', error.error.message, 'error');
+      }, () => {
+        // En teoria el observable se completa, pero no estoy seguro.
+        // console.log('complete');
+      });
   }
 
   private _savePrograma(message: string) {
