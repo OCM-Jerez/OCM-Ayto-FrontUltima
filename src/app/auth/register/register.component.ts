@@ -8,6 +8,9 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 import { REGISTER_VALIDATORS } from "./REGISTER.validators"
+import { IregisterUser } from '../../domain/user';
+import { UserService } from "src/app/service/user.service";
+import { first, map, tap } from "rxjs/operators";
 
 @Component({
   selector: 'app-register',
@@ -46,11 +49,14 @@ import { REGISTER_VALIDATORS } from "./REGISTER.validators"
 })
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
+  private _user: IregisterUser;
+
 
   constructor(
+    private _userService: UserService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private router: Router,
+    private _router: Router,
     private _formBuilder: FormBuilder
   ) {
     this._loadForm();
@@ -84,6 +90,51 @@ export class RegisterComponent implements OnInit {
       return validator!.message;
     }
     return '';
+  }
+
+  register() {
+    this._user = {
+      "login": "mamapp8",
+      "password": "mamapp"
+    }
+
+    // const res = this._userService.loginExist(this._user)
+    //   .subscribe(response => {
+    //     console.log("retorno loginExist", response);
+    //   })
+
+    // const res = this._userService.loginExist(this._user)
+    //   .pipe(
+    //     tap(),
+    //     map(response => {
+    //       console.log("retorno loginExist", response);
+    //     })
+    // );
+
+    const res = this._userService.loginExist(this._user)
+      .pipe(
+        first()
+      )
+      .subscribe({
+        next: val => console.log('next: ', val),
+        error: err => console.log('error subscribe: ', err),
+        complete: () => console.log('complete')
+      });
+
+
+    // const res = this._userService.loginExist("mamap7").subscribe(response => {
+    //   console.log("retorno loginExist", response);
+    // })
+
+    // this._userService.postUser(this._user).subscribe(response => {
+    //   this._savePrograma('registrado');
+    // })
+  }
+
+  private _savePrograma(message: string) {
+    console.log("Registrado");
+    this._router.navigate(['/auth/login']);
+    this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
   }
 
 }
