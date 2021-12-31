@@ -24,10 +24,7 @@ export function customValidator(): ValidatorFn {
     };
 }
 
-
 export function mustMatch(password: string): ValidatorFn {
-
-
     return (control: AbstractControl): ValidationErrors | null => {
         const passwordConfirm = control.value as string;
         console.log(passwordConfirm);
@@ -41,9 +38,6 @@ export function mustMatch(password: string): ValidatorFn {
         return null;
     };
 }
-
-
-
 
 export const REGISTER_VALIDATORS: IAtribute[] = [
     {

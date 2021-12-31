@@ -78,10 +78,25 @@ export class RegisterComponent implements OnInit {
         email: [null],
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
         // NO se como pasar el valor del campo password
-        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('password')]],
+        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
       }
     )
   }
+
+
+  // private _loadForm(): void {
+  //   this.formGroup = this._formBuilder.group(
+  //     {
+  //       user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
+  //       firstName: [null],
+  //       lastName: [null],
+  //       email: [null],
+  //       password: ['1234546', [Validators.required, Validators.minLength(6)]],
+  //       // NO se como pasar el valor del campo password
+  //       passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6)]],
+  //     },
+  //     { validator: CustomValidator.passwordValidator('passsword', 'passwordConfirm') });
+  // }
 
   getError(controlName: string): string {
     const control = this.formGroup.get(controlName)
