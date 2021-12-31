@@ -9,7 +9,7 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 
-import { LOGIN_VALIDATORS } from "./login.validators"
+import { customValidator, LOGIN_VALIDATORS } from "./login.validators"
 import { environment } from 'src/environments/environment';
 import { ILogin } from './login.interface';
 import { UserService } from '../../service/user.service';
@@ -68,7 +68,8 @@ export class AppLoginComponent implements OnInit {
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
       {
-        user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
+        // user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5), customValidator()]],
+        user: ['12345', [Validators.required, Validators.minLength(5), customValidator()]],
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
       }
     )
