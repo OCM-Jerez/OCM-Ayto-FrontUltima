@@ -12,6 +12,7 @@ import { MessageService } from "primeng/api";
 import { LOGIN_VALIDATORS } from "./login.validators"
 import { environment } from 'src/environments/environment';
 import { ILogin } from './login.interface';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-login',
@@ -52,6 +53,7 @@ export class AppLoginComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
+    private _userService: UserService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private _router: Router,
@@ -86,9 +88,10 @@ export class AppLoginComponent implements OnInit {
 
   login() {
     const URL_API = environment.host + '/login';
-    this.httpClient.post(URL_API, { username: "maria", password: "guess" }).subscribe((data) => {
+    this.httpClient.post(URL_API, { login: "maria", password: "guess" }).subscribe((data) => {
       console.log(data);
     });
+    this._router.navigate(['/favorites/dashboardanalytics']);
   }
 
 }
