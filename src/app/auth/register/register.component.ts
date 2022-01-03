@@ -79,10 +79,11 @@ export class RegisterComponent implements OnInit {
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
         // NO se como pasar el valor del campo password
         passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
+        // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch(this.formGroup.value.password)]],
+
       }
     )
   }
-
 
   // private _loadForm(): void {
   //   this.formGroup = this._formBuilder.group(
@@ -112,7 +113,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this._user = {
-      "login": "mamapp7",
+      "login": "mamapp8",
       "password": "mamapp"
     }
 
