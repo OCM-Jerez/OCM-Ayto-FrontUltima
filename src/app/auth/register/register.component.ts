@@ -9,7 +9,7 @@ import { Observable, of } from "rxjs";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
-import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
+import { mustMatch, REGISTER_VALIDATORS, identityRevealedValidator } from "./REGISTER.validators"
 import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
 import { first, map, tap } from "rxjs/operators";
@@ -78,10 +78,13 @@ export class RegisterComponent implements OnInit {
         email: [null],
         password: ['1234546', [Validators.required, Validators.minLength(6)]],
         // NO se como pasar el valor del campo password
-        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
-        // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch(this.formGroup.value.password)]],
+        // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
+        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6)]],
 
-      }
+        // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch(this.formGroup.value.password)]],
+      },
+      { validators: identityRevealedValidator }
+
     )
   }
 
@@ -117,39 +120,17 @@ export class RegisterComponent implements OnInit {
       "password": "mamapp"
     }
 
-    // const res = this._userService.loginExist(this._user)
-    //   .subscribe(response => {
-    //     console.log("retorno loginExist", response);
-    //   })
-
-    // const res = this._userService.loginExist(this._user)
-    //   .pipe(
-    //     tap(),
-    //     map(response => {
-    //       console.log("retorno loginExist", response);
-    //     })
-    // );
-
     const res = this._userService.loginExist(this._user)
-      .pipe(
-        first()
+      .subscribe(
+        response => {
+          Swal.fire('', 'El usuario ya existe', 'error');
+        },
+        error => {
+          // TODO: SI NO EXISTE EL USUARIO, GUARDARLO EN EN LA BASE DE DATOS....
+          Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
+        }
       )
-      .subscribe({
-        next: val => console.log('next: ', val),
-        error: err => console.log('error subscribe: ', err),
-        complete: () => console.log('complete')
-      });
-
-
-    // const res = this._userService.loginExist("mamap7").subscribe(response => {
-    //   console.log("retorno loginExist", response);
-    // })
-
-    // this._userService.postUser(this._user).subscribe(response => {
-    //   this._savePrograma('registrado');
-    // })
   }
-
 
   registro() {
     // const { login, firstName, lastName, email, password } = this.miFormulario.value;
