@@ -40,7 +40,7 @@ export class UserService {
 
     loginExist(user: IregisterUser): Observable<boolean> {
         const url = this.URL_API + '/registerLogin';
-        console.log(url);
+        // console.log(url);
         return this.httpClient.post<boolean>(url, user)
     }
 
