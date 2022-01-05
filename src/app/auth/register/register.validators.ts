@@ -24,6 +24,13 @@ export function customValidator(): ValidatorFn {
     };
 }
 
+
+export const identityRevealedValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    const name = control.get('password');
+    const alterEgo = control.get('passwordConfirm');
+    return name.value === alterEgo.value ? { identityRevealed: true } : null;
+};
+
 export function mustMatch(password: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         const passwordConfirm = control.value as string;
@@ -82,7 +89,7 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
                 message: 'Debe tener al menos 6 caracteres.'
             },
             {
-                name: 'mustMatch',
+                name: 'identityRevealedValidator',
                 message: 'No coincide'
             },
         ]
