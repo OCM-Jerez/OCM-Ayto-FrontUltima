@@ -1,20 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import Swal from 'sweetalert2';
-
-import { Observable, of } from "rxjs";
-
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-
 import { mustMatch, REGISTER_VALIDATORS, identityRevealedValidator } from "./REGISTER.validators"
 import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
-import { first, map, tap } from "rxjs/operators";
-import { AuthService } from "../auth.service";
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -50,29 +41,23 @@ import { AuthService } from "../auth.service";
   ],
 
 })
-export class RegisterComponent implements OnInit {
-  private _miError: string = '';
+export class RegisterComponent {
   formGroup: FormGroup;
   private _user: IregisterUser;
 
-
   constructor(
     private _userService: UserService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private _router: Router,
     private _formBuilder: FormBuilder,
-    private authService: AuthService
   ) {
     this._loadForm();
   }
 
-  ngOnInit() { }
-
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
       {
-        user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
+        // user: ['mamapp7', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5)]],
+        user: ['mamapp7', [Validators.required, Validators.minLength(5)]],
         firstName: [null],
         lastName: [null],
         email: [null],
@@ -84,8 +69,7 @@ export class RegisterComponent implements OnInit {
         // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch(this.formGroup.value.password)]],
       },
       { validators: identityRevealedValidator }
-
-    )
+    );
   }
 
   // private _loadForm(): void {
@@ -116,7 +100,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this._user = {
-      "login": "mamapp8",
+      "login": this.formGroup.value.user,
       "password": "mamapp"
     }
 
@@ -132,44 +116,10 @@ export class RegisterComponent implements OnInit {
       )
   }
 
-  registro() {
-    // const { login, firstName, lastName, email, password } = this.miFormulario.value;
-    const activated = true;
-    const langKey = 'es'
-    const user: IUser = {
-      firstName: 'firstName',
-      email: 'email',
-      password: 'password',
-      login: 'login',
-      lastName: 'lastName',
-      activated: true,
-      langKey: 'langKey'
-    }
-
-    this.authService.registro(user)
-      .subscribe(ok => {
-        if (ok) {
-          Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
-          this._router.navigateByUrl('/login');
-        } else {
-
-        }
-      }, error => {
-        // TODO Cambiar mensage posibles errores.
-        if (error.error.message = 'Invalid login name or password.') {
-          this._miError = 'Nombre de usuario o password erroneo.';
-        }
-        Swal.fire('Error', error.error.message, 'error');
-      }, () => {
-        // En teoria el observable se completa, pero no estoy seguro.
-        // console.log('complete');
-      });
-  }
-
   private _savePrograma(message: string) {
     console.log("Registrado");
     this._router.navigate(['/auth/login']);
-    this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
+    // this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
   }
 
 }
