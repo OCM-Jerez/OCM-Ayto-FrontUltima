@@ -42,15 +42,27 @@ export class AuthService {
     const url = `${environment.host}/authenticate`;
     const body = { username, password };
 
-    return this.http.post<AuthResponse>(url, body)
+    // return this.http.post<AuthResponse>(url, body)
+    //   .pipe(
+    //     tap(resp => {
+    //       localStorage.setItem('token', resp.id_token!);
+    //     }),
+    //     map(resp => true),
+    //     catchError(err => of(err.error.message))
+    //   );
+
+    return this.http.post<any>(url, body)
       .pipe(
-        tap(resp => {
-          localStorage.setItem('token', resp.id_token!);
-        }),
-        map(resp => true),
-        catchError(err => of(err.error.message))
+        map(resp => {
+          return (resp)
+            ? { loginExiste: true }
+            : null
+        })
       );
+
   }
+
+
 
   validarToken(): Observable<boolean> {
     const url = `${environment.host}/account`;
