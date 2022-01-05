@@ -38,7 +38,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 	}
 
 	private errorHandler(error: HttpErrorResponse): Observable<never> {
-		console.log(error);
+		// console.log(error);
 
 		if (error instanceof HttpErrorResponse) {
 			if (error.error instanceof ErrorEvent) {
@@ -62,8 +62,8 @@ export class ErrorInterceptor implements HttpInterceptor {
 						break;
 					}
 					case 404: {
-						console.warn('Error 404: ', error);
-						this.messageService.add({ severity: 'error', summary: 'Error ruta API', detail: error.message, life: 8000 });
+						// console.warn('Error 404: ', error);
+						// this.messageService.add({ severity: 'error', summary: 'Error ruta API', detail: error.message, life: 8000 });
 						break;
 					}
 					case 500: {
