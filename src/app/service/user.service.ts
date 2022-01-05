@@ -44,12 +44,4 @@ export class UserService {
         return this.httpClient.post<boolean>(url, user)
     }
 
-
-    // loginExist(login: string): Observable<boolean[]> {
-    //     const url = this.URL_API + '/registerLogin';
-    //     console.log(url);
-    //     return this.httpClient.post<boolean[]>(url, login)
-    // }
-
-
 }
