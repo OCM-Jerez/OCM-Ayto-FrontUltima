@@ -1,21 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
 
 import Swal from 'sweetalert2';
 
-import { Observable, of } from "rxjs";
-
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-
-
 import { customValidator, LOGIN_VALIDATORS } from "./login.validators"
-import { environment } from 'src/environments/environment';
-import { ILogin } from './login.interface';
 import { UserService } from '../../service/user.service';
-import { LoginService } from "./login.service";
+
 import { IregisterUser } from "src/app/domain/user";
 
 @Component({
@@ -52,24 +43,18 @@ import { IregisterUser } from "src/app/domain/user";
   ],
 
 })
-export class AppLoginComponent implements OnInit {
+export class AppLoginComponent {
   miError: string = '';
   formGroup: FormGroup;
   private _user: IregisterUser;
 
   constructor(
-    private httpClient: HttpClient,
     private _userService: UserService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private _router: Router,
     private _formBuilder: FormBuilder,
-    private loginService: LoginService,
   ) {
     this._loadForm();
   }
-
-  ngOnInit() { }
 
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
@@ -93,14 +78,6 @@ export class AppLoginComponent implements OnInit {
     return '';
   }
 
-  // login() {
-  //   const URL_API = environment.host + '/login';
-  //   this.httpClient.post(URL_API, { login: "maria", password: "guess" }).subscribe((data) => {
-  //     console.log(data);
-  //   });
-  //   this._router.navigate(['/favorites/dashboardanalytics']);
-  // }
-
   login() {
     this._user = {
       "login": this.formGroup.value.user,
@@ -115,28 +92,32 @@ export class AppLoginComponent implements OnInit {
     const res = this._userService.loginExist(this._user)
       .subscribe(
         async response => {
-          await Swal.fire('', `El usuario ${this._user.login} existe`, 'success');
-          this.passwordExist()
+          // await Swal.fire('', `El usuario ${this._user.login} existe`, 'success');
+          this.passwordExist(true)
         },
         async error => {
           // Si no existe el Usuario.
-          await Swal.fire('', `El usuario ${this._user.login} no existe en la base de datos`, 'error');
-          this.passwordExist()
+          // await Swal.fire('', `El usuario ${this._user.login} no existe en la base de datos`, 'error');
+          this.passwordExist(false)
         }
       )
   }
 
-  passwordExist() {
+  passwordExist(usuarioExist: boolean) {
     const res1 = this._userService.passwordExist(this._user)
       .subscribe(
         async response => {
-          await Swal.fire('', `El password ${this._user.password} existe`, 'success');
-          this._router.navigate(['/favorites/dashboardanalytics']);
+          // await Swal.fire('', `El password ${this._user.password} existe`, 'success');
+          if (usuarioExist) {
+            this._router.navigate(['/favorites/dashboardanalytics']);
+          } else {
+            Swal.fire('', `Usuario o password erroneo`, 'error');
+          }
         },
         error => {
           // Si no existe el password.
-          Swal.fire('', `El password ${this._user.password} no existe en la base de datos`, 'error');
-
+          // Swal.fire('', `El password ${this._user.password} no existe en la base de datos`, 'error');
+          Swal.fire('', `Usuario o password erroneo`, 'error');
         }
       )
   }
