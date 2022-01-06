@@ -92,14 +92,15 @@ export class RegisterComponent {
         },
         error => {
           // Si no existe el Usuario, guardarlo en BBDD.
-          this._userService.postUser(this._user).subscribe(response => {
-            Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
-          },
-            error => {
-              // TODO: Mejorar respuesta de error
-              Swal.fire('', `Error ${error.message}`, 'error');
-            }
-          );
+          this._userService.postUser(this._user)
+            .subscribe(response => {
+              Swal.fire('', `El usuario ${this._user.login} ha sido creado correctamente`, 'success');
+            },
+              error => {
+                // TODO: Mejorar respuesta de error
+                Swal.fire('', `Error ${error.message}`, 'error');
+              }
+            );
         }
       )
   }
