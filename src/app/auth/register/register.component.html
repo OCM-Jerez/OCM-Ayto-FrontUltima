@@ -6,10 +6,6 @@
                 <span style="color: aliceblue;">Observatorio Ciudadano Municipal de Jerez</span>
             </div>
         </div>
-        <!-- <div class="topbar-right p-mr-3 p-d-flex">
-            <button pButton pRipple type="button" label="DASHBOARD" [routerLink]="['/']"
-                class="p-button-text p-button-plain topbar-button"></button>
-        </div> -->
     </div>
 
     <div class="p-as-center p-mt-auto p-mb-auto">
@@ -18,13 +14,14 @@
                 <h2>REGISTRO</h2>
             </div>
             <h4>Bienvenido</h4>
-            <div class="pages-detail p-mb-6 p-px-6">Por favor, usa este formulario para REGISTRARTE.</div>
+            <div class="pages-detail p-mb-6 p-px-6">Por favor, usa este formulario para REGISTRARTE.
+                <br />
+                Únicamente te solicitamos Usuario y Password,
+                <br />
+                más adelente, si lo deseas, podras añadir más datos.
+            </div>
 
             <form novalidate [formGroup]="formGroup" autocomplete="off">
-                <!-- <p-dialog [closable]="false" [style]="{width: '650px'}" header="Detalles programa" [modal]="true"
-                    styleClass="p-fluid"> -->
-                <!-- <ng-template pTemplate="content"> -->
-
                 <div class="p-field">
                     <label for="user">Usuario</label>
                     <input type="text" id="user" pInputTextarea autofocus autocomplete="off" formControlName="user">
@@ -32,25 +29,7 @@
                 </div>
 
                 <div class="p-field">
-                    <label for="user">Nombre</label>
-                    <input type="text" id="firstName" pInputTextarea autofocus formControlName="firstName">
-                    <small class="OCM-error"> {{getError('firstName')}}</small>
-                </div>
-
-                <div class="p-field">
-                    <label for="user">lastName</label>
-                    <input type="text" id="lastName" pInputTextarea autofocus formControlName="lastName">
-                    <small class="OCM-error"> {{getError('lastName')}}</small>
-                </div>
-
-                <div class="p-field">
-                    <label for="user">email</label>
-                    <input type="text" id="email" pInputTextarea autofocus formControlName="email">
-                    <small class="OCM-error"> {{getError('email')}}</small>
-                </div>
-
-                <div class="p-field">
-                    <label for="password">password</label>
+                    <label for="password">password </label>
                     <input type="password" id="password" pInputTextarea formControlName="password">
                     <small class="OCM-error">{{getError('password')}}</small>
                 </div>
@@ -61,17 +40,9 @@
                     <small class="OCM-error">{{getError('passwordConfirm')}}</small>
                 </div>
 
-                <!-- </ng-template> -->
-
-                <!-- <ng-template pTemplate="footer"> -->
-                <!-- <button class="OCM-Button" type="button" (click)="hideDialog()">Cancelar</button> -->
-                <button [disabled]="formGroup!.invalid" class="OCM-Button p-mt-6" type="submit"
-                    [routerLink]="['/auth/login']">Login</button>
-                <!-- </ng-template> -->
+                <button class="OCM-Button p-mt-6" type="submit" [routerLink]="['/auth/login']">Login</button>
                 <button class="OCM-Button" type="button" (click)="register()">Registrar</button>
-                <!-- </p-dialog> -->
             </form>
-
         </div>
     </div>
 </div>
