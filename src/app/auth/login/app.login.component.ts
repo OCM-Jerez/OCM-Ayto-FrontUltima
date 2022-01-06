@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { ILogin } from './login.interface';
 import { UserService } from '../../service/user.service';
 import { LoginService } from "./login.service";
+import { IregisterUser } from "src/app/domain/user";
 
 @Component({
   selector: 'app-login',
@@ -54,6 +55,7 @@ import { LoginService } from "./login.service";
 export class AppLoginComponent implements OnInit {
   miError: string = '';
   formGroup: FormGroup;
+  private _user: IregisterUser;
 
   constructor(
     private httpClient: HttpClient,
@@ -69,13 +71,12 @@ export class AppLoginComponent implements OnInit {
 
   ngOnInit() { }
 
-
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
       {
         // user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5), customValidator()]],
-        user: ['12345', [Validators.required, Validators.minLength(5)]],
-        password: ['1234546', [Validators.required, Validators.minLength(6)]],
+        user: ['mamapp10', [Validators.required, Validators.minLength(5)]],
+        password: ['mamapp', [Validators.required, Validators.minLength(6)]],
       }
     )
   }
@@ -92,36 +93,52 @@ export class AppLoginComponent implements OnInit {
     return '';
   }
 
+  // login() {
+  //   const URL_API = environment.host + '/login';
+  //   this.httpClient.post(URL_API, { login: "maria", password: "guess" }).subscribe((data) => {
+  //     console.log(data);
+  //   });
+  //   this._router.navigate(['/favorites/dashboardanalytics']);
+  // }
+
   login() {
-    const URL_API = environment.host + '/login';
-    this.httpClient.post(URL_API, { login: "maria", password: "guess" }).subscribe((data) => {
-      console.log(data);
-    });
-    this._router.navigate(['/favorites/dashboardanalytics']);
+    this._user = {
+      "login": this.formGroup.value.user,
+      "password": this.formGroup.value.password
+    }
+
+    // console.log(this.formGroup.value);
+    // const { user, password } = this.formGroup.value;
+    // const userLogin: any = { user, password }
+    // console.log(userLogin);
+
+    const res = this._userService.loginExist(this._user)
+      .subscribe(
+        async response => {
+          await Swal.fire('', `El usuario ${this._user.login} existe`, 'success');
+          this.passwordExist()
+        },
+        async error => {
+          // Si no existe el Usuario.
+          await Swal.fire('', `El usuario ${this._user.login} no existe en la base de datos`, 'error');
+          this.passwordExist()
+        }
+      )
   }
 
-  // login() {
-  //   const { username, password } = this.formGroup.value;
-  //   const login: ILogin = { username, password }
+  passwordExist() {
+    const res1 = this._userService.passwordExist(this._user)
+      .subscribe(
+        async response => {
+          await Swal.fire('', `El password ${this._user.password} existe`, 'success');
+          this._router.navigate(['/favorites/dashboardanalytics']);
+        },
+        error => {
+          // Si no existe el password.
+          Swal.fire('', `El password ${this._user.password} no existe en la base de datos`, 'error');
 
-  //   this.loginService.login(login).subscribe(
-  //     // next (respuesta) es un IUser.
-  //     next => {
-  //       // environment.userLoged = next.login;
-  //       // environment.IsAdmin = (next.authorities.includes('ROLE_ADMIN')) ? true : false;
-  //       // this.$localStorage.store('userLog', username);
-  //       // this.router.navigateByUrl('solicitudes');
-  //     }, error => {
-  //       console.log(error);
-
-  //       if (error.error.message = 'Invalid login name or password.') {
-  //         this.miError = 'Nombre de usuario o password erroneo.';
-  //       }
-  //       Swal.fire('Error', this.miError, 'error');
-  //     }, () => {
-  //       // En teoria el observable se completa, pero no estoy seguro.
-  //       // console.log('complete');
-  //     });
-  // }
+        }
+      )
+  }
 
 }
