@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+// import { Router } from "@angular/router";
 
 import Swal from 'sweetalert2';
+
 import { mustMatch, REGISTER_VALIDATORS, identityRevealedValidator } from "./REGISTER.validators"
 import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
@@ -47,7 +48,7 @@ export class RegisterComponent {
 
   constructor(
     private _userService: UserService,
-    private _router: Router,
+    // private _router: Router,
     private _formBuilder: FormBuilder,
   ) {
     this._loadForm();
@@ -81,25 +82,26 @@ export class RegisterComponent {
   register() {
     this._user = {
       "login": this.formGroup.value.user,
-      "password": "mamapp"
+      "password": this.formGroup.value.password
     }
 
     const res = this._userService.loginExist(this._user)
       .subscribe(
         response => {
-          Swal.fire('', 'El usuario ya existe', 'error');
+          Swal.fire('', `El usuario ${this._user.login} ya existe`, 'error');
         },
         error => {
-          // TODO: SI NO EXISTE EL USUARIO, GUARDARLO EN EN LA BASE DE DATOS....
-          Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
+          // Si no existe el Usuario, guardarlo en BBDD.
+          this._userService.postUser(this._user).subscribe(response => {
+            Swal.fire('', 'El usuario ha sido creado correctamente', 'success');
+          },
+            error => {
+              // TODO: Mejorar respuesta de error
+              Swal.fire('', `Error ${error.message}`, 'error');
+            }
+          );
         }
       )
-  }
-
-  private _savePrograma(message: string) {
-    console.log("Registrado");
-    this._router.navigate(['/auth/login']);
-    // this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
   }
 
 }

@@ -16,7 +16,7 @@ export class UserService {
     private URL_API = environment.host + '/user';
 
     postUser(user: IregisterUser): Observable<IregisterUser> {
-        console.log("postUser", [user]);
+        // console.log("postUser", [user]);
         try {
             return this.httpClient.post<IregisterUser>(this.URL_API, user)
         } catch (error) {
