@@ -61,7 +61,7 @@ export class AppLoginComponent {
       {
         // user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5), customValidator()]],
         user: ['mamapp10', [Validators.required, Validators.minLength(5)]],
-        password: ['mamapp', [Validators.required, Validators.minLength(6)]],
+        password: ['mam', [Validators.required, Validators.minLength(3)]],
       }
     )
   }
@@ -122,7 +122,6 @@ export class AppLoginComponent {
       )
   }
 
-
   loginNew() {
     console.log("loginNew");
 
@@ -134,20 +133,19 @@ export class AppLoginComponent {
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
-
           console.log(response);
-
-
-          // await Swal.fire('', `El usuario ${this._user.login} existe`, 'success');
-
+          if (response) {
+            this._router.navigate(['/favorites/dashboardanalytics']);
+          } else {
+            Swal.fire('', `Usuario o password erroneo`, 'error');
+          }
         },
-        async error => {
+        error => {
           // Si no existe el Usuario.
-          // await Swal.fire('', `El usuario ${this._user.login} no existe en la base de datos`, 'error');
+          Swal.fire('', `Usuario o password erroneo`, 'error');
 
         }
       )
   }
-
 
 }
