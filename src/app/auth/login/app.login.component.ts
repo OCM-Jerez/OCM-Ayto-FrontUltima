@@ -122,4 +122,32 @@ export class AppLoginComponent {
       )
   }
 
+
+  loginNew() {
+    console.log("loginNew");
+
+    this._user = {
+      "login": this.formGroup.value.user,
+      "password": this.formGroup.value.password
+    }
+
+    const res = this._userService.login(this._user)
+      .subscribe(
+        async response => {
+
+          console.log(response);
+
+
+          // await Swal.fire('', `El usuario ${this._user.login} existe`, 'success');
+
+        },
+        async error => {
+          // Si no existe el Usuario.
+          // await Swal.fire('', `El usuario ${this._user.login} no existe en la base de datos`, 'error');
+
+        }
+      )
+  }
+
+
 }

@@ -49,5 +49,11 @@ export class UserService {
         return this.httpClient.post<boolean>(url, user)
     }
 
+    login(user: IregisterUser): Observable<any> {
+        const url = environment.host + '/login' + '/' + user.login;
+        console.log(url);
+        // return this.httpClient.get<IregisterUser>(url, { params: { login: user.login } })
+        return this.httpClient.get<IregisterUser>(url)
 
+    }
 }
