@@ -20,7 +20,7 @@ export class UserService {
         try {
             return this.httpClient.post<IregisterUser>(this.URL_API, user)
         } catch (error) {
-            console.log(error);
+            console.log('Error en postUser', error);
         }
     }
 
