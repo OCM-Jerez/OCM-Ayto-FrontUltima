@@ -12,35 +12,8 @@ import { IregisterUser } from "src/app/domain/user";
 @Component({
   selector: 'app-login',
   templateUrl: './app.login.component.html',
-  styles: [
-    `
-            :host ::ng-deep .p-dialog .product-image {
-                width: 150px;
-                margin: 0 auto 2rem auto;
-                display: block;
-            }
-
-            @media screen and (max-width: 960px) {
-                :host
-                    ::ng-deep
-                    .p-datatable.p-datatable-customers
-                    .p-datatable-tbody
-                    > tr
-                    > td:last-child {
-                    text-align: center;
-                }
-
-                :host
-                    ::ng-deep
-                    .p-datatable.p-datatable-customers
-                    .p-datatable-tbody
-                    > tr
-                    > td:nth-child(6) {
-                    display: flex;
-                }
-            }
-        `,
-  ],
+  styleUrls: [
+    './app.login.component.scss'],
 
 })
 export class AppLoginComponent {
@@ -60,7 +33,7 @@ export class AppLoginComponent {
     this.formGroup = this._formBuilder.group(
       {
         // user: ['12345', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(5), customValidator()]],
-        user: ['mamapp10', [Validators.required, Validators.minLength(5)]],
+        user: ['mamq', [Validators.required, Validators.minLength(3)]],
         password: ['mam', [Validators.required, Validators.minLength(3)]],
       }
     )
