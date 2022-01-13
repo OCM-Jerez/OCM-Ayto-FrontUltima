@@ -24,12 +24,6 @@ export function customValidator(): ValidatorFn {
     };
 }
 
-export const identityRevealedValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-    const name = control.get('password');
-    const alterEgo = control.get('passwordConfirm');
-    return name.value === alterEgo.value ? { identityRevealed: true } : null;
-};
-
 export function mustMatch(field: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
         if (control.parent) {
@@ -48,23 +42,18 @@ export function mustMatch(field: string): ValidatorFn {
                     passwordConfirm.setErrors({ identityRevealedValidator: true });
                     return null;
                 }
-
                 return { identityRevealedValidator: true }
             }
-
 
             if (field === 'password') {
                 passwordConfirm.setErrors(null);
                 return null;
             }
-
         }
 
         return null;
     };
 }
-
-
 
 export const REGISTER_VALIDATORS: IAtribute[] = [
     {

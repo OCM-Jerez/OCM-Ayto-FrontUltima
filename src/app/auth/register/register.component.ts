@@ -1,54 +1,24 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-// import { Router } from "@angular/router";
 
 import Swal from 'sweetalert2';
 
-import { mustMatch, REGISTER_VALIDATORS, identityRevealedValidator } from "./REGISTER.validators"
+import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
+
 import { IregisterUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  styles: [
-    `
-            :host ::ng-deep .p-dialog .product-image {
-                width: 150px;
-                margin: 0 auto 2rem auto;
-                display: block;
-            }
-
-            @media screen and (max-width: 960px) {
-                :host
-                    ::ng-deep
-                    .p-datatable.p-datatable-customers
-                    .p-datatable-tbody
-                    > tr
-                    > td:last-child {
-                    text-align: center;
-                }
-
-                :host
-                    ::ng-deep
-                    .p-datatable.p-datatable-customers
-                    .p-datatable-tbody
-                    > tr
-                    > td:nth-child(6) {
-                    display: flex;
-                }
-            }
-        `,
-  ],
-
 })
+
 export class RegisterComponent {
   formGroup: FormGroup;
   private _user: IregisterUser;
 
   constructor(
     private _userService: UserService,
-    // private _router: Router,
     private _formBuilder: FormBuilder,
   ) {
     this._loadForm();
@@ -59,10 +29,8 @@ export class RegisterComponent {
       {
         login: ['mam', [Validators.required, Validators.minLength(3)]],
         password: ['mam', [Validators.required, Validators.minLength(3), mustMatch('password')]],
-        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
-        // passwordConfirm: ['mam', [Validators.required, Validators.minLength(3)]],
-      },
-      { validators: identityRevealedValidator }
+        passwordConfirm: ['mam', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
+      }
     );
   }
 
