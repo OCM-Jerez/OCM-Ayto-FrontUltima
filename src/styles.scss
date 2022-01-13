@@ -18,6 +18,37 @@
     color: #2c1e30;
 }
 
+:host ::ng-deep .p-dialog .product-image {
+    width: 150px;
+    margin: 0 auto 2rem auto;
+    display: block;
+}
+
+@media screen and (max-width: 960px) {
+    :host ::ng-deep .p-datatable.p-datatable-customers .p-datatable-tbody > tr > td:last-child {
+        text-align: center;
+    }
+
+    :host ::ng-deep .p-datatable.p-datatable-customers .p-datatable-tbody > tr > td:nth-child(6) {
+        display: flex;
+    }
+}
+
+.p-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.OCM-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 30px;
+    padding-top: 20px;
+}
+
 .OCM-error {
     color: RED;
 }
