@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // import { EventService } from "../service/eventservice";
 import { EventService } from "../../service/eventservice";
 import { SelectItem } from "primeng/api";
@@ -15,7 +15,7 @@ import { AppMainComponent } from "src/app/app.main.component";
 @Component({
     templateUrl: "./dashboardanalytics.component.html",
 })
-export class DashboardAnalyticsComponent implements OnInit {
+export class DashboardAnalyticsComponent implements OnInit, AfterViewInit {
     cities: SelectItem[];
     products: Product[];
     chartMonthlyData: any;
@@ -48,10 +48,10 @@ export class DashboardAnalyticsComponent implements OnInit {
 
     @ViewChild("doughnut") doughnutViewChild: UIChart;
     @ViewChild("bar") chartViewChild: UIChart;
-    @ViewChild("storeA") storeAViewChild: UIChart;
-    @ViewChild("storeB") storeBViewChild: UIChart;
-    @ViewChild("storeC") storeCViewChild: UIChart;
-    @ViewChild("storeD") storeDViewChild: UIChart;
+    // @ViewChild("storeA") storeAViewChild: UIChart;
+    // @ViewChild("storeB") storeBViewChild: UIChart;
+    // @ViewChild("storeC") storeCViewChild: UIChart;
+    // @ViewChild("storeD") storeDViewChild: UIChart;
     @ViewChild("pie") pieViewChild: UIChart;
 
     constructor(
@@ -68,6 +68,7 @@ export class DashboardAnalyticsComponent implements OnInit {
             },
         ]);
     }
+
 
     ngOnInit() {
         this.productService
@@ -239,6 +240,12 @@ export class DashboardAnalyticsComponent implements OnInit {
             },
         };
 
+
+
+    }
+
+    ngAfterViewInit(): void {
+
         const calculateStore = (storeData, totalValue) => {
             let randomNumber = +(Math.random() * 500).toFixed(2);
             let data = storeData.datasets[0].data;
@@ -253,49 +260,49 @@ export class DashboardAnalyticsComponent implements OnInit {
             return { diff, totalValue, status };
         };
 
-        this.storeInterval = setInterval(() => {
-            requestAnimationFrame(() => {
-                let {
-                    diff: storeADiff,
-                    totalValue: storeATotalValue,
-                    status: storeAStatus,
-                } = calculateStore(this.storeAData, this.storeATotalValue);
-                this.storeADiff = storeADiff;
-                this.storeATotalValue = storeATotalValue;
-                this.storeAStatus = storeAStatus;
-                this.storeAViewChild.chart.update();
+        // this.storeInterval = setInterval(() => {
+        //     requestAnimationFrame(() => {
+        //         let {
+        //             diff: storeADiff,
+        //             totalValue: storeATotalValue,
+        //             status: storeAStatus,
+        //         } = calculateStore(this.storeAData, this.storeATotalValue);
+        //         this.storeADiff = storeADiff;
+        //         this.storeATotalValue = storeATotalValue;
+        //         this.storeAStatus = storeAStatus;
+        //         this.storeAViewChild.chart.update();
 
-                let {
-                    diff: storeBDiff,
-                    totalValue: storeBTotalValue,
-                    status: storeBStatus,
-                } = calculateStore(this.storeBData, this.storeBTotalValue);
-                this.storeBDiff = storeBDiff;
-                this.storeBTotalValue = storeBTotalValue;
-                this.storeBStatus = storeBStatus;
-                this.storeBViewChild.chart.update();
+        //         let {
+        //             diff: storeBDiff,
+        //             totalValue: storeBTotalValue,
+        //             status: storeBStatus,
+        //         } = calculateStore(this.storeBData, this.storeBTotalValue);
+        //         this.storeBDiff = storeBDiff;
+        //         this.storeBTotalValue = storeBTotalValue;
+        //         this.storeBStatus = storeBStatus;
+        //         this.storeBViewChild.chart.update();
 
-                let {
-                    diff: storeCDiff,
-                    totalValue: storeCTotalValue,
-                    status: storeCStatus,
-                } = calculateStore(this.storeCData, this.storeCTotalValue);
-                this.storeCDiff = storeCDiff;
-                this.storeCTotalValue = storeCTotalValue;
-                this.storeCStatus = storeCStatus;
-                this.storeCViewChild.chart.update();
+        //         let {
+        //             diff: storeCDiff,
+        //             totalValue: storeCTotalValue,
+        //             status: storeCStatus,
+        //         } = calculateStore(this.storeCData, this.storeCTotalValue);
+        //         this.storeCDiff = storeCDiff;
+        //         this.storeCTotalValue = storeCTotalValue;
+        //         this.storeCStatus = storeCStatus;
+        //         this.storeCViewChild.chart.update();
 
-                let {
-                    diff: storeDDiff,
-                    totalValue: storeDTotalValue,
-                    status: storeDStatus,
-                } = calculateStore(this.storeDData, this.storeDTotalValue);
-                this.storeDDiff = storeDDiff;
-                this.storeDTotalValue = storeDTotalValue;
-                this.storeDStatus = storeDStatus;
-                this.storeDViewChild.chart.update();
-            });
-        }, 2000);
+        //         let {
+        //             diff: storeDDiff,
+        //             totalValue: storeDTotalValue,
+        //             status: storeDStatus,
+        //         } = calculateStore(this.storeDData, this.storeDTotalValue);
+        //         this.storeDDiff = storeDDiff;
+        //         this.storeDTotalValue = storeDTotalValue;
+        //         this.storeDStatus = storeDStatus;
+        //         this.storeDViewChild.chart.update();
+        //     });
+        // }, 2000);
     }
 
     ngOnDestroy() {

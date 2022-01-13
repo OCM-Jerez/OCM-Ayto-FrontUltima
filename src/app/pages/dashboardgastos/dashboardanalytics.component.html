@@ -3,28 +3,14 @@
         <div class="card height-100">
             <div class="card-header">
                 <h5>Comparativos anuales</h5>
-                <button
-                    pRipple
-                    pButton
-                    type="button"
-                    label="Vertical/Stacked Data"
-                    class="p-button-text"
-                    [ngClass]="{
+                <button pRipple pButton type="button" label="Vertical/Stacked Data" class="p-button-text" [ngClass]="{
                         'p-ml-auto': !app.isRTL,
                         'p-mr-auto': app.isRTL
-                    }"
-                    (click)="changeMonthlyDataView()"
-                ></button>
+                    }" (click)="changeMonthlyDataView()"></button>
             </div>
 
-            <p-chart
-                #bar
-                type="bar"
-                [data]="chartMonthlyData"
-                [options]="chartMonthlyOptions"
-                responsive="true"
-                height="400px"
-            ></p-chart>
+            <p-chart #bar type="bar" [data]="chartMonthlyData" [options]="chartMonthlyOptions" responsive="true"
+                height="400px"></p-chart>
         </div>
     </div>
 
@@ -33,104 +19,63 @@
             <div class="card-header p-mb-2">
                 <h5>Distribución</h5>
                 <div>
-                    <button
-                        pButton
-                        pRipple
-                        type="button"
-                        icon="pi pi-ellipsis-h"
-                        class="p-button-rounded p-button-text p-button-plain"
-                        (click)="menu11.toggle($event)"
-                    ></button>
-                    <p-menu
-                        #menu11
-                        [popup]="true"
-                        [model]="[
+                    <button pButton pRipple type="button" icon="pi pi-ellipsis-h"
+                        class="p-button-rounded p-button-text p-button-plain" (click)="menu11.toggle($event)"></button>
+                    <p-menu #menu11 [popup]="true" [model]="[
                             { label: 'Update', icon: 'pi pi-fw pi-refresh' },
                             { label: 'Edit', icon: 'pi pi-fw pi-pencil' }
-                        ]"
-                    ></p-menu>
+                        ]"></p-menu>
                 </div>
             </div>
             <div class="card-subheader p-mb-2 p-d-flex p-ai-center">
                 <span>Junio 22 - Junio 29</span>
-                <button
-                    pRipple
-                    pButton
-                    type="button"
-                    label="Semi/Full Data"
-                    class="p-button-text"
-                    [ngClass]="{
+                <button pRipple pButton type="button" label="Semi/Full Data" class="p-button-text" [ngClass]="{
                         'p-ml-auto': !app.isRTL,
                         'p-mr-auto': app.isRTL
-                    }"
-                    (click)="changeDoughnutDataView()"
-                ></button>
+                    }" (click)="changeDoughnutDataView()"></button>
             </div>
-            <p-chart
-                #doughnut
-                type="doughnut"
-                [data]="doughnutData"
-                [options]="doughnutOptions"
-                responsive="true"
-            ></p-chart>
+            <p-chart #doughnut type="doughnut" [data]="doughnutData" [options]="doughnutOptions" responsive="true">
+            </p-chart>
             <div class="p-d-flex p-flex-column p-jc-center">
                 <div class="p-d-flex p-flex-row p-ai-center p-mt-4 p-px-3">
-                    <i
-                        class="
+                    <i class="
                             pi pi-thumbs-up
                             p-p-3
                             rounded-circle
                             lightgreen-bgcolor
                             solid-surface-text-color
-                        "
-                    ></i>
-                    <div
-                        class="p-d-flex p-flex-column"
-                        [ngClass]="{
+                        "></i>
+                    <div class="p-d-flex p-flex-column" [ngClass]="{
                             'p-ml-3': !app.isRTL,
                             'p-mr-3': app.isRTL
-                        }"
-                    >
+                        }">
                         <span>Mejor día de la semana</span>
                         <small>Viernes</small>
                     </div>
-                    <span
-                        class="indigo-color"
-                        [ngClass]="{
+                    <span class="indigo-color" [ngClass]="{
                             'p-ml-auto': !app.isRTL,
                             'p-mr-auto': app.isRTL
-                        }"
-                        >95</span
-                    >
+                        }">95</span>
                 </div>
                 <div class="p-d-flex p-flex-row p-ai-center p-my-4 p-px-3">
-                    <i
-                        class="
+                    <i class="
                             pi pi-thumbs-down
                             rounded-circle
                             p-p-3
                             orange-bgcolor
                             solid-surface-text-color
-                        "
-                    ></i>
-                    <div
-                        class="p-d-flex p-flex-column"
-                        [ngClass]="{
+                        "></i>
+                    <div class="p-d-flex p-flex-column" [ngClass]="{
                             'p-ml-3': !app.isRTL,
                             'p-mr-3': app.isRTL
-                        }"
-                    >
+                        }">
                         <span>Peor día de la semana</span>
                         <small>Sabado</small>
                     </div>
-                    <span
-                        class="indigo-color"
-                        [ngClass]="{
+                    <span class="indigo-color" [ngClass]="{
                             'p-ml-auto': !app.isRTL,
                             'p-mr-auto': app.isRTL
-                        }"
-                        >6</span
-                    >
+                        }">6</span>
                 </div>
             </div>
         </div>
