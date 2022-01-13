@@ -57,11 +57,10 @@ export class RegisterComponent {
   private _loadForm(): void {
     this.formGroup = this._formBuilder.group(
       {
-        user: ['mamapp7', [Validators.required, Validators.minLength(5)]],
-        password: ['1234546', [Validators.required, Validators.minLength(6)]],
-        // NO se como pasar el valor del campo password
-        // passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch(this.formGroup.value.password)]],
-        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6)]],
+        login: ['mam', [Validators.required, Validators.minLength(3)]],
+        password: ['mam', [Validators.required, Validators.minLength(3), mustMatch('password')]],
+        passwordConfirm: ['1234546', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
+        // passwordConfirm: ['mam', [Validators.required, Validators.minLength(3)]],
       },
       { validators: identityRevealedValidator }
     );
@@ -81,7 +80,7 @@ export class RegisterComponent {
 
   register() {
     this._user = {
-      "login": this.formGroup.value.user,
+      "login": this.formGroup.value.login,
       "password": this.formGroup.value.password
     }
 

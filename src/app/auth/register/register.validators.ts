@@ -24,27 +24,47 @@ export function customValidator(): ValidatorFn {
     };
 }
 
-
 export const identityRevealedValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     const name = control.get('password');
     const alterEgo = control.get('passwordConfirm');
     return name.value === alterEgo.value ? { identityRevealed: true } : null;
 };
 
-export function mustMatch(password: string): ValidatorFn {
+export function mustMatch(field: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const passwordConfirm = control.value as string;
-        console.log(passwordConfirm);
-        if (password !== passwordConfirm) {
-            console.log('No coinciden');
-            return { mustMatch: true };
-        } else {
+        if (control.parent) {
+            const passwordConfirm = control.parent.get('passwordConfirm');
+            const password = control.parent.get('password');
 
-            console.log('Si coinciden');
+            if (!passwordConfirm || !password) {
+                return { identityRevealedValidator: true }
+            }
+
+            const pass = password.value as string;
+            const passConfirm = passwordConfirm.value as string;
+
+            if (pass !== passConfirm) {
+                if (field === 'password') {
+                    passwordConfirm.setErrors({ identityRevealedValidator: true });
+                    return null;
+                }
+
+                return { identityRevealedValidator: true }
+            }
+
+
+            if (field === 'password') {
+                passwordConfirm.setErrors(null);
+                return null;
+            }
+
         }
+
         return null;
     };
 }
+
+
 
 export const REGISTER_VALIDATORS: IAtribute[] = [
     {
@@ -74,6 +94,10 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
             {
                 name: 'minlength',
                 message: 'Debe tener al menos 6 caracteres.'
+            },
+            {
+                name: 'identityRevealedValidator',
+                message: 'No coincide'
             }
         ]
     },
