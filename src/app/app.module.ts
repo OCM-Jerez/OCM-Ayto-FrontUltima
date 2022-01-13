@@ -13,8 +13,8 @@ import { AppConfigComponent } from "./app.config.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
 
-// import { AppCodeModule } from "./app.code.component";
-// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
+import { AppCodeModule } from "./app.code.component";
+import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
@@ -83,10 +83,10 @@ import { ToastModule } from "primeng/toast";
 // import { ChipsModule } from "primeng/chips";
 // import { CodeHighlighterModule } from "primeng/codehighlighter";
 // import { ColorPickerModule } from "primeng/colorpicker";
-// import { ContextMenuModule } from "primeng/contextmenu";
+import { ContextMenuModule } from "primeng/contextmenu";
 // import { DataViewModule } from "primeng/dataview";
 // import { DividerModule } from "primeng/divider";
-// import { DropdownModule } from "primeng/dropdown";
+import { DropdownModule } from "primeng/dropdown";
 // import { FieldsetModule } from "primeng/fieldset";
 // import { FileUploadModule } from "primeng/fileupload";
 // import { FullCalendarModule } from "primeng/fullcalendar";
@@ -94,40 +94,40 @@ import { ToastModule } from "primeng/toast";
 // import { InplaceModule } from "primeng/inplace";
 // import { InputMaskModule } from "primeng/inputmask";
 // import { InputNumberModule } from "primeng/inputnumber";
-// import { InputSwitchModule } from "primeng/inputswitch";
+import { InputSwitchModule } from "primeng/inputswitch";
 // import { KnobModule } from "primeng/knob";
 // import { LightboxModule } from "primeng/lightbox";
 // import { ListboxModule } from "primeng/listbox";
-// import { MegaMenuModule } from "primeng/megamenu";
+import { MegaMenuModule } from "primeng/megamenu";
 // import { MessageModule } from "primeng/message";
 // import { MessagesModule } from "primeng/messages";
 // import { MultiSelectModule } from "primeng/multiselect";
 // import { OrderListModule } from "primeng/orderlist";
 // import { OrganizationChartModule } from "primeng/organizationchart";
-// import { OverlayPanelModule } from "primeng/overlaypanel";
+import { OverlayPanelModule } from "primeng/overlaypanel";
 // import { PaginatorModule } from "primeng/paginator";
-// import { PanelMenuModule } from "primeng/panelmenu";
-// import { PanelModule } from "primeng/panel";
+import { PanelMenuModule } from "primeng/panelmenu";
+import { PanelModule } from "primeng/panel";
 // import { PasswordModule } from "primeng/password";
 // import { PickListModule } from "primeng/picklist";
 // import { ProgressBarModule } from "primeng/progressbar";
-// import { RadioButtonModule } from "primeng/radiobutton";
+import { RadioButtonModule } from "primeng/radiobutton";
 // import { RatingModule } from "primeng/rating";
 // import { RippleModule } from "primeng/ripple";
 // import { ScrollPanelModule } from "primeng/scrollpanel";
 // import { ScrollTopModule } from "primeng/scrolltop";
-// import { SelectButtonModule } from "primeng/selectbutton";
+import { SelectButtonModule } from "primeng/selectbutton";
 // import { SkeletonModule } from "primeng/skeleton";
-// import { SlideMenuModule } from "primeng/slidemenu";
-// import { SliderModule } from "primeng/slider";
-// import { SplitButtonModule } from "primeng/splitbutton";
+import { SlideMenuModule } from "primeng/slidemenu";
+import { SliderModule } from "primeng/slider";
+import { SplitButtonModule } from "primeng/splitbutton";
 // import { SplitterModule } from "primeng/splitter";
 // import { StepsModule } from "primeng/steps";
 // import { TagModule } from "primeng/tag";
 // import { TerminalModule } from "primeng/terminal";
 // import { TieredMenuModule } from "primeng/tieredmenu";
-// import { ToggleButtonModule } from "primeng/togglebutton";
-// import { TooltipModule } from "primeng/tooltip";
+import { ToggleButtonModule } from "primeng/togglebutton";
+import { TooltipModule } from "primeng/tooltip";
 // import { TreeModule } from "primeng/tree";
 // import { TreeTableModule } from "primeng/treetable";
 // import { VirtualScrollerModule } from "primeng/virtualscroller";
@@ -199,10 +199,10 @@ import { ProductService } from "./service/productservice";
         // ChipsModule,
         // CodeHighlighterModule,
         // ColorPickerModule,
-        // ContextMenuModule,
+        ContextMenuModule,
         // DataViewModule,
         // DividerModule,
-        // DropdownModule,
+        DropdownModule,
         // FieldsetModule,
         // FileUploadModule,
         // FullCalendarModule,
@@ -210,44 +210,44 @@ import { ProductService } from "./service/productservice";
         // InplaceModule,
         // InputMaskModule,
         // InputNumberModule,
-        // InputSwitchModule,
+        InputSwitchModule,
         // KnobModule,
         // LightboxModule,
         // ListboxModule,
-        // MegaMenuModule,
+        MegaMenuModule,
         // MessageModule,
         // MessagesModule,
         // MultiSelectModule,
         // OrderListModule,
         // OrganizationChartModule,
-        // OverlayPanelModule,
+        OverlayPanelModule,
         // PaginatorModule,
-        // PanelMenuModule,
-        // PanelModule,
+        PanelMenuModule,
+        PanelModule,
         // PasswordModule,
         // PickListModule,
         // ProgressBarModule,
-        // RadioButtonModule,
+        RadioButtonModule,
         // RatingModule,
         // RippleModule,
         // ScrollPanelModule,
         // ScrollTopModule,
-        // SelectButtonModule,
+        SelectButtonModule,
         // SkeletonModule,
-        // SlideMenuModule,
-        // SliderModule,
-        // SplitButtonModule,
+        SlideMenuModule,
+        SliderModule,
+        SplitButtonModule,
         // SplitterModule,
         // StepsModule,
         // TagModule,
         // TerminalModule,
         // TieredMenuModule,
-        // ToggleButtonModule,
-        // TooltipModule,
+        ToggleButtonModule,
+        TooltipModule,
         // TreeModule,
         // TreeTableModule,
         // VirtualScrollerModule,
-        // AppCodeModule,
+        AppCodeModule,
     ],
     declarations: [
         AppProgramasComponent,
@@ -282,6 +282,7 @@ import { ProductService } from "./service/productservice";
         AppMenuComponent,
         AppMenuitemComponent,
         AppNotfoundComponent,
+        AppInlineMenuComponent
     ],
     providers: [
         // ProgramaService,
