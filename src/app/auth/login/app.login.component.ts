@@ -8,6 +8,8 @@ import { LOGIN_VALIDATORS } from "./login.validators"
 import { UserService } from '../../service/user.service';
 
 import { IregisterUser } from "src/app/domain/user";
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -98,18 +100,23 @@ export class AppLoginComponent {
     }
 
     const res = this._userService.login(this._user)
+      // .pipe(
+      //   catchError(err => {
+      //     console.log("error", err);
+      //     return throwError(err);
+      //   })
+      // )
       .subscribe(
         async response => {
-          if (response) {
-            this._router.navigate(['/favorites/dashboardanalytics']);
-          } else {
-            Swal.fire('', `Usuario o password erroneo`, 'error');
-          }
+          if (response) this._router.navigate(['/favorites/dashboardanalytics']);
+          //  else {
+          //   Swal.fire('', `Usuario o password erroneo`, 'error');
+          // }
         },
         error => {
           // Si no existe el Usuario.
+          console.log("error2", error);
           Swal.fire('', `Usuario o password erroneo`, 'error');
-
         }
       )
   }
