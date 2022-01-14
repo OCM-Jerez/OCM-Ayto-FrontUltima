@@ -282,6 +282,7 @@ import { ProductService } from "./service/productservice";
         AppMenuComponent,
         AppMenuitemComponent,
         AppNotfoundComponent,
+        // Añade avatar y menu opciones al final del menu de la izquierda
         // AppInlineMenuComponent
     ],
     providers: [
