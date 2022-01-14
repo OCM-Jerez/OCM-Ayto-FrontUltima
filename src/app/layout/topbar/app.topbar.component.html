@@ -157,8 +157,7 @@
                 <li class="layout-topbar-item">
                     <a class="layout-topbar-action p-d-flex p-dir-row p-jc-center p-ai-center p-px-2 rounded-circle"
                         (click)="appMain.onTopbarItemClick($event, 'profile')" pRipple>
-                        <img src="assets/demo/images/avatar/amyelsner.png" alt="avatar"
-                            style="width: 32px; height: 32px;">
+                        <img src="assets/img/mam.jpg" alt="avatar" style="width: 32px; height: 32px;">
                     </a>
 
                     <ul class="layout-topbar-action-panel p-shadow-6" [@topbarActionPanelAnimation]="'visible'"
@@ -166,26 +165,25 @@
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-cog" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                                <span>Settings</span>
+                                <span>Datos usuario</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-file-o" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                                <span>Terms of Usage</span>
+                                <span>Terminos de uso</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
                             <a class="p-d-flex p-flex-row p-ai-center" pRipple>
                                 <i class="pi pi-compass" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
-                                <span>Support</span>
+                                <span>Soporte</span>
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
-                            <a class="p-d-flex p-flex-row p-ai-center" pRipple>
+                            <a class="p-d-flex p-flex-row p-ai-center" pRipple [routerLink]="['auth/login']">
                                 <i class="pi pi-power-off" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Logout</span>
-                                <button class="OCM-Button" type="buton" [routerLink]="['auth/login']">Login</button>
                             </a>
                         </li>
                     </ul>
