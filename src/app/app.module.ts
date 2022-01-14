@@ -12,7 +12,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppConfigComponent } from "./app.config.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
-
 import { AppCodeModule } from "./app.code.component";
 // import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 
@@ -49,24 +48,38 @@ import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
 import { SindicatoComponent } from './pages/sindicato/sindicato.component';
-import { ToolbarModule } from "primeng/toolbar";
 
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ChartModule } from "primeng/chart";
 import { ConfirmationService, MessageService } from "primeng/api";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { ConfirmPopupModule } from "primeng/confirmpopup";
+import { ContextMenuModule } from "primeng/contextmenu";
+import { DialogModule } from "primeng/dialog";
+import { DropdownModule } from "primeng/dropdown";
+import { InputSwitchModule } from "primeng/inputswitch";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
-import { DialogModule } from "primeng/dialog";
+import { MegaMenuModule } from "primeng/megamenu";
 import { MenubarModule } from "primeng/menubar";
 import { MenuModule } from "primeng/menu";
+import { OverlayPanelModule } from "primeng/overlaypanel";
+import { PanelMenuModule } from "primeng/panelmenu";
+import { PanelModule } from "primeng/panel";
+import { RadioButtonModule } from "primeng/radiobutton";
+import { SelectButtonModule } from "primeng/selectbutton";
 import { SidebarModule } from "primeng/sidebar";
+import { SlideMenuModule } from "primeng/slidemenu";
+import { SliderModule } from "primeng/slider";
+import { SplitButtonModule } from "primeng/splitbutton";
 import { TableModule } from "primeng/table";
 import { TabMenuModule } from "primeng/tabmenu";
 import { TabViewModule } from "primeng/tabview";
 import { TimelineModule } from "primeng/timeline";
 import { ToastModule } from "primeng/toast";
+import { ToggleButtonModule } from "primeng/togglebutton";
+import { ToolbarModule } from "primeng/toolbar";
+import { TooltipModule } from "primeng/tooltip";
 
 // import { AccordionModule } from "primeng/accordion";
 // import { AutoCompleteModule } from "primeng/autocomplete";
@@ -83,10 +96,8 @@ import { ToastModule } from "primeng/toast";
 // import { ChipsModule } from "primeng/chips";
 // import { CodeHighlighterModule } from "primeng/codehighlighter";
 // import { ColorPickerModule } from "primeng/colorpicker";
-import { ContextMenuModule } from "primeng/contextmenu";
 // import { DataViewModule } from "primeng/dataview";
 // import { DividerModule } from "primeng/divider";
-import { DropdownModule } from "primeng/dropdown";
 // import { FieldsetModule } from "primeng/fieldset";
 // import { FileUploadModule } from "primeng/fileupload";
 // import { FullCalendarModule } from "primeng/fullcalendar";
@@ -94,45 +105,37 @@ import { DropdownModule } from "primeng/dropdown";
 // import { InplaceModule } from "primeng/inplace";
 // import { InputMaskModule } from "primeng/inputmask";
 // import { InputNumberModule } from "primeng/inputnumber";
-import { InputSwitchModule } from "primeng/inputswitch";
 // import { KnobModule } from "primeng/knob";
 // import { LightboxModule } from "primeng/lightbox";
 // import { ListboxModule } from "primeng/listbox";
-import { MegaMenuModule } from "primeng/megamenu";
 // import { MessageModule } from "primeng/message";
 // import { MessagesModule } from "primeng/messages";
 // import { MultiSelectModule } from "primeng/multiselect";
 // import { OrderListModule } from "primeng/orderlist";
 // import { OrganizationChartModule } from "primeng/organizationchart";
-import { OverlayPanelModule } from "primeng/overlaypanel";
 // import { PaginatorModule } from "primeng/paginator";
-import { PanelMenuModule } from "primeng/panelmenu";
-import { PanelModule } from "primeng/panel";
 // import { PasswordModule } from "primeng/password";
 // import { PickListModule } from "primeng/picklist";
 // import { ProgressBarModule } from "primeng/progressbar";
-import { RadioButtonModule } from "primeng/radiobutton";
 // import { RatingModule } from "primeng/rating";
 // import { RippleModule } from "primeng/ripple";
 // import { ScrollPanelModule } from "primeng/scrollpanel";
 // import { ScrollTopModule } from "primeng/scrolltop";
-import { SelectButtonModule } from "primeng/selectbutton";
 // import { SkeletonModule } from "primeng/skeleton";
-import { SlideMenuModule } from "primeng/slidemenu";
-import { SliderModule } from "primeng/slider";
-import { SplitButtonModule } from "primeng/splitbutton";
 // import { SplitterModule } from "primeng/splitter";
 // import { StepsModule } from "primeng/steps";
 // import { TagModule } from "primeng/tag";
 // import { TerminalModule } from "primeng/terminal";
 // import { TieredMenuModule } from "primeng/tieredmenu";
-import { ToggleButtonModule } from "primeng/togglebutton";
-import { TooltipModule } from "primeng/tooltip";
 // import { TreeModule } from "primeng/tree";
 // import { TreeTableModule } from "primeng/treetable";
 // import { VirtualScrollerModule } from "primeng/virtualscroller";
 
-// import { ProgramaService } from "./service/programaservice";
+import { CustomerService } from "./service/customerservice";
+import { EventService } from "./service/eventservice";
+import { IconService } from "./service/iconservice";
+import { ProductService } from "./service/productservice";
+
 import { BarrioService } from "./service/barrio.service";
 import { CapituloGastoService } from "./service/capitulo-gasto.service";
 import { CapituloIngresoService } from "./service/capitulo-ingreso.service";
@@ -145,44 +148,52 @@ import { OrganicoService } from "./service/organicoservice";
 import { OrganoContratacionService } from "./service/organo-contratacion.service";
 import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoService } from "./service/sindicato.service";
-import { CustomerService } from "./service/customerservice";
-import { EventService } from "./service/eventservice";
-import { IconService } from "./service/iconservice";
 
-import { ProductService } from "./service/productservice";
-
+// import { ProgramaService } from "./service/programaservice";
 // import { CountryService } from "./service/countryservice";
 // import { NodeService } from "./service/nodeservice";
 // import { PhotoService } from "./service/photoservice";
 
 @NgModule({
     imports: [
+        AppCodeModule,
+        AppRoutingModule,
+        BreadcrumbModule,
         BrowserAnimationsModule,
         BrowserModule,
-        FormsModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-
-        AppRoutingModule,
-
-        HighchartsChartModule,
-
-        BreadcrumbModule,
         ChartModule,
         ConfirmDialogModule,
         ConfirmPopupModule,
+        ContextMenuModule,
         DialogModule,
+        DropdownModule,
+        FormsModule,
+        HighchartsChartModule,
+        HttpClientModule,
+        InputSwitchModule,
         InputTextareaModule,
         InputTextModule,
+        MegaMenuModule,
         MenubarModule,
         MenuModule,
+        OverlayPanelModule,
+        PanelMenuModule,
+        PanelModule,
+        RadioButtonModule,
+        ReactiveFormsModule,
+        SelectButtonModule,
         SidebarModule,
+        SlideMenuModule,
+        SliderModule,
+        SplitButtonModule,
         TableModule,
         TabMenuModule,
         TabViewModule,
         TimelineModule,
         ToastModule,
+        ToggleButtonModule,
         ToolbarModule,
+        TooltipModule,
 
         // AccordionModule,
         // AutoCompleteModule,
@@ -199,10 +210,8 @@ import { ProductService } from "./service/productservice";
         // ChipsModule,
         // CodeHighlighterModule,
         // ColorPickerModule,
-        ContextMenuModule,
         // DataViewModule,
         // DividerModule,
-        DropdownModule,
         // FieldsetModule,
         // FileUploadModule,
         // FullCalendarModule,
@@ -210,46 +219,43 @@ import { ProductService } from "./service/productservice";
         // InplaceModule,
         // InputMaskModule,
         // InputNumberModule,
-        InputSwitchModule,
         // KnobModule,
         // LightboxModule,
         // ListboxModule,
-        MegaMenuModule,
         // MessageModule,
         // MessagesModule,
         // MultiSelectModule,
         // OrderListModule,
         // OrganizationChartModule,
-        OverlayPanelModule,
         // PaginatorModule,
-        PanelMenuModule,
-        PanelModule,
         // PasswordModule,
         // PickListModule,
         // ProgressBarModule,
-        RadioButtonModule,
         // RatingModule,
         // RippleModule,
         // ScrollPanelModule,
         // ScrollTopModule,
-        SelectButtonModule,
         // SkeletonModule,
-        SlideMenuModule,
-        SliderModule,
-        SplitButtonModule,
         // SplitterModule,
         // StepsModule,
         // TagModule,
         // TerminalModule,
         // TieredMenuModule,
-        ToggleButtonModule,
-        TooltipModule,
         // TreeModule,
         // TreeTableModule,
         // VirtualScrollerModule,
-        AppCodeModule,
     ],
     declarations: [
+        AppBreadcrumbComponent,
+        AppComponent,
+        AppConfigComponent,
+        AppErrorComponent,
+        AppFooterComponent,
+        AppLoginComponent,
+        AppMainComponent,
+        AppMenuComponent,
+        AppMenuitemComponent,
+        AppNotfoundComponent,
         AppProgramasComponent,
         AppRightMenuComponent,
         AppTopBarComponent,
@@ -271,44 +277,32 @@ import { ProductService } from "./service/productservice";
         RegisterComponent,
         SeccionCensalComponent,
         SindicatoComponent,
-
-        AppBreadcrumbComponent,
-        AppComponent,
-        AppConfigComponent,
-        AppErrorComponent,
-        AppFooterComponent,
-        AppLoginComponent,
-        AppMainComponent,
-        AppMenuComponent,
-        AppMenuitemComponent,
-        AppNotfoundComponent,
         // Añade avatar y menu opciones al final del menu de la izquierda
         // AppInlineMenuComponent
     ],
     providers: [
-        // ProgramaService,
+        AppBreadcrumbService,
         BarrioService,
         CapituloGastoService,
         CapituloIngresoService,
+        ConfirmationService,
         CustomerService,
         DelegacionService,
         DistritoService,
         EcoGastoService,
         EcoIngresoService,
         EnteService,
+        EventService,
+        IconService,
+        MenuService,
+        MessageService,
         OrganicoService,
         OrganoContratacionService,
         SeccionCensalService,
         SindicatoService,
 
-        AppBreadcrumbService,
-        EventService,
-        IconService,
-        MenuService,
-        MessageService,
-        ConfirmationService,
-
         ProductService,  //Se usa en Dashboard gastos
+        // ProgramaService,
         // CountryService,
         // NodeService,
         // PhotoService,
