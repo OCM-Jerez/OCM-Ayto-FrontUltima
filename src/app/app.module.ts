@@ -14,7 +14,7 @@ import { AppMainComponent } from "./app.main.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
 
 import { AppCodeModule } from "./app.code.component";
-import { AppInlineMenuComponent } from "./app.inlinemenu.component";
+// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
@@ -282,7 +282,7 @@ import { ProductService } from "./service/productservice";
         AppMenuComponent,
         AppMenuitemComponent,
         AppNotfoundComponent,
-        AppInlineMenuComponent
+        // AppInlineMenuComponent
     ],
     providers: [
         // ProgramaService,
