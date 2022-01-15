@@ -73,7 +73,6 @@ export class AppLoginComponent {
         },
         error => {
           // Si no existe el Usuario.
-          console.log("error2", error);
           Swal.fire('', `Usuario o password erroneo`, 'error');
         }
       )
