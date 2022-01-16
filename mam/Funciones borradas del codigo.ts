@@ -39,7 +39,7 @@ export class AppLoginComponent {
             .subscribe(
                 async response => {
                     if (usuarioExist) {
-                        this._router.navigate(['/favorites/dashboardanalytics']);
+                        this._router.navigate(['/dashboardanalytics']);
                     } else {
                         Swal.fire('', `Usuario o password erroneo`, 'error');
                     }

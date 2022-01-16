@@ -57,7 +57,7 @@ export class AppLoginComponent {
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
-          if (response) this._router.navigate(['/favorites/dashboardanalytics']);
+          if (response) this._router.navigate(['DashboardComponent']);
         },
         error => {
           // Si no existe el Usuario.

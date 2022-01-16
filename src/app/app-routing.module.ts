@@ -36,9 +36,16 @@ import { RegisterComponent } from "./auth/register/register.component";
                     path: "",
                     component: AppMainComponent,
                     children: [
-                        { path: "", component: DashboardComponent },
                         {
-                            path: "favorites/dashboardanalytics",
+                            path: "",
+                            component: AppLoginComponent
+                        },
+                        {
+                            path: "DashboardComponent",  //Ingresos
+                            component: DashboardComponent
+                        },
+                        {
+                            path: "dashboardanalytics", // Gastos
                             component: DashboardAnalyticsComponent,
                         },
                         {

@@ -36,7 +36,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: "Gastos",
                         icon: "pi pi-fw pi-shopping-cart",
-                        routerLink: ["/favorites/dashboardanalytics"],
+                        routerLink: ["/dashboardanalytics"],
                         badge: "2",
                         badgeClass: "p-badge-success",
                     },

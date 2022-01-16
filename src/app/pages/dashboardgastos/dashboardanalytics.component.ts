@@ -64,7 +64,7 @@ export class DashboardAnalyticsComponent implements OnInit, AfterViewInit {
         this.breadcrumbService.setItems([
             {
                 label: "Dashboard Analytics",
-                routerLink: ["/favorites/dashboardanalytics"],
+                routerLink: ["/dashboardanalytics"],
             },
         ]);
     }
