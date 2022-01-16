@@ -50,8 +50,8 @@ export class UserService {
     //     return this.httpClient.get<boolean>(url)
     // }
 
-    login(user: IloginUser): Observable<boolean> {
+    login(user: IloginUser): Observable<IloginUser> {
         const url = environment.host + '/auth' + '/' + user.login + '/' + user.password;
-        return this.httpClient.get<boolean>(url)
+        return this.httpClient.get<IloginUser>(url)
     }
 }

@@ -54,14 +54,29 @@ export class AppLoginComponent {
       "password": this.formGroup.value.password
     }
 
+    // const res = this._userService.login(this._user)
+    //   .subscribe(
+    //     async response => {
+    //       if (response) this._router.navigate(['DashboardComponent']);
+    //     },
+    //     error => {
+    //       // Si no existe el Usuario.
+    //       Swal.fire('', `Usuario o password erroneo`, 'error');
+    //     }
+    //   )
+
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
-          if (response) this._router.navigate(['DashboardComponent']);
-        },
-        error => {
-          // Si no existe el Usuario.
-          Swal.fire('', `Usuario o password erroneo`, 'error');
+          console.log('response', response);
+
+          if (response.login) {
+            this._router.navigate(['DashboardComponent']);
+          } else {
+            // Si no existe el Usuario.
+            Swal.fire('', `Usuario o password erroneo`, 'error');
+          }
+
         }
       )
   }
