@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
 
-import { IregisterUser, IUser } from '../../domain/user';
+import { IloginUser, IUser } from '../../domain/user';
 import { UserService } from "src/app/service/user.service";
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ import { UserService } from "src/app/service/user.service";
 
 export class RegisterComponent {
   formGroup: FormGroup;
-  private _user: IregisterUser;
+  private _user: IloginUser;
 
   constructor(
     private _userService: UserService,

@@ -1,5 +1,5 @@
 
-export interface IregisterUser {
+export interface IloginUser {
     login: string;
     password: string;
 }

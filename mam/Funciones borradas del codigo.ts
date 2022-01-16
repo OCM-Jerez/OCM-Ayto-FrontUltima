@@ -1,5 +1,5 @@
 export class UserService {
-    passwordExist(user: IregisterUser): Observable<boolean> {
+    passwordExist(user: IloginUser): Observable<boolean> {
         const url = this.URL_API + '/passwordExist';
         return this.httpClient.post<boolean>(url, user)
     }

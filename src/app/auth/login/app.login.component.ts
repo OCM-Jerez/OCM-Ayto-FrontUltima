@@ -6,7 +6,7 @@ import { UserService } from '../../service/user.service';
 
 import { LOGIN_VALIDATORS } from "./login.validators"
 
-import { IregisterUser } from "src/app/domain/user";
+import { IloginUser } from "src/app/domain/user";
 
 import Swal from 'sweetalert2';
 @Component({
@@ -17,7 +17,7 @@ import Swal from 'sweetalert2';
 
 export class AppLoginComponent {
   formGroup: FormGroup;
-  private _user: IregisterUser;
+  private _user: IloginUser;
 
   constructor(
     private _userService: UserService,
