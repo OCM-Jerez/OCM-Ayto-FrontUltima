@@ -29,7 +29,7 @@ export class RegisterComponent {
       {
         login: ['mam', [Validators.required, Validators.minLength(3)]],
         password: ['mam', [Validators.required, Validators.minLength(3), mustMatch('password')]],
-        passwordConfirm: ['mam', [Validators.required, Validators.minLength(6), mustMatch('passwordConfirm')]],
+        passwordConfirm: ['mam', [Validators.required, Validators.minLength(3), mustMatch('passwordConfirm')]],
       }
     );
   }
