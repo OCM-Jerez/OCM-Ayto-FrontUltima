@@ -40,12 +40,18 @@ export class UserService {
 
     // Se usa en RegisterComponent
     loginExist(user: IloginUser): Observable<boolean> {
-        const url = this.URL_API + '/registerLogin';
+        // const url = this.URL_API + '/registerLogin';
+        const url = environment.host + '/auth' + '/registerLogin';
         return this.httpClient.post<boolean>(url, user)
     }
 
+    // login(user: IloginUser): Observable<boolean> {
+    //     const url = environment.host + '/login' + '/' + user.login + '/' + user.password;
+    //     return this.httpClient.get<boolean>(url)
+    // }
+
     login(user: IloginUser): Observable<boolean> {
-        const url = environment.host + '/login' + '/' + user.login + '/' + user.password;
+        const url = environment.host + '/auth' + '/' + user.login + '/' + user.password;
         return this.httpClient.get<boolean>(url)
     }
 }
