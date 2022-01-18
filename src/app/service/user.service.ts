@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { IloginUser } from '../domain/user';
+import { IloginUser, IResponseLogin } from '../domain/user';
 import { environment } from 'src/environments/environment';
 
 @Injectable(
@@ -50,8 +50,8 @@ export class UserService {
     //     return this.httpClient.get<boolean>(url)
     // }
 
-    login(user: IloginUser): Observable<IloginUser> {
+    login(user: IloginUser): Observable<IResponseLogin> {
         const url = environment.host + '/auth' + '/' + user.login + '/' + user.password;
-        return this.httpClient.get<IloginUser>(url)
+        return this.httpClient.get<IResponseLogin>(url)
     }
 }

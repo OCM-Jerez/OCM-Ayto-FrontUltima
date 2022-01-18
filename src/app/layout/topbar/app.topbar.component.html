@@ -181,7 +181,7 @@
                             </a>
                         </li>
                         <li class="layout-topbar-action-item">
-                            <a class="p-d-flex p-flex-row p-ai-center" pRipple [routerLink]="['auth/login']">
+                            <a class="p-d-flex p-flex-row p-ai-center" pRipple (click)="closeSession()">
                                 <i class="pi pi-power-off" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></i>
                                 <span>Logout</span>
                             </a>

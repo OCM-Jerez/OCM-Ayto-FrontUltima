@@ -3,6 +3,8 @@ import { trigger, style, transition, animate, AnimationEvent } from '@angular/an
 import { MegaMenuItem } from 'primeng/api';
 import { AppComponent } from '../../app.component';
 import { AppMainComponent } from '../../app.main.component';
+import { JwtValidService } from 'src/common/services/token-valid.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-topbar',
     templateUrl: './app.topbar.component.html',
@@ -20,7 +22,7 @@ import { AppMainComponent } from '../../app.main.component';
 })
 export class AppTopBarComponent {
 
-    constructor(public appMain: AppMainComponent, public app: AppComponent) {
+    constructor(public appMain: AppMainComponent, public app: AppComponent, private _jwtValidService: JwtValidService, private _router: Router) {
     }
 
     activeItem: number;
@@ -122,5 +124,11 @@ export class AppTopBarComponent {
                 this.searchInputViewChild.nativeElement.focus();
                 break;
         }
+    }
+
+    closeSession(): void {
+        this._jwtValidService.clearToken();
+        this._router.navigateByUrl('/auth/login')
+
     }
 }
