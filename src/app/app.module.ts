@@ -18,7 +18,7 @@ import { AppCodeModule } from "./app.code.component";
 import { HighchartsChartModule } from "highcharts-angular";
 
 import { AppLoginComponent } from "./auth/login/app.login.component";
-import { RegisterComponent } from './auth/register/register.component';
+// import { RegisterComponent } from './auth/register/register.component';
 
 import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
 import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
@@ -153,6 +153,7 @@ import { SindicatoService } from "./service/sindicato.service";
 // import { CountryService } from "./service/countryservice";
 // import { NodeService } from "./service/nodeservice";
 // import { PhotoService } from "./service/photoservice";
+import { ApiInterceptor } from '../common/interceptors/api.interceptor';
 
 @NgModule({
     imports: [
@@ -274,7 +275,7 @@ import { SindicatoService } from "./service/sindicato.service";
         OrganicosComponent,
         OrganoContratacionComponent,
         ProgramaDetailComponent,
-        RegisterComponent,
+        // RegisterComponent,
         SeccionCensalComponent,
         SindicatoComponent,
         // Añade avatar y menu opciones al final del menu de la izquierda
@@ -310,9 +311,14 @@ import { SindicatoService } from "./service/sindicato.service";
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         {
             provide: HTTP_INTERCEPTORS,
-            useClass: ErrorInterceptor,
+            useClass: ApiInterceptor,
             multi: true
         },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptor,
+            multi: true
+        }
     ],
     bootstrap: [AppComponent],
 })
