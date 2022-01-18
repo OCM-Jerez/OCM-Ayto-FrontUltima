@@ -129,6 +129,6 @@ export class AppTopBarComponent {
     closeSession(): void {
         this._jwtValidService.clearToken();
         this._router.navigateByUrl('/auth/login')
-
     }
+
 }
