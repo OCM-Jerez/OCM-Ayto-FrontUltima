@@ -27,6 +27,7 @@ import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.co
 import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
 import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
 import { RegisterComponent } from "./auth/register/register.component";
+import { HomeGuard } from "src/common/guards/home.guard";
 
 @NgModule({
     imports: [
@@ -35,11 +36,10 @@ import { RegisterComponent } from "./auth/register/register.component";
                 {
                     path: "",
                     component: AppMainComponent,
+                    canActivate: [HomeGuard],
+                    canActivateChild: [],
                     children: [
-                        {
-                            path: "",
-                            component: AppLoginComponent
-                        },
+
                         {
                             path: "DashboardComponent",  //Ingresos
                             component: DashboardComponent
@@ -127,7 +127,10 @@ import { RegisterComponent } from "./auth/register/register.component";
                 { path: "error", component: AppErrorComponent },
                 { path: "notfound", component: AppNotfoundComponent },
                 { path: "auth/login", component: AppLoginComponent },
-                { path: "auth/register", component: RegisterComponent },
+                {
+                    path: "auth/register",
+                    loadChildren: () => import("./auth/register/register.module").then(m => m.RegisterModule)
+                },
                 { path: "**", redirectTo: "/notfound" },
             ],
             { scrollPositionRestoration: "enabled" }
