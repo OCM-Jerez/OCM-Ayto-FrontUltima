@@ -57,7 +57,7 @@ export function mustMatch(field: string): ValidatorFn {
 
 export const REGISTER_VALIDATORS: IAtribute[] = [
     {
-        formControlName: 'user',
+        formControlName: 'login',
         validators: [
             {
                 name: 'required',
@@ -69,7 +69,7 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
             },
             {
                 name: 'minlength',
-                message: 'Debe tener al menos 5 caracteres.'
+                message: 'Debe tener al menos 3 caracteres.'
             },
         ]
     },
@@ -82,7 +82,7 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
             },
             {
                 name: 'minlength',
-                message: 'Debe tener al menos 6 caracteres.'
+                message: 'Debe tener al menos 3 caracteres.'
             },
             {
                 name: 'identityRevealedValidator',
@@ -99,7 +99,7 @@ export const REGISTER_VALIDATORS: IAtribute[] = [
             },
             {
                 name: 'minlength',
-                message: 'Debe tener al menos 6 caracteres.'
+                message: 'Debe tener al menos 3 caracteres.'
             },
             {
                 name: 'identityRevealedValidator',
