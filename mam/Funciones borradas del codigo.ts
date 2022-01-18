@@ -51,3 +51,20 @@ export class AppLoginComponent {
             )
     }
 }
+
+
+AppLoginComponent
+ // const res = this._userService.login(this._user)
+    //   .subscribe(
+    //     async response => {
+    //       if (response) this._router.navigate(['DashboardComponent']);
+    //     },
+    //     error => {
+    //       // Si no existe el Usuario.
+    //       Swal.fire('', `Usuario o password erroneo`, 'error');
+    //     }
+    //   )
+
+    // sessionStorage.setItem(SESSION_STORAGE_ENUM.TOKEN, JSON.stringify(response));
+    // const obj =JSON.parse(sessionStorage.getItem(SESSION_STORAGE_ENUM.TOKEN)) as IResponseLogin;
+    // const obj2 = this._sessionStorageService.getItem<IResponseLogin>(SESSION_STORAGE_ENUM.TOKEN);

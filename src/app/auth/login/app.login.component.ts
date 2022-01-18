@@ -6,11 +6,12 @@ import { UserService } from '../../service/user.service';
 
 import { LOGIN_VALIDATORS } from "./login.validators"
 
-import { IloginUser, IResponseLogin } from "src/app/domain/user";
+import { IloginUser } from "src/app/domain/user";
 
-import Swal from 'sweetalert2';
 import { SessionStorageService } from "../../../common/services/storage/storage.service"
 import { SESSION_STORAGE_ENUM } from "src/common/utils/storage.enum";
+
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './app.login.component.html',
@@ -57,33 +58,13 @@ export class AppLoginComponent {
       "password": this.formGroup.value.password
     }
 
-    // const res = this._userService.login(this._user)
-    //   .subscribe(
-    //     async response => {
-    //       if (response) this._router.navigate(['DashboardComponent']);
-    //     },
-    //     error => {
-    //       // Si no existe el Usuario.
-    //       Swal.fire('', `Usuario o password erroneo`, 'error');
-    //     }
-    //   )
-
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
-          console.log('response', response);
 
           if (response) {
-
-            // sessionStorage.setItem(SESSION_STORAGE_ENUM.TOKEN, JSON.stringify(response));
             this._sessionStorageService.setItem(SESSION_STORAGE_ENUM.USER_DATA, response);
-
-            // const obj =JSON.parse(sessionStorage.getItem(SESSION_STORAGE_ENUM.TOKEN)) as IResponseLogin;
-
-            // const obj2 = this._sessionStorageService.getItem<IResponseLogin>(SESSION_STORAGE_ENUM.TOKEN);
-
             this._router.navigate(['DashboardComponent']);
-
           } else {
             // Si no existe el Usuario.
             Swal.fire('', `Usuario o password erroneo`, 'error');
