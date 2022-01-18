@@ -5,7 +5,7 @@
             class="p-button-rounded p-button-text p-button-plain p-mr-1"></button>
         <button pButton pRipple type="button" icon="pi pi-bookmark"
             class="p-button-rounded p-button-text p-button-plain p-mr-1"></button>
-        <button pButton pRipple type="button" icon="pi pi-power-off" [routerLink]="['auth/login']"
+        <button pButton pRipple type="button" icon="pi pi-power-off" (click)="closeSession()"
             class="p-button-rounded p-button-text p-button-plain p-mr-1"></button>
     </div>
 </div>

@@ -2,20 +2,22 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
 import { AppBreadcrumbService } from './app.breadcrumb.service';
+import { JwtValidService } from 'src/common/services/token-valid.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-breadcrumb',
     templateUrl: './app.breadcrumb.component.html'
 })
 export class AppBreadcrumbComponent implements OnDestroy {
-
     subscription: Subscription;
-
     items: MenuItem[];
-
     home: MenuItem;
 
-    constructor(public breadcrumbService: AppBreadcrumbService) {
+    constructor(
+        public breadcrumbService: AppBreadcrumbService,
+        private _jwtValidService: JwtValidService,
+        private _router: Router) {
         this.subscription = breadcrumbService.itemsHandler.subscribe(response => {
             this.items = response;
         });
@@ -27,5 +29,10 @@ export class AppBreadcrumbComponent implements OnDestroy {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
+    }
+
+    closeSession(): void {
+        this._jwtValidService.clearToken();
+        this._router.navigateByUrl('/auth/login')
     }
 }
