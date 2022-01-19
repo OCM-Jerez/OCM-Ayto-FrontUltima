@@ -29,7 +29,7 @@ export class AppMenuComponent implements OnInit {
                     {
                         label: "Ingresos",
                         icon: "pi pi-fw pi-euro",
-                        routerLink: ["/"],
+                        routerLink: ["/DashboardComponent"],
                         badge: "4",
                         badgeClass: "p-badge-info",
                     },
