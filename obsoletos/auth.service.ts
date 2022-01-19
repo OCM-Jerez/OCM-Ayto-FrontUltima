@@ -4,9 +4,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { of, Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../src/environments/environment';
 
-import { IUser } from '../domain/user';
+import { IUser } from '../src/app/domain/user';
 import { AuthResponse } from './auth.interfaces';
 
 @Injectable({

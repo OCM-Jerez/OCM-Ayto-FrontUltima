@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 import { ILogin } from './login.interface';
-import { IUser } from '../../domain/user'
+import { IUser } from '../src/app/domain/user'
 
-import { AuthServerProvider } from '../../auth/auth-jwt.service';
-import { AccountService } from '../account/account.service';
+import { AuthServerProvider } from './auth-jwt.service';
+import { AccountService } from './account/account.service';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {

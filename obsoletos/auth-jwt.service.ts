@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 // import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
-import { environment } from '../../environments/environment';
-import { ILogin } from './login/login.interface';
+import { environment } from '../src/environments/environment';
+import { ILogin } from './login.interface';
 
 type JwtToken = {
   id_token: string;

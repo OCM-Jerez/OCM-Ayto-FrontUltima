@@ -7,10 +7,10 @@ import { Observable, ReplaySubject, of } from 'rxjs';
 import { shareReplay, tap, catchError } from 'rxjs/operators';
 //import { StateStorageService } from 'app/core/auth/state-storage.service';//
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../src/environments/environment';
 
 // import { IUser } from '../users/user.interface';
-import { IUser } from '../../domain/user';
+import { IUser } from '../../src/app/domain/user';
 
 
 @Injectable({ providedIn: 'root' })

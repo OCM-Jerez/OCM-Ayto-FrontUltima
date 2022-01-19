@@ -275,9 +275,9 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         OrganicosComponent,
         OrganoContratacionComponent,
         ProgramaDetailComponent,
-        // RegisterComponent,
         SeccionCensalComponent,
         SindicatoComponent,
+        // RegisterComponent,
         // Añade avatar y menu opciones al final del menu de la izquierda
         // AppInlineMenuComponent
     ],
