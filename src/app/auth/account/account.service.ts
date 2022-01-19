@@ -7,7 +7,7 @@ import { Observable, ReplaySubject, of } from 'rxjs';
 import { shareReplay, tap, catchError } from 'rxjs/operators';
 //import { StateStorageService } from 'app/core/auth/state-storage.service';//
 
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 
 // import { IUser } from '../users/user.interface';
 import { IUser } from '../../domain/user';

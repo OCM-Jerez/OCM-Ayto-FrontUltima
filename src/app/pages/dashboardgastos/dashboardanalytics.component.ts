@@ -9,8 +9,8 @@ import { ProductService } from "../../service/productservice";
 
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { UIChart } from "primeng/chart";
-import { AppComponent } from "src/app/app.component";
-import { AppMainComponent } from "src/app/app.main.component";
+import { AppComponent } from "../../app.component";
+import { AppMainComponent } from "../../app.main.component";
 
 @Component({
     templateUrl: "./dashboardanalytics.component.html",

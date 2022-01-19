@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
 import { AppBreadcrumbService } from './app.breadcrumb.service';
-import { JwtValidService } from 'src/common/services/token-valid.service';
+import { JwtValidService } from '../../../common/services/token-valid.service';
 
 @Component({
     selector: 'app-breadcrumb',

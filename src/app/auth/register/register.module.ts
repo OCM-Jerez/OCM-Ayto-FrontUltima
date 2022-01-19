@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedFormModule } from 'src/common/shared/shared-form.module';
+import { SharedFormModule } from '../../../common/shared/shared-form.module';
 
 import { RegisterComponent } from './register.component';
 

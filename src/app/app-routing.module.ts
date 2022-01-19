@@ -1,33 +1,30 @@
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 
-// import { DashboardComponent } from "./demo/view/dashboard.component";
-// import { DashboardAnalyticsComponent } from "./demo/view/dashboardanalytics.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { AppProgramasComponent } from "./pages/programa/app.programas.component";
+import { BarrioComponent } from "./pages/barrio/barrio.component";
+import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
+import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
+import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
 import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
-import { PresupuestosComponent } from "./pages/presupuestos/presupuestos.component";
-import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
-import { EcoGastosComponent } from "./pages/eco-gastos/eco-gastos.component";
-import { OrganicosComponent } from "./pages/organicos/organicos.component";
-import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.component";
-import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
-import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
-import { BarrioComponent } from "./pages/barrio/barrio.component";
 import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
 import { DistritoComponent } from "./pages/distrito/distrito.component";
+import { EcoGastosComponent } from "./pages/eco-gastos/eco-gastos.component";
+import { EcoIngresosComponent } from "./pages/eco-ingresos/eco-ingresos.component";
 import { EnteComponent } from "./pages/ente/ente.component";
+import { HomeGuard } from "../common/guards/home.guard";
+import { OrganicosComponent } from "./pages/organicos/organicos.component";
 import { OrganoContratacionComponent } from "./pages/organo-contratacion/organo-contratacion.component";
+import { PresupuestosComponent } from "./pages/presupuestos/presupuestos.component";
+import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from "./pages/seccion-censal/seccion-censal.component";
 import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
-import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
-import { RegisterComponent } from "./auth/register/register.component";
-import { HomeGuard } from "src/common/guards/home.guard";
 
 @NgModule({
     imports: [

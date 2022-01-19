@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { IPrograma, ISavePrograma } from '../domain/programa';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable(
     {

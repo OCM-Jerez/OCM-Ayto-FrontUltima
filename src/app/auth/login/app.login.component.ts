@@ -6,10 +6,10 @@ import { UserService } from '../../service/user.service';
 
 import { LOGIN_VALIDATORS } from "./login.validators"
 
-import { IloginUser } from "src/app/domain/user";
+import { IloginUser } from "../../domain/user";
 
 import { SessionStorageService } from "../../../common/services/storage/storage.service"
-import { SESSION_STORAGE_ENUM } from "src/common/utils/storage.enum";
+import { SESSION_STORAGE_ENUM } from "../../../common/utils/storage.enum";
 
 import Swal from 'sweetalert2';
 @Component({

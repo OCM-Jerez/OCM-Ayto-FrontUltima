@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
 
 import { IloginUser, IUser } from '../../domain/user';
-import { UserService } from "src/app/service/user.service";
+import { UserService } from "../../service/user.service";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -55,12 +55,16 @@ export class RegisterComponent {
     const res = this._userService.loginExist(this._user)
       .subscribe(
         response => {
+          console.log("response", response);
           Swal.fire('', `El usuario ${this._user.login} ya existe`, 'error');
         },
         error => {
+          console.log("error", error, this._user);
           // Si no existe el Usuario, guardarlo en BBDD.
           this._userService.postUser(this._user)
             .subscribe(response => {
+              console.log("response", response);
+
               Swal.fire('', `El usuario ${this._user.login} ha sido creado correctamente`, 'success');
             },
               error => {

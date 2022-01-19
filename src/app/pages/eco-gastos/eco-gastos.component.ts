@@ -6,8 +6,7 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
-import { EcoGastoService } from "src/app/service/ecogastoservice";
-import { ClassGetter } from "@angular/compiler/src/output/output_ast";
+import { EcoGastoService } from "../../service/ecogastoservice";
 
 @Component({
   selector: 'app-eco-gastos',

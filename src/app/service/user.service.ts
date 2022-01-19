@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { IloginUser, IResponseLogin } from '../domain/user';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable(
     {
@@ -16,7 +16,7 @@ export class UserService {
     private URL_API = environment.host + '/user';
 
     postUser(user: IloginUser): Observable<IloginUser> {
-        // console.log("postUser", [user]);
+        console.log("postUser", [user]);
         try {
             return this.httpClient.post<IloginUser>(this.URL_API, user)
         } catch (error) {

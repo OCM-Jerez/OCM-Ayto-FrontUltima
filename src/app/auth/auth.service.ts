@@ -6,7 +6,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 
-import { IUser } from 'src/app/domain/user';
+import { IUser } from '../domain/user';
 import { AuthResponse } from './auth.interfaces';
 
 @Injectable({
