@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { MenuItem } from 'primeng/api';
 import { AppBreadcrumbService } from './app.breadcrumb.service';
 import { JwtValidService } from 'src/common/services/token-valid.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-breadcrumb',
@@ -17,7 +16,7 @@ export class AppBreadcrumbComponent implements OnDestroy {
     constructor(
         public breadcrumbService: AppBreadcrumbService,
         private _jwtValidService: JwtValidService,
-        private _router: Router) {
+    ) {
         this.subscription = breadcrumbService.itemsHandler.subscribe(response => {
             this.items = response;
         });
@@ -33,6 +32,5 @@ export class AppBreadcrumbComponent implements OnDestroy {
 
     closeSession(): void {
         this._jwtValidService.clearToken();
-        this._router.navigateByUrl('/auth/login')
     }
 }
