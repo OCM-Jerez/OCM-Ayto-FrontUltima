@@ -15,6 +15,17 @@ export class UserService {
     constructor(private httpClient: HttpClient) { }
     private URL_API = environment.host + '/user';
 
+    login(user: IloginUser): Observable<IResponseLogin> {
+        const url = environment.host + '/auth' + '/' + user.login + '/' + user.password;
+        return this.httpClient.get<IResponseLogin>(url)
+    }
+
+    // Se usa en RegisterComponent
+    loginExist(user: IloginUser): Observable<boolean> {
+        const url = environment.host + '/auth' + '/registerLogin';
+        return this.httpClient.post<boolean>(url, user)
+    }
+
     postUser(user: IloginUser): Observable<IloginUser> {
         console.log("postUser", [user]);
         try {
@@ -38,20 +49,4 @@ export class UserService {
         return this.httpClient.delete<IloginUser[]>(url)
     }
 
-    // Se usa en RegisterComponent
-    loginExist(user: IloginUser): Observable<boolean> {
-        // const url = this.URL_API + '/registerLogin';
-        const url = environment.host + '/auth' + '/registerLogin';
-        return this.httpClient.post<boolean>(url, user)
-    }
-
-    // login(user: IloginUser): Observable<boolean> {
-    //     const url = environment.host + '/login' + '/' + user.login + '/' + user.password;
-    //     return this.httpClient.get<boolean>(url)
-    // }
-
-    login(user: IloginUser): Observable<IResponseLogin> {
-        const url = environment.host + '/auth' + '/' + user.login + '/' + user.password;
-        return this.httpClient.get<IResponseLogin>(url)
-    }
 }
