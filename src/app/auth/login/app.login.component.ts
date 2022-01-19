@@ -23,10 +23,10 @@ export class AppLoginComponent {
   private _user: IloginUser;
 
   constructor(
-    private _userService: UserService,
-    private _router: Router,
     private _formBuilder: FormBuilder,
-    private _sessionStorageService: SessionStorageService
+    private _router: Router,
+    private _sessionStorageService: SessionStorageService,
+    private _userService: UserService,
   ) {
     this._loadForm();
   }
@@ -61,6 +61,8 @@ export class AppLoginComponent {
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
+          console.log(response);
+
 
           if (response) {
             this._sessionStorageService.setItem(SESSION_STORAGE_ENUM.USER_DATA, response);
