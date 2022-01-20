@@ -55,14 +55,12 @@ export class RegisterComponent {
     const res = this._userService.registerUser(this._user)
       .subscribe(
         response => {
-          console.log("response", response);
           if (response.login === '') {
             Swal.fire('', `El usuario ${this._user.login} se ha creado correctamente`, 'success');
           } else {
             Swal.fire('', `El usuario ${this._user.login} ya existe`, 'error');
           }
         },
-
       )
   }
 

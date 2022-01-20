@@ -61,12 +61,10 @@ export class AppLoginComponent {
     const res = this._userService.login(this._user)
       .subscribe(
         async response => {
-
           if (response.token !== '') {
             this._sessionStorageService.setItem(SESSION_STORAGE_ENUM.USER_DATA, response);
             this._router.navigate(['DashboardComponent']);
           } else {
-            // Si no existe el User o la contraseña es incorrecta
             Swal.fire('', `Usuario o password erroneo`, 'error');
           }
 

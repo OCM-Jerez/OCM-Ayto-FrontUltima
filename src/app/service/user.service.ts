@@ -25,15 +25,6 @@ export class UserService {
         return this.httpClient.post<IloginUser>(url, user)
     }
 
-    postUser(user: IloginUser): Observable<IloginUser> {
-        console.log("postUser", [user]);
-        try {
-            return this.httpClient.post<IloginUser>(this.URL_API, user)
-        } catch (error) {
-            console.log('Error en postUser', error);
-        }
-    }
-
     getUsers() {
         return this.httpClient.get<IloginUser[]>(this.URL_API)
     }
