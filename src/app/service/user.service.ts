@@ -20,10 +20,9 @@ export class UserService {
         return this.httpClient.get<IResponseLogin>(url)
     }
 
-    // Se usa en RegisterComponent
-    loginExist(user: IloginUser): Observable<boolean> {
+    registerUser(user: IloginUser): Observable<IloginUser> {
         const url = environment.host + '/auth' + '/registerLogin';
-        return this.httpClient.post<boolean>(url, user)
+        return this.httpClient.post<IloginUser>(url, user)
     }
 
     postUser(user: IloginUser): Observable<IloginUser> {

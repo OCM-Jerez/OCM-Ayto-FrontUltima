@@ -52,27 +52,17 @@ export class RegisterComponent {
       "password": this.formGroup.value.password
     }
 
-    const res = this._userService.loginExist(this._user)
+    const res = this._userService.registerUser(this._user)
       .subscribe(
         response => {
           console.log("response", response);
-          Swal.fire('', `El usuario ${this._user.login} ya existe`, 'error');
+          if (response.login === '') {
+            Swal.fire('', `El usuario ${this._user.login} se ha creado correctamente`, 'success');
+          } else {
+            Swal.fire('', `El usuario ${this._user.login} ya existe`, 'error');
+          }
         },
-        error => {
-          console.log("error", error, this._user);
-          // Si no existe el Usuario, guardarlo en BBDD.
-          this._userService.postUser(this._user)
-            .subscribe(response => {
-              console.log("response", response);
 
-              Swal.fire('', `El usuario ${this._user.login} ha sido creado correctamente`, 'success');
-            },
-              error => {
-                // TODO: Mejorar respuesta de error
-                Swal.fire('', `Error ${error.message}`, 'error');
-              }
-            );
-        }
       )
   }
 
