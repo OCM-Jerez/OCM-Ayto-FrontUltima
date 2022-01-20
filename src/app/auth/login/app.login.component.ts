@@ -63,7 +63,8 @@ export class AppLoginComponent {
         async response => {
           if (response.token !== '') {
             this._sessionStorageService.setItem(SESSION_STORAGE_ENUM.USER_DATA, response);
-            this._router.navigate(['DashboardIngresos']);
+            // this._router.navigate(['DashboardIngresos']);
+            this._router.navigateByUrl("/")
           } else {
             Swal.fire('', `Usuario o password erroneo`, 'error');
           }

@@ -13,6 +13,6 @@ export const routes: Routes = [{ path: "", component: RegisterComponent }]
     imports: [
         RouterModule.forChild(routes),
         SharedFormModule
-    ]
+    ],
 })
 export class RegisterModule { }

@@ -1,11 +1,11 @@
+import { AppComponent } from './../../app.component';
+import { MenuService } from './../../layout/menu/app.menu.service';
 import { Component, AfterViewInit, Renderer2, OnInit, OnDestroy } from '@angular/core';
-import { MenuService } from './layout/menu/app.menu.service';
 import { PrimeNGConfig } from 'primeng/api';
-import { AppComponent } from './app.component';
 
 @Component({
     selector: 'app-main',
-    templateUrl: './app.main.component.html'
+    templateUrl: './app-main.component.html'
 })
 export class AppMainComponent implements AfterViewInit, OnInit, OnDestroy {
     topbarMenuActive: boolean;

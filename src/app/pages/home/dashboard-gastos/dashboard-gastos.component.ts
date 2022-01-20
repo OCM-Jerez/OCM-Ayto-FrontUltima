@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
 import { SelectItem } from "primeng/api";
-import { Product } from "../../domain/product";
+import { Product } from "../../../domain/product";
 
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { UIChart } from "primeng/chart";
-import { AppComponent } from "../../app.component";
-import { AppMainComponent } from "../../app.main.component";
+import { AppComponent } from "../../../app.component";
 import { throwError } from 'rxjs';
+import { AppMainComponent } from '../app-main.component';
 
 @Component({
     templateUrl: "./dashboard-gastos.component.html",

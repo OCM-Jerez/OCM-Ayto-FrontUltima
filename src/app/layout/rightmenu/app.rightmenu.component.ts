@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../../app.component';
-import { AppMainComponent } from '../../app.main.component';
+import { AppMainComponent } from '../../pages/home/app-main.component';
 
 @Component({
     selector: 'app-rightmenu',

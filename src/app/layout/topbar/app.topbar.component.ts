@@ -3,8 +3,8 @@ import { trigger, style, transition, animate, AnimationEvent } from '@angular/an
 
 import { MegaMenuItem } from 'primeng/api';
 import { AppComponent } from '../../app.component';
-import { AppMainComponent } from '../../app.main.component';
 import { JwtValidService } from '../../../common/services/token-valid.service';
+import { AppMainComponent } from '../../pages/home/app-main.component';
 
 @Component({
     selector: 'app-topbar',

@@ -4,7 +4,6 @@ import { PrimeNGConfig } from "primeng/api";
 @Component({
     selector: "app-root",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
     topbarTheme: string = "blue";
@@ -16,7 +15,7 @@ export class AppComponent implements OnInit {
     ripple: boolean = true;
     isRTL: boolean = false;
 
-    constructor(private primengConfig: PrimeNGConfig) {}
+    constructor(private primengConfig: PrimeNGConfig) { }
 
     ngOnInit() {
         this.primengConfig.ripple = true;

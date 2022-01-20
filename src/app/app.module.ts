@@ -9,21 +9,11 @@ import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AppConfigComponent } from "./app.config.component";
-import { AppMainComponent } from "./app.main.component";
 // import { AppCodeModule } from "../../obsoletos/app.code.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
 import { AppLoginComponent } from "./auth/login/app.login.component";
-
-import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
-import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
-import { AppFooterComponent } from "./layout/footer/app.footer.component";
-import { AppMenuComponent } from "./layout/menu/app.menu.component";
-import { AppRightMenuComponent } from "./layout/rightmenu/app.rightmenu.component";
-import { AppTopBarComponent } from "./layout/topbar/app.topbar.component";
-import { MenuService } from "./layout/menu/app.menu.service";
 
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
@@ -32,8 +22,6 @@ import { BarrioComponent } from './pages/barrio/barrio.component';
 import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
 import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { DashboardGastosComponent } from "./pages/dashboard-gastos/dashboard-gastos.component";
-import { DashboardIngresosComponent } from "./pages/dashboard-ingresos/dashboard-ingresos.component";
 import { DashboardtiemposComponent } from "./pages/dashboard-tiempos/dashboard-tiempos.component";
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
@@ -96,7 +84,6 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoService } from "./service/sindicato.service";
 
 import { ApiInterceptor } from '../common/interceptors/api.interceptor';
-import { AppMenuitemComponent } from "./app.menuitem.component";
 
 @NgModule({
     imports: [
@@ -140,25 +127,15 @@ import { AppMenuitemComponent } from "./app.menuitem.component";
         TooltipModule,
     ],
     declarations: [
-        AppBreadcrumbComponent,
         AppComponent,
-        AppConfigComponent,
         AppErrorComponent,
-        AppFooterComponent,
         AppLoginComponent,
-        AppMainComponent,
-        AppMenuComponent,
-        AppMenuitemComponent,
         AppNotfoundComponent,
         AppProgramasComponent,
-        AppRightMenuComponent,
-        AppTopBarComponent,
         BarrioComponent,
         CapituloGastoComponent,
         CapituloIngresosComponent,
         CuentaGeneralComponent,
-        DashboardGastosComponent,
-        DashboardIngresosComponent,
         DashboardtiemposComponent,
         DelegacionComponent,
         DistritoComponent,
@@ -172,7 +149,6 @@ import { AppMenuitemComponent } from "./app.menuitem.component";
         SindicatoComponent,
     ],
     providers: [
-        AppBreadcrumbService,
         BarrioService,
         CapituloGastoService,
         CapituloIngresoService,
@@ -185,7 +161,7 @@ import { AppMenuitemComponent } from "./app.menuitem.component";
         EnteService,
         // EventService,
         // IconService,
-        MenuService,
+
         MessageService,
         OrganicoService,
         OrganoContratacionService,

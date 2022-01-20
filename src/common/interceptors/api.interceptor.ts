@@ -8,6 +8,9 @@ import { JwtValidService } from '../services/token-valid.service';
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
     constructor(private _jwtValidService: JwtValidService, private _router: Router) { }
+
+    whiteList = ['auth', 'register'];
+
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         if (this._urlWhiteList(req.url)) {
@@ -34,6 +37,9 @@ export class ApiInterceptor implements HttpInterceptor {
     }
 
     private _urlWhiteList(url: string): boolean {
-        return url.search('auth') > -1
+        const search = this.whiteList.find(item => url.search(item) > -1);
+
+        return search !== undefined;
+        // return url.search('auth') > -1
     }
 }
