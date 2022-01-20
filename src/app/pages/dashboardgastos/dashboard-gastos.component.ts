@@ -1,69 +1,38 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-// import { EventService } from "../service/eventservice";
-import { EventService } from "../../service/eventservice";
+
 import { SelectItem } from "primeng/api";
-// import { Product } from "../domain/product";
 import { Product } from "../../domain/product";
-// import { ProductService } from "../service/productservice";
-import { ProductService } from "../../service/productservice";
 
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { UIChart } from "primeng/chart";
 import { AppComponent } from "../../app.component";
 import { AppMainComponent } from "../../app.main.component";
+import { throwError } from 'rxjs';
 
 @Component({
-    templateUrl: "./dashboardanalytics.component.html",
+    templateUrl: "./dashboard-gastos.component.html",
 })
-export class DashboardAnalyticsComponent implements OnInit, AfterViewInit {
-    cities: SelectItem[];
-    products: Product[];
+export class DashboardGastosComponent implements OnInit, AfterViewInit {
     chartMonthlyData: any;
     chartMonthlyOptions: any;
     doughnutData: any;
     doughnutOptions: any;
-    storeATotalValue: number = 100;
-    storeADiff: number = 0;
-    storeAStatus: number = 0;
-    storeAData: any;
-    storeBTotalValue: number = 120;
-    storeBDiff: number = 0;
-    storeBStatus: number = 0;
-    storeBData: any;
-    storeCTotalValue: number = 150;
-    storeCDiff: number = 0;
-    storeCStatus: number = 0;
-    storeCData: any;
-    storeDTotalValue: number = 80;
-    storeDDiff: number = 0;
-    storeDStatus: number = 0;
-    storeDData: any;
-    storeOptions: any;
-    storeInterval: any;
     pieData: any;
     pieOptions: any;
     mainData: any;
-    events: any[];
-    selectedCity: any;
 
     @ViewChild("doughnut") doughnutViewChild: UIChart;
     @ViewChild("bar") chartViewChild: UIChart;
-    // @ViewChild("storeA") storeAViewChild: UIChart;
-    // @ViewChild("storeB") storeBViewChild: UIChart;
-    // @ViewChild("storeC") storeCViewChild: UIChart;
-    // @ViewChild("storeD") storeDViewChild: UIChart;
     @ViewChild("pie") pieViewChild: UIChart;
 
     constructor(
         public app: AppComponent,
         public appMain: AppMainComponent,
-        private productService: ProductService,
-        private eventService: EventService,
         private breadcrumbService: AppBreadcrumbService
     ) {
         this.breadcrumbService.setItems([
             {
-                label: "Dashboard Analytics",
+                label: "Dashboard gastos",
                 routerLink: ["/dashboardanalytics"],
             },
         ]);
@@ -71,37 +40,6 @@ export class DashboardAnalyticsComponent implements OnInit, AfterViewInit {
 
 
     ngOnInit() {
-        this.productService
-            .getProducts()
-            .then((data) => (this.products = data));
-
-        this.eventService.getEvents().then((events) => {
-            this.events = events;
-        });
-
-        this.cities = [];
-        this.cities.push({ label: "Select City", value: null });
-        this.cities.push({
-            label: "New York",
-            value: { id: 1, name: "New York", code: "NY" },
-        });
-        this.cities.push({
-            label: "Rome",
-            value: { id: 2, name: "Rome", code: "RM" },
-        });
-        this.cities.push({
-            label: "London",
-            value: { id: 3, name: "London", code: "LDN" },
-        });
-        this.cities.push({
-            label: "Istanbul",
-            value: { id: 4, name: "Istanbul", code: "IST" },
-        });
-        this.cities.push({
-            label: "Paris",
-            value: { id: 5, name: "Paris", code: "PRS" },
-        });
-
         this.chartMonthlyData = this.getChartData();
         this.chartMonthlyOptions = this.getChartOptions();
 
@@ -119,196 +57,14 @@ export class DashboardAnalyticsComponent implements OnInit, AfterViewInit {
             this.pieData = this.getPieData();
             this.pieOptions = this.getPieOptions();
         };
-
-        this.storeAData = {
-            labels: [
-                "Enero",
-                "Febrero",
-                "Marzo",
-                "Abril",
-                "Mayo",
-                "Junio",
-                "Julio",
-                "Agosto",
-                "Septiembre",
-            ],
-            datasets: [
-                {
-                    data: [55, 3, 45, 6, 44, 58, 84, 68, 64],
-                    borderColor: ["#4DD0E1"],
-                    backgroundColor: ["rgba(77, 208, 225, 0.8)"],
-                    borderWidth: 2,
-                    fill: true,
-                },
-            ],
-        };
-
-        this.storeBData = {
-            labels: [
-                "Enero",
-                "Febrero",
-                "Marzo",
-                "Abril",
-                "Mayo",
-                "Junio",
-                "Julio",
-                "Agosto",
-                "Septiembre",
-            ],
-            datasets: [
-                {
-                    data: [81, 75, 63, 100, 69, 79, 38, 37, 76],
-                    borderColor: ["#4DD0E1"],
-                    backgroundColor: ["rgba(77, 208, 225, 0.8)"],
-                    borderWidth: 2,
-                    fill: true,
-                },
-            ],
-        };
-
-        this.storeCData = {
-            labels: [
-                "Enero",
-                "Febrero",
-                "Marzo",
-                "Abril",
-                "Mayo",
-                "Junio",
-                "Julio",
-                "Agosto",
-                "Septiembre",
-            ],
-            datasets: [
-                {
-                    data: [99, 55, 22, 72, 24, 79, 35, 91, 48],
-                    borderColor: ["#4DD0E1"],
-                    backgroundColor: ["rgba(77, 208, 225, 0.8)"],
-                    borderWidth: 2,
-                    fill: true,
-                },
-            ],
-        };
-
-        this.storeDData = {
-            labels: [
-                "Enero",
-                "Febrero",
-                "Marzo",
-                "Abril",
-                "Mayo",
-                "Junio",
-                "Julio",
-                "Agosto",
-                "Septiembre",
-            ],
-            datasets: [
-                {
-                    data: [5, 51, 68, 82, 28, 21, 29, 45, 44],
-                    borderColor: ["#4DD0E1"],
-                    backgroundColor: ["rgba(77, 208, 225, 0.8)"],
-                    borderWidth: 2,
-                    fill: true,
-                },
-            ],
-        };
-
-        this.storeOptions = {
-            legend: {
-                display: false,
-            },
-            responsive: true,
-            aspectRatio: 4,
-            scales: {
-                yAxes: [
-                    {
-                        display: false,
-                    },
-                ],
-                xAxes: [
-                    {
-                        display: false,
-                    },
-                ],
-            },
-            tooltips: {
-                enabled: false,
-            },
-            elements: {
-                point: {
-                    radius: 0,
-                },
-            },
-        };
-
-
-
     }
 
     ngAfterViewInit(): void {
-
-        const calculateStore = (storeData, totalValue) => {
-            let randomNumber = +(Math.random() * 500).toFixed(2);
-            let data = storeData.datasets[0].data;
-            let length = data.length;
-            data.push(randomNumber);
-            data.shift();
-
-            let diff = +(data[length - 1] - data[length - 2]).toFixed(2);
-            let status = diff === 0 ? 0 : diff > 0 ? 1 : -1;
-            totalValue = +(totalValue + diff).toFixed(2);
-
-            return { diff, totalValue, status };
-        };
-
-        // this.storeInterval = setInterval(() => {
-        //     requestAnimationFrame(() => {
-        //         let {
-        //             diff: storeADiff,
-        //             totalValue: storeATotalValue,
-        //             status: storeAStatus,
-        //         } = calculateStore(this.storeAData, this.storeATotalValue);
-        //         this.storeADiff = storeADiff;
-        //         this.storeATotalValue = storeATotalValue;
-        //         this.storeAStatus = storeAStatus;
-        //         this.storeAViewChild.chart.update();
-
-        //         let {
-        //             diff: storeBDiff,
-        //             totalValue: storeBTotalValue,
-        //             status: storeBStatus,
-        //         } = calculateStore(this.storeBData, this.storeBTotalValue);
-        //         this.storeBDiff = storeBDiff;
-        //         this.storeBTotalValue = storeBTotalValue;
-        //         this.storeBStatus = storeBStatus;
-        //         this.storeBViewChild.chart.update();
-
-        //         let {
-        //             diff: storeCDiff,
-        //             totalValue: storeCTotalValue,
-        //             status: storeCStatus,
-        //         } = calculateStore(this.storeCData, this.storeCTotalValue);
-        //         this.storeCDiff = storeCDiff;
-        //         this.storeCTotalValue = storeCTotalValue;
-        //         this.storeCStatus = storeCStatus;
-        //         this.storeCViewChild.chart.update();
-
-        //         let {
-        //             diff: storeDDiff,
-        //             totalValue: storeDTotalValue,
-        //             status: storeDStatus,
-        //         } = calculateStore(this.storeDData, this.storeDTotalValue);
-        //         this.storeDDiff = storeDDiff;
-        //         this.storeDTotalValue = storeDTotalValue;
-        //         this.storeDStatus = storeDStatus;
-        //         this.storeDViewChild.chart.update();
-        //     });
-        // }, 2000);
+        throwError('sin definir');
     }
 
     ngOnDestroy() {
-        if (this.storeInterval) {
-            clearInterval(this.storeInterval);
-        }
+
     }
 
     getColors() {

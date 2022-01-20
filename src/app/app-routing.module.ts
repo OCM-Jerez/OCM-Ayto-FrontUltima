@@ -10,7 +10,7 @@ import { BarrioComponent } from "./pages/barrio/barrio.component";
 import { CapituloGastoComponent } from "./pages/capitulo-gasto/capitulo-gasto.component";
 import { CapituloIngresosComponent } from "./pages/capitulo-ingresos/capitulo-ingresos.component";
 import { CuentaGeneralComponent } from "./pages/cuenta-general/cuenta-general.component";
-import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
+import { DashboardGastosComponent } from "./pages/dashboardgastos/dashboard-gastos.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DelegacionComponent } from "./pages/delegacion/delegacion.component";
@@ -43,7 +43,7 @@ import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
                         },
                         {
                             path: "dashboardanalytics", // Gastos
-                            component: DashboardAnalyticsComponent,
+                            component: DashboardGastosComponent,
                         },
                         {
                             path: "dashboardtiempos",

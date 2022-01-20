@@ -13,12 +13,10 @@ import { AppConfigComponent } from "./app.config.component";
 import { AppMainComponent } from "./app.main.component";
 import { AppMenuitemComponent } from "./app.menuitem.component";
 import { AppCodeModule } from "./app.code.component";
-// import { AppInlineMenuComponent } from "./app.inlinemenu.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
 import { AppLoginComponent } from "./auth/login/app.login.component";
-// import { RegisterComponent } from './auth/register/register.component';
 
 import { AppBreadcrumbComponent } from "./layout/breadcrumb/app.breadcrumb.component";
 import { AppBreadcrumbService } from "./layout/breadcrumb/app.breadcrumb.service";
@@ -35,7 +33,7 @@ import { BarrioComponent } from './pages/barrio/barrio.component';
 import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
 import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { DashboardAnalyticsComponent } from "./pages/dashboardgastos/dashboardanalytics.component";
+import { DashboardGastosComponent } from "./pages/dashboardgastos/dashboard-gastos.component";
 import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
@@ -81,60 +79,9 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { ToolbarModule } from "primeng/toolbar";
 import { TooltipModule } from "primeng/tooltip";
 
-// import { AccordionModule } from "primeng/accordion";
-// import { AutoCompleteModule } from "primeng/autocomplete";
-// import { AvatarGroupModule } from "primeng/avatargroup";
-// import { AvatarModule } from "primeng/avatar";
-// import { BadgeModule } from "primeng/badge";
-// import { ButtonModule } from "primeng/button";
-// import { CalendarModule } from "primeng/calendar";
-// import { CardModule } from "primeng/card";
-// import { CarouselModule } from "primeng/carousel";
-// import { CascadeSelectModule } from "primeng/cascadeselect";
-// import { CheckboxModule } from "primeng/checkbox";
-// import { ChipModule } from "primeng/chip";
-// import { ChipsModule } from "primeng/chips";
-// import { CodeHighlighterModule } from "primeng/codehighlighter";
-// import { ColorPickerModule } from "primeng/colorpicker";
-// import { DataViewModule } from "primeng/dataview";
-// import { DividerModule } from "primeng/divider";
-// import { FieldsetModule } from "primeng/fieldset";
-// import { FileUploadModule } from "primeng/fileupload";
-// import { FullCalendarModule } from "primeng/fullcalendar";
-// import { GalleriaModule } from "primeng/galleria";
-// import { InplaceModule } from "primeng/inplace";
-// import { InputMaskModule } from "primeng/inputmask";
-// import { InputNumberModule } from "primeng/inputnumber";
-// import { KnobModule } from "primeng/knob";
-// import { LightboxModule } from "primeng/lightbox";
-// import { ListboxModule } from "primeng/listbox";
-// import { MessageModule } from "primeng/message";
-// import { MessagesModule } from "primeng/messages";
-// import { MultiSelectModule } from "primeng/multiselect";
-// import { OrderListModule } from "primeng/orderlist";
-// import { OrganizationChartModule } from "primeng/organizationchart";
-// import { PaginatorModule } from "primeng/paginator";
-// import { PasswordModule } from "primeng/password";
-// import { PickListModule } from "primeng/picklist";
-// import { ProgressBarModule } from "primeng/progressbar";
-// import { RatingModule } from "primeng/rating";
-// import { RippleModule } from "primeng/ripple";
-// import { ScrollPanelModule } from "primeng/scrollpanel";
-// import { ScrollTopModule } from "primeng/scrolltop";
-// import { SkeletonModule } from "primeng/skeleton";
-// import { SplitterModule } from "primeng/splitter";
-// import { StepsModule } from "primeng/steps";
-// import { TagModule } from "primeng/tag";
-// import { TerminalModule } from "primeng/terminal";
-// import { TieredMenuModule } from "primeng/tieredmenu";
-// import { TreeModule } from "primeng/tree";
-// import { TreeTableModule } from "primeng/treetable";
-// import { VirtualScrollerModule } from "primeng/virtualscroller";
-
 import { CustomerService } from "./service/customerservice";
-import { EventService } from "./service/eventservice";
+// import { EventService } from "./service/eventservice";
 import { IconService } from "./service/iconservice";
-import { ProductService } from "./service/productservice";
 
 import { BarrioService } from "./service/barrio.service";
 import { CapituloGastoService } from "./service/capitulo-gasto.service";
@@ -149,10 +96,6 @@ import { OrganoContratacionService } from "./service/organo-contratacion.service
 import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoService } from "./service/sindicato.service";
 
-// import { ProgramaService } from "./service/programaservice";
-// import { CountryService } from "./service/countryservice";
-// import { NodeService } from "./service/nodeservice";
-// import { PhotoService } from "./service/photoservice";
 import { ApiInterceptor } from '../common/interceptors/api.interceptor';
 
 @NgModule({
@@ -195,56 +138,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         ToggleButtonModule,
         ToolbarModule,
         TooltipModule,
-
-        // AccordionModule,
-        // AutoCompleteModule,
-        // AvatarGroupModule,
-        // AvatarModule,
-        // BadgeModule,
-        // ButtonModule,
-        // CalendarModule,
-        // CardModule,
-        // CarouselModule,
-        // CascadeSelectModule,
-        // CheckboxModule,
-        // ChipModule,
-        // ChipsModule,
-        // CodeHighlighterModule,
-        // ColorPickerModule,
-        // DataViewModule,
-        // DividerModule,
-        // FieldsetModule,
-        // FileUploadModule,
-        // FullCalendarModule,
-        // GalleriaModule,
-        // InplaceModule,
-        // InputMaskModule,
-        // InputNumberModule,
-        // KnobModule,
-        // LightboxModule,
-        // ListboxModule,
-        // MessageModule,
-        // MessagesModule,
-        // MultiSelectModule,
-        // OrderListModule,
-        // OrganizationChartModule,
-        // PaginatorModule,
-        // PasswordModule,
-        // PickListModule,
-        // ProgressBarModule,
-        // RatingModule,
-        // RippleModule,
-        // ScrollPanelModule,
-        // ScrollTopModule,
-        // SkeletonModule,
-        // SplitterModule,
-        // StepsModule,
-        // TagModule,
-        // TerminalModule,
-        // TieredMenuModule,
-        // TreeModule,
-        // TreeTableModule,
-        // VirtualScrollerModule,
     ],
     declarations: [
         AppBreadcrumbComponent,
@@ -264,7 +157,7 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         CapituloGastoComponent,
         CapituloIngresosComponent,
         CuentaGeneralComponent,
-        DashboardAnalyticsComponent,
+        DashboardGastosComponent,
         DashboardComponent,
         DashboardtiemposComponent,
         DelegacionComponent,
@@ -277,9 +170,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         ProgramaDetailComponent,
         SeccionCensalComponent,
         SindicatoComponent,
-        // RegisterComponent,
-        // Añade avatar y menu opciones al final del menu de la izquierda
-        // AppInlineMenuComponent
     ],
     providers: [
         AppBreadcrumbService,
@@ -293,7 +183,7 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         EcoGastoService,
         EcoIngresoService,
         EnteService,
-        EventService,
+        // EventService,
         IconService,
         MenuService,
         MessageService,
@@ -301,13 +191,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         OrganoContratacionService,
         SeccionCensalService,
         SindicatoService,
-
-        ProductService,  //Se usa en Dashboard gastos
-        // ProgramaService,
-        // CountryService,
-        // NodeService,
-        // PhotoService,
-
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         {
             provide: HTTP_INTERCEPTORS,
