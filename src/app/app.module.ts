@@ -11,7 +11,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppConfigComponent } from "./app.config.component";
 import { AppMainComponent } from "./app.main.component";
-import { AppCodeModule } from "./app.code.component";
+// import { AppCodeModule } from "../../obsoletos/app.code.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
 
@@ -100,7 +100,7 @@ import { AppMenuitemComponent } from "./app.menuitem.component";
 
 @NgModule({
     imports: [
-        AppCodeModule,
+        // AppCodeModule,
         AppRoutingModule,
         BreadcrumbModule,
         BrowserAnimationsModule,
