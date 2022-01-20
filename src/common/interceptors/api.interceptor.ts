@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { EMPTY, Observable } from 'rxjs';
 import { JwtValidService } from '../services/token-valid.service';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
     constructor(private _jwtValidService: JwtValidService, private _router: Router) { }
-
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
 
         if (this._urlWhiteList(req.url)) {
             return next.handle(req);
