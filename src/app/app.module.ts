@@ -34,7 +34,7 @@ import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.co
 import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
 import { DashboardGastosComponent } from "./pages/dashboardgastos/dashboard-gastos.component";
-import { DashboardComponent } from "./pages/dashboardingresos/dashboard.component";
+import { DashboardIngresosComponent } from "./pages/dashboardingresos/dashboard-ingresos.component";
 import { DashboardtiemposComponent } from "./pages/dashboardtiempos/dashboardtiempos.component";
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
@@ -158,7 +158,7 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         CapituloIngresosComponent,
         CuentaGeneralComponent,
         DashboardGastosComponent,
-        DashboardComponent,
+        DashboardIngresosComponent,
         DashboardtiemposComponent,
         DelegacionComponent,
         DistritoComponent,

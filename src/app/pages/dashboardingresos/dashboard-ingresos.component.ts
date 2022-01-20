@@ -1,13 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
 import { AppMainComponent } from "../../app.main.component";
 import { AppComponent } from "../../app.component";
 
 @Component({
-    templateUrl: "./dashboard.component.html",
+    templateUrl: "./dashboard-ingresos.component.html",
 })
-export class DashboardComponent implements OnInit {
+export class DashboardIngresosComponent implements OnInit {
     ordersChart: any;
     ordersOptions: any;
     chartData: any;
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
         private breadcrumbService: AppBreadcrumbService
     ) {
         this.breadcrumbService.setItems([
-            { label: "Dashboard ingresos", routerLink: ["/"] },
+            { label: "Dashboard ingresos", routerLink: ["/DashboardComponent"] },
         ]);
     }
 
