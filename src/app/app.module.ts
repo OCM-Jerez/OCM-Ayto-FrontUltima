@@ -11,7 +11,6 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppConfigComponent } from "./app.config.component";
 import { AppMainComponent } from "./app.main.component";
-import { AppMenuitemComponent } from "./app.menuitem.component";
 import { AppCodeModule } from "./app.code.component";
 
 import { HighchartsChartModule } from "highcharts-angular";
@@ -79,9 +78,9 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { ToolbarModule } from "primeng/toolbar";
 import { TooltipModule } from "primeng/tooltip";
 
-import { CustomerService } from "./service/customerservice";
+// import { CustomerService } from "../../obsoletos/sevices/customerservice";
 // import { EventService } from "./service/eventservice";
-import { IconService } from "./service/iconservice";
+// import { IconService } from "../../obsoletos/service/iconservice";
 
 import { BarrioService } from "./service/barrio.service";
 import { CapituloGastoService } from "./service/capitulo-gasto.service";
@@ -97,6 +96,7 @@ import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoService } from "./service/sindicato.service";
 
 import { ApiInterceptor } from '../common/interceptors/api.interceptor';
+import { AppMenuitemComponent } from "./app.menuitem.component";
 
 @NgModule({
     imports: [
@@ -177,14 +177,14 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         CapituloGastoService,
         CapituloIngresoService,
         ConfirmationService,
-        CustomerService,
+        // CustomerService,
         DelegacionService,
         DistritoService,
         EcoGastoService,
         EcoIngresoService,
         EnteService,
         // EventService,
-        IconService,
+        // IconService,
         MenuService,
         MessageService,
         OrganicoService,
