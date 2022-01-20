@@ -6,8 +6,8 @@ import * as moment from 'moment'
 
 @Component({
     selector: "app-dashboardtiempos",
-    templateUrl: "./dashboardtiempos.component.html",
-    styleUrls: ["./dashboardtiempos.component.scss"],
+    templateUrl: "./dashboard-tiempos.component.html",
+    styleUrls: ["./dashboard-tiempos.component.scss"],
 })
 
 export class DashboardtiemposComponent {
