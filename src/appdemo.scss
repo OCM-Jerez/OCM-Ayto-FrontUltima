@@ -1,4 +1,4 @@
-@import "assets/demo/flags/flags.css";
+// @import "assets/demo/flags/flags.css";
 
 .layout-topbar {
     .notifications {
@@ -21,14 +21,14 @@
     .app {
         .layout-topbar-action-panel {
             a {
-                padding: .5rem 0;
+                padding: 0.5rem 0;
 
                 i {
                     width: 42px;
                     height: 42px;
                     border: 1px solid transparent;
                     border-radius: 50%;
-                    margin: .5rem 0;
+                    margin: 0.5rem 0;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -40,8 +40,8 @@
 
 .layout-rightmenu {
     .header {
-        padding-bottom: .5rem;
-        margin-bottom: .714rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.714rem;
         border-bottom: 1px solid var(--divider-color);
     }
 
@@ -51,7 +51,7 @@
         }
 
         b {
-            color: var(--primary-color)
+            color: var(--primary-color);
         }
     }
 
@@ -70,7 +70,7 @@
             padding: 0;
 
             > li {
-                padding: .875rem .5rem;
+                padding: 0.875rem 0.5rem;
             }
         }
     }
@@ -113,10 +113,10 @@
                 border: 0 none;
 
                 .p-column-title {
-                    padding: .4rem;
+                    padding: 0.4rem;
                     min-width: 30%;
                     display: inline-block;
-                    margin: -.4em 1em -.4em -.4rem;
+                    margin: -0.4em 1em -0.4em -0.4rem;
                     font-weight: bold;
                 }
 
