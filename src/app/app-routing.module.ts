@@ -38,15 +38,15 @@ import { SindicatoComponent } from "./pages/sindicato/sindicato.component";
                     children: [
 
                         {
-                            path: "DashboardComponent",  //Ingresos
+                            path: "DashboardIngresos",  //Ingresos
                             component: DashboardIngresosComponent
                         },
                         {
-                            path: "dashboardanalytics", // Gastos
+                            path: "dashboardGastos", // Gastos
                             component: DashboardGastosComponent,
                         },
                         {
-                            path: "dashboardtiempos",
+                            path: "dashboardTiempos",
                             component: DashboardtiemposComponent,
                         },
                         // **************** ingresos **********************
