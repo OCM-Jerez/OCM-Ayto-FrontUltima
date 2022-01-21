@@ -16,11 +16,9 @@ import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { BarrioComponent } from './pages/barrio/barrio.component';
-import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
-import { EcoIngresosComponent } from './pages/eco-ingresos/eco-ingresos.component';
 import { EnteComponent } from './pages/ente/ente.component';
 import { OrganicosComponent } from './pages/organicos/organicos.component';
 import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
@@ -125,11 +123,9 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppLoginComponent,
         AppNotfoundComponent,
         BarrioComponent,
-        CapituloGastoComponent,
         CuentaGeneralComponent,
         DelegacionComponent,
         DistritoComponent,
-        EcoIngresosComponent,
         EnteComponent,
         OrganicosComponent,
         OrganoContratacionComponent,

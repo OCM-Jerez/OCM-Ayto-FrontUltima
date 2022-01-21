@@ -13,10 +13,12 @@
         "titleBar.activeBackground": "#0bbae6",
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#0bbae6",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    {
+        "titleBar.inactiveForeground": "#e7e7e799",
         "search.exclude": {
             "**/node_modules": false
+        },
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
         }
-    }
+    },
+}

@@ -1,31 +1,31 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { EcoIngreso } from "../../domain/eco-ingreso";
-import { EcoIngresoService } from "../../service/ecoingresoservice";
+import { CapituloGasto } from "../../../domain/capitulo-gasto";
+import { CapituloGastoService } from "../../../service/capitulo-gasto.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-eco-ingresos',
-  templateUrl: './eco-ingresos.component.html',
-  styleUrls: ['./eco-ingresos.component.scss'],
+  selector: 'app-capitulo-gasto',
+  templateUrl: './capitulo-gastos.component.html',
+  styleUrls: ['./capitulo-gastos.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class EcoIngresosComponent implements OnInit {
-  ecoIngresoDialog: boolean;
+export class CapituloGastosComponent implements OnInit {
+  _dialog: boolean;
   // programas: Organico[];
-  ecoIngreso$: Observable<EcoIngreso[]>;
+  _obs$: Observable<CapituloGasto[]>;
 
-  ecoIngreso: EcoIngreso;
-  selectedEcoIngreso: EcoIngreso[];
+  _obj: CapituloGasto;
+  _selected: CapituloGasto[];
   submitted: boolean;
   cols: any[];
 
   constructor(
-    private ecoIngresoService: EcoIngresoService,
+    private capituloGastoService: CapituloGastoService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
@@ -38,7 +38,7 @@ export class EcoIngresosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ecoIngreso$ = this.ecoIngresoService.getEcoIngreso();
+    this._obs$ = this.capituloGastoService.getCapituloGasto();
     // Nombres columnas al exportar a .CSV.
     this.cols = [
       { field: "Codigo", header: "Codigo" },
@@ -50,24 +50,24 @@ export class EcoIngresosComponent implements OnInit {
   }
 
   openNew() {
-    this.ecoIngreso = {};
+    this._obj = {};
     this.submitted = false;
-    this.ecoIngresoDialog = true;
+    this._dialog = true;
   }
 
-  edit(ecoIngreso: EcoIngreso) {
-    this.ecoIngreso = { ...ecoIngreso };
-    this.ecoIngresoDialog = true;
+  edit(_obj: CapituloGasto) {
+    this._obj = { ..._obj };
+    this._dialog = true;
   }
 
   detail(codEco: string, desEco: string) {
-    this.ecoIngresoService.codEco = codEco;
-    this.ecoIngresoService.desEco = desEco;
+    this.capituloGastoService.codEco = codEco;
+    this.capituloGastoService.desEco = desEco;
     this.router.navigate(["/pages/programaDetail"]);
   }
 
   hideDialog() {
-    this.ecoIngresoDialog = false;
+    this._dialog = false;
     this.submitted = false;
   }
 

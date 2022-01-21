@@ -10,7 +10,6 @@ export const routes: Routes = [
         path: "",
         component: AppMainComponent,
         children: [
-
             {
                 path: "DashboardIngresos",
                 component: DashboardIngresosComponent
@@ -23,22 +22,20 @@ export const routes: Routes = [
                 path: "dashboardTiempos",
                 loadChildren: () => import('./dashboard-tiempos/dashboard-tiempos.module').then(m => m.DashboardtiemposModule)
             },
-            //     // **************** ingresos **********************
-            //     {
-            //         path: "pages/capituloIngresos",
-            //         component: CapituloIngresosComponent,
-            //     },
+            //   **************** ingresos **********************
             {
                 path: "pages/capituloIngresos",
                 loadChildren: () => import('./capitulo-ingresos/capitulo-ingresos.module').then(m => m.CapituloIngresosModule)
             },
-
-            //     {
-            //         path: "pages/ecoIngresos",
-            //         component: EcoIngresosComponent,
-            //     },
-
-            //     // **************** gastos ************************
+            {
+                path: "pages/ecoIngresos",
+                loadChildren: () => import('./eco-ingresos/eco-ingresos.module').then(m => m.EcoIngresosModule)
+            },
+            //   **************** gastos ************************
+            {
+                path: "pages/capituloGasto",
+                loadChildren: () => import('./capitulo-gastos/capitulo-gastos.module').then(m => m.CapituloGastosModule)
+            },
             //     {
             //         path: "pages/capituloGasto",
             //         component: CapituloGastoComponent,
