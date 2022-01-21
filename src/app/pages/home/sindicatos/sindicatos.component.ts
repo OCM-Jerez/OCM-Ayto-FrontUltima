@@ -1,20 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Sindicato } from "../../domain/sindicato";
-import { SindicatoService } from "../../service/sindicato.service";
+import { Sindicato } from "../../../domain/sindicato";
+import { SindicatoService } from "../../../service/sindicato.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-sindicato',
-  templateUrl: './sindicato.component.html',
-  styleUrls: ['./sindicato.component.scss'],
+  templateUrl: './sindicatos.component.html',
+  styleUrls: ['./sindicatos.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class SindicatoComponent implements OnInit {
+export class SindicatosComponent implements OnInit {
   _dialog: boolean;
   _obs$: Observable<Sindicato[]>;
 

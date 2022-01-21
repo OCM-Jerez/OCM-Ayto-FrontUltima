@@ -77,12 +77,15 @@ export const routes: Routes = [
                 path: "pages/organoContratacion",
                 loadChildren: () => import('./organo-contratacion/organo-contratacion.module').then(m => m.OrganoContratacionModule)
             },
-            //    
-            //     {
-            //         path: "pages/sindicato",
-            //         component: SindicatoComponent,
-            //     },
+            {
+                path: "pages/sindicato",
+                loadChildren: () => import('./sindicatos/sindicatos.module').then(m => m.SindicatosModule)
+            },
             //  **************** organización geográfica ************************
+            {
+                path: "pages/barrio",
+                loadChildren: () => import('./barrios/barrios.module').then(m => m.BarriosModule)
+            },
             //     {
             //         path: "pages/barrio",
             //         component: BarrioComponent,

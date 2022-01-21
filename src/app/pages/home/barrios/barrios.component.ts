@@ -1,20 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Barrio } from "../../domain/barrio";
-import { BarrioService } from "../../service/barrio.service";
+import { Barrio } from "../../../domain/barrio";
+import { BarrioService } from "../../../service/barrio.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-barrio',
-  templateUrl: './barrio.component.html',
-  styleUrls: ['./barrio.component.scss'],
+  templateUrl: './barrios.component.html',
+  styleUrls: ['./barrios.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class BarrioComponent implements OnInit {
+export class BarriosComponent implements OnInit {
   _dialog: boolean;
   // programas: Organico[];
   _obs$: Observable<Barrio[]>;

@@ -14,11 +14,9 @@ import { AppLoginComponent } from "./auth/login/app.login.component";
 
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
-import { BarrioComponent } from './pages/barrio/barrio.component';
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
-import { SindicatoComponent } from './pages/sindicato/sindicato.component';
 
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ChartModule } from "primeng/chart";
@@ -111,11 +109,9 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppErrorComponent,
         AppLoginComponent,
         AppNotfoundComponent,
-        BarrioComponent,
         DistritoComponent,
         ProgramaDetailComponent,
         SeccionCensalComponent,
-        SindicatoComponent,
     ],
     providers: [
         BarrioService,
