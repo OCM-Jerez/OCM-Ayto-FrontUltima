@@ -15,13 +15,11 @@ import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { BarrioComponent } from './pages/barrio/barrio.component';
-import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { DelegacionComponent } from './pages/delegacion/delegacion.component';
-import { DistritoComponent } from './pages/distrito/distrito.component';
-import { EnteComponent } from './pages/ente/ente.component';
+import { EnteComponent } from './pages/home/ente/ente.component';
 import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
+import { DistritoComponent } from './pages/distrito/distrito.component';
 import { SindicatoComponent } from './pages/sindicato/sindicato.component';
 
 import { BreadcrumbModule } from "primeng/breadcrumb";
@@ -116,8 +114,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppLoginComponent,
         AppNotfoundComponent,
         BarrioComponent,
-        CuentaGeneralComponent,
-        DelegacionComponent,
         DistritoComponent,
         EnteComponent,
         OrganoContratacionComponent,

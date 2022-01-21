@@ -55,19 +55,21 @@ export const routes: Routes = [
                 loadChildren: () => import('./eco-gastos/eco-gastos.module').then(m => m.EcoGastosModule)
             },
             //     // **************** información económica ************************
-            //     {
-            //         path: "pages/presupuestos",
-            //         component: PresupuestosComponent,
-            //     },
-            //     {
-            //         path: "pages/cuentaGeneral",
-            //         component: CuentaGeneralComponent,
-            //     },
-            //     // **************** organización municipal ************************
-            //     {
-            //         path: "pages/delegacion",
-            //         component: DelegacionComponent,
-            //     },
+            {
+                path: "pages/presupuestos",
+                loadChildren: () => import('./presupuestos/presupuestos.module').then(m => m.PresupuestosModule)
+            },
+            {
+                path: "pages/cuentaGeneral",
+                loadChildren: () => import('./cuenta-general/cuenta-general.module').then(m => m.CuentaGeneralModule)
+            },
+
+            //  **************** organización municipal ************************
+            {
+                path: "pages/delegacion",
+                loadChildren: () => import('./delegacion/delegacion.module').then(m => m.DelegacionModule)
+            },
+
             //     {
             //         path: "pages/ente",
             //         component: EnteComponent,
