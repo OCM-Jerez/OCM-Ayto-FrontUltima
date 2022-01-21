@@ -42,10 +42,7 @@ export const routes: Routes = [
             //         path: "pages/organicos",
             //         component: OrganicosComponent,
             //     },
-            //     {
-            //         path: "pages/programas",
-            //         component: AppProgramasComponent,
-            //     },
+            //    
             {
                 path: "pages/programas",
                 loadChildren: () => import('./programas/app-programas.module').then(m => m.AppProgramasModule)
@@ -55,10 +52,7 @@ export const routes: Routes = [
             //         path: "pages/programaDetail",
             //         component: ProgramaDetailComponent,
             //     },
-            //     {
-            //         path: "pages/ecoGastos",
-            //         component: EcoGastosComponent,
-            //     },
+            //   
             {
                 path: "pages/ecoGastos",
                 loadChildren: () => import('./eco-gastos/eco-gastos.module').then(m => m.EcoGastosModule)
