@@ -86,18 +86,14 @@ export const routes: Routes = [
                 path: "pages/barrio",
                 loadChildren: () => import('./barrios/barrios.module').then(m => m.BarriosModule)
             },
-            //     {
-            //         path: "pages/barrio",
-            //         component: BarrioComponent,
-            //     },
-            //     {
-            //         path: "pages/distrito",
-            //         component: DistritoComponent,
-            //     },
-            //     {
-            //         path: "pages/seccionCensal",
-            //         component: SeccionCensalComponent,
-            //     },
+            {
+                path: "pages/distrito",
+                loadChildren: () => import('./distritos/distritos.module').then(m => m.DistritosModule)
+            },
+            {
+                path: "pages/seccionCensal",
+                loadChildren: () => import('./seccion-censal/seccion-censal.module').then(m => m.SeccionCensalModule)
+            },
             {
                 path: "",
                 redirectTo: 'DashboardIngresos'

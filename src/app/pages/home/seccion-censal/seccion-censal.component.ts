@@ -1,30 +1,30 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Distrito } from "../../domain/distrito";
-import { DistritoService } from "../../service/distrito.service";
+import { SeccionCensal } from "../../../domain/seccion-censal";
+import { SeccionCensalService } from "../../../service/seccion-censal.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-distrito',
-  templateUrl: './distrito.component.html',
-  styleUrls: ['./distrito.component.scss'],
+  selector: 'app-organoContratacion',
+  templateUrl: './seccion-censal.component.html',
+  styleUrls: ['./seccion-censal.component.scss'],
   providers: [MessageService, ConfirmationService]
 })
-export class DistritoComponent implements OnInit {
+export class SeccionCensalComponent implements OnInit {
   _dialog: boolean;
-  _obs$: Observable<Distrito[]>;
+  _obs$: Observable<SeccionCensal[]>;
 
-  _obj: Distrito;
-  _selected: Distrito[];
+  _obj: SeccionCensal;
+  _selected: SeccionCensal[];
   submitted: boolean;
   cols: any[];
 
   constructor(
-    private distritoService: DistritoService,
+    private organoContratacionService: SeccionCensalService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
@@ -37,7 +37,7 @@ export class DistritoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._obs$ = this.distritoService.getDistrito();
+    this._obs$ = this.organoContratacionService.getSeccionCensal();
     // Nombres columnas al exportar a .CSV.
     this.cols = [
       { field: "Codigo", header: "Codigo" },
@@ -54,14 +54,14 @@ export class DistritoComponent implements OnInit {
     this._dialog = true;
   }
 
-  edit(_obj: Distrito) {
+  edit(_obj: SeccionCensal) {
     this._obj = { ..._obj };
     this._dialog = true;
   }
 
   detail(codEco: string, desEco: string) {
-    this.distritoService.codEco = codEco;
-    this.distritoService.desEco = desEco;
+    this.organoContratacionService.codEco = codEco;
+    this.organoContratacionService.desEco = desEco;
     this.router.navigate(["/pages/programaDetail"]);
   }
 
