@@ -17,7 +17,6 @@ import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { BarrioComponent } from './pages/barrio/barrio.component';
 import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
-import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
@@ -127,7 +126,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppNotfoundComponent,
         BarrioComponent,
         CapituloGastoComponent,
-        CapituloIngresosComponent,
         CuentaGeneralComponent,
         DelegacionComponent,
         DistritoComponent,

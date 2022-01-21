@@ -28,6 +28,11 @@ export const routes: Routes = [
             //         path: "pages/capituloIngresos",
             //         component: CapituloIngresosComponent,
             //     },
+            {
+                path: "pages/capituloIngresos",
+                loadChildren: () => import('./capitulo-ingresos/capitulo-ingresos.module').then(m => m.CapituloIngresosModule)
+            },
+
             //     {
             //         path: "pages/ecoIngresos",
             //         component: EcoIngresosComponent,
