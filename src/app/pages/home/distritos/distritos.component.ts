@@ -31,8 +31,8 @@ export class DistritosComponent implements OnInit {
     private router: Router
   ) {
     this.breadcrumbService.setItems([
-      { label: "Ingresos" },
-      { label: "Económicos", routerLink: ["pages/ecoIngresos"] },
+      { label: "Distribución geografica" },
+      { label: "Distritos", routerLink: ["pages/distritos"] },
     ]);
   }
 

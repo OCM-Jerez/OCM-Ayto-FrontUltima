@@ -31,8 +31,8 @@ export class SindicatosComponent implements OnInit {
     private router: Router
   ) {
     this.breadcrumbService.setItems([
-      { label: "Ingresos" },
-      { label: "Económicos", routerLink: ["pages/ecoIngresos"] },
+      { label: "Organización municipal" },
+      { label: "Sindicatos", routerLink: ["pages/sindicato"] },
     ]);
   }
 
