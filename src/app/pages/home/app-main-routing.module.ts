@@ -36,15 +36,10 @@ export const routes: Routes = [
                 path: "pages/capituloGasto",
                 loadChildren: () => import('./capitulo-gastos/capitulo-gastos.module').then(m => m.CapituloGastosModule)
             },
-            //     {
-            //         path: "pages/capituloGasto",
-            //         component: CapituloGastoComponent,
-            //     },
-            //     {
-            //         path: "pages/organicos",
-            //         component: OrganicosComponent,
-            //     },
-            //    
+            {
+                path: "pages/organicos",
+                loadChildren: () => import('./organicos/organicos.module').then(m => m.OrganicosModule)
+            },
             {
                 path: "pages/programas",
                 loadChildren: () => import('./programas/app-programas.module').then(m => m.AppProgramasModule)

@@ -9,7 +9,6 @@ import { ErrorInterceptor } from '../common/interceptors/error.interceptor';
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-// import { AppCodeModule } from "../../obsoletos/app.code.component";
 
 import { AppLoginComponent } from "./auth/login/app.login.component";
 
@@ -20,7 +19,6 @@ import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.co
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
 import { EnteComponent } from './pages/ente/ente.component';
-import { OrganicosComponent } from './pages/organicos/organicos.component';
 import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
@@ -58,10 +56,6 @@ import { ToggleButtonModule } from "primeng/togglebutton";
 import { ToolbarModule } from "primeng/toolbar";
 import { TooltipModule } from "primeng/tooltip";
 
-// import { CustomerService } from "../../obsoletos/sevices/customerservice";
-// import { EventService } from "./service/eventservice";
-// import { IconService } from "../../obsoletos/service/iconservice";
-
 import { BarrioService } from "./service/barrio.service";
 import { CapituloGastoService } from "./service/capitulo-gasto.service";
 import { CapituloIngresoService } from "./service/capitulo-ingreso.service";
@@ -79,7 +73,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
 
 @NgModule({
     imports: [
-        // AppCodeModule,
         AppRoutingModule,
         BreadcrumbModule,
         BrowserAnimationsModule,
@@ -127,7 +120,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         DelegacionComponent,
         DistritoComponent,
         EnteComponent,
-        OrganicosComponent,
         OrganoContratacionComponent,
         ProgramaDetailComponent,
         SeccionCensalComponent,
@@ -138,15 +130,11 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         CapituloGastoService,
         CapituloIngresoService,
         ConfirmationService,
-        // CustomerService,
         DelegacionService,
         DistritoService,
         EcoGastoService,
         EcoIngresoService,
         EnteService,
-        // EventService,
-        // IconService,
-
         MessageService,
         OrganicoService,
         OrganoContratacionService,
