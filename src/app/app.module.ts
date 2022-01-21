@@ -15,8 +15,6 @@ import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { BarrioComponent } from './pages/barrio/barrio.component';
-import { EnteComponent } from './pages/home/ente/ente.component';
-import { OrganoContratacionComponent } from './pages/organo-contratacion/organo-contratacion.component';
 import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
 import { SeccionCensalComponent } from './pages/seccion-censal/seccion-censal.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
@@ -115,8 +113,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppNotfoundComponent,
         BarrioComponent,
         DistritoComponent,
-        EnteComponent,
-        OrganoContratacionComponent,
         ProgramaDetailComponent,
         SeccionCensalComponent,
         SindicatoComponent,

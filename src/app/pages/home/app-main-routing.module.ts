@@ -54,7 +54,7 @@ export const routes: Routes = [
                 path: "pages/ecoGastos",
                 loadChildren: () => import('./eco-gastos/eco-gastos.module').then(m => m.EcoGastosModule)
             },
-            //     // **************** información económica ************************
+            //  **************** información económica ************************
             {
                 path: "pages/presupuestos",
                 loadChildren: () => import('./presupuestos/presupuestos.module').then(m => m.PresupuestosModule)
@@ -69,20 +69,20 @@ export const routes: Routes = [
                 path: "pages/delegacion",
                 loadChildren: () => import('./delegacion/delegacion.module').then(m => m.DelegacionModule)
             },
-
-            //     {
-            //         path: "pages/ente",
-            //         component: EnteComponent,
-            //     },
-            //     {
-            //         path: "pages/organoContratacion",
-            //         component: OrganoContratacionComponent,
-            //     },
+            {
+                path: "pages/ente",
+                loadChildren: () => import('./entes/entes.module').then(m => m.EntesModule)
+            },
+            {
+                path: "pages/organoContratacion",
+                loadChildren: () => import('./organo-contratacion/organo-contratacion.module').then(m => m.OrganoContratacionModule)
+            },
+            //    
             //     {
             //         path: "pages/sindicato",
             //         component: SindicatoComponent,
             //     },
-            //     // **************** organización geográfica ************************
+            //  **************** organización geográfica ************************
             //     {
             //         path: "pages/barrio",
             //         component: BarrioComponent,
