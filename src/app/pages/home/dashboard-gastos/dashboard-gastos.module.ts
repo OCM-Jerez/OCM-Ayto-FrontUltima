@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { DashboardGastosComponent } from './dashboard-gastos.component';
 import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
+import { DashboardGastosComponent } from './dashboard-gastos.component';
 import { SharedFormModule } from '../../../../common/shared/shared-form.module';
+
 import { ChartModule } from 'primeng/chart';
 import { MenuModule } from 'primeng/menu';
-
-import { Routes, RouterModule } from '@angular/router';
 
 export const routes: Routes = [{ path: '', component: DashboardGastosComponent }]
 

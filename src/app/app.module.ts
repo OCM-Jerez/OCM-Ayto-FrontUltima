@@ -11,21 +11,16 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 // import { AppCodeModule } from "../../obsoletos/app.code.component";
 
-import { HighchartsChartModule } from "highcharts-angular";
-
 import { AppLoginComponent } from "./auth/login/app.login.component";
 
 import { AppErrorComponent } from "./pages/error/app.error.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
-import { AppProgramasComponent } from "./pages/programa/app.programas.component";
 import { BarrioComponent } from './pages/barrio/barrio.component';
 import { CapituloGastoComponent } from './pages/capitulo-gasto/capitulo-gasto.component';
 import { CapituloIngresosComponent } from './pages/capitulo-ingresos/capitulo-ingresos.component';
 import { CuentaGeneralComponent } from './pages/cuenta-general/cuenta-general.component';
-import { DashboardtiemposComponent } from "./pages/dashboard-tiempos/dashboard-tiempos.component";
 import { DelegacionComponent } from './pages/delegacion/delegacion.component';
 import { DistritoComponent } from './pages/distrito/distrito.component';
-import { EcoGastosComponent } from './pages/eco-gastos/eco-gastos.component';
 import { EcoIngresosComponent } from './pages/eco-ingresos/eco-ingresos.component';
 import { EnteComponent } from './pages/ente/ente.component';
 import { OrganicosComponent } from './pages/organicos/organicos.component';
@@ -99,7 +94,6 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         DialogModule,
         DropdownModule,
         FormsModule,
-        HighchartsChartModule,
         HttpClientModule,
         InputSwitchModule,
         InputTextareaModule,
@@ -131,15 +125,12 @@ import { ApiInterceptor } from '../common/interceptors/api.interceptor';
         AppErrorComponent,
         AppLoginComponent,
         AppNotfoundComponent,
-        AppProgramasComponent,
         BarrioComponent,
         CapituloGastoComponent,
         CapituloIngresosComponent,
         CuentaGeneralComponent,
-        DashboardtiemposComponent,
         DelegacionComponent,
         DistritoComponent,
-        EcoGastosComponent,
         EcoIngresosComponent,
         EnteComponent,
         OrganicosComponent,

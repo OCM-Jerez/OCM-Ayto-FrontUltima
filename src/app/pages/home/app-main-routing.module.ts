@@ -12,17 +12,17 @@ export const routes: Routes = [
         children: [
 
             {
-                path: "DashboardIngresos",  //Ingresos
+                path: "DashboardIngresos",
                 component: DashboardIngresosComponent
             },
             {
-                path: "dashboardGastos", // Gastos
+                path: "dashboardGastos",
                 loadChildren: () => import('./dashboard-gastos/dashboard-gastos.module').then(m => m.DashboardGastosModule)
             },
-            //     {
-            //         path: "dashboardTiempos",
-            //         component: DashboardtiemposComponent,
-            //     },
+            {
+                path: "dashboardTiempos",
+                loadChildren: () => import('./dashboard-tiempos/dashboard-tiempos.module').then(m => m.DashboardtiemposModule)
+            },
             //     // **************** ingresos **********************
             //     {
             //         path: "pages/capituloIngresos",
@@ -46,6 +46,11 @@ export const routes: Routes = [
             //         path: "pages/programas",
             //         component: AppProgramasComponent,
             //     },
+            {
+                path: "pages/programas",
+                loadChildren: () => import('./programas/app-programas.module').then(m => m.AppProgramasModule)
+            },
+
             //     {
             //         path: "pages/programaDetail",
             //         component: ProgramaDetailComponent,
@@ -54,6 +59,10 @@ export const routes: Routes = [
             //         path: "pages/ecoGastos",
             //         component: EcoGastosComponent,
             //     },
+            {
+                path: "pages/ecoGastos",
+                loadChildren: () => import('./eco-gastos/eco-gastos.module').then(m => m.EcoGastosModule)
+            },
             //     // **************** información económica ************************
             //     {
             //         path: "pages/presupuestos",

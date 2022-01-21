@@ -1,12 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Economico } from "../../domain/economico";
+import { Economico } from "../../../domain/economico";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
-import { EcoGastoService } from "../../service/ecogastoservice";
+import { EcoGastoService } from "../../../service/ecogastoservice";
 
 @Component({
   selector: 'app-eco-gastos',

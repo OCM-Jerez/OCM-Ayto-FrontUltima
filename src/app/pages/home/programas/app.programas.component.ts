@@ -4,14 +4,14 @@ import { Router } from "@angular/router";
 
 import { Observable, of } from "rxjs";
 
+import { IPrograma, ISavePrograma } from "src/app/domain/programa";
+import { ProgramaService } from "src/app/service/programaservice";
+import { AppBreadcrumbService } from "src/app/layout/breadcrumb/app.breadcrumb.service";
+
+import { PROGRAMAS_VALIDATORS } from "./programas.validators"
+
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
-
-import { ProgramaService } from "../../service/programaservice";
-import { AppBreadcrumbService } from "../../layout/breadcrumb/app.breadcrumb.service";
-
-import { IPrograma, ISavePrograma } from "../../domain/programa";
-import { PROGRAMAS_VALIDATORS } from "./programas.validators"
 
 @Component({
     templateUrl: "./app.programas.component.html",
