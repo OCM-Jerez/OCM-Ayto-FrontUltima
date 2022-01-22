@@ -2,14 +2,13 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
-import { UserService } from '../../service/user.service';
+import { UserService } from '../../service';
+import { SessionStorageService } from "../../../common/services/storage/storage.service"
 
 import { LOGIN_VALIDATORS } from "./login.validators"
-
-import { IloginUser } from "../../domain/user";
-
-import { SessionStorageService } from "../../../common/services/storage/storage.service"
 import { SESSION_STORAGE_ENUM } from "../../../common/utils/storage.enum";
+
+import { IloginUser } from "../../domain";
 
 import Swal from 'sweetalert2';
 @Component({
@@ -63,7 +62,6 @@ export class AppLoginComponent {
         async response => {
           if (response.token !== '') {
             this._sessionStorageService.setItem(SESSION_STORAGE_ENUM.USER_DATA, response);
-            // this._router.navigate(['DashboardIngresos']);
             this._router.navigateByUrl("/")
           } else {
             Swal.fire('', `Usuario o password erroneo`, 'error');
