@@ -4,8 +4,8 @@ import { Router } from "@angular/router";
 
 import { Observable, of } from "rxjs";
 
-import { IPrograma, ISavePrograma } from "src/app/domain/programa";
-import { ProgramaService } from "src/app/service/programa.service";
+import { IPrograma, ISavePrograma } from "src/app/domain";
+import { ProgramaService } from "src/app/service";
 import { AppBreadcrumbService } from "src/app/layout/breadcrumb/app.breadcrumb.service";
 
 import { PROGRAMAS_VALIDATORS } from "./programas.validators"
