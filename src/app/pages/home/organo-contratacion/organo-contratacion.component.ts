@@ -1,23 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { OrganoContratacion } from "../../../domain/organo-contratacion";
-import { OrganoContratacionService } from "../../../service/organo-contratacion.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
+import { OrganoContratacionService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+
+import { OrganoContratacion } from "../../../domain";
 @Component({
   selector: 'app-organoContratacion',
   templateUrl: './organo-contratacion.component.html',
   styleUrls: ['./organo-contratacion.component.scss'],
-  providers: [MessageService, ConfirmationService]
 })
+
 export class OrganoContratacionComponent implements OnInit {
   _dialog: boolean;
   _obs$: Observable<OrganoContratacion[]>;
-
   _obj: OrganoContratacion;
   _selected: OrganoContratacion[];
   submitted: boolean;
@@ -25,8 +23,6 @@ export class OrganoContratacionComponent implements OnInit {
 
   constructor(
     private organoContratacionService: OrganoContratacionService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -44,7 +40,6 @@ export class OrganoContratacionComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
