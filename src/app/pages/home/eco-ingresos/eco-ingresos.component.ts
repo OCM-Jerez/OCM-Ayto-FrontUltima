@@ -1,22 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { EcoIngreso } from "../../../domain/eco-ingreso";
-import { EcoIngresoService } from "../../../service/eco-ingreso.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
+
+import { EcoIngresoService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+
+import { EcoIngreso } from "../../../domain";
 
 @Component({
   selector: 'app-eco-ingresos',
   templateUrl: './eco-ingresos.component.html',
-  styleUrls: ['./eco-ingresos.component.scss'],
-  providers: [MessageService, ConfirmationService]
+  styleUrls: ['./eco-ingresos.component.scss']
 })
+
 export class EcoIngresosComponent implements OnInit {
   ecoIngresoDialog: boolean;
-  // programas: Organico[];
   ecoIngreso$: Observable<EcoIngreso[]>;
 
   ecoIngreso: EcoIngreso;
@@ -26,8 +25,7 @@ export class EcoIngresosComponent implements OnInit {
 
   constructor(
     private ecoIngresoService: EcoIngresoService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
+
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -45,7 +43,6 @@ export class EcoIngresosComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
