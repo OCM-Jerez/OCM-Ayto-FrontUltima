@@ -1,22 +1,20 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Barrio } from "../../../domain/barrio";
-import { BarrioService } from "../../../service/barrio.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
+
+import { BarrioService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+import { Barrio } from "../../../domain";
 
 @Component({
   selector: 'app-barrio',
   templateUrl: './barrios.component.html',
   styleUrls: ['./barrios.component.scss'],
-  providers: [MessageService, ConfirmationService]
 })
+
 export class BarriosComponent implements OnInit {
   _dialog: boolean;
-  // programas: Organico[];
   _obs$: Observable<Barrio[]>;
 
   _obj: Barrio;
@@ -26,8 +24,6 @@ export class BarriosComponent implements OnInit {
 
   constructor(
     private barrioService: BarrioService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -45,7 +41,6 @@ export class BarriosComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
