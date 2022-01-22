@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 
-import { SelectItem } from "primeng/api";
-import { Product } from "../../../domain/product";
+import { throwError } from 'rxjs';
+
+import { UIChart } from "primeng/chart";
 
 import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
-import { UIChart } from "primeng/chart";
+
 import { AppComponent } from "../../../app.component";
-import { throwError } from 'rxjs';
 import { AppMainComponent } from '../app-main.component';
 
 @Component({
@@ -37,7 +37,6 @@ export class DashboardGastosComponent implements OnInit, AfterViewInit {
             },
         ]);
     }
-
 
     ngOnInit() {
         this.chartMonthlyData = this.getChartData();
