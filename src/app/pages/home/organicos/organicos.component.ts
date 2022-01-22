@@ -1,13 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Organico } from "../../../domain/organico";
-import { OrganicoService } from "../../../service/organico.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
 
+import { OrganicoService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+
+import { Organico } from "../../../domain";
 @Component({
   selector: 'app-organicos',
   templateUrl: './organicos.component.html',
@@ -41,13 +40,11 @@ import { Observable } from "rxjs";
         }
     `,
   ],
-  providers: [MessageService, ConfirmationService],
 })
+
 export class OrganicosComponent implements OnInit {
   organicoDialog: boolean;
-  // programas: Organico[];
   organicos$: Observable<Organico[]>;
-
   organico: Organico;
   selectedOrganicos: Organico[];
   submitted: boolean;
@@ -55,8 +52,6 @@ export class OrganicosComponent implements OnInit {
 
   constructor(
     private organicoService: OrganicoService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -74,7 +69,6 @@ export class OrganicosComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
