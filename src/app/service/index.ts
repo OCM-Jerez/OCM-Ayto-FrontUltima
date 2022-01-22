@@ -6,7 +6,7 @@ export * from './distrito.service';
 export * from './ecogastoservice';
 export * from './ecoingresoservice';
 export * from './ente.service';
-export * from './organicoservice';
+export * from './organico.service';
 export * from './organo-contratacion.service';
 export * from './programaservice';
 export * from './seccion-censal.service';

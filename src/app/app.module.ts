@@ -56,7 +56,7 @@ import { DistritoService } from "./service/distrito.service";
 import { EcoGastoService } from "./service/ecogastoservice";
 import { EcoIngresoService } from "./service/ecoingresoservice";
 import { EnteService } from "./service/ente.service";
-import { OrganicoService } from "./service/organicoservice";
+import { OrganicoService } from "./service/organico.service";
 import { OrganoContratacionService } from "./service/organo-contratacion.service";
 import { SeccionCensalService } from "./service/seccion-censal.service";
 import { SindicatoService } from "./service/sindicato.service";
