@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
-import Swal from 'sweetalert2';
+import { UserService } from "../../service";
 
+import { IloginUser } from '../../domain';
 import { mustMatch, REGISTER_VALIDATORS } from "./REGISTER.validators"
 
-import { IloginUser, IUser } from '../../domain/user';
-import { UserService } from "../../service/user.service";
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
