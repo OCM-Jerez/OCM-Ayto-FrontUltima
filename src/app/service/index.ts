@@ -8,7 +8,7 @@ export * from './ecoingresoservice';
 export * from './ente.service';
 export * from './organico.service';
 export * from './organo-contratacion.service';
-export * from './programaservice';
+export * from './programa.service';
 export * from './seccion-censal.service';
 export * from './sindicato.service';
 export * from './user.service';

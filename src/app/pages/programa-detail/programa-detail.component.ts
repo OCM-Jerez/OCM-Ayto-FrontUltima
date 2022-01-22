@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 import { IPrograma } from "../../domain/programa";
-import { ProgramaService } from "../../service/programaservice";
+import { ProgramaService } from "../../service/programa.service";
 
 @Component({
     selector: "app-programa-detail",
