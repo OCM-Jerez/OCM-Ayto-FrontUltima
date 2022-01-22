@@ -4,7 +4,7 @@ export * from './capitulo-ingreso.service';
 export * from './delegacion.service';
 export * from './distrito.service';
 export * from './eco-gasto.service';
-export * from './ecoingresoservice';
+export * from './eco-ingreso.service';
 export * from './ente.service';
 export * from './organico.service';
 export * from './organo-contratacion.service';

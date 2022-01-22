@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { EcoIngreso } from "../../../domain/eco-ingreso";
-import { EcoIngresoService } from "../../../service/ecoingresoservice";
+import { EcoIngresoService } from "../../../service/eco-ingreso.service";
 import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
