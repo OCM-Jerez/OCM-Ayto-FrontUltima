@@ -53,7 +53,7 @@ import { CapituloGastoService } from "./service/capitulo-gasto.service";
 import { CapituloIngresoService } from "./service/capitulo-ingreso.service";
 import { DelegacionService } from "./service/delegacion.service";
 import { DistritoService } from "./service/distrito.service";
-import { EcoGastoService } from "./service/ecogastoservice";
+import { EcoGastoService } from "./service/eco-gasto.service";
 import { EcoIngresoService } from "./service/ecoingresoservice";
 import { EnteService } from "./service/ente.service";
 import { OrganicoService } from "./service/organico.service";

@@ -3,6 +3,7 @@ export * from './capitulo-gasto';
 export * from './capitulo-ingreso';
 export * from './delegacion';
 export * from './distrito';
+export * from './economico';
 export * from './eco-ingreso';
 export * from './ente';
 export * from './organico';
