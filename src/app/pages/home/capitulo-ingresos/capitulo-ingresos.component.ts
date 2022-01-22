@@ -1,22 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { CapituloIngreso } from "../../../domain/capitulo-ingreso";
-import { CapituloIngresoService } from "../../../service/capitulo-ingreso.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
+
+import { CapituloIngresoService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+
+import { CapituloIngreso } from "../../../domain";
 
 @Component({
   selector: 'app-capitulo-ingresos',
   templateUrl: './capitulo-ingresos.component.html',
   styleUrls: ['./capitulo-ingresos.component.scss'],
-  providers: [MessageService, ConfirmationService]
 })
+
 export class CapituloIngresosComponent implements OnInit {
   _dialog: boolean;
-  // programas: Organico[];
   _obs$: Observable<CapituloIngreso[]>;
 
   _obj: CapituloIngreso;
@@ -26,8 +25,6 @@ export class CapituloIngresosComponent implements OnInit {
 
   constructor(
     private capituloIngresoService: CapituloIngresoService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -45,7 +42,6 @@ export class CapituloIngresosComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
