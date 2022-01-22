@@ -1,23 +1,22 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
-import { Ente } from "../../../domain/ente";
-import { EnteService } from "../../../service/ente.service";
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
-import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
 import { Observable } from "rxjs";
+
+import { EnteService } from "../../../service";
+import { AppBreadcrumbService } from "../../../layout/breadcrumb/app.breadcrumb.service";
+
+import { Ente } from "../../../domain";
 
 @Component({
   selector: 'app-ente',
   templateUrl: './entes.component.html',
   styleUrls: ['./entes.component.scss'],
-  providers: [MessageService, ConfirmationService]
 })
+
 export class EntesComponent implements OnInit {
   _dialog: boolean;
   _obs$: Observable<Ente[]>;
-
   _obj: Ente;
   _selected: Ente[];
   submitted: boolean;
@@ -25,8 +24,6 @@ export class EntesComponent implements OnInit {
 
   constructor(
     private enteService: EnteService,
-    private messageService: MessageService,
-    private confirmationService: ConfirmationService,
     private breadcrumbService: AppBreadcrumbService,
     private router: Router
   ) {
@@ -44,7 +41,6 @@ export class EntesComponent implements OnInit {
       { field: "Descripcion", header: "Descripcion" },
       { field: "Observaciones", header: "Observaciones" },
       { field: "WEBOCM", header: "WEBOCM" },
-      // { field: 'inventoryStatus', header: 'Status' }
     ];
   }
 
