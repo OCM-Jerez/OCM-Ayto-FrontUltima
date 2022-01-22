@@ -1,17 +1,24 @@
-import { ChartModule } from 'primeng/chart';
-import { NgModule } from '@angular/core';
-import { AppMainComponent } from './app-main.component';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { AppMainRoutingodule } from './app-main-routing.module';
-import { DashboardIngresosComponent } from './dashboard-ingresos/dashboard-ingresos.component';
 
+import { DashboardIngresosComponent } from './dashboard-ingresos/dashboard-ingresos.component';
+import { AppMainComponent } from './app-main.component';
+
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
-
-    declarations: [AppMainComponent, DashboardIngresosComponent],
-    imports: [CommonModule, LayoutModule, AppMainRoutingodule, ChartModule],
-
+    declarations: [
+        AppMainComponent,
+        DashboardIngresosComponent
+    ],
+    imports: [
+        CommonModule,
+        LayoutModule,
+        AppMainRoutingodule,
+        ChartModule
+    ],
 })
 export class AppMainModule { }
