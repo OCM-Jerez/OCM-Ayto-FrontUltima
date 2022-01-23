@@ -3,18 +3,9 @@ import { AppComponent } from "../../app.component";
 
 @Component({
     selector: "app-menu",
-    template: `
-        <ul class="layout-menu">
-            <li
-                app-menuitem
-                *ngFor="let item of model; let i = index"
-                [item]="item"
-                [index]="i"
-                [root]="true"
-            ></li>
-        </ul>
-    `,
+    templateUrl: './app.menu.component.html',
 })
+
 export class AppMenuComponent implements OnInit {
     model: any[];
 
