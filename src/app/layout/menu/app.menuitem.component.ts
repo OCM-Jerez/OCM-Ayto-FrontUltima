@@ -1,44 +1,16 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { MenuService } from './app.menu.service';
 import { AppMainComponent } from '../../pages/home/app-main.component';
+import { MenuService } from './app.menu.service';
 
 @Component({
-    /* tslint:disable:component-selector */
+    // /* tslint:disable:component-selector */
     selector: '[app-menuitem]',
-    /* tslint:enable:component-selector */
-    template: `
-        <ng-container>
-            <div *ngIf="root">
-                <span class="layout-menuitem-text">{{item.label}}</span>
-            </div>
-            <a [attr.href]="item.url" (click)="itemClick($event)" *ngIf="!item.routerLink || item.items" (keydown.enter)="itemClick($event)"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple
-               [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
-                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
-                <span class="layout-menuitem-text">{{item.label}}</span>
-                <span class="p-badge p-component p-badge-no-gutter" [ngClass]="item.badgeClass" *ngIf="item.badge && !root">{{item.badge}}</span>
-                <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
-            </a>
-            <a (click)="itemClick($event)" *ngIf="item.routerLink && !item.items"
-               [routerLink]="item.routerLink" routerLinkActive="active-menuitem-routerlink" [routerLinkActiveOptions]="{exact: true}"
-               [attr.target]="item.target" [attr.tabindex]="0" [ngClass]="item.class" (mouseenter)="onMouseEnter()" pRipple
-               [pTooltip]="item.label" [tooltipDisabled]="active || !(root && app.isSlim() && !app.isMobile())">
-                <i [ngClass]="item.icon" class="layout-menuitem-icon"></i>
-                <span class="layout-menuitem-text">{{item.label}}</span>
-                <span class="p-badge p-component p-badge-no-gutter" [ngClass]="item.badgeClass" *ngIf="item.badge && !root">{{item.badge}}</span>
-                <i class="pi pi-fw pi-angle-down layout-submenu-toggler" *ngIf="item.items"></i>
-            </a>
-            <ul *ngIf="(item.items && root) || (item.items && active)" [@children]="root ? 'visible' : active ? 'visibleAnimated' : 'hiddenAnimated'">
-                <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
-                    <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child.badgeClass"></li>
-                </ng-template>
-            </ul>
-        </ng-container>
-    `,
+    templateUrl: './app.menuitem.component.html',
+
     host: {
         '[class.layout-root-menuitem]': 'root || active',
         '[class.active-menuitem]': '(active)'
@@ -71,24 +43,21 @@ import { AppMainComponent } from '../../pages/home/app-main.component';
     ]
 })
 export class AppMenuitemComponent implements OnInit, OnDestroy {
-
     @Input() item: any;
-
     @Input() index: number;
-
     @Input() root: boolean;
-
     @Input() parentKey: string;
-
     active = false;
-
     menuSourceSubscription: Subscription;
-
     menuResetSubscription: Subscription;
-
     key: string;
 
-    constructor(public app: AppMainComponent, public router: Router, private cd: ChangeDetectorRef, private menuService: MenuService) {
+    constructor(
+        public app: AppMainComponent,
+        public router: Router,
+        private cd: ChangeDetectorRef,
+        private menuService: MenuService
+    ) {
         this.menuSourceSubscription = this.menuService.menuSource$.subscribe(key => {
             // deactivate current active menu
             if (this.active && this.key !== key && key.indexOf(this.key) !== 0) {
