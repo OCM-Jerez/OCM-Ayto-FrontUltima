@@ -17,8 +17,10 @@
         "search.exclude": {
             "**/node_modules": false
         },
+    },
+    "[typescript]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
-    },
+    }
 }
