@@ -42,7 +42,7 @@ export const routes: Routes = [
             },
             {
                 path: "pages/programas",
-                loadChildren: () => import('./programas/app-programas.module').then(m => m.AppProgramasModule)
+                loadChildren: () => import('./programas/programas.module').then(m => m.ProgramasModule)
             },
 
             //     {

@@ -14,8 +14,8 @@ import { ConfirmationService } from "primeng/api";
 import { MessageService } from "primeng/api";
 
 @Component({
-    templateUrl: "./app.programas.component.html",
-    styleUrls: ["./app.programas.scss"],
+    templateUrl: "./programas.component.html",
+    styleUrls: ["./programas.scss"],
     styles: [
         `
             :host ::ng-deep .p-dialog .product-image {
@@ -47,7 +47,7 @@ import { MessageService } from "primeng/api";
     ],
 })
 
-export class AppProgramasComponent implements OnInit {
+export class ProgramasComponent implements OnInit {
     programaDialog: boolean;
     programaNew: boolean;
     programas$: Observable<IPrograma[]>;

@@ -5,22 +5,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedFormModule } from '../../../../common/shared';
 import { SharedTableModule } from '../../../../common/shared';
 
-import { ChartModule } from 'primeng/chart';
-import { MenuModule } from 'primeng/menu';
+import { ProgramasComponent } from './programas.component';
 
-import { AppProgramasComponent } from './app.programas.component';
-
-export const routes: Routes = [{ path: '', component: AppProgramasComponent }]
+export const routes: Routes = [{ path: '', component: ProgramasComponent }]
 
 @NgModule({
-    declarations: [AppProgramasComponent],
+    declarations: [ProgramasComponent],
     imports: [
-        ChartModule,
         CommonModule,
-        MenuModule,
         RouterModule.forChild(routes),
         SharedFormModule,
         SharedTableModule
     ],
 })
-export class AppProgramasModule { }
+export class ProgramasModule { }
