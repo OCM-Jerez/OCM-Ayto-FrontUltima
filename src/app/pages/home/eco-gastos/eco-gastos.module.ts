@@ -14,11 +14,11 @@ export const routes: Routes = [{ path: '', component: EcoGastosComponent }]
 @NgModule({
     declarations: [EcoGastosComponent],
     imports: [
+        ChartModule,
         CommonModule,
+        MenuModule,
         RouterModule.forChild(routes),
         SharedFormModule,
-        ChartModule,
-        MenuModule,
         SharedTableModule
     ],
 })

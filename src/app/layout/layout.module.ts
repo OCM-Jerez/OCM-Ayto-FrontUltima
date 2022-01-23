@@ -1,56 +1,56 @@
-import { AppBreadcrumbComponent } from './breadcrumb/app.breadcrumb.component';
-
-
-
-
-import { TooltipModule } from 'primeng/tooltip';
-import { InputSwitchModule } from 'primeng/inputswitch';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MenuModule } from 'primeng/menu';
-import { AppBreadcrumbService } from './breadcrumb/app.breadcrumb.service';
+import { AppBreadcrumbComponent } from './breadcrumb/app.breadcrumb.component';
 import { AppFooterComponent } from './footer/app.footer.component';
 import { AppMenuComponent } from './menu/app.menu.component';
 import { AppRightMenuComponent } from './rightmenu/app.rightmenu.component';
 import { AppTopBarComponent } from './topbar/app.topbar.component';
-import { SidebarModule } from "primeng/sidebar";
-import { BreadcrumbModule } from "primeng/breadcrumb";
-import { MenuService } from './menu/app.menu.service';
 import { AppConfigComponent } from './config/app-config.component';
+import { AppMenuitemComponent } from './menu/app.menuitem.component';
 
+import { BreadcrumbModule } from "primeng/breadcrumb";
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { MenuModule } from 'primeng/menu';
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { PanelMenuModule } from "primeng/panelmenu";
 import { PanelModule } from "primeng/panel";
 import { SharedFormModule } from 'src/common/shared/shared-form.module';
-import { AppMenuitemComponent } from './menu/app.menuitem.component';
+import { SidebarModule } from "primeng/sidebar";
+import { TooltipModule } from 'primeng/tooltip';
+
+import { AppBreadcrumbService } from './breadcrumb/app.breadcrumb.service';
+import { MenuService } from './menu/app.menu.service';
+
 @NgModule({
     declarations: [
         AppBreadcrumbComponent,
         AppFooterComponent,
-        AppMenuComponent, AppRightMenuComponent,
-        AppTopBarComponent, AppConfigComponent,
-        AppMenuitemComponent
+        AppMenuComponent,
+        AppRightMenuComponent,
+        AppMenuitemComponent,
+        AppTopBarComponent,
+        AppConfigComponent,
     ],
     imports: [
-        CommonModule,
-        SharedFormModule,
-        SidebarModule,
         BreadcrumbModule,
-        MenuModule,
+        CommonModule,
         InputSwitchModule,
+        MenuModule,
         OverlayPanelModule,
         PanelMenuModule,
         PanelModule,
-        TooltipModule
+        SharedFormModule,
+        SidebarModule,
+        TooltipModule,
     ],
     exports: [
         AppBreadcrumbComponent,
+        AppConfigComponent,
         AppFooterComponent,
         AppMenuComponent,
         AppRightMenuComponent,
         AppTopBarComponent,
-        AppConfigComponent
     ],
     providers: [
         AppBreadcrumbService,

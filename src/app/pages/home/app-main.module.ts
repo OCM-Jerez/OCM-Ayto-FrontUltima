@@ -15,10 +15,10 @@ import { ChartModule } from 'primeng/chart';
         DashboardIngresosComponent
     ],
     imports: [
+        AppMainRoutingodule,
+        ChartModule,
         CommonModule,
         LayoutModule,
-        AppMainRoutingodule,
-        ChartModule
     ],
 })
 export class AppMainModule { }
