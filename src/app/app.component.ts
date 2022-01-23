@@ -5,6 +5,7 @@ import { PrimeNGConfig } from "primeng/api";
     selector: "app-root",
     templateUrl: "./app.component.html",
 })
+
 export class AppComponent implements OnInit {
     topbarTheme: string = "blue";
     menuTheme: string = "light";
