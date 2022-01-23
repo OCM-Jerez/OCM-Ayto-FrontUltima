@@ -25,12 +25,12 @@ import { MenuService } from './menu/app.menu.service';
 @NgModule({
     declarations: [
         AppBreadcrumbComponent,
+        AppConfigComponent,
         AppFooterComponent,
         AppMenuComponent,
-        AppRightMenuComponent,
         AppMenuitemComponent,
+        AppRightMenuComponent,
         AppTopBarComponent,
-        AppConfigComponent,
     ],
     imports: [
         BreadcrumbModule,
@@ -49,6 +49,7 @@ import { MenuService } from './menu/app.menu.service';
         AppConfigComponent,
         AppFooterComponent,
         AppMenuComponent,
+        AppMenuitemComponent,
         AppRightMenuComponent,
         AppTopBarComponent,
     ],
