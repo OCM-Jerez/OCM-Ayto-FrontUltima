@@ -15,11 +15,11 @@ export const routes: Routes = [{ path: '', component: AppProgramasComponent }]
 @NgModule({
     declarations: [AppProgramasComponent],
     imports: [
+        ChartModule,
         CommonModule,
+        MenuModule,
         RouterModule.forChild(routes),
         SharedFormModule,
-        ChartModule,
-        MenuModule,
         SharedTableModule
     ],
 })
