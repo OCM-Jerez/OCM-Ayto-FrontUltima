@@ -1,14 +1,19 @@
 <div class="layout-footer p-d-flex p-ai-center p-p-4 p-shadow-2">
+
     <img style="width: 200px; margin-right: 20px" id="footer-logo" src="assets/img/logoOCM.jpg"
         alt="ultima-footer-logo">
     <span>Ver. 1.0.0</span>
-    <button pButton pRipple type="button" icon="pi pi-github fs-large"
-        class="p-button-rounded p-button-text p-button-plain"
-        [ngClass]="{'p-ml-auto p-mr-2': !app.isRTL, 'p-ml-2 p-mr-auto': app.isRTL}"></button>
-    <button pButton pRipple type="button" icon="pi pi-facebook fs-large"
-        class="p-button-rounded p-button-text p-button-plain"
-        [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></button>
-    <button pButton pRipple type="button" icon="pi pi-twitter fs-large"
-        class="p-button-rounded p-button-text p-button-plain"
-        [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></button>
+
+    <a pButton pRipple type="button" icon="pi pi-github fs-large" class="p-button-rounded p-button-text p-button-plain"
+        href="https://github.com/OCM-Jerez/" target="_blank" rel="nofollow"
+        [ngClass]="{'p-ml-auto p-mr-2': !app.isRTL, 'p-ml-2 p-mr-auto': app.isRTL}"></a>
+
+    <a pButton pRipple type="button" icon="pi pi-facebook fs-large"
+        class="p-button-rounded p-button-text p-button-plain" href="https://www.facebook.com/OcmJerez/" target="_blank"
+        rel="nofollow" [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></a>
+
+    <a pButton pRipple type="button" icon="pi pi-twitter fs-large" class="p-button-rounded p-button-text p-button-plain"
+        href="https://twitter.com/ocmjerez" target="_blank" rel="nofollow"
+        [ngClass]="{'p-mr-2': !app.isRTL, 'p-ml-2': app.isRTL}"></a>
+
 </div>
