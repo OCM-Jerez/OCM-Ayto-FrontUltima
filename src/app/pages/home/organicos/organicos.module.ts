@@ -2,13 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { OrganicosComponent } from './organicos.component';
+
 import { SharedFormModule } from '../../../../common/shared';
 import { SharedTableModule } from '../../../../common/shared';
-
-import { ChartModule } from 'primeng/chart';
-import { MenuModule } from 'primeng/menu';
-
-import { OrganicosComponent } from './organicos.component';
 
 export const routes: Routes = [{ path: '', component: OrganicosComponent }]
 
@@ -18,8 +15,6 @@ export const routes: Routes = [{ path: '', component: OrganicosComponent }]
         CommonModule,
         RouterModule.forChild(routes),
         SharedFormModule,
-        ChartModule,
-        MenuModule,
         SharedTableModule
     ],
 })

@@ -2,13 +2,10 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { CapituloGastosComponent } from './capitulo-gastos.component';
+
 import { SharedFormModule } from '../../../../common/shared';
 import { SharedTableModule } from '../../../../common/shared';
-
-import { ChartModule } from 'primeng/chart';
-import { MenuModule } from 'primeng/menu';
-
-import { CapituloGastosComponent } from './capitulo-gastos.component';
 
 export const routes: Routes = [{ path: '', component: CapituloGastosComponent }]
 
@@ -18,8 +15,6 @@ export const routes: Routes = [{ path: '', component: CapituloGastosComponent }]
         CommonModule,
         RouterModule.forChild(routes),
         SharedFormModule,
-        ChartModule,
-        MenuModule,
         SharedTableModule
     ],
 })
