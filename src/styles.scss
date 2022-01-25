@@ -40,6 +40,29 @@
     align-items: flex-start;
 }
 
+.OCM-login-page {
+    background: url("./assets/img/login-bg.jpg");
+    background-size: cover;
+
+    .pages-panel {
+        .pages-header {
+            background: #0097a7;
+        }
+
+        .input-panel {
+            width: 100%;
+
+            .p-inputtext {
+                width: 100%;
+            }
+        }
+
+        .login-button > * {
+            width: 100%;
+        }
+    }
+}
+
 .OCM-login {
     display: flex;
     flex-direction: column;
