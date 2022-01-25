@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
+import { SharedFormModule, SharedTableModule } from '../../../../common/shared';
 import { PresupuestosComponent } from './presupuestos.component';
 
-import { SharedFormModule } from '../../../../common/shared';
-import { SharedTableModule } from '../../../../common/shared';
 
 export const routes: Routes = [{ path: '', component: PresupuestosComponent }]
 
