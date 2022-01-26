@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { ChartModule } from "primeng/chart";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
@@ -41,7 +42,7 @@ import { AppComponent } from "./app.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
-import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail.component";
+import { ProgramaDetailComponent } from "./pages/home/programa-detail/programa-detail.component";
 @NgModule({
     imports: [
         AppRoutingModule,
@@ -89,6 +90,8 @@ import { ProgramaDetailComponent } from "./pages/programa-detail/programa-detail
         ProgramaDetailComponent,
     ],
     providers: [
+        MessageService,
+        ConfirmationService,
         { provide: LocationStrategy, useClass: HashLocationStrategy },
         {
             provide: HTTP_INTERCEPTORS,
