@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IPrograma, ISavePrograma } from '../domain/programa';
 
-
-
 @Injectable({ providedIn: 'root' })
 export class ProgramaService {
     codPro: string;

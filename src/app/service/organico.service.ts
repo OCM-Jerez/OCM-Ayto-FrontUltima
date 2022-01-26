@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Organico } from '../domain/organico';
 
-
-
 @Injectable({ providedIn: 'root' })
 export class OrganicoService {
     codPro: string;

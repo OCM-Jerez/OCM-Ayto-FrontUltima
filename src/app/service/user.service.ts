@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { IloginUser, IResponseLogin } from '../domain/user';
 
-
-
 @Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private httpClient: HttpClient) { }

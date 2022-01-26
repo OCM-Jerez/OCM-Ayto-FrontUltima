@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { EcoIngreso } from "../domain/eco-ingreso";
 
-
-
 @Injectable({ providedIn: 'root' })
 export class EcoIngresoService {
     codEco: string;

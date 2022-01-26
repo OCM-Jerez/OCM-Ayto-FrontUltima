@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { SeccionCensal } from "../domain/seccion-censal";
 
-
-
 @Injectable({ providedIn: 'root' })
 export class SeccionCensalService {
   codEco: string;

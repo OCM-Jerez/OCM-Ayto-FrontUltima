@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Ente } from "../domain/ente";
 
-
-
 @Injectable({ providedIn: 'root' })
 export class EnteService {
   codEco: string;

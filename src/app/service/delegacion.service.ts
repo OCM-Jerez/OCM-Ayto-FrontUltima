@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Delegacion } from "../domain/delegacion";
 
-
-
 @Injectable({ providedIn: 'root' })
 export class DelegacionService {
   codEco: string;

@@ -4,8 +4,6 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Distrito } from "../domain/distrito";
 
-
-
 @Injectable({ providedIn: 'root' })
 export class DistritoService {
   codEco: string;
