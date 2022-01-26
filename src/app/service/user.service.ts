@@ -1,16 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { IloginUser, IResponseLogin } from '../domain/user';
 import { environment } from '../../environments/environment';
+import { IloginUser, IResponseLogin } from '../domain/user';
 
-@Injectable(
-    {
-        providedIn: 'root',
-    }
-)
+
+
+@Injectable({ providedIn: 'root' })
 export class UserService {
     constructor(private httpClient: HttpClient) { }
     private URL_API = environment.host + '/user';

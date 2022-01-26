@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-
+import { catchError } from 'rxjs/operators';
 import { Ente } from "../domain/ente";
 
-@Injectable()
+
+
+@Injectable({ providedIn: 'root' })
 export class EnteService {
   codEco: string;
   desEco: string

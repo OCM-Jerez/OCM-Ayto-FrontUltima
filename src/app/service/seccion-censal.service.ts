@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
-
+import { catchError } from 'rxjs/operators';
 import { SeccionCensal } from "../domain/seccion-censal";
 
-@Injectable()
+
+
+@Injectable({ providedIn: 'root' })
 export class SeccionCensalService {
   codEco: string;
   desEco: string

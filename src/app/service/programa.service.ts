@@ -1,16 +1,12 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
-import { IPrograma, ISavePrograma } from '../domain/programa';
 import { environment } from '../../environments/environment';
+import { IPrograma, ISavePrograma } from '../domain/programa';
 
-@Injectable(
-    {
-        providedIn: 'root',
-    }
-)
+
+
+@Injectable({ providedIn: 'root' })
 export class ProgramaService {
     codPro: string;
     desPro: string
