@@ -28,8 +28,6 @@ import { SlideMenuModule } from "primeng/slidemenu";
 import { SliderModule } from "primeng/slider";
 import { SplitButtonModule } from "primeng/splitbutton";
 import { TableModule } from "primeng/table";
-import { TabMenuModule } from "primeng/tabmenu";
-import { TabViewModule } from "primeng/tabview";
 import { TimelineModule } from "primeng/timeline";
 import { ToastModule } from "primeng/toast";
 import { ToggleButtonModule } from "primeng/togglebutton";
@@ -42,7 +40,6 @@ import { AppComponent } from "./app.component";
 import { AppLoginComponent } from "./auth/login/app.login.component";
 import { AppNotfoundComponent } from "./pages/404notFound/app.notfound.component";
 import { AppErrorComponent } from "./pages/error/app.error.component";
-import { ProgramaDetailComponent } from "./pages/home/programa-detail/programa-detail.component";
 @NgModule({
     imports: [
         AppRoutingModule,
@@ -74,8 +71,8 @@ import { ProgramaDetailComponent } from "./pages/home/programa-detail/programa-d
         SliderModule,
         SplitButtonModule,
         TableModule,
-        TabMenuModule,
-        TabViewModule,
+        // TabMenuModule,
+        // TabViewModule,
         TimelineModule,
         ToastModule,
         ToggleButtonModule,
@@ -87,7 +84,7 @@ import { ProgramaDetailComponent } from "./pages/home/programa-detail/programa-d
         AppErrorComponent,
         AppLoginComponent,
         AppNotfoundComponent,
-        ProgramaDetailComponent,
+        // ProgramaDetailComponent,
     ],
     providers: [
         MessageService,

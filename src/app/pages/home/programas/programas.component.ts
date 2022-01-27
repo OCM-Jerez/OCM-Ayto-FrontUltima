@@ -1,17 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-
+import { ConfirmationService, MessageService } from "primeng/api";
 import { Observable, of } from "rxjs";
-
 import { IPrograma, ISavePrograma } from "src/app/domain";
-import { ProgramaService } from "src/app/service";
 import { AppBreadcrumbService } from "src/app/layout/breadcrumb/app.breadcrumb.service";
+import { ProgramaService } from "src/app/service";
+import { PROGRAMAS_VALIDATORS } from "./programas.validators";
 
-import { PROGRAMAS_VALIDATORS } from "./programas.validators"
 
-import { ConfirmationService } from "primeng/api";
-import { MessageService } from "primeng/api";
+
+
 
 @Component({
     templateUrl: "./programas.component.html",
@@ -110,7 +109,7 @@ export class ProgramasComponent implements OnInit {
         // https://youtu.be/df0eH9mM9nU?t=1262
         this.programaService.codPro = codPro;
         this.programaService.desPro = desPro;
-        this.router.navigate(["/pages/programaDetail"]);
+        this.router.navigate(["pages/programaDetail"]);
     }
 
     editPrograma(programa: IPrograma) {

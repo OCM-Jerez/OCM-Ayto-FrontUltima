@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-
-
 import { RouterModule, Routes } from '@angular/router';
 import { AppMainComponent } from './app-main.component';
 import { DashboardIngresosComponent } from './dashboard-ingresos/dashboard-ingresos.component';
+
+
 
 export const routes: Routes = [
     {
@@ -44,12 +44,11 @@ export const routes: Routes = [
                 path: "pages/programas",
                 loadChildren: () => import('./programas/programas.module').then(m => m.ProgramasModule)
             },
+            {
+                path: "pages/programaDetail",
+                loadChildren: () => import('./programa-detail/programa-detail.module').then(m => m.ProgramaDetailModule)
+            },
 
-            //     {
-            //         path: "pages/programaDetail",
-            //         component: ProgramaDetailComponent,
-            //     },
-            //   
             {
                 path: "pages/ecoGastos",
                 loadChildren: () => import('./eco-gastos/eco-gastos.module').then(m => m.EcoGastosModule)
