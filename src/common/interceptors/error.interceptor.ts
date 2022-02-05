@@ -8,16 +8,14 @@ import {
 	HttpRequest
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import Swal from 'sweetalert2';
 import { IErrorResponse } from '../models/http-api.interface';
-import { MessageService } from 'primeng/api';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-	constructor(private messageService: MessageService) { }
+	constructor() { }
 
 	intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 		// const token = localStorage.getItem('acces_token')!;
@@ -42,23 +40,27 @@ export class ErrorInterceptor implements HttpInterceptor {
 
 		if (error instanceof HttpErrorResponse) {
 			if (error.error instanceof ErrorEvent) {
-				this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message, life: 4000 });
+				// this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message, life: 4000 });
+				Swal.fire('', `Error  ${error.message}`, 'error');
 			} else {
 				const errorController = error.error as IErrorResponse;
 				switch (error.status) {
 					case 400: {
 						if (errorController) {
 							console.warn('Error 400: ', error);
-							this.messageService.add({ severity: 'error', summary: 'Error 400', detail: errorController.errorResponse.message[0], life: 4000 });
+							// this.messageService.add({ severity: 'error', summary: 'Error 400', detail: errorController.errorResponse.message[0], life: 4000 });
+							Swal.fire('', `Error 400  ${errorController.errorResponse.message[0]}`, 'error');
 						} else {
 							console.warn(error);
-							this.messageService.add({ severity: 'error', summary: 'Error 400', detail: error.message, life: 8000 });
+							// this.messageService.add({ severity: 'error', summary: 'Error 400', detail: error.message, life: 8000 });
+							Swal.fire('', `Error 400  ${error.message[0]}`, 'error');
 						}
 					}
 						break;
 					case 401: {
 						console.warn('Error 401: ', error);
-						this.messageService.add({ severity: 'error', summary: 'Error 401', detail: error.message, life: 8000 });
+						// this.messageService.add({ severity: 'error', summary: 'Error 401', detail: error.message, life: 8000 });
+						Swal.fire('', `Error 401  ${error.message[0]}`, 'error');
 						break;
 					}
 					case 404: {
@@ -68,17 +70,20 @@ export class ErrorInterceptor implements HttpInterceptor {
 					}
 					case 500: {
 						console.warn('Error 500: ', error);
-						this.messageService.add({ severity: 'error', summary: 'La BBDD no esta en funcionamiento, o no existe la tabla que intentas consultar en la BBDD', detail: error.message, life: 8000 });
+						// this.messageService.add({ severity: 'error', summary: 'La BBDD no esta en funcionamiento, o no existe la tabla que intentas consultar en la BBDD', detail: error.message, life: 8000 });
+						Swal.fire('', `La BBDD no esta en funcionamiento, o no existe la tabla que intentas consultar en la BBDD  ${error.message[0]}`, 'error');
 						break;
 					}
 					case 0: {
 						console.warn('Error 0: ', error);
-						this.messageService.add({ severity: 'error', summary: 'El back parece estar caido', detail: error.message, life: 8000 });
+						// this.messageService.add({ severity: 'error', summary: 'El back parece estar caido', detail: error.message, life: 8000 });
+						Swal.fire('', `El back parece estar caido  ${error.message[0]}`, 'error');
 						break;
 					}
 					default:
 						console.warn(error);
-						this.messageService.add({ severity: 'error', summary: 'Error de conexión', detail: error.message, life: 8000 });
+						// this.messageService.add({ severity: 'error', summary: 'Error de conexión', detail: error.message, life: 8000 });
+						Swal.fire('', `Error de conexion  ${error.message[0]}`, 'error');
 						break;
 				}
 

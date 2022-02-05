@@ -1,16 +1,12 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ConfirmationService, MessageService } from "primeng/api";
 import { Observable, of } from "rxjs";
 import { IPrograma, ISavePrograma } from "src/app/domain";
 import { AppBreadcrumbService } from "src/app/layout/breadcrumb/app.breadcrumb.service";
 import { ProgramaService } from "src/app/service";
+import Swal from 'sweetalert2';
 import { PROGRAMAS_VALIDATORS } from "./programas.validators";
-
-
-
-
 
 @Component({
     templateUrl: "./programas.component.html",
@@ -58,8 +54,6 @@ export class ProgramasComponent implements OnInit {
 
     constructor(
         private programaService: ProgramaService,
-        private messageService: MessageService,
-        private confirmationService: ConfirmationService,
         private breadcrumbService: AppBreadcrumbService,
         private router: Router,
         private _formBuilder: FormBuilder
@@ -76,6 +70,8 @@ export class ProgramasComponent implements OnInit {
         // No hace falta subscribe pero hay que añadir async en el html
         // <p-table #dt [value]="programas$ | async" ............
         this.programas$ = this.programaService.getProgramas();
+        console.log(this.programas$);
+
 
         // this.programaService.getProgramas().subscribe(response => {
         //     console.log(response)
@@ -145,25 +141,60 @@ export class ProgramasComponent implements OnInit {
     }
 
     private _savePrograma(response: IPrograma[], message: string) {
-        this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
+        // this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: `programa ${message}`, life: 4000 });
+        Swal.fire('', `Todo correcto programa ${message} creado`, 'success');
         this.programas$ = of(response);
         this.formGroup.reset();
         this.programaDialog = false;
         this.programaNew = true;
     }
 
+    // deletePrograma(programa: IPrograma) {
+    //     this.confirmationService.confirm({
+    //         message: '¿Estas seguro que quieres borrar el programa: ' + programa.descripcionOCM + '?',
+    //         header: 'Confirmar',
+    //         icon: 'pi pi-exclamation-triangle',
+    //         accept: () => {
+    //             this.programaService.deletePrograma(programa.id).subscribe(response => {
+    //                 // this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa borrado', life: 4000 });
+    //                 Swal.fire('', `Todo correcto programa eliminado`, 'success');
+    //                 this.programas$ = of(response);
+    //             })
+    //         }
+    //     });
+    // }
+
     deletePrograma(programa: IPrograma) {
-        this.confirmationService.confirm({
-            message: '¿Estas seguro que quieres borrar el programa: ' + programa.descripcionOCM + '?',
-            header: 'Confirmar',
-            icon: 'pi pi-exclamation-triangle',
-            accept: () => {
-                this.programaService.deletePrograma(programa.id).subscribe(response => {
-                    this.messageService.add({ severity: 'success', summary: 'Todo correcto', detail: 'programa borrado', life: 4000 });
-                    this.programas$ = of(response);
-                })
+        Swal.fire({
+            title: `¿Estas seguro que quieres eliminar este programa?`,
+            text: `${programa.descripcionOCM}`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, ¡elimínalo!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const sub$ = this.programaService.deletePrograma(programa.id).subscribe(
+                    response => {
+                        Swal.fire(
+                            '¡Eliminado!',
+                            `El programa ${programa.descripcionOCM} ha sido eliminado`,
+                            'success'
+                        ),
+                            this.programas$ = of(response);
+                    },
+                    error => {
+                        Swal.fire(
+                            '¡Error!',
+                            `El programa  ${programa.descripcionOCM} NO ha sido eliminado. ${error}`,
+                            'error'
+                        )
+                    })
+                sub$.unsubscribe
             }
-        });
+        })
     }
 
     hideDialog() {
